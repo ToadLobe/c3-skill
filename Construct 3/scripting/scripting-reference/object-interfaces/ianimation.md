@@ -1,0 +1,40 @@
+---
+title: "IAnimation script interface"
+source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimation"
+---
+
+# IAnimation script interface
+
+## On this page
+- [IAnimation APIs](#internalH1Link0)
+
+---
+The `IAnimation` interface represents an animation, typically from a Sprite object via its [ISpriteInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/sprite) interface. Each frame of the animation is represented by the [IAnimationFrame](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimationframe) interface.
+
+## IAnimation APIs
+**name**  
+A read-only string of the animation name.
+
+**speed**  
+A read-only number with the animation playback speed in animation frames per second.
+
+**isLooping**  
+A read-only boolean indicating if animation playback repeats when it reaches the end.
+
+**repeatCount**  
+A read-only number indicating how many times to repeat the animation.
+
+**repeatTo**  
+A read-only number of the zero-based frame index to go back to when repeating the animation.
+
+**isPingPong**  
+A read-only boolean indicating if the animation will reverse when reaching the start or end of the animation.
+
+**frameCount**  
+A read-only number of frames in this animation.
+
+**getFrames()**  
+Return an array of [IAnimationFrame](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimationframe) representing all the frames in this animation in sequence.
+
+***frames()**  
+Iterates all [IAnimationFrame](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimationframe) in this animation in sequence.

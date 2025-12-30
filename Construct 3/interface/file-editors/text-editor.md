@@ -1,0 +1,22 @@
+---
+title: "Text editor"
+source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/file-editors/text-editor"
+---
+
+# Text editor
+`[Paid plans only]`  The **Text editor** allows editing text-based files in the project. These can be in a range of formats, such as plain text, comma-separated values (CSV), or bundled JSON, XML, HTML, CSS or JavaScript files. The data you enter can be loaded at runtime by loading the [project file](https://www.construct.net/make-games/manuals/construct-3/project-primitives/files). The Text Editor appears when editing or adding any text-based file in the [Project Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/project-bar).
+
+![The Text Editor](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/933/text-editor.png)
+
+### Opening the Text Editor
+To open the Text Editor in a new project, start by adding a text-based file in the *Files* folder of the [Project Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/project-bar). For more information, see [project files](https://www.construct.net/make-games/manuals/construct-3/project-primitives/files).
+
+### Using the Text Editor
+Using the Text Editor to edit long pieces of text/data in a project file is often a lot more convenient than trying to paste large amounts of text data in to events or in to Text objects.
+The Text Editor provides a number of features including:
+
+- Line numbering
+- Syntax highlighting for a range of formats
+- Code folding (collapsing code sections)
+- Find/replace/replace all, including with regular expressions
+- New file templates for formats like HTML

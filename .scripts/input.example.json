@@ -1,0 +1,15 @@
+{
+  "title": "Example Page Title",
+  "url": "/en/make-games/manuals/construct-3/example-page",
+  "toc": [
+    {
+      "text": "Section 1",
+      "href": "#section-1"
+    },
+    {
+      "text": "Section 2",
+      "href": "#section-2"
+    }
+  ],
+  "html": "<div class=\"content\"><h2>Section 1</h2><p>This is the first section content.</p><h2>Section 2</h2><p>This is the second section with <strong>bold</strong> and <em>italic</em> text.</p></div>"
+}

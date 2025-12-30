@@ -1,0 +1,5 @@
+# Local files (scraper, data, node env)
+.local/
+
+# OS files
+.DS_Store

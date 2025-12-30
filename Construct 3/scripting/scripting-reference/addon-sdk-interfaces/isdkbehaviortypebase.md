@@ -1,0 +1,16 @@
+---
+title: "ISDKBehaviorTypeBase addon SDK interface"
+source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkbehaviortypebase"
+---
+
+# ISDKBehaviorTypeBase addon SDK interface
+
+## On this page
+- [ISDKBehaviorTypeBase APIs](#internalH1Link0)
+
+---
+The `ISDKBehaviorTypeBase` is used in the runtime as a base class for behavior types in the addon SDK (i.e. behaviors at the same level as object types). It derives from [IBehaviorType](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviortype).
+
+## ISDKBehaviorTypeBase APIs
+**_onCreate()**  
+Optional override called when the runtime starts up and creates all behavior types before the project starts.

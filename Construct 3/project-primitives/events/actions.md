@@ -1,0 +1,20 @@
+---
+title: "Actions"
+source: "https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/actions"
+---
+
+# Actions
+
+## On this page
+- [Breakpoints](#internalH1Link0)
+
+---
+In events, **actions** do something, such as create an object or go to another layout. They appear to the right of the event.
+
+![Diagram of an event in Construct](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/876/event-diagram.png)
+
+Actions only affect the [instances](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instances) that met the event's [conditions](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/conditions). See [How Events Work](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/how-events-work) for more information.
+To add an action to an event, click the **Add action** link that appears beside the event underneath any existing actions. For more information on adding and editing events, see [Event Sheet View](https://www.construct.net/make-games/manuals/construct-3/interface/event-sheet-view).
+
+## Breakpoints
+`[Paid plans only]`  It's possible to place a breakpoint on an action, to pause execution when it is reached in the [debugger](https://www.construct.net/make-games/manuals/construct-3/interface/debugger). For more information, see [breakpoints](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/breakpoints).
