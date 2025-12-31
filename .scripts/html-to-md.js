@@ -1,6 +1,11 @@
 /**
- * HTML to Markdown Converter for Construct 3 Manual
- * Usage: node html-to-md.js <input.json> <output-dir>
+ * HTML to Markdown Converter for Construct Manuals
+ *
+ * Usage:
+ *   Single file:  node html-to-md.js <input.json> [output-dir]
+ *   Batch mode:   node html-to-md.js --batch <input-dir> [output-dir]
+ *
+ * Supports: construct-3, addon-sdk (auto-detected from URL)
  */
 
 const { JSDOM } = require('jsdom');
@@ -8,7 +13,22 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE_URL = 'https://www.construct.net';
-const MANUAL_BASE = '/en/make-games/manuals/construct-3';
+
+// Manual configurations
+const MANUALS = {
+  'construct-3': '/en/make-games/manuals/construct-3',
+  'addon-sdk': '/en/make-games/manuals/addon-sdk'
+};
+
+// Detect manual type from URL
+function detectManualType(url) {
+  for (const [type, base] of Object.entries(MANUALS)) {
+    if (url.startsWith(base)) {
+      return { type, base };
+    }
+  }
+  return { type: 'construct-3', base: MANUALS['construct-3'] };
+}
 
 /**
  * Convert DOM node to Markdown
@@ -89,9 +109,35 @@ function nodeToMarkdown(node, listDepth = 0) {
 
     case 'pre': {
       const codeEl = node.querySelector('code');
-      const lang = codeEl?.className?.match(/language-(\w+)/)?.[1] || '';
+      let lang = codeEl?.className?.match(/language-(\w+)/)?.[1] || '';
       const content = codeEl ? codeEl.textContent : node.textContent;
-      return `\`\`\`${lang}\n${content.trim()}\n\`\`\`\n\n`;
+
+      // Detect programming languages (often mislabeled)
+      if (!lang || lang === 'javascript' || lang === 'js' || lang === 'none') {
+        // C++ detection (avoid -> as it conflicts with WGSL)
+        if (/\b(std::|#include\s*<|nullptr|NSString|NSArray|NSDictionary)\b/.test(content) ||
+            /^\/\/\s*C\+\+/m.test(content) ||
+            /\{\s*\{\s*"[^"]+",\s*"[^"]+"\s*\}/.test(content)) {  // C++ initializer list { { "key", "value" } }
+          lang = 'cpp';
+        }
+        // JSON detection (starts with { or [ or "key":, has "key": pattern, no JS keywords)
+        else if (/^\s*([\[{]|"[^"]+"\s*:)/.test(content) &&
+                 /"[^"]+"\s*:/.test(content) &&
+                 !/\b(function|const|let|var|class|import|export|=>|return|new\s+\w+)\b/.test(content)) {
+          lang = 'json';
+        }
+        // WGSL detection (WebGPU shaders) - check before GLSL as it has more specific syntax
+        else if (/(<f32>|<u32>|<i32>|:\s*f32|:\s*u32|:\s*i32|:\s*vec[234]|fn\s+\w+\s*\(|@fragment|@vertex|@binding|@group|var<uniform>|texture_2d|texture_depth|-> vec)/.test(content)) {
+          lang = 'wgsl';
+        }
+        // GLSL detection (WebGL shaders)
+        else if (/\b(texture2D|sampler2D|lowp|mediump|highp|gl_Frag|uniform\s+\w+\s+\w+;|varying\s+\w+\s+\w+;)\b/.test(content) ||
+                 /^#extension\s+GL_/.test(content)) {
+          lang = 'glsl';
+        }
+      }
+
+      return `\n\n\`\`\`${lang}\n${content.trim()}\n\`\`\`\n\n`;
     }
 
     case 'a': {
@@ -118,6 +164,14 @@ function nodeToMarkdown(node, listDepth = 0) {
 
     case 'figure':
     case 'div': {
+      // Skip toolbar (copy button container)
+      if (node.classList.contains('toolbar')) {
+        return '';
+      }
+      // Handle horizontal rule divs
+      if (node.classList.contains('hr')) {
+        return '\n\n---\n\n';
+      }
       // Handle image containers with captions
       if (node.classList.contains('imgAlign') || node.classList.contains('imageWrapper')) {
         const img = node.querySelector('img');
@@ -142,42 +196,122 @@ function nodeToMarkdown(node, listDepth = 0) {
     }
 
     case 'ul': {
-      const items = Array.from(node.children)
-        .filter(child => child.tagName === 'LI')
-        .map(li => {
+      let result = '\n\n';
+      let listEnded = false;
+      // First pass: collect all items to determine if we need loose list
+      const items = [];
+      Array.from(node.childNodes).forEach(child => {
+        if (child.nodeType === 1 && child.tagName === 'LI') {
+          items.push(nodeToMarkdown(child, listDepth));
+        }
+      });
+      // Use loose list (blank lines between items) if any item is long or multiline
+      const useLooseList = items.some(item => item.length > 120 || /\n\s*\S/.test(item));
+
+      Array.from(node.childNodes).forEach(child => {
+        if (child.nodeType === 1 && child.tagName === 'LI') {
           const indent = '  '.repeat(listDepth);
-          const content = nodeToMarkdown(li, listDepth);
-          return `${indent}- ${content.trim()}`;
-        })
-        .join('\n');
-      return '\n\n' + items + '\n\n';
+          const content = nodeToMarkdown(child, listDepth);
+          const separator = useLooseList ? '\n\n' : '\n';
+          result += `${indent}- ${content.trim()}${separator}`;
+        } else if (child.nodeType === 1) {
+          // Block-level elements break the list
+          const blockTags = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'DIV', 'P', 'ASIDE', 'BLOCKQUOTE'];
+          if (blockTags.includes(child.tagName)) {
+            if (!listEnded) {
+              result += '\n';
+              listEnded = true;
+            }
+            result += nodeToMarkdown(child, 0); // Reset list depth
+          } else {
+            result += nodeToMarkdown(child, listDepth);
+          }
+        } else {
+          // Text nodes - only add if not just whitespace after list ended
+          const text = nodeToMarkdown(child, listDepth);
+          if (listEnded && text.trim()) {
+            result += text;
+          } else if (!listEnded) {
+            result += text;
+          }
+        }
+      });
+      return result + '\n';
     }
 
     case 'ol': {
       let i = 0;
-      const items = Array.from(node.children)
-        .filter(child => child.tagName === 'LI')
-        .map(li => {
+      let result = '\n\n';
+      let listEnded = false;
+      // First pass: collect all items to determine if we need loose list
+      const items = [];
+      Array.from(node.childNodes).forEach(child => {
+        if (child.nodeType === 1 && child.tagName === 'LI') {
+          items.push(nodeToMarkdown(child, listDepth));
+        }
+      });
+      // Use loose list (blank lines between items) if any item is long or multiline
+      const useLooseList = items.some(item => item.length > 120 || /\n\s*\S/.test(item));
+
+      Array.from(node.childNodes).forEach(child => {
+        if (child.nodeType === 1 && child.tagName === 'LI') {
           i++;
           const indent = '  '.repeat(listDepth);
-          const content = nodeToMarkdown(li, listDepth);
-          return `${indent}${i}. ${content.trim()}`;
-        })
-        .join('\n');
-      return '\n\n' + items + '\n\n';
+          const content = nodeToMarkdown(child, listDepth);
+          const separator = useLooseList ? '\n\n' : '\n';
+          result += `${indent}${i}. ${content.trim()}${separator}`;
+        } else if (child.nodeType === 1) {
+          // Block-level elements break the list
+          const blockTags = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'DIV', 'P', 'ASIDE', 'BLOCKQUOTE'];
+          if (blockTags.includes(child.tagName)) {
+            if (!listEnded) {
+              result += '\n';
+              listEnded = true;
+            }
+            result += nodeToMarkdown(child, 0); // Reset list depth
+          } else {
+            result += nodeToMarkdown(child, listDepth);
+          }
+        } else {
+          // Text nodes - only add if not just whitespace after list ended
+          const text = nodeToMarkdown(child, listDepth);
+          if (listEnded && text.trim()) {
+            result += text;
+          } else if (!listEnded) {
+            result += text;
+          }
+        }
+      });
+      return result + '\n';
     }
 
     case 'li': {
-      const parts = [];
+      // Separate inline content from block-level content
+      const blockTags = ['UL', 'OL', 'DL', 'ASIDE', 'DIV', 'PRE', 'BLOCKQUOTE', 'TABLE'];
+      let inlineContent = '';
+      let blockContent = '';
+      const indent = '   '; // 3 spaces for ordered list continuation
+
       Array.from(node.childNodes).forEach(child => {
-        if (child.tagName === 'UL' || child.tagName === 'OL') {
-          parts.push('\n' + nodeToMarkdown(child, listDepth + 1));
+        if (child.nodeType === 1 && blockTags.includes(child.tagName)) {
+          // Block-level element - process and indent
+          let block = nodeToMarkdown(child, listDepth + 1);
+          // Indent each line of block content
+          block = block.replace(/^(?=.)/gm, indent);
+          blockContent += '\n' + block;
         } else {
-          parts.push(nodeToMarkdown(child, listDepth));
+          inlineContent += nodeToMarkdown(child, listDepth);
         }
       });
-      // Strip trailing newlines from li content (may come from <p> inside <li>)
-      return parts.join('').replace(/\n+$/, '');
+
+      // Combine: inline content first, then indented block content
+      let result = inlineContent.trim();
+      if (blockContent) {
+        // Only trim newlines, preserve indentation spaces
+        blockContent = blockContent.replace(/^\n+/, '').replace(/\n+$/, '');
+        result += '\n' + blockContent;
+      }
+      return result;
     }
 
     case 'dl': {
@@ -225,22 +359,15 @@ function nodeToMarkdown(node, listDepth = 0) {
 
     case 'aside': {
       const noticeDiv = node.querySelector('.notice');
-      let type = 'Note';
-      let emoji = '';
+      let type = 'Tip';
 
       if (noticeDiv) {
-        if (noticeDiv.classList.contains('tip')) {
-          type = 'Tip';
-          emoji = '> ';
-        } else if (noticeDiv.classList.contains('warning')) {
+        if (noticeDiv.classList.contains('warning')) {
           type = 'Warning';
-          emoji = '> ';
         } else if (noticeDiv.classList.contains('info')) {
           type = 'Info';
-          emoji = '> ';
         } else if (noticeDiv.classList.contains('danger')) {
           type = 'Danger';
-          emoji = '> ';
         }
       }
 
@@ -254,10 +381,20 @@ function nodeToMarkdown(node, listDepth = 0) {
       contentEl.childNodes.forEach(child => {
         content += nodeToMarkdown(child, listDepth);
       });
-      content = content.trim().replace(/\n\s*/g, '\n> ');
+      content = content.trim();
 
-      // Always start blockquote on new line with blank line before
-      // Two trailing spaces after type for Markdown line break
+      // Check if content starts with a known type label (e.g., **Note:** or **Warning:**)
+      // Only extract if it's a known type, otherwise keep as content
+      const knownTypes = ['Note', 'NOTE', 'Warning', 'WARNING', 'Tip', 'TIP', 'Info', 'INFO', 'Danger', 'DANGER', 'Important', 'IMPORTANT'];
+      const boldTypeMatch = content.match(/^\*\*([^*:]+):?\*\*:?\s*/);
+      if (boldTypeMatch && knownTypes.includes(boldTypeMatch[1])) {
+        type = boldTypeMatch[1];
+        content = content.substring(boldTypeMatch[0].length);
+      }
+
+      // Format for blockquote continuation
+      content = content.replace(/\n\s*/g, '\n> ');
+
       return `\n\n> **${type}**  \n> ${content}\n\n`;
     }
 
@@ -266,6 +403,13 @@ function nodeToMarkdown(node, listDepth = 0) {
 
     case 'hr':
       return '\n---\n\n';
+
+    case 'button':
+      // Skip copy buttons from code blocks
+      if (node.classList.contains('copy-to-clipboard-button')) {
+        return '';
+      }
+      return processChildren();
 
     case 'span':
     case 'section':
@@ -284,13 +428,17 @@ function nodeToMarkdown(node, listDepth = 0) {
 function convertHtmlToMarkdown(html, title, toc, url) {
   const dom = new JSDOM(html);
   const document = dom.window.document;
-  const content = document.body.firstChild;
+  const body = document.body;
 
-  if (!content) {
+  if (!body || !body.childNodes.length) {
     return { error: 'No content found' };
   }
 
-  const markdown = nodeToMarkdown(content);
+  // Process ALL children of body, not just firstChild
+  let markdown = '';
+  body.childNodes.forEach(child => {
+    markdown += nodeToMarkdown(child);
+  });
 
   // Build final Markdown
   let md = `---
@@ -314,31 +462,35 @@ source: "${BASE_URL}${url}"
   // Add content
   md += markdown;
 
-  // Clean up formatting
+  // Protect code blocks during cleanup (replace with placeholders)
+  const codeBlocks = [];
+  md = md.replace(/```[\s\S]*?```/g, (match) => {
+    codeBlocks.push(match);
+    return `__CODE_BLOCK_${codeBlocks.length - 1}__`;
+  });
+
+  // Clean up formatting (preserve intentional indentation for list continuations)
   md = md
-    .replace(/^\s+/gm, '')            // Remove leading whitespace on each line
+    .replace(/^ /gm, '')              // Remove single leading space (collapsed whitespace), preserve multiple
     .replace(/\n{3,}/g, '\n\n')       // Max double newline
     .replace(/([^\n])\n(!\[)/g, '$1\n\n$2')  // Add blank line before images
-    .replace(/(\]\([^)]+\))\n([^\n])/g, '$1\n\n$2')  // Add blank line after images
+    .replace(/(!\[[^\]]*\]\([^)]+\))\n([^\n])/g, '$1\n\n$2')  // Add blank line after images (not links)
     .replace(/([^\n])\n(#+\s)/g, '$1\n\n$2')  // Add blank line before headings
-    .replace(/([^\n>])\n(> \*\*)/g, '$1\n\n$2')  // Add blank line before blockquote start
+    .replace(/([^\n>\s])\n(> \*\*)/g, '$1\n\n$2')  // Add blank line before blockquote start (not after trailing spaces)
     .replace(/>\n(> \*\*)/g, '>\n\n$1')  // Separate consecutive blockquotes
-    .replace(/(> [^\n]+)\n([^>\n])/g, '$1\n\n$2')  // Add blank line after blockquote
+    .replace(/(> [^\n]+)\n([^>\n\s])/g, '$1\n\n$2')  // Add blank line after blockquote (not before indented content)
     .replace(/([.!?)])\n(\*\*)/g, '$1\n\n$2')  // Add blank line before definition terms
     .replace(/([:.])\n(\d+\. |\- )/g, '$1\n\n$2')  // Add blank line before list (after : or .)
     .replace(/(\d+\. [^\n]+)\n([A-Z])/g, '$1\n\n$2')  // Add blank line after ordered list before text
     .replace(/(- [^\n]+)\n([A-Z])/g, '$1\n\n$2')  // Add blank line after unordered list before text
     .replace(/([^\n])\n(\|)/g, '$1\n\n$2')  // Add blank line before tables
     .replace(/(\|[^\n]*)\n\n(\|)/g, '$1\n$2')  // Remove blank lines within tables
+    .replace(/([.!?)\]]) ?\n(---)/g, '$1\n\n$2')  // Add blank line before horizontal rules (after sentences)
+    .replace(/([^\n])\n(__CODE_BLOCK_)/g, '$1\n\n$2')  // Add blank line before code blocks
     .trim() + '\n';
 
-  // Compact consecutive list items
-  let prev;
-  do {
-    prev = md;
-    md = md.replace(/(- [^\n]+)\n\n(- )/g, '$1\n$2');
-    md = md.replace(/(\d+\. [^\n]+)\n\n(\d+\. )/g, '$1\n$2');
-  } while (md !== prev);
+  // Restore code blocks
+  md = md.replace(/__CODE_BLOCK_(\d+)__/g, (_, i) => codeBlocks[parseInt(i)]);
 
   return { markdown: md };
 }
@@ -346,17 +498,16 @@ source: "${BASE_URL}${url}"
 /**
  * Save Markdown file
  */
-function saveMarkdown(outputDir, url, markdown) {
+function saveMarkdown(outputDir, url, markdown, manualBase) {
   // Handle root path first
-  if (url === MANUAL_BASE || url === MANUAL_BASE + '/') {
+  if (url === manualBase || url === manualBase + '/') {
     const filePath = path.join(outputDir, 'index.md');
     fs.mkdirSync(outputDir, { recursive: true });
     fs.writeFileSync(filePath, markdown, 'utf8');
-    console.log(`Saved: ${filePath}`);
     return filePath;
   }
 
-  let relativePath = url.replace(MANUAL_BASE + '/', '');
+  let relativePath = url.replace(manualBase + '/', '');
   if (relativePath.startsWith('/')) {
     relativePath = relativePath.substring(1);
   }
@@ -376,40 +527,109 @@ function saveMarkdown(outputDir, url, markdown) {
   // Save file
   const filePath = path.join(dirPath, fileName);
   fs.writeFileSync(filePath, markdown, 'utf8');
-  console.log(`Saved: ${filePath}`);
 
   return filePath;
 }
 
 /**
- * Main function - process JSON input
+ * Process single JSON file
+ */
+function processFile(inputFile, outputDir) {
+  const input = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
+  const { type, base } = detectManualType(input.url);
+
+  const result = convertHtmlToMarkdown(input.html, input.title, input.toc, input.url);
+
+  if (result.error) {
+    return { error: result.error };
+  }
+
+  const filePath = saveMarkdown(outputDir, input.url, result.markdown, base);
+  return { success: true, filePath, type };
+}
+
+/**
+ * Batch process all JSON files in a directory
+ */
+function batchProcess(inputDir, outputDir) {
+  console.log('='.repeat(60));
+  console.log('HTML to Markdown Batch Converter');
+  console.log('='.repeat(60));
+  console.log(`Input:  ${inputDir}`);
+  console.log(`Output: ${outputDir}\n`);
+
+  const files = fs.readdirSync(inputDir).filter(f => f.endsWith('.json'));
+  console.log(`Found ${files.length} JSON files\n`);
+
+  let success = 0;
+  let failed = 0;
+
+  files.forEach((file, i) => {
+    const progress = `[${i + 1}/${files.length}]`;
+    try {
+      const inputPath = path.join(inputDir, file);
+      const result = processFile(inputPath, outputDir);
+
+      if (result.error) {
+        console.log(`${progress} Error: ${file} - ${result.error}`);
+        failed++;
+        return;
+      }
+
+      console.log(`${progress} ${path.relative(outputDir, result.filePath)}`);
+      success++;
+    } catch (err) {
+      console.log(`${progress} Error: ${file} - ${err.message}`);
+      failed++;
+    }
+  });
+
+  console.log('\n' + '='.repeat(60));
+  console.log('Conversion completed!');
+  console.log('='.repeat(60));
+  console.log(`Success: ${success}`);
+  console.log(`Failed: ${failed}`);
+}
+
+/**
+ * Main function
  */
 function main() {
   const args = process.argv.slice(2);
 
   if (args.length < 1) {
-    console.log('Usage: node html-to-md.js <input.json> [output-dir]');
-    console.log('  input.json: JSON file with { html, title, toc, url }');
-    console.log('  output-dir: Output directory (default: current dir)');
+    console.log('Usage:');
+    console.log('  Single file:  node html-to-md.js <input.json> [output-dir]');
+    console.log('  Batch mode:   node html-to-md.js --batch <input-dir> [output-dir]');
+    console.log('');
+    console.log('Supports: construct-3, addon-sdk (auto-detected from URL)');
     process.exit(1);
   }
 
+  // Batch mode
+  if (args[0] === '--batch') {
+    if (args.length < 2) {
+      console.error('Error: --batch requires input directory');
+      process.exit(1);
+    }
+    const inputDir = args[1];
+    const outputDir = args[2] || path.join(__dirname, '..');
+    batchProcess(inputDir, outputDir);
+    return;
+  }
+
+  // Single file mode
   const inputFile = args[0];
-  const outputDir = args[1] || path.join(__dirname, '..');  // Default to parent directory
+  const outputDir = args[1] || path.join(__dirname, '..');
 
-  // Read input
-  const input = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
-
-  // Convert
-  const result = convertHtmlToMarkdown(input.html, input.title, input.toc, input.url);
+  const result = processFile(inputFile, outputDir);
 
   if (result.error) {
     console.error('Error:', result.error);
     process.exit(1);
   }
 
-  // Save
-  saveMarkdown(outputDir, input.url, result.markdown);
+  console.log(`Saved: ${result.filePath}`);
 }
 
 // Export for use as module

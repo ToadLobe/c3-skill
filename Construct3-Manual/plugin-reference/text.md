@@ -83,7 +83,7 @@ This will assign the tag "mytag" to the words "quick brown fox". This works stra
 2. Changing styles within the tagged range
 
 In the normal case you may expect the above tagged range to count as a single tag with a single size and position. However it may be broken across lines by word wrap, such as shown below:
-```none
+```text
 The quick brown
 fox jumps over
 the lazy dog

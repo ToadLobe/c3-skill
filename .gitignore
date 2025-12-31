@@ -1,5 +1,8 @@
 # Local files (scraper, data, node env)
 .local/
 
+# IDE files
+.history/
+
 # OS files
 .DS_Store
