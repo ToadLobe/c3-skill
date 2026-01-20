@@ -21,7 +21,7 @@ The **iframe** object can display another web page, or a string of some HTML con
 This object can also be used to show embedded content, such as YouTube videos. For example if you choose to share a YouTube video and select the "embed" option, it provides some HTML code for an *iframe* element. The `src` attribute is the embed URL for the video, e.g. [https://www.youtube.com/embed/pWiC5Ln_0yA](https://www.construct.net/out?u=https%3a%2f%2fwww.youtube.com%2fembed%2fpWiC5Ln_0yA). This can be used in the *URL* property of Construct's iframe object to show the video in your game.
 
 ## Layering HTML objects
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
 
 ## iframe properties
 **URL**  
@@ -47,10 +47,10 @@ Check *Enable sandbox* to add the `sandbox` attribute on the iframe element, pro
 > Do not use both the `allow-scripts` and `allow-same-origin` in the sandbox string. This allows scripts to remove the sandbox protection.
 
 ## iframe conditions
-The iframe object does not have any of its own conditions. See [common conditions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-conditions) for features shared between form control objects.
+The iframe object does not have any of its own conditions. See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
 
 ## iframe actions
-See [common actions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-actions) for features shared between form control objects.
+See [common actions](common-features/common-actions.md) for features shared between form control objects.
 
 **Display HTML string**  
 Load a string of HTML content in the iframe. This is similar to using the *HTML content* property. If the iframe was previously displaying a URL, it will switch to the HTML content instead.

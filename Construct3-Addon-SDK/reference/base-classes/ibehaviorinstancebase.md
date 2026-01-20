@@ -22,7 +22,7 @@ The `IBehaviorInstanceBase` interface is used as the base class for behavior ins
 Reference to the associated SDK type class.
 
 **this._behaviorInstance**  
-Reference to the [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/addon-sdk/reference/object-interfaces/ibehaviorinstance) interface representing this instance in the editor. This allows access to Construct's built-in features for behavior instances.
+Reference to the [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) interface representing this instance in the editor. This allows access to Construct's built-in features for behavior instances.
 
 ## Methods
 
@@ -30,7 +30,7 @@ Reference to the [IBehaviorInstance](https://www.construct.net/en/make-games/man
 Optional override for when a property with the given ID is changed. The value the property was changed to is also passed.
 
 **GetBehaviorInstance()**  
-Return the [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/addon-sdk/reference/object-interfaces/ibehaviorinstance) interface representing this instance in the editor.
+Return the [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) interface representing this instance in the editor.
 
 **GetSdkBehaviorType()**  
 Return the associated SDK type class.

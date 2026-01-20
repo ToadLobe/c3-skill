@@ -15,7 +15,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-re
 The **Timer behavior** triggers its *On timer* condition regularly or once after a delay. This is like using the system *Every X seconds* condition, or the system *Wait* action, except that times are kept for each instance individually. The rate of *On timer* triggering is affected by the time scale. The timer behavior is a more convenient alternative to adding *dt* to an instance variable every tick.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ITimerBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/timer).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ITimerBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/timer.md).
 
 ## Tags
 A single Timer behavior can keep track of multiple timers. To distinguish between them, a *tag* is used. A tag is just a string, which can be anything. For example, starting a timer with tag "attack" will trigger *On timer "attack"*, but not *On timer "defend"*.

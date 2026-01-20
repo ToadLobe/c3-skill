@@ -14,16 +14,16 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-refe
 - [Text Input expressions](#internalH1Link5)
 
 ---
-The **Text input** object is a form control providing a text field the user can type text in to. This is used for getting data from the user; don't confuse it with the [Text](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/text) object, which is for displaying text.
+The **Text input** object is a form control providing a text field the user can type text in to. This is used for getting data from the user; don't confuse it with the [Text](text.md) object, which is for displaying text.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ITextInputInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/text-input).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ITextInputInstance script interface](../scripting/scripting-reference/plugin-interfaces/text-input.md).
 
 ## Layering HTML objects
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
 
 ## Styling text inputs
-As Text Input objects are HTML elements, their appearance can be customised using CSS (Cascading Style Sheets). The *ID* and *Class* properties can be used to identify the HTML element, and a CSS [project file](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/files) added to apply some styles to it.
+As Text Input objects are HTML elements, their appearance can be customised using CSS (Cascading Style Sheets). The *ID* and *Class* properties can be used to identify the HTML element, and a CSS [project file](../project-primitives/files.md) added to apply some styles to it.
 
 ## Text Input properties
 **Text**  
@@ -68,7 +68,7 @@ Automatically set the *font-size* property of the element according to the layou
 An optional *id* attribute for the element in the DOM (Document Object Model). This can be useful for accessing the element's value from external scripts, or styling with CSS in the HTML page.
 
 ## Text input conditions
-See [common conditions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-conditions) for features shared between form control objects.
+See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
 
 **Compare text**  
 Compare the text currently entered in to the field. The comparison can either be case sensitive ("TEXT" is different to "text") or case insensitive ("TEXT" is the same as "text").
@@ -83,7 +83,7 @@ Triggered when the user double-clicks the field.
 Triggered whenever the text in the field is modified, by typing, backspace/delete, cut/paste etc.
 
 ## Text input actions
-See [common actions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-actions) for features shared between form control objects.
+See [common actions](common-features/common-actions.md) for features shared between form control objects.
 
 **Append text**  
 Add some text to the end of the current text. For example, if the text object contains *Hello* and has *World* appended, the text object then contains *HelloWorld*.

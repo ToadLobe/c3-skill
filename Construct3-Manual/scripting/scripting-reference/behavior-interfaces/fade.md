@@ -11,7 +11,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Fade behavior APIs](#internalH1Link2)
 
 ---
-The `IFadeBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Fade behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/fade).
+The `IFadeBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Fade behavior](../../../behavior-reference/fade.md).
 
 ## Example
 Below is a sample code snippet demonstrating starting a fade for `inst` (assumed to be an instance with the Fade behavior) and logging to the console when the fade finishes.
@@ -26,7 +26,7 @@ console.log("Fade finished!");
 inst.behaviors.Fade.startFade();
 ```
 Copy ## Fade behavior events
-See [behavior instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/behavior-instance-event) for standard behavior instance event object properties.
+See [behavior instance event](../interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
 
 **"fadeinend"**  
 Fired when the fade in stage finishes, moving on to the wait stage.

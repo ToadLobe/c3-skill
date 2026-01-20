@@ -169,7 +169,7 @@ Show a save file picker allowing the user to choose a file on their local system
 
 **Read text file**  
 **Read binary file**  
-Read the contents of a file from a previously completed picker. The file or folder to read from is identified by the *Picker tag*. The *Folder path* is optional and is only used for folder pickers or from a open picker with *Multiple* enabled, and specifies the filename to be read, e.g. "file1.txt" or "subfolder/file2.txt" when using a folder picker. When using a save file picker or an open file picker for a single file, leave the *Folder path* empty as it is not used, as it will read the single file chosen by the picker. The *File tag* is optional and allows identifying when the read operation completes or fails with the *On file operation complete/error* triggers. In the case of reading a text file, the *FileText* expression is set to the read text content when completed. In the case of reading a binary file, the read file contents will be placed in the chosen [Binary Data](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/binary-data) object when completed.
+Read the contents of a file from a previously completed picker. The file or folder to read from is identified by the *Picker tag*. The *Folder path* is optional and is only used for folder pickers or from a open picker with *Multiple* enabled, and specifies the filename to be read, e.g. "file1.txt" or "subfolder/file2.txt" when using a folder picker. When using a save file picker or an open file picker for a single file, leave the *Folder path* empty as it is not used, as it will read the single file chosen by the picker. The *File tag* is optional and allows identifying when the read operation completes or fails with the *On file operation complete/error* triggers. In the case of reading a text file, the *FileText* expression is set to the read text content when completed. In the case of reading a binary file, the read file contents will be placed in the chosen [Binary Data](binary-data.md) object when completed.
 
 **Write text file**  
 **Write binary file**  
@@ -178,7 +178,7 @@ Write text or binary data to a file from a previously completed picker. The file
 > **Tip**  
 > Note that save file pickers erase the chosen file, so appending is only useful after using an open file picker.
 
-In the case of writing a binary file, the contents of the chosen [Binary Data](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/binary-data) will be written to the file.
+In the case of writing a binary file, the contents of the chosen [Binary Data](binary-data.md) will be written to the file.
 
 **Copy file**  
 Only applies to folder pickers. Copy a file within a previously picked folder. The *Source path* specifies an existing file to copy, e.g. "subfolder/file1.txt". The *Destination path* specifies where to create a copy; this will either create a new file if it doesn't exist, or overwrite an existing file if it already exists. The *File tag* is optional and allows identifying when the copy operation completes or fails with the *On file operation complete/error* triggers.

@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Array APIs](#internalH1Link0)
 
 ---
-The `IArrayInstance` interface derives from [IInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance) to add APIs specific to the [Array plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/array). 
+The `IArrayInstance` interface derives from [IInstance](../object-interfaces/iinstance.md) to add APIs specific to the [Array plugin](../../../plugin-reference/array.md). 
 
 > **Tip**  
 > The Array object can only store strings and numbers, since these are the only types Construct uses in expressions. Use normal JavaScript arrays to store other types.

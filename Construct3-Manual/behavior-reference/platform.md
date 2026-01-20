@@ -14,15 +14,15 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-re
 - [Platform expressions](#internalH1Link5)
 
 ---
-The **Platform behavior** implements a side-view "jump and run" style movement. It supports slopes, moving platforms, "jump-thru" platforms, and arbitrary angles of gravity. There are several examples of the Platform behavior that can be found in the [Start Page](https://www.construct.net/make-games/manuals/construct-3/overview/start-page).
-The Platform behavior will land on any objects with the [Solid](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/solid) or [Jump-thru](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/jump-thru) behaviors. Jump-thru is different in that the Platform movement can jump on to a Jump-thru from underneath, whereas jumping in to a solid from underneath causes the player to bounce off. The image below illustrates the difference.
+The **Platform behavior** implements a side-view "jump and run" style movement. It supports slopes, moving platforms, "jump-thru" platforms, and arbitrary angles of gravity. There are several examples of the Platform behavior that can be found in the [Start Page](../overview/start-page.md).
+The Platform behavior will land on any objects with the [Solid](solid.md) or [Jump-thru](jump-thru.md) behaviors. Jump-thru is different in that the Platform movement can jump on to a Jump-thru from underneath, whereas jumping in to a solid from underneath causes the player to bounce off. The image below illustrates the difference.
 
 ![Jump-thru vs. Solid behaviors](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/976/jumpthru-solid.png)
 
-By default the Platform movement is controlled by the left and right arrow keys and up arrow to jump. To set up custom or automatic controls, see the [behavior reference summary](https://www.construct.net/make-games/manuals/construct-3/behavior-reference).
+By default the Platform movement is controlled by the left and right arrow keys and up arrow to jump. To set up custom or automatic controls, see the [behavior reference summary](../behavior-reference.md).
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IPlatformBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/platform).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IPlatformBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/platform.md).
 
 ## Implementing reliable platform movements
 For the most reliable platform movement, it is recommended to use a **invisible rectangle sprite with no animations** with the Platform movement. Then, the animated player object can be positioned on top of that. Otherwise, the changing size and collision polygon of the object as its animation plays can interfere with the Platform movement's floor, wall and slope detection, causing a shaking or glitchy movement. For more information and a complete guide, see the tutorial [How to make a Platform game](https://www.construct.net/tutorials/platformer-game-2329).
@@ -60,7 +60,7 @@ If enabled, the player may make one extra mid-air jump before landing on the gro
 Maximum time in milliseconds that the jump strength is sustained at while the jump control is being held before the effect of gravity takes over. This allows for variable height jumps depending on whether the jump control is tapped or held. For example if set to 200, then the jump velocity is sustained for up to the first 200ms of holding the jump control.
 
 **Default controls**  
-If enabled, movement is controlled by the left and right arrow keys and the up arrow key to jump. Disable to set up custom controls using the *Simulate control* action. For more information see the [behavior reference summary](https://www.construct.net/make-games/manuals/construct-3/behavior-reference).
+If enabled, movement is controlled by the left and right arrow keys and the up arrow key to jump. Disable to set up custom controls using the *Simulate control* action. For more information see the [behavior reference summary](../behavior-reference.md).
 
 **Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, it can be enabled at runtime using the Set enabled action.
@@ -99,7 +99,7 @@ These are *animation triggers*, which trigger when the platform movement is movi
 
 ## Platform actions
 **Fall through**  
-If the player is currently standing on a [jump-thru](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/jump-thru) platform, this action will make them fall through it. This is useful for adding an additional control, e.g. down arrow, to jump down from jump-thru platforms.
+If the player is currently standing on a [jump-thru](jump-thru.md) platform, this action will make them fall through it. This is useful for adding an additional control, e.g. down arrow, to jump down from jump-thru platforms.
 
 **Reset double jump**  
 Change whether a double-jump is allowed during the current jump. If disabled a double-jump will no longer be allowed in the current jump, even if it is the first jump; if enabled a double-jump will be allowed again, even if a double-jump was already made in the current jump.
@@ -132,7 +132,7 @@ Set whether input is being ignored. If input is ignored, pressing any of the con
 Manually set the horizontal and vertical components of motion, in pixels per second. For example, setting the vector Y to -1000 would cause a jump with strength 1000, which could be useful for implementing springs.
 
 **Simulate control**  
-Simulate one of the movement controls being held down. Useful when *Default controls* is disabled. See the [behavior reference summary](https://www.construct.net/make-games/manuals/construct-3/behavior-reference) for more information.
+Simulate one of the movement controls being held down. Useful when *Default controls* is disabled. See the [behavior reference summary](../behavior-reference.md) for more information.
 
 ## Platform expressions
 **Acceleration**  

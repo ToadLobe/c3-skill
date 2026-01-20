@@ -17,10 +17,10 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-refe
 - [Built-in ease names](#internalH1Link8)
 
 ---
-The **Timeline controller** object allows [timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines) to be controlled in event sheets.
+The **Timeline controller** object allows [timelines](../project-primitives/timelines.md) to be controlled in event sheets.
 
 ## Tagging
-Much like [tweens](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/tween), timelines can be optionally tagged when they are played using one of the **Play** actions. Tags are useful to later control a timeline (or multiple timelines sharing the same tags) with some of the other actions, conditions or expressions.
+Much like [tweens](../behavior-reference/tween.md), timelines can be optionally tagged when they are played using one of the **Play** actions. Tags are useful to later control a timeline (or multiple timelines sharing the same tags) with some of the other actions, conditions or expressions.
 
 ## Setting instances to play
 In the simplest case, a timeline will affect the instances that were used to create the timeline in the editor. Using the **Set Instance** action it is possible to use different instances to the ones used in the editor. Below are some short examples to help illustrate how this action works.
@@ -28,7 +28,7 @@ In the below example the timeline plugin **Play** action is used by itself on st
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/31240/timeline-plugin-manual-02.png)
 
-In this example the timeline plugin **Play** action is used together with the system plugin **Create Object** action and the timeline plugin **Set Instance** action. This plays the timeline affecting the newly created instance. The new instance will be used in the [track](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/tracks) with ID **"a-track-id"** and the timeline is tagged **"new-timeline"**
+In this example the timeline plugin **Play** action is used together with the system plugin **Create Object** action and the timeline plugin **Set Instance** action. This plays the timeline affecting the newly created instance. The new instance will be used in the [track](../project-primitives/timelines/track.md) with ID **"a-track-id"** and the timeline is tagged **"new-timeline"**
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/31241/timeline-plugin-manual-01.png)
 
@@ -47,7 +47,7 @@ Using the **Set Instance** action we specify to play a timeline for each picked 
 Lastly the preview of the layout shows that two different timelines where created to accommodate for the four instances found at the start of the layout.
 
 ## Omitting the track ID
-There are a couple of cases in which it is possible to ignore using the **track ID** property of a [track](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/tracks) as well as omit using the **track ID** parameter of the **Set Instance** action.
+There are a couple of cases in which it is possible to ignore using the **track ID** property of a [track](../project-primitives/timelines/track.md) as well as omit using the **track ID** parameter of the **Set Instance** action.
 
 ### A timeline with only one track
 In this case it is possible to not use the **track ID**, as there is only one instance so there is no need to make any choice. The track ID must be empty in both the timeline track and the **Set Instance** action.
@@ -64,7 +64,7 @@ The images bellow show how a timeline and it's properties might look in in this 
 | Events |
 | --- |
 | ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/47786/set-intance-no-track-id-1.png) |
-In this particular case the **octopus** [sprite](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/sprite) is used in the first track while the **toster** sprite is used in the second track. Because no track IDs are used, order is assumed to be the same as that defined in the editor. 
+In this particular case the **octopus** [sprite](sprite.md) is used in the first track while the **toster** sprite is used in the second track. Because no track IDs are used, order is assumed to be the same as that defined in the editor. 
 
 ## Unsetting all instances
 Sometimes it might be necessary to clear the state the **Timeline Controller** uses in order to use different instances in a timeline. You might find that some state was previously set but no timeline was played to use it. Such a scenario is likely to cause subsequent uses of **Set instance** and **Play** to produce unexpected results. In those cases use the **Unset instances** action to clear the **Timeline Controller** before attempting to use **Set Instance** and **Play** together again.
@@ -95,7 +95,7 @@ Triggered when a timeline finishes playback, given by its tag.
 Triggered when any timeline finishes playback.
 
 **On keyframe reached**  
-Triggered when a [master keyframe](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/master-keyframe) with certain tags is reached during playback. The keyframe can be identified by whether it matches any of the given tags, or if it has all of the given tags. Separate tags with spaces.
+Triggered when a [master keyframe](../project-primitives/timelines/master-keyframe.md) with certain tags is reached during playback. The keyframe can be identified by whether it matches any of the given tags, or if it has all of the given tags. Separate tags with spaces.
 
 **On any keyframe reached**  
 Triggered when any master keyframe is reached during playback. The *KeyframeTags* expression has a string of the keyframe's *Tags* property.
@@ -163,7 +163,7 @@ In a trigger, a string with the name of the relevant timeline.
 In a trigger, a string with the tags of the relevant timeline.
 
 **Value(timelineNameOrTags, valueTrackNameOrId)**  
-Retrieve the value of a [value track](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/track/value-track) by specifying a timeline name or tags and a value track name or track id. If no matching value track is found, the expression returns 0.
+Retrieve the value of a [value track](../project-primitives/timelines/track/value-track.md) by specifying a timeline name or tags and a value track name or track id. If no matching value track is found, the expression returns 0.
 
 **Ease(easeName, value)**  
 Return the result of an ease function at a given value in the range 0-1. The ease name can be either a built-in ease, or the name of a custom ease in the project. A list of the names of built-in eases is included below.

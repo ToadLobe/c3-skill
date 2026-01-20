@@ -13,11 +13,11 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-re
 - [Shadow caster expressions](#internalH1Link4)
 
 ---
-The **Shadow caster behavior** marks an object as casting a shadow from a [Shadow light](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/shadow-light) object. For more information, see the documentation for *Shadow light*.
+The **Shadow caster behavior** marks an object as casting a shadow from a [Shadow light](../plugin-reference/shadow-light.md) object. For more information, see the documentation for *Shadow light*.
 Shadows are cast from the object's collision polygon, if it has one, otherwise its bounding rectangle.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IShadowCasterBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/shadow-caster).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IShadowCasterBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/shadow-caster.md).
 
 ## Collision polygon shape
 Objects with the *Shadow caster* behavior must use [convex collision polygons](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fConvex_polygon). Shadows will not render correctly if they use concave polygons. If you need a concave shape, this can always be achieved by placing multiple shadow caster objects next to each other to compose a concave shape out of convex parts.

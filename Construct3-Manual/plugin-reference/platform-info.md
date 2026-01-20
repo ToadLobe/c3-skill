@@ -14,7 +14,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-refe
 The **Platform info** object returns information about the system, device and browser.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IPlatformInfo script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/iplatforminfo), typically accessed via the `runtime.platformInfo` property. Note that this interface is always available in script regardless of whether the Platform Info object has been added to the project.
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IPlatformInfo script interface](../scripting/scripting-reference/interfaces/iplatforminfo.md), typically accessed via the `runtime.platformInfo` property. Note that this interface is always available in script regardless of whether the Platform Info object has been added to the project.
 
 ## Platform info conditions
 **Is Cordova export**  

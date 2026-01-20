@@ -10,7 +10,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/getting-sta
 - [Changing UI mode](#internalH1Link1)
 
 ---
-Construct works on mobile devices like phones and tablets. (See [System requirements](https://www.construct.net/make-games/manuals/construct-3/getting-started/system-requirements) for supported devices.) These devices typically use touch input, and often have small screens. While Construct can be used on a phone, it is much more comfortable to use a tablet device with a larger screen if you have one available.
+Construct works on mobile devices like phones and tablets. (See [System requirements](system-requirements.md) for supported devices.) These devices typically use touch input, and often have small screens. While Construct can be used on a phone, it is much more comfortable to use a tablet device with a larger screen if you have one available.
 
 > **Tip**  
 > Not all features of Construct are available on mobile. It's intended for light usage, such as reviewing and tweaking projects, rather than your main development work. For that we recommend using a device with a keyboard and mouse.
@@ -26,19 +26,19 @@ This manual is written primarily for desktop devices, since that is what most pe
 - Where the manual says to right-click, or open a *context menu*, **tap and hold** on the item. After a moment a menu will appear.
 
 ## Accessing bars
-Since most mobile devices have small screens, Construct hides [bars](https://www.construct.net/make-games/manuals/construct-3/interface/bars) by default. To access these bars, **swipe in from the side** and the bar will slide in. Since there are a number of bars and only two sides, you can access the other bars by **repeatedly swiping in from the side again**. As you do this the previous bar will slide out and the next bar will slide in.
+Since most mobile devices have small screens, Construct hides [bars](../interface/bars.md) by default. To access these bars, **swipe in from the side** and the bar will slide in. Since there are a number of bars and only two sides, you can access the other bars by **repeatedly swiping in from the side again**. As you do this the previous bar will slide out and the next bar will slide in.
 On the left side the sequence of bars is:
 
-1. [Properties Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/properties-bar)
-2. [Bookmarks Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/bookmarks-bar)
-3. [Find Results bars](https://www.construct.net/make-games/manuals/construct-3/interface/bars/find-results-bar)
-4. [Z Order Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/z-order-bar)
+1. [Properties Bar](../interface/bars/properties-bar.md)
+2. [Bookmarks Bar](../interface/bars/bookmarks-bar.md)
+3. [Find Results bars](../interface/bars/find-results-bar.md)
+4. [Z Order Bar](../interface/bars/z-order-bar.md)
 
 On the right side the sequence of bars is:
 
-1. [Project Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/project-bar)
-2. [Layers Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/layers-bar)
-3. [Tilemap Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/tilemap-bar)
+1. [Project Bar](../interface/bars/project-bar.md)
+2. [Layers Bar](../interface/bars/layers-bar.md)
+3. [Tilemap Bar](../interface/bars/tilemap-bar.md)
 
 If you reach the end, the sequence will start again, cycling through the set of bars for that side of the screen. Bars can be closed by swiping them back the other way. The next time you swipe in from the side of the screen, you'll always get back the last bar you used that side. That helps you keep using the same bar for a while, and you can still keep swiping to switch between bars at any time.
 

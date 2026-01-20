@@ -11,14 +11,14 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Keyboard APIs](#internalH1Link2)
 
 ---
-The `IKeyboardObjectType` interface derives from [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) to add APIs specific to the [Keyboard plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/keyboard).
+The `IKeyboardObjectType` interface derives from [IObjectClass](../object-interfaces/iobjectclass.md) to add APIs specific to the [Keyboard plugin](../../../plugin-reference/keyboard.md).
 Note this class derives from the object class interface, not the instance interface. Typically it is used through `runtime.keyboard` instead of the named object.
 
 ## Examples
 See the [Simple keyboard movement](https://editor.construct.net/#open=simple-keyboard-movement) example for a basic demonstration of using the `isKeyDown()` method to move a Sprite.
 
 ## Events
-To detect key press events, use the `"keyup"` and `"keydown"` events fired on the [Runtime script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime).
+To detect key press events, use the `"keyup"` and `"keydown"` events fired on the [Runtime script interface](../iruntime.md).
 
 ## Keyboard APIs
 **isKeyDown(keyStringOrWhich)**  

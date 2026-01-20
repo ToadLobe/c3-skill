@@ -1,6 +1,6 @@
 # Construct 3 Addon SDK Documentation
 
-This directory contains the complete Construct 3 Addon SDK documentation, converted from the official manual at [construct.net](https://www.construct.net/en/make-games/manuals/addon-sdk).
+This directory contains the complete Construct 3 Addon SDK documentation, converted from the official manual at [construct.net](index.md).
 
 ## Overview
 

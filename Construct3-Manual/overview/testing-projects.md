@@ -31,7 +31,7 @@ Sometimes it's useful to have multiple simultaneous preview windows open, such a
 In the main toolbar, there is a dropdown arrow next to the Preview button that shows a menu with more preview options. These can also be found in the `Menu › Project` submenu, or by right-clicking the project name in the Project Bar.
 
 ### Debug layout
-This runs the current layout in a special **debug** mode. The debugger is a special development tool which helps you inspect the state of the project (such as the value of expressions and variables). It also provides diagnostic tools such as advancing the game frame-by-frame, changing values, destroying objects, setting breakpoints in events, and more. This can bring invaluable insight to how your project is working, particularly if you run in to a problem. For more information see the manual section on the [Debugger](https://www.construct.net/make-games/manuals/construct-3/interface/debugger).
+This runs the current layout in a special **debug** mode. The debugger is a special development tool which helps you inspect the state of the project (such as the value of expressions and variables). It also provides diagnostic tools such as advancing the game frame-by-frame, changing values, destroying objects, setting breakpoints in events, and more. This can bring invaluable insight to how your project is working, particularly if you run in to a problem. For more information see the manual section on the [Debugger](../interface/debugger.md).
 
 ### Preview project
 This starts a preview from the first layout in the project. This is either the first layout that appears in the Project Bar, or whichever layout is set in the *First layout* project property.

@@ -16,7 +16,7 @@ Plugin and behavior addons have separate scripts that run in the context of the 
 > **Tip**  
 > Effects don't use editor scripts. They only provide shader code.
 
-Most addons do not need complex editor scripts. However some editor features are available for things like specifying dependencies and importing assets. These are documented in the [Editor API reference](https://www.construct.net/make-games/manuals/addon-sdk/reference) section of the Addon SDK manual. 
+Most addons do not need complex editor scripts. However some editor features are available for things like specifying dependencies and importing assets. These are documented in the [Editor API reference](../reference/iplugininfo.md) section of the Addon SDK manual. 
 
 ## Do not access the DOM in editor scripts
 

@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [ITimelineStateBase APIs](#internalH1Link0)
 
 ---
-The `ITimelineStateBase` is the base class of [ITimelineState](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/itimelinestate) and [ITweenState](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/itweenstate), allowing common APIs to be shared between timelines and tweens, as tweens are a kind of temporary timeline. Unless otherwise stated, where this documentation refers to a timeline, it also applies to a tween. 
+The `ITimelineStateBase` is the base class of [ITimelineState](itimelinestate.md) and [ITweenState](itweenstate.md), allowing common APIs to be shared between timelines and tweens, as tweens are a kind of temporary timeline. Unless otherwise stated, where this documentation refers to a timeline, it also applies to a tween. 
 
 > **Tip**  
 > Once a timeline finishes, this interface is destroyed and all its properties will throw exceptions upon access. The only exception to this is the `isReleased` property which provides a read-only boolean that indicates if the interface has been released and is now invalid.

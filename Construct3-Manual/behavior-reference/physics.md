@@ -13,7 +13,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-re
 - [Physics expressions](#internalH1Link4)
 
 ---
-The **Physics behavior** simulates realistic object physics. It is powered by Box2D. Construct comes with several examples demonstrating what the Physics behavior can do; filter by the *Physics* behavior in the [Example Browser](https://www.construct.net/make-games/manuals/construct-3/overview/example-browser) to find them.
+The **Physics behavior** simulates realistic object physics. It is powered by Box2D. Construct comes with several examples demonstrating what the Physics behavior can do; filter by the *Physics* behavior in the [Example Browser](../overview/example-browser.md) to find them.
 The Physics behavior is relatively complex. The following tutorials are recommended to gain a basic understanding of how to use the Physics behavior and some important points to know before beginning to use it:
 
 - [Physics in Construct: The basics](https://www.construct.net/en/tutorials/physics-in-construct-the-basics-6)
@@ -22,7 +22,7 @@ The Physics behavior is relatively complex. The following tutorials are recommen
 This manual section will not repeat the information in these tutorials. Instead it will describe each feature of the Physics behavior. The tutorials describe how Physics engines work, what the different types of joints are, the difference between impulses and forces, and so on in case you're not already familiar with them.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IPhysicsBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/physics).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IPhysicsBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/physics.md).
 
 ## Using Physics in Construct
 The Physics behavior simulates physics separately to the Construct layout. Construct will try to keep the Physics and Construct "worlds" synchronised if one changes but not the other, but this can be unpredictable. For example, setting an object's position or angle will cause Construct to teleport the corresponding object in the physics simulation to the object's new position, which does not always properly take in to account collisions. The same is true of using other Construct behaviors at the same time as Physics.
@@ -36,7 +36,7 @@ If enabled, simulate the object having infinite mass. Its density is ignored and
 **Collision mask**  
 How to handle physics collisions for this object. The options are:
 
-- **Use collision polygon** uses the object's collision polygon from the [Animations editor](https://www.construct.net/make-games/manuals/construct-3/interface/animations-editor) for physics collisions. If it doesn't have a collision polygon it will use the object's bounding box.
+- **Use collision polygon** uses the object's collision polygon from the [Animations editor](../interface/animations-editor.md) for physics collisions. If it doesn't have a collision polygon it will use the object's bounding box.
 - **Bounding box** ignores the object's collision polygon if any, and for the purposes of Physics collisions considers the object to be a rectangle.
 - **Circle** ignores the object's collision polygon if any, and for the purposes of Physics collisions considers the object to be a circle. This allows objects to smoothly roll along (like for example barrels). This is especially useful since object's collision polygons is made out of straight lines, so a smooth circle cannot be created that way.
 

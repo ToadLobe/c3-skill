@@ -11,12 +11,12 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/project-pri
 - [Node properties](#internalH1Link2)
 
 ---
-The comment node is a secondary type of node that can be added to a [flowchart](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart).
-Unlike regular [nodes](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart/node), which represent a state and can have information, these are meant to be used exclusively as notes to describe what is going on in a certain part of a flowchart and have no impact at runtime.
+The comment node is a secondary type of node that can be added to a [flowchart](flowchart.md).
+Unlike regular [nodes](flowchart-node.md), which represent a state and can have information, these are meant to be used exclusively as notes to describe what is going on in a certain part of a flowchart and have no impact at runtime.
 
 ## Creating comment nodes
-To create a comment node in a flowchart, open a [Flowchart View](https://www.construct.net/en/make-games/manuals/construct-3/interface/flowchart-view) for it from the [Project Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/project-bar) and then right-click in any empty space of the Flowchart View and select the **Add comment node** option from the context menu. Doing that will create a node at the position of the pointer.
-For more information on further editing of nodes, see the [Flowchart View](https://www.construct.net/en/make-games/manuals/construct-3/interface/flowchart-view) section of the manual.
+To create a comment node in a flowchart, open a [Flowchart View](../../interface/flowchart-view.md) for it from the [Project Bar](../../interface/bars/project-bar.md) and then right-click in any empty space of the Flowchart View and select the **Add comment node** option from the context menu. Doing that will create a node at the position of the pointer.
+For more information on further editing of nodes, see the [Flowchart View](../../interface/flowchart-view.md) section of the manual.
 
 ## Main comment
 The main body of the node is a text box that can be clicked on to write in it.

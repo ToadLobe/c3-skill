@@ -53,7 +53,7 @@ Set the fill mode to draw a texture, specified by the current texture, and using
 Set the fill mode to draw smooth lines using the current color.
 
 **SetColor(color)**  
-Set the current color with an [SDK.Color](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/color).
+Set the current color with an [SDK.Color](../geometry-interfaces/color.md).
 
 **SetColorRgba(r, g, b, a)**  
 Set the current color by directly passing the RGBA components.
@@ -69,29 +69,29 @@ Set and get the current Z component used for all 2D drawing commands that don't 
 Set the current color to (1, 1, 1, 1).
 
 **Rect(rect)**  
-Draw a rectangle given by an [SDK.Rect](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/rect).
+Draw a rectangle given by an [SDK.Rect](../geometry-interfaces/rect.md).
 
 **Rect2(left, top, right, bottom)**  
 Draw a rectangle by directly passing the left, top, right and bottom positions.
 
 **Quad(quad)**  
-Draw a quad given by an [SDK.Quad](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/quad).
+Draw a quad given by an [SDK.Quad](../geometry-interfaces/quad.md).
 
 **Quad2(tlx, tly, trx, try_, brx, bry, blx, bly)**  
 Draw a quad by directly passing the positions of each of the four points in the quad.
 
 **Quad3(quad, rect)**  
-Draw a quad given by an [SDK.Quad](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/quad), using an [SDK.Rect](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/rect) for the source texture co-ordinates to draw from.
+Draw a quad given by an [SDK.Quad](../geometry-interfaces/quad.md), using an [SDK.Rect](../geometry-interfaces/rect.md) for the source texture co-ordinates to draw from.
 
 **Quad4(quad, texQuad)**  
-Draw a quad given by an [SDK.Quad](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/quad), using another `SDK.Quad` for the source texture co-ordinates to draw from.
+Draw a quad given by an [SDK.Quad](../geometry-interfaces/quad.md), using another `SDK.Quad` for the source texture co-ordinates to draw from.
 
 **Quad3D(tlx, tly, tlz, trx, try_, trz, brx, bry, brz, blx, bly, blz, rect)**  
 **Quad3D2(tlx, tly, tlz, trx, try_, trz, brx, bry, brz, blx, bly, blz, texQuad)**  
-Draw a 3D quad, specifying all four points of the quad with X, Y and Z co-ordinates. The first overload accepts texture co-ordinates via an [SDK.Rect](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/rect) *rect*, and the second accepts texture co-ordinates via an [SDK.Quad](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/quad) *texQuad*.
+Draw a 3D quad, specifying all four points of the quad with X, Y and Z co-ordinates. The first overload accepts texture co-ordinates via an [SDK.Rect](../geometry-interfaces/rect.md) *rect*, and the second accepts texture co-ordinates via an [SDK.Quad](../geometry-interfaces/quad.md) *texQuad*.
 
 **DrawMesh(posArr, uvArr, indexArr, colorArr)**  
-Draw an array of textured triangles based on the given position, texture co-ordinate and index arrays, and an optional per-vertex color array. For more details refer to the documentation for the [IRenderer](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderer-interface) `drawMesh()` method, which works the same (albeit with different casing on the method name).
+Draw an array of textured triangles based on the given position, texture co-ordinate and index arrays, and an optional per-vertex color array. For more details refer to the documentation for the [IRenderer](../../../Construct3-Manual/scripting/scripting-reference/graphics-interfaces/irenderer-interface.md) `drawMesh()` method, which works the same (albeit with different casing on the method name).
 
 **ConvexPoly(pointsArray)**  
 Draw a convex polygon using the given array of points, in alternating X, Y order. Therefore the size of the array must be even, and must contain at least six elements (to define three points).
@@ -120,13 +120,13 @@ Set the current line width for line-drawing calls. This must be followed by a `P
 Set the current line cap for line-drawing calls. This must be followed by a `PopLineCap()` call when finished to restore the previous line cap. The available line caps are `"butt"` and `"square"`.
 
 **SetTexture(texture)**  
-Set the current texture to a given [IWebGLTexture](https://www.construct.net/make-games/manuals/addon-sdk/reference/graphics-interfaces/iwebgltexture).
+Set the current texture to a given [IWebGLTexture](iwebgltexture.md).
 
 **CreateWebGLText()**  
-Return a new [IWebGLText](https://www.construct.net/make-games/manuals/addon-sdk/reference/graphics-interfaces/iwebgltext) interface. This manages text wrapping, drawing text, and uploading the results to a WebGL texture.
+Return a new [IWebGLText](iwebgltext.md) interface. This manages text wrapping, drawing text, and uploading the results to a WebGL texture.
 
 **CreateDynamicTexture(width, height, opts)**  
-Create a new empty [IWebGLTexture](https://www.construct.net/make-games/manuals/addon-sdk/reference/graphics-interfaces/iwebgltexture) for dynamic use, i.e. expecting the texture content to be replaced using `UpdateTexture()`. The size of the texture is given by `width` and `height` which must be positive integers. `opts` specifies options for the texture which is an object that can include the following properties:
+Create a new empty [IWebGLTexture](iwebgltexture.md) for dynamic use, i.e. expecting the texture content to be replaced using `UpdateTexture()`. The size of the texture is given by `width` and `height` which must be positive integers. `opts` specifies options for the texture which is an object that can include the following properties:
 
 - `wrapX`: the texture horizontal wrap mode: one of `"clamp-to-edge"`, `"repeat"`, `"mirror-repeat"`
 
@@ -141,11 +141,11 @@ Create a new empty [IWebGLTexture](https://www.construct.net/make-games/manuals/
 - `mipMapQuality`: if `mipMap` is true, one of `"default"` (default), `"low"` or `"high"`
 
 **UpdateTexture(data, texture, opts)**  
-Upload *data* as the new texture contents for the [IWebGLTexture](https://www.construct.net/make-games/manuals/addon-sdk/reference/graphics-interfaces/iwebgltexture) *texture*. This can only be used for textures created with `CreateDynamicTexture()` and managed by your addon. 
+Upload *data* as the new texture contents for the [IWebGLTexture](iwebgltexture.md) *texture*. This can only be used for textures created with `CreateDynamicTexture()` and managed by your addon. 
 *data* can be one of the following types: `HTMLImageElement`, `HTMLVideoElement`, `HTMLCanvasElement`, `ImageBitmap`, `OffscreenCanvas` or `ImageData`. Note in worker mode the DOM types cannot be used (`HTMLImageElement`, `HTMLVideoElement`, `HTMLCanvasElement`); in this case use `ImageBitmap` or `OffscreenCanvas` instead. This method cannot resize an existing texture, so the data must match the size the texture was created with; if the size needs to change, destroy and re-create the texture. 
 *opts* specifies options for the texture upload which is an object that can include the following properties:
 
 - `premultiplyAlpha`: a boolean indicating whether to premultiply alpha of the image content specified by *data* (default true). Construct always renders using premultiplied alpha so this is normally necessary; however if the data is known to already be premultiplied, set this to false.
 
 **DeleteTexture(texture)**  
-Delete a [IWebGLTexture](https://www.construct.net/make-games/manuals/addon-sdk/reference/graphics-interfaces/iwebgltexture), releasing its resources. This can only be used for textures created with `CreateDynamicTexture()` and managed by your addon. Do not attempt to delete textures managed by the Construct engine.
+Delete a [IWebGLTexture](iwebgltexture.md), releasing its resources. This can only be used for textures created with `CreateDynamicTexture()` and managed by your addon. Do not attempt to delete textures managed by the Construct engine.

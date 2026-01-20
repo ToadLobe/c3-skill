@@ -89,7 +89,7 @@ Triggered after the cloud save *Create* actions with the corresponding bucket ID
 
 **On get success**  
 **On get binary success**  
-Triggered after the cloud save *Get* action with the corresponding bucket ID and key completes successfully. When the *Get* action *Type* is *text*, *On get success* triggers, and the downloaded data is provided by the *CloudSaveText* expression; when *Type* is *binary*, *On get binary success* triggers, and the downloaded data is placed in the specified [Binary Data](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/binary-data) object.
+Triggered after the cloud save *Get* action with the corresponding bucket ID and key completes successfully. When the *Get* action *Type* is *text*, *On get success* triggers, and the downloaded data is provided by the *CloudSaveText* expression; when *Type* is *binary*, *On get binary success* triggers, and the downloaded data is placed in the specified [Binary Data](binary-data.md) object.
 
 **On get error**  
 Triggered after the cloud save *Get* action with the corresponding bucket ID and key fails to complete. This could occur if the user went offline, or if a network error occured.
@@ -119,7 +119,7 @@ Set the name of the currently signed in player. In some cases the player name is
 
 **Create (binary)**  
 **Create (text)**  
-Create or replace the data for a key. A game bucket ID can optionally be provided, but if left empty it will use player private storage. The *text* variant uploads a string for the data, whereas the *binary* variant uploads the contents of a [Binary Data](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/binary-data) object. *On create success* or *On create error* will trigger depending on whether the upload completed successfully.
+Create or replace the data for a key. A game bucket ID can optionally be provided, but if left empty it will use player private storage. The *text* variant uploads a string for the data, whereas the *binary* variant uploads the contents of a [Binary Data](binary-data.md) object. *On create success* or *On create error* will trigger depending on whether the upload completed successfully.
 
 **Get**  
 Download the data previously uploaded for a key with one of the *Create* actions. A game bucket ID can optionally be provided, but if left empty it will use player private storage. If this fails, *On get error* will trigger. Otherwise when *Type* is *Text*, *On get success* will trigger, and the downloaded data will be in the *CloudSaveText* expression; when *Type* is *binary*, *On get binary success* will trigger, with the downloaded data stored in the specified Binary Data object.

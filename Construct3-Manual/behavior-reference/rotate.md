@@ -15,7 +15,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-re
 The **Rotate behavior** makes an object spin.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IRotateBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/rotate).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IRotateBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/rotate.md).
 
 ## Rotate properties
 **Speed**  

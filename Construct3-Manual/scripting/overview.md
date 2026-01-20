@@ -53,7 +53,7 @@ JavaScript is often shortened to *JS* and normally uses files with the extension
 
 ## Quick start guide
 If you already know JavaScript, check out the [Construct for JavaScript developers quick start guide](https://www.construct.net/en/tutorials/construct-javascript-2866) for a summary of what you might need to know when working in Construct. If you already know TypeScript, you can also check out the [Construct for TypeScript developers quick start guide](https://www.construct.net/en/tutorials/construct-typescript-3210).
-If you'd also prefer to use an external code editor like [VS Code](https://www.construct.net/out?u=https%3a%2f%2fcode.visualstudio.com%2f), see [Using an external editor](https://www.construct.net/make-games/manuals/construct-3/scripting/guides/using-external-editor).
+If you'd also prefer to use an external code editor like [VS Code](https://www.construct.net/out?u=https%3a%2f%2fcode.visualstudio.com%2f), see [Using an external editor](guides/using-external-editor.md).
 
 ## Learning JavaScript
 If you're interested in learning JavaScript from scratch using Construct, see our 13-part tutorial series [Learn JavaScript in Construct](https://www.construct.net/en/courses/learn-javascript-construct-79).
@@ -71,8 +71,8 @@ The [official TypeScript website](https://www.construct.net/out?u=https%3a%2f%2f
 - [TypeScript for JavaScript Programmers](https://www.construct.net/out?u=https%3a%2f%2fwww.typescriptlang.org%2fdocs%2fhandbook%2ftypescript-in-5-minutes.html)
 - [The TypeScript Handbook](https://www.construct.net/out?u=https%3a%2f%2fwww.typescriptlang.org%2fdocs%2fhandbook%2fintro.html)
 
-See also the guide [Using TypeScript in Construct](https://www.construct.net/make-games/manuals/construct-3/scripting/guides/using-typescript).
+See also the guide [Using TypeScript in Construct](guides/using-external-editor.md).
 
 ## Examples
-In the [Example Browser](https://www.construct.net/make-games/manuals/construct-3/overview/example-browser) you can filter for JavaScript or TypeScript examples under the *Coding* header. You'll find a variety of example projects making use of JavaScript/TypeScript coding in Construct, including many examples that come with both JavaScript and TypeScript variants. These cover everything from simple beginner examples to sophisticated fully-coded games.
+In the [Example Browser](../overview/example-browser.md) you can filter for JavaScript or TypeScript examples under the *Coding* header. You'll find a variety of example projects making use of JavaScript/TypeScript coding in Construct, including many examples that come with both JavaScript and TypeScript variants. These cover everything from simple beginner examples to sophisticated fully-coded games.
 The reference section of the manual also includes some code samples in places, with snippets demonstrating how to use specific features. These will usually need to be pasted in to a project with appropriately named objects and behaviors to work correctly, or otherwise edited as necessary for use in your own projects.

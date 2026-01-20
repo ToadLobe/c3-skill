@@ -29,7 +29,7 @@ To control behaviors with Gamepad input, use the *Simulate control* action. An e
 
 ![Events to control a behavior with a gamepad](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/995/gamepad-controls.png)
 
-For more information, see the section on *Custom controls* in the [Behavior reference](https://www.construct.net/make-games/manuals/construct-3/behavior-reference).
+For more information, see the section on *Custom controls* in the [Behavior reference](../behavior-reference.md).
 
 ## Multiple gamepads
 Multiple gamepad devices can be connected to a single computer. To differentiate between them, most actions, conditions and expressions in the Gamepad object also take a *Gamepad* parameter. This is a zero-based index of the controller. For example, 0 identifies the first controller, 1 identifies the second, and so on. This allows you to make multiplayer gamepad-controlled games.

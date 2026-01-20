@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [3D Camera APIs](#internalH1Link0)
 
 ---
-The `I3DCameraObjectType` interface derives from [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) to add APIs specific to the [3D Camera plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/3d-camera).
+The `I3DCameraObjectType` interface derives from [IObjectClass](../object-interfaces/iobjectclass.md) to add APIs specific to the [3D Camera plugin](../../../plugin-reference/3d-camera.md).
 Note this class derives from the object class interface, not the instance interface. Its default name is not a valid JavaScript identifier as it starts with a number, meaning it needs to be accessed with the syntax `runtime.objects["3DCamera"]`. You may wish to rename the object to a valid JavaScript identifier such as *Camera3D*, so that it can be accessed more conveniently with the syntax `runtime.objects.Camera3D`.
 
 ## 3D Camera APIs
@@ -59,7 +59,7 @@ Return an array of `[x, y, z]` with a 3D unit vector pointing to the right of th
 Return an array of `[x, y, z]` with the camera up vector, which helps determine the camera orientation. Note this is recomputed from the given camera and look positions, so may not be exactly the same as the up vector given in *lookAtPosition()*.
 
 **zScale**  
-A read-only number with the number of pixels per unit on the Z axis. See the *Z scale* property in the [3D Camera manual entry](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/3d-camera) for more details.
+A read-only number with the number of pixels per unit on the Z axis. See the *Z scale* property in the [3D Camera manual entry](../../../plugin-reference/3d-camera.md) for more details.
 
 **fieldOfView**  
 Set or get the angle of the field of view in radians. Note this only has an effect when *Z Axis scale* is set to *Regular* in Project Properties. The default field of view is also set in Project Properties.

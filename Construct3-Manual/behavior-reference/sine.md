@@ -16,7 +16,7 @@ The **Sine behavior** can adjust an object's properties (like its position, size
 [Click here to open an example of the Sine behavior](https://editor.construct.net/#open=sine-behavior-types), which demonstrates each type of movement the behavior can use.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ISineBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/sine).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ISineBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/sine.md).
 
 ## Sine properties
 **Movement**  

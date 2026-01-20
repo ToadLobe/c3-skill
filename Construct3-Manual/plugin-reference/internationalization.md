@@ -51,7 +51,7 @@ The `"locale"` key is optional and is used when loading to indicate to what lang
 ## Loading an Internationalization file
 To load an internationalization file do the following:
 
-1. Use the [AJAX plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/ajax) to request the file.
+1. Use the [AJAX plugin](ajax.md) to request the file.
 2. In the AJAX *On Complete* trigger, use the *Load from JSON* action of the Internationalization plugin to load the AJAX data.
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/104056/internationalizationmanual00.png)

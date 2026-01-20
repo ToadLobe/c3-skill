@@ -10,7 +10,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Effect APIs](#internalH1Link1)
 
 ---
-The `IEffectInstance` script interface represents the parameters for a single effect on a [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance), [ILayer](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout/ilayer) or [ILayout](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout). It is typically accessed through the `effects` property.
+The `IEffectInstance` script interface represents the parameters for a single effect on a [IWorldInstance](iworldinstance.md), [ILayer](../layout-interfaces/ilayout/ilayer.md) or [ILayout](../layout-interfaces/ilayout.md). It is typically accessed through the `effects` property.
 
 ## Examples
 See the [Scripting effect parameters](https://editor.construct.net/#open=scripting-effect-parameters) example for a demonstration of using the `setParameter()` method to modify effect parameters.

@@ -23,7 +23,7 @@ Browsers only directly support running JavaScript code. The way TypeScript works
 As TypeScript compiles to JavaScript for running in the browser, the rest of this section refers to JavaScript code.
 
 ## Construct's debugger
-It should be noted that [Construct's debugger](https://www.construct.net/en/make-games/manuals/construct-3/interface/debugger) cannot debug JavaScript - only the browser dev tools can. In an event sheet Construct's debugger can only stop just before running a script block or script action, and continuing will run all the JavaScript in that block to completion and then advance to the next block. Construct's debugger has no way to stop on code in script files at all. Therefore it is not generally useful for debugging JavaScript code.
+It should be noted that [Construct's debugger](../../interface/debugger.md) cannot debug JavaScript - only the browser dev tools can. In an event sheet Construct's debugger can only stop just before running a script block or script action, and continuing will run all the JavaScript in that block to completion and then advance to the next block. Construct's debugger has no way to stop on code in script files at all. Therefore it is not generally useful for debugging JavaScript code.
 
 Using both the Construct debugger and browser dev tools simultaneously is possible, but is likely to be very confusing. Therefore it is recommended to only use one or the other at a time.
 
@@ -39,7 +39,7 @@ The *Console* tab provides a list of messages, used for development purposes. Ca
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/132045/console-hello.png)
 
-You can also directly type in JavaScript code in the console, which runs when you press <kbd>Enter</kbd>. This is a useful way to try out snippets of code or quickly write and test a function to use in your project. If you are stopped on a breakpoint, code run in the console can also use any variables in the scope of the breakpoint. Often this is useful if you break in some code with the `runtime` variable available, allowing you to call [runtime script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime) functions from the console.
+You can also directly type in JavaScript code in the console, which runs when you press <kbd>Enter</kbd>. This is a useful way to try out snippets of code or quickly write and test a function to use in your project. If you are stopped on a breakpoint, code run in the console can also use any variables in the scope of the breakpoint. Often this is useful if you break in some code with the `runtime` variable available, allowing you to call [runtime script interface](../scripting-reference/iruntime.md) functions from the console.
 
 > **Tip**  
 > Remember that browsers can only directly run JavaScript code. Therefore you can only type JavaScript code in to the console - you can't enter TypeScript code there.

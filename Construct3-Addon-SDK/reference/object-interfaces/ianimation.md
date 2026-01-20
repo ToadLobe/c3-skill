@@ -19,10 +19,10 @@ The `IAnimation` interface represents an animation within an animated object typ
 Return a string of the animation name.
 
 **GetObjectType()**  
-Return the [IObjectType](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/iobjecttype) that this animation belongs to.
+Return the [IObjectType](iobjecttype.md) that this animation belongs to.
 
 **GetFrames()**  
-Return an array of [IAnimationFrame](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/ianimationframe) representing the frames in this animation.
+Return an array of [IAnimationFrame](ianimationframe.md) representing the frames in this animation.
 
 **AddFrame(blob, width, height)**  
 Add a new animation frame to the animation. All the parameters are optional. There are four overloads of this method:
@@ -35,7 +35,7 @@ Add a new animation frame to the animation. All the parameters are optional. The
 
 4. No blob passed but size provided: use the size for the empty animation frame
 
-The method returns a promise that resolves with the added [IAnimationFrame](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/ianimationframe).
+The method returns a promise that resolves with the added [IAnimationFrame](ianimationframe.md).
 
 **SetSpeed(s)**  
 **GetSpeed()**  

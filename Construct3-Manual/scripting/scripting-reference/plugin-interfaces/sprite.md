@@ -11,11 +11,11 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Sprite object type APIs](#internalH1Link2)
 
 ---
-The `ISpriteInstance` interface derives from [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to add APIs specific to the [Sprite plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/sprite).
-Sprite object types also define a `ISpriteObjectType` interface which derives from [IObjectClass](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) to add Sprite APIs that affect the object type, such as dynamic animations.
+The `ISpriteInstance` interface derives from [IWorldInstance](../object-interfaces/iworldinstance.md) to add APIs specific to the [Sprite plugin](../../../plugin-reference/sprite.md).
+Sprite object types also define a `ISpriteObjectType` interface which derives from [IObjectClass](../object-interfaces/iobjectclass.md) to add Sprite APIs that affect the object type, such as dynamic animations.
 
 ## Sprite instance events
-See [instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/instance-event) for standard instance event object properties.
+See [instance event](../interfaces/instance-event.md) for standard instance event object properties.
 
 **"framechange"**  
 Fired when the currently displayed animation frame changes during playback of an animation. The event object has the additional properties:
@@ -29,7 +29,7 @@ Fired when playback of the current animation reaches the end. The event object h
 
 ## Sprite instance APIs
 **animation**  
-A reference to a [IAnimation](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimation) script interface representing the current animation, which can be used to access additional details such as the frames in the animation.
+A reference to a [IAnimation](../object-interfaces/ianimation.md) script interface representing the current animation, which can be used to access additional details such as the frames in the animation.
 
 **setAnimation(name, from = "beginning")**  
 Set the current animation by a string of its name (case-insensitive). If the animation name does not exist, an exception will be thrown. `from` can be set to either `"current-frame"` to switch to the same frame index in the new animation, or `"beginning"` to rewind to the first frame. 
@@ -38,7 +38,7 @@ Set the current animation by a string of its name (case-insensitive). If the ani
 > Note that if the animation being set is already playing, this method does nothing, even if set to play from the beginning. If you intend to restart the animation, use `startAnimation("beginning")` instead.
 
 **getAnimation(name)**  
-Get an [IAnimation](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimation) for an animation in the Sprite object by a case-insensitive string of its name. Returns `null` if no animation is found.
+Get an [IAnimation](../object-interfaces/ianimation.md) for an animation in the Sprite object by a case-insensitive string of its name. Returns `null` if no animation is found.
 
 **animationName**  
 A read-only string of the current animation name. Use the `setAnimation()` method to change the animation.
@@ -103,7 +103,7 @@ Copy
 These `ISpriteObjectType` APIs are available on the object type class, e.g. `runtime.objects.MySprite`, rather than instances. Note this means that any changes, such as to the animations or animation frames, will affect all instances.
 
 **getAnimation(name)**  
-Return an [IAnimation](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimation) representing the animation with the given name, or `null` if none exists.
+Return an [IAnimation](../object-interfaces/ianimation.md) representing the animation with the given name, or `null` if none exists.
 
 **getAllAnimations()**  
 Return an array of `IAnimation` representing all animations that the Sprite object type has.
@@ -115,7 +115,7 @@ Add a new animation with the given name and return an `IAnimation` representing 
 Remove an animation with the given name. An exception will be thrown if an animation with the given name does not exist, or the specified animation is the last one, as Sprite objects must have at least one animation.
 
 **addAnimationFrame(animName, where)**  
-Add an animation frame to the animation with the specified name. The new frame will be transparent and sized 100x100. The `where` parameter must be either a number for a zero-based index of where to insert the frame, and can be -1 to add to the end, or a string of an animation frame tag to insert relative to. When adding an animation frame not at the end, it is inserted just before the given frame. The method returns an [IAnimationFrame](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimationframe) representing the added frame.
+Add an animation frame to the animation with the specified name. The new frame will be transparent and sized 100x100. The `where` parameter must be either a number for a zero-based index of where to insert the frame, and can be -1 to add to the end, or a string of an animation frame tag to insert relative to. When adding an animation frame not at the end, it is inserted just before the given frame. The method returns an [IAnimationFrame](../object-interfaces/ianimationframe.md) representing the added frame.
 
 **removeAnimationFrame(animName, where)**  
 Remove an animation frame from the animation with the specified name. The last frame cannot be removed, as animations must have at least one frame. The `where` parameter must be either a number for a zero-based index of where to remove a frame, and can be -1 to remove from the end, or a string of an animation frame tag to remove.

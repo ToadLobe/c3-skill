@@ -24,7 +24,7 @@ The **Drawing canvas** object provides a drawing surface that you can draw your 
 > Drawing Canvas is a 2D feature. It does not work on 3D layers with a 3D camera view.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IDrawingCanvasInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/drawing-canvas).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IDrawingCanvasInstance script interface](../scripting/scripting-reference/plugin-interfaces/drawing-canvas.md).
 
 ## Colors
 The colors for drawing commands or pixels, such as the color to fill a rectangle, are typically specified with the *rgba* system expression. This specifies the red, green, blue and alpha components of the color in the range 0-100. The *rgba255* expression is identical but uses a 0-255 scale that artists may be more familiar with. The *rgbEx* and *rgbEx255* expressions can also be used, but do not provide a parameter for alpha, so will act as if the alpha was fully opaque.

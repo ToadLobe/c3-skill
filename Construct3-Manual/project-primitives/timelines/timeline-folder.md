@@ -10,8 +10,8 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/project-pri
 - [Timeline Folder Properties](#internalH1Link1)
 
 ---
-In the [Timeline Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar), timeline folders are represented as a row with an icon of a folder.
-These are used to organise nested [timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/timeline) in a parent timeline and don't have any impact in the playback. A timeline folder can have nested timelines as well as other timeline folders. They can be moved to and from timeline folders or the root of the timeline by dragging and dropping.
+In the [Timeline Bar](../../interface/bars/timeline-bar.md), timeline folders are represented as a row with an icon of a folder.
+These are used to organise nested [timelines](timeline.md) in a parent timeline and don't have any impact in the playback. A timeline folder can have nested timelines as well as other timeline folders. They can be moved to and from timeline folders or the root of the timeline by dragging and dropping.
 It is worth noting that the only specific property of a timeline folder is the **Name**. Every other property in it doesn't have a direct impact on the folder itself and exists only as a convenience to make modifications in all of the items within it.
 
 ## Adding Timeline Folders
@@ -30,4 +30,4 @@ The name of the timeline folder.
 **Enabled**  
 **Locked**  
 **Show UI Elements**  
-See the section on common timeline element properties in [Timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines). Changing these at the timeline folder level will apply the change to every sub-element.
+See the section on common timeline element properties in [Timelines](../timelines.md). Changing these at the timeline folder level will apply the change to every sub-element.

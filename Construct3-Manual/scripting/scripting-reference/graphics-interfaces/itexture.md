@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [ITexture APIs](#internalH1Link0)
 
 ---
-The `ITexture` interface represents a texture for use with the [renderer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderer-interface). 
+The `ITexture` interface represents a texture for use with the [renderer](irenderer-interface.md). 
 This interface cannot be directly constructed. It is only available through other APIs. 
 
 ## ITexture APIs

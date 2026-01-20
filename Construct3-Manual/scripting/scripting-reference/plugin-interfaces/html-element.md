@@ -10,11 +10,11 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [HTML Element APIs](#internalH1Link1)
 
 ---
-The `IHTMLElementInstance` interface derives from [IDOMInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/idominstance) to add APIs specific to the [HTML Element plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/html-element).
+The `IHTMLElementInstance` interface derives from [IDOMInstance](../object-interfaces/idominstance.md) to add APIs specific to the [HTML Element plugin](../../../plugin-reference/html-element.md).
 In DOM mode the HTML Element can be accessed with standard DOM APIs using the `getElement()` method of `IDOMInstance`. However these methods can all still be used in worker mode. Most of the methods are asynchronous as in this case updates are managed by posting messages between the worker and the DOM.
 
 ## HTML Element events
-See [instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/instance-event) for standard instance event object properties.
+See [instance event](../interfaces/instance-event.md) for standard instance event object properties.
 
 **"click"**  
 Fired when any part of the HTML Element or its content is clicked. This event fires repeatedly for the target element followed by all parent elements up to the main HTML element, simulating event bubbling. The event object has two additional properties `targetId` and `targetClass` that can be used to identify the element clicked.
@@ -54,13 +54,13 @@ A string of the complete inner text of the main HTML element, in plain text form
 > Methods that change the HTML element, including assigning this property, are asynchronous. This means reading the value back won't update until the asynchronous methods have completed.
 
 **async createSpriteImgElement(spriteInst, selector, insertAt, id, class_)**  
-Creates an `<img>` element with the content of a given [ISpriteInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/sprite)'s current image, and inserts it to the HTML element. The location to insert is specified by a CSS selector string. The `insertAt` parameter must be a string of one of `"start"`, `"end"` or `"replace"` indicating how to insert the image element. The `id` and `class_` parameters are optional strings to set an ID or class for the inserted image element, which helps make it easy to style the inserted image with CSS. 
+Creates an `<img>` element with the content of a given [ISpriteInstance](sprite.md)'s current image, and inserts it to the HTML element. The location to insert is specified by a CSS selector string. The `insertAt` parameter must be a string of one of `"start"`, `"end"` or `"replace"` indicating how to insert the image element. The `id` and `class_` parameters are optional strings to set an ID or class for the inserted image element, which helps make it easy to style the inserted image with CSS. 
 
 > **Tip**  
 > This method provides a simple way to show a Sprite image on top of a HTML element, since normally HTML elements always show on top of Sprites.
 
 **async positionInstanceAtElement(worldInst, selector)**  
-Sets the position and size of a given [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to match the position and size of a specific HTML element given by a CSS selector string. 
+Sets the position and size of a given [IWorldInstance](../object-interfaces/iworldinstance.md) to match the position and size of a specific HTML element given by a CSS selector string. 
 
 > **Tip**  
 > This method provides a way to use invisible HTML and CSS for complex layouts, while displaying the actual content with other objects, allowing for full use of Z order, effects and so on.

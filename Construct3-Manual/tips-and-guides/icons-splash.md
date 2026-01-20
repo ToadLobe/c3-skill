@@ -10,10 +10,10 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/tips-and-gu
 - [Manually customizing icons and splashes](#internalH1Link1)
 
 ---
-The **Icons & screenshots** folder in the [Project Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/project-bar) holds a set of image files that are used for icons, splash screens or screenshots for your project. The specific images used depend on the platform you export to, but where possible Construct will automatically use the images from the folder where appropriate.
+The **Icons & screenshots** folder in the [Project Bar](../interface/bars/project-bar.md) holds a set of image files that are used for icons, splash screens or screenshots for your project. The specific images used depend on the platform you export to, but where possible Construct will automatically use the images from the folder where appropriate.
 
 ## Image purposes
-When you select an image in the *Icons & screenshots* folder in the Project Bar, the [Properties Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/properties-bar) updates to show properties for that image. The most important property is the *Purpose* property. This tells Construct what you want to use the image for. The different purposes and what they are used for are described below.
+When you select an image in the *Icons & screenshots* folder in the Project Bar, the [Properties Bar](../interface/bars/properties-bar.md) updates to show properties for that image. The most important property is the *Purpose* property. This tells Construct what you want to use the image for. The different purposes and what they are used for are described below.
 
 ### None set
 If the purpose is *(none set)*, Construct won't automatically use this icon for anything. It will be treated as a simple image file that is bundled with your project. This may be useful if you want to manually configure an icon after exporting. It's also the default for newly imported image files, so you may want to change it after importing if you intend for the icon to be used for something else.

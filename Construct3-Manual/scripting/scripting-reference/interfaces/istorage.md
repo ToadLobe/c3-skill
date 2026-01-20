@@ -10,8 +10,8 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Storage APIs](#internalH1Link1)
 
 ---
-The `IStorage` interface provides access to storage for the project. It essentially wraps a simple key-value storage engine based on [IndexedDB](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fIndexedDB_API). This means any data that can be stored in IndexedDB can be stored with these methods, such as numbers, strings, Blobs, etc. It is typically accessed by the [IRuntime](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/iruntime) `storage` property.
-This interface accesses the same storage as the [Local Storage plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/local-storage). Therefore an item stored from the event sheet can also be read from script, and vice versa. Note however that Construct expressions can only be strings or numbers, so if a script stores a different type it cannot be used in the event sheet.
+The `IStorage` interface provides access to storage for the project. It essentially wraps a simple key-value storage engine based on [IndexedDB](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fIndexedDB_API). This means any data that can be stored in IndexedDB can be stored with these methods, such as numbers, strings, Blobs, etc. It is typically accessed by the [IRuntime](../iruntime.md) `storage` property.
+This interface accesses the same storage as the [Local Storage plugin](../../../plugin-reference/local-storage.md). Therefore an item stored from the event sheet can also be read from script, and vice versa. Note however that Construct expressions can only be strings or numbers, so if a script stores a different type it cannot be used in the event sheet.
 As with the Local Storage plugin, the storage is unique to the specific project. It is not shared with any other projects or other website storage, even on the same origin.
 
 ## Examples

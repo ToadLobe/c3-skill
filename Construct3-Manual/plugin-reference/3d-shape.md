@@ -19,7 +19,7 @@ Try out the [3D shape tour example](https://editor.construct.net/#open=3dshape-t
 You can learn more about 3D shape and how it works with other 3D features in the tutorial [Using 3D in Construct](https://www.construct.net/en/tutorials/using-3d-construct-2746).
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [I3DShapeInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/3d-shape).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [I3DShapeInstance script interface](../scripting/scripting-reference/plugin-interfaces/3d-shape.md).
 
 ## Size and position on Z axis
 Construct's normal 2D editing features cover the X and Y co-ordinates and size. To adjust the position on the Z axis, change the **Z elevation** property (which is the same property used to move other 2D objects like Sprite up and down on the Z axis). To adjust how tall the shape is (i.e. its depth), change the **Z height** property of the 3D shape object.
@@ -65,7 +65,7 @@ Optionally choose a Sprite, Tiled Background or 9-Patch object to display instea
 By default the camera appears at Z=100 and looks down to Z=0, meaning the camera is normally 100 units above the layout. However when using tiled images for 3D shape faces, such as Tiled Background or 9-Patch, this can result in unexpected tiling results. For example a 3D shape that has a Z height of 25 will display a Tiled Background as if it was 25 pixels tall, which may be too small for the displayed size of the object. The Z tiling factor is a multiple for the Z height to use when tiling images. For example the default of 8 means a Z height of 25 will actually tile as if it was 200 pixels tall, which usually produces better tiling results.
 
 ## 3D shape conditions
-For conditions in common to other objects, see [Common conditions](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/common-features/common-conditions).
+For conditions in common to other objects, see [Common conditions](common-features/common-conditions.md).
 
 **Compare shape**  
 Compare the current shape that is in use. This can be changed by the *Set shape* action.
@@ -77,7 +77,7 @@ Compare the current Z height (i.e. depth) of the shape.
 Check if one of the six faces of the shape is currently set to visible. Note this only checks whether the visibility is currently enabled, either in the object's properties or with the *Set face visible* action - it does not test whether the face is really showing on-screen.
 
 ## 3D shape actions
-For actions common to other objects, see [Common actions](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/common-features/common-actions).
+For actions common to other objects, see [Common actions](common-features/common-actions.md).
 
 **Set back face culling**  
 Change the *Back face culling* property. See above for more details.
@@ -107,7 +107,7 @@ Change the Z height, i.e. depth, of the 3D shape. This must be greater or equal 
 Change the multiple used for tiling images along the Z height of the object. See the *Z tiling factor* property for more information.
 
 ## 3D shape expressions
-For expressions common to other objects, see [common expressions](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/common-features/common-expressions).
+For expressions common to other objects, see [common expressions](common-features/common-expressions.md).
 
 **FaceImagePointCount(Face)**  
 **FaceImagePointX(Face, ImagePoint)**  

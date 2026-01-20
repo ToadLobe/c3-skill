@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [IAnimation APIs](#internalH1Link0)
 
 ---
-The `IAnimation` interface represents an animation, typically from a Sprite object via its [ISpriteInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/sprite) interface. Each frame of the animation is represented by the [IAnimationFrame](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimationframe) interface.
+The `IAnimation` interface represents an animation, typically from a Sprite object via its [ISpriteInstance](../plugin-interfaces/sprite.md) interface. Each frame of the animation is represented by the [IAnimationFrame](ianimationframe.md) interface.
 
 ## IAnimation APIs
 **name**  
@@ -34,7 +34,7 @@ A read-only boolean indicating if the animation will reverse when reaching the s
 A read-only number of frames in this animation.
 
 **getFrames()**  
-Return an array of [IAnimationFrame](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimationframe) representing all the frames in this animation in sequence.
+Return an array of [IAnimationFrame](ianimationframe.md) representing all the frames in this animation in sequence.
 
 ***frames()**  
-Iterates all [IAnimationFrame](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimationframe) in this animation in sequence.
+Iterates all [IAnimationFrame](ianimationframe.md) in this animation in sequence.

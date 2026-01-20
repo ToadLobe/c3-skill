@@ -12,9 +12,9 @@ source: "https://www.construct.net/en/make-games/manuals/addon-sdk/reference/plu
 
 ---
 
-PluginProperty defines a single property for an addon that will appear in the Properties Bar. Typically an array of PluginProperty is passed to `this._info.SetProperties()`. See [Configuring Plugins](https://www.construct.net/make-games/manuals/addon-sdk/guide/configuring-plugins) for more information. Note that despite the name, PluginProperty is also used to define properties for behaviors.
+PluginProperty defines a single property for an addon that will appear in the Properties Bar. Typically an array of PluginProperty is passed to `this._info.SetProperties()`. See [Configuring Plugins](../guide/configuring-plugins.md) for more information. Note that despite the name, PluginProperty is also used to define properties for behaviors.
 
-Note properties do not directly define any strings that appear in the editor UI. These are defined in [The Language File](https://www.construct.net/make-games/manuals/addon-sdk/guide/language-file).
+Note properties do not directly define any strings that appear in the editor UI. These are defined in [The Language File](../guide/language-file.md).
 
 ## Constructor
 
@@ -43,7 +43,7 @@ The type of the property. This can be one of:
 
 - `"color"`  `[For plugins only]`  — a color picker property. The initial value must be an array, e.g. `[1, 0, 0]` for red.
 
-- `"object"`  `[For plugins only]`  — an object picker property allowing the user to pick an object class. **Note:** At runtime, this passes a SID (Serialization ID) for the chosen object class, or -1 if none was picked. Use [getObjectClassBySid()](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkutils) to look up the corresponding `IObjectClass`.
+- `"object"`  `[For plugins only]`  — an object picker property allowing the user to pick an object class. **Note:** At runtime, this passes a SID (Serialization ID) for the chosen object class, or -1 if none was picked. Use [getObjectClassBySid()](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkutils.md) to look up the corresponding `IObjectClass`.
 
 - `"projectfile"`  `[For plugins only]`   `[Addon SDK v2 only]`  (r426+) — a dropdown list from which any project file in the project can be chosen. The property value at runtime is a relative path to fetch the project file from. The `"filter"` option can also be specified to filter the list by a file extension, e.g. ".txt" to only list .txt files.
 
@@ -98,4 +98,4 @@ For `"link"` type properties only. Specifies how the link callback function is u
 For `"info"` type properties only. A function that is called to get the value to display as a read-only string. The function is automatically called when any other properties change. The parameter is an instance of your addon, which you can use to read other property values and use them in the returned value.
 
 **interpolatable**  
-For `"integer"`, `"float"`, `"percent"`, `"text"`, `"longtext"`, `"check"`, `"combo"` and `"color"` type properties only. Has a default value of `false`, set to `true` so the property can be supported by timelines. In order to fully support timelines it is also needed to follow the [Timeline Integration Guide](https://www.construct.net/en/make-games/manuals/addon-sdk/guide/timeline-integration).
+For `"integer"`, `"float"`, `"percent"`, `"text"`, `"longtext"`, `"check"`, `"combo"` and `"color"` type properties only. Has a default value of `false`, set to `true` so the property can be supported by timelines. In order to fully support timelines it is also needed to follow the [Timeline Integration Guide](../guide/timeline-integration.md).

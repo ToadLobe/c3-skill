@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-refe
 - [Flowchart Controller Conditions](#internalH1Link0)
 
 ---
-The **Flowchart Controller** plugin allows [flowcharts](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart) to be controlled in event sheets.
+The **Flowchart Controller** plugin allows [flowcharts](../project-primitives/flowcharts/flowchart.md) to be controlled in event sheets.
 Some of the common uses of the plugin include the following:
 
 - Create instances of flowcharts using the **Start flowchart** or **Start flowchart (by name)** actions.
@@ -137,7 +137,7 @@ Reset the current flowchart, making the default initial node the current one.
 Reset the specified flowchart, making the default initial node the current one in that flowchart.
 
 **Go to next node**  
-Go to the next node, using an index or a name to choose the [output](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart-node-output) to follow.
+Go to the next node, using an index or a name to choose the [output](../project-primitives/flowcharts/flowchart-node-output.md) to follow.
 
 **Go to default node**  
 Go to the next node, following the default output. If no default output has been set, nothing will happen.

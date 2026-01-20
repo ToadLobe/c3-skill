@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Jump-thru behavior APIs](#internalH1Link0)
 
 ---
-The `IJumpthruBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Jump-thru behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/jump-thru).
+The `IJumpthruBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Jump-thru behavior](../../../behavior-reference/jump-thru.md).
 
 ## Jump-thru behavior APIs
 **isEnabled**  

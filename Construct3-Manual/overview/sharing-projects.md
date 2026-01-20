@@ -11,8 +11,8 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/overview/sh
 - [Sharing with subscription administrator](#internalH1Link2)
 
 ---
-The easiest and quickest way to share your project so someone else can run it is using **Remote Preview**  `[Paid plans only]` . For more information see [Testing projects](https://www.construct.net/make-games/manuals/construct-3/overview/testing-projects).
-If you want people to play your finished project, you should **Export** it. This produces a playable game ready for publishing. See the section on [publishing projects](https://www.construct.net/en/make-games/manuals/construct-3/overview/publishing-projects).
+The easiest and quickest way to share your project so someone else can run it is using **Remote Preview**  `[Paid plans only]` . For more information see [Testing projects](testing-projects.md).
+If you want people to play your finished project, you should **Export** it. This produces a playable game ready for publishing. See the section on [publishing projects](publishing-projects.md).
 
 ## Share a project file
 You can also save as a single file, or use the *Download a copy* option, to get a single .c3p file representing your entire project. Then you can share that file using other tools and services, such as by attaching it to an email, or uploading it to a storage service.

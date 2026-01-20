@@ -5,11 +5,11 @@ source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/timelin
 
 # Timeline Integration
 
-Adding [timeline](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines) support to a 3rd party addon, be it a [plugin](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/plugins), [behavior](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/behaviors) or [effect](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/effects) is quite easy. A little bit of extra work is needed though, here is how to do it.
+Adding [timeline](../../Construct3-Manual/project-primitives/timelines.md) support to a 3rd party addon, be it a [plugin](../../Construct3-Manual/project-primitives/objects/plugins.md), [behavior](../../Construct3-Manual/project-primitives/objects/behaviors.md) or [effect](../../Construct3-Manual/project-primitives/objects/effects.md) is quite easy. A little bit of extra work is needed though, here is how to do it.
 
 ### Plugins
 
-1. Set the `interpolatable` [plugin property](https://www.construct.net/en/make-games/manuals/addon-sdk/reference/pluginproperty) option to `true` in all the plugin properties which should be supported by timelines.
+1. Set the `interpolatable` [plugin property](../reference/pluginproperty.md) option to `true` in all the plugin properties which should be supported by timelines.
 
 2. Implement the `GetPropertyValueByIndex(index)` method in the plugin instance class.
   **index argument**  
@@ -79,7 +79,7 @@ See plugin integration above, all steps apply.
 
 ### Effects
 
-Edit the effect's `.json` file and add the `interpolatable` property with a value of `true` to each [paramenter definition](https://www.construct.net/en/make-games/manuals/addon-sdk/guide/configuring-effects) which should be supported by timelines. No additional modifications needed. 
+Edit the effect's `.json` file and add the `interpolatable` property with a value of `true` to each [paramenter definition](configuring-effects.md) which should be supported by timelines. No additional modifications needed. 
 
 > **NOTE**  
 > Remember that not all properties need to be supported, if it looks like it doesn't make sense for a property to receive dynamic updates, it is ok to not support it.

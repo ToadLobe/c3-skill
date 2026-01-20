@@ -25,7 +25,7 @@ Follow these steps to update a plugin or behavior from Addon SDK v1 to v2.
 
 ### Step 1: update SDK version
 
-In [addon.json](https://www.construct.net/make-games/manuals/addon-sdk/guide/addon-metadata), update the `"sdk-version"` field to 2. If the field is missing, add it with the value 2. This indicates to Construct that the addon is using the Addon SDK v2.
+In [addon.json](addon-metadata.md), update the `"sdk-version"` field to 2. If the field is missing, add it with the value 2. This indicates to Construct that the addon is using the Addon SDK v2.
 
 You'll probably want to also increment the `"version"` field as the update to Addon SDK v2 warrants an updated addon version too.
 
@@ -37,20 +37,20 @@ The following table lists the changes to base classes for plugins.
 
 | SDK v1 base class | SDK v2 base class |
 | --- | --- |
-| [C3.SDKPluginBase](https://www.construct.net/make-games/manuals/addon-sdk/runtime-reference/base-classes/sdkpluginbase) | [globalThis.ISDKPluginBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkpluginbase) |
-| [C3.SDKTypeBase](https://www.construct.net/make-games/manuals/addon-sdk/runtime-reference/base-classes/sdktypebase) | [globalThis.ISDKObjectTypeBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkobjecttypebase) |
-| [C3.SDKInstanceBase](https://www.construct.net/make-games/manuals/addon-sdk/runtime-reference/base-classes/sdkinstancebase) | [globalThis.ISDKInstanceBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkinstancebase) |
-| [C3.SDKWorldInstanceBase](https://www.construct.net/make-games/manuals/addon-sdk/runtime-reference/base-classes/sdkworldinstancebase) | [globalThis.ISDKWorldInstanceBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkworldinstancebase) |
-| [C3.SDKDOMPluginBase](https://www.construct.net/make-games/manuals/addon-sdk/runtime-reference/base-classes/sdkdompluginbase) | [globalThis.ISDKDOMPluginBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkdompluginbase) |
-| [C3.SDKDOMInstanceBase](https://www.construct.net/make-games/manuals/addon-sdk/runtime-reference/base-classes/sdkdominstancebase) | [globalThis.ISDKDOMInstanceBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkdominstancebase) |
+| [C3.SDKPluginBase](../runtime-reference.md) | [globalThis.ISDKPluginBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkpluginbase.md) |
+| [C3.SDKTypeBase](../runtime-reference.md) | [globalThis.ISDKObjectTypeBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkobjecttypebase.md) |
+| [C3.SDKInstanceBase](../runtime-reference.md) | [globalThis.ISDKInstanceBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkinstancebase.md) |
+| [C3.SDKWorldInstanceBase](../runtime-reference.md) | [globalThis.ISDKWorldInstanceBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkworldinstancebase.md) |
+| [C3.SDKDOMPluginBase](../runtime-reference.md) | [globalThis.ISDKDOMPluginBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkdompluginbase.md) |
+| [C3.SDKDOMInstanceBase](../runtime-reference.md) | [globalThis.ISDKDOMInstanceBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkdominstancebase.md) |
 
 The following table lists the changes to base classes for behaviors.
 
 | SDK v1 base class | SDK v2 base class |
 | --- | --- |
-| [C3.SDKBehaviorBase](https://www.construct.net/make-games/manuals/addon-sdk/runtime-reference/base-classes/sdkbehaviorbase) | [globalThis.ISDKBehaviorBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkbehaviorbase) |
-| [C3.SDKBehaviorTypeBase](https://www.construct.net/make-games/manuals/addon-sdk/runtime-reference/base-classes/sdkbehaviortypebase) | [globalThis.ISDKBehaviorTypeBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkbehaviortypebase) |
-| [C3.SDKBehaviorInstanceBase](https://www.construct.net/make-games/manuals/addon-sdk/runtime-reference/base-classes/sdkbehaviorinstancebase) | [globalThis.ISDKBehaviorInstanceBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkbehaviorinstancebase) |
+| [C3.SDKBehaviorBase](../runtime-reference.md) | [globalThis.ISDKBehaviorBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkbehaviorbase.md) |
+| [C3.SDKBehaviorTypeBase](../runtime-reference.md) | [globalThis.ISDKBehaviorTypeBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkbehaviortypebase.md) |
+| [C3.SDKBehaviorInstanceBase](../runtime-reference.md) | [globalThis.ISDKBehaviorInstanceBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkbehaviorinstancebase.md) |
 
 ### Step 3: update class constructors
 
@@ -111,13 +111,13 @@ The method `GetScriptInterfaceClass()` can be deleted and the entire script inte
 
 While all previously documented properties and methods in SDK v1 are still supported in SDK v2, they have been renamed to follow the naming conventions of the rest of the scripting APIs. In some cases some details are different to simplify the SDK or to adapt to the particular requirements of the new architecture.
 
-For example the SDK v1 instance method `GetDebuggerProperties()` is now named `_getDebuggerProperties()`, but otherwise works identically; `Trigger()` is now named `_trigger()` but otherwise works identically; and so on. Refer to the class links in the above table to review the full reference. Note also some features may now be in other base classes; for example the SDK v1 class `SDKInstanceBase` had a property `this._runtime`; the SDK v2 class `ISDKInstanceBase` does not define a property for the runtime, but it inherits from [IInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance), which defines the property `this.runtime`.
+For example the SDK v1 instance method `GetDebuggerProperties()` is now named `_getDebuggerProperties()`, but otherwise works identically; `Trigger()` is now named `_trigger()` but otherwise works identically; and so on. Refer to the class links in the above table to review the full reference. Note also some features may now be in other base classes; for example the SDK v1 class `SDKInstanceBase` had a property `this._runtime`; the SDK v2 class `ISDKInstanceBase` does not define a property for the runtime, but it inherits from [IInstance](../../Construct3-Manual/scripting/scripting-reference/object-interfaces/iinstance.md), which defines the property `this.runtime`.
 
-For consistency, you will likely want to rename any other class methods to follow the new [camelCase](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fCamel_case) naming convention. As per the [Addon SDK coding conventions](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces), you may wish to use an underscore prefix to indicate methods which should not be called from the scripting feature, but cannot be made private.
+For consistency, you will likely want to rename any other class methods to follow the new [camelCase](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fCamel_case) naming convention. As per the [Addon SDK coding conventions](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces.md), you may wish to use an underscore prefix to indicate methods which should not be called from the scripting feature, but cannot be made private.
 
 ### Step 6: update remaining code
 
-In some addons, such as if the main purpose is to integrate a third-party service, the addon should not require any further major changes. However if your addon has extensive logic using the runtime APIs from the Addon SDK v1, these will need to be rewritten in terms of the new runtime APIs based on Construct's scripting feature. A full reference of the available APIs can be found in the [scripting reference](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference) section of Construct's manual.
+In some addons, such as if the main purpose is to integrate a third-party service, the addon should not require any further major changes. However if your addon has extensive logic using the runtime APIs from the Addon SDK v1, these will need to be rewritten in terms of the new runtime APIs based on Construct's scripting feature. A full reference of the available APIs can be found in the [scripting reference](../../Construct3-Manual/scripting/scripting-reference.md) section of Construct's manual.
 
 ## Recommended architecture
 
@@ -137,7 +137,7 @@ In the past the global object may have been referred to using `window` or `self`
 
 ### Configure to use modules
 
-The Addon SDK v2 now supports using JavaScript Modules (i.e. `import` and `export` statements) in your runtime scripts. By default Construct creates a new main script module for your addon so you don't have to set anything else up, but it's good practice to set it up anyway as it's how all modern addons are written, and it's necessary if you want to use `import` or `export` in your runtime scripts. For more details see the section *Configuring use of modules* in [Runtime scripts](https://www.construct.net/make-games/manuals/addon-sdk/guide/runtime-scripts).
+The Addon SDK v2 now supports using JavaScript Modules (i.e. `import` and `export` statements) in your runtime scripts. By default Construct creates a new main script module for your addon so you don't have to set anything else up, but it's good practice to set it up anyway as it's how all modern addons are written, and it's necessary if you want to use `import` or `export` in your runtime scripts. For more details see the section *Configuring use of modules* in [Runtime scripts](runtime-scripts.md).
 
 ## Sample diffs
 

@@ -13,7 +13,7 @@ Construct provides its own built-in code editor based on [Monaco](https://www.co
 Using TypeScript requires some extra steps which are detailed below. However the basic setup is explained first, which works well for JavaScript projects.
 
 ### Step 1: save a folder project
-First of all, make sure you save your project to a folder. This means all your project files, including your script files, are saved as individual files within the project folder, rather than all contained within a .c3p file. For more information see the section on project folders in [Saving projects](https://www.construct.net/make-games/manuals/construct-3/overview/saving-projects).
+First of all, make sure you save your project to a folder. This means all your project files, including your script files, are saved as individual files within the project folder, rather than all contained within a .c3p file. For more information see the section on project folders in [Saving projects](../../overview/saving-projects.md).
 
 ### Step 2: enable auto-reload
 Once saved to a folder, right-click the main *Scripts* folder in the Project Bar, and select the *Auto reload all on preview* menu option. After doing that the menu option will appear with a tick to indicate the auto-reload mode is enabled.
@@ -70,4 +70,4 @@ Sometimes you may make changes to the project that affect the TypeScript definit
 Note that we recommend using the workflow described here, where you only have the .js files in your Construct project, and the .ts files are only used by the external editor. This basically out-sources compilation of TypeScript to JavaScript to your external editor, with Construct only using the compiled JavaScript output.
 If your Construct project has both a .ts and .js version of the same file, Construct gives precedence to the .js file. This should mean your external editor workflow keeps working as expected, but there's no reason to keep the .ts file in the project - Construct isn't actually using it at all, and so to avoid confusion, we would recommend not having it in your project. In particular this could be confusing if you try to edit the .ts file from within Construct: it would not change the .js file and so not affect the way your project works, and auto-reload mode would overwrite the file on the next preview, so your changes would be lost anyway.
 
-For more advice about TypeScript workflows, see [TypeScript in Construct](https://www.construct.net/make-games/manuals/construct-3/scripting/using-scripting/typescript-construct).
+For more advice about TypeScript workflows, see [TypeScript in Construct](../using-scripting/script-files.md).

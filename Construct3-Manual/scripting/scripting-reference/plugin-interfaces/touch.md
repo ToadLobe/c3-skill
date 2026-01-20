@@ -11,14 +11,14 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Touch APIs](#internalH1Link2)
 
 ---
-The `ITouchObjectType` interface derives from [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) to add APIs specific to the [Touch plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/touch).
+The `ITouchObjectType` interface derives from [IObjectClass](../object-interfaces/iobjectclass.md) to add APIs specific to the [Touch plugin](../../../plugin-reference/touch.md).
 Note this class derives from the object class interface, not the instance interface. Typically it is used through `runtime.touch` instead of the named object.
 
 ## Examples
 The [Tracking pointers](https://editor.construct.net/#open=tracking-pointers) example demonstrates how both mouse and touch input can be tracked simultaneously using pointer events.
 
 ## Events
-To detect touch input events, use the events fired on the [Runtime script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime), such as `"pointerdown"`. There are also `"deviceorientation"` and `"devicemotion"` events which can be used to detect device movement.
+To detect touch input events, use the events fired on the [Runtime script interface](../iruntime.md), such as `"pointerdown"`. There are also `"deviceorientation"` and `"devicemotion"` events which can be used to detect device movement.
 
 ## Touch APIs
 **async requestPermission(type)**  

@@ -11,7 +11,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [ILOSBehaviorRay interface](#internalH1Link2)
 
 ---
-The `ILOSBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Line-of-sight behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/line-of-sight).
+The `ILOSBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Line-of-sight behavior](../../../behavior-reference/line-of-sight.md).
 An additional `ILOSBehaviorRay` interface is returned by the `castRay()` method.
 
 ## Examples
@@ -25,7 +25,7 @@ Set or get the maximum distance in pixels that line-of-sight can reach. If an ob
 Set or get the angle in radians of the cone of view in which the object can have line-of-sight to other objects, relative to the current angle of the object.
 
 **addObstacle(iObjectClass)**  
-If the *Obstacles* property is *Custom*, adds the given [IObjectClass](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) as another kind of object to count as an obstruction to line-of-sight. 
+If the *Obstacles* property is *Custom*, adds the given [IObjectClass](../object-interfaces/iobjectclass.md) as another kind of object to count as an obstruction to line-of-sight. 
 
 > **Tip**  
 > Note that while this is a method for the instance, it affects the entire behavior.

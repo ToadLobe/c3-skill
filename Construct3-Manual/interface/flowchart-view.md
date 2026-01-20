@@ -23,11 +23,11 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/f
 - [Default outputs](#internalH1Link14)
 
 ---
-The **Flowchart View** allows visually editing a [flowchart](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart) by setting up [nodes](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart-node), making connections between the nodes to form a tree structure and adding information that will be associated with each node. See also the manual section for [flowcharts](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts).
+The **Flowchart View** allows visually editing a [flowchart](../project-primitives/flowcharts/flowchart.md) by setting up [nodes](../project-primitives/flowcharts/flowchart-node.md), making connections between the nodes to form a tree structure and adding information that will be associated with each node. See also the manual section for [flowcharts](../project-primitives/flowcharts.md).
 
 ![The Flowchart View](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/124636/overview.png)
 
-Asides from showing the nodes and the connections between them, there is also a **status bar** at the bottom which displays the current **zoom level**, the **caption** of the last selected node and the **index**, and the **name** and **value** of the last selected [output](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart-node-output).
+Asides from showing the nodes and the connections between them, there is also a **status bar** at the bottom which displays the current **zoom level**, the **caption** of the last selected node and the **index**, and the **name** and **value** of the last selected [output](../project-primitives/flowcharts/flowchart-node-output.md).
 
 ## Adding and deleting nodes
 To add new nodes, right-click in any empty space of the flowchart view and tap the `Add node` option.
@@ -48,7 +48,7 @@ This can be done by:
 
 - Right-clicking on the node and choosing the `Add` option from the context menu.
 - Clicking on the `Add` link at the bottom left of each node.
-- Clicking the `Add` link in the [Properties Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/properties-bar) when it is showing properties for a node.
+- Clicking the `Add` link in the [Properties Bar](bars/properties-bar.md) when it is showing properties for a node.
 | Context menu option | Node link | Properties bar |
 | --- | --- | --- |
 | ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/130616/flowchart-node-contextmenu-add.png) | ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/124637/node-add.png) | ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/130617/flowchart-node-properties-bar.png) |
@@ -154,7 +154,7 @@ There are a few ways to scroll in the Flowchart View:
 On desktop systems, middle-mouse dragging is probably the most convenient way to move around the flowchart.
 To zoom hold <kbd>Control</kbd> (<kbd>Meta</kbd> on Mac) and scroll the mouse wheel.
 
-Make sure to check the [Keyboard shortcuts](https://www.construct.net/en/make-games/manuals/construct-3/interface/keyboard-shortcuts) section of the manual for a complete list.
+Make sure to check the [Keyboard shortcuts](keyboard-shortcuts.md) section of the manual for a complete list.
 
 ## Managing complex flowcharts
 When flowcharts start becoming large it can be difficult to keep track of what is going on just by looking at it.
@@ -167,15 +167,15 @@ Each output can be given a unique color that is used to draw it's corresponding 
 
 **Output link mode**  
 Each output can use two different methods to draw it's corresponding link. It can be either a straight line (default method), or it can use path finding so the link avoids overlapping other nodes. This can help in cases were a straight link is overlapping other nodes making the flowchart look messy. This property can only be changed from the properties of an output shown in the Properties Bar
-**[Reference nodes](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/reference-node)**  
+**[Reference nodes](../project-primitives/flowcharts/reference-node.md)**  
 This types of nodes are used as a placeholder for a different flowchart. Can be useful to split up large flowcharts in more manageable chunks.
 
-**[Comment nodes](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/comment-node)**  
+**[Comment nodes](../project-primitives/flowcharts/comment-node.md)**  
 This types of nodes are used to place comments directly in a flowchart.
 
 ## Preset nodes
 Nodes can be saved to be used later as a base to create new nodes.
-This can be useful in more complex use cases as it is likely that in any given project all of the existing flowchart nodes will follow a similar structure so they can be easily processed by an [Event Sheet](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/event-sheets).
+This can be useful in more complex use cases as it is likely that in any given project all of the existing flowchart nodes will follow a similar structure so they can be easily processed by an [Event Sheet](../project-primitives/events/event-sheets.md).
 Manually adding all the outputs and editing the names of the outputs so they match the format being used every single time a node is created can quickly become tedious and also error prone.
 Identifying the format of the nodes that are going to be used more often and saving them as presets can save time, avoid errors and just make the experience of editing a flowchart a little bit more enjoyable.
 Saving a node as a preset is easy, you can either change the corresponding property in the Properties bar or use the `Preset › Add to presets` context menu option of a node.
@@ -219,7 +219,7 @@ Outputs can be set as the default one in their node by a context menu option or 
 | ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/130643/flowchart-node-output.png) | ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/130644/flowchart-node-properties-bar.png) |
 The two use cases of this setting are the following:
 
-1. A default output can be chosen at runtime using the [Flowchart Controller](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/flowchart-controller) ACEs that specifically target them. This allows to more easily manage a default option in each node without the need of enforcing a convention when designing the nodes.
+1. A default output can be chosen at runtime using the [Flowchart Controller](../plugin-reference/flowchart-controller.md) ACEs that specifically target them. This allows to more easily manage a default option in each node without the need of enforcing a convention when designing the nodes.
 2. In the case of a node being disabled, the runtime follows default outputs automatically if the state of the flowchart falls in a disabled node. If the following node is also disabled the runtime will attempt to continue following default outputs until it lands on a node which is not disabled.
 
 ![Disabled and Bypassed node](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/130647/flowchart-node-bypass.png)

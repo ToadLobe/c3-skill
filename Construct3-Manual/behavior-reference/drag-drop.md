@@ -16,7 +16,7 @@ The **Drag & Drop behavior** enables objects to be dragged and dropped either by
 An object starts dragging when a mouse click or touch falls inside the object's collision polygon. It is released when the mouse button is released or the touch ends.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IDragDropBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/drag-drop).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IDragDropBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/drag-drop.md).
 
 ## Drag & Drop properties
 **Axes**  

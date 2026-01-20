@@ -11,7 +11,7 @@ source: "https://www.construct.net/en/make-games/manuals/addon-sdk/reference/obj
 
 ---
 
-The `ICollisionPoly` interface represents the collision polygon for an [IAnimationFrame](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/ianimationframe). It is represented as a list of numbers representing points connected in a loop. As with image points, the collision polygon points are specified in texture co-ordinates, i.e. from 0 to 1. 
+The `ICollisionPoly` interface represents the collision polygon for an [IAnimationFrame](ianimationframe.md). It is represented as a list of numbers representing points connected in a loop. As with image points, the collision polygon points are specified in texture co-ordinates, i.e. from 0 to 1. 
 
 ## Methods
 

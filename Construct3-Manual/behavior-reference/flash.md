@@ -14,7 +14,7 @@ The **Flash behavior** makes an object blink by toggling its visibility on and o
 Simply adding the Flash behavior to an object does not do anything. You must use the *Flash* action to make the object flash.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IFlashBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/flash).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IFlashBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/flash.md).
 
 ## Flash conditions
 **Is flashing**  

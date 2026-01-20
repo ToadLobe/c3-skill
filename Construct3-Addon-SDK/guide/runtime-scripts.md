@@ -20,7 +20,7 @@ Plugin and behavior addons have separate scripts that run in the context of the 
 
 ### Runtime documentation
 
-In Construct's addon SDK, runtime scripts are based on the same APIs as used by Construct's scripting feature. The APIs specific to the Addon SDK can be found in the [Addon SDK interfaces](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces) section of the scripting reference in the Construct manual. Further, all the APIs in the rest of the [scripting reference](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference) section of Construct's manual are also accessible to addons.
+In Construct's addon SDK, runtime scripts are based on the same APIs as used by Construct's scripting feature. The APIs specific to the Addon SDK can be found in the [Addon SDK interfaces](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces.md) section of the scripting reference in the Construct manual. Further, all the APIs in the rest of the [scripting reference](../../Construct3-Manual/scripting/scripting-reference.md) section of Construct's manual are also accessible to addons.
 
 ## Using modules
 
@@ -72,7 +72,7 @@ this._info.SetDOMSideScripts(["c3runtime/domSide.js"]);
 
 Since an array of script paths is used, if you have a lot of DOM code, you can split it across different files. Don't forget to add these files to the file list in `addon.json`.
 
-For documentation on the DOM messaging APIs, refer to [DOMElementHandler](https://www.construct.net/en/make-games/manuals/addon-sdk/runtime-reference/base-classes/domelementhandler) (used in domSide.js), [ISDKDOMPluginBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkdompluginbase) (used in plugin.js), and [ISDKDOMInstanceBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkdominstancebase) (used in instance.js).
+For documentation on the DOM messaging APIs, refer to [DOMElementHandler](../runtime-reference.md) (used in domSide.js), [ISDKDOMPluginBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkdompluginbase.md) (used in plugin.js), and [ISDKDOMInstanceBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkdominstancebase.md) (used in instance.js).
 
 For an example demonstrating how to get started, see the **domElementPlugin** template in the C3 plugin SDK download. This demonstrates using the above APIs to create a simple `<button>` element in the DOM with a custom button text, and firing an *On clicked* trigger, with support for running in a Web Worker.
 

@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Bullet behavior APIs](#internalH1Link0)
 
 ---
-The `IBulletBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Bullet behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/bullet).
+The `IBulletBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Bullet behavior](../../../behavior-reference/bullet.md).
 
 ## Bullet behavior APIs
 **speed**  

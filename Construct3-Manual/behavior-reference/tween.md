@@ -18,15 +18,15 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-re
 - [Tween expressions](#internalH1Link9)
 
 ---
-The **Tween behavior** animates the values of properties over time. For example you can "tween" an object's position to (100, 100), which will move it from its current position to the target position over time. Different *ease functions* can be used to alter the rate at which the value changes over time, for example using a *Linear* function for a constant-rate motion, *In Out Sinusoidal* for a sine-curve based movement which speeds up then slows down, and many more. Custom ease curves can also be designed with the [Ease editor](https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/ease-editor).
+The **Tween behavior** animates the values of properties over time. For example you can "tween" an object's position to (100, 100), which will move it from its current position to the target position over time. Different *ease functions* can be used to alter the rate at which the value changes over time, for example using a *Linear* function for a constant-rate motion, *In Out Sinusoidal* for a sine-curve based movement which speeds up then slows down, and many more. Custom ease curves can also be designed with the [Ease editor](../interface/dialogs/ease-editor.md).
 [Click here to open an example of the Tween behavior](https://editor.construct.net/#open=tweening).
 The term "tween" comes from the term "[Inbetweening](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fInbetweening)", referring to generating intermediate frames in between two states.
 
 > **Tip**  
-> Tweening to a position moves objects over a fixed time. If you need to move objects to a position using a maximum speed with acceleration and deceleration, use the [Move To behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/move) instead.
+> Tweening to a position moves objects over a fixed time. If you need to move objects to a position using a maximum speed with acceleration and deceleration, use the [Move To behavior](move.md) instead.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ITweenBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/tween).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ITweenBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/tween.md).
 
 ## Tween types
 Construct's Tween behavior has three types of tween:
@@ -116,14 +116,14 @@ Triggered when a tween matching all the given tags ping-pongs. Use the *State* p
 Change the end value for an existing one-property tween matching all the given tags.
 
 **Tween (one property)**  
-Start a tween for a single property. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Property* chooses which property of the object to modify. The start value of the tween uses the current value of the property. *End value* specifies the value to tween to. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Like [timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/timeline), a one property tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
+Start a tween for a single property. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Property* chooses which property of the object to modify. The start value of the tween uses the current value of the property. *End value* specifies the value to tween to. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Like [timelines](../project-primitives/timelines/timeline.md), a one property tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
 
 ## Tween actions - two properties
 **Set end values**  
 Change the end value for an existing two-property tween matching all the given tags.
 
 **Tween (two properties)**  
-Start a tween for two properties. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Property* chooses which property pair of the object to modify. The start value of the tween uses the current value of the properties. *End X* and *End Y* specify the end value for each of the two properties. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Like [timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/timeline), a two property tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
+Start a tween for two properties. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Property* chooses which property pair of the object to modify. The start value of the tween uses the current value of the properties. *End X* and *End Y* specify the end value for each of the two properties. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Like [timelines](../project-primitives/timelines/timeline.md), a two property tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
 
 ## Tween actions - value
 **Set end value**  
@@ -133,7 +133,7 @@ Change the end value for an existing value tween matching all the given tags.
 Change the start value for an existing value tween matching all the given tags.
 
 **Tween (value)**  
-Start a tween for a number, independent of any properties. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Start value* and *End value* specify the start and end value to tween through. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Use the *Value* expression to retrieve the current value of the tween over time, such as to apply it to a different object, behavior or effect. Like [timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/timeline), a value tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
+Start a tween for a number, independent of any properties. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Start value* and *End value* specify the start and end value to tween through. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Use the *Value* expression to retrieve the current value of the tween over time, such as to apply it to a different object, behavior or effect. Like [timelines](../project-primitives/timelines/timeline.md), a value tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
 
 ## Tween actions - playback
 **Pause**  

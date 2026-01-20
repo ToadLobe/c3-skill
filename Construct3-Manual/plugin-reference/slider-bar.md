@@ -18,10 +18,10 @@ The **Slider bar** object provides a simple form control allowing the user to pi
 ![Slider bar control](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/1020/sliderbar.png)
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ISliderBarInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/slider-bar).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ISliderBarInstance script interface](../scripting/scripting-reference/plugin-interfaces/slider-bar.md).
 
 ## Layering HTML objects
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
 
 ## Slider bar properties
 **Minimum**  
@@ -49,7 +49,7 @@ An optional *id* attribute for the element in the DOM (Document Object Model). T
 An optional *class* attribute for the element in the DOM (Document Object Model). This can be useful for CSS styling.
 
 ## Slider bar conditions
-See [common conditions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-conditions) for features shared between form control objects.
+See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
 
 **Compare value**  
 Compare the currently chosen value from the slider bar.
@@ -64,7 +64,7 @@ Triggered repeatedly as the user changes the chosen value on the slider bar. Unl
 Triggered when the user clicks the slider bar.
 
 ## Slider bar actions
-See [common actions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-actions) for features shared between form control objects.
+See [common actions](common-features/common-actions.md) for features shared between form control objects.
 
 **Set maximum**  
 Set the maximum value that can be chosen from the slider bar.

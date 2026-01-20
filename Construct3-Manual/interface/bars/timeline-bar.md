@@ -15,7 +15,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/b
 - [More information](#internalH1Link6)
 
 ---
-The **Timeline Bar** shows the currently active [timeline](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines). Through this control you can add and remove [instances](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/instances) and other types of tracks to a timeline, and edit its properties.
+The **Timeline Bar** shows the currently active [timeline](../../project-primitives/timelines.md). Through this control you can add and remove [instances](../../project-primitives/objects/instances.md) and other types of tracks to a timeline, and edit its properties.
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/87433/timeline-0.png)
 
@@ -25,8 +25,8 @@ Here's a summary of how to use the Timeline Bar. A project can have multiple tim
 ### Step 1: create a timeline
 With the Timeline Bar open, you can create a timeline with any of the following methods:
 
-- Right-click **Timelines** folder in the [Project Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/project-bar) and select *Add timeline*
-- Right-click in the [Layout View](https://www.construct.net/en/make-games/manuals/construct-3/interface/layout-view) and select `Timeline › Add timeline`
+- Right-click **Timelines** folder in the [Project Bar](project-bar.md) and select *Add timeline*
+- Right-click in the [Layout View](../layout-view.md) and select `Timeline › Add timeline`
 
 | Project Bar context menu | Layout View context menu |
 | --- | --- |
@@ -65,14 +65,14 @@ The timeline can be previewed in the editor by pressing the **Play** button in t
 | ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/87440/timeline-toolbar-playback.png) |
 
 ### Controlling timelines in events
-You can control the timeline in your events using the [Timeline Controller plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/timeline-controller).
+You can control the timeline in your events using the [Timeline Controller plugin](../../plugin-reference/timeline-controller.md).
 
 | Timeline Controller Plugin | Timeline Events |
 | --- | --- |
 | ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/82230/timelinemanual04.png) | ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/26558/timeline-manual-11.png) |
 
 ## Edit mode
-When edit mode is turned on with the edit toolbar button, the selection boxes in the Layout View change color and the properties which can be animated with the timeline are highlighted in the [Properties Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/properties-bar). The highlighting only happens for instances which are part of the current timeline. Properties which are not highlighted in edit mode cannot be animated with a timeline. After finishing editing a timeline remember to turn the mode off as changes made in this mode are only relevant to the active timeline, rather than the whole project.
+When edit mode is turned on with the edit toolbar button, the selection boxes in the Layout View change color and the properties which can be animated with the timeline are highlighted in the [Properties Bar](properties-bar.md). The highlighting only happens for instances which are part of the current timeline. Properties which are not highlighted in edit mode cannot be animated with a timeline. After finishing editing a timeline remember to turn the mode off as changes made in this mode are only relevant to the active timeline, rather than the whole project.
 
 | Highlighted Properties | Highlighted Selection |
 | --- | --- |
@@ -89,7 +89,7 @@ Additionally, the X and Y properties of any instance can also be updated directl
 ## Drag & drop
 There are various places in which it is possible to use a drag and drop workflow when using the Timeline Bar.
 
-- To add new instances directly to the timeline from the current active [layout](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/layouts). Drag the instances from the Layout View and drop them on a Timeline.
+- To add new instances directly to the timeline from the current active [layout](../../project-primitives/layouts.md). Drag the instances from the Layout View and drop them on a Timeline.
 - To sort the different elements of the timeline that are represented by a row, such as a track.
 - To add a nested timeline in the current timeline by dragging it from the Project bar.
 - To update the starting offset of a nested timeline.
@@ -105,7 +105,7 @@ There are various places in which it is possible to use a drag and drop workflow
 By toggling auto keyframes, keyframes will be added to the timeline at the position of the current time marker, as soon as changes are made in either the Properties bar or the Layout view.
 
 ## Note on animating Sprite plugin instances
-It is possible to animate the current frame of a [Sprite plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/sprite) instance by animating it's **initial frame** property.
+It is possible to animate the current frame of a [Sprite plugin](../../plugin-reference/sprite.md) instance by animating it's **initial frame** property.
 When animating in this way make sure that the Sprite's normal animation is stopped as it would interfere with the changes made by a timeline. Likewise if you are just using a Sprite's regular animations, playing a timeline that changes the initial frame will cause un-expected results.
 
 > **Warning**  
@@ -114,6 +114,6 @@ When animating in this way make sure that the Sprite's normal animation is stopp
 It is also possible to change the current animation a Sprite plugin instance will show at runtime by animating the **initial animation** property.
 
 ## More information
-For more details on a timeline's capabilities, properties and related objects see the [Project Primitives section on timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines).
-See the [Timeline Controller plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/timeline-controller) manual entry for more information on the actions, conditions and expressions available for controlling timelines.
-The Timeline Bar has various keyboard shortcuts which are listed in the manual entry [Keyboard shortcuts](https://www.construct.net/en/make-games/manuals/construct-3/interface/keyboard-shortcuts).
+For more details on a timeline's capabilities, properties and related objects see the [Project Primitives section on timelines](../../project-primitives/timelines.md).
+See the [Timeline Controller plugin](../../plugin-reference/timeline-controller.md) manual entry for more information on the actions, conditions and expressions available for controlling timelines.
+The Timeline Bar has various keyboard shortcuts which are listed in the manual entry [Keyboard shortcuts](../keyboard-shortcuts.md).

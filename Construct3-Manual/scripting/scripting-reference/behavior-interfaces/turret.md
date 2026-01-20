@@ -10,10 +10,10 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Turret behavior APIs](#internalH1Link1)
 
 ---
-The `ITurretBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Turret behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/turret).
+The `ITurretBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Turret behavior](../../../behavior-reference/turret.md).
 
 ## Turret behavior events
-See [behavior instance event](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/behavior-instance-event) for standard behavior instance event object properties.
+See [behavior instance event](../interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
 
 **"targetacquired"**  
 Fired when the turret behavior acquires a target. The `targetInst` property of the event object contains a reference to the instance that was acquired as a target.
@@ -42,7 +42,7 @@ A string of either `"first"` or `"nearest"` indicating the targeting mode. `"fir
 
 **isPredictiveAimEnabled**  
 **projectileSpeed**  
-A boolean indicating whether predictive aim is enabled. If it is enabled, the projectile speed must also be specified in pixels per second. For more information see the section on predictive aim in the [Turret behavior manual entry](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/turret).
+A boolean indicating whether predictive aim is enabled. If it is enabled, the projectile speed must also be specified in pixels per second. For more information see the section on predictive aim in the [Turret behavior manual entry](../../../behavior-reference/turret.md).
 
 **isEnabled**  
 A boolean indicating if the behavior is enabled. If disabled, the behavior no longer has any effect on the object.

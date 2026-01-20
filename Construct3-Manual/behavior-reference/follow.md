@@ -17,7 +17,7 @@ Only adding the Follow behavior to an object does not do anything. You must use 
 You can find a number of examples using the Follow behavior in Construct's Example Browser, such as the [Follow behavior example](https://editor.construct.net/#open=follow-behavior) and [Follow record/replay](https://editor.construct.net/#open=follow-record-replay).
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IFollowBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/follow).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IFollowBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/follow.md).
 
 ## Follow properties
 **Mode**  

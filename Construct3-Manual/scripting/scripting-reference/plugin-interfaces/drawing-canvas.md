@@ -13,23 +13,23 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Drawing Canvas APIs](#internalH1Link4)
 
 ---
-The `IDrawingCanvasInstance` interface derives from [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to add APIs specific to the [Drawing Canvas plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/drawing-canvas).
+The `IDrawingCanvasInstance` interface derives from [IWorldInstance](../object-interfaces/iworldinstance.md) to add APIs specific to the [Drawing Canvas plugin](../../../plugin-reference/drawing-canvas.md).
 
 ## Examples
 See the [Drawing Canvas: Generate Image](https://editor.construct.net/#open=drawingcanvas-generate-image) example for a demonstration of programmatically generating an image for Drawing Canvas.
 
 ## Drawing co-ordinates
-The co-ordinate system used in drawing APIs work the same as they do for actions. For more information refer to the [Drawing Canvas object documentation](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/drawing-canvas).
+The co-ordinate system used in drawing APIs work the same as they do for actions. For more information refer to the [Drawing Canvas object documentation](../../../plugin-reference/drawing-canvas.md).
 
 ## Colors in drawing methods
 In some of the drawing APIs, there are parameters that accept a color. These are represented using an array with either three components e.g. `[r, g, b]`, in which case the alpha is treated as opaque, or four components e.g. `[r, g, b, a]` to specify the alpha as well. Each component is a normalized float value in the range 0-1.
 For example `[1, 0, 0]` represents opaque red, and `[0, 0, 1, 0.5]` represents blue at 50% opacity.
 
 ## Drawing Canvas events
-See [instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/instance-event) for standard instance event object properties.
+See [instance event](../interfaces/instance-event.md) for standard instance event object properties.
 
 **"resolutionchange"**  
-Fired at the same time as the *On resolution changed* trigger. For more details see the section on resizing and resolution in the [Drawing Canvas plugin manual entry](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/drawing-canvas).
+Fired at the same time as the *On resolution changed* trigger. For more details see the section on resizing and resolution in the [Drawing Canvas plugin manual entry](../../../plugin-reference/drawing-canvas.md).
 
 ## Drawing Canvas APIs
 **clearCanvas(color)**  
@@ -68,14 +68,14 @@ With `fillPoly()` the polygon must provide at least three points, and may be [co
 Set the blend mode used for draw operations on to the canvas. This is different to the blend used to draw the canvas itself to the layout. The blend mode is specified as a string and must be one of `"normal"`, `"additive"`, `"copy"`, `"destination-over"`, `"source-in"`, `"destination-in"`, `"source-out"`, `"destination-out"`, `"source-atop"` or `"destination-atop"`.
 
 **async pasteInstances(instancesArr, includeEffects = true)**  
-Draw a list of instances that are currently overlapping the canvas at their current positions, given as an array of [IWorldInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance). By default objects are drawn exactly as they appear, taking in to account any effects added to them; set `includeEffects` to `false` to draw without effects, as if all the object's effects were disabled. Note that the drawing actually happens at the end of the tick, and so this method is `async` so it can be awaited to ensure the paste has completed. 
+Draw a list of instances that are currently overlapping the canvas at their current positions, given as an array of [IWorldInstance](../object-interfaces/iworldinstance.md). By default objects are drawn exactly as they appear, taking in to account any effects added to them; set `includeEffects` to `false` to draw without effects, as if all the object's effects were disabled. Note that the drawing actually happens at the end of the tick, and so this method is `async` so it can be awaited to ensure the paste has completed. 
 
 > **Tip**  
 > Note if an object is destroyed immediately after pasting without waiting for completion, it will not be drawn, as it will be destroyed before it gets to be drawn.
 
 **setFixedResolutionMode(fixedWidth, fixedHeight)**  
 **setAutoResolutionMode()**  
-Switch between fixed and auto resolution modes. For more information refer to the [Drawing Canvas object documentation](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/drawing-canvas).
+Switch between fixed and auto resolution modes. For more information refer to the [Drawing Canvas object documentation](../../../plugin-reference/drawing-canvas.md).
 
 **surfaceDeviceWidth**  
 **surfaceDeviceHeight**  
@@ -83,7 +83,7 @@ Switch between fixed and auto resolution modes. For more information refer to th
 Read-only values representing the size of the Drawing Canvas rendering surface in device pixels. The method returns both values at the same time.
 
 **pixelScale**  
-A read-only value with the size of a single canvas pixel in object co-ordinates. See the section *Co-ordinate systems* in the [Drawing Canvas object documentation](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/drawing-canvas) for more information.
+A read-only value with the size of a single canvas pixel in object co-ordinates. See the section *Co-ordinate systems* in the [Drawing Canvas object documentation](../../../plugin-reference/drawing-canvas.md) for more information.
 
 **async getImagePixelData()**  
 Takes a snapshot of the drawing canvas pixel state on the GPU, and reads it back to the CPU asynchronously. Resolves with an [ImageData](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fImageData) representing the pixel data. Note this uses unpremultiplied alpha, whereas the surface on the GPU is premultiplied, so technically this is lossy.

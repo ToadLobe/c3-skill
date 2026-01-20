@@ -16,8 +16,8 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/b
 - [Drag & Drop](#internalH1Link7)
 
 ---
-The **Instances Bar** shows all the [instances](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/instances) in the current [layout](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/layouts) at a glance, it can be very useful in large or busy layouts to quickly find specific instances.
-You can also use folders to group related instances together. [Hierarchies](https://www.construct.net/en/make-games/manuals/construct-3/interface/layout-view#internalH1Link4) are shown as a tree structure to quickly tell which instances are where in complex structures.
+The **Instances Bar** shows all the [instances](../../project-primitives/objects/instances.md) in the current [layout](../../project-primitives/layouts.md) at a glance, it can be very useful in large or busy layouts to quickly find specific instances.
+You can also use folders to group related instances together. [Hierarchies](../layout-view.md#internalH1Link4) are shown as a tree structure to quickly tell which instances are where in complex structures.
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/124586/overview.png)
 
@@ -29,7 +29,7 @@ To add a folder right-click anywhere in the bar and choose the appropriate optio
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/121772/instancesbar-context-menu-1.png)
 
 Once a folder is created you can drag & drop instances in and out of them by dragging the items in the bar.
-It is also possible to drag instances into a folder directly from the [Layout View](https://www.construct.net/en/make-games/manuals/construct-3/interface/layout-view).
+It is also possible to drag instances into a folder directly from the [Layout View](../layout-view.md).
 The order in which instances appear in the bar can also be altered by dragging and dropping.
 
 > **Tip**  
@@ -53,14 +53,14 @@ These options are shown with any context menu in the bar.
 - **Show more information:** show additional information about each instance. 
 - **Hierarchies:** show an icon next to instances which have children. In the case an instance has a parent in a different layout (which can happen when working with global layers), that layout will also be shown next to the item.
 - **Meshes:** show an icon next to instances which have a mesh and also show the horizontal and vertical size of the mesh.
-- **Layers & Layouts:** show an icon indicating if the [layer](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/layers) is global and the name of the layer the instance belongs to. If the layer is not part of the current layout, also shows the layout the layer is coming from. 
+- **Layers & Layouts:** show an icon indicating if the [layer](../../project-primitives/layers.md) is global and the name of the layer the instance belongs to. If the layer is not part of the current layout, also shows the layout the layer is coming from. 
 
 > **Tip**  
 > Clicking the layer name will make it the currently active layer.
 
-- **Plugin:** show the icon and the name of the [plugin](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/plugins).
-- **Templates:** [template](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/templates) and replica instances show a unique icon as well as the corresponding template name.
-- **Timelines:** show an icon next to instances belonging to a [timeline](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/timeline) as well as the names of the timelines the instance belongs too.
+- **Plugin:** show the icon and the name of the [plugin](../../project-primitives/objects/plugins.md).
+- **Templates:** [template](../../project-primitives/objects/templates.md) and replica instances show a unique icon as well as the corresponding template name.
+- **Timelines:** show an icon next to instances belonging to a [timeline](../../project-primitives/timelines/timeline.md) as well as the names of the timelines the instance belongs too.
 
 > **Tip**  
 > Clicking the lower part of the bar also shows this menu.
@@ -81,7 +81,7 @@ These options are shown when showing a context menu for an instance or group of 
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/124581/instance-context-menu.png)
 
-- **Timeline:** shown for all instances as long as there is a timeline in the [project](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/projects). Will have different options depending on how the instance relates to the current timeline. This is the same as the equivalent Layout View context menu option.
+- **Timeline:** shown for all instances as long as there is a timeline in the [project](../../project-primitives/projects.md). Will have different options depending on how the instance relates to the current timeline. This is the same as the equivalent Layout View context menu option.
 - **Tilemap:** only shown for Tilemap plugin instances. This is the same as the equivalent Layout View context menu option.
 - **Z Order:** shown for all instances. This is the same as the equivalent Layout View context menu option.
 - **Hierarchy:** shown for instances that are already part of a hierarchy or when selecting multiple instances. This is the same as the equivalent Layout View context menu option.
@@ -98,7 +98,7 @@ These options are shown when showing a context menu for an instance or group of 
 
 - **Lock / Unlock layer:** toggle the lock state of the layer the selected instance belongs to.
 - **Toggle layer visibility:** toggle the visible state of the layer the selected instance belongs to.
-- **Select layer:** select the layer which the selected instance belongs to. This is the same as selecting a layer through the [Layers bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/layers-bar).
+- **Select layer:** select the layer which the selected instance belongs to. This is the same as selecting a layer through the [Layers bar](layers-bar.md).
 - **Delete:** delete the the selection of instances.
 - **Cut, Copy and Paste:** these options do the same as the ones in the Layout view context menu.
 - **Find all references:** searches the whole project for the selected instance.
@@ -130,7 +130,7 @@ Instances highlighted in red are shown in the bar because they belong to the **G
 Use the search field at the top of the bar to filter instances. Items are filtered using the following criteria and order:
 
 1. Any match with the item name as shown in the bar.
-2. Any match with the [Object type](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/object-types) name.
+2. Any match with the [Object type](../../project-primitives/objects/object-types.md) name.
 3. Any match with the plugin name.
 4. Any match with any of the tags an instance might have.
 5. Any match with the template name an instance might have.

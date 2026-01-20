@@ -32,7 +32,7 @@ A `Quad` can be constructed with no parameters, which defaults all co-ordinates 
 Set all four points of the quad in a single call.
 
 **setRect(left, top, right, bottom)**  
-Set the quad's points to represent an axis-aligned rectangle using the given positions. Note that this is only useful if you subsequently make further modifications to the quad, else you may as well use the [Rect](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/rect) interface.
+Set the quad's points to represent an axis-aligned rectangle using the given positions. Note that this is only useful if you subsequently make further modifications to the quad, else you may as well use the [Rect](rect.md) interface.
 
 **copy(quad)**  
 Set all points of the quad by copying another `SDK.Quad`.
@@ -58,13 +58,13 @@ Set each point of the quad individually.
 Get each point of the quad individually.
 
 **setFromRect(rect)**  
-Set the points of the quad to an axis-aligned rectangle given by an [SDK.Rect](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/rect). Note that this is only useful if you subsequently make further modifications to the quad, else you may as well use the Rect interface directly.
+Set the points of the quad to an axis-aligned rectangle given by an [SDK.Rect](rect.md). Note that this is only useful if you subsequently make further modifications to the quad, else you may as well use the Rect interface directly.
 
 **setFromRotatedRect(rect, angle)**  
-Set the points of the quad to a rotated rectangle given by an [SDK.Rect](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/rect), rotated about the origin by `angle` in radians.
+Set the points of the quad to a rotated rectangle given by an [SDK.Rect](rect.md), rotated about the origin by `angle` in radians.
 
 **getBoundingBox(rect)**  
-Calculate the bounding box of the quad, and store the result by writing to a given [SDK.Rect](https://www.construct.net/make-games/manuals/addon-sdk/reference/geometry-interfaces/rect).
+Calculate the bounding box of the quad, and store the result by writing to a given [SDK.Rect](rect.md).
 
 **midX()**  
 **midY()**  

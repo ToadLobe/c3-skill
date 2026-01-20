@@ -9,11 +9,11 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [ISDKWorldInstanceBase APIs](#internalH1Link0)
 
 ---
-The `ISDKWorldInstanceBase` interface is used as a runtime base class for world instances in the addon SDK. It derives from both [ISDKInstanceBase](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkinstancebase) and [IWorldInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance).
+The `ISDKWorldInstanceBase` interface is used as a runtime base class for world instances in the addon SDK. It derives from both [ISDKInstanceBase](isdkinstancebase.md) and [IWorldInstance](../object-interfaces/iworldinstance.md).
 
 ## ISDKWorldInstanceBase APIs
 **_draw(renderer)**  
-An override for drawing plugins to draw their content using the passed [IRenderer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderer-interface) interface.
+An override for drawing plugins to draw their content using the passed [IRenderer](../graphics-interfaces/irenderer-interface.md) interface.
 
 **_handleRendererContextLoss()**  
 Utility method to enable calling of the `_onRendererContextLost()` and `_onRendererContextRestored()` methods.

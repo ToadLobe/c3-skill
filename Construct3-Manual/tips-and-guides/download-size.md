@@ -55,7 +55,7 @@ Here is some other advice relating to reducing the download size or wait time fo
 
 ### Minify script on export
 When exporting your project, choosing the *Advanced* script minify option will produce the smallest possible JavaScript files. For large projects this will make a smaller difference than optimizing images, audio and video, but it will help achieve the smallest download size possible.
-If you write JavaScript code in your project, note you may need to make changes to use *Advanced* minify mode - see the [manual section on advanced minification](https://www.construct.net/make-games/manuals/construct-3/scripting/guides/advanced-minification). Alternatively *Simple* mode should always be safe, but won't reduce the JavaScript file size as much.
+If you write JavaScript code in your project, note you may need to make changes to use *Advanced* minify mode - see the [manual section on advanced minification](../scripting/guides/advanced-minification.md). Alternatively *Simple* mode should always be safe, but won't reduce the JavaScript file size as much.
 
 ### Use a loader layout on the web
 For web exports, consider using a loader layout. This is a special layout that can start running while the rest of the project is still downloading. Construct only needs to download the content shown on the loader layout before it can start it. This means the user can see something interactive much more quickly, even if the overall download size is the same. See the tutorial [How to use loader layouts to make custom loading screens](https://www.construct.net/en/tutorials/loader-layouts-custom-loading-9).

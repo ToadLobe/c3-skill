@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [8 direction behavior APIs](#internalH1Link0)
 
 ---
-The `I8DirectionBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [8 direction behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/8-direction).
+The `I8DirectionBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [8 direction behavior](../../../behavior-reference/8-direction.md).
 
 ## 8 direction behavior APIs
 **stop()**  

@@ -17,7 +17,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-refe
 - [Z Order](#internalH1Link8)
 
 ---
-The following [actions](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/actions) are common to several plugins.
+The following [actions](../../project-primitives/events/actions.md) are common to several plugins.
 
 ## Angle
 Note angles in Construct start with 0 degrees facing right and increment clockwise.
@@ -41,7 +41,7 @@ Set the object's angle in degrees, from 0 to 360. 0 degrees is facing right and 
 Set the object's angle to face a position in the layout.
 
 ## Appearance
-Not all objects support the actions relating to effects. For more information see [Effects](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/effects).
+Not all objects support the actions relating to effects. For more information see [Effects](../../project-primitives/objects/effects.md).
 
 **Set blend mode**  
 Change the way the object blends with the background by altering the object's *Blend mode* property.
@@ -102,16 +102,16 @@ Set whether the HTML element is visible or hidden. The visibility can also be to
 ## Instance variables
 **Add to**  
 **Subtract from**  
-Modify a number [instance variable](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instance-variables).
+Modify a number [instance variable](../../project-primitives/objects/instance-variables.md).
 
 **Set**  
-Set a number or text [instance variable](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instance-variables).
+Set a number or text [instance variable](../../project-primitives/objects/instance-variables.md).
 
 **Set boolean**  
-Set a boolean [instance variable](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instance-variables), which can hold either a true or false value.
+Set a boolean [instance variable](../../project-primitives/objects/instance-variables.md), which can hold either a true or false value.
 
 **Toggle boolean**  
-Toggle a boolean [instance variable](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instance-variables), which flips it from true to false or vice versa.
+Toggle a boolean [instance variable](../../project-primitives/objects/instance-variables.md), which flips it from true to false or vice versa.
 
 ## Mesh distortion
 These actions are available in objects that support the mesh distortion feature. This allows the object to be split in to a grid of points, and each point moved around individually to deform the appearance of the object. Moving mesh points also affects the object's collisions accordingly. See the mesh distortion examples in the Start Page for a demonstration.

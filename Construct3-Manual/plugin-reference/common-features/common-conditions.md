@@ -18,7 +18,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-refe
 - [Z Order](#internalH1Link9)
 
 ---
-The following conditions are common to several [plugins](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/plugins).
+The following conditions are common to several [plugins](../../project-primitives/objects/plugins.md).
 
 ## Angle
 Note angles in Construct start with 0 degrees facing right and increment clockwise.
@@ -98,10 +98,10 @@ True if the element is currently visible. Otherwise the element still exists and
 
 ## Instance variables
 **Compare instance variable**  
-Compare the current value of one of the object's number or text type [instance variables](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instance-variables).
+Compare the current value of one of the object's number or text type [instance variables](../../project-primitives/objects/instance-variables.md).
 
 **Is boolean instance variable set**  
-Test if one of the object's boolean [instance variables](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instance-variables) is set to *true*. Invert the condition to test if false.
+Test if one of the object's boolean [instance variables](../../project-primitives/objects/instance-variables.md) is set to *true*. Invert the condition to test if false.
 
 **Pick highest/lowest**  
 Pick the single instance with the highest or the lowest instance variable value of all the instances. Note this still only picks a single instance even if multiple instances have the same highest or lowest value; in this case an arbitrary instance is selected.

@@ -17,7 +17,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/project-pri
 ---
 Templates help managing instances in larger projects. The main uses for them are:
 
-1. Conveniently updating properties for multiple instances across the project in the editor. This can prove to be time consuming and prone to error if done individually. Using templates you can declare a single instance to be the source **template** and other instances of the same [object type](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/object-types) to be **replicas** of it. After doing so, changing the template will also change all replicas, even across layouts.
+1. Conveniently updating properties for multiple instances across the project in the editor. This can prove to be time consuming and prone to error if done individually. Using templates you can declare a single instance to be the source **template** and other instances of the same [object type](object-types.md) to be **replicas** of it. After doing so, changing the template will also change all replicas, even across layouts.
 2. A template can be used as a preset when creating an instance at runtime using the **Create Object** action. Doing this is can help avoid needing lots of initialization actions and makes it easier to make changes to existing presets or add new ones later on.
 3. Using templates it is possible to define different hierarchies in the editor, and then choose which one to create at runtime.
 
@@ -26,7 +26,7 @@ Templates help managing instances in larger projects. The main uses for them are
 2. **Replica:** an instance that has been set to use an instance already defined as a template. A replica takes its values from the source template unless they are explicitly modified, at which point the replica's own values are used instead.
 
 ## Template properties
-The [Properties Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/properties-bar) shows relevant properties in the *Template* section. The properties that can be shown there are:
+The [Properties Bar](../../interface/bars/properties-bar.md) shows relevant properties in the *Template* section. The properties that can be shown there are:
 
 - **Template mode:** an instance can be turned into a template by selecting the *Template* value from the drop-down list. If there are any instances in the object type which have already been set to be a template, then the *Replica* value will also be available in the drop down menu.
 - **Template name:** the name to identify a template. This is only shown when **Template mode** is set to *Template*.
@@ -43,7 +43,7 @@ The three main cases of using templates in the Properties Bar are shown in the i
 ## Setting up templates and replicas
 To start using this feature the first thing you will need to do is set an instance to be a template. To do that, follow these steps:
 
-1. Select the instance you want to be a template in the [Layout View](https://www.construct.net/en/make-games/manuals/construct-3/interface/layout-view).
+1. Select the instance you want to be a template in the [Layout View](../../interface/layout-view.md).
 2. Pick the *Template* option from the **Template mode** dropdown in the Properties bar.
 3. The **Template name** input will appear.
 4. Give the template a name using the **Template name** text input.

@@ -15,19 +15,19 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-refe
 
 ---
 The **CSV** plugin supports reading and writing data in [comma-separated values](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fComma-separated_values) (CSV) format, as well as other similar formats that use a different delimiter such as [tab-separated values](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fTab-separated_values) (TSV).
-Delimiter-based formats like CSV and TSV are simple and easy to use, but are limited in their ability to represent more complex data. For more advanced uses consider using [JSON](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/json) instead.
+Delimiter-based formats like CSV and TSV are simple and easy to use, but are limited in their ability to represent more complex data. For more advanced uses consider using [JSON](json.md) instead.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ICSVObjectType script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/csv).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ICSVObjectType script interface](../scripting/scripting-reference/plugin-interfaces/csv.md).
 
 ## Using CSV files
-CSV and TSV files can be added as [project files](https://www.construct.net/make-games/manuals/construct-3/project-primitives/files) in the Project Bar and edited directly in Construct. As with other data formats, these can then be loaded by requesting them with the [AJAX object](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/ajax).
+CSV and TSV files can be added as [project files](../project-primitives/files.md) in the Project Bar and edited directly in Construct. As with other data formats, these can then be loaded by requesting them with the [AJAX object](ajax.md).
 
 ## Using tab delimiters
 Due to the use of the tab key as a shortcut in the editor, it can be difficult to type a tab in the Parameters Dialog for the delimiter parameter if you want to use tab-separated values. To make this easier the CSV plugin provides a *TabCharacter* expression which just returns a string with a single tab character in it, so it can be conveniently used as a delimiter parameter.
 
 ## Using array for storage
-The CSV plugin merely parses and generates CSV. It uses an [Array object](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/array) to store the actual data, as CSV can conveniently be represented as a two-dimensional array, and it allows using the full features of the Array object to read and manipulate the data.
+The CSV plugin merely parses and generates CSV. It uses an [Array object](array.md) to store the actual data, as CSV can conveniently be represented as a two-dimensional array, and it allows using the full features of the Array object to read and manipulate the data.
 
 ## CSV conditions
 **On parse error**  

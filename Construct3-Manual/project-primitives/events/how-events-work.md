@@ -18,9 +18,9 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/project-pri
 
 ---
 If you're new to Construct's events, this section will outline how they work. This is essential reading for beginners! You will be able to make much better and more reliable games with a thorough understanding of how events work.
-To learn how to add and edit events, see [Event Sheet View](https://www.construct.net/make-games/manuals/construct-3/interface/event-sheet-view).
+To learn how to add and edit events, see [Event Sheet View](../../interface/event-sheet-view.md).
 Events are designed to be easily readable and to intuitively "just work". However, they have specific, well-defined ways of working which is described here.
-Events work by **filtering** specific [instances](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instances) that meet some [conditions](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/conditions). The [actions](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/actions) then run for *those instances only*. For example, consider the following event:
+Events work by **filtering** specific [instances](../objects/instances.md) that meet some [conditions](conditions.md). The [actions](actions.md) then run for *those instances only*. For example, consider the following event:
 
 ![A simple collision event](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/934/howeventswork1.png)
 
@@ -51,7 +51,7 @@ Think of conditions as starting with all instances being picked, and progressive
 
 ## Picking resets between events
 After an event ends, the next event begins from scratch. Its conditions will start picking from all instances again.
-On the other hand, [sub-events](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/sub-events) (which appear indented) **carry on from where its parent event left off**. A sub-event will further filter the instances left over by the event that came before it. If an event has two sub-events, they both pick from the same set of instances the parent left behind - the second sub-event is not affected by the first. In other words, events at the same indentation level always pick from the same set of instances, and events at a lower indentation level are always working with the instances handed down from above.
+On the other hand, [sub-events](sub-events.md) (which appear indented) **carry on from where its parent event left off**. A sub-event will further filter the instances left over by the event that came before it. If an event has two sub-events, they both pick from the same set of instances the parent left behind - the second sub-event is not affected by the first. In other words, events at the same indentation level always pick from the same set of instances, and events at a lower indentation level are always working with the instances handed down from above.
 
 ## The System object
 In Construct the System object represents built-in functionality. It has no instances. This means most system conditions do not pick any instances: they are either true or false. If they are false the event stops running, otherwise the event continues without the picked instances having been changed. There are exceptions, though: if a system condition uses an object, such as *Pick random instance*, that will affect the picked objects.
@@ -75,7 +75,7 @@ Normally blocks work as 'AND' blocks. To make an 'OR' block, right-click the blo
 
 Note that because OR blocks run if any condition is true, it's possible the event will still run if some conditions were false and did not pick any instances. In this case the actions will still run, but possibly with zero instances picked for any objects where no instances met the condition. If any actions are run for objects with no instances picked, nothing happens.
 Also note normally you can only put one trigger in an event, but you can put multiple triggers in an 'Or' block, and the event will run if any of triggers run.
-You can combine the block types by using [sub-events](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/sub-events). This allows you to build up more advanced logic, such as an 'Or' block followed by an 'And' block.
+You can combine the block types by using [sub-events](sub-events.md). This allows you to build up more advanced logic, such as an 'Or' block followed by an 'And' block.
 
 ## Looping conditions
 Some events **loop**, which simply means they repeat more than once. Note the green circular arrow in the below example to indicate this.
@@ -86,8 +86,8 @@ This means when the layout starts, the *Create object* action repeats 10 times. 
 There can also be more conditions following the *Repeat* condition. These are tested on each of the repeats as well, and must be true for the actions to run. There can even be more than one loop in an event, but this is rare.
 
 ## Families and containers
-Note families  `[Paid plans only]`  pick their instances entirely separately from any of the object types in the family. For more information, see the section *Picking families in events* in the manual entry on [Families](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/families).
-Containers are an advanced feature that can also make groups of instances always be picked together. For more information see the manual entry on [Containers](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/containers).
+Note families  `[Paid plans only]`  pick their instances entirely separately from any of the object types in the family. For more information, see the section *Picking families in events* in the manual entry on [Families](../objects/families.md).
+Containers are an advanced feature that can also make groups of instances always be picked together. For more information see the manual entry on [Containers](../objects/containers.md).
 
 ## Summary
 Using this event system it's possible to make sophisticated logic for games quickly and easily. It is a very powerful alternative to scripting or programming languages but much easier for non-technical people to use.

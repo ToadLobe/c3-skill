@@ -17,16 +17,16 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-refe
 - [Tilemap expressions](#internalH1Link8)
 
 ---
-The **Tilemap** object allows tile-based projects to be designed more easily. The object's tilemap can also be edited in the [layout view](https://www.construct.net/make-games/manuals/construct-3/interface/layout-view) using the [Tilemap Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/tilemap-bar).
+The **Tilemap** object allows tile-based projects to be designed more easily. The object's tilemap can also be edited in the [layout view](../interface/layout-view.md) using the [Tilemap Bar](../interface/bars/tilemap-bar.md).
 
 ![An example tilemap](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/987/tilemap.png)
 
 Tilemaps also have significant performance benefits over achieving the same results with other kinds of objects, such as arranging a grid of Sprites. The Tilemap object can optimise collision detection and rendering in a way that scales well even with extremely large Tilemap objects.
-For information about editing tilemaps in Construct, see the manual entry for the [Tilemap Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/tilemap-bar).
-A useful behavior to use to move objects around on top of the Tilemap object is the [Tile movement behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/tile-movement).
+For information about editing tilemaps in Construct, see the manual entry for the [Tilemap Bar](../interface/bars/tilemap-bar.md).
+A useful behavior to use to move objects around on top of the Tilemap object is the [Tile movement behavior](../behavior-reference/tile-movement.md).
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ITilemapInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/tilemap).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ITilemapInstance script interface](../scripting/scripting-reference/plugin-interfaces/tilemap.md).
 
 ## Tilemap object image
 The image used for the Tilemap object is the *tileset*. This is an image that contains every different tile that can be used in the tilemap. The tiles can also can be offset and spaced, but this is not normally necessary. The tileset image appears in the Tilemap Bar after selecting the object, allowing you to choose which tiles to draw with.
@@ -90,7 +90,7 @@ Erase the tile at a position.
 Erase a rectangular area of tiles in the tilemap.
 
 **Erase tile with brush**  
-Erase tiles using a brush created in the [Tilemap Brush Editor](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/tilemap-bar/tilemap-brush-editor). When using an auto tiling brush, the specified position will be modified, along with the surrounding eight positions. If a patch brush is used the whole patch will be erased.
+Erase tiles using a brush created in the [Tilemap Brush Editor](../interface/bars/tilemap-bar/tilemap-brush-editor.md). When using an auto tiling brush, the specified position will be modified, along with the surrounding eight positions. If a patch brush is used the whole patch will be erased.
 
 **Erase tile with brush (by name)**  
 Like **Erase tile with brush**, but allows you to specify the name of the brush using a string.
@@ -114,7 +114,7 @@ Set the tile flipped or rotated state at a position in the tilemap. The tile ID 
 Set the flipped or rotated state for a rectangular area of tiles in the tilemap. None of the tile IDs in the rectangular area are changed.
 
 **Set tile with brush**  
-Set tiles using a brush created in the [Tilemap Brush Editor](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/tilemap-bar/tilemap-brush-editor). When using an auto tiling brush, the specified position will be modified, along with the surrounding eight positions. Using a patch brush modifies all the tiles covered by the patch, the selected position corresponds to the top left of the patch.
+Set tiles using a brush created in the [Tilemap Brush Editor](../interface/bars/tilemap-bar/tilemap-brush-editor.md). When using an auto tiling brush, the specified position will be modified, along with the surrounding eight positions. Using a patch brush modifies all the tiles covered by the patch, the selected position corresponds to the top left of the patch.
 
 **Set tile with brush (by name)**  
 Like **Set tile with brush**, but allows you to specify the name of the brush using a string.
@@ -126,7 +126,7 @@ Set tiles using a patch brush. This is similar to **Set tile with brush**, with 
 Like **Set tile with patch brush**, but allows you to specify the name of the brush using a string.
 
 **Load image from URL**  
-Load a new tilemap image from a given URL. It is not used until the image has finished downloading, and *On image URL loaded* triggers. Images loaded from different domains are subject to the same cross-domain restrictions as AJAX requests - for more information see the section on cross-domain in the [AJAX](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/ajax) object. Data URIs can also be passed as an image, e.g. from a canvas snapshot or camera image.
+Load a new tilemap image from a given URL. It is not used until the image has finished downloading, and *On image URL loaded* triggers. Images loaded from different domains are subject to the same cross-domain restrictions as AJAX requests - for more information see the section on cross-domain in the [AJAX](ajax.md) object. Data URIs can also be passed as an image, e.g. from a canvas snapshot or camera image.
 
 ## Tilemap expressions
 **TilesJSON**  

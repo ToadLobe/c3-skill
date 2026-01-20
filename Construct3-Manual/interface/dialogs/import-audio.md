@@ -12,7 +12,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/d
 - [Playback preference](#internalH1Link3)
 
 ---
-The **Import Audio dialog** allows audio files to be added to the project from disk. It is accessed by selecting `Import Sounds` or `Import Music` from the right-click menu of the *Sounds* or *Music* folders in the [Project Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/project-bar). Be sure to add the Audio object to your project to play back sounds and music.
+The **Import Audio dialog** allows audio files to be added to the project from disk. It is accessed by selecting `Import Sounds` or `Import Music` from the right-click menu of the *Sounds* or *Music* folders in the [Project Bar](../bars/project-bar.md). Be sure to add the Audio object to your project to play back sounds and music.
 
 ![The Import Audio dialog](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/957/import-audio-dialog.png)
 

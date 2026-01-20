@@ -117,7 +117,7 @@ Specifies a fake trigger. This appears identical to a trigger in the event sheet
 Normally, the condition runtime method is executed once per picked instance. If the condition is marked static, the runtime method is executed once only, on the object type class. This means the runtime method must also implement the instance picking entirely itself, including respecting negation and OR blocks.
 
 **isLooping**  
-Display an icon in the event sheet to indicate the condition loops. The condition method should use [ILoopingConditionContext](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/iloopingconditioncontext) to implement its loop.
+Display an icon in the event sheet to indicate the condition loops. The condition method should use [ILoopingConditionContext](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/iloopingconditioncontext.md) to implement its loop.
 
 **isInvertible**  
 Allow the condition to be inverted in the event sheet. Set to `false` to disable invert.
@@ -245,4 +245,4 @@ Optional and only valid with the `"string"` type. Set to a globally unique ID an
 
 ## Language strings
 
-The aces.json file does not include any strings displayed in the editor UI. These are all kept in a separate language file to facilitate translation. Therefore to finish adding ACEs, the relevant UI strings like the list name and description must be added to the language file. See [The language file](https://www.construct.net/make-games/manuals/addon-sdk/guide/language-file) for more information.
+The aces.json file does not include any strings displayed in the editor UI. These are all kept in a separate language file to facilitate translation. Therefore to finish adding ACEs, the relevant UI strings like the list name and description must be added to the language file. See [The language file](language-file.md) for more information.

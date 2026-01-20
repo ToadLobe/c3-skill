@@ -178,7 +178,7 @@ If you only want to show web ads, it is not necessary to provide ad units in you
 There is a slight difference between rewarded ads in mobile and rewarded ads in web that should be considered.
 In mobile when the ad is viewed you can use the **RewardType** and **RewardValue** expression to get information about the reward and this information is set in your Admob account through the ad unit.
 In a web export, because you don't use ad units, the rewarded ads will always return the value *"Reward"* for the **RewardType** expression and the value of *"1"* for the **RewardValue** expression.
-For this reason it is recommended to use the [Platform Info](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/platform-info) plugin to decide what to do after a rewarded ad is viewed, depending on what platform the game is running on.
+For this reason it is recommended to use the [Platform Info](platform-info.md) plugin to decide what to do after a rewarded ad is viewed, depending on what platform the game is running on.
 
 ## Mobile Advert Conditions
 **On Banner Ready**  

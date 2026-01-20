@@ -11,7 +11,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Flash behavior APIs](#internalH1Link2)
 
 ---
-The `IFlashBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Flash behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/flash).
+The `IFlashBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Flash behavior](../../../behavior-reference/flash.md).
 
 ## Example
 Below is a sample code snippet demonstrating flashing `inst` (assumed to be an instance with the Flash behavior) and logging to the console when the flash finishes.
@@ -26,7 +26,7 @@ console.log("Flash finished!");
 inst.behaviors.Flash.flash(0.1, 0.1, 2);
 ```
 Copy ## Flash behavior events
-See [behavior instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/behavior-instance-event) for standard behavior instance event object properties.
+See [behavior instance event](../interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
 
 **"flashend"**  
 Fired when a flash finishes.

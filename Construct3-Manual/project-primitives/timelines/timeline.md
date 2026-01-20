@@ -11,15 +11,15 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/project-pri
 - [Timeline Properties](#internalH1Link2)
 
 ---
-A timeline can gradually change values of an [instance](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/instances) over time to produce an animation. It allows for the co-ordination of complex transitions of many different instances at the same time.
-Although the most basic usage is to change the **X** and **Y** properties of an instance to produce movement, a timeline can be configured to affect almost every property that can be part of an instance. This includes all the common instance properties, [instance variables](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/instance-variables), [effect](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/effects) parameters, [behavior](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/behaviors) properties and [plugin](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/plugins) properties. Not all properties are supported by timelines as some of them don't make sense, such as any property that is only used on start up.
+A timeline can gradually change values of an [instance](../objects/instances.md) over time to produce an animation. It allows for the co-ordination of complex transitions of many different instances at the same time.
+Although the most basic usage is to change the **X** and **Y** properties of an instance to produce movement, a timeline can be configured to affect almost every property that can be part of an instance. This includes all the common instance properties, [instance variables](../objects/instance-variables.md), [effect](../objects/effects.md) parameters, [behavior](../objects/behaviors.md) properties and [plugin](../objects/plugins.md) properties. Not all properties are supported by timelines as some of them don't make sense, such as any property that is only used on start up.
 Timelines can modify boolean and text properties, but since these can not be interpolated like numbers or colors to achieve a smooth transition, they just change as the timeline's play head reaches their property keyframes.
 
 ## Adding Timelines
-With the [Timeline Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar) open, create a timeline using any of the following methods:
+With the [Timeline Bar](../../interface/bars/timeline-bar.md) open, create a timeline using any of the following methods:
 
-- Right-click the **Timelines** folder in the [Project Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/project-bar) and select *Add timeline*
-- Right-click a space in the [Layout View](https://www.construct.net/en/make-games/manuals/construct-3/interface/layout-view) and select `Timeline › Add timeline` (when the Timeline Bar is open)
+- Right-click the **Timelines** folder in the [Project Bar](../../interface/bars/project-bar.md) and select *Add timeline*
+- Right-click a space in the [Layout View](../../interface/layout-view.md) and select `Timeline › Add timeline` (when the Timeline Bar is open)
 
 ## Nesting Timelines
 With the Timeline Bar open and more than one timeline added to the project, use one of the following methods:
@@ -36,7 +36,7 @@ The name of the timeline. It is a unique identifier and is used to refer to the 
 **Result mode**  
 **Ease**  
 **Path mode**  
-See the section on common timeline element properties in [Timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines). These properties follow an inheritance pattern.
+See the section on common timeline element properties in [Timelines](../timelines.md). These properties follow an inheritance pattern.
 
 **Time**  
 The current time of the main time marker. This only affects the editor.
@@ -52,7 +52,7 @@ When using the Step animation mode, this value will be used at runtime to produc
 This property is connected to the **Raw step** property, it is used to generate the correct Raw step value in a more intuitive way. When Raw step is changed, this property is updated automatically.
 
 **Show UI elements**  
-See the section on common timeline element properties in [Timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines). Changing this property will apply the change to every sub-element.
+See the section on common timeline element properties in [Timelines](../timelines.md). Changing this property will apply the change to every sub-element.
 
 **Use Step**  
 Use this property to avoid using the step value in the editor. If disabled, scrubbing to preview the timeline in the editor will be completely smooth.

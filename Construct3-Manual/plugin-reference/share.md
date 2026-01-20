@@ -18,9 +18,9 @@ The **Share** object can bring up the system share feature, allowing the user to
 This object has no script interface, because when using JavaScript or TypeScript coding you can use the browser built-in [Web Share API](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fWeb_Share_API).
 
 ## Sharing files
-The Share plugin can add files to a share, such as images or videos, if *Is sharing files supported* is true. The contents of the file is taken from a [Binary Data](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/binary-data) object. Often Construct can provide a screenshot or video as a local URL. The process to share this as a file is as follows:
+The Share plugin can add files to a share, such as images or videos, if *Is sharing files supported* is true. The contents of the file is taken from a [Binary Data](binary-data.md) object. Often Construct can provide a screenshot or video as a local URL. The process to share this as a file is as follows:
 
-1. Use the [AJAX object](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/ajax) to load the URL in to a Binary Data object. This works like any other AJAX request, except using the *Set response binary* action before the request action.
+1. Use the [AJAX object](ajax.md) to load the URL in to a Binary Data object. This works like any other AJAX request, except using the *Set response binary* action before the request action.
 2. Once the AJAX request completes successfully, the data from the URL is in the Binary Data object.
 3. Now you can use the *Add file* action to attach the contents of the Binary Data object to the next share. Use the *Add file* action immediately before the *Share* action to attach the file to the next share.
 
@@ -44,7 +44,7 @@ Triggered if a share action is not successfully completed or an error otherwise 
 
 ## Share actions
 **Add file**  
-Attach a file to the next share using the contents of a [Binary Data](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/binary-data) object, with a given filename. This can be used multiple times before a *Share* action to attach multiple files to be shared, such as a series of screenshots. The type of the data must also be specified, which is normally `"image/png"` for a screenshot, or `"video/webm"` for a video, but can also be other types (see [MIME Types](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fBasics_of_HTTP%2fMIME_types)). For more information see *Sharing files* above.
+Attach a file to the next share using the contents of a [Binary Data](binary-data.md) object, with a given filename. This can be used multiple times before a *Share* action to attach multiple files to be shared, such as a series of screenshots. The type of the data must also be specified, which is normally `"image/png"` for a screenshot, or `"video/webm"` for a video, but can also be other types (see [MIME Types](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fBasics_of_HTTP%2fMIME_types)). For more information see *Sharing files* above.
 
 **Share**  
 Use the system share feature to share some text via another app. *Text* is the text to share; *Title* is an optional title to use (which can be used for other fields, such as the subject of an email if shared to an email app); and *URL* is a link to share. All three fields are optional, but at least one must be provided. If *Is sharing files supported* is true and any *Add file* actions were used before this action, those files are attached to the share.

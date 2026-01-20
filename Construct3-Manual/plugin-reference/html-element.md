@@ -24,14 +24,14 @@ This guide will not teach how HTML and CSS work. However there is lots of inform
 You can find several examples of using the HTML Element object in the Example Browser. Add the HTML Element plugin as a filter and the list will display projects using it.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IHTMLElementInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/html-element). This allows access in worker mode; when worker mode is disabled, you can also use all the browser standard DOM APIs.
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IHTMLElementInstance script interface](../scripting/scripting-reference/plugin-interfaces/html-element.md). This allows access in worker mode; when worker mode is disabled, you can also use all the browser standard DOM APIs.
 
 ## Layering HTML objects
-As the name suggests, this object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+As the name suggests, this object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
 
 ## CSS styling
 If you only need a small number of custom CSS styles for HTML Element, these can be entered in to the *Style attribute* property. However it's often more convenient to use a CSS file to write styles in a more readable and easily editable way.
-CSS styles can be added to the project by adding a stylesheet to the *Files* folder in the Project Bar. See [Project files](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/files) for more details.
+CSS styles can be added to the project by adding a stylesheet to the *Files* folder in the Project Bar. See [Project files](../project-primitives/files.md) for more details.
 The HTML Element object has *ID* and *Class* properties. These can be filled in and then CSS styles added for the corresponding ID or class, which will allow altering the appearance of the main HTML element created by Construct. For example if the class is entered as *myelement*, then CSS styles can be added for it with the rule `.myelement { ... }`.
 Note that Construct sets the following styles on the HTML element via its style attribute. It is best not to override these as they may cause the element to work incorrectly.
 
@@ -71,7 +71,7 @@ height: calc(var(--construct-scale) * 2em);
 Copy This sets `.mybutton` to have a height of 2em at 100% scale, but also adjusts the height to follow Construct's fullscreen scaling.
 
 ## Managing long HTML content
-If you have a lot of HTML content to display, consider adding it as a HTML project file. Then use the [AJAX](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/ajax) object to fetch the project file, and set the content of the HTML Element to the content of the project file.
+If you have a lot of HTML content to display, consider adding it as a HTML project file. Then use the [AJAX](ajax.md) object to fetch the project file, and set the content of the HTML Element to the content of the project file.
 
 ## Scaling with the canvas
 By default *Auto font size* is enabled. This means Construct sets a `font-size` style on the main HTML element to an `em` size that scales with the displayed canvas size. For example at 100% scale it will set `font-size: 1em`. Then if the window is resized to display twice as large, it will set `font-size: 2em`.
@@ -188,7 +188,7 @@ Triggered when a CSS animation for any contained element finishes (i.e. the `"an
 > Note that some actions have the same name. Actions in the *HTML element* group are common to all HTML-based plugins like Button and Text Input, and will only affect the main HTML element. Actions in the *HTML content* group are unique to the HTML Element plugin and can update the content of the object.
 
 **Create sprite image element**  
-Creates an `<img>` element with the content of a given [Sprite](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/sprite) object's current image, and inserts it to the HTML element. The location to insert is set by a CSS selector. This can be left blank to insert in to the main HTML element. Alternatively a selector like `".myclass"` will mean to insert content to the child element with the class *myclass*. The element can be set to inserted at the start or the end of the given element, or alternatively replacing all the content of the given element with the image. The inserted image element can optionally also be given an ID and class, which helps make it easy to style the inserted image with CSS. 
+Creates an `<img>` element with the content of a given [Sprite](sprite.md) object's current image, and inserts it to the HTML element. The location to insert is set by a CSS selector. This can be left blank to insert in to the main HTML element. Alternatively a selector like `".myclass"` will mean to insert content to the child element with the class *myclass*. The element can be set to inserted at the start or the end of the given element, or alternatively replacing all the content of the given element with the image. The inserted image element can optionally also be given an ID and class, which helps make it easy to style the inserted image with CSS. 
 
 > **Tip**  
 > This action provides a simple way to show a Sprite image on top of a HTML element, since normally HTML elements always show on top of Sprites.

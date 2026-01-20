@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Shadow Light APIs](#internalH1Link0)
 
 ---
-The `IShadowLightInstance` interface derives from [IWorldInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to add APIs specific to the [Shadow Light plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/shadow-light).
+The `IShadowLightInstance` interface derives from [IWorldInstance](../object-interfaces/iworldinstance.md) to add APIs specific to the [Shadow Light plugin](../../../plugin-reference/shadow-light.md).
 
 ## Shadow Light APIs
 **lightX**  

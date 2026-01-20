@@ -13,10 +13,10 @@ The `IBehaviorType` interface represents a behavior added to an object class. Fo
 
 ## IBehaviorType APIs
 **runtime**  
-A reference back to the [IRuntime interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime).
+A reference back to the [IRuntime interface](../iruntime.md).
 
 **behavior**  
-A reference to the [IBehavior](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehavior) of the associated behavior.
+A reference to the [IBehavior](ibehavior.md) of the associated behavior.
 
 **name**  
 A read-only string of the behavior type name.

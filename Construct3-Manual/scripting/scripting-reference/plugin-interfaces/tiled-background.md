@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Tiled Background APIs](#internalH1Link0)
 
 ---
-The `ITiledBackgroundInstance` interface derives from [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to add APIs specific to the [Tiled Background plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/tiled-background).
+The `ITiledBackgroundInstance` interface derives from [IWorldInstance](../object-interfaces/iworldinstance.md) to add APIs specific to the [Tiled Background plugin](../../../plugin-reference/tiled-background.md).
 
 ## Tiled Background APIs
 **imageWidth**  

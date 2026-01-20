@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Text APIs](#internalH1Link0)
 
 ---
-The `ITextInstance` interface derives from [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to add APIs specific to the [Text plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/text).
+The `ITextInstance` interface derives from [IWorldInstance](../object-interfaces/iworldinstance.md) to add APIs specific to the [Text plugin](../../../plugin-reference/text.md).
 
 ## Text APIs
 **text**  
@@ -25,7 +25,7 @@ If text is being written out with the `typewriterText()` method, force it to fin
 An array with 3 elements specifying the red, green and blue color of the text, with color values as floats in the 0-1 range. 
 
 > **Tip**  
-> Try not to confuse this with the [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) property `colorRgb`, which applies a color tint to the overall appearance of the object.
+> Try not to confuse this with the [IWorldInstance](../object-interfaces/iworldinstance.md) property `colorRgb`, which applies a color tint to the overall appearance of the object.
 
 **fontFace**  
 A string specifying the font used to display the text, e.g. "Arial".
@@ -72,10 +72,10 @@ Look up the tag for a part of the text at a given position and return the tag if
 
 **getTagCount(tag)**  
 **getTagPositionAndSize(tag, index)**  
-Get the number of fragments, and the size and position of each fragment by its zero-based index, for a given tag. Note that a single tag may be broken in to multiple fragments - see the section *Tagged range fragmentation* in the [Text object manual entry](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/text) for more details. The `getTagPositionAndSize()` method returns the position and size as an object with the properties `{x, y, width, height}`.
+Get the number of fragments, and the size and position of each fragment by its zero-based index, for a given tag. Note that a single tag may be broken in to multiple fragments - see the section *Tagged range fragmentation* in the [Text object manual entry](../../../plugin-reference/text.md) for more details. The `getTagPositionAndSize()` method returns the position and size as an object with the properties `{x, y, width, height}`.
 
 **changeIconSet(objectClass)**  
-Changes the *Icon set* property, replacing the Sprite used for BBcode icons to the one specified by the given [IObjectClass](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) (which must be from a Sprite object). This can be used to change the set of icons displayed by the Text object. Note if the new Sprite object does not have the same number of animation frames, or the same animation frame tags, then some icons may disappear.
+Changes the *Icon set* property, replacing the Sprite used for BBcode icons to the one specified by the given [IObjectClass](../object-interfaces/iobjectclass.md) (which must be from a Sprite object). This can be used to change the set of icons displayed by the Text object. Note if the new Sprite object does not have the same number of animation frames, or the same animation frame tags, then some icons may disappear.
 
 **async getAsHtmlString()**  
 Converts the contents of the Text object, including any icons, in to a string of HTML. This process is asynchronous so the method must be awaited. It resolves with a string of HTML code. The result is cached (and updates the *AsHTML* expression) so repeat calls will resolve with the same HTML string, until the Text object contents is modified, after which the next call will regenerate the HTML string again.

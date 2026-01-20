@@ -12,14 +12,14 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [IPathfindingMap interface](#internalH1Link3)
 
 ---
-The `IPathfindingBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Pathfinding behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/pathfinding).
+The `IPathfindingBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Pathfinding behavior](../../../behavior-reference/pathfinding.md).
 An additional `IPathfindingMap` interface is also used to represent the pathfinding map, i.e. grid of obstacles, which is shared between all Pathfinding behavior instances using the same cell size and cell border settings.
 
 ## Examples
 See the [Scripting pathfinding example](https://editor.construct.net/#open=scripting-pathfinding) for a demonstration of using these APIs to find and display a path around obstacles.
 
 ## Pathfinding behavior events
-See [behavior instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/behavior-instance-event) for standard behavior instance event object properties.
+See [behavior instance event](../interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
 
 **"arrived"**  
 Fired when a moving object comes to a stop at its destination.
@@ -77,7 +77,7 @@ Return the position of a node in the path that was found, in layout co-ordinates
 Iterates all nodes in the path that was found. This returns the same information as `getNodeAt()` but as a generator, yielding values of the form `[x, y]`.
 
 **directMovementMode**  
-Set or get a string of one of `"none"`, `"to-destination"` or `"anywhere-along-path"` reflecting the direct movement mode. For more information about the effect of each mode, see the *Direct movement* property in the [Pathfinding behavior manual entry](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/pathfinding).
+Set or get a string of one of `"none"`, `"to-destination"` or `"anywhere-along-path"` reflecting the direct movement mode. For more information about the effect of each mode, see the *Direct movement* property in the [Pathfinding behavior manual entry](../../../behavior-reference/pathfinding.md).
 
 **isEnabled**  
 A boolean indicating if the behavior is enabled. If disabled, the behavior no longer has any effect on the object.
@@ -107,8 +107,8 @@ Determine whether each cell in the obstacles grid is an obstacle again. This is 
 
 **async regenerateRegion(startX, startY, endX, endY)**  
 **async regenerateObjectRegion(objectClass)**  
-As with *regenerateMap()*, but only the specified area is updated. This is usually considerably faster than regenerating the entire map. However as with regenerating the entire obstacle map, changes only take effect after the returned promise resolves. *regenerateRegion()* takes a rectangle in layout co-ordinates to regenerate. *regenerateObjectRegion()* similarly regenerates the rectangle in the layout given by the bounding boxes of the instances of an [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass). Note this can cover multiple rectangles if there are multiple instances.
+As with *regenerateMap()*, but only the specified area is updated. This is usually considerably faster than regenerating the entire map. However as with regenerating the entire obstacle map, changes only take effect after the returned promise resolves. *regenerateRegion()* takes a rectangle in layout co-ordinates to regenerate. *regenerateObjectRegion()* similarly regenerates the rectangle in the layout given by the bounding boxes of the instances of an [IObjectClass](../object-interfaces/iobjectclass.md). Note this can cover multiple rectangles if there are multiple instances.
 
 **startPathGroup(baseCost = 1, cellSpread = 1, maxWorkers = 1)**  
 **endPathGroup()**  
-Start and end a *path group*, which can be used to spread out the paths found inside the group. For more information refer to the corresponding *Start path group* and *End path group* actions in the [Pathfinding behavior manual entry](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/pathfinding).
+Start and end a *path group*, which can be used to spread out the paths found inside the group. For more information refer to the corresponding *Start path group* and *End path group* actions in the [Pathfinding behavior manual entry](../../../behavior-reference/pathfinding.md).

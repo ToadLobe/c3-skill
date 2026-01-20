@@ -43,22 +43,22 @@ The files in a .c3addon for a plugin are arranged as follows. Note some features
 
 ## Specifying metadata
 
-The basic metadata about your addon, such as its ID and type, is set in **addon.json**. See [Addon metadata](https://www.construct.net/make-games/manuals/addon-sdk/guide/addon-metadata) for more information.
+The basic metadata about your addon, such as its ID and type, is set in **addon.json**. See [Addon metadata](addon-metadata.md) for more information.
 
 ## Setting plugin information
 
-For plugins, the detailed information about the plugin and its capabilities is set in **plugin.js**. See [Configuring plugins](https://www.construct.net/make-games/manuals/addon-sdk/guide/configuring-plugins) for more information.
+For plugins, the detailed information about the plugin and its capabilities is set in **plugin.js**. See [Configuring plugins](configuring-plugins.md) for more information.
 
 ## Setting behavior information
 
-For behaviors, the detailed information about the behavior and its capabilities is set in **behavior.js**. See [Configuring behaviors](https://www.construct.net/make-games/manuals/addon-sdk/guide/configuring-behaviors) for more information.
+For behaviors, the detailed information about the behavior and its capabilities is set in **behavior.js**. See [Configuring behaviors](configuring-behaviors.md) for more information.
 
 ## Setting effect information
 
-For effects, the detailed information about the effect and its capabilities is set using extra properties in **addon.json**. The effect itself is written in a **.fx** file. See [Configuring effects](https://www.construct.net/make-games/manuals/addon-sdk/guide/configuring-effects) for more information.
+For effects, the detailed information about the effect and its capabilities is set using extra properties in **addon.json**. The effect itself is written in a **.fx** file. See [Configuring effects](configuring-effects.md) for more information.
 
 ## Defining actions, conditions and expressions
 
 To define your plugin or behavior's actions, conditions and expressions (ACEs), they must be specified in **aces.json** and the corresponding language strings added in **en-US.json**. (Currently the language file must be in US English, but the fact it is in a separate file will help facilitate translation in future.)
 
-For more information see [Defining actions, conditions and expressions](https://www.construct.net/make-games/manuals/addon-sdk/guide/defining-aces).
+For more information see [Defining actions, conditions and expressions](defining-aces.md).

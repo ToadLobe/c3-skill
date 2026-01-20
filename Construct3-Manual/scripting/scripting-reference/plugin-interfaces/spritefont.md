@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [SpriteFont APIs](#internalH1Link0)
 
 ---
-The `ISpriteFontInstance` interface derives from [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to add APIs specific to the [Sprite font plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/sprite-font).
+The `ISpriteFontInstance` interface derives from [IWorldInstance](../object-interfaces/iworldinstance.md) to add APIs specific to the [Sprite font plugin](../../../plugin-reference/sprite-font.md).
 
 ## SpriteFont APIs
 **text**  
@@ -52,4 +52,4 @@ Look up the tag for a part of the text at a given position and return the tag if
 
 **getTagCount(tag)**  
 **getTagPositionAndSize(tag, index)**  
-Get the number of fragments, and the size and position of each fragment by its zero-based index, for a given tag. Note that a single tag may be broken in to multiple fragments - see the section *Tagged range fragmentation* in the [Text object manual entry](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/text) for more details (which applies equally to SpriteFonts). The `getTagPositionAndSize()` method returns the position and size as an object with the properties `{x, y, width, height}`.
+Get the number of fragments, and the size and position of each fragment by its zero-based index, for a given tag. Note that a single tag may be broken in to multiple fragments - see the section *Tagged range fragmentation* in the [Text object manual entry](../../../plugin-reference/text.md) for more details (which applies equally to SpriteFonts). The `getTagPositionAndSize()` method returns the position and size as an object with the properties `{x, y, width, height}`.

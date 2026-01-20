@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [IImageInfo APIs](#internalH1Link0)
 
 ---
-The `IImageInfo` interface represents an image in the project. It is also the base class of [IAnimationFrame](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimationframe).
+The `IImageInfo` interface represents an image in the project. It is also the base class of [IAnimationFrame](ianimationframe.md).
 
 ## IImageInfo APIs
 **width**  

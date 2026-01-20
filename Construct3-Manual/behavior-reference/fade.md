@@ -15,7 +15,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-re
 The **Fade behavior** fades objects in and out by changing the object's opacity over time. By default, it makes an object fade out over 1 second then destroys it.
 
 > **Tip**  
-> The Fade behavior is made redundant by the [Tween behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/tween). It's recommended to use opacity tweens instead of the Fade behavior. See also [Superseded features](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/superseded-features).
+> The Fade behavior is made redundant by the [Tween behavior](tween.md). It's recommended to use opacity tweens instead of the Fade behavior. See also [Superseded features](../tips-and-guides/superseded-features.md).
 
 Fades run in the following order. If any of the times are 0, the step is skipped.
 
@@ -28,7 +28,7 @@ For example, with each time set to 1 second, the object will fade in from invisi
 It is recommended to leave *Destroy* enabled. If disabled, the object still exists after fading out, but is invisible. If many objects are using the Fade behavior, this can build up many invisible objects over time, which gradually use more memory and CPU causing the game to slow down.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IFadeBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/fade).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IFadeBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/fade.md).
 
 ## Fade properties
 **Fade in time**  

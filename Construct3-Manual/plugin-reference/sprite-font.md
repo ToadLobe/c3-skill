@@ -20,10 +20,10 @@ The **Sprite Font** object uses an image to display text. The "sprite font" is t
 ![How a Sprite Font works](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/985/spritefont.png)
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ISpriteFontInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/spritefont).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ISpriteFontInstance script interface](../scripting/scripting-reference/plugin-interfaces/spritefont.md).
 
 ## Comparison with Text object
-Both the Sprite Font and [Text](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/text) objects can display text in the project. Typically the Text object shows monochrome characters from an existing font or web font, which can use a range of sizes and possibly also bold and italic options. On the other hand Sprite Font uses images for each character. While this means any kind of artwork can be used for text, notably allowing for multi-colored text, it has the trade-off that it only really supports one font size and one bold/italic setting (those that it is drawn with).
+Both the Sprite Font and [Text](text.md) objects can display text in the project. Typically the Text object shows monochrome characters from an existing font or web font, which can use a range of sizes and possibly also bold and italic options. On the other hand Sprite Font uses images for each character. While this means any kind of artwork can be used for text, notably allowing for multi-colored text, it has the trade-off that it only really supports one font size and one bold/italic setting (those that it is drawn with).
 Another important difference is that traditional fonts as used by the Text object often have good support for unicode characters. This allows them to display a wide range of characters, including many alphabets and character sets from many different languages, as well as emoji. Sprite Fonts however can only use the characters for which an image has been drawn. It is very difficult to make a sprite font that covers much of the tens of thousands of possible unicode characters. If a Sprite Font is set to show some text which contains a character that has not been drawn, it will simply show an empty space for that character. If the entire string is in a different language which the sprite font does not cover, nothing will render at all. Bear in mind that if you allow user-inputted text, such as the player's name, or you wish to translate the project in future, then Text objects are probably more suitable.
 
 ## Re-coloring SpriteFonts
@@ -42,7 +42,7 @@ The following tags are supported. Note that due to the fact SpriteFonts render i
 - `[hide]invisible text[/hide]` - this is useful for flashing effects, since the text still takes up the same width while invisible
 - `[background=#ff0000]change background color[/background]`
 - `[offsetx=10]offset X[/offsetx]` and `[offsety=10]offset Y[/offsety]` - move text by a number of pixels on each axis, useful for animated effects
-- `[tag=mytag]tag a range of text[/tag]`, assigns the tag "mytag" to a range of text, which can then be referred to in events (e.g. the *Has tag at position* condition, or expressions to get its size and position). Note see the section *Tagged range fragmentation* in the [Text object](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/text) manual entry for more details (as fragmentation works the same for both SpriteFont and Text objects).
+- `[tag=mytag]tag a range of text[/tag]`, assigns the tag "mytag" to a range of text, which can then be referred to in events (e.g. the *Has tag at position* condition, or expressions to get its size and position). Note see the section *Tagged range fragmentation* in the [Text object](text.md) manual entry for more details (as fragmentation works the same for both SpriteFont and Text objects).
 
 ## Sprite font properties
 **Text**  
@@ -153,7 +153,7 @@ Look up the tag for a part of the text at a given position and return the tag if
 **TagY(tag, index)**  
 **TagWidth(tag, index)**  
 **TagHeight(tag, index)**  
-Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* in the [Text object](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/text) manual entry for more details (as fragmentation works the same for both SpriteFont and Text objects).
+Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* in the [Text object](text.md) manual entry for more details (as fragmentation works the same for both SpriteFont and Text objects).
 
 **TextWidth**  
 **TextHeight**  

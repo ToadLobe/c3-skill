@@ -16,8 +16,8 @@ The `IRuntime` script interface provides a way for JavaScript code in Construct 
 
 ## Accessing the runtime script interface
 The runtime script interface is typically accessed with the name `runtime`. Note however this is not in a global variable: it is only passed in specific places.
-All scripts in event sheets have the runtime interface passed to them as a parameter named `runtime`. For more information see [Scripts in event sheets](https://www.construct.net/make-games/manuals/construct-3/scripting/using-scripting/scripts-in-event-sheets).
-In script files, the runtime interface is only passed to the `runOnStartup()` method. Outside of that, it is your responsibility to pass it along wherever else it is needed. For more information see [Script files](https://www.construct.net/make-games/manuals/construct-3/scripting/using-scripting/script-files).
+All scripts in event sheets have the runtime interface passed to them as a parameter named `runtime`. For more information see [Scripts in event sheets](../using-scripting/scripts-in-event-sheets.md).
+In script files, the runtime interface is only passed to the `runOnStartup()` method. Outside of that, it is your responsibility to pass it along wherever else it is needed. For more information see [Script files](../using-scripting/script-files.md).
 
 ## Runtime events
 The following events can be listened for using the `addEventListener` method.
@@ -39,7 +39,7 @@ These events fire every tick, at different points during ticking the engine. Eac
 
 **"beforeprojectstart"**  
 **"afterprojectstart"**  
-Fired once only when the first layout in the project starts. `"beforeprojectstart"` fires before the [ILayout](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout) event `"beforelayoutstart"` on the first layout, which in turn is before *On start of layout* triggers. `"afterprojectstart"` fires after the ILayout event `"afterlayoutstart"` on the first layout, which in turn is after *On start of layout* triggers. In both events, all instances on the first layout are created and available to modify.
+Fired once only when the first layout in the project starts. `"beforeprojectstart"` fires before the [ILayout](layout-interfaces/ilayout.md) event `"beforelayoutstart"` on the first layout, which in turn is before *On start of layout* triggers. `"afterprojectstart"` fires after the ILayout event `"afterlayoutstart"` on the first layout, which in turn is after *On start of layout* triggers. In both events, all instances on the first layout are created and available to modify.
 
 > **Tip**  
 > These events can use async handler functions, and the runtime will wait for them to finish before continuing.
@@ -48,7 +48,7 @@ Fired once only when the first layout in the project starts. `"beforeprojectstar
 **"afteranylayoutstart"**  
 **"beforeanylayoutend"**  
 **"afteranylayoutend"**  
-Fired whenever any layout starts or ends. The *start* events fire before and after the *On start of layout* trigger, and the *end* events fire before and after the *On end of layout* trigger. The event object has the property `layout` which is the [ILayout](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout) for the layout that is starting or ending. 
+Fired whenever any layout starts or ends. The *start* events fire before and after the *On start of layout* trigger, and the *end* events fire before and after the *On end of layout* trigger. The event object has the property `layout` which is the [ILayout](layout-interfaces/ilayout.md) for the layout that is starting or ending. 
 
 > **Tip**  
 > These events can use async handler functions, and the runtime will wait for them to finish before continuing.
@@ -83,7 +83,7 @@ Fired when pointer input is received. This covers mouse, pen and touch input. Th
 Fired when device orientation or motion sensor input is received. These pass copies of a [DeviceOrientationEvent](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fDeviceOrientationEvent) or [DeviceMotionEvent](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fDeviceMotionEvent) respectively.
 
 > **Tip**  
-> These events require permission to be granted before they will fire. See the `requestPermission()` method in the [Touch script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/touch).
+> These events require permission to be granted before they will fire. See the `requestPermission()` method in the [Touch script interface](plugin-interfaces/touch.md).
 
 **"suspend"**  
 **"resume"**  
@@ -97,13 +97,13 @@ Fired when the savegame system saves or loads the state of the game. The `saveDa
 > These events can use async handler functions, and the runtime will wait for them to finish before continuing.
 
 **"instancecreate"**  
-Fired whenever any new instance is created. The event object has an `instance` property referring to the [IInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance) (or derivative) that was created.
+Fired whenever any new instance is created. The event object has an `instance` property referring to the [IInstance](object-interfaces/iinstance.md) (or derivative) that was created.
 
 **"hierarchyready"**  
-Fired for the root instance in a hierarchy after all instances have finished creating - see the [IWorldInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) event for more details. When fired on IRuntime, the event object has an `instance` property referring to the [IWorldInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) (or derivative) that was created.
+Fired for the root instance in a hierarchy after all instances have finished creating - see the [IWorldInstance](object-interfaces/iworldinstance.md) event for more details. When fired on IRuntime, the event object has an `instance` property referring to the [IWorldInstance](object-interfaces/iworldinstance.md) (or derivative) that was created.
 
 **"instancedestroy"**  
-Fired whenever any instance is destroyed. After this event, all references to the instance are now invalid, so any remaining references to the instance should be removed or cleared to `null` in this event. Accessing an instance after it is destroyed will throw exceptions or return invalid data. The event object has an `instance` property referring to the [IInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance) (or derivative) that was destroyed. It also has an `isEndingLayout` property to indicate if the object is being destroyed because it's the end of a layout, or destroyed for other reasons.
+Fired whenever any instance is destroyed. After this event, all references to the instance are now invalid, so any remaining references to the instance should be removed or cleared to `null` in this event. Accessing an instance after it is destroyed will throw exceptions or return invalid data. The event object has an `instance` property referring to the [IInstance](object-interfaces/iinstance.md) (or derivative) that was destroyed. It also has an `isEndingLayout` property to indicate if the object is being destroyed because it's the end of a layout, or destroyed for other reasons.
 
 **"loadingprogress"**  
 Fired during a [loader layout](https://www.construct.net/en/tutorials/loader-layouts-custom-loading-9) when the value of the `loadingProgress` property changes. 
@@ -120,58 +120,58 @@ Add or remove a callback function for an event. See *Runtime events* above for t
 > See the [Handling multiple events](https://editor.construct.net/#open=multi-event-handler) example for a way to conveniently handle events.
 
 **objects**  
-An object with a property for each object class in the project. For example if the project has an object named *Sprite*, then `runtime.objects.Sprite` will refer to the [IObjectClass interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) for *Sprite*.
+An object with a property for each object class in the project. For example if the project has an object named *Sprite*, then `runtime.objects.Sprite` will refer to the [IObjectClass interface](object-interfaces/iobjectclass.md) for *Sprite*.
 
 > **Tip**  
 > In some cases, objects may have names that aren't valid JavaScript identifiers. In this case you can use the string property syntax, e.g. `runtime.objects["Sprite"]`.
 
 **getInstanceByUid(uid)**  
-Get an instance (an [IInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance) or derivative) by its UID (Unique ID), a unique number assigned to each instance and accessible via its `uid` property.
+Get an instance (an [IInstance](object-interfaces/iinstance.md) or derivative) by its UID (Unique ID), a unique number assigned to each instance and accessible via its `uid` property.
 
 **globalVars**  
-An object with a property for each [global variable](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/variables) on an event sheet in the project. For example if the project has a global variable on an event sheet named *Score*, then `runtime.globalVars.Score` provides access to the global variable from script.
+An object with a property for each [global variable](../../project-primitives/events/variables.md) on an event sheet in the project. For example if the project has a global variable on an event sheet named *Score*, then `runtime.globalVars.Score` provides access to the global variable from script.
 
 > **Tip**  
 > In some cases, event variables may have names that aren't valid JavaScript identifiers. In this case you can use the string property syntax, e.g. `runtime.globalVars["Score"]`.
 
 **mouse**  
-A shorthand reference to the [Mouse script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/mouse). This is only set if the Mouse plugin is added to the project.
+A shorthand reference to the [Mouse script interface](plugin-interfaces/mouse.md). This is only set if the Mouse plugin is added to the project.
 
 **keyboard**  
-A shorthand reference to the [Keyboard script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/keyboard). This is only set if the Keyboard plugin is added to the project.
+A shorthand reference to the [Keyboard script interface](plugin-interfaces/keyboard.md). This is only set if the Keyboard plugin is added to the project.
 
 **touch**  
-A shorthand reference to the [Touch script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/touch). This is only set if the Touch plugin is added to the project.
+A shorthand reference to the [Touch script interface](plugin-interfaces/touch.md). This is only set if the Touch plugin is added to the project.
 
 **timelineController**  
-A shorthand reference to the [Timeline Controller script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/timeline-controller). This is only set if the Timeline Controller plugin is added to the project.
+A shorthand reference to the [Timeline Controller script interface](plugin-interfaces/timeline-controller.md). This is only set if the Timeline Controller plugin is added to the project.
 
 **platformInfo**  
-A shorthand reference to the [IPlatformInfo script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/iplatforminfo). Note this always available regardless of whether the Platform Info plugin has been added to the project.
+A shorthand reference to the [IPlatformInfo script interface](interfaces/iplatforminfo.md). Note this always available regardless of whether the Platform Info plugin has been added to the project.
 
 **collisions**  
-The [ICollisionEngine](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/icollisionengine) interface providing access to collision APIs.
+The [ICollisionEngine](interfaces/icollisionengine.md) interface providing access to collision APIs.
 
 **layout**  
-An [ILayout interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout) representing the current layout.
+An [ILayout interface](layout-interfaces/ilayout.md) representing the current layout.
 
 **getLayout(layoutNameOrIndex)**  
-Get an [ILayout interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout) for a layout in the project, by a case-insensitive string of its name or its zero-based index in the project.
+Get an [ILayout interface](layout-interfaces/ilayout.md) for a layout in the project, by a case-insensitive string of its name or its zero-based index in the project.
 
 **getAllLayouts()**  
-Return an array of [ILayout interfaces](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout) representing all the layouts in the project, in the sequence they appear in the Project Bar.
+Return an array of [ILayout interfaces](layout-interfaces/ilayout.md) representing all the layouts in the project, in the sequence they appear in the Project Bar.
 
 **goToLayout(layoutNameOrIndex)**  
 End the current layout and switch to a new layout given by a case-insensitive string of its name, or its zero-based index in the project (which is the order layouts appear in the Project Bar with all folders expanded). Note the layout switch does not take place until the end of the current tick.
 
 **renderer**  
-The [IRenderer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderer-interface) script interface representing Construct's renderer, which is used for drawing content. Note that content can only be drawn in certain events, such as [ILayer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout/ilayer)'s `"beforedraw"` and `"afterdraw"` events. However you may use the renderer to load resources such as textures at any time, including on startup.
+The [IRenderer](graphics-interfaces/irenderer-interface.md) script interface representing Construct's renderer, which is used for drawing content. Note that content can only be drawn in certain events, such as [ILayer](layout-interfaces/ilayout/ilayer.md)'s `"beforedraw"` and `"afterdraw"` events. However you may use the renderer to load resources such as textures at any time, including on startup.
 
 **assets**  
-An [IAssetManager interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/iassetmanager) providing access to project assets like sound and music files or other project files, as well as audio decoding utilities.
+An [IAssetManager interface](interfaces/iassetmanager.md) providing access to project assets like sound and music files or other project files, as well as audio decoding utilities.
 
 **storage**  
-An [IStorage interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/istorage) providing access to storage from scripts. Storage is shared with the Local Storage plugin.
+An [IStorage interface](interfaces/istorage.md) providing access to storage from scripts. Storage is shared with the Local Storage plugin.
 
 **projectId**  
 A string of the project ID, as specified in Project Properties.
@@ -191,10 +191,10 @@ A string of the project version, as specified in Project Properties.
 Read-only numbers with the project viewport size, as specified in Project Properties. The method returns both values at the same time.
 
 **loadingProgress**  
-Return the current load progress on a loader layout in the range 0 to 1. This is the same as the *LoadingProgress* [system expression](https://www.construct.net/make-games/manuals/construct-3/system-reference/system-expressions). For more information, see the tutorial [how to make a custom loading screen](https://www.construct.net/en/tutorials/loader-layouts-custom-loading-9).
+Return the current load progress on a loader layout in the range 0 to 1. This is the same as the *LoadingProgress* [system expression](../../system-reference/system-expressions.md). For more information, see the tutorial [how to make a custom loading screen](https://www.construct.net/en/tutorials/loader-layouts-custom-loading-9).
 
 **imageLoadingProgress**  
-Return the current loading progress of any memory management *Load* [system actions](https://www.construct.net/make-games/manuals/construct-3/system-reference/system-actions) that are currently busy, on a scale of 0-1. This is the same as the *ImageLoadingProgress* [system expression](https://www.construct.net/make-games/manuals/construct-3/system-reference/system-expressions).
+Return the current loading progress of any memory management *Load* [system actions](../../system-reference/system-actions.md) that are currently busy, on a scale of 0-1. This is the same as the *ImageLoadingProgress* [system expression](../../system-reference/system-expressions.md).
 
 **sampling**  
 A read-only string indicating the project's *Sampling* property with one of the strings `"nearest"`, `"bilinear"` or `"trilinear"`.
@@ -231,7 +231,7 @@ Set the limits on the delta-time (`dt`) measurement. If the real-world delta-tim
 > Note the inverse relationship between the framerate and delta-time: an increasing framerate results in an decreasing delta-time, and a decreasing framerate results in increasing delta-time.
 
 **framerateMode**  
-Change the project *Framerate mode* property at runtime. This can be one of the following strings: `"vsync"`, `"unlimited-tick"` or `"unlimited-frame"`. For more details, see the corresponding [project property](https://www.construct.net/make-games/manuals/construct-3/project-primitives/projects).
+Change the project *Framerate mode* property at runtime. This can be one of the following strings: `"vsync"`, `"unlimited-tick"` or `"unlimited-frame"`. For more details, see the corresponding [project property](../../project-primitives/projects.md).
 
 **framesPerSecond**  
 A read-only number indicating how many frames per second (FPS) the project is rendering. The most common display refresh rate is 60 Hz, so typically an efficiently designed project will render at 60 FPS. Note however if nothing is changing on-screen, then nothing is rendered, and so the FPS measurement may fall to 0 or display a lower result; this does not indicate poor performance, only that fewer frames are necessary to render. The `ticksPerSecond` property indicates how frequently the engine is stepping, which may be different to the frames rendered per second.
@@ -255,7 +255,7 @@ A read-only [Date](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozil
 Call a function in an event sheet, by a case-insensitive string of its name. Each parameter added after the name is passed to the function. There must be at least as many parameters provided as the function uses, although any additional parameters will be ignored. If the function has a return value, it will be returned from this method, else it returns `null`.
 
 **setReturnValue(value)**  
-This can only be called from a script in an [event sheet function](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/functions) with a return type other than *None*. It is essentially equivalent to the *Set return value* action. However the fact this method can be called from script can make it easier to return a value from script from an event sheet function. For example an event sheet function could contain a single script action with the code `runtime.setReturnValue(getMyValue())`, which means anywhere the event sheet function is called it returns the value of calling `getMyValue()` in JavaScript.
+This can only be called from a script in an [event sheet function](../../project-primitives/events/functions.md) with a return type other than *None*. It is essentially equivalent to the *Set return value* action. However the fact this method can be called from script can make it easier to return a value from script from an event sheet function. For example an event sheet function could contain a single script action with the code `runtime.setReturnValue(getMyValue())`, which means anywhere the event sheet function is called it returns the value of calling `getMyValue()` in JavaScript.
 
 **signal(tag)**  
 Triggers *On signal*, resumes any events waiting for a signal with the given tag, and resolves any promise returned by `waitForSignal().`
@@ -263,13 +263,13 @@ Triggers *On signal*, resumes any events waiting for a signal with the given tag
 Returns a Promise that resolves when the given tag is signalled. It may be signalled by either the script API or an event sheet.
 
 **random()**  
-Return a random number in the range [0, 1). This is similar to `Math.random()`, but can produce a deterministic sequence of values if the [Advanced Random](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/advanced-random) object overrides the system random.
+Return a random number in the range [0, 1). This is similar to `Math.random()`, but can produce a deterministic sequence of values if the [Advanced Random](../../plugin-reference/advanced-random.md) object overrides the system random.
 
 **destroyMultiple(iterable)**  
-Destroys all instances in the iterable of [IInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance) (such as an array or [Set](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fSet) of instances). This is equivalent to a for-of loop calling `destroy()` on every instance; however it is significantly more efficient when destroying large numbers of instances, as the internal engine updates necessary after destroying an instance are only processed once rather than repeatedly.
+Destroys all instances in the iterable of [IInstance](object-interfaces/iinstance.md) (such as an array or [Set](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fSet) of instances). This is equivalent to a for-of loop calling `destroy()` on every instance; however it is significantly more efficient when destroying large numbers of instances, as the internal engine updates necessary after destroying an instance are only processed once rather than repeatedly.
 
 **sortZOrder(iterable, callback)**  
-Sort the relative Z order of all the [IWorldInstances](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) given by *iterable*, using a custom sort function as the *callback* which receives two *IWorldInstance* to compare as arguments. An example using a *myZOrder* instance variable for sorting a Sprite object's instances is given below.
+Sort the relative Z order of all the [IWorldInstances](object-interfaces/iworldinstance.md) given by *iterable*, using a custom sort function as the *callback* which receives two *IWorldInstance* to compare as arguments. An example using a *myZOrder* instance variable for sorting a Sprite object's instances is given below.
 ```javascript
 runtime.sortZOrder(runtime.objects.Sprite.instances(),
 (a, b) => a.instVars.myZOrder - b.instVars.myZOrder);
@@ -286,7 +286,7 @@ Invoke a download of the resource at the given *url*, downloading with the given
 A read-only boolean indicating if the runtime is currently running in the context of a Web Worker. This is controlled by the *Use worker* project property. In worker mode, a more limited set of browser APIs is available. See [Functions and classes available to Web Workers](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fWeb_Workers_API%2fFunctions_and_classes_available_to_workers).
 
 **getHTMLLayer(index)**  
-Retrieve the HTML element used to contain all HTML content on a given HTML layer in the project. The index is the zero-based index of the HTML layer (not the Construct layer). This method can only be used in DOM mode - if the project property *Use worker* is *Yes* then calling this method will throw an exception. This method is useful to obtain a parent element in which to insert custom HTML content such that it appears layered according to one of Construct's HTML layers. For more information see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+Retrieve the HTML element used to contain all HTML content on a given HTML layer in the project. The index is the zero-based index of the HTML layer (not the Construct layer). This method can only be used in DOM mode - if the project property *Use worker* is *Yes* then calling this method will throw an exception. This method is useful to obtain a parent element in which to insert custom HTML content such that it appears layered according to one of Construct's HTML layers. For more information see [HTML layers](../../tips-and-guides/html-layers.md).
 
 **async alert(message)**  
 Show an alert message prompt using the [alert()](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fWindow%2falert) method. This is provided as a runtime method since it forwards the call to the DOM in worker mode. Note that unlike the standard browser `alert()` method, this is an async method - in worker mode it returns a promise that is resolved when the alert is closed, and execution in the worker will continue while the alert is showing. In DOM mode, the alert is blocking and will stop all execution while the alert is showing (but it still returns a promise that resolves when the alert is closed).
@@ -295,7 +295,7 @@ Show an alert message prompt using the [alert()](https://www.construct.net/out?u
 > This method is also made available as a global `alert()` function in worker mode. This is to help make sure simple test code works as expected, even if the code is unintentionally run in the context of a Web Worker, where the browser `alert()` method is not normally available.
 
 ## Runtime SDK events and APIs
-These events and APIs are normally only needed for use with the [Addon SDK](https://www.construct.net/en/make-games/manuals/addon-sdk) and should not normally be used when using JavaScript coding in Construct. However as they are also part of the `IRuntime` interface they are also documented here.
+These events and APIs are normally only needed for use with the [Addon SDK](../../../Construct3-Addon-SDK/index.md) and should not normally be used when using JavaScript coding in Construct. However as they are also part of the `IRuntime` interface they are also documented here.
 
 ### SDK events
 **"afterload"**  
@@ -303,4 +303,4 @@ Fired after the `_loadFromJson()` call after the rest of the runtime has finishe
 
 ### SDK APIs
 **sdk**  
-Access the [ISDKUtils](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkutils) interface which implements more APIs specific to the addon SDK.
+Access the [ISDKUtils](addon-sdk-interfaces/isdkutils.md) interface which implements more APIs specific to the addon SDK.

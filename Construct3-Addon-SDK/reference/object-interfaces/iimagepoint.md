@@ -11,12 +11,12 @@ source: "https://www.construct.net/en/make-games/manuals/addon-sdk/reference/obj
 
 ---
 
-The `IImagePoint` interface represents an image point on an [IAnimationFrame](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/ianimationframe). 
+The `IImagePoint` interface represents an image point on an [IAnimationFrame](ianimationframe.md). 
 
 ## Methods
 
 **GetAnimationFrame()**  
-Return the associated [IAnimationFrame](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/ianimationframe).
+Return the associated [IAnimationFrame](ianimationframe.md).
 
 **SetName(name)**  
 **GetName()**  

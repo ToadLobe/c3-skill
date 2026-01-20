@@ -14,16 +14,16 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-re
 
 ---
 The **Bullet behavior** simply moves an object forwards at an angle. However, it provides extra options like gravity and bouncing that allow it to also be used like a bouncing ball. Like the name suggests it is ideal for projectiles like bullets, but it is also useful for automatically controlling other types of objects like enemies which move forwards continuously.
-For two examples of the Bullet behavior see the [Bouncing balls](https://editor.construct.net/#open=bouncing-balls) and [Bouncing bullets](https://editor.construct.net/#open=bouncing-bullets) examples in the [Example Browser](https://www.construct.net/make-games/manuals/construct-3/overview/example-browser).
+For two examples of the Bullet behavior see the [Bouncing balls](https://editor.construct.net/#open=bouncing-balls) and [Bouncing bullets](https://editor.construct.net/#open=bouncing-bullets) examples in the [Example Browser](../overview/example-browser.md).
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IBulletBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/bullet).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IBulletBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/bullet.md).
 
 ## Stepping bullets
 Normally the bullet behavior moves a fixed distance every tick. However if it is moving extremely fast, the distance it moves in one frame can be enough to jump over obstacles in their entirety. To avoid this problem you can enable the *Step* property. This will move the object in small increments, triggering *On step* each time. In *On step* you can add an *Is overlapping* condition to check if the bullet is overlapping an obstacle with improved accuracy.
 In an *On step* event the *Stop stepping* action will prevent the bullet advancing any further. This leaves the bullet in the first position it collided with an object, which is a good place to create an effect like an explosion. You can also *Destroy* the object which will also automatically stop stepping.
 For an example of how stepping works, see the [Bullet stepping example](https://editor.construct.net/#open=bullet-stepping) in the Example Browser.
-While the same technique can also be used to make instant hit bullets, this is usually better done using the raycasting feature of the [Line of Sight behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/line-of-sight), as demonstrated in the [Instant hit laser example](https://editor.construct.net/#open=instant-hit-laser).
+While the same technique can also be used to make instant hit bullets, this is usually better done using the raycasting feature of the [Line of Sight behavior](line-of-sight.md), as demonstrated in the [Instant hit laser example](https://editor.construct.net/#open=instant-hit-laser).
 
 ## Bullet properties
 **Speed**  
@@ -36,7 +36,7 @@ The rate of acceleration for the bullet, in pixels per second per second. Zero w
 The force of gravity, which causes acceleration downwards, in pixels per second per second. Zero disables gravity which is useful for top-down games. Positive values cause a parabolic path as the bullet is bullet down by gravity.
 
 **Bounce off solids**  
-If enabled, the bullet will bounce off any objects with the [Solid behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/solid). It will also calculate the angle of reflection to bounce off realistically depending on the object's shape and angle.
+If enabled, the bullet will bounce off any objects with the [Solid behavior](solid.md). It will also calculate the angle of reflection to bounce off realistically depending on the object's shape and angle.
 
 **Set angle**  
 If disabled, the behavior will never change the object's angle. If enabled, the behavior always sets the object angle to the angle of motion, and if the object angle is changed, the angle of motion will be updated correspondingly.

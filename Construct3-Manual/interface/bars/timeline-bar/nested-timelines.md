@@ -11,12 +11,12 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/b
 - [Layout view feedback](#internalH1Link2)
 
 ---
-It is possible to nest [timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/timeline) inside another parent timeline, this allows for coordination between timelines without the need of events. When a timeline is shown as nested inside a parent it works largely the same, some exclusive bits of UI are introduced as well as some differences when compared to the main timeline.
+It is possible to nest [timelines](../../../project-primitives/timelines/timeline.md) inside another parent timeline, this allows for coordination between timelines without the need of events. When a timeline is shown as nested inside a parent it works largely the same, some exclusive bits of UI are introduced as well as some differences when compared to the main timeline.
 
 ## Adding nested timelines
 First you will need to create more than one timeline in the project, after doing that you can do any of the following:
 
-- Drag a timeline from the [Project Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/project-bar) into the [Timeline Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar) to nest it in the currently active timeline.
+- Drag a timeline from the [Project Bar](../project-bar.md) into the [Timeline Bar](../timeline-bar.md) to nest it in the currently active timeline.
 - Use the sub option `Timeline › Add timelines` of the <kbd>+</kbd> split button in the toolbar to bring up a dialog from which to choose timelines to add.
 - Right-click on empty space in the Timeline Bar to bring up a context menu for the current timeline and use the option `Timeline › Add timelines`.
 
@@ -30,7 +30,7 @@ The image below shows how a nested timeline shows up in the Timeline Bar, after 
 ## Editing nested timelines
 
 ### Focus
-While a timeline is shown as nested content most editing can be done on it as in the main timeline. This includes, editing through the Properties Bar, moving keyframes, deleting keyframes and changing the starting offset. Adding [instances](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/instances) and adding keyframes is not directly available to nested timelines though. In order to do those actions the nested timeline must have focus.
+While a timeline is shown as nested content most editing can be done on it as in the main timeline. This includes, editing through the Properties Bar, moving keyframes, deleting keyframes and changing the starting offset. Adding [instances](../../../project-primitives/objects/instances.md) and adding keyframes is not directly available to nested timelines though. In order to do those actions the nested timeline must have focus.
 Giving focus to a nested timeline is easy, you can do one of the following:
 
 - Double-click the corresponding nested timeline row.

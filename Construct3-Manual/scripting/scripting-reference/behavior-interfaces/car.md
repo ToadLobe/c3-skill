@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Car behavior APIs](#internalH1Link0)
 
 ---
-The `ICarBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Car behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/car).
+The `ICarBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Car behavior](../../../behavior-reference/car.md).
 
 ## Car behavior APIs
 **stop()**  

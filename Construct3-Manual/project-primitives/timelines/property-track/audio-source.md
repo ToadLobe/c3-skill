@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/project-pri
 - [Audio Source Property Track Properties](#internalH1Link0)
 
 ---
-The audio source [property track](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/property-track) is unique to the [audio track](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/track/audio-track) and has a few unique properties to it that are not present in any other type of property track. 
+The audio source [property track](../property-track.md) is unique to the [audio track](../track/audio-track.md) and has a few unique properties to it that are not present in any other type of property track. 
 
 ## Audio Source Property Track Properties
 **Name**  
@@ -20,8 +20,8 @@ The starting time in the timeline
 **Audio duration**  
 The total duration of the audio source, this property can not be modified
 **Tag**  
-An optional tag to be able to control the corresponding audio object by using the [Audio plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/audio)
+An optional tag to be able to control the corresponding audio object by using the [Audio plugin](../../../plugin-reference/audio.md)
 
 **Enabled**  
 **Locked**  
-See the section on common timeline element properties in [Timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines). Changing these at the property track level will apply the change to every sub-element.
+See the section on common timeline element properties in [Timelines](../../timelines.md). Changing these at the property track level will apply the change to every sub-element.

@@ -9,11 +9,11 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [IBehavior APIs](#internalH1Link0)
 
 ---
-The `IBehavior` interface represents a kind of behavior, such as Solid, Physics or Pin. Some behaviors derive from this class to add extra options that are global to the entire behavior, such as the physics world properties in the Physics behavior. This interface is usually accessed through the [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) `behavior` property.
+The `IBehavior` interface represents a kind of behavior, such as Solid, Physics or Pin. Some behaviors derive from this class to add extra options that are global to the entire behavior, such as the physics world properties in the Physics behavior. This interface is usually accessed through the [IBehaviorInstance](ibehaviorinstance.md) `behavior` property.
 
 ## IBehavior APIs
 **runtime**  
-A reference back to the [IRuntime](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime) interface.
+A reference back to the [IRuntime](../iruntime.md) interface.
 
 **id**  
 A read-only string with a unique identifier for this behavior as specified by the behavior developer.

@@ -13,7 +13,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 
 ---
 The `IRenderer` script interface provides access to Construct's renderer in the runtime. The same interface can be used regardless of the underlying rendering technology (e.g. WebGL or WebGPU). The interface's methods provide high-level drawing commands implemented by Construct, so you don't need to handle low-level concerns like vertex buffers.
-`IRenderer` can be used both in project code, such as with the [ILayer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout/ilayer) events `"beforedraw"` and `"afterdraw"`, and in the addon SDK for drawing plugins.
+`IRenderer` can be used both in project code, such as with the [ILayer](../layout-interfaces/ilayout/ilayer.md) events `"beforedraw"` and `"afterdraw"`, and in the addon SDK for drawing plugins.
 
 ## Renderer state
 `IRenderer` uses a persistent rendering state. Therefore to correctly render something, all the intended state must be specified, otherwise it will use an undefined previous state. `IRenderer` simplifies the renderer state to:
@@ -146,44 +146,44 @@ Set the current line width for line-drawing calls. This must be followed by a `p
 Set the current line cap for line-drawing calls. This must be followed by a `popLineCap()` call when finished to restore the previous line cap. The available line caps are `"butt"` and `"square"`.
 
 **setTexture(texture)**  
-Set the current texture to a given [ITexture](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/itexture).
+Set the current texture to a given [ITexture](itexture.md).
 
 **createStaticTexture(data, opts)**  
-Create an [ITexture](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/itexture) with the content specified by `data`. This method is asynchronous and so returns a Promise that resolves with the created `ITexture`. The `data` parameter may be one of `HTMLImageElement`, `HTMLCanvasElement`, `OffscreenCanvas` or `ImageBitmap`. (Note that in worker mode, only `OffscreenCanvas` and `ImageBitmap` are available.) `opts` specifies options for the texture - see the section *Texture options* above for more details. 
+Create an [ITexture](itexture.md) with the content specified by `data`. This method is asynchronous and so returns a Promise that resolves with the created `ITexture`. The `data` parameter may be one of `HTMLImageElement`, `HTMLCanvasElement`, `OffscreenCanvas` or `ImageBitmap`. (Note that in worker mode, only `OffscreenCanvas` and `ImageBitmap` are available.) `opts` specifies options for the texture - see the section *Texture options* above for more details. 
 
 > **Tip**  
 > Static textures do not support changing their content, and are optimized accordingly. If you want to be able to change the content of a texture, use `createDynamicTexture()`.
 
 **createDynamicTexture(width, height, opts)**  
-Create a new empty [ITexture](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/itexture) for dynamic use, i.e. expecting the texture content to be replaced using `updateTexture()`. The size of the texture is given by `width` and `height` which must be positive integers. `opts` specifies options for the texture - see the section *Texture options* above for more details.
+Create a new empty [ITexture](itexture.md) for dynamic use, i.e. expecting the texture content to be replaced using `updateTexture()`. The size of the texture is given by `width` and `height` which must be positive integers. `opts` specifies options for the texture - see the section *Texture options* above for more details.
 
 **updateTexture(data, texture, opts)**  
-Upload *data* as the new texture contents for the [ITexture](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/itexture) *texture*. This can only be used for textures created with `createDynamicTexture()` and managed by your addon. 
+Upload *data* as the new texture contents for the [ITexture](itexture.md) *texture*. This can only be used for textures created with `createDynamicTexture()` and managed by your addon. 
 *data* can be one of the following types: `HTMLImageElement`, `HTMLVideoElement`, `HTMLCanvasElement`, `ImageBitmap`, `OffscreenCanvas` or `ImageData`. Note in worker mode the DOM types cannot be used (`HTMLImageElement`, `HTMLVideoElement`, `HTMLCanvasElement`); in this case use `ImageBitmap` or `OffscreenCanvas` instead. This method cannot resize an existing texture, so the data must match the size the texture was created with; if the size needs to change, destroy and re-create the texture. 
 *opts* specifies options for the texture upload which is an object that can include the following properties:
 
 - `premultiplyAlpha`: a boolean indicating whether to premultiply alpha of the image content specified by *data* (default true). Construct always renders using premultiplied alpha so this is normally necessary; however if the data is known to already be premultiplied, set this to false.
 
 **deleteTexture(texture)**  
-Delete an [ITexture](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/itexture), releasing its resources. This can only be used for textures created with `createDynamicTexture()` and managed by your addon. Do not attempt to delete textures managed by the Construct engine.
+Delete an [ITexture](itexture.md), releasing its resources. This can only be used for textures created with `createDynamicTexture()` and managed by your addon. Do not attempt to delete textures managed by the Construct engine.
 
 **async loadTextureForImageInfo(imageInfo, opts)**  
-For use with the addon SDK. Load a texture for a given [IImageInfo](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iimageinfo). Returns a promise that resolves with the loaded [ITexture](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/itexture). `opts` specifies options for the texture - see the section *Texture options* above for more details.
+For use with the addon SDK. Load a texture for a given [IImageInfo](../object-interfaces/iimageinfo.md). Returns a promise that resolves with the loaded [ITexture](itexture.md). `opts` specifies options for the texture - see the section *Texture options* above for more details.
 
 **releaseTextureForImageInfo(imageInfo)**  
-For use with the addon SDK. Release a texture for a given [IImageInfo](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iimageinfo) that was previously loaded with `loadTextureForImageInfo()`.
+For use with the addon SDK. Release a texture for a given [IImageInfo](../object-interfaces/iimageinfo.md) that was previously loaded with `loadTextureForImageInfo()`.
 
 **getTextureForImageInfo(imageInfo)**  
-For use with the addon SDK. Returns the existing [ITexture](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/itexture) for a given [IImageInfo](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iimageinfo) that was previously loaded with `loadTextureForImageInfo()`, or returns `null` if no texture is loaded (or the texture is still asynchronously loading).
+For use with the addon SDK. Returns the existing [ITexture](itexture.md) for a given [IImageInfo](../object-interfaces/iimageinfo.md) that was previously loaded with `loadTextureForImageInfo()`, or returns `null` if no texture is loaded (or the texture is still asynchronously loading).
 
 **createRendererText()**  
-Return a new [IRendererText](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderertext) interface. This manages text wrapping, drawing text, and uploading the results to a WebGL texture.
+Return a new [IRendererText](irenderertext.md) interface. This manages text wrapping, drawing text, and uploading the results to a WebGL texture.
 
 **setDeviceTransform()**  
 Set the co-ordinate system to be in device transform mode, which is in units of device pixels and relative to the screen. This can be useful for achieving pixel-perfect rendering.
 
 **setLayerTransform(layer)**  
-Set the co-ordinate system to match the given [ILayer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout/ilayer). This is the default mode - this method is normally called after `setDeviceTransform()` to restore normal rendering.
+Set the co-ordinate system to match the given [ILayer](../layout-interfaces/ilayout/ilayer.md). This is the default mode - this method is normally called after `setDeviceTransform()` to restore normal rendering.
 
 ## Drawing meshes
 The `drawMesh()` method allows passing typed arrays with vertex, texture co-ordinate, index, and optionally color data, for efficient rendering of entire meshes. Note that the mesh drawn with this method uses the same renderer state (blend mode, fill mode, color and texture) for all triangles. To draw parts of the mesh with different renderer state, you will need to make multiple calls to `drawMesh()` with other calls to change state in between. You can create typed arrays over different ranges of the same ArrayBuffer to draw sections of a mesh - see the [MDN guide on TypedArray](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fTypedArray) for more details.

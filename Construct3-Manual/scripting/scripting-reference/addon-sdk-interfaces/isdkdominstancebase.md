@@ -9,18 +9,18 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [ISDKDOMInstanceBase APIs](#internalH1Link0)
 
 ---
-The `ISDKDOMInstanceBase` interface is used as a runtime base class for DOM instances (which create a HTML element) in the addon SDK. It derives from [ISDKWorldInstanceBase](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkworldinstancebase).
+The `ISDKDOMInstanceBase` interface is used as a runtime base class for DOM instances (which create a HTML element) in the addon SDK. It derives from [ISDKWorldInstanceBase](isdkworldinstancebase.md).
 
 ## ISDKDOMInstanceBase APIs
 **_postToDOMElement(handler, data)**  
 **_postToDOMElementAsync(handler, data)**  
-Post a message from the runtime instance to the DOM side. The message is received using `AddDOMElementMessageHandler()` in [DOMElementHandler](https://www.construct.net/en/make-games/manuals/addon-sdk/runtime-reference/base-classes/domelementhandler). `handler` is a string identifying the kind of message. `data` is a JSON object that is forwarded with the message to provide additional details. The async variant returns a promise that awaits an async handler on the DOM side and forwards the return value back to the runtime, which the returned promise resolves with. The non-async variant simply posts a message and ignores the result (i.e. fire-and-forget).
+Post a message from the runtime instance to the DOM side. The message is received using `AddDOMElementMessageHandler()` in [DOMElementHandler](../../../../Construct3-Addon-SDK/runtime-reference.md). `handler` is a string identifying the kind of message. `data` is a JSON object that is forwarded with the message to provide additional details. The async variant returns a promise that awaits an async handler on the DOM side and forwards the return value back to the runtime, which the returned promise resolves with. The non-async variant simply posts a message and ignores the result (i.e. fire-and-forget).
 
 **_postToDOMElementMaybeSync(handler, data)**  
 As with `_postToDOMElement()`, but when the runtime is in DOM mode, calls the DOM handler synchronously inside the call. When the runtime is in worker mode, this still posts a message which is handled later. Usually this method is not necessary, but it can be used to work around some user input restrictions in some browsers in DOM mode only.
 
 **_createElement(data)**  
-Instruct the runtime to create a DOM element for this instance. It will end up calling `CreateElement()` in [DOMElementHandler](https://www.construct.net/en/make-games/manuals/addon-sdk/runtime-reference/base-classes/domelementhandler) with `data` (an optional object with additional details to create with). The runtime associates the resulting element with this instance.
+Instruct the runtime to create a DOM element for this instance. It will end up calling `CreateElement()` in [DOMElementHandler](../../../../Construct3-Addon-SDK/runtime-reference.md) with `data` (an optional object with additional details to create with). The runtime associates the resulting element with this instance.
 
 **focusElement()**  
 **blurElement()**  

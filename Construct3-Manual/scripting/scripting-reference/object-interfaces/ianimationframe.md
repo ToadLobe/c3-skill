@@ -9,10 +9,10 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [IAnimationFrame APIs](#internalH1Link0)
 
 ---
-The `IAnimationFrame` interface represents a single animation frame within an [IAnimation](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimation). It derives from the [IImageInfo](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iimageinfo) script interface.
+The `IAnimationFrame` interface represents a single animation frame within an [IAnimation](ianimation.md). It derives from the [IImageInfo](iimageinfo.md) script interface.
 
 > **Tip**  
-> Note that when accessing the origin, image points, or collision polygon points on `IAnimationFrame`, the positions are returned in normalized form, in the range 0-1, representing the position set in the editor. For example (0, 0) is the top-left point, (1, 1) is the bottom-right, and (0.5, 0.5) is the middle. This differs from the [ISpriteInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/sprite) methods which return positions in layout co-ordinates based on the current location and orientation of the Sprite instance it is called on.
+> Note that when accessing the origin, image points, or collision polygon points on `IAnimationFrame`, the positions are returned in normalized form, in the range 0-1, representing the position set in the editor. For example (0, 0) is the top-left point, (1, 1) is the bottom-right, and (0.5, 0.5) is the middle. This differs from the [ISpriteInstance](../plugin-interfaces/sprite.md) methods which return positions in layout co-ordinates based on the current location and orientation of the Sprite instance it is called on.
 
 ## IAnimationFrame APIs
 **duration**  

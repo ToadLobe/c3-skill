@@ -4,14 +4,14 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/d
 ---
 
 # Add/edit function parameter dialog
-The **Add/Edit Function Parameter dialog** allows you to change the details of a [function](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/functions) parameter. Since function parameters work similarly to [local variables](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/variables), the dialog is also similar to the [Add/edit event variable dialog](https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/event-variable).
+The **Add/Edit Function Parameter dialog** allows you to change the details of a [function](../../project-primitives/events/functions.md) parameter. Since function parameters work similarly to [local variables](../../project-primitives/events/variables.md), the dialog is also similar to the [Add/edit event variable dialog](event-variable.md).
 
 ![The Add/edit function parameter dialog](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/26700/add-edit-function-parameter.png)
 
 The dialog has the following fields.
 
 **Name**  
-The name identifies the function parameter. This is typed in to [expressions](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/expressions) to retrieve the value of the parameter. Some names cannot be used, like the names of system expressions, since they would conflict when entering an expression. The name is also displayed when calling the function.
+The name identifies the function parameter. This is typed in to [expressions](../../project-primitives/events/expressions.md) to retrieve the value of the parameter. Some names cannot be used, like the names of system expressions, since they would conflict when entering an expression. The name is also displayed when calling the function.
 
 **Type**  
 The type specifies what kind of value the parameter holds. This can be *Number*, *String* (text), or *Boolean* (an on/off value, displayed as a checkbox). The type of a parameter does not change - you can't pass text for a number variable and vice versa.

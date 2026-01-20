@@ -11,9 +11,9 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/b
 ---
 
 ## The tilemap brush editor
-This editor is used to create, edit and delete auto-tiling and patch brushes for use with the [Tilemap Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/tilemap-bar).
-There are three types of brushes supported, the 16 tile auto tiling brush, the 47 tile auto tiling brush and the patch brush. Brushes are created by default with each instance of the [Tilemap plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/tilemap). The default brushes are setup to work correctly with the default tilemap image.
-When the editor is opened from the auto tiling tool it will show the first auto tiling brush in the corresponding [object type](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/object-types). If it is opened from the patch brush tool, it will show the first patch brush in the corresponding object type. This is just for convenience as both types of brushes can be edited regardless from which part of the UI the editor was opened from.
+This editor is used to create, edit and delete auto-tiling and patch brushes for use with the [Tilemap Bar](../tilemap-bar.md).
+There are three types of brushes supported, the 16 tile auto tiling brush, the 47 tile auto tiling brush and the patch brush. Brushes are created by default with each instance of the [Tilemap plugin](../../../plugin-reference/tilemap.md). The default brushes are setup to work correctly with the default tilemap image.
+When the editor is opened from the auto tiling tool it will show the first auto tiling brush in the corresponding [object type](../../../project-primitives/objects/object-types.md). If it is opened from the patch brush tool, it will show the first patch brush in the corresponding object type. This is just for convenience as both types of brushes can be edited regardless from which part of the UI the editor was opened from.
 
 ### Using the editor with auto tiling brushes
 Here is a short summary on how to create, edit and use an auto tiling brush.

@@ -21,7 +21,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/system-refe
 - [Templates](#internalH1Link12)
 
 ---
-This section describes all the [conditions](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/conditions) in the built-in System object in Construct. They are listed in the order they appear in the [Add Condition dialog](https://www.construct.net/make-games/manuals/construct-3/interface/dialogs/add-condition-action).
+This section describes all the [conditions](../project-primitives/events/conditions.md) in the built-in System object in Construct. They are listed in the order they appear in the [Add Condition dialog](../interface/dialogs/add-condition-action.md).
 
 ## Angles
 Note angles in Construct start with 0 degrees facing right and increment clockwise.
@@ -37,19 +37,19 @@ True if an angle is within a number of degrees of another angle. This is more re
 
 ## General
 **Compare two values**  
-Compare any two [expressions](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/expressions) (which can either numbers or text) with each other. They can be compared as *Equal*, *Not equal*, *Less*, *Less or equal*, *Greater* or *Greater or equal*.
+Compare any two [expressions](../project-primitives/events/expressions.md) (which can either numbers or text) with each other. They can be compared as *Equal*, *Not equal*, *Less*, *Less or equal*, *Greater* or *Greater or equal*.
 
 **Evaluate expression**  
-True if the given expression is a non-zero number, or a non-empty string. This is useful with [boolean expressions](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/expressions) like `score < 0 | health < 0`.
+True if the given expression is a non-zero number, or a non-empty string. This is useful with [boolean expressions](../project-primitives/events/expressions.md) like `score < 0 | health < 0`.
 
 **Every tick**  
-A condition which is always true. Used on its own, this has the same effect as running every time it is checked, which is once per tick, hence the name "Every tick". This is about 60 times a second on most devices; see [how events work](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/how-events-work) for more information. Adding *Every tick* to an event with other conditions is redundant and has no effect at all.
+A condition which is always true. Used on its own, this has the same effect as running every time it is checked, which is once per tick, hence the name "Every tick". This is about 60 times a second on most devices; see [how events work](../project-primitives/events/how-events-work.md) for more information. Adding *Every tick* to an event with other conditions is redundant and has no effect at all.
 
 **Is between values**  
 Test if a number is between two values (greater or equal to a lower value and less or equal to a higher value).
 
 **Is group active**  
-Test if a [group of events](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/groups) is active or inactive. The name of the group is used to identify it.
+Test if a [group of events](../project-primitives/events/groups.md) is active or inactive. The name of the group is used to identify it.
 
 **Is number NaN**  
 Test if a number is equal to *NaN* (Not A Number), a special value returned by calculations which cannot be represented as a real number, such as the square root of -1.
@@ -58,14 +58,14 @@ Test if a number is equal to *NaN* (Not A Number), a special value returned by c
 Check if a value is a number or a string.
 
 **Object UID exists**  
-Test if an object exists with the given Unique ID (UID). For more information on UIDs, see [instances](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instances).
+Test if an object exists with the given Unique ID (UID). For more information on UIDs, see [instances](../project-primitives/objects/instances.md).
 
 **Test regex**  
 Test if a given string matches a regular expression with flags. This only returns a true or false result, so to make more advanced use of regular expressions, see the *Regex...* system expressions.
 
 ## Global & local variables
 **Compare variable**  
-Compare the value of a *number* or *text* type [event variable](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/variables) (a global variable or local variable in scope). The comparison can be made *Equal*, *Not equal*, *Less*, *Less or equal*, *Greater* or *Greater or equal*.
+Compare the value of a *number* or *text* type [event variable](../project-primitives/events/variables.md) (a global variable or local variable in scope). The comparison can be made *Equal*, *Not equal*, *Less*, *Less or equal*, *Greater* or *Greater or equal*.
 
 **Is boolean set**  
 Test if a boolean event variable is set to *true*. To test if it is false, invert the condition.
@@ -78,7 +78,7 @@ Compare the opacity (or semitransparency) of a layer, from 0 (transparent) to 10
 Test if a layer currently has zero instances on it. This counts any objects anywhere at all on the layer, so even one instance far outside the viewport will make this condition false.
 
 **Layer is HTML**  
-Test if a layer is currently set to be a HTML layer. For more information see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+Test if a layer is currently set to be a HTML layer. For more information see [HTML layers](../tips-and-guides/html-layers.md).
 
 **Layer is interactive**  
 Test if a layer is currently interactive, allowing its content to respond to mouse and touch input. This can be changed with the *Set layer interactive* action.
@@ -97,14 +97,14 @@ Test if the current layout includes a layer with the given name (case insensitiv
 Triggered after the *Snapshot canvas* system action, when the snapshot is ready. It can then be accessed with the *CanvasSnapshot* system expression.
 
 ## Loops
-Loops can be stopped with the *Stop Loop* [system action](https://www.construct.net/make-games/manuals/construct-3/system-reference/system-actions).
+Loops can be stopped with the *Stop Loop* [system action](system-actions.md).
 
 **For**  
-Repeat the event a number of times, using an index variable over a range of values. The index can be retrieved with the *LoopIndex* [system expression](https://www.construct.net/make-games/manuals/construct-3/system-reference/system-expressions) and passing the name of the loop.
+Repeat the event a number of times, using an index variable over a range of values. The index can be retrieved with the *LoopIndex* [system expression](system-expressions.md) and passing the name of the loop.
 
 **For Each**  
 **For Each (ordered)**  
-Repeat the event once per picked [instance](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instances). This only repeats for instances that have been picked by prior conditions. See [how events work](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/how-events-work) for more information on picking. *For Each* is commonly mis-used or used redundantly - actions already apply *for each* instance picked by conditions, so it often is simply not needed. However, if you fully understand how the event system works, it can be used to force the event to apply once per instance where the event system would not normally do that. The 'ordered' variant allows the order that the instances are iterated in to be defined by an expression. For example, ordering by `Sprite.Y` ascending will iterate the top instances on the screen first, moving downwards.
+Repeat the event once per picked [instance](../project-primitives/objects/instances.md). This only repeats for instances that have been picked by prior conditions. See [how events work](../project-primitives/events/how-events-work.md) for more information on picking. *For Each* is commonly mis-used or used redundantly - actions already apply *for each* instance picked by conditions, so it often is simply not needed. However, if you fully understand how the event system works, it can be used to force the event to apply once per instance where the event system would not normally do that. The 'ordered' variant allows the order that the instances are iterated in to be defined by an expression. For example, ordering by `Sprite.Y` ascending will iterate the top instances on the screen first, moving downwards.
 
 **Repeat**  
 Simply repeat the event a given number of times. This tests any conditions following it on every repeat, and if those conditions are met also runs the actions and any sub-events on every repeat.
@@ -121,22 +121,22 @@ Triggered when all memory management 'Load' actions that were started have finis
 
 ## Pick instances
 **Pick all**  
-Reset the picked objects back to all of them. Subsequent conditions will pick from all instances again instead of filtering from only those meeting all the conditions so far. See [How events work](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/how-events-work) for more information on how instances are picked in events. Useful in subevents to start affecting different instances again.
+Reset the picked objects back to all of them. Subsequent conditions will pick from all instances again instead of filtering from only those meeting all the conditions so far. See [How events work](../project-primitives/events/how-events-work.md) for more information on how instances are picked in events. Useful in subevents to start affecting different instances again.
 
 **Pick by comparison**  
 Pick the individual instances of an object type that meet a comparison. For example, it is possible to pick all instances where `Object.X * 2` is less than `Object.Y + 100`, which is not possible with either the *Compare X* or *Compare Y* conditions.
 
 **Pick by evaluate**  
-Pick the individual instances of an object type where the expression evaluates to a nonzero value. In other words, for each instance if the expression is 0, it is not picked, else it is picked. This is most useful with the comparison and logical operators (see [Expressions](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/expressions)). For example, it's possible to pick instances using the following expression (where & means "and" and | means "or"): `(Object.X > 100 & Object.Y > 100) | (Object.X < -100 & Object.Y < -100)`
+Pick the individual instances of an object type where the expression evaluates to a nonzero value. In other words, for each instance if the expression is 0, it is not picked, else it is picked. This is most useful with the comparison and logical operators (see [Expressions](../project-primitives/events/expressions.md)). For example, it's possible to pick instances using the following expression (where & means "and" and | means "or"): `(Object.X > 100 & Object.Y > 100) | (Object.X < -100 & Object.Y < -100)`
 
 **Pick by highest/lowest**  
 Pick a single instance of a given object type for which the given expression evaluates to the highest or lowest number. This evaluates the provided expression repeatedly for each individual instance of the object type, and uses the resulting values to determine which instance had the highest or lowest result, and then picks that instance. For example picking the instance with the highest expression `Object.X` will pick the single instance furthest to the right. Where there is a tie, an arbitrary single instance is chosen - it will never pick more than once instance.
 
 **Pick last created**  
-Pick the most recently created instance of an object type or family. This is useful with the *Create object (by name)* [system action](https://www.construct.net/make-games/manuals/construct-3/system-reference/system-actions). For example if you know the created object must belong to a [family](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/families), then you can use *Pick last created* to pick the created instance from the family.
+Pick the most recently created instance of an object type or family. This is useful with the *Create object (by name)* [system action](system-actions.md). For example if you know the created object must belong to a [family](../project-primitives/objects/families.md), then you can use *Pick last created* to pick the created instance from the family.
 
 **Pick Nth instance**  
-Pick the [instance](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instances) at a given place in the internal list of picked objects. This is most useful used in sub-events to act on separate instances. For example, in a "Sprite collided with Sprite" event, *Pick 0th instance* and *Pick 1st instance* can be used to act on each instance involved in the collision separately. 
+Pick the [instance](../project-primitives/objects/instances.md) at a given place in the internal list of picked objects. This is most useful used in sub-events to act on separate instances. For example, in a "Sprite collided with Sprite" event, *Pick 0th instance* and *Pick 1st instance* can be used to act on each instance involved in the collision separately. 
 If all objects are currently picked, this condition can also be used to pick an object by its index ID (IID).
 
 **Pick overlapping point**  
@@ -149,7 +149,7 @@ Pick a random instance from the currently picked objects. In other words, if *Pi
 For more information on using savegames, see the tutorial [How to make savegames](https://www.construct.net/en/tutorials/savegames-11).
 
 **On load complete**  
-Triggered after the *Load* [system action](https://www.construct.net/make-games/manuals/construct-3/system-reference/system-actions) successfully completes.
+Triggered after the *Load* [system action](system-actions.md) successfully completes.
 
 **On load failed**  
 Triggered after the *Load* system action fails to complete, usually because the slot has not been saved to yet.

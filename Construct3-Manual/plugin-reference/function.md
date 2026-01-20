@@ -19,7 +19,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-refe
 
 > **Warning**  
 
-> **The Function plugin has been replaced with a new [built-in functions feature](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/functions) and is now deprecated. This manual entry is provided for archival reasons only and may be removed in future.**
+> **The Function plugin has been replaced with a new [built-in functions feature](../project-primitives/events/functions.md) and is now deprecated. This manual entry is provided for archival reasons only and may be removed in future.**
 
 The **Function** object can run a different event (*On function*) in an action (*Call function*). This is analogous to functions in traditional programming languages. Using functions can help you organise events and avoid having to duplicate groups of actions or events.
 
@@ -42,7 +42,7 @@ It is often useful to split many parts of your events in to functions like this,
 
 ## Parameters
 When calling a function, you can also pass *parameters*. These are simply numbers or strings that are made available to the function. For example, the *CreateEnemy* function from the previous example could be modified to take two parameters: the X and the Y co-ordinates at which to create the enemy. This helps functions to be made more general purpose by using extra information from the action calling the function.
-To add a parameter to a function call, click the **Add parameter** link that appears in the [Parameters dialog](https://www.construct.net/make-games/manuals/construct-3/interface/dialogs/parameters) when editing the *Call function* action. This is a special link that only appears for this action in the Function object. Inside an *On function* event, you can then use the *Param* expression with the zero-based index of the parameter to retrieve the corresponding value.
+To add a parameter to a function call, click the **Add parameter** link that appears in the [Parameters dialog](../interface/dialogs/parameters.md) when editing the *Call function* action. This is a special link that only appears for this action in the Function object. Inside an *On function* event, you can then use the *Param* expression with the zero-based index of the parameter to retrieve the corresponding value.
 
 ## Advanced function features
 Like in programming languages, the Function object supports the following:
@@ -60,7 +60,7 @@ Functions can also return a result. For example, a *factorial* function could ca
 If the event was called using the *Call function* action, the returned value is afterwards available using the *ReturnValue* expression. Functions can also be called directly from an expression using the *Call* expression; in this case the return value is automatically returned as the result of the *Call* expression.
 
 ## JavaScript integration
-It is strongly recommended to use the [Addon SDK](https://www.construct.net/make-games/manuals/addon-sdk) to integrate JavaScript code with Construct. However it is possible to trigger a function in the Function object from JavaScript code using the following function:
+It is strongly recommended to use the [Addon SDK](../../Construct3-Addon-SDK/index.md) to integrate JavaScript code with Construct. However it is possible to trigger a function in the Function object from JavaScript code using the following function:
 ```javascript
 if (self.c2_callFunction)
 self.c2_callFunction("name", ["param1", "param2"]);

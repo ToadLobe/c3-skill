@@ -9,12 +9,12 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/f
 - [De-duplicating rows](#internalH1Link0)
 
 ---
-`[Paid plans only]`  The **Dictionary editor** allows editing a dictionary data file for the [Dictionary object](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/dictionary). The data you enter can be loaded at runtime by loading the [project file](https://www.construct.net/make-games/manuals/construct-3/project-primitives/files) in to the Dictionary object. It provides a visual way to set the initial data for a Dictionary. The Dictionary Editor appears when editing or adding an dictionary data file (in JSON format) in the [Project Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/project-bar).
+`[Paid plans only]`  The **Dictionary editor** allows editing a dictionary data file for the [Dictionary object](../../plugin-reference/dictionary.md). The data you enter can be loaded at runtime by loading the [project file](../../project-primitives/files.md) in to the Dictionary object. It provides a visual way to set the initial data for a Dictionary. The Dictionary Editor appears when editing or adding an dictionary data file (in JSON format) in the [Project Bar](../bars/project-bar.md).
 
 ![The Dictionary Editor](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/932/dictionary-editor.png)
 
 ### Opening the Dictionary Editor
-To open the Dictionary Editor in a new project, start by adding a new *Dictionary* file in the *Files* folder of the [Project Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/project-bar). For more information, see [project files](https://www.construct.net/make-games/manuals/construct-3/project-primitives/files).
+To open the Dictionary Editor in a new project, start by adding a new *Dictionary* file in the *Files* folder of the [Project Bar](../bars/project-bar.md). For more information, see [project files](../../project-primitives/files.md).
 
 ### Editing dictionaries
 Initially the dictionary has a single item, which means there is just one row available. Use the *Size* setting to change how many items are available. This determines how many rows appear in the editor, allowing you to enter more data. Each row represents a key in the dictionary (in the left column) and its associated value (in the right column).

@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [3D Shape APIs](#internalH1Link0)
 
 ---
-The `I3DShapeInstance` interface derives from [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to add APIs specific to the [3D shape plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/3d-shape).
+The `I3DShapeInstance` interface derives from [IWorldInstance](../object-interfaces/iworldinstance.md) to add APIs specific to the [3D shape plugin](../../../plugin-reference/3d-shape.md).
 
 ## 3D Shape APIs
 **shape**  
@@ -31,7 +31,7 @@ Change one of the shape faces to use one of the other face images. For example t
 > This also undoes `setFaceObject`, restoring the 3D shape's own face image instead of another object's image.
 
 **setFaceObject(face, objectClass)**  
-Replace the image used for a face of the shape with the image used by a Sprite, Tiled Background or 9-Patch object. An instance of the given object must exist on the current layout. The *face* parameter is a string identifying the face which must be one of `"back"`, `"front"`, `"left"`, `"right"`, `"top"` and `"bottom"`. The *objectClass* parameter is an [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) referencing the object to set for the given face. Only Sprite, Tiled Background and 9-Patch object types are supported. 
+Replace the image used for a face of the shape with the image used by a Sprite, Tiled Background or 9-Patch object. An instance of the given object must exist on the current layout. The *face* parameter is a string identifying the face which must be one of `"back"`, `"front"`, `"left"`, `"right"`, `"top"` and `"bottom"`. The *objectClass* parameter is an [IObjectClass](../object-interfaces/iobjectclass.md) referencing the object to set for the given face. Only Sprite, Tiled Background and 9-Patch object types are supported. 
 
 > **Tip**  
 > This method can be undone with `setFaceImage`.
@@ -40,7 +40,7 @@ Replace the image used for a face of the shape with the image used by a Sprite, 
 Set or get a boolean corresponding to the *Back face culling* property. When enabled, back face culling automatically hides faces of the shape that are pointing away from the camera.
 
 **zTilingFactor**  
-Set or get the Z tiling factor property of the 3D shape. For more information, refer to the [3D shape plugin manual entry](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/3d-shape).
+Set or get the Z tiling factor property of the 3D shape. For more information, refer to the [3D shape plugin manual entry](../../../plugin-reference/3d-shape.md).
 
 **getImagePointCount()**  
 Return the number of image points on the back face.

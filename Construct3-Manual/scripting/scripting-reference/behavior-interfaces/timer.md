@@ -11,7 +11,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Timer behavior APIs](#internalH1Link2)
 
 ---
-The `ITimerBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Timer behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/timer).
+The `ITimerBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Timer behavior](../../../behavior-reference/timer.md).
 
 ## Example
 Below is a sample code snippet demonstrating setting two timers on `inst` (assumed to be an instance with the Timer behavior). One is a regular timer and the other is a one-off timer. 
@@ -31,7 +31,7 @@ inst.behaviors.Timer.startTimer(1, "myRegularTimer", "regular");
 inst.behaviors.Timer.startTimer(2.5, "myOneOffTimer", "once");
 ```
 Copy ## Timer behavior events
-See [behavior instance event](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/behavior-instance-event) for standard behavior instance event object properties.
+See [behavior instance event](../interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
 
 **"timer"**  
 Fired when a timer period has elapsed. The event object has a `tag` property which is a string of the tag for the timer that has elapsed.

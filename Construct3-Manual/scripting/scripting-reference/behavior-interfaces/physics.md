@@ -11,8 +11,8 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [IPhysicsBehaviorInstance APIs](#internalH1Link2)
 
 ---
-The `IPhysicsBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Physics behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/physics).
-The Physics behavior also provides a `IPhysicsBehavior` interface deriving from [IBehavior](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehavior), which specifies the global settings affecting the entire Physics world. This interface can be accessed through the `behavior` property of a Physics behavior instance.
+The `IPhysicsBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Physics behavior](../../../behavior-reference/physics.md).
+The Physics behavior also provides a `IPhysicsBehavior` interface deriving from [IBehavior](../object-interfaces/ibehavior.md), which specifies the global settings affecting the entire Physics world. This interface can be accessed through the `behavior` property of a Physics behavior instance.
 
 ## Examples
 See the [Physics scripting example](https://editor.construct.net/#open=physics-scripting) for a demonstration of using physics from JavaScript code.
@@ -36,7 +36,7 @@ Set or get a string of either `"fixed"` or `"variable"` indicating the Physics t
 Set or get the number of velocity iterations and position iterations used in the physics engine. The default is 8 and 3 respectively. Lower values run faster but are less accurate, and higher values can reduce performance but provide a more realistic simulation.
 
 **setCollisionsEnabled(iObjectClassA, iObjectClassB, state)**  
-Set whether collisions are enabled between object types using the Physics behavior. The object types are specified by [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass), and *state* is a boolean indicating whether collisions between these types are enabled. Note this affects all instances of the given object types.
+Set whether collisions are enabled between object types using the Physics behavior. The object types are specified by [IObjectClass](../object-interfaces/iobjectclass.md), and *state* is a boolean indicating whether collisions between these types are enabled. Note this affects all instances of the given object types.
 
 ## IPhysicsBehaviorInstance APIs
 **isEnabled**  
@@ -81,7 +81,7 @@ Set or get the angular velocity, in radians per second.
 **linearDamping**  
 **angularDamping**  
 **isBullet**  
-These are setters and getters for the various properties of the Physics behavior. For more details, refer to the section *Physics properties* in the [Physics behavior manual entry](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/physics).
+These are setters and getters for the various properties of the Physics behavior. For more details, refer to the section *Physics properties* in the [Physics behavior manual entry](../../../behavior-reference/physics.md).
 
 **mass**  
 Read-only number representing the mass of the physics object, as calculated by the physics engine. This is the area of the object's collision mask multiplied by its density.
@@ -98,14 +98,14 @@ Set or get a boolean indicating whether the Physics object is awake or asleep. P
 `[Deprecated]`  Returns true when `isAwake` is false. Only provided for backwards compatibility; use `isAwake` instead.
 
 **createDistanceJoint(imgPt, iOtherInst, otherImgPt, damping, freq)**  
-Fix two physics objects at a given distance apart, as if connected by a pole. The other instance must be an [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) which also uses the Physics behavior. An image point can be specified for each with `imgPt` to connect to a specific part of the object. Note that an image point of `0` specifies the center of gravity of the object - if you intend to connect to the object origin, use `-1`. `damping` is the joint damping ratio from 0 to 1, and `freq` is the mass-spring-damper frequency in Hertz.
+Fix two physics objects at a given distance apart, as if connected by a pole. The other instance must be an [IWorldInstance](../object-interfaces/iworldinstance.md) which also uses the Physics behavior. An image point can be specified for each with `imgPt` to connect to a specific part of the object. Note that an image point of `0` specifies the center of gravity of the object - if you intend to connect to the object origin, use `-1`. `damping` is the joint damping ratio from 0 to 1, and `freq` is the mass-spring-damper frequency in Hertz.
 
 **createRevoluteJoint(imgPt, iOtherInst)**  
 **createLimitedRevoluteJoint(imgPt, iOtherInst, lower, upper)**  
-Hinge two physics objects together, so they can rotate freely as if connected by a pin. Limited revolute joints only allow rotation through a certain range of angles (given in radians), like the clapper of a bell. The other instance must be an [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) which also uses the Physics behavior. An image point can also be specified to connect to a specific part of the object. Note that an image point of `0` specifies the center of gravity of the object - if you intend to connect to the object origin, use `-1`.
+Hinge two physics objects together, so they can rotate freely as if connected by a pin. Limited revolute joints only allow rotation through a certain range of angles (given in radians), like the clapper of a bell. The other instance must be an [IWorldInstance](../object-interfaces/iworldinstance.md) which also uses the Physics behavior. An image point can also be specified to connect to a specific part of the object. Note that an image point of `0` specifies the center of gravity of the object - if you intend to connect to the object origin, use `-1`.
 
 **createPrismaticJoint(imgPt, iOtherInst, axisAngle, enableLimit, lowerTranslation, upperTranslation, enableMotor, motorSpeed, maxMotorForce)**  
-Restrict the movement of two physics objects along a specific axis, given by `axisAngle` in radians. An image point can also be specified to connect to a specific part of the object. Note that an image point of `0` specifies the center of gravity of the object - if you intend to connect to the object origin, use `-1`. The other instance must be an [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) which also uses the Physics behavior. `enableLimit` is a boolean specifying whether there is a lower and upper movement limit; if enabled these are given by the lower and upper translation (in pixels), otherwise unlimited movement is allowed along the axis. A motor can also be enabled by `enableMotor` to provide a continuous force along the axis with `motorSpeed` in radians per second, and `maxMotorForce` the maximum torque.
+Restrict the movement of two physics objects along a specific axis, given by `axisAngle` in radians. An image point can also be specified to connect to a specific part of the object. Note that an image point of `0` specifies the center of gravity of the object - if you intend to connect to the object origin, use `-1`. The other instance must be an [IWorldInstance](../object-interfaces/iworldinstance.md) which also uses the Physics behavior. `enableLimit` is a boolean specifying whether there is a lower and upper movement limit; if enabled these are given by the lower and upper translation (in pixels), otherwise unlimited movement is allowed along the axis. A motor can also be enabled by `enableMotor` to provide a continuous force along the axis with `motorSpeed` in radians per second, and `maxMotorForce` the maximum torque.
 
 **removeAllJoints()**  
 Remove all joints from the object. Any objects this object was attached to via joints is also affected. Note some joints automatically disable collisions between the objects, so you may want to manually disable collisions again after removing joints otherwise overlapping objects will "teleport" apart (as the physics engine will try to prevent them overlapping).

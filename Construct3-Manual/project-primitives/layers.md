@@ -11,8 +11,8 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/project-pri
 - [Layer properties](#internalH1Link2)
 
 ---
-A **layer** is like a transparent sheet of glass that objects are painted on to. Layers can be used to show different groups of objects in front or behind each other, like the foreground and background. Layers belong to a [layout](https://www.construct.net/make-games/manuals/construct-3/project-primitives/layouts) and can be added, edited and removed in the [Layers Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/layers-bar). Layers can be scrolled at different rates for parallax effects, and also individually scaled and rotated, which makes them a powerful way to make interesting visual effects.
-Layers are also important to add non-scrolling content (e.g. HUDs or UIs) to scrolling projects. A layer with its parallax set to **0, 0** will not scroll at all, so any objects placed on this layer will always stay in the same place on-screen. Note that in this case, objects should be placed within the dashed rectangle that appears in the top-left of the [Layout View](https://www.construct.net/make-games/manuals/construct-3/interface/layout-view).
+A **layer** is like a transparent sheet of glass that objects are painted on to. Layers can be used to show different groups of objects in front or behind each other, like the foreground and background. Layers belong to a [layout](layouts.md) and can be added, edited and removed in the [Layers Bar](../interface/bars/layers-bar.md). Layers can be scrolled at different rates for parallax effects, and also individually scaled and rotated, which makes them a powerful way to make interesting visual effects.
+Layers are also important to add non-scrolling content (e.g. HUDs or UIs) to scrolling projects. A layer with its parallax set to **0, 0** will not scroll at all, so any objects placed on this layer will always stay in the same place on-screen. Note that in this case, objects should be placed within the dashed rectangle that appears in the top-left of the [Layout View](../interface/layout-view.md).
 A common arrangement for layers might be:
 
 - **HUD** (top layer - health bar, UI info etc.)
@@ -21,7 +21,7 @@ A common arrangement for layers might be:
 - **Background** (bottom layer - the background)
 
 Note that the Free edition is limited to using two layers only.
-Layers can also have [effects](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/effects) applied, which affects all content appearing on the layer.
+Layers can also have [effects](objects/effects.md) applied, which affects all content appearing on the layer.
 
 ## Sub-layers
 Layers can also be added as sub-layers of another layer. Sub-layers appear indented in the Layers Bar to show they come under another layer.
@@ -33,10 +33,10 @@ Layer effects involving sub-layers also allow for composition of more advanced e
 Sometimes many layouts in a project have the same content on a particular layer, such as for interface or HUD overlaid on to the project. Changing this content then becomes a chore since changes must be repeated on every layout. **Global layers** are aimed at solving this problem.
 If a layer's *Global* property is enabled, then **every layer in the project with the same name** is overridden by that layer. The initial objects, as well as its properties, are used instead of the other layer's own content and properties. Then changes can be made once to the original global layer, and the changes will be applied project-wide.
 The layer with the *Global* property enabled is the "master" layer. On other layers in the project with the same name, the *Global* property will be read-only and display *Overridden* to indicate it is being substituted by a different layer. The same layer's content will appear in the editor, and all edits will affect the master layer, no matter which layout it is being edited from.
-Whether a layer is the original global layer or is overridden will be shown next to a layer's name in between parenthesis in all relevant places, these includes the *Layers* dropdown in the Properties bar when an [instance](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/instances/edit) is selected and next to each item of the [Layers Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/layers-bar).
+Whether a layer is the original global layer or is overridden will be shown next to a layer's name in between parenthesis in all relevant places, these includes the *Layers* dropdown in the Properties bar when an [instance](objects/instances.md) is selected and next to each item of the [Layers Bar](../interface/bars/layers-bar.md).
 
 ## Layer properties
-The properties for a layer can be edited in the [Properties Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/properties-bar) after clicking the layer in the [Layers Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/layers-bar). Note this also changes the **active layer**.
+The properties for a layer can be edited in the [Properties Bar](../interface/bars/properties-bar.md) after clicking the layer in the [Layers Bar](../interface/bars/layers-bar.md). Note this also changes the **active layer**.
 
 **Name**  
 The name of the layer, which can be used to refer to the layer in the event system.
@@ -48,7 +48,7 @@ Whether or not the layer is initially visible **when previewing**. This is diffe
 Whether or not the layer is initially interactive when previewing. If disabled, then the content of the layer will not respond to mouse or touch input.
 
 **HTML elements layer**  
-Allow HTML elements to appear above this layer. This allows content on other layers above this layer to render on top of HTML elements on this layer. Layers which enable this are shown with a special icon in the Layers Bar. For more details see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+Allow HTML elements to appear above this layer. This allows content on other layers above this layer to render on top of HTML elements on this layer. Layers which enable this are shown with a special icon in the Layers Bar. For more details see [HTML layers](../tips-and-guides/html-layers.md).
 
 **Use render cells**  
 Optimise the rendering of this layer for extremely large layouts with a large number of static objects spread out across this layer. This is not normally necessary except for certain types of large projects. If this is used incorrectly, it can actually make rendering less efficient, so make sure you can measure a performance improvement before using it. For more information, see the blog post [How render cells work](https://www.construct.net/en/blogs/ashleys-blog-2/render-cells-work-921).
@@ -81,7 +81,7 @@ A read-only property indicating if the layer renders to an intermediate texture.
 When using 3D rendering mode, this setting can change a layer back in to rendering in 2D mode. This allows projects with 3D content to still use 2D layers as backdrops or overlays which are not affected by depth. For example a HUD layer ought to display on top of all 3D content, regardless of depth, so would typically use a 2D rendering mode for the layer. Otherwise in 3D mode, 3D features may still overlap the layer content if they rise higher than the layer contents. For an example, see [Combining 2D & 3D layers](https://editor.construct.net/#open=combining-2d-3d), and you can learn more about 3D features and 2D layers in the tutorial [Using 3D features in Construct](https://www.construct.net/en/tutorials/using-3d-construct-2746). 
 
 > **Tip**  
-> This property only appears for projects using 3D rendering mode. See the *Rendering mode* [project property](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/projects).
+> This property only appears for projects using 3D rendering mode. See the *Rendering mode* [project property](projects.md).
 
 **Draw order**  
 This setting only appears for layers using a 3D rendering mode. The default draw order is *Z order*, meaning objects are drawn in a back-to-front order according to the Z order of instances on the layer. 3D layers can also be set to *Camera distance* draw order, which instead ignores the Z order and draws instances on the layer according to how far away from the camera they are, from furthest away to nearest. This has no effect on opaque objects, but is important for rendering transparency in 3D. For more information see the tutorial [Using 3D in Construct](https://www.construct.net/en/tutorials/using-3d-construct-2746).
@@ -90,7 +90,7 @@ This setting only appears for layers using a 3D rendering mode. The default draw
 Change the way the layer is blended with the background when it is rendered to the display. See the *Blend modes* example that comes with Construct 3 for a visual demonstration of each.
 
 **Effects**  
-Add and edit [effects](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/effects) that apply to the whole layer.
+Add and edit [effects](objects/effects.md) that apply to the whole layer.
 
 **Visible in editor**  
 Whether or not the layer is showing **in the Layout View**. Note this is different to the *Initially visible* property which only affects previewing. This setting can also be accessed via the Layers Bar.

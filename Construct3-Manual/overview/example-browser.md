@@ -17,7 +17,7 @@ Construct comes with hundreds of example projects to help you learn about it, as
 
 There are several ways to open the Example Browser. The main ways are:
 
-- Click **Browse examples** on the [Start Page](https://www.construct.net/en/make-games/manuals/construct-3/overview/start-page)
+- Click **Browse examples** on the [Start Page](start-page.md)
 - Click one of the three recommended examples on the Start Page to open it in the Example Browser
 - Select `Menu › View › Example browser`
 
@@ -48,7 +48,7 @@ Construct comes with hundreds of examples, so the Example Browser has lots of ta
 - **Mobile**: projects designed to work well on a mobile device with touch input
 - **Performance**: benchmarks or demonstrations of the performance of Construct's engine
 - **Hierarchies**: projects making use of Construct's hierarchies feature (i.e. connecting a child object to a parent)
-- **Timeline**: projects making use of Construct's [Timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines) animation feature
+- **Timeline**: projects making use of Construct's [Timelines](../project-primitives/timelines.md) animation feature
 - **Plugins:** projects sorted by which plugins they use
 - **Behaviors:** projects sorted by which behaviors they use
 - **Effects:** projects sorted by which effects they use

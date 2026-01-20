@@ -12,8 +12,8 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Tween behavior APIs](#internalH1Link3)
 
 ---
-The `ITweenBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Tween behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/tween).
-An actively running tween is represented by [ITweenState](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/itweenstate), which also derives from [ITimelineState](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/itimelinestate). These interfaces can be used to control playback, including identifying when tweens end via the `finished` promise.
+The `ITweenBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Tween behavior](../../../behavior-reference/tween.md).
+An actively running tween is represented by [ITweenState](../interfaces/itweenstate.md), which also derives from [ITimelineState](../interfaces/itimelinestate.md). These interfaces can be used to control playback, including identifying when tweens end via the `finished` promise.
 
 ## Examples
 See the [Scripting tweens example](https://editor.construct.net/#open=scripting-tweens) for a demonstration of using tweens from JavaScript code.
@@ -89,7 +89,7 @@ When using the `startTween` method, the `ease` parameter must be one of the stri
 
 ## Tween behavior APIs
 **startTween(prop, endValue, time, ease, opts)**  
-Start a tween running for a property to a given end value, over a `time` given in seconds, with an ease function specified by `ease`. Returns an [ITweenState](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/itweenstate) representing the running tween. 
+Start a tween running for a property to a given end value, over a `time` given in seconds, with an ease function specified by `ease`. Returns an [ITweenState](../interfaces/itweenstate.md) representing the running tween. 
 - `prop` must be a string of one of the property names given in the table in the section *Tween properties* above.
 - `endValue` must be either a number, or an array of numbers, depending on `prop`. In the table of properties above, where the *Number of values* is 1, this must be a number; where it is greater than 1, it must be an array with that many values.
 - `time` is the duration the tween will run for in seconds.
@@ -107,10 +107,10 @@ The `opts` parameter is optional for providing further parameters via object pro
 See above for some code examples demonstrating some of the ways this method can be called.
 
 ***allTweens()**  
-Iterates all actively running tweens created by the behavior, represented with [ITweenState](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/itweenstate).
+Iterates all actively running tweens created by the behavior, represented with [ITweenState](../interfaces/itweenstate.md).
 
 ***tweensByTags(tags)**  
-Iterates all actively running tweens matching the given set of tags, represented with [ITweenState](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/itweenstate). The tags may be specified as either a space-separated string, or an array of strings.
+Iterates all actively running tweens matching the given set of tags, represented with [ITweenState](../interfaces/itweenstate.md). The tags may be specified as either a space-separated string, or an array of strings.
 
 **isEnabled**  
 A boolean indicating if the behavior is enabled. If disabled, the behavior no longer has any effect on the object.

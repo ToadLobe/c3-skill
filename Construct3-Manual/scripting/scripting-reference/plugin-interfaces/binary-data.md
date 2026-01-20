@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Binary Data APIs](#internalH1Link0)
 
 ---
-The `IBinaryDataInstance` interface derives from [IInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance) to add APIs specific to the [Binary Data plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/binary-data). This makes it possible to read and alter the binary data from scripts, which is often more convenient than trying to do so from events.
+The `IBinaryDataInstance` interface derives from [IInstance](../object-interfaces/iinstance.md) to add APIs specific to the [Binary Data plugin](../../../plugin-reference/binary-data.md). This makes it possible to read and alter the binary data from scripts, which is often more convenient than trying to do so from events.
 Binary Data stores its data as an [ArrayBuffer](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fArrayBuffer), which cannot be directly modified. In JavaScript, data can be read and written to an ArrayBuffer using [typed arrays](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fTyped_arrays) or [DataView](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fDataView).
 
 ## Binary Data APIs

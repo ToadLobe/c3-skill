@@ -10,10 +10,10 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Progress Bar APIs](#internalH1Link1)
 
 ---
-The `IProgressBarInstance` interface derives from [IDOMInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/idominstance) to add APIs specific to the [Progress Bar plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/progress-bar). 
+The `IProgressBarInstance` interface derives from [IDOMInstance](../object-interfaces/idominstance.md) to add APIs specific to the [Progress Bar plugin](../../../plugin-reference/progress-bar.md). 
 
 ## Progress Bar events
-See [instance event](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/instance-event) for standard instance event object properties. 
+See [instance event](../interfaces/instance-event.md) for standard instance event object properties. 
 **"click"**  
 Fired when the progress bar is clicked.
 

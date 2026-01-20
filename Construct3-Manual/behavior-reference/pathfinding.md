@@ -18,7 +18,7 @@ The **Pathfinding behavior** uses the A* pathfinding algorithm to efficiently fi
 [Click here to open an example of the Pathfinding behavior](https://editor.construct.net/#open=pathfinding) to see how it can be used. Search for *Pathfinding* in the Start Page to find an additional example.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IPathfindingBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/pathfinding).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IPathfindingBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/pathfinding.md).
 
 ## The pathfinding grid
 The pathfinding behavior works based on dividing the layout in to a grid. Since pixel-perfect pathfinding can be extremely slow to process, dividing the layout in to cells makes the pathfinding enormously more efficient. The cell size can be set in the behavior property, and the larger it is the more efficient pathfinding is. However setting a large cell size can cause problems: a cell can only be entirely obstacle or entirely free, and using large cells can close up small gaps. For example take the following arrangement of obstacles using a cell size of 32:
@@ -62,7 +62,7 @@ The cell size, in pixels, of the grid of obstacles. See above for more details a
 The amount, in pixels, to expand the cell size by when testing for obstacles. See above for more details about how this is used.
 
 **Obstacles**  
-If *Solids*, the behavior will automatically mark cells touching objects with the [Solid behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/solid) as being obstacles. If *Custom*, you must define which objects are obstacles by using the *Add obstacle* action on startup.
+If *Solids*, the behavior will automatically mark cells touching objects with the [Solid behavior](solid.md) as being obstacles. If *Custom*, you must define which objects are obstacles by using the *Add obstacle* action on startup.
 
 > **Tip**  
 > Note this applies to all instances, since the obstacle map is shared. This setting cannot be used to affect individual instances differently.
@@ -170,7 +170,7 @@ See the [Pathfinding groups](https://editor.construct.net/#open=pathfinding-grou
 Automatically start moving the object along the found path. This can only be used after *On path found* - the path is not immediately known after the *Find path* action.
 
 > **Tip**  
-> You can also use the [Move To behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/move)'s *Move along Pathfinding path* action as an alternative, since the Move To behavior uses a different movement algorithm.
+> You can also use the [Move To behavior](move.md)'s *Move along Pathfinding path* action as an alternative, since the Move To behavior uses a different movement algorithm.
 
 **Set speed**  
 Set the current speed of the object if it is currently moving along its path, in pixels per second. This cannot be negative or greater than the maximum speed of the behavior.

@@ -9,11 +9,11 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [IPlugin APIs](#internalH1Link0)
 
 ---
-The `IPlugin` script interface represents a plugin, such as the Sprite plugin. The plugin only exists once in the project: if there are multiple Sprite objects in a project, then each object type is represented with a different [IObjectClass](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass).
+The `IPlugin` script interface represents a plugin, such as the Sprite plugin. The plugin only exists once in the project: if there are multiple Sprite objects in a project, then each object type is represented with a different [IObjectClass](iobjectclass.md).
 
 ## IPlugin APIs
 **runtime**  
-A reference back to the [IRuntime](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime) interface.
+A reference back to the [IRuntime](../iruntime.md) interface.
 
 **id**  
 A read-only string with a unique identifier for this plugin as specified by the plugin developer.
@@ -23,7 +23,7 @@ A read-only boolean indicating whether this plugin is a 'single global' type, me
 
 **getSingleGlobalObjectType()**  
 **getSingleGlobalInstance()**  
-These calls are only permitted when `isSingleGlobal` is true. These return the single [IObjectClass](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) and [IInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance) respectively that have been created for this plugin.
+These calls are only permitted when `isSingleGlobal` is true. These return the single [IObjectClass](iobjectclass.md) and [IInstance](iinstance.md) respectively that have been created for this plugin.
 
 **isWorldType**  
 A read-only boolean indicating whether this plugin is a world type, meaning it appears in layouts.

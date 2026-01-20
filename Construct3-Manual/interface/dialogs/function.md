@@ -4,7 +4,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/d
 ---
 
 # Add/edit function dialog
-The add/edit function dialog appears when adding or editing a [function](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/functions).
+The add/edit function dialog appears when adding or editing a [function](../../project-primitives/events/functions.md).
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/84224/function-dialog.png)
 
@@ -14,7 +14,7 @@ This dialog has the following fields.
 The name of the function. Note that if the function is used as an expression (its *Return type* is not *None*), the name must be a valid expression, so cannot contain special characters or whitespace. Functions used as actions (with a *Return type* of *None*) can use any name.
 
 **Description  `[Optional]`**  
-An optional description of the function, for your organisational purposes. This is displayed in the [Add action dialog](https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/add-condition-action) or [Expressions dictionary](https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/expressions-dictionary) depending on the return type of the function, and can be a helpful reminder of what the function does.
+An optional description of the function, for your organisational purposes. This is displayed in the [Add action dialog](add-condition-action.md) or [Expressions dictionary](expressions-dictionary.md) depending on the return type of the function, and can be a helpful reminder of what the function does.
 
 **Category  `[Optional]`**  
 An optional category for the function, for your organisational purposes. Functions with the same category are grouped together in the *Add action dialog* and *Expressions dictionary*, providing a way to arrange related functions together. This field autocompletes with existing category names used in the project, making it easier to use the same category names.

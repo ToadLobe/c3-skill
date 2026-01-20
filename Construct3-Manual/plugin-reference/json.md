@@ -17,10 +17,10 @@ The **JSON** object can parse and read strings in JavaScript Object Notation (JS
 [Click here to open an example of the JSON plugin.](https://editor.construct.net/#open=json)
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IJSONInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/json). (JavaScript and TypeScript have built-in support for JSON, but this allows for interacting with data used in an event sheet.)
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IJSONInstance script interface](../scripting/scripting-reference/plugin-interfaces/json.md). (JavaScript and TypeScript have built-in support for JSON, but this allows for interacting with data used in an event sheet.)
 
 ## Loading a JSON file
-JSON must be loaded as a string with the *Parse* action. If you have a small snippet of JSON, you can paste it directly in to the action parameter - but note in expressions a double-quote character (`"`) must be repeated twice (`""`) to avoid ending the string, which can be inconvenient. Instead it is recommended to request a JSON [project file](https://www.construct.net/make-games/manuals/construct-3/project-primitives/files) using the [AJAX](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/ajax) object. When the AJAX request completes, pass `AJAX.LastData` in to the *Parse* action. Then the data from the file can be used.
+JSON must be loaded as a string with the *Parse* action. If you have a small snippet of JSON, you can paste it directly in to the action parameter - but note in expressions a double-quote character (`"`) must be repeated twice (`""`) to avoid ending the string, which can be inconvenient. Instead it is recommended to request a JSON [project file](../project-primitives/files.md) using the [AJAX](ajax.md) object. When the AJAX request completes, pass `AJAX.LastData` in to the *Parse* action. Then the data from the file can be used.
 
 ## JSON paths
 Construct only supports numbers and strings in expressions. To allow you to use structures like nested objects and arrays, the JSON object uses a special *path string* which identifies keys in the JSON data. The path is similar to the JavaScript syntax that would be used to access the JSON data, but note it is not actually evaluated as JavaScript code.

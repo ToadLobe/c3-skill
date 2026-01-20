@@ -9,7 +9,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [JSON APIs](#internalH1Link0)
 
 ---
-The `IJSONInstance` interface derives from [IInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance) to add APIs specific to the [JSON plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/json). JSON can be conveniently modified from script alone, but this interface allows exchanging data between event sheets and code.
+The `IJSONInstance` interface derives from [IInstance](../object-interfaces/iinstance.md) to add APIs specific to the [JSON plugin](../../../plugin-reference/json.md). JSON can be conveniently modified from script alone, but this interface allows exchanging data between event sheets and code.
 
 ## JSON APIs
 **getJsonDataCopy()**  

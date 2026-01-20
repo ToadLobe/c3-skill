@@ -19,13 +19,13 @@ The **List** object creates either a **dropdown list** or **list box** form cont
 ![List types](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/1005/list-types.png)
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IListInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/list).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IListInstance script interface](../scripting/scripting-reference/plugin-interfaces/list.md).
 
 ## Layering HTML objects
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
 
 ## Styling lists
-As List objects are HTML elements, their appearance can be customised using CSS (Cascading Style Sheets). The *ID* and *Class* properties can be used to identify the HTML element, and a CSS [project file](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/files) added to apply some styles to it.
+As List objects are HTML elements, their appearance can be customised using CSS (Cascading Style Sheets). The *ID* and *Class* properties can be used to identify the HTML element, and a CSS [project file](../project-primitives/files.md) added to apply some styles to it.
 
 ## List properties
 **Items**  
@@ -57,7 +57,7 @@ An optional *id* attribute for the element in the DOM (Document Object Model). T
 An optional *class* attribute for the element in the DOM (Document Object Model). This can be useful for CSS styling.
 
 ## List conditions
-See [common conditions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-conditions) for features shared between form control objects.
+See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
 
 **Compare item text at**  
 Compare the text of a given item in the list.
@@ -78,7 +78,7 @@ Triggered when the control is double-clicked.
 Triggered whenever the chosen selection in the control is changed. This can be by any means of input (such as a mouse click, keyboard press, or touch input on mobile).
 
 ## List actions
-See [common actions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-actions) for features shared between form control objects.
+See [common actions](common-features/common-actions.md) for features shared between form control objects.
 
 **Add item**  
 Append a new item to the end of the list of available choices.

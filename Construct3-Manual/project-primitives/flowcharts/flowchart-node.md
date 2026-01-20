@@ -10,12 +10,12 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/project-pri
 - [Node properties](#internalH1Link1)
 
 ---
-The node is the main component of a [flowchart](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart). It represents a state the flowchart can get into and can hold arbitrary data in the form of [outputs](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart-node-output), similar to having a small amount of [Dictionary](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/dictionary) data in each node.
-The information a node holds can be queried at runtime using the [Flowchart Controller](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/flowchart-controller) plugin.
+The node is the main component of a [flowchart](flowchart.md). It represents a state the flowchart can get into and can hold arbitrary data in the form of [outputs](flowchart-node-output.md), similar to having a small amount of [Dictionary](../../plugin-reference/dictionary.md) data in each node.
+The information a node holds can be queried at runtime using the [Flowchart Controller](../../plugin-reference/flowchart-controller.md) plugin.
 
 ## Creating nodes
-To create a node in a flowchart, open a [Flowchart View](https://www.construct.net/en/make-games/manuals/construct-3/interface/flowchart-view) for it from the [Project Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/project-bar) and then right-click in any empty space of the Flowchart View and select the **Add** option from the context menu. Doing that will create a node at the position of the pointer.
-For more information on further editing of nodes, see the [Flowchart View](https://www.construct.net/en/make-games/manuals/construct-3/interface/flowchart-view) section of the manual.
+To create a node in a flowchart, open a [Flowchart View](../../interface/flowchart-view.md) for it from the [Project Bar](../../interface/bars/project-bar.md) and then right-click in any empty space of the Flowchart View and select the **Add** option from the context menu. Doing that will create a node at the position of the pointer.
+For more information on further editing of nodes, see the [Flowchart View](../../interface/flowchart-view.md) section of the manual.
 
 ## Node properties
 **Tags**  

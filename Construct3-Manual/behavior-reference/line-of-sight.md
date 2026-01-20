@@ -17,7 +17,7 @@ The **Line-of-sight (LOS) behavior** allows the ability to check if two objects 
 Line-of-sight can also perform *Raycasting*. Normal line-of-sight checks there are no obstacles in a straight line between two objects. With raycasting, if there is an obstacle in the way, you can find the exact position of the obstacle in the way, as well as the surface normal and angle of reflection. The [Instant hit laser example](https://editor.construct.net/#open=instant-hit-laser) provides a demonstration of how to use raycasting.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ILOSBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/line-of-sight).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ILOSBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/line-of-sight.md).
 
 ## Line-of-sight properties
 **Obstacles**  

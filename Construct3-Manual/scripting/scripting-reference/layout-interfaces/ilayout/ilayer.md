@@ -11,7 +11,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Layer APIs](#internalH1Link2)
 
 ---
-The `ILayer` script interface represents a layer on a [layout](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout).
+The `ILayer` script interface represents a layer on a [layout](../ilayout.md).
 
 ## Examples
 See the [Input event position example](https://editor.construct.net/#open=input-event-position) for a demonstration of using the layer `cssPxToLayer()` method, which is useful when handling input events. The [Custom Layer Drawing example](https://editor.construct.net/#open=custom-layer-drawing-js) also demonstrates using code to draw custom content to a layer with the `"afterdraw"` event.
@@ -22,7 +22,7 @@ The following events can be listened for using the `addEventListener` method.
 **"beforedraw"**  
 **"afterdraw"**  
 Fired when the layer is drawn, allowing custom drawing code to draw on this layer. As Construct uses a back-to-front renderer, content drawn in the `"beforedraw"` event will appear underneath other content on the layer, and content drawn in the `"afterdraw"` event will appear on top of other content on the layer. The event object has the following properties: 
-- `renderer`: the [IRenderer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderer-interface) script interface with which you can draw content.
+- `renderer`: the [IRenderer](../../graphics-interfaces/irenderer-interface.md) script interface with which you can draw content.
 - `layer`: the `ILayer` of the layer being drawn.
 
 > **Tip**  
@@ -30,7 +30,7 @@ Fired when the layer is drawn, allowing custom drawing code to draw on this laye
 
 ## Layer APIs
 **runtime**  
-A reference back to the [IRuntime](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime) interface.
+A reference back to the [IRuntime](../../iruntime.md) interface.
 
 **name**  
 A read-only string of the layer name.
@@ -43,7 +43,7 @@ A read-only number with the zero-based index of the layer on its layout. The bot
 Add or remove a callback function for an event. See *Layer events* above for the available events.
 
 **layout**  
-The [ILayout interface](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout) representing the layout this layer belongs to.
+The [ILayout interface](../ilayout.md) representing the layout this layer belongs to.
 
 **parentLayer**  
 A reference to the layer's parent `ILayer` if it is a sub-layer, else `null` if it is a top-level layer.
@@ -82,7 +82,7 @@ A boolean indicating if the layer background is transparent. When transparent, t
 Set or get the background color of a layer as an array with 3 elements specifying the red, green and blue components with values in the 0-1 range. Note this is ignored if the layer is transparent.
 
 **isHTMLElementsLayer**  
-A boolean indicating if this layer acts as a HTML layer. For more information see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+A boolean indicating if this layer acts as a HTML layer. For more information see [HTML layers](../../../../tips-and-guides/html-layers.md).
 
 **scrollX**  
 **scrollY**  
@@ -111,19 +111,19 @@ Set or get the layer angle in radians.
 Set or get the Z elevation of the entire layer. By default the camera is at Z = 100, and looking down to Z = 0. The default Z elevation is 0. Increasing it will move the layer upwards (towards the camera) and decreasing it will move it downwards (away from the camera).
 
 **renderingMode**  
-Set or get the *Rendering mode* [layer property](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/layers) as a string of either `"2d"` or `"3d"`. This allows dynamically changing a layer between rendering modes at runtime.
+Set or get the *Rendering mode* [layer property](../../../../project-primitives/layers.md) as a string of either `"2d"` or `"3d"`. This allows dynamically changing a layer between rendering modes at runtime.
 
 **getViewport()**  
 Return a [DOMRect](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fDOMRect) representing the bounds of the viewport on this layer in layout co-ordinates.
 
 **isForceOwnTexture**  
-A boolean indicating the layer's *Force own texture* property. For more information see the property in the [Layers](https://www.construct.net/make-games/manuals/construct-3/project-primitives/layers) manual entry.
+A boolean indicating the layer's *Force own texture* property. For more information see the property in the [Layers](../../../../project-primitives/layers.md) manual entry.
 
 **blendMode**  
-A string indicating the blend mode of the layer, controlling how it draws over the other layers behind it. The allowed strings are the same as accepted by the [IRenderer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderer-interface) method `setBlendMode()`.
+A string indicating the blend mode of the layer, controlling how it draws over the other layers behind it. The allowed strings are the same as accepted by the [IRenderer](../../graphics-interfaces/irenderer-interface.md) method `setBlendMode()`.
 
 **effects**  
-An array of [IEffectInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ieffectinstance) representing the effect parameters of the effects on this layer.
+An array of [IEffectInstance](../../object-interfaces/ieffectinstance.md) representing the effect parameters of the effects on this layer.
 
 **cssPxToLayer(clientX, clientY, z = 0)**  
 **layerToCssPx(layerX, layerY, z = 0)**  

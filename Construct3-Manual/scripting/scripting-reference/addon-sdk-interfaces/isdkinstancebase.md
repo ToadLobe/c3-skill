@@ -10,7 +10,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Wrapper extension methods](#internalH1Link1)
 
 ---
-The `ISDKInstanceBase` interface is used as a runtime base class for instances in the addon SDK. It derives from [IInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance).
+The `ISDKInstanceBase` interface is used as a runtime base class for instances in the addon SDK. It derives from [IInstance](../object-interfaces/iinstance.md).
 
 ## ISDKInstanceBase APIs
 **_release()**  
@@ -48,7 +48,7 @@ Optional override that is called every tick just **before** events are run after
 Optional override that is called every tick just **after** events are run after `_setTicking2(true)` has been called.
 
 **_getDebuggerProperties()**  
-Override to return properties to display in the debugger. For more information see [runtime scripts](https://www.construct.net/make-games/manuals/addon-sdk/guide/runtime-scripts).
+Override to return properties to display in the debugger. For more information see [runtime scripts](../../../../Construct3-Addon-SDK/guide/runtime-scripts.md).
 
 **_saveToJson()**  
 Optional override to return a JSON object that represents the state of the instance for savegames.
@@ -57,7 +57,7 @@ Optional override to return a JSON object that represents the state of the insta
 Optional override accepting a JSON object returned by a prior call to `_saveToJson()` that represents the state of an instance to load, for savegames.
 
 ## Wrapper extension methods
-These methods relate to the use of [wrapper extensions](https://www.construct.net/en/make-games/manuals/addon-sdk/guide/wrapper-extensions). Refer to that manual section for more details; for completeness the relevant methods are also included here.
+These methods relate to the use of [wrapper extensions](../../../../Construct3-Addon-SDK/guide/wrapper-extensions.md). Refer to that manual section for more details; for completeness the relevant methods are also included here.
 
 **_isWrapperExtensionAvailable()**  
 Returns a boolean indicating whether the corresponding wrapper extension was successfully loaded. If this returns false then no messages sent to the wrapper extension will be received, and async messages will return a promise that never resolves.

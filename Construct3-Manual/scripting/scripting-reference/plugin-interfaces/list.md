@@ -10,10 +10,10 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [List APIs](#internalH1Link1)
 
 ---
-The `IListInstance` interface derives from [IDOMInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/idominstance) to add APIs specific to the [List plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/list).
+The `IListInstance` interface derives from [IDOMInstance](../object-interfaces/idominstance.md) to add APIs specific to the [List plugin](../../../plugin-reference/list.md).
 
 ## List events
-See [instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/instance-event) for standard instance event object properties.
+See [instance event](../interfaces/instance-event.md) for standard instance event object properties.
 
 **"click"**  
 Fired when the list is clicked.

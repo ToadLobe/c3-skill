@@ -18,21 +18,21 @@ The **SVG Picture** object can display a [Scalable Vector Graphics](https://www.
 SVG Picture currently does not support animations and only shows a static image.
 
 > **Tip**  
-> Animated SVGs can be displayed with the [HTML Element](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/html-element) object.
+> Animated SVGs can be displayed with the [HTML Element](html-element.md) object.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ISVGPictureInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/svg-picture).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ISVGPictureInstance script interface](../scripting/scripting-reference/plugin-interfaces/svg-picture.md).
 
 ## Importing an SVG image
 The easiest way to add an SVG file you your project is to **drag-and-drop an SVG file in to the Layout View**. This will automatically import the SVG file as a project file, create an SVG Picture object, and set the SVG Picture to display the imported file.
 Alternatively you can follow this process manually:
 
-1. Import the SVG file as a [project file](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/files)
+1. Import the SVG file as a [project file](../project-primitives/files.md)
 2. Create an SVG Picture object
 3. Set the *SVG file* property to the imported SVG file
 
 ## Other ways to use SVG
-You can also import SVG files in the [Animations Editor](https://www.construct.net/en/make-games/manuals/construct-3/interface/animations-editor) for use in other objects like Sprite. This will rasterize them, which means converting them to a bitmap image at a fixed size. This loses some of the benefits of scaling SVGs, but allows them to be used in other objects, including as a part of Sprite animations, and provides other features such as customizing the collision polygon.
+You can also import SVG files in the [Animations Editor](../interface/animations-editor.md) for use in other objects like Sprite. This will rasterize them, which means converting them to a bitmap image at a fixed size. This loses some of the benefits of scaling SVGs, but allows them to be used in other objects, including as a part of Sprite animations, and provides other features such as customizing the collision polygon.
 
 ## SVG Picture properties
 **SVG file**  
@@ -48,7 +48,7 @@ Choose whether the object is shown (visible) or hidden (invisible) when the layo
 Choose the position of the origin of the object relative to its unrotated bounding rectangle.
 
 ## SVG Picture conditions
-SVG Picture does not have any of its own conditions. For conditions in common to other objects, see [Common conditions](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/common-features/common-conditions).
+SVG Picture does not have any of its own conditions. For conditions in common to other objects, see [Common conditions](common-features/common-conditions.md).
 
 ## SVG Picture actions
 **Set image**  
@@ -56,4 +56,4 @@ SVG Picture does not have any of its own conditions. For conditions in common to
 Set the SVG file being displayed by the object, either by a dropdown list or by an expression of the filename.
 
 ## SVG Picture conditions
-SVG Picture does not have any of its own expressions. For expressions in common to other objects, see [Common expressions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-expressions).
+SVG Picture does not have any of its own expressions. For expressions in common to other objects, see [Common expressions](common-features/common-expressions.md).

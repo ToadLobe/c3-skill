@@ -13,7 +13,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/d
 - [The "Purpose" property](#internalH1Link4)
 
 ---
-This editor enables the possibility of creating custom ease functions to be used with [timelines](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines)and [tweens](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/tween). This is a little bit of extra work when compared to the built in ease functions, but it makes it possible to customize your timeline animations and tweens even further.
+This editor enables the possibility of creating custom ease functions to be used with [timelines](../../project-primitives/timelines.md)and [tweens](../../behavior-reference/tween.md). This is a little bit of extra work when compared to the built in ease functions, but it makes it possible to customize your timeline animations and tweens even further.
 The most basic use is that of a cubic curve with a beginning, end and anchor points. This allows variations on all the basic ease functions (e.g. Sinusoidal, Back etc). It is also possible to add additional points in the middle of the curve to create variations of the more complex curves (e.g. Bounce, Elastic). Of course it is also possible to create completely original curves by using multiple points.
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/118234/update000.png)
@@ -22,7 +22,7 @@ The most basic use is that of a cubic curve with a beginning, end and anchor poi
 Here is a short summary on how to create eases, use the ease editor and finally apply a custom ease.
 
 ### Step 1: Create a custom ease
-Right-click **Eases** folder in the [Project Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/project-bar) and select *Add ease*.
+Right-click **Eases** folder in the [Project Bar](../bars/project-bar.md) and select *Add ease*.
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/28577/add.png)
 
@@ -38,7 +38,7 @@ There are some limitations to the position the anchor points can take in relatio
 The default ease will be something similar to the built in **In Out Sinusoidal** ease function.
 
 ### Step 4: Use the custom ease
-Once a custom ease is complete, it can be used in any of the places the built in eases are available. The names of the custom eases will appear after the names of the built in ease functions in all the relevant places. These include the [Properties Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/properties-bar), [Timeline Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar) and [Tween behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/tween).
+Once a custom ease is complete, it can be used in any of the places the built in eases are available. The names of the custom eases will appear after the names of the built in ease functions in all the relevant places. These include the [Properties Bar](../bars/properties-bar.md), [Timeline Bar](../bars/timeline-bar.md) and [Tween behavior](../../behavior-reference/tween.md).
 
 ## Interface
 
@@ -91,7 +91,7 @@ The toolbar at the top shows a few useful fields and buttons:
 - **Zoom:** Works like elsewhere in the application
 
 ## Editing built-in eases
-When the ease editor is opened from the common **Ease editor** property of a [Timeline element](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines), the editor can be opened showing a built-in ease.
+When the ease editor is opened from the common **Ease editor** property of a [Timeline element](../../project-primitives/timelines.md), the editor can be opened showing a built-in ease.
 In this case a new custom ease is created to look just like the corresponding built-in ease, it is also given a unique name and can be edited normally.
 After closing the editor, if any meaningful changes where made, the new custom ease is added to the project and assigned to the corresponding timeline element. If no meaningful change was made after the editor is closed, everything is discarded.
 
@@ -105,5 +105,5 @@ As mentioned earlier, this property can take the following values:
 Can be used anywhere where custom eases are supported. Their first and last keyframes can not be edited at all, that means the ease is bounded to **start at a value of 0** and **end at a value of 1**.
 
 **Expressions only**  
-Can only be used as argument in expressions that support providing a custom ease, such as the **Ease** expression of the [Timeline Controller](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/timeline-controller) plugin. This purpose allows to edit the first and last keyframes of the ease, allowing it to **start at values different from 0** and **end in values different from 1**.
-If a custom ease is already used in a place which expects it to have the **"Any"** purpose, such as [Tweens](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/tween), then the property will not be able to be changed. The same goes if it is already used in a place which expects the **"Expressions only"** prupose.
+Can only be used as argument in expressions that support providing a custom ease, such as the **Ease** expression of the [Timeline Controller](../../plugin-reference/timeline-controller.md) plugin. This purpose allows to edit the first and last keyframes of the ease, allowing it to **start at values different from 0** and **end in values different from 1**.
+If a custom ease is already used in a place which expects it to have the **"Any"** purpose, such as [Tweens](../../behavior-reference/tween.md), then the property will not be able to be changed. The same goes if it is already used in a place which expects the **"Expressions only"** prupose.

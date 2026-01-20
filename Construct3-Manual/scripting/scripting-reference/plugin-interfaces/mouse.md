@@ -11,7 +11,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Mouse APIs](#internalH1Link2)
 
 ---
-The `IMouseObjectType` interface derives from [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) to add APIs specific to the [Mouse plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/mouse).
+The `IMouseObjectType` interface derives from [IObjectClass](../object-interfaces/iobjectclass.md) to add APIs specific to the [Mouse plugin](../../../plugin-reference/mouse.md).
 Note this class derives from the object class interface, not the instance interface. Typically it is used through `runtime.mouse` instead of the named object.
 
 ## Examples
@@ -19,7 +19,7 @@ The [Shooting code example](https://editor.construct.net/#open=scripting-shootin
 The [Tracking pointers](https://editor.construct.net/#open=tracking-pointers) example also demonstrates how both mouse and touch input can be tracked simultaneously using pointer events.
 
 ## Events
-To detect mouse button events, use the events fired on the [Runtime script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime), such as `"mousedown"` or `"pointerdown"`.
+To detect mouse button events, use the events fired on the [Runtime script interface](../iruntime.md), such as `"mousedown"` or `"pointerdown"`.
 
 ## Mouse APIs
 **getMouseX(layerNameOrIndex)**  
@@ -34,7 +34,7 @@ Return a boolean indicating if the given mouse button is currently down. The but
 Set the appearance of the mouse cursor to a string of a CSS `cursor` style value, e.g. `"crosshair"`. See [cursor styles on MDN](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fCSS%2fcursor) for some possible values.
 
 **setCursorObjectClass(objectClass)**  
-Set the appearance of the mouse cursor to the current image of an [IObjectClass](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass). Various limitations apply: the object image is used as it appears in the image editor, not taking in to account size or rotation in the layout; the image cannot be too large (64x64 is usually the limit); the cursor may not be applied close to the edges of the browser window; and support varies depending on browser and OS. Some sample code for this method is shown below.
+Set the appearance of the mouse cursor to the current image of an [IObjectClass](../object-interfaces/iobjectclass.md). Various limitations apply: the object image is used as it appears in the image editor, not taking in to account size or rotation in the layout; the image cannot be too large (64x64 is usually the limit); the cursor may not be applied close to the edges of the browser window; and support varies depending on browser and OS. Some sample code for this method is shown below.
 ```javascript
 runtime.mouse.setCursorObjectClass(runtime.objects.Sprite);
 ```

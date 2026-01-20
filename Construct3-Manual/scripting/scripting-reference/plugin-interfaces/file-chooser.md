@@ -10,10 +10,10 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [File Chooser APIs](#internalH1Link1)
 
 ---
-The `IFileChooserInstance` interface derives from [IDOMInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/idominstance) to add APIs specific to the [File Chooser plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/file-chooser). 
+The `IFileChooserInstance` interface derives from [IDOMInstance](../object-interfaces/idominstance.md) to add APIs specific to the [File Chooser plugin](../../../plugin-reference/file-chooser.md). 
 
 ## File Chooser events
-See [instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/instance-event) for standard instance event object properties. 
+See [instance event](../interfaces/instance-event.md) for standard instance event object properties. 
 **"change"**  
 Fired when a file or set of files has been chosen from the input control.
 

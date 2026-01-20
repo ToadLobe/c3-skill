@@ -21,7 +21,7 @@ Currently the XML plugin is read-only. You can read data but not change any valu
 This object has no script interface, because when using JavaScript or TypeScript coding you can use the browser built-in APIs for [parsing and serializing XML](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fXML%2fParsing_and_serializing_XML).
 
 ## Loading an XML document
-XML must be loaded as a string with the *Load* action. If you have a small snippet of XML, you can paste it directly in to the action parameter - but note in expressions a double-quote character (`"`) must be repeated twice (`""`) to avoid ending the string, which can be inconvenient. Instead it is recommended to load an XML [project file](https://www.construct.net/make-games/manuals/construct-3/project-primitives/files) using the [AJAX](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/ajax) object. When the AJAX request completes, pass `AJAX.LastData` in to the *Load* action. Then the data from the file can be used.
+XML must be loaded as a string with the *Load* action. If you have a small snippet of XML, you can paste it directly in to the action parameter - but note in expressions a double-quote character (`"`) must be repeated twice (`""`) to avoid ending the string, which can be inconvenient. Instead it is recommended to load an XML [project file](../project-primitives/files.md) using the [AJAX](ajax.md) object. When the AJAX request completes, pass `AJAX.LastData` in to the *Load* action. Then the data from the file can be used.
 
 ## XML conditions
 **For each node**  

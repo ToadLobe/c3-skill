@@ -17,7 +17,7 @@ The **Dictionary** object associates keys with values. Keys are string, and thei
 Key names in the Dictionary object are always case sensitive. This means the key "SCORE" is considered different to the key "score".
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IDictionaryInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/dictionary). (JavaScript and TypeScript have built-in support for [Map](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fMap) which is a similar data structure, but this allows interacting with data used in event sheets.)
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IDictionaryInstance script interface](../scripting/scripting-reference/plugin-interfaces/dictionary.md). (JavaScript and TypeScript have built-in support for [Map](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fMap) which is a similar data structure, but this allows interacting with data used in event sheets.)
 
 ### Example
 Suppose the number 100 is stored with the key "score", and the string "Joe" stored with the key "name". The result storage looks like the following table:
@@ -31,7 +31,7 @@ This is like storing data in instance variables or event variables, but since yo
 Dictionaries are very efficient at retrieving values. Even if you have a dictionary with thousands of keys, it is still very fast to read a value. Arrays are typically much slower to search through (e.g. using the *IndexOf* expression), since they must scan through the entire array to locate elements.
 
 ## Designing dictionaries
-You can use Construct's [Dictionary Editor](https://www.construct.net/make-games/manuals/construct-3/interface/file-editors/dictionary-editor)  `[Paid plans only]`  to set the initial contents of a dictionary. You can create a new dictionary data file as a [project file](https://www.construct.net/make-games/manuals/construct-3/project-primitives/files) from the [Project Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/project-bar). At runtime you can load the project file with the [AJAX](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/ajax) object and use the Dictionary's *Load* action to read the data file from the AJAX's *LastData* expression.
+You can use Construct's [Dictionary Editor](../interface/file-editors/dictionary-editor.md)  `[Paid plans only]`  to set the initial contents of a dictionary. You can create a new dictionary data file as a [project file](../project-primitives/files.md) from the [Project Bar](../interface/bars/project-bar.md). At runtime you can load the project file with the [AJAX](ajax.md) object and use the Dictionary's *Load* action to read the data file from the AJAX's *LastData* expression.
 
 ## Dictionary conditions
 **Compare value**  

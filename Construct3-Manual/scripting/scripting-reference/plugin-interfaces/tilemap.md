@@ -10,7 +10,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Tilemap APIs](#internalH1Link1)
 
 ---
-The `ITilemapInstance` interface derives from [IWorldInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to add APIs specific to the [Tilemap plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/tilemap).
+The `ITilemapInstance` interface derives from [IWorldInstance](../object-interfaces/iworldinstance.md) to add APIs specific to the [Tilemap plugin](../../../plugin-reference/tilemap.md).
 
 ## Tile numbers
 Tiles in the tilemap are represented as a single 32-bit integer number and can be rotated and flipped. To support this they consist of two parts using a bitmask:

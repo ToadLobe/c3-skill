@@ -4,13 +4,13 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/b
 ---
 
 # The Find Results Bar
-`[Paid plans only]`  The **Find Results Bar** is displayed either when you search for text in an event sheet (using **Ctrl + F** or `Event sheet › Find...`), or when you use the **Find all references** feature (e.g. via the [Project Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/project-bar) to search for an object type's references). The results are listed with highlighting and information about their location, and they can be used to navigate to the result in the project.
+`[Paid plans only]`  The **Find Results Bar** is displayed either when you search for text in an event sheet (using **Ctrl + F** or `Event sheet › Find...`), or when you use the **Find all references** feature (e.g. via the [Project Bar](project-bar.md) to search for an object type's references). The results are listed with highlighting and information about their location, and they can be used to navigate to the result in the project.
 
 ![Find results for 'Find all references'](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/115441/find-references-bar.png)
 
 ![Find results for a search term](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/88276/find-search-term-results.png)
 
-There are various different kinds of find results. These can be text matches for text searches, event matches for *Find all references*, instances on a layout, family members, and more. Normally navigating to a result locates and selects the relevant event in the [Event Sheet View](https://www.construct.net/make-games/manuals/construct-3/interface/event-sheet-view) or line of text in a project file. However other types display in different ways; for example navigating to a reference which indicates a number of instances on a layout will instead open the [Layout View](https://www.construct.net/make-games/manuals/construct-3/interface/layout-view), select those instances, and adjust the scroll and zoom so all the instances are visible on-screen.
+There are various different kinds of find results. These can be text matches for text searches, event matches for *Find all references*, instances on a layout, family members, and more. Normally navigating to a result locates and selects the relevant event in the [Event Sheet View](../event-sheet-view.md) or line of text in a project file. However other types display in different ways; for example navigating to a reference which indicates a number of instances on a layout will instead open the [Layout View](../layout-view.md), select those instances, and adjust the scroll and zoom so all the instances are visible on-screen.
 To navigate to a result, **double-click** on it, or right-click and select `Go to`. This allows you to review the result in its original context.
 Results can also be removed via the right-click menu or the <kbd>Delete</kbd> key, or the results cleared entirely. You can also choose `Redo search` to update the results with the latest state of the project.
 

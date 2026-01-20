@@ -15,7 +15,7 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-re
 The **Orbit behavior** moves an object in a circle or ellipse around a point. The object's initial position is used as the point to orbit around.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IOrbitBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/orbit).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IOrbitBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/orbit.md).
 
 ## Orbit properties
 **Speed**  

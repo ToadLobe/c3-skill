@@ -10,10 +10,10 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Text Input APIs](#internalH1Link1)
 
 ---
-The `ITextInputInstance` interface derives from [IDOMInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/idominstance) to add APIs specific to the [Text Input plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/text-input).
+The `ITextInputInstance` interface derives from [IDOMInstance](../object-interfaces/idominstance.md) to add APIs specific to the [Text Input plugin](../../../plugin-reference/text-input.md).
 
 ## Text Input events
-See [instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/instance-event) for standard instance event object properties.
+See [instance event](../interfaces/instance-event.md) for standard instance event object properties.
 
 **"click"**  
 **"dblclick"**  

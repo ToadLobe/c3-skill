@@ -25,11 +25,11 @@ In the event sheet, functions are represented as a different type of event block
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/26689/add-function.png)
 
-When you select this the [Add function dialog](https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/function) will appear for you to fill in details about the function. Once created, the function appears in the event sheet similar to a normal event, but with a special function icon and *On function* text at the top.
+When you select this the [Add function dialog](../../interface/dialogs/function.md) will appear for you to fill in details about the function. Once created, the function appears in the event sheet similar to a normal event, but with a special function icon and *On function* text at the top.
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/26690/function-block.png)
 
-You can add [conditions](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/conditions), [actions](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/actions) and [sub-events](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/sub-events) to functions, just like you can with normal events. However functions do not run unless you call them in an action. Once you've added a function to your project, a new special *Functions* object appears in the [Add action dialog](https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/add-condition-action), next to the System object.
+You can add [conditions](conditions.md), [actions](actions.md) and [sub-events](sub-events.md) to functions, just like you can with normal events. However functions do not run unless you call them in an action. Once you've added a function to your project, a new special *Functions* object appears in the [Add action dialog](../../interface/dialogs/add-condition-action.md), next to the System object.
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/26692/call-function-1.png)
 
@@ -41,7 +41,7 @@ Choosing the function adds an action that calls (runs) the function.
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/26694/call-function-3.png)
 
-Functions are similar to [custom actions](https://www.construct.net/make-games/manuals/construct-3/project-primitives/events/custom-actions), but not associated with a specific object type or family. This action will run the corresponding *On function* event, including testing its conditions, running actions, and running any sub-events, and then return to the original action and continue from where it left off.
+Functions are similar to [custom actions](custom-actions.md), but not associated with a specific object type or family. This action will run the corresponding *On function* event, including testing its conditions, running actions, and running any sub-events, and then return to the original action and continue from where it left off.
 
 > **Tip**  
 > Functions are global. This means you can call a function from anywhere in your event sheets, even if the function is in a different event sheet that is not included in the event sheet you call it from.
@@ -68,7 +68,7 @@ To add a parameter to a function, use the *Add parameter* menu option when right
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/26696/add-parameter.png)
 
-When you select this the [Add function parameter dialog](https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/function-parameter) appears for you to fill in details about the parameter, including its name, description and type. Parameters appear similar to [local variables](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/events/variables), but inside the function block.
+When you select this the [Add function parameter dialog](../../interface/dialogs/function-parameter.md) appears for you to fill in details about the parameter, including its name, description and type. Parameters appear similar to [local variables](variables.md), but inside the function block.
 
 ![](https://construct-static.com/images/v1721/uploads/articleuploadobject/0/images/26697/function-parameters.png)
 
@@ -86,7 +86,7 @@ A function can set its return value using the *Set return value* action in the b
 Parameters can also be added in parentheses, e.g.:
 `Functions.MyFunction(1, 2, 3)`
 The expression returns the value set by the *Set return value* action in the function call.
-Functions which return a value will also appear in the [Expressions dictionary](https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/expressions-dictionary), also show up in autocomplete, and also show call tips when entering parameters, just like other expressions. In summary, while functions with no return type are essentially custom actions, functions with a return type are essentially custom expressions.
+Functions which return a value will also appear in the [Expressions dictionary](../../interface/dialogs/expressions-dictionary.md), also show up in autocomplete, and also show call tips when entering parameters, just like other expressions. In summary, while functions with no return type are essentially custom actions, functions with a return type are essentially custom expressions.
 
 ## Picking
 Normally, calling a function will run the function with picking reset. That means if an event picks some instances with conditions, then calls a function, the function runs with all instances picked again, ignoring the fact that conditions previously picked some instances.
@@ -95,7 +95,7 @@ Enabling *Copy picked* on the function changes this so the function keeps the sa
 Note that if the function changes which instances are picked with its own conditions, that does not affect the place that called the function. When returning after the function has finished, any changes the function made to picking are discarded. In other words, calling a function does not affect the calling event's picking, even if *Copy picked* is enabled.
 
 ## Asynchronous functions
-A function can be set to *Asynchronous* (or *async* for short) in the [Add/Edit Function dialog](https://www.construct.net/make-games/manuals/construct-3/interface/dialogs/function). This allows it to be used with the System *Wait for previous actions to complete* action. This means if the function does any waiting itself, such as with an action like *Wait 3 seconds*, the caller can also wait for the function call to complete with *Wait for previous actions to complete*.
+A function can be set to *Asynchronous* (or *async* for short) in the [Add/Edit Function dialog](../../interface/dialogs/function.md). This allows it to be used with the System *Wait for previous actions to complete* action. This means if the function does any waiting itself, such as with an action like *Wait 3 seconds*, the caller can also wait for the function call to complete with *Wait for previous actions to complete*.
 
 > **Tip**  
 > Make sure the asynchronous function ends with a *Wait for previous actions to complete* action if it uses async actions. This ensures all async actions have been completed before the function itself is marked as having completed. Alternatively you may want to leave some async actions at the end that are not waited for, allowing the async function to finish without waiting for the last actions.
@@ -117,10 +117,10 @@ When using functions, you'll notice actions and expressions refer to a built-in 
 ## JavaScript integration
 
 ### Scripting
-When using [scripts in Construct](https://www.construct.net/en/make-games/manuals/construct-3/scripting/overview), use [runtime.callFunction()](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/iruntime) to call an event function from script.
+When using [scripts in Construct](../../scripting/overview.md), use [runtime.callFunction()](../../scripting/scripting-reference/iruntime.md) to call an event function from script.
 
 ### External calls
-In other cases, it is strongly recommended to use the [Addon SDK](https://www.construct.net/make-games/manuals/addon-sdk) to integrate JavaScript code with Construct. However it is possible to trigger a function from JavaScript using the following function:
+In other cases, it is strongly recommended to use the [Addon SDK](../../../Construct3-Addon-SDK/index.md) to integrate JavaScript code with Construct. However it is possible to trigger a function from JavaScript using the following function:
 ```javascript
 c3_callFunction("name", ["param1", "param2"]);
 ```

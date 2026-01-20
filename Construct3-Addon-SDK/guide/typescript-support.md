@@ -45,7 +45,7 @@ If you want to add TypeScript support to an existing JavaScript-only addon, then
 
 For proper type checking, you'll need to export Construct's type definitions to your addon folder. To do that, follow these steps.
 
-1. In Construct, [enable developer mode](https://www.construct.net/make-games/manuals/addon-sdk/guide/enabling-developer-mode) and then reload Construct.
+1. In Construct, [enable developer mode](enabling-developer-mode.md) and then reload Construct.
 
 2. In the main menu, a new *Developer mode* submenu should have appeared. In that submenu, select *Set up TypeScript for addon*. Note this requires a browser that supports the File System Access API - try using Chrome or Edge if the option does not appear.
 
@@ -65,7 +65,7 @@ Once you are up and running, you will likely want to make repeated changes to yo
 
 In VS Code, press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> and then select *tsc: watch*. This enables a mode where VS Code will automatically compile your .ts files to .js whenever you save the file. Note this must be done once per session.
 
-Assuming you are [using a developer mode addon](https://www.construct.net/make-games/manuals/addon-sdk/guide/using-developer-mode), then your workflow can go like this:
+Assuming you are [using a developer mode addon](using-developer-mode.md), then your workflow can go like this:
 
 1. You make a change to a TypeScript file and save the change
 2. TypeScript then automatically compiles the .ts file to .js (or reports errors if you made a mistake)

@@ -21,16 +21,16 @@ The **Local Storage** plugin can **store data locally** on the user's device. Fo
 Local Storage works offline, since it stores data to the device itself. Different browsers use different storages, so data is not shared between different browsers on the same computer - each browser has its own unique storage. This is also separate to the browser cache, which is temporary storage to avoid needlessly re-downloading the same files over and over again. However the user can usually still choose to clear local storage data from their browser (with an option perhaps named something like "clear offline website data"). Non-browser export options like desktop exports and mobile apps are not affected by the user clearing any amount of data from any browser, they also use separate storage. Finally for security reasons browsers use separate storage per domain. For example all content on *construct.net* shares the same storage, but content on *facebook.com* uses a different storage and cannot access any data saved from *construct.net*.
 
 ### Scripting
-When using JavaScript or TypeScript coding, you can use the [IStorage](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/istorage) interface to access the same storage as Construct uses for this object (there is no dedicated script interface for the Local Storage plugin itself). Further, you can use the browser built-in storage APIs such as [IndexedDB](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fIndexedDB_API) for more advanced cases.
+When using JavaScript or TypeScript coding, you can use the [IStorage](../scripting/scripting-reference/interfaces/istorage.md) interface to access the same storage as Construct uses for this object (there is no dedicated script interface for the Local Storage plugin itself). Further, you can use the browser built-in storage APIs such as [IndexedDB](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fIndexedDB_API) for more advanced cases.
 
 ## Storage location on disk
-The Local Storage plugin stores all saved data in an internal browser database. This does not produce any easily discoverable files on disk. If you want to save data to easily identifiable files on disk, such as storing save data in a file in the user's Documents folder, consider using the [File System plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/filesystem) instead.
+The Local Storage plugin stores all saved data in an internal browser database. This does not produce any easily discoverable files on disk. If you want to save data to easily identifiable files on disk, such as storing save data in a file in the user's Documents folder, consider using the [File System plugin](filesystem.md) instead.
 
 ## Storage quotas
 To prevent abuse, most browsers implement a storage quota, which is a maximum amount of data that can be saved locally. On most modern browsers this is defined as a proportion of the free storage space on the device. You can check the available quota on a device by loading Construct and checking the About dialog which shows the quota available. If the quota is exceeded, the *On error* trigger will fire when writing to storage.
 
 ## Using Local Storage
-Local Storage uses a very simple storage system: values are stored under named *keys*, similar to how the [Dictionary](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/dictionary) object works. For example the value 100 could be stored under a key named *score*.
+Local Storage uses a very simple storage system: values are stored under named *keys*, similar to how the [Dictionary](dictionary.md) object works. For example the value 100 could be stored under a key named *score*.
 Local Storage is asynchronous. This means reading and writing data does not complete immediately. The actions only start the process of reading or writing a value, and the project continues to run in the interim. This ensures that slow or busy storage systems do not impact the performance of the project. When the read or write is complete, a trigger fires (*On item get* or *On item set*) which indicates either the value is available to read (with the *ItemValue* expression) or that the value was successfully written.
 For example here is a flow to read the value of the key "score":
 
@@ -47,7 +47,7 @@ Here is a flow to set the new value of "score":
 Note that you must be careful to avoid "races" when using asynchronous storage. For example the *Clear storage* action may take a moment to complete before it fires *On storage cleared*. It is possible to write more values to storage in between, while *Clear storage* is still processing. This is like "racing" the *Clear storage* and *Set item* actions: the end result depends on what order they complete in, which is unpredictable. In this case it is more or less random what happens: the written keys may be cleared, or they may not be - you cannot rely on any specific result. Therefore you should be careful to avoid this case.
 
 ## Simplifying usage with Dictionary
-Although it improves performance, dealing with asynchronous reads and writes can sometimes be difficult. One simple way to conveniently have synchronous storage is to store an entire [Dictionary](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/dictionary) object's contents to Local Storage, by saving its *AsJSON* string. Then you can load this content from Local Storage with the *Load* action. This means only saving and loading the dictionary contents is asynchronous, and the rest of the time you can use the Dictionary object's features to synchronously access data, such as simply using its *Get* expression to immediately read a value. However you must remember to save the Dictionary again at some point before the user quits the project.
+Although it improves performance, dealing with asynchronous reads and writes can sometimes be difficult. One simple way to conveniently have synchronous storage is to store an entire [Dictionary](dictionary.md) object's contents to Local Storage, by saving its *AsJSON* string. Then you can load this content from Local Storage with the *Load* action. This means only saving and loading the dictionary contents is asynchronous, and the rest of the time you can use the Dictionary object's features to synchronously access data, such as simply using its *Get* expression to immediately read a value. However you must remember to save the Dictionary again at some point before the user quits the project.
 
 ## Redirecting storage
 If you have a complex existing project and you decide you want to change how data is saved - such as by saving it to a file with the File System plugin, or using a cloud service - updating all usages of the Local Storage plugin can be tricky. To help with this you can enable the *In memory only* property of the object. This essentially disables the use of storage and only holds data in memory, and the data will be lost when reloading the page or app. However the data can then be accessed using the *MemoryStorageAsJSON* expression for saving elsewhere, and loaded with the *Load memory from JSON* action, to persist storage somewhere else. Note that if you use this to save to a cloud service, you may want to check the size of the saved data - usually it is not a problem to save a large amount of data locally, but it may turn out to be too much to upload and download.
@@ -123,14 +123,14 @@ Check if a key exists in storage. This triggers either *On item exists* if the k
 
 **Get item**  
 **Get binary item**  
-Read the value of a key in storage. This triggers *On item get* when the value has been read. When reading binary data, the data will be written to the chosen [Binary Data](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/binary-data) object; otherwise the *ItemValue* expression is set to the value of the key.
+Read the value of a key in storage. This triggers *On item get* when the value has been read. When reading binary data, the data will be written to the chosen [Binary Data](binary-data.md) object; otherwise the *ItemValue* expression is set to the value of the key.
 
 **Remove item**  
 Remove (delete) a key from storage. This triggers *On item removed* when the key has been removed.
 
 **Set item**  
 **Set binary item**  
-Set the value of a key in storage. This triggers *On item set* when the value has been written. When setting binary data, the contents of a [Binary Data](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/binary-data) object are written; otherwise the text or number provided is used.
+Set the value of a key in storage. This triggers *On item set* when the value has been written. When setting binary data, the contents of a [Binary Data](binary-data.md) object are written; otherwise the text or number provided is used.
 
 **Clear storage**  
 Remove (delete) all items from storage, reverting it back to the empty state. This triggers *On storage cleared* when completed.

@@ -15,27 +15,27 @@ source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/s
 - [Scene graph APIs](#internalH1Link6)
 
 ---
-The `IWorldInstance` script interface represents a single instance of an object type (represented by [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass)) that appears in a layout. It derives from the [IInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iinstance) script interface.
-Many objects return a more specific class deriving from `IInstance` or `IWorldInstance` to add APIs specific to the plugin. See the [Plugin interfaces reference](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces) for more information.
+The `IWorldInstance` script interface represents a single instance of an object type (represented by [IObjectClass](iobjectclass.md)) that appears in a layout. It derives from the [IInstance](iinstance.md) script interface.
+Many objects return a more specific class deriving from `IInstance` or `IWorldInstance` to add APIs specific to the plugin. See the [Plugin interfaces reference](../plugin-interfaces/sprite.md) for more information.
 
 ## Getting an IWorldInstance
-Instances are typically accessed through [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) methods like `getFirstInstance()`. For example, `runtime.objects.Sprite.getFirstInstance()` will return the first instance of the Sprite object type.
+Instances are typically accessed through [IObjectClass](iobjectclass.md) methods like `getFirstInstance()`. For example, `runtime.objects.Sprite.getFirstInstance()` will return the first instance of the Sprite object type.
 
 > **Tip**  
 > Try not to confuse object classes with object instances. A common mistake is to try to use something like `runtime.objects.Sprite.x` to get the X co-ordinate of a Sprite instance. However `runtime.objects.Sprite` is an IObjectClass, which does not have a position. First add another call to get an instance before trying to read instance properties, for example `runtime.objects.Sprite.getFirstInstance().x`.
 
 ## World instance events
-The following events can be listened for on any `IWorldInstance` using the `addEventListener` method. See [instance event](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/instance-event) for standard event properties. Note many more kinds of addon-specific events can be fired. See the documentation on each addon's script interfaces for more information.
+The following events can be listened for on any `IWorldInstance` using the `addEventListener` method. See [instance event](../interfaces/instance-event.md) for standard event properties. Note many more kinds of addon-specific events can be fired. See the documentation on each addon's script interfaces for more information.
 
 **"hierarchyready"**  
 Fired for the root instance in a hierarchy after all instances have finished creating. During creation of a hierarchy it is uncertain whether other instances in the hierarchy have been created yet, which can sometimes complicate initializing hierarchies. When this event fires all instances in the hierarchy have been created, including triggering *On created* in event sheets, and so it is a suitable time to perform initialization of an entire hierarchy. As this only fires for the root instance, if you wish to iterate the rest of the instances in the hierarchy, use the `allInstances()` generator method of the root instance.
 
 ## General APIs
 **layout**  
-An [ILayout interface](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout) representing the layout the instance is on.
+An [ILayout interface](../layout-interfaces/ilayout.md) representing the layout the instance is on.
 
 **layer**  
-An [ILayer interface](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout/ilayer) representing the layer the instance is on.
+An [ILayer interface](../layout-interfaces/ilayout/ilayer.md) representing the layer the instance is on.
 
 **x**  
 **y**  
@@ -98,10 +98,10 @@ The opacity of the instance, as a floating point number in the range [0, 1], whe
 An array with 3 elements specifying the red, green and blue color filter of the instance, with color values as floats in the 0-1 range.
 
 **blendMode**  
-A string indicating the current blend mode of the instance, controlling how it draws over the background. The allowed strings are the same as accepted by the [IRenderer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderer-interface) method `setBlendMode()`.
+A string indicating the current blend mode of the instance, controlling how it draws over the background. The allowed strings are the same as accepted by the [IRenderer](../graphics-interfaces/irenderer-interface.md) method `setBlendMode()`.
 
 **effects**  
-An array of [IEffectInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ieffectinstance) representing the effect parameters for each effect on the instance.
+An array of [IEffectInstance](ieffectinstance.md) representing the effect parameters for each effect on the instance.
 
 ## Z order APIs
 **moveToTop()**  
@@ -109,7 +109,7 @@ An array of [IEffectInstance](https://www.construct.net/en/make-games/manuals/co
 Move the instance to the top or the bottom of its current layer in the Z order.
 
 **moveToLayer(layer)**  
-Move the instance to the top of a different layer given by its [ILayer](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/layout-interfaces/ilayout/ilayer).
+Move the instance to the top of a different layer given by its [ILayer](../layout-interfaces/ilayout/ilayer.md).
 
 **moveAdjacentToInstance(other, isAfter)**  
 Move the instance adjacent to `other` (another `IWorldInstance`) in the Z order. If necessary this also moves the instance to the same layer as `other`. If `isAfter` is true, it moves it just above the given instance, else just below.
@@ -118,7 +118,7 @@ Move the instance adjacent to `other` (another `IWorldInstance`) in the Z order.
 A read-only integer indicating the instance's current index in the Z order on its current layer, starting at 0 for the back of the current layer, and increasing as it moves to the front.
 
 ## Collision APIs
-See also the [ICollisionEngine](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/icollisionengine) interface for more collision APIs.
+See also the [ICollisionEngine](../interfaces/icollisionengine.md) interface for more collision APIs.
 
 **isCollisionEnabled**  
 Set or get a boolean indicating whether collisions are enabled for this instance. If disabled, the instance will always fail all overlap or collision checks.
@@ -130,7 +130,7 @@ Test if a point intersects this instance, using its collision polygon if any, an
 Test if this instance overlaps another world instance given by an `IWorldInstance`, returning `true` if they overlap, else `false`. This uses the object's collision polygons if any. If either instance has collisions disabled, this will always return `false`.
 
 **testOverlapSolid()**  
-Test if this instance overlaps any instance with the [Solid behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/solid). This returns the instance interface class for the first instance with the solid behavior that was found to overlap this instance, or `null` if none. This uses the object's collision polygons if any and respects solid collision filtering.
+Test if this instance overlaps any instance with the [Solid behavior](../../../behavior-reference/solid.md). This returns the instance interface class for the first instance with the solid behavior that was found to overlap this instance, or `null` if none. This uses the object's collision polygons if any and respects solid collision filtering.
 
 > **Tip**  
 > The return value of this method is truthy when an overlap is found and falsey when not, so this can be used directly in an `if` statement.
