@@ -1,0 +1,14 @@
+{
+  "name": "construct3-docs-scraper",
+  "version": "3.0.0",
+  "description": "Scraper and generator for Construct 3 documentation",
+  "scripts": {
+    "scrape": "node autonomous-scraper.js all --force",
+    "scrape:manual": "node autonomous-scraper.js manual --force",
+    "scrape:sdk": "node autonomous-scraper.js addon-sdk --force",
+    "regenerate": "node regenerate.js"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}

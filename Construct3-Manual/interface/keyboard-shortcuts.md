@@ -1,25 +1,29 @@
 ---
 title: "Keyboard shortcuts"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/keyboard-shortcuts"
+release: 449
 ---
-
-# Keyboard shortcuts
 
 ## On this page
-- [General](#internalH1Link0)
-- [Layout view](#internalH1Link1)
-- [Event Sheet View](#internalH1Link2)
-- [Animations Editor](#internalH1Link3)
-- [Timeline Bar](#internalH1Link4)
-- [Tilemap bar](#internalH1Link5)
-- [Ease editor](#internalH1Link6)
-- [Flowchart View](#internalH1Link7)
+
+- [General](#general)
+- [Layout view](#layout-view)
+- [Event Sheet View](#event-sheet-view)
+- [Animations Editor](#animations-editor)
+- [Timeline Bar](#timeline-bar)
+- [Tilemap bar](#tilemap-bar)
+- [Tilemap brush editor](#tilemap-brush-editor)
+- [Ease editor](#ease-editor)
+- [Flowchart View](#flowchart-view)
 
 ---
+
 The following keyboard shortcuts are available in Construct 3.
+
 Note that on macOS the **Command key** <kbd>⌘</kbd> is used instead of **Control** for most keyboard shortcuts. However since it is the only exception, for brevity the keyboard shortcuts below refer to <kbd>Ctrl</kbd>.
 
 ## General
+
 <kbd>Ctrl</kbd> + <kbd>X</kbd> Cut
 
 <kbd>Ctrl</kbd> + <kbd>C</kbd> Copy
@@ -52,9 +56,9 @@ Note that on macOS the **Command key** <kbd>⌘</kbd> is used instead of **Contr
 
 <kbd>F5</kbd> Preview current layout
 
-<kbd>Shift</kbd> + <kbd>F4</kbd> [Debug](https://www.construct.net/make-games/manuals/construct-3/interface/debugger) from first layout
+<kbd>Shift</kbd> + <kbd>F4</kbd> [Debug](debugger.md) from first layout
 
-<kbd>Shift</kbd> + <kbd>F5</kbd> [Debug](https://www.construct.net/make-games/manuals/construct-3/interface/debugger) current layout
+<kbd>Shift</kbd> + <kbd>F5</kbd> [Debug](debugger.md) current layout
 
 <kbd>Alt</kbd> + **Preview** button to start an additional preview
 
@@ -93,7 +97,8 @@ Note that on macOS the **Command key** <kbd>⌘</kbd> is used instead of **Contr
 <kbd>Shift</kbd> + <kbd>S</kbd> Go to associated view (switches between Layout View and Event Sheet View)
 
 ## Layout view
-See also: [Layout View](https://www.construct.net/make-games/manuals/construct-3/interface/layout-view)
+
+See also: [Layout View](layout-view.md)
 
 <kbd>Ctrl</kbd> + **Mouse Wheel Up** or <kbd>Ctrl</kbd> + <kbd>+</kbd> Zoom in
 
@@ -104,6 +109,7 @@ Hold <kbd>Shift</kbd> to increase the zoom rate.
 <kbd>Ctrl</kbd> + <kbd>0</kbd> Return to 100% zoom
 
 **Middle mouse button drag** or **Hold space and move mouse** Pan the view
+
 <kbd>Ctrl</kbd> + <kbd>E</kbd> or <kbd>Shift</kbd> + <kbd>S</kbd> Go to associated event sheet
 
 **Arrow keys** Nudge selected objects 1 pixel. **Hold** <kbd>Shift</kbd> to nudge 10 pixels.
@@ -141,11 +147,12 @@ Hold <kbd>Shift</kbd> to increase the zoom rate.
 
 To paste objects in-place (so they paste at their original positions, instead of relative to the mouse), **hold** <kbd>Shift</kbd> **while placing a paste**. The full process is: <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy an object; press <kbd>Ctrl</kbd> + <kbd>V</kbd> to turn the mouse to a crosshair, hold <kbd>Shift</kbd> and click, all objects paste at their original positions (instead of by the mouse) and the mouse returns to a normal cursor.
 
-<kbd>Ctrl</kbd> + <kbd>R</kbd> Start all Live Previews  `[Paid plans only]` 
+<kbd>Ctrl</kbd> + <kbd>R</kbd> Start all Live Previews  `[Paid plans only]`
 
-<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> Stop all Live Previews  `[Paid plans only]` 
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> Stop all Live Previews  `[Paid plans only]`
 
-When editing tilemaps using the [Tilemap Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/tilemap-bar):
+When editing tilemaps using the [Tilemap Bar](bars/tilemap-bar.md):
+
 <kbd>1</kbd> - <kbd>6</kbd> Switch current tool
 
 <kbd>X</kbd> Flip horizontal
@@ -160,15 +167,17 @@ When editing tilemaps using the [Tilemap Bar](https://www.construct.net/make-gam
 
 <kbd>Shift</kbd> + **right click** Select a patch of tiles from the tilemap
 
-<kbd>Ctrl or Alt Gr</kbd> + <kbd>[</kbd> Use the **replace whole hierarchy** option on the current selection of [templates and/or replicas](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/templates)
+<kbd>Ctrl or Alt Gr</kbd> + <kbd>[</kbd> Use the **replace whole hierarchy** option on the current selection of [templates and/or replicas](../project-primitives/objects/templates.md)
 
 <kbd>Ctrl or Alt Gr</kbd> + <kbd>]</kbd> Use the **modify existing hierarchy** option on the current selection of templates and/or replicas
 
-When editing timelines using the [Timeline Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/timeline-bar):
+When editing timelines using the [Timeline Bar](bars/timeline-bar.md):
+
 Hold <kbd>Ctrl</kbd> when dragging a cubic bezier anchor point to also modify the adjacent anchor point if there is any.
 
 ## Event Sheet View
-See also: [Event Sheet View](https://www.construct.net/make-games/manuals/construct-3/interface/event-sheet-view)
+
+See also: [Event Sheet View](event-sheet-view.md)
 
 <kbd>Ctrl</kbd> + <kbd>+</kbd> Increase text size
 
@@ -241,7 +250,8 @@ See also: [Event Sheet View](https://www.construct.net/make-games/manuals/constr
 In the Parameters Dialog, press <kbd>F4</kbd> to toggle the Expressions Dictionary.
 
 ## Animations Editor
-See also: [Animations Editor](https://www.construct.net/make-games/manuals/construct-3/interface/animations-editor)
+
+See also: [Animations Editor](animations-editor.md)
 
 <kbd>B</kbd> Brush tool
 
@@ -285,11 +295,12 @@ See also: [Animations Editor](https://www.construct.net/make-games/manuals/const
 
 <kbd>Ctrl</kbd> + <kbd>G</kbd> Toggle grid
 
-<kbd>Shift</kbd> + <kbd>O</kbd> Toggle onion skin  `[Paid plans only]` 
+<kbd>Shift</kbd> + <kbd>O</kbd> Toggle onion skin  `[Paid plans only]`
 
 <kbd>Ctrl</kbd> + <kbd>1</kbd> Zoom to fit
 
 Quick assign origin and image points:
+
 <kbd>Num pad 1</kbd> or <kbd>End</kbd> Bottom left
 
 <kbd>Num pad 2</kbd> Bottom
@@ -323,6 +334,7 @@ Hold <kbd>Shift</kbd> to apply the origin/image point to the entire animation. <
 <kbd>Shift</kbd> + **Rotate Anticlockwise button** or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> Rotate entire animation anticlockwise
 
 Animations only:
+
 <kbd>Ctrl</kbd> + <kbd>Up</kbd> Previous animation
 
 <kbd>Ctrl</kbd> + <kbd>Down</kbd> Next animation
@@ -333,20 +345,21 @@ Animations only:
 
 <kbd>Ctrl</kbd> + <kbd>P</kbd> Start / restart preview animation
 
-<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> Close animation preview 
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> Close animation preview
 
 ## Timeline Bar
-See also: [Timeline Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar)
+
+See also: [Timeline Bar](bars/timeline-bar.md)
 
 <kbd>E</kbd> Toggle timeline edit mode
 
-<kbd>S</kbd> Set or update [master keyframes](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/master-keyframe) and [property keyframes](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/property-keyframe) at the current time marker position
+<kbd>S</kbd> Set or update [master keyframes](../project-primitives/timelines/master-keyframe.md) and [property keyframes](../project-primitives/timelines/property-keyframe.md) at the current time marker position
 
 <kbd>Ctrl</kbd> + <kbd>D</kbd> Disable the current selection of timeline elements
 
 <kbd>Ctrl</kbd> + <kbd>E</kbd> Enable the current selection of timeline elements
 
-<kbd>M</kbd> Add missing property keyframes at the current time marker position using the current [instance](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/instances) values (a master keyframe must exist at the position for this shortcut to work)
+<kbd>M</kbd> Add missing property keyframes at the current time marker position using the current [instance](../project-primitives/objects/instances.md) values (a master keyframe must exist at the position for this shortcut to work)
 
 <kbd>Ctrl</kbd> + <kbd>M</kbd> Add missing property keyframes at the current time marker position using values which seamlessly fit in the timeline (a master keyframe must exist at the position for this shortcut to work)
 
@@ -373,7 +386,9 @@ See also: [Timeline Bar](https://www.construct.net/en/make-games/manuals/constru
 <kbd>Ctrl</kbd> + <kbd>P</kbd> Paste keyframes using the current time marker as reference.
 
 If no tracks are selected at the moment of pasting, the keyframes will be added in their respective tracks.
+
 If there are tracks selected at the moment of pasting, an attempt is made to paste the keyframes into the tracks they would fit best. If there are keyframes in the selection which can't be fit anywhere, they are ignored.
+
 <kbd>Esc</kbd> Clear highlighting on all timeline elements
 
 <kbd>Ctrl</kbd> + **Mouse Wheel** to scale the timeline UI
@@ -391,7 +406,8 @@ If there are tracks selected at the moment of pasting, an attempt is made to pas
 <kbd>Alt</kbd> + <kbd>C</kbd> Add a colour property track in the current timeline
 
 ## Tilemap bar
-See also: [Tilemap Bar](https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/tilemap-bar)
+
+See also: [Tilemap Bar](bars/tilemap-bar.md)
 
 <kbd>Esc</kbd> or <kbd>1</kbd> Restore normal layout editing
 
@@ -415,13 +431,31 @@ See also: [Tilemap Bar](https://www.construct.net/en/make-games/manuals/construc
 
 **Hold** <kbd>Ctrl</kbd> with rectangle tool to erase tiles in the drawn rectangle
 
+## Tilemap brush editor
+
+See also: [Tilemap Brush Editor](../../../../../../../interface/bars/tilemap-bar/tilemap-brush-editor.md)
+
+<kbd>Alt</kbd> + <kbd>T</kbd> Toggle tiles in template
+
+<kbd>Ctrl</kbd> + <kbd>B</kbd> Toggle background
+
+<kbd>Ctrl</kbd> + <kbd>+</kbd> Zoom In
+
+<kbd>Ctrl</kbd> + <kbd>-</kbd> Zoom Out
+
+<kbd>Ctrl</kbd> + <kbd>0</kbd> Zoom Reset
+
+<kbd>Delete</kbd> + <kbd>0</kbd> Delete selected tile from probability list
+
 ## Ease editor
-See also: [Ease Editor](https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/ease-editor)
+
+See also: [Ease Editor](dialogs/ease-editor.md)
 
 Hold <kbd>Ctrl</kbd> when dragging an anchor point to also modify the adjacent anchor point if there is any.
 
 ## Flowchart View
-See also: [Flowchart View](https://www.construct.net/en/make-games/manuals/construct-3/interface/flowchart-view)
+
+See also: [Flowchart View](flowchart-view.md)
 
 <kbd>Ctrl</kbd> + **A** Select all nodes.
 
@@ -430,6 +464,7 @@ See also: [Flowchart View](https://www.construct.net/en/make-games/manuals/const
 <kbd>Ctrl</kbd> + **Mouse Wheel Down** Zoom out.
 
 **Middle mouse button drag** or **Hold space and move mouse** Pan the view
-**Hold** <kbd>Shift</kbd> while selecting [nodes](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart-node) and [outputs](https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart-node-output) to add them to the same selection to be able to drag or delete them at the same time.
+
+**Hold** <kbd>Shift</kbd> while selecting [nodes](../project-primitives/flowcharts/flowchart-node.md) and [outputs](../project-primitives/flowcharts/flowchart-node-output.md) to add them to the same selection to be able to drag or delete them at the same time.
 
 <kbd>Backspace</kbd> or <kbd>Delete</kbd> to delete the current selection of nodes, outputs or links.

@@ -1,13 +1,12 @@
 ---
 title: "IEventParentRow interface"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/reference/model-interfaces/ieventparentrow"
+release: 449
 ---
-
-# IEventParentRow interface
 
 ## On this page
 
-- [Methods](#internalH1Link0)
+- [Methods](#methods)
 
 ---
 
@@ -15,5 +14,5 @@ The `IEventParentRow` interface is a base class representing any row in the even
 
 ## Methods
 
-**async AddEventBlock()**  
-Add an empty child event block, with no conditions or actions. Returns a promise resolving with the created [IEventBlock](https://www.construct.net/make-games/manuals/addon-sdk/reference/model-interfaces/ieventblock).
+**async AddEventBlock()**
+Add an empty child event block, with no conditions or actions. Returns a promise resolving with the created [IEventBlock](ieventblock.md).

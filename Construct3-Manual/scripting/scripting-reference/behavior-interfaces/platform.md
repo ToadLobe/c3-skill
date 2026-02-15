@@ -1,83 +1,93 @@
 ---
 title: "Platform behavior script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/platform"
+release: 449
 ---
-
-# Platform behavior script interface
 
 ## On this page
-- [Platform behavior APIs](#internalH1Link0)
+
+- [Platform behavior APIs](#platform-behavior-apis)
 
 ---
-The `IPlatformBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Platform behavior](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/platform).
+
+The `IPlatformBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Platform behavior](../../../behavior-reference/platform.md).
 
 ## Platform behavior APIs
-**fallThrough()**  
+
+**fallThrough()**
 If the player is currently standing on a jump-thru platform, this method will make them fall through it.
 
-**resetDoubleJump(allow)**  
+**resetDoubleJump(allow)**
 Change whether a double-jump is allowed during the current jump. If `false` passed, a double-jump will no longer be allowed in the current jump, even if it is the first jump. If `true` passed a double-jump will be allowed again, even if a double-jump was already made in the current jump.
 
-**simulateControl(control)**  
+**simulateControl(control)**
 Simulate one of the movement controls being held down. Useful when *isDefaultControls* is disabled. The control is provided as a string and must be one of `"left"`, `"right"`, `"jump"`.
 
-**speed**  
+**speed**
 Get the current speed in pixels per second (read-only).
 
-**maxSpeed**  
+**maxSpeed**
 Set or get the maximum speed in pixels per second.
 
-**acceleration**  
-**deceleration**  
+**acceleration**
 Set or get the acceleration/deceleration of the movement in pixels per second per second.
 
-**vectorX**  
-**vectorY**  
-**setVector(vectorX, vectorY)**  
-**getVector()**  
+**deceleration**
+Set or get the acceleration/deceleration of the movement in pixels per second per second.
+
+**vectorX**
 Set or get the X and Y components of the movement in pixels per second. The methods allow setting or getting both values at the same time.
 
-**jumpStrength**  
+**vectorY**
+Set or get the X and Y components of the movement in pixels per second. The methods allow setting or getting both values at the same time.
+
+**setVector(vectorX, vectorY)**
+Set or get the X and Y components of the movement in pixels per second. The methods allow setting or getting both values at the same time.
+
+**getVector()**
+Set or get the X and Y components of the movement in pixels per second. The methods allow setting or getting both values at the same time.
+
+**jumpStrength**
 Set or get the initial vertical speed of a jump in pixels per second when the jump key is pressed.
 
-**maxFallSpeed**  
+**maxFallSpeed**
 Set or get the maximum speed in pixels per second the object can accelerate to when in free-fall.
 
-**gravity**  
+**gravity**
 Set or get the acceleration caused by gravity, in pixels per second per second, at the angle given by *gravityAngle*.
 
-**gravityAngle**  
+**gravityAngle**
 Set or get the angle that gravity accelerates the object, in radians. By default this points down.
 
-**isDoubleJumpEnabled**  
+**isDoubleJumpEnabled**
 A boolean indicating if the player may make one extra mid-air jump before landing on the ground.
 
-**jumpSustain**  
+**jumpSustain**
 Set or get the maximum time in seconds that the jump strength is sustained at while the jump control is being held before the effect of gravity takes over.
 
-**isMoving**  
+**isMoving**
 A read-only boolean indicating if the object is currently moving. This checks if either `vectorX` or `vectorY` are non-zero.
 
-**isOnFloor**  
+**isOnFloor**
 A read-only boolean indicating if the object is currently standing on a solid or jump-thru.
 
-**isByWall(side)**  
+**isByWall(side)**
 Test if a solid blocking horizontal movement is immediately to the object's left or right, returning a boolean indicating if a wall was found. Jump-thrus do not count as walls. Pass either `"left"` or `"right"` as the *side*.
 
-**isJumping**  
+**isJumping**
 A read-only boolean indicating if the object is currently moving upwards.
 
-**isFalling**  
+**isFalling**
 A read-only boolean indicating if the object is currently in free-fall.
 
-**ceilingCollisionMode**  
+**ceilingCollisionMode**
 A string of either `"stop"` (the default) or `"preserve-momentum"` (keep the vertical speed) indicating how to handle ceiling collisions.
 
-**isDefaultControls**  
+**isDefaultControls**
 A boolean indicating if the default controls (using the arrow keys) are enabled.
 
-**isIgnoringInput**  
+**isIgnoringInput**
 A boolean indicating if input is currently being ignored. If input is ignored, pressing any of the control keys has no effect. However, unlike disabling the behavior, the object can continue to move.
 
-**isEnabled**  
+**isEnabled**
 A boolean indicating if the behavior is enabled. If disabled, the behavior no longer has any effect on the object.

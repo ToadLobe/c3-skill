@@ -1,15 +1,14 @@
 ---
 title: "Runtime scripts"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/runtime-scripts"
+release: 449
 ---
-
-# Runtime scripts
 
 ## On this page
 
-- [Using modules](#internalH1Link0)
-- [DOM calls in the C3 runtime](#internalH1Link1)
-- [Supporting the debugger](#internalH1Link2)
+- [Using modules](#runtime-documentation)
+- [DOM calls in the C3 runtime](#using-modules)
+- [Supporting the debugger](#configuring-use-of-modules)
 
 ---
 
@@ -20,7 +19,7 @@ Plugin and behavior addons have separate scripts that run in the context of the 
 
 ### Runtime documentation
 
-In Construct's addon SDK, runtime scripts are based on the same APIs as used by Construct's scripting feature. The APIs specific to the Addon SDK can be found in the [Addon SDK interfaces](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces) section of the scripting reference in the Construct manual. Further, all the APIs in the rest of the [scripting reference](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference) section of Construct's manual are also accessible to addons.
+In Construct's addon SDK, runtime scripts are based on the same APIs as used by Construct's scripting feature. The APIs specific to the Addon SDK can be found in the [Addon SDK interfaces](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces.md) section of the scripting reference in the Construct manual. Further, all the APIs in the rest of the [scripting reference](../../Construct3-Manual/scripting/scripting-reference.md) section of Construct's manual are also accessible to addons.
 
 ## Using modules
 
@@ -31,9 +30,7 @@ A major feature of the Addon SDK is first-class support for modules. These allow
 By default the Addon SDK samples are all already configured to use modules. However for clarity, to use modules an addon must be configured as follows:
 
 1. The editor plugin must call `this._info.SetRuntimeModuleMainScript("c3runtime/main.js")` to set the runtime script file *main.js* as the main script. Then this is the only script that Construct loads.
-
 2. All other runtime scripts must then be imported in main.js, e.g. `import "./instance.js";`
-
 3. Add main.js to the `file-list` in addon.json so it works in developer mode
 
 If an addon does not call `SetRuntimeModuleMainScript()`, then Construct automatically generates a main script that imports every runtime file. However this is not the right way to use modules if you want to do something like `import` a module in one of your existing runtime files.
@@ -43,11 +40,8 @@ If an addon does not call `SetRuntimeModuleMainScript()`, then Construct automat
 Assuming the addon is already configured to use modules - which all the Addon SDK samples are - then if you want to import a new module script named *mymodule.js*, these are the steps to follow.
 
 1. Create the file *c3runtime/mymodule.js* and write an `export` in it.
-
 2. In the editor plugin/behavior script, call `this._info.AddC3RuntimeScript("c3runtime/mymodule.js");` to add it as a runtime script, so the editor knows the file exists.
-
 3. In addon.json add *c3runtime/mymodule.js* to `"file-list"` so the file is available in developer mode.
-
 4. Import the new module in an existing runtime script. For example at the top of instance.js you could write: `import * as MyModule from "./mymodule.js";`
 
 In short, when an addon is configured to use modules, all you need to do to add a new module script is to add it as a runtime file and then `import` it somewhere.
@@ -69,10 +63,9 @@ By default Construct 3 assumes no DOM scripts are used. If you want to use one, 
 ```javascript
 this._info.SetDOMSideScripts(["c3runtime/domSide.js"]);
 ```
-
 Since an array of script paths is used, if you have a lot of DOM code, you can split it across different files. Don't forget to add these files to the file list in `addon.json`.
 
-For documentation on the DOM messaging APIs, refer to [DOMElementHandler](https://www.construct.net/en/make-games/manuals/addon-sdk/runtime-reference/base-classes/domelementhandler) (used in domSide.js), [ISDKDOMPluginBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkdompluginbase) (used in plugin.js), and [ISDKDOMInstanceBase](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkdominstancebase) (used in instance.js).
+For documentation on the DOM messaging APIs, refer to [DOMElementHandler](../runtime-reference/base-classes/domelementhandler.md) (used in domSide.js), [ISDKDOMPluginBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkdompluginbase.md) (used in plugin.js), and [ISDKDOMInstanceBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkdominstancebase.md) (used in instance.js).
 
 For an example demonstrating how to get started, see the **domElementPlugin** template in the C3 plugin SDK download. This demonstrates using the above APIs to create a simple `<button>` element in the DOM with a custom button text, and firing an *On clicked* trigger, with support for running in a Web Worker.
 
@@ -106,13 +99,13 @@ The following code is used by the Sprite plugin to display its animation-related
 ```javascript
 _getDebuggerProperties()
 {
-	const prefix = "plugins.sample-plugin.debugger";
-	return [{
-		title: prefix + ".title",
-		properties: [
-			{name: prefix + ".speed",	value: this.speed,	onedit: v => this.speed = v},
-			{name: prefix + ".angle",	value: this.angle,	onedit: v => this.angle = v}
-		]
-	}];
+  const prefix = "plugins.sample-plugin.debugger";
+  return [{
+    title: prefix + ".title",
+    properties: [
+      {name: prefix + ".speed",  value: this.speed,  onedit: v => this.speed = v},
+      {name: prefix + ".angle",  value: this.angle,  onedit: v => this.angle = v}
+    ]
+  }];
 }
 ```

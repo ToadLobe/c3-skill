@@ -1,18 +1,19 @@
 ---
 title: "iframe"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/iframe"
+release: 449
 ---
-
-# iframe
 
 ## On this page
-- [Layering HTML objects](#internalH1Link0)
-- [iframe properties](#internalH1Link1)
-- [iframe conditions](#internalH1Link2)
-- [iframe actions](#internalH1Link3)
-- [iframe expressions](#internalH1Link4)
+
+- [Layering HTML objects](#layering-html-objects)
+- [iframe properties](#iframe-properties)
+- [iframe conditions](#iframe-conditions)
+- [iframe actions](#iframe-actions)
+- [iframe expressions](#iframe-expressions)
 
 ---
+
 The **iframe** object can display another web page, or a string of some HTML content, in your project. It is named after the [<iframe> element](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTML%2fElement%2fiframe), which is what the object uses.
 
 > **Warning**  
@@ -21,44 +22,54 @@ The **iframe** object can display another web page, or a string of some HTML con
 This object can also be used to show embedded content, such as YouTube videos. For example if you choose to share a YouTube video and select the "embed" option, it provides some HTML code for an *iframe* element. The `src` attribute is the embed URL for the video, e.g. [https://www.youtube.com/embed/pWiC5Ln_0yA](https://www.construct.net/out?u=https%3a%2f%2fwww.youtube.com%2fembed%2fpWiC5Ln_0yA). This can be used in the *URL* property of Construct's iframe object to show the video in your game.
 
 ## Layering HTML objects
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
+
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
 
 ## iframe properties
-**URL**  
+
+**URL**
 The URL of a web page to load inside the iframe.
 
-**HTML content**  
+**HTML content**
 A string of HTML content to display inside the iframe. This loads the HTML locally and does not request a separate web page. This is only used if the *URL* property is left empty.
 
-**Initially visible**  
+**Initially visible**
 Whether the object is initially visible at runtime.
 
-**ID**  
+**ID**
 An optional `id` attribute to set on the iframe element. This may be useful if you have other styles or JavaScript code that you want to use with the iframe.
 
-**Allow**  
+**Allow**
 An optional [feature policy](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fFeature_Policy) string to set in the iframe's `allow` attribute, which specifies what the displayed page is allowed to do. The default is designed to allow embedded video playback on services like YouTube, granting the video permission to enter fullscreen, autoplay, and use encrypted media.
 
-**Enable sandbox**  
-**Sandbox**  
+**Enable sandbox**
+Check *Enable sandbox* to add the `sandbox` attribute on the iframe element, providing enhanced security. The *Sandbox* property is then the string to use in the `sandbox` attribute. Enabling the sandbox starts by removing a wide range of capabilities, and then each capability can be re-enabled by adding it to the sandbox string. By default the sandbox string allows JavaScript execution, but blocks forms, popups, same-origin access, top-document navigation, and more. If you only display static HTML content, you can also remove the default `allow-scripts` to block any JavaScript execution at all. For more information see the [iframe sandbox attribute on MDN](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTML%2fElement%2fiframe).
+
+> **Warning**  
+> Do not use both the `allow-scripts` and `allow-same-origin` in the sandbox string. This allows scripts to remove the sandbox protection.
+
+**Sandbox**
 Check *Enable sandbox* to add the `sandbox` attribute on the iframe element, providing enhanced security. The *Sandbox* property is then the string to use in the `sandbox` attribute. Enabling the sandbox starts by removing a wide range of capabilities, and then each capability can be re-enabled by adding it to the sandbox string. By default the sandbox string allows JavaScript execution, but blocks forms, popups, same-origin access, top-document navigation, and more. If you only display static HTML content, you can also remove the default `allow-scripts` to block any JavaScript execution at all. For more information see the [iframe sandbox attribute on MDN](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTML%2fElement%2fiframe).
 
 > **Warning**  
 > Do not use both the `allow-scripts` and `allow-same-origin` in the sandbox string. This allows scripts to remove the sandbox protection.
 
 ## iframe conditions
-The iframe object does not have any of its own conditions. See [common conditions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-conditions) for features shared between form control objects.
+
+The iframe object does not have any of its own conditions. See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
 
 ## iframe actions
-See [common actions](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/common-features/common-actions) for features shared between form control objects.
 
-**Display HTML string**  
+See [common actions](common-features/common-actions.md) for features shared between form control objects.
+
+**Display HTML string**
 Load a string of HTML content in the iframe. This is similar to using the *HTML content* property. If the iframe was previously displaying a URL, it will switch to the HTML content instead.
 
-**Navigate to URL**  
+**Navigate to URL**
 Load a new URL in the iframe. If the iframe was previously displaying a string of HTML, it will switch to loading this URL instead.
 
-****  
+****
 
 ## iframe expressions
+
 The iframe object does not have any of its own expressions.

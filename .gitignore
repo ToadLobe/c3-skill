@@ -1,5 +1,14 @@
-# Local files (scraper, data, node env)
+# Local dev environment
 .local/
+.claude/
+.playwright-mcp/
+node_modules/
+
+# Scripts runtime files (keep scripts source in git)
+.scripts/node_modules/
+.scripts/data/
+.scripts/scrape-state-*.json
+.scripts/package-lock.json
 
 # IDE files
 .history/

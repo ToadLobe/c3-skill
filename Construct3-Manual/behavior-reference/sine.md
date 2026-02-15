@@ -1,25 +1,29 @@
 ---
 title: "Sine behavior"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/sine"
+release: 449
 ---
-
-# Sine behavior
 
 ## On this page
-- [Sine properties](#internalH1Link0)
-- [Sine conditions](#internalH1Link1)
-- [Sine actions](#internalH1Link2)
-- [Sine expressions](#internalH1Link3)
+
+- [Sine properties](#scripting)
+- [Sine conditions](#sine-properties)
+- [Sine actions](#sine-conditions)
+- [Sine expressions](#sine-actions)
 
 ---
+
 The **Sine behavior** can adjust an object's properties (like its position, size or angle) back and forth according to an oscillating [sine wave](https://www.construct.net/out?u=http%3a%2f%2fen.wikipedia.org%2fwiki%2fFile%3aSimple_sine_wave.svg). This can be used to create interesting visual effects. Despite the name, alternative wave functions like 'Triangle' can also be selected to create different effects. A visualisation of the different wave types can be found on [Wikipedia](https://www.construct.net/out?u=http%3a%2f%2fen.wikipedia.org%2fwiki%2fFile%3aWaveforms.svg).
+
 [Click here to open an example of the Sine behavior](https://editor.construct.net/#open=sine-behavior-types), which demonstrates each type of movement the behavior can use.
 
 ### Scripting
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ISineBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/sine).
+
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ISineBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/sine.md).
 
 ## Sine properties
-**Movement**  
+
+**Movement**
 The Sine behavior has the following modes:
 
 - **Horizontal** moves the object left and right on the X axis
@@ -33,7 +37,7 @@ The Sine behavior has the following modes:
 - **Z elevation** moves the object up and down on the Z axis.
 - **Value only** does not modify the object. It simply stores the oscillating value which can be accessed by the *Value* expression. This can be useful to create custom effects or modify any other object or behavior property based on the sine behavior.
 
-**Wave**  
+**Wave**
 The wave function used to calculate the movement. For a visualisation see [this Wikipedia diagram](https://www.construct.net/out?u=http%3a%2f%2fen.wikipedia.org%2fwiki%2fFile%3aWaveforms.svg).
 
 - **Sine:** the default smooth oscillating motion based on a sine wave.
@@ -42,77 +46,80 @@ The wave function used to calculate the movement. For a visualisation see [this 
 - **Reverse sawtooth:** reverse linear motion with a jump back to start.
 - **Square:** alternating between the two maximum values.
 
-**Period**  
+**Period**
 The duration, in seconds, of one complete back-and-forth cycle.
 
-**Period random**  
+**Period random**
 A random number of seconds added to the period for each instance. This can help vary the appearance when a lot of instances are using the Sine behavior.
 
-**Period offset**  
+**Period offset**
 The initial time in seconds through the cycle. For example, if the period is 2 seconds and the period offset is 1 second, the sine behavior starts half way through a cycle.
 
-**Period offset random**  
+**Period offset random**
 A random number of seconds added to the period offset for each instance. This can help vary the appearance when a lot of instances are using the Sine behavior.
 
-**Magnitude**  
+**Magnitude**
 The maximum change in the object's position, size or angle. This is in pixels for position or size modes, or degrees for the angle mode.
 
-**Magnitude random**  
+**Magnitude random**
 A random value to add to the magnitude for each instance. This can help vary the appearance when a lot of instances are using the Sine behavior.
 
-**Enabled**  
+**Enabled**
 If disabled, the behavior will have no effect until the *Set active* action is used.
 
-**Preview  `[Paid plans only]`**  
+**Preview Paid plans only**
 Enable to run a preview of the behavior directly in the Layout View.
 
 ## Sine conditions
-**Compare magnitude**  
+
+**Compare magnitude**
 Compare the current magnitude of the movement.
 
-**Compare movement**  
+**Compare movement**
 Compare the current movement property of the behavior.
 
-**Compare period**  
+**Compare period**
 Compare the current period of the movement, in seconds.
 
-**Compare wave**  
+**Compare wave**
 Compare the current wave property of the behavior.
 
-**Is enabled**  
+**Is enabled**
 Test if the behavior is currently enabled. When disabled it will have no effect on the object.
 
 ## Sine actions
-**Set cycle position**  
+
+**Set cycle position**
 Set the progress through one cycle of the chosen wave, from 0 (the beginning of the cycle) to 1 (the end of the cycle). For example setting the cycle position to 0.5 will put it half way through the repeating motion.
 
-**Set enabled**  
+**Set enabled**
 Enable or disable the behavior. When disabled, the behavior does not affect the object at all.
 
-**Set magnitude**  
+**Set magnitude**
 Set the current magnitude of the cycle. This is in pixels when modifying the size or position, and degrees when modifying the angle.
 
-**Set movement**  
+**Set movement**
 Change the movement type of the behavior, e.g. from *Horizontal* to *Size*.
 
-**Set period**  
+**Set period**
 Set the duration of a single complete back-and-forth cycle, in seconds.
 
-**Set wave**  
+**Set wave**
 Change the wave property of the behavior, choosing a different wave function to be used to calculate the movement.
 
-**Update initial state**  
+**Update initial state**
 The Sine behavior records the object's initial state upon its creation, and always oscillates relative to that, even if it is deactivated and later activated after the object has been modified. If the object changes and you wish for the Sine behavior to oscillate relative to the new state instead of its state upon creation, use this action to reset the initial state to the object's current state.
 
 ## Sine expressions
-**CyclePosition**  
+
+**CyclePosition**
 Return a value from 0 to 1 representing the progress through the current cycle. For example, exactly half way through a cycle this returns 0.5.
 
-**Magnitude**  
+**Magnitude**
 Return the current magnitude of the cycle. This is in pixels when modifying the size or position, and degrees when modifying the angle.
 
-**Period**  
+**Period**
 Return the current period of a single complete back-and-forth cycle in seconds.
 
-**Value**  
+**Value**
 Return the current oscillating value. This will alternate as a positive and negative value centered on zero. This is useful to create custom effects when in *Value only* mode.

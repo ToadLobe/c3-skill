@@ -1,27 +1,32 @@
 ---
 title: "Keyboard script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/keyboard"
+release: 449
 ---
-
-# Keyboard script interface
 
 ## On this page
-- [Examples](#internalH1Link0)
-- [Events](#internalH1Link1)
-- [Keyboard APIs](#internalH1Link2)
+
+- [Examples](#examples)
+- [Events](#events)
+- [Keyboard APIs](#keyboard-apis)
 
 ---
-The `IKeyboardObjectType` interface derives from [IObjectClass](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjectclass) to add APIs specific to the [Keyboard plugin](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/keyboard).
+
+The `IKeyboardObjectType` interface derives from [IObjectClass](../object-interfaces/iobjectclass.md) to add APIs specific to the [Keyboard plugin](../../../plugin-reference/keyboard.md).
+
 Note this class derives from the object class interface, not the instance interface. Typically it is used through `runtime.keyboard` instead of the named object.
 
 ## Examples
+
 See the [Simple keyboard movement](https://editor.construct.net/#open=simple-keyboard-movement) example for a basic demonstration of using the `isKeyDown()` method to move a Sprite.
 
 ## Events
-To detect key press events, use the `"keyup"` and `"keydown"` events fired on the [Runtime script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime).
+
+To detect key press events, use the `"keyup"` and `"keydown"` events fired on the [Runtime script interface](../iruntime.md).
 
 ## Keyboard APIs
-**isKeyDown(keyStringOrWhich)**  
+
+**isKeyDown(keyStringOrWhich)**
 Return a boolean indicating if the specified keyboard key is currently being held down. The key can be specified either by its numeric code, corresponding to the [KeyboardEvent.which](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fKeyboardEvent%2fwhich) property, or a string identifying the physical key, corresponding to the [KeyboardEvent.code](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fKeyboardEvent%2fcode) property (see also [KeyboardEvent: code values](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fKeyboardEvent%2fcode%2fcode_values)).
 
 > **Tip**  

@@ -1,29 +1,36 @@
 ---
 title: "IImagePoint interface"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/reference/object-interfaces/iimagepoint"
+release: 449
 ---
-
-# IImagePoint interface
 
 ## On this page
 
-- [Methods](#internalH1Link0)
+- [Methods](#methods)
 
 ---
 
-The `IImagePoint` interface represents an image point on an [IAnimationFrame](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/ianimationframe). 
+The `IImagePoint` interface represents an image point on an [IAnimationFrame](ianimationframe.md).
 
 ## Methods
 
-**GetAnimationFrame()**  
-Return the associated [IAnimationFrame](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/ianimationframe).
+**GetAnimationFrame()**
+Return the associated [IAnimationFrame](ianimationframe.md).
 
-**SetName(name)**  
-**GetName()**  
+**SetName(name)**
 Set or get the name of the image point.
 
-**SetX(x)**  
-**SetY(y)**  
-**GetX()**  
-**GetY()**  
+**GetName()**
+Set or get the name of the image point.
+
+**SetX(x)**
+Set or get the position of the image point in texture co-ordinates, i.e. from 0 to 1.
+
+**SetY(y)**
+Set or get the position of the image point in texture co-ordinates, i.e. from 0 to 1.
+
+**GetX()**
+Set or get the position of the image point in texture co-ordinates, i.e. from 0 to 1.
+
+**GetY()**
 Set or get the position of the image point in texture co-ordinates, i.e. from 0 to 1.

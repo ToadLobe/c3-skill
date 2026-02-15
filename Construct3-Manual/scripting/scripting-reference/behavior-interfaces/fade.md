@@ -1,54 +1,61 @@
 ---
 title: "Fade behavior script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/fade"
+release: 449
 ---
-
-# Fade behavior script interface
 
 ## On this page
-- [Example](#internalH1Link0)
-- [Fade behavior events](#internalH1Link1)
-- [Fade behavior APIs](#internalH1Link2)
+
+- [Example](#example)
+- [Fade behavior events](#fade-behavior-events)
+- [Fade behavior APIs](#fade-behavior-apis)
 
 ---
-The `IFadeBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Fade behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/fade).
+
+The `IFadeBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Fade behavior](../../../behavior-reference/fade.md).
 
 ## Example
-Below is a sample code snippet demonstrating starting a fade for `inst` (assumed to be an instance with the Fade behavior) and logging to the console when the fade finishes.
+
+Below is a sample code snippet demonstrating starting a fade for `inst` (assumed to be an instance with the Fade behavior)  and logging to the console when the fade finishes.
+
 ```javascript
 // Handle "fadeoutend" event which logs to console when
 // the fade has finished
 inst.behaviors.Fade.addEventListener("fadeoutend", e =>
 {
-console.log("Fade finished!");
+  console.log("Fade finished!");
 });
+
 // Start the Fade effect running
 inst.behaviors.Fade.startFade();
 ```
-Copy ## Fade behavior events
-See [behavior instance event](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/behavior-instance-event) for standard behavior instance event object properties.
 
-**"fadeinend"**  
+## Fade behavior events
+
+See [behavior instance event](../interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
+
+**"fadeinend"**
 Fired when the fade in stage finishes, moving on to the wait stage.
 
-**"waitend"**  
+**"waitend"**
 Fired when the wait stage finishes, moving on to the fade out stage.
 
-**"fadeoutend"**  
+**"fadeoutend"**
 Fired when the fade out stage finishes. The object may also be destroyed immediately after this event if the *Destroy* property of the behavior is enabled.
 
 ## Fade behavior APIs
-**startFade()**  
+
+**startFade()**
 Start the fade effect running if it is not already running.
 
-**restartFade()**  
+**restartFade()**
 Force the fade effect to restart from the beginning.
 
-**fadeInTime**  
+**fadeInTime**
 Set or get the fade in time in seconds. Set to 0 to skip this stage.
 
-**waitTime**  
+**waitTime**
 Set or get the wait time, in between the fade in and fade out, in seconds. Set to 0 to skip this stage.
 
-**fadeOutTime**  
+**fadeOutTime**
 Set or get the fade out time in seconds. Set to 0 to skip this stage.

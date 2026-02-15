@@ -1,17 +1,16 @@
 ---
 title: "TypeScript support"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/typescript-support"
+release: 449
 ---
-
-# TypeScript support
 
 ## On this page
 
-- [Installation](#internalH1Link0)
-- [Setting up the addon files](#internalH1Link1)
-- [Set up TypeScript](#internalH1Link2)
-- [Workflow](#internalH1Link3)
-- [Summary](#internalH1Link4)
+- [Installation](#installation)
+- [Setting up the addon files](#setting-up-the-addon-files)
+- [Set up TypeScript](#set-up-typescript)
+- [Workflow](#workflow)
+- [Summary](#summary)
 
 ---
 
@@ -45,16 +44,13 @@ If you want to add TypeScript support to an existing JavaScript-only addon, then
 
 For proper type checking, you'll need to export Construct's type definitions to your addon folder. To do that, follow these steps.
 
-1. In Construct, [enable developer mode](https://www.construct.net/make-games/manuals/addon-sdk/guide/enabling-developer-mode) and then reload Construct.
-
+1. In Construct, [enable developer mode](enabling-developer-mode.md) and then reload Construct.
 2. In the main menu, a new *Developer mode* submenu should have appeared. In that submenu, select *Set up TypeScript for addon*. Note this requires a browser that supports the File System Access API - try using Chrome or Edge if the option does not appear.
-
 3. A folder picker appears. Select the folder that contains your addon (where addon.json is located).
 
 This will make two changes to your addon folder:
 
 1. A subfolder *ts-defs* is created, with a range of TypeScript definition files for Construct's APIs.
-
 2. The file tsconfig.json (TypeScript configuration file) is created in the addon folder with default TypeScript settings, but only if the file does not exist. If tsconfig.json already exists then it does not alter it.
 
 Note that Construct's TypeScript definition files will be added to and possibly revised over time. To update the TypeScript definition files to the latest version, choose *Set up TypeScript for addon* again in a future release of Construct, and it will update all the TypeScript definition files to the latest versions. Remember that if tsconfig.json already exists then this does not change it, so any alterations you've made to the TypeScript configuration will be persisted.
@@ -65,12 +61,11 @@ Once you are up and running, you will likely want to make repeated changes to yo
 
 In VS Code, press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> and then select *tsc: watch*. This enables a mode where VS Code will automatically compile your .ts files to .js whenever you save the file. Note this must be done once per session.
 
-Assuming you are [using a developer mode addon](https://www.construct.net/make-games/manuals/addon-sdk/guide/using-developer-mode), then your workflow can go like this:
+Assuming you are [using a developer mode addon](using-developer-mode.md), then your workflow can go like this:
 
 1. You make a change to a TypeScript file and save the change
 2. TypeScript then automatically compiles the .ts file to .js (or reports errors if you made a mistake)
 3. When you next preview a project in Construct, it will reload the latest .js files from your local web server.
-
 4. Then the preview starts up running your latest code changes.
 
 ## Summary

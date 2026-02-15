@@ -1,18 +1,24 @@
 ---
 title: "IImageInfo script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iimageinfo"
+release: 449
 ---
-
-# IImageInfo script interface
 
 ## On this page
-- [IImageInfo APIs](#internalH1Link0)
+
+- [IImageInfo APIs](#iimageinfo-apis)
 
 ---
-The `IImageInfo` interface represents an image in the project. It is also the base class of [IAnimationFrame](https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ianimationframe).
+
+The `IImageInfo` interface represents an image in the project. It is also the base class of [IAnimationFrame](ianimationframe.md).
 
 ## IImageInfo APIs
-**width**  
-**height**  
-**getSize()**  
+
+**width**
+Read-only numbers specifying the dimensions of the image in pixels. The method returns both values at the same time.
+
+**height**
+Read-only numbers specifying the dimensions of the image in pixels. The method returns both values at the same time.
+
+**getSize()**
 Read-only numbers specifying the dimensions of the image in pixels. The method returns both values at the same time.

@@ -1,16 +1,15 @@
 ---
 title: "Wrapper extensions"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/wrapper-extensions"
+release: 449
 ---
-
-# Wrapper extensions
 
 ## On this page
 
-- [Messaging](#internalH1Link0)
-- [Exporting properties to package.json](#internalH1Link1)
-- [Suggested architecture](#internalH1Link2)
-- [Additional examples](#internalH1Link3)
+- [Messaging](#messaging)
+- [Exporting properties to package.json](#one-off-messages)
+- [Suggested architecture](#async-messages)
+- [Additional examples](#exporting-properties-to-packagejson)
 
 ---
 
@@ -32,11 +31,8 @@ The wrapper extension system uses a minimal message-passing system to send small
 The [Construct Addon SDK](https://www.construct.net/out?u=https%3a%2f%2fgithub.com%2fScirra%2fConstruct-Addon-SDK) includes the wrapper extension SDK under the path *plugin-sdk/wrapperExtensionPlugin*. A wrapper extension works as follows:
 
 - A [Visual Studio 2022](https://www.construct.net/out?u=https%3a%2f%2fvisualstudio.microsoft.com%2fdownloads%2f) (the Community edition is a free download) solution for Windows, an [Xcode](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.apple.com%2fxcode%2f) project for macOS, and a CMake project for Linux, in the *extension* subfolder that uses C++ code to build a DLL which integrates custom features, such as a C/C++ SDK like Steamworks.
-
 - The DLL uses *.ext.dll* (Windows), *.ext.dylib* (macOS) or *.ext.so* (Linux) as the file extension. The wrapper application looks for files with this name in the same folder as the executable, and will automatically load them on startup.
-
 - The Construct plugin bundles the DLL file by calling `AddFileDependency()` with the type `"wrapper-extension"`. This means when a project using the addon is exported, it will also export the necessary file (e.g. the *.ext.dll* file for Windows).
-
 - The Construct plugin can then detect that the wrapper extension is available, and if it is, send messages instructing the wrapper extension to perform certain tasks.
 
 The sample in the SDK implements a wrapper extension that demonstrates returning data from C++ back to JavaScript, and implements an action that shows a message box to the user. This uses the Windows [MessageBox](https://www.construct.net/out?u=https%3a%2f%2flearn.microsoft.com%2fen-us%2fwindows%2fwin32%2fapi%2fwinuser%2fnf-winuser-messagebox) API, the macOS [NSAlert](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.apple.com%2fdocumentation%2fappkit%2fnsalert) API, and GTK on Linux.
@@ -63,18 +59,18 @@ A one-off message can be sent from JavaScript with a call `this._sendWrapperExte
 
 A one-off message can be sent from the wrapper extension with a call like:
 
-```cpp
+```none
 // C++
 SendWebMessage("message-id", {
-	{ "sampleString1",	"Hello world!" },
-	{ "sampleString2",	"Foo bar baz" },
+  { "sampleString1",  "Hello world!" },
+  { "sampleString2",  "Foo bar baz" },
 });
 ```
 
 In this case the second parameter is a small amount of JSON data that is passed to the JavaScript message handler. The keys must be strings, and the values may only be boolean, number (`double` type to match JavaScript's number type), or string. (Strings in the C++ SDK must be `std::string` or C-style `char*` in UTF-8 encoding.)
 
-> **Note**  
-> when reading JavaScript object properties sent from C++, be sure to use the minify-proof string syntax (e.g. `result["sampleString1"]`), as these properties come from an external source and so should not be changed by the minifier. See [Script minification](https://www.construct.net/make-games/manuals/addon-sdk/guide/script-minification) for more details.
+> **Tip**  
+> **Note:** when reading JavaScript object properties sent from C++, be sure to use the minify-proof string syntax (e.g. `result["sampleString1"]`), as these properties come from an external source and so should not be changed by the minifier. See [Script minification](script-minification.md) for more details.
 
 Wrapper extensions receive all messages from JavaScript to the same `HandleWebMessage()` method. That method receives a string of the message ID, and it's up to the wrapper extension to examine that string and respond appropriately depending on the kind of message. The recommended architecture is to use that method solely to distinguish the kind of message, unpack parameters, and then call a dedicated handler method.
 
@@ -84,10 +80,10 @@ JavaScript can also send an asynchronous message to the wrapper extension. (This
 
 The wrapper extension receives asynchronous messages the same way as one-off messages, except the `asyncId` parameter is set to a unique number for the message. In order to respond to the message, it must call `SendAsyncResponse()` passing the same `asyncId` the message was received with, e.g.:
 
-```cpp
+```none
 SendAsyncResponse({
-	{ "sampleString1",			"Hello world!" },
-	{ "sampleString2",			"Foo bar baz" },
+  { "sampleString1",      "Hello world!" },
+  { "sampleString2",      "Foo bar baz" },
 }, asyncId);
 ```
 
@@ -98,7 +94,7 @@ The provided JSON data works the same as with `SendWebMessage()`, and is used as
 
 ## Exporting properties to package.json
 
-A Construct plugin that uses a wrapper extension can make use of the [IPluginInfo](https://www.construct.net/make-games/manuals/addon-sdk/reference/iplugininfo) method `SetWrapperExportProperties()` to export the values of some plugin properties to the exported package.json file. The wrapper extension can then parse the contents of package.json on startup and find the values of these properties before any web content has loaded at all. This can be useful for loading SDKs with plugin properties specifying initialization details (like an app ID or API key) before anything else loads, which some SDKs recommend.
+A Construct plugin that uses a wrapper extension can make use of the [IPluginInfo](../reference/iplugininfo.md) method `SetWrapperExportProperties()` to export the values of some plugin properties to the exported package.json file. The wrapper extension can then parse the contents of package.json on startup and find the values of these properties before any web content has loaded at all. This can be useful for loading SDKs with plugin properties specifying initialization details (like an app ID or API key) before anything else loads, which some SDKs recommend.
 
 ## Suggested architecture
 
@@ -124,7 +120,7 @@ Apple platforms typically use [Objective-C](https://www.construct.net/out?u=http
 
 Apple platforms typically use [NSString](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.apple.com%2fdocumentation%2ffoundation%2fnsstring) for strings. Similar to our advice for Windows, we recommend using `std::string` with UTF-8 encoding as much as possible, and only use `NSString` when interacting with platform APIs, converting to `NSString` to make Objective-C calls and immediately converting any `NSString` results back to `std::string`. Some sample code for converting between `NSString` and `std::string` is shown below.
 
-```cpp
+```none
 std::string message = "Hello world";
 
 // Convert std::string to NSString

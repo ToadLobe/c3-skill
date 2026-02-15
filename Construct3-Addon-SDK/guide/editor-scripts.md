@@ -1,22 +1,21 @@
 ---
 title: "Editor scripts"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/editor-scripts"
+release: 449
 ---
-
-# Editor scripts
 
 ## On this page
 
-- [Do not access the DOM in editor scripts](#internalH1Link0)
+- [Do not access the DOM in editor scripts](#do-not-access-the-dom-in-editor-scripts)
 
 ---
 
-Plugin and behavior addons have separate scripts that run in the context of the editor rather than the runtime (the Construct game engine). 
+Plugin and behavior addons have separate scripts that run in the context of the editor rather than the runtime (the Construct game engine).
 
 > **Tip**  
 > Effects don't use editor scripts. They only provide shader code.
 
-Most addons do not need complex editor scripts. However some editor features are available for things like specifying dependencies and importing assets. These are documented in the [Editor API reference](https://www.construct.net/make-games/manuals/addon-sdk/reference) section of the Addon SDK manual. 
+Most addons do not need complex editor scripts. However some editor features are available for things like specifying dependencies and importing assets. These are documented in the [Editor API reference](../reference.md) section of the Addon SDK manual.
 
 ## Do not access the DOM in editor scripts
 
