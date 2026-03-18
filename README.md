@@ -31,6 +31,10 @@ Unofficial Markdown conversion of the official [Construct 3](https://www.constru
 - [Answer your own performance questions](https://www.construct.net/en/blogs/ashleys-blog-2/answer-own-performance-925)
 - [Outstanding game performance](https://www.construct.net/en/blogs/construct-official-blog-1/outstanding-game-performance-1584)
 
+### Project & Workflow
+
+- [Construct's project format](https://www.construct.net/en/tutorials/constructs-project-format-3275)
+
 ### Development Experience
 
 - [Common mis-used events & gotchas](https://www.construct.net/en/blogs/construct-official-blog-1/common-mis-used-events-gotchas-822)
