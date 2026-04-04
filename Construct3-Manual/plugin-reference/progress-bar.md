@@ -30,54 +30,54 @@ This object displays using a HTML element rather than drawing in to the canvas. 
 
 ## Progress bar properties
 
-**Value**
+**Value**  
 The initial progress display to show, from 0 to the maximum.
 
-**Maximum**
+**Maximum**  
 The maximum progress value, at which point the progress bar is shown full indicating a completed operation.
 
-**Tooltip**
+**Tooltip**  
 An optional tooltip to show while hovering the mouse over the control.
 
-**Initially visibile**
+**Initially visibile**  
 Whether the control is initially visible or invisible in the page.
 
-**ID Optional**
+**ID Optional**  
 An optional *id* attribute for the element in the DOM (Document Object Model). This can be useful for CSS styling.
 
-**Class Optional**
+**Class Optional**  
 An optional *class* attribute for the element in the DOM (Document Object Model). This can be useful for CSS styling.
 
 ## Progress bar conditions
 
 See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
 
-**Compare progress**
+**Compare progress**  
 Compare the currently set progress amount.
 
-**On clicked**
+**On clicked**  
 Triggered when the progress bar control is clicked.
 
 ## Progress bar actions
 
 See [common actions](common-features/common-actions.md) for features shared between form control objects.
 
-**Make indeterminate**
+**Make indeterminate**  
 Set the progress bar in to an indeterminate mode, intended to indicate that it is working, but the progress is unknown. The display of this mode depends on the browser and platform. Not all browsers may support an indeterminate mode for progress bars.
 
-**Set maximum**
+**Set maximum**  
 Set the maximum progress value for the progress bar.
 
-**Set progress**
+**Set progress**  
 Set the current progress value displayed by the progress bar, from 0 to the maximum.
 
-**Set tooltip**
+**Set tooltip**  
 Set the tooltip that appears when the mouse hovers over the control.
 
 ## Progress bar expressions
 
-**Maximum**
+**Maximum**  
 The currently set maximum progress value.
 
-**Progress**
+**Progress**  
 The currently set progress amount, if the bar is not in indeterminate mode.

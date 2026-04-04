@@ -72,87 +72,87 @@ The Particles object has a relatively many properties, which are split in to thr
 
 ### General
 
-**Rate**
+**Rate**  
 The number of particles created per second. If *Type* is *One-shot*, this is the total number of particles fired. Note that in *Continuous spray* mode, the overall particle count may be significantly more than the rate depending on the other properties. Also note that in *One-shot* mode, the rate can only be changed immediately after the object has been created; after the first tick, using the *Set rate* action will have no effect.
 
-**Spray cone**
+**Spray cone**  
 The number of degrees through which particles are fired. This is represented by the red lines in the Layout View. Use 360 to fire particles in all directions.
 
-**Type**
+**Type**  
 The Particles object can work in two modes:
 
 - **Continuous spray** will create a constant spray of particles (the default).
 - **One-shot** will create a single blast of particles, the total number set by *Rate*. Once all particles have been destroyed, the Particles object then destroys itself. This is useful for one-off effects like explosions or impacts.
 
-**Image**
+**Image**  
 Click to open the [Animations editor](../interface/animations-editor.md) to edit the particle image. Try a spot on a transparent background, or on a black background with the Additive effect. Note the image is not used if an object is set instead.
 
-**Object**
+**Object**  
 Create instances of an object for each particle instead of drawing the particle image. For more information see the section *Advanced particle effects* above. Note this mode is slower than using a particle image.
 
 > **Tip**  
 > To unselect an already chosen object, open the object picker, click *Clear selection*, and then click OK.
 
-**Initially visible**
+**Initially visible**  
 Set whether the object is shown (visible) or hidden (invisible) when the layout starts.
 
-**Preview Paid plans only**
+**Preview Paid plans only**  
 Enable to run a preview of the particle effect directly in the Layout View. You can change the other particle properties and see their effect in real-time.
 
 ### Initial particle properties
 
-**Speed**
+**Speed**  
 The initial speed each particle is fired at, in pixels per second.
 
-**Size**
+**Size**  
 The initial size of each particle, in pixels. Particles are always shown as squares, but the shape can be customised with the particle image.
 
-**Opacity**
+**Opacity**  
 The initial opacity of each particle, from 0 (transparent) to 100 (opaque).
 
-**Grow rate**
+**Grow rate**  
 The initial grow rate (change in size over time) for each particle, in pixels per second. 0 means the particle will always stay the same size. A positive value will make particles grow, and a negative value will make particles shrink.
 
-**X randomiser**
+**X randomiser**  
 The initial offset to the particle's position. You can make particles created along a line or in a box with these properties.
 
-**Y randomiser**
+**Y randomiser**  
 The initial offset to the particle's position. You can make particles created along a line or in a box with these properties.
 
-**Speed randomiser**
+**Speed randomiser**  
 A random adjustment to each particle's initial speed on creation. For example, a value of 100 will change each particle's initial speed by up to 50 pixels per second faster or slower.
 
-**Size randomiser**
+**Size randomiser**  
 A random adjustment to each particle's size on creation. For example, a value of 20 will change each particle's initial size by up to 10 pixels larger or smaller.
 
-**Grow rate randomiser**
+**Grow rate randomiser**  
 A random adjustment to each particle's grow rate on creation. For example, a value of 10 will change each particle's initial grow rate by up to 5 pixels per second greater or less.
 
 ### Particle lifetime properties
 
-**Acceleration**
+**Acceleration**  
 Change in particle speed over time, in pixels per second per second. A positive value will make particles speed up, and a negative value will make them slow down.
 
-**Gravity**
+**Gravity**  
 The acceleration downwards caused by gravity, in pixels per second per second. Useful for making fountain or other falling particle effects. Set to 0 to prevent gravity having any effect on particle movement.
 
-**Angle randomiser**
+**Angle randomiser**  
 A random change to each particle's angle to apply during its lifetime. For example, set to 0 to prevent particles ever changing direction, or set to 10 to allow particles to randomly change direction a little over time.
 
-**Speed randomiser**
+**Speed randomiser**  
 A random change to each particle's speed to apply during its lifetime. For example, set to 0 to prevent the speed changing, or set to 100 to allow particles to speed up or slow down somewhat over time.
 
-**Opacity randomiser**
+**Opacity randomiser**  
 A random change to each particle's opacity to apply during its lifetime. Useful for creating "twinkling" effects.
 
-**Destroy mode**
+**Destroy mode**  
 How each particle is destroyed. There are three modes available:
 
 - **Fade to invisible** will fade each particle's opacity to zero over the *Timeout*. When the particle becomes invisible, it is destroyed.
 - **Timeout expired** simply destroys each particle after the *Timeout* has expired, without altering the opacity.
 - **Particle stopped** destroys each particle when its speed reaches zero. You must take care to use a negative *Acceleration*, or particles will never be destroyed!
 
-**Timeout**
+**Timeout**  
 The time in seconds particles last for before being destroyed, depending on the *Destroy mode*.
 
 ## Particle conditions, actions and expressions
@@ -163,18 +163,18 @@ For features in common to other objects, see [Common features](common-features.m
 
 ### Particle conditions
 
-**Is spraying**
+**Is spraying**  
 True if the particle spray is currently enabled.
 
 ### Particle actions
 
-**Set spraying**
+**Set spraying**  
 Enable or disable the spray, when in *Continuous spray* mode. When disabled, no new particles are created.
 
-**Fast-forward**
+**Fast-forward**  
 Skip ahead the particle effect by a time in seconds. For example fast-forwarding by 3 seconds will cause the Particles object to instantly spawn, move and destroy particles as if 3 seconds had gone by. This is useful for making sure particle effects appear ready immediately, rather than taking a few seconds to move their particles out from the spawn point.
 
 ### Particle expressions
 
-**ParticleCount**
+**ParticleCount**  
 The number of particles the Particles object currently has. This is important to ensure you are not creating too many particles and slowing the project down; see the *Optimisation* section above. Note that due to the way Construct expressions work, if you have multiple Particle object instances, this will only return the particle count for one of the instances - use a *For Each* loop to count multiple instance's total particle count.

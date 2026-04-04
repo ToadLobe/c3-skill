@@ -23,35 +23,35 @@ When using JavaScript or TypeScript coding, the features of this behavior can be
 
 ## Drag & Drop properties
 
-**Axes**
+**Axes**  
 Optionally axis-limit the movement, for example only allowing the object to be dragged horizontally or vertically. The default is *Both*, allowing the object to be dragged anywhere.
 
-**Enabled**
+**Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, it can be enabled at runtime using the *Set enabled* action.
 
 ## Drag & Drop conditions
 
-**Is dragging**
+**Is dragging**  
 True if the object is currently being dragged by mouse or touch.
 
-**Is enabled**
+**Is enabled**  
 True if the behavior is currently enabled; false if disabled by the *Set enabled* action.
 
-**On drag start**
+**On drag start**  
 Triggered when the object is clicked or touched inside its collision polygon.
 
-**On drop**
+**On drop**  
 Triggered when the object is being dragged, and the mouse button is released or the touch ends.
 
 ## Drag & Drop actions
 
-**Set enabled**
+**Set enabled**  
 Enable or disable the Drag & Drop behavior. If disabled, clicking or touching the object has no effect and the object cannot be dragged. It also becomes 'transparent' to clicks and touches, meaning other objects underneath it can still be dragged and dropped. If the object is being dragged when it is disabled, the drag is cancelled, but *On drop* will not trigger.
 
-**Set axes**
+**Set axes**  
 Set the *Axes* property, allowing changing which axes movement is limited to.
 
-**Drop**
+**Drop**  
 Stop dragging the object if it is currently being dragged. This also triggers *On drop*.
 
 ## Drag & Drop expressions

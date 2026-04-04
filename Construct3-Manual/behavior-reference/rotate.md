@@ -21,38 +21,38 @@ When using JavaScript or TypeScript coding, the features of this behavior can be
 
 ## Rotate properties
 
-**Speed**
+**Speed**  
 The rate of rotation, in degrees per second. Use a positive value for clockwise rotation and negative for anticlockwise rotation.
 
-**Acceleration**
+**Acceleration**  
 The rate the rotation speed changes, in degrees per second per second. Use a positive value to accelerate clockwise and a negative to accelerate anticlockwise.
 
-**Enabled**
+**Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, it can be enabled at runtime using the *Set enabled* action.
 
-**Preview Paid plans only**
+**Preview Paid plans only**  
 Enable to run a preview of the behavior directly in the Layout View.
 
 ## Rotate conditions
 
-**Is enabled**
+**Is enabled**  
 Test if the behavior is currently enabled. When disabled it will have no effect on the object.
 
 ## Rotate actions
 
-**Set acceleration**
+**Set acceleration**  
 Set the corresponding properties. See *Rotate properties*.
 
-**Set speed**
+**Set speed**  
 Set the corresponding properties. See *Rotate properties*.
 
-**Set enabled**
+**Set enabled**  
 Enable or disable the movement. If disabled, the behavior will stop rotating the object.
 
 ## Rotate expressions
 
-**Acceleration**
+**Acceleration**  
 Return the corresponding *Acceleration* property.
 
-**Speed**
+**Speed**  
 Return the current rotating speed, in degrees per second. A positive value indicates clockwise rotation and a negative value indicates anticlockwise rotation.

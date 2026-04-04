@@ -31,28 +31,28 @@ As Text Input objects are HTML elements, their appearance can be customised usin
 
 ## Text Input properties
 
-**Text**
+**Text**  
 The initial text entered in to the field.
 
-**Placeholder**
+**Placeholder**  
 Some text that appears faintly when the field is empty. This can be used for hints for what the field is for, e.g. *Username*.
 
-**Tooltip**
+**Tooltip**  
 A tooltip that appears if the user hovers the mouse over the text box and waits. Leave blank for no tooltip.
 
-**Initially visibile**
+**Initially visibile**  
 Whether or not the text box is shown on startup. If invisible, the field must be shown with the *Set visible* action.
 
-**Enabled**
+**Enabled**  
 Whether the text box is initially enabled. If disabled, the field will be greyed out and cannot be modified.
 
-**Read-only**
+**Read-only**  
 Set whether the field is read-only, which means the text cannot be modified but can still be selected. This is different to disabling the field, which changes the appearance of the input.
 
-**Spell check**
+**Spell check**  
 Enable spell-checking on the text entered in to the field, if the browser supports it. If enabled, spelling errors are underlined with a squiggly red line.
 
-**Type**
+**Type**  
 Set the type of content being entered in to the text field, which can be:
 
 - **Text:** any text content
@@ -66,57 +66,57 @@ Set the type of content being entered in to the text field, which can be:
 
 The *email*, *number*, *telephone number* and *URL* types are generally most useful for mobile devices, since they change which type of on-screen keyboard appears when the field is focused. For example, *Text* will show a general purpose on-screen keyboard, whereas *Number* may show a simple number pad, making it more convenient for the user to enter the content.
 
-**Auto font size**
+**Auto font size**  
 Automatically set the *font-size* property of the element according to the layout and layer scale. This will prevent the *font-size* CSS property being manually set with the *Set CSS style* action. Disable if you intend to use *Set CSS style* to adjust the *font-size* property.
 
-**ID Optional**
+**ID Optional**  
 An optional *id* attribute for the element in the DOM (Document Object Model). This can be useful for accessing the element's value from external scripts, or styling with CSS in the HTML page.
 
 ## Text input conditions
 
 See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
 
-**Compare text**
+**Compare text**  
 Compare the text currently entered in to the field. The comparison can either be case sensitive ("TEXT" is different to "text") or case insensitive ("TEXT" is the same as "text").
 
-**On clicked**
+**On clicked**  
 Triggered when the user clicks the field.
 
-**On double-clicked**
+**On double-clicked**  
 Triggered when the user double-clicks the field.
 
-**On text changed**
+**On text changed**  
 Triggered whenever the text in the field is modified, by typing, backspace/delete, cut/paste etc.
 
 ## Text input actions
 
 See [common actions](common-features/common-actions.md) for features shared between form control objects.
 
-**Append text**
+**Append text**  
 Add some text to the end of the current text. For example, if the text object contains *Hello* and has *World* appended, the text object then contains *HelloWorld*.
 
-**Scroll to bottom**
+**Scroll to bottom**  
 Scroll to the bottom of the control. Only has an effect when set to the *textarea* type, since it is the only multiline mode. This is useful for chat or log style textareas.
 
-**Set max length**
+**Set max length**  
 Set the maximum number of characters allowed to be entered in the field. Set to -1 to disable any limit and allow an unlimited number of characters (which is the default).
 
-**Set placeholder**
+**Set placeholder**  
 Set the text that appears faintly when the field is empty. This can be used for hints for what the field is for, e.g. *Username*.
 
-**Set read-only**
+**Set read-only**  
 Set whether the field is read-only, which means the text cannot be modified but can still be selected. This is different to disabling the field, where text cannot be selected.
 
-**Set text**
+**Set text**  
 Set the text currently entered in to the field.
 
-**Set tooltip**
+**Set tooltip**  
 Set the text that appears for the field tooltip. Leave blank for no tooltip.
 
 ## Text Input expressions
 
-**MaxLength**
+**MaxLength**  
 Return the maximum number of characters allowed to be entered in to the field, as set by the *Set max length* action. If there is no maximum length (the default), this returns -1.
 
-**Text**
+**Text**  
 Get a string containing the text currently entered in to the field.

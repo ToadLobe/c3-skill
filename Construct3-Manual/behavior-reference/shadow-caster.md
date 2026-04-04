@@ -28,38 +28,38 @@ Objects with the *Shadow caster* behavior must use [convex collision polygons](h
 
 ## Shadow caster properties
 
-**Height**
+**Height**  
 The simulated height of the object, which adjusts the length of shadow it casts. If the *Shadow light* height is less than or equal to the object height, it casts an "infinite" shadow which goes all the way offscreen; if it is higher, it uses the relative heights to calculate how long a shadow to cast. For example two objects with different heights will cast different length shadows.
 
-**Tag**
+**Tag**  
 A tag for this shadow casting object. A *Shadow light* object also has a tag, and can be set to only cast shadows from shadow casters with the same or different tags to itself. This can be used to have different *Shadow lights* casting shadows off different sets of objects, such as to have shadows working at different levels of Z order.
 
-**Enabled**
+**Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, the object will not cast a shadow.
 
 ## Shadow caster conditions
 
-**Compare height**
+**Compare height**  
 Compare the current height property of the behavior to a value.
 
-**Is enabled**
+**Is enabled**  
 True if the behavior is currently enabled so it can cast shadows.
 
 ## Shadow caster actions
 
-**Set enabled**
+**Set enabled**  
 Enable or disable the behavior. If disabled, the object will not cast a shadow.
 
-**Set height**
+**Set height**  
 Set the height property of the behavior. For more information see *Shadow caster properties*.
 
-**Set tag**
+**Set tag**  
 Change the tag of the behavior. For more information see *Shadow caster properties*.
 
 ## Shadow caster expressions
 
-**Height**
+**Height**  
 Return the current height property.
 
-**Tag**
+**Tag**  
 Return the currently set tag for the behavior.

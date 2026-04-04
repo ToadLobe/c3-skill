@@ -37,18 +37,18 @@ The CSV plugin merely parses and generates CSV. It uses an [Array object](array.
 
 ## CSV conditions
 
-**On parse error**
+**On parse error**  
 Triggered when using the *Parse* action with invalid data, such as a quoted item that is missing its end quote. If a parse error occurs then no data will be read from the file and the specified Array object will be unmodified.
 
-**On parse success**
+**On parse success**  
 Triggered when using the *Parse* action with valid data that is successfully parsed.
 
 ## CSV actions
 
-**Generate CSV**
+**Generate CSV**  
 Generate a string of CSV data using data from a specified two-dimensional Array object. A custom delimiter can be set for other delimiter-separated formats like tab-separated values. After this action the resulting string is available via the *GeneratedCSV* expression.
 
-**Parse CSV**
+**Parse CSV**  
 Read a string of CSV data in to a specified Array object. The resulting data will be stored as a two-dimensional array. A custom delimiter can be set for other delimiter-separated formats like tab-separated values. If any of the rows are different lengths, the width of the array will be the maximum row length. If the data is invalid for any reason, *On parse error* will be triggered; otherwise if valid *On parse success* will be triggered. The *Data type* parameter determines whether values are read as strings or numbers. Its possible values are:
 
 - **Auto:** automatically determine whether values are strings or numbers, based on whether the string looks like a number. For example "hello" will be stored as a string, but "100" will be stored as a number.
@@ -57,8 +57,8 @@ Read a string of CSV data in to a specified Array object. The resulting data wil
 
 ## CSV expressions
 
-**GeneratedCSV**
+**GeneratedCSV**  
 After the *Generate CSV* action, this expression returns a string of the generated CSV data.
 
-**TabCharacter**
+**TabCharacter**  
 This expression merely returns a string with a single tab character in it. This can be useful to use as a delimiter parameter for tab-separated values (TSV), as a tab character can be difficult to type in the editor as it functions as a keyboard shortcut to move focus.

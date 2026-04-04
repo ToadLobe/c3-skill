@@ -54,147 +54,147 @@ The following tags are supported. Note that due to the fact SpriteFonts render i
 
 ## Sprite font properties
 
-**Text**
+**Text**  
 The initial text to display.
 
-**Sprite font**
+**Sprite font**  
 Click the Edit link to edit the source image that text characters are rendered from. The image can be any size, but it should fit the characters it contains exactly. Characters start in the top-left and the sequence moves to the right, wrapping down to the next line when it reaches the right edge of the image. If the character is narrower than the cell, and you change its width using *Spacing data* or the *Set character width* action, the image should be drawn left-aligned in the cell.
 
-**Character width**
+**Character width**  
 The size of each character's cell in the sprite font image. Individual characters can be displayed with a different width using *Spacing data* or the *Set character width* action. In this case, the character should be drawn left-aligned within its cell.
 
-**Character height**
+**Character height**  
 The size of each character's cell in the sprite font image. Individual characters can be displayed with a different width using *Spacing data* or the *Set character width* action. In this case, the character should be drawn left-aligned within its cell.
 
-**Character set**
+**Character set**  
 A string of characters that describes the sequence of letters in the sprite font image. This is used to map text to images. While the default starts with the English alphabet, it could be changed to another language or sequence and the image updated accordingly. Note however the Sprite Font can only display characters that are in the character set; any characters not in the character set with a corresponding image will appear as an empty space.
 
-**Spacing data**
+**Spacing data**  
 Some data in JSON format that lists the widths of individual characters. This allows improved text layout by using narrower spaces for narrower characters. The spacing data also affects the display of the text in the Layout View. The data is an array of pairs. Each pair is a width, and then a string of all the characters that width applies to. For example the pair `[10, "aeou"]` will set the width of the characters *a*, *e*, *o* and *u* to 10 pixels. The characters are case-sensitive, allowing you to choose different widths for uppercase characters. You can also set the width of the space character. Each pair must be listed in an array, e.g.
 
  `[[10, "aeou"], [12, "mvw"]]`.
 
-**Scale**
+**Scale**  
 A multiplier to scale the rendered text with, such as 0.5 for half as big or 2 for twice as big. This can be used to "fake" different font sizes, but remember it's only stretching images; you may want to draw the font again at a different size instead of using a scale.
 
-**Character spacing**
+**Character spacing**  
 Extra space in pixels to add horizontally between characters.
 
-**Line height**
+**Line height**  
 Extra space in pixels to add vertically between lines. 0 is the default size, negative values make lines closer together, and positive values space lines out further apart.
 
-**Horizontal alignment**
+**Horizontal alignment**  
 The horizontal alignment of the text within the object bounding rectangle.
 
-**Vertical alignment**
+**Vertical alignment**  
 The vertical alignment of the text within the object bounding box.
 
-**Wrapping**
+**Wrapping**  
 Choose how text wraps at the end of a line. *Word* will wrap entire words separated by spaces or hyphens. *Character* will wrap to the next line on any character, even punctuation. *CJK* works similarly to *Character*, but has special handling for Chinese, Japanese and Korean punctuation characters, intended to ensure punctuation wraps appropriately.
 
-**Initially visible**
+**Initially visible**  
 Whether the object is initially visible or invisible when the layout starts.
 
-**Origin**
+**Origin**  
 Choose the position of the origin relative to its unrotated bounding rectangle.
 
 ## Sprite font conditions
 
-**Compare text**
+**Compare text**  
 Compare the current text the object is showing.
 
-**Has tag at position**
+**Has tag at position**  
 Test if there is text with a specific tag at the given position (case insensitive). For example if the text has the BBcode `Hello [tag=mytag]world[/tag]`, then testing if the tag "mytag" is at a given position will check if that position is over just the part of the text that says "world".
 
-**Is running typewriter text**
+**Is running typewriter text**  
 True while text is being written out using the *Typewriter text* action.
 
-**On typewriter text finished**
+**On typewriter text finished**  
 Triggered when text being written out using the *Typewriter text* action finishes writing out all the text.
 
 ## Sprite font actions
 
-**Append text**
+**Append text**  
 Add some text to the end of the existing text.
 
-**Set character spacing**
+**Set character spacing**  
 Set the corresponding object properties. For more information, see *Sprite font properties*.
 
-**Set line height**
+**Set line height**  
 Set the corresponding object properties. For more information, see *Sprite font properties*.
 
-**Set scale**
+**Set scale**  
 Set the corresponding object properties. For more information, see *Sprite font properties*.
 
-**Set horizontal alignment**
+**Set horizontal alignment**  
 Set the corresponding object properties. For more information, see *Sprite font properties*.
 
-**Set vertical alignment**
+**Set vertical alignment**  
 Set the corresponding object properties. For more information, see *Sprite font properties*.
 
-**Set wrapping**
+**Set wrapping**  
 Set the corresponding object properties. For more information, see *Sprite font properties*.
 
-**Set character width**
+**Set character width**  
 Set the width of certain characters. Normally it is preferable to use the *Spacing data* property, since it displays with correct spacing in the Layout View. In this action you can specify multiple characters at the same time to set their widths simultaneously, including the space character.
 
-**Set text**
+**Set text**  
 Replace the current text with a new string.
 
-**Typewriter text**
+**Typewriter text**  
 Set the text over time by starting with an empty string and gradually adding characters until the full text is written out, over a duration specified in seconds. Once the full text is written out, *On typewriter text finished* triggers. Note using *Set text* or *Append text* while text is being written out will cancel the effect.
 
 > **Tip**  
 > You can use a speed in characters per second instead of an overall time by using an expression like `len(Self.PlainText) / 10` for the time. In this case it will write out 10 characters per second regardless of the length of the string.
 
-**Finish typewriter**
+**Finish typewriter**  
 If text is being written out with the *Typewriter text* action, force it to finish immediately.
 
 ## Sprite font expressions
 
-**CharacterHeight**
+**CharacterHeight**  
 Return the sprite font cell height.
 
-**CharacterScale**
+**CharacterScale**  
 Return the corresponding object properties. For more information, see *Sprite font properties*.
 
-**CharacterSpacing**
+**CharacterSpacing**  
 Return the corresponding object properties. For more information, see *Sprite font properties*.
 
-**LineHeight**
+**LineHeight**  
 Return the corresponding object properties. For more information, see *Sprite font properties*.
 
-**CharacterWidth(char)**
+**CharacterWidth(char)**  
 Return the width of a character. A character must be passed (as a string) so the *Spacing data*
 
  or *Set character width* action can be taken in to account. Since the expression can only return one value, if there are multiple characters in the string, only the first is used.
 
-**Text**
+**Text**  
 Return the object's current text.
 
-**PlainText**
+**PlainText**  
 Return a string containing the object's current text, with any BBCode tags stripped out. For example if the text is `[b]Hello[/b]`, the *Text* expression will return that (with BBCode tags included), but the *PlainText* expression will return just `Hello`.
 
-**TagAtPosition(x, y)**
+**TagAtPosition(x, y)**  
 Look up the tag for a part of the text at a given position and return the tag if any, else return an empty string if no tag is specified. For example if the text has the BBcode `Hello [tag=mytag]world[/tag]`, then the tag at a position over the word "world" is "mytag", and the tag at a position over the word "Hello" is "" (an empty string).
 
-**TagCount(tag)**
+**TagCount(tag)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* in the [Text object](text.md) manual entry for more details (as fragmentation works the same for both SpriteFont and Text objects).
 
-**TagX(tag, index)**
+**TagX(tag, index)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* in the [Text object](text.md) manual entry for more details (as fragmentation works the same for both SpriteFont and Text objects).
 
-**TagY(tag, index)**
+**TagY(tag, index)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* in the [Text object](text.md) manual entry for more details (as fragmentation works the same for both SpriteFont and Text objects).
 
-**TagWidth(tag, index)**
+**TagWidth(tag, index)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* in the [Text object](text.md) manual entry for more details (as fragmentation works the same for both SpriteFont and Text objects).
 
-**TagHeight(tag, index)**
+**TagHeight(tag, index)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* in the [Text object](text.md) manual entry for more details (as fragmentation works the same for both SpriteFont and Text objects).
 
-**TextWidth**
+**TextWidth**  
 Return the size of the actual text content within the Sprite Font object's rectangle.
 
-**TextHeight**
+**TextHeight**  
 Return the size of the actual text content within the Sprite Font object's rectangle.

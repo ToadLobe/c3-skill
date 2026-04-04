@@ -126,45 +126,45 @@ Note the example paths shown in this table are for illustrative purposes only - 
 
 ## File system conditions
 
-**Desktop features supported**
+**Desktop features supported**  
 Detect whether desktop-specific features of this plugin are available. This is only the case when running after using a supported desktop export option. When true, the known folder pickers like "<documents>" can be used (providing they are available - use the *Has picker tag* condition to check), as well as the desktop-specific actions like *Run file* and *Shell open*.
 
-**Has picker tag**
+**Has picker tag**  
 True if a given picker tag has been remembered from a previous session, or if a known folder tag is available. In this case the picker tag can still be referred to for file system operations, such as to read a previously chosen file, without having to show a picker again.
 
-**On picker complete**
+**On picker complete**  
 Triggered after the *Show folder picker*, *Show open file picker* or *Show save file picker* actions with a matching picker tag, depending on the result of the picker. A picker is completed when the user successfully chooses a file or folder and access is then granted to the selection. Cancelling a picker, or otherwise being unable to show a picker (e.g. due to not being in a user input trigger), will trigger *On picker error*.
 
-**On picker error**
+**On picker error**  
 Triggered after the *Show folder picker*, *Show open file picker* or *Show save file picker* actions with a matching picker tag, depending on the result of the picker. A picker is completed when the user successfully chooses a file or folder and access is then granted to the selection. Cancelling a picker, or otherwise being unable to show a picker (e.g. due to not being in a user input trigger), will trigger *On picker error*.
 
-**Is supported**
+**Is supported**  
 True if file system features are supported. This depends on support for the File System Access API in the browser. If false then none of the features of the plugin will work.
 
-**On file operation complete**
+**On file operation complete**  
 Triggered after any file or folder operation such as reading a file or creating a folder, with a matching file tag completes/fails.
 
-**On file operation error**
+**On file operation error**  
 Triggered after any file or folder operation such as reading a file or creating a folder, with a matching file tag completes/fails.
 
-**On any file operation complete**
+**On any file operation complete**  
 Triggered after any file or folder operation such as reading a file or creating a folder completes/fails, regardless of its file tag. The associated file tag can be retrieved with the *FileTag* expression.
 
-**On any file operation error**
+**On any file operation error**  
 Triggered after any file or folder operation such as reading a file or creating a folder completes/fails, regardless of its file tag. The associated file tag can be retrieved with the *FileTag* expression.
 
-**On dropped files**
+**On dropped files**  
 Triggered when the user drags and drops files in to the window. The dropped files can be accessed using the special picker tag `<dropped-files>`. This allows accessing the dropped files as if the user picked a folder containing the files. The *FileCount* and *FileNameAt* expressions can also be immediately used to identify the number and names of the dropped files without having to use the *List content* action. The dropped files are read-only.
 
-**Has file/folder**
+**Has file/folder**  
 Use this after the *List content* action to check whether a given file or folder exists in the returned list of files and folders. Note that this checks for the specified type of item - so for example if checking whether a folder exists, and the given name does exist but is actually a file, then the condition will be false. You must choose whether to check for the file name case-sensitively; note that typically on Windows and macOS file names are not case sensitive, but on Linux they are.
 
 ## File system actions
 
-**Add accept type**
+**Add accept type**  
 Add a file type to be shown in the next open file or save file picker. By default the pickers will show all kinds of files; adding an accept type defaults to filtering by those kinds of files, and adding multiple accept types allows the user to switch between different filters. The accept type must specify a [MIME type](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fBasics_of_HTTP%2fMIME_types), such as "text/plain" for text files or "image/png" for PNG images. A list of file extensions can also be provided in case they cannot be deduced from the MIME type. These must begin with a dot and multiple file extensions can be specified separated by semicolons, e.g. ".png;.jpg" indicates to allow both .png and .jpg file extensions. A description can also be provided which may be shown in the picker. When the next picker is shown, the list of added accept types is cleared and must be added again for another picker; typically you should use this action immediately prior to showing a picker.
 
-**Show folder picker**
+**Show folder picker**  
 Show a folder picker allowing the user to choose a folder on their local system. The *Picker tag* identifies the chosen folder if it is completed successfully. The *Mode* determines what kind of permission prompt the user is shown.
 
 > **Tip**  
@@ -172,7 +172,7 @@ Show a folder picker allowing the user to choose a folder on their local system.
 
  The *Picker ID* is an optional extra identifier for remembering the picker settings, such as the last viewed folder. The *Start in* setting allows choosing a default system folder to show as the initial selection of the folder picker, but is overridden by any remembered settings from the same *Picker ID*.
 
-**Show open file picker**
+**Show open file picker**  
 Show an open file picker allowing the user to choose one or multiple files on their local system to open. The *Picker tag* identifies the chosen file or files if it is completed successfully, and grants read access. (The files can later be written to, but the browser will show another permission prompt.) *Show accept all* sets whether to show an accept type that shows all kinds of files; if disabled then the *Add accept type* action must be used beforehand. *Multiple* can be enabled to allow the user to select multiple files in the open file picker.
 
 > **Tip**  
@@ -180,7 +180,7 @@ Show an open file picker allowing the user to choose one or multiple files on th
 
  The *Picker ID* is an optional extra identifier for remembering the picker settings, such as the last viewed folder. The *Start in* setting allows choosing a default system folder to show as the initial selection of the folder picker, but is overridden by any remembered settings from the same *Picker ID*.
 
-**Show save file picker**
+**Show save file picker**  
 Show a save file picker allowing the user to choose a file on their local system to save to. The *Picker tag* identifies the chosen file if it is completed successfully, and grants write access.
 
 > **Warning**  
@@ -188,13 +188,13 @@ Show a save file picker allowing the user to choose a file on their local system
 
  *Show accept all* sets whether to show an accept type that shows all kinds of files; if disabled then the *Add accept type* action must be used beforehand. The *Suggested name* is used as the initial filename choice to save to in the picker. The *Picker ID* is an optional extra identifier for remembering the picker settings, such as the last viewed folder. The *Start in* setting allows choosing a default system folder to show as the initial selection of the folder picker, but is overridden by any remembered settings from the same *Picker ID*.
 
-**Read text file**
+**Read text file**  
 Read the contents of a file from a previously completed picker. The file or folder to read from is identified by the *Picker tag*. The *Folder path* is optional and is only used for folder pickers or from a open picker with *Multiple* enabled, and specifies the filename to be read, e.g. "file1.txt" or "subfolder/file2.txt" when using a folder picker. When using a save file picker or an open file picker for a single file, leave the *Folder path* empty as it is not used, as it will read the single file chosen by the picker. The *File tag* is optional and allows identifying when the read operation completes or fails with the *On file operation complete/error* triggers. In the case of reading a text file, the *FileText* expression is set to the read text content when completed. In the case of reading a binary file, the read file contents will be placed in the chosen [Binary Data](binary-data.md) object when completed.
 
-**Read binary file**
+**Read binary file**  
 Read the contents of a file from a previously completed picker. The file or folder to read from is identified by the *Picker tag*. The *Folder path* is optional and is only used for folder pickers or from a open picker with *Multiple* enabled, and specifies the filename to be read, e.g. "file1.txt" or "subfolder/file2.txt" when using a folder picker. When using a save file picker or an open file picker for a single file, leave the *Folder path* empty as it is not used, as it will read the single file chosen by the picker. The *File tag* is optional and allows identifying when the read operation completes or fails with the *On file operation complete/error* triggers. In the case of reading a text file, the *FileText* expression is set to the read text content when completed. In the case of reading a binary file, the read file contents will be placed in the chosen [Binary Data](binary-data.md) object when completed.
 
-**Write text file**
+**Write text file**  
 Write text or binary data to a file from a previously completed picker. The file or folder to write to is identified by the *Picker tag*. The *Folder path* is optional and is only used for folder pickers or from a open picker with *Multiple* enabled, and specifies the filename to be written to, e.g. "file1.txt" or "subfolder/file2.txt" when using a folder picker. When using a save file picker or an open file picker for a single file, leave the *Folder path* empty as it is not used, as it will write to the single file chosen by the picker. The *File tag* is optional and allows identifying when the write operation completes or fails with the *On file operation complete/error* triggers. In the case of writing a text file, the given *Text* will be written to the file, and the text content can optionally be appended to the end of the existing file.
 
 > **Tip**  
@@ -202,7 +202,7 @@ Write text or binary data to a file from a previously completed picker. The file
 
  In the case of writing a binary file, the contents of the chosen [Binary Data](binary-data.md) will be written to the file.
 
-**Write binary file**
+**Write binary file**  
 Write text or binary data to a file from a previously completed picker. The file or folder to write to is identified by the *Picker tag*. The *Folder path* is optional and is only used for folder pickers or from a open picker with *Multiple* enabled, and specifies the filename to be written to, e.g. "file1.txt" or "subfolder/file2.txt" when using a folder picker. When using a save file picker or an open file picker for a single file, leave the *Folder path* empty as it is not used, as it will write to the single file chosen by the picker. The *File tag* is optional and allows identifying when the write operation completes or fails with the *On file operation complete/error* triggers. In the case of writing a text file, the given *Text* will be written to the file, and the text content can optionally be appended to the end of the existing file.
 
 > **Tip**  
@@ -210,16 +210,16 @@ Write text or binary data to a file from a previously completed picker. The file
 
  In the case of writing a binary file, the contents of the chosen [Binary Data](binary-data.md) will be written to the file.
 
-**Copy file**
+**Copy file**  
 Only applies to folder pickers. Copy a file within a previously picked folder. The *Source path* specifies an existing file to copy, e.g. "subfolder/file1.txt". The *Destination path* specifies where to create a copy; this will either create a new file if it doesn't exist, or overwrite an existing file if it already exists. The *File tag* is optional and allows identifying when the copy operation completes or fails with the *On file operation complete/error* triggers.
 
-**Create folder**
+**Create folder**  
 Only applies to folder pickers. Create a subfolder within a previously picked folder. The *Folder path* specifies the folder to create. This can refer to multiple subfolders which will all be created, e.g. "subfolder/otherfolder". The *File tag* is optional and allows identifying when the folder creation operation completes or fails with the *On file operation complete/error* triggers.
 
-**Delete**
+**Delete**  
 Only applies to folder pickers. Delete a file or folder within a previously picked folder. The *Folder path* specifies the file or folder to delete, e.g. "subfolder/file1.txt" or "subfolder". The *Recursive* option applies only when *Folder path* identifies a folder: if enabled it will delete all files and folders within the identified folder as well as the folder itself, but if disabled it will only successfully delete the folder if it is already empty. The *File tag* is optional and allows identifying when the delete operation completes or fails with the *On file operation complete/error* triggers.
 
-**List content**
+**List content**  
 Only applies to folder pickers. Retrieves a list of all files and folders within a previously picked folder. The *Folder path* identifies a subfolder to list the contents for, or can be left empty to list the contents of the originally picked folder. Enabling *Recursive* will also list all files and folders through subfolders of the specified folder.
 
 > **Tip**  
@@ -227,18 +227,18 @@ Only applies to folder pickers. Retrieves a list of all files and folders within
 
  The *File tag* is optional and allows identifying when the listing operation completes or fails with the *On file operation complete/error* triggers. Once completed, the available files and folders can be accessed with the *FileCount*, *FileNameAt*, *FolderCount* and *FolderNameAt* expressions. When *Recursive* was enabled, the listed file and folder names may include slashes, such as *subfolder/file.txt*; for cross-platform consistency these always use forwards slashes, even on Windows.
 
-**Move file**
+**Move file**  
 Only applies to folder pickers. Move a file within a previously picked folder. The file can be moved from one subfolder to another, or if it stays in the same folder, it renames the file. The *Source path* specifies the file to move, e.g. "subfolder/file1.txt". The *Destination path* specifies where to move (or rename) the file to. The *File tag* is optional and allows identifying when the copy operation completes or fails with the *On file operation complete/error* triggers.
 
-**Run file**
+**Run file**  
 Only supported in desktop exports when the *Desktop features available* condition is true. This action attempts to execute the provided file path. Command-line arguments can also be optionally provided. This can be used to run another program. Uniquely for this action the folder picker parameter can be left empty, in which case the provided file path is run directly; this can be useful to run system executables like "cmd.exe" on Windows.
 
-**Shell open**
+**Shell open**  
 Only supported in desktop exports when the *Desktop features available* condition is true. This action requests that the operating system shell (the component that handles the system user interface) opens the specified file. Typically this launches the default app associated with the file type and then opens the file in it, similar to double-clicking the file in the system file explorer.
 
 ## File system expressions
 
-**FileCount**
+**FileCount**  
 Retrieve the number and filenames of available files. The available list of files is updated in the following situations:
 
 - After an open file picker, to identify the available filenames (which can be multiple filenames if the *Multiple* option was enabled, otherwise it is just one file)
@@ -246,7 +246,7 @@ Retrieve the number and filenames of available files. The available list of file
 - After *On dropped files* triggers, to identify the available dropped files
 - After a save file picker to identify the chosen saved filename (which is just one file)
 
-**FileNameAt(index)**
+**FileNameAt(index)**  
 Retrieve the number and filenames of available files. The available list of files is updated in the following situations:
 
 - After an open file picker, to identify the available filenames (which can be multiple filenames if the *Multiple* option was enabled, otherwise it is just one file)
@@ -254,29 +254,29 @@ Retrieve the number and filenames of available files. The available list of file
 - After *On dropped files* triggers, to identify the available dropped files
 - After a save file picker to identify the chosen saved filename (which is just one file)
 
-**FolderCount**
+**FolderCount**  
 Retrieve the number and names of available folders. The available list of folders is updated in the following situations:
 
 - After the *List content* action for listing the contents of a folder. If the *List content* action *Recursive* option was enabled, file and folder names may include slashes, such as *subfolder/file.txt*; for cross-platform consistency these always use forwards slashes, even on Windows.
 - After a folder picker has completed, to identify the name of the chosen folder (which is just one folder).
 
-**FolderNameAt(index)**
+**FolderNameAt(index)**  
 Retrieve the number and names of available folders. The available list of folders is updated in the following situations:
 
 - After the *List content* action for listing the contents of a folder. If the *List content* action *Recursive* option was enabled, file and folder names may include slashes, such as *subfolder/file.txt*; for cross-platform consistency these always use forwards slashes, even on Windows.
 - After a folder picker has completed, to identify the name of the chosen folder (which is just one folder).
 
-**FileText**
+**FileText**  
 After a *Read text file* action completes successfully, the contents of the read file.
 
 > **Tip**  
 > Note that this is replaced when the next *Read text file* action completes, so it is best to use it immediately after reading a file.
 
-**FileTag**
+**FileTag**  
 In a file system operation trigger such as *On any file operation complete*, this returns the file tag of the associated file operation.
 
-**FolderPath**
+**FolderPath**  
 In a file system operation trigger working within a folder, this returns the folder path of the associated file operation.
 
-**PickerTag**
+**PickerTag**  
 In a trigger, this returns the picker tag associated with the picker or file system operation.

@@ -46,23 +46,23 @@ By default, all shadow lights cast shadows off all shadow casters. In some cases
 
 ## Shadow light properties
 
-**Light height**
+**Light height**  
 The height of the light, used with the shadow caster object heights to calculate the length of shadow to cast. This property only has an effect if the *Light radius* is 0, otherwise shadows always extend offscreen.
 
-**Light radius**
+**Light radius**  
 The radius of the light. If the radius is 0, the light acts like a point source and shadows are hard-edged. If the radius is larger the object will render penumbras at the edges of shadows. The larger the radius, the wider the penumbras will be. For correct rendering avoid using a large radius, and especially avoid making the radius larger than any of the shadow caster objects. If the radius is not 0, the light height is ignored and shadows always extend offscreen.
 
-**Cast from**
+**Cast from**  
 Which shadow caster objects to render shadows for from this object. The options are:
 
 - **All:** every shadow caster object will get a shadow rendered for this light.
 - **Same tag:** shadows will only be rendered for shadow casters with the same Tag property.
 - **Different tag:** shadows will only be rendered for shadow casters with a different Tag property.
 
-**Tag**
+**Tag**  
 Used to determine which shadow casters to render shadows for, depending on the *Cast from* mode. If *Cast from* is set to *All*, the tag is ignored.
 
-**Preview Paid plans only**
+**Preview Paid plans only**  
 Enable to run a preview of the shadow casting effect directly in the Layout View.
 
 ## Shadow light conditions
@@ -71,31 +71,31 @@ The Shadow light object does not have any of its own conditions.
 
 ## Shadow light actions
 
-**Set cast from**
+**Set cast from**  
 Set the corresponding object properties. For more information see *Shadow light properties*.
 
-**Set light height**
+**Set light height**  
 Set the corresponding object properties. For more information see *Shadow light properties*.
 
-**Set tag**
+**Set tag**  
 Set the corresponding object properties. For more information see *Shadow light properties*.
 
-**Set light position**
+**Set light position**  
 Sets the position in the layout from which shadows are cast from.
 
 > **Tip**  
 > Note that using the normal *Set position* action will also update the light position. However the Shadow Light object automatically positions itself in the middle of the viewport in order to draw over the whole screen. Using *Set position* to set the light position in the middle of the viewport may conflict with its automatic positioning, so this action can be used as a more reliable way to guarantee the light position is placed at the given location.
 
-**Set shadow color**
+**Set shadow color**  
 Set the color of the shadows that are rendered by the light. The default is black. Use an expression of the form `rgb(red, green, blue)`. To set the opacity of the shadows, change the opacity of the *Shadow light* object.
 
 ## Shadow light expressions
 
-**LightX**
+**LightX**  
 The X and Y co-ordinates of the light source in the layout. Note a quirk: the light source is moved using the ordinary *Set position* actions, but due to the way the object rendering works the ordinary X and Y expressions always return a position relative to the viewport instead. The *LightX* and *LightY* expressions return the actual position of the light source.
 
-**LightY**
+**LightY**  
 The X and Y co-ordinates of the light source in the layout. Note a quirk: the light source is moved using the ordinary *Set position* actions, but due to the way the object rendering works the ordinary X and Y expressions always return a position relative to the viewport instead. The *LightX* and *LightY* expressions return the actual position of the light source.
 
-**Tag**
+**Tag**  
 Return the current tag of the object.

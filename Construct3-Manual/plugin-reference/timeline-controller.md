@@ -89,104 +89,104 @@ Sometimes it might be necessary to clear the state the **Timeline Controller** u
 
 ## Timeline controller conditions
 
-**Is any playing**
+**Is any playing**  
 True if any timeline is playing.
 
-**Is playing**
+**Is playing**  
 True if a specified timeline is playing, given by its tag.
 
-**Is any paused**
+**Is any paused**  
 True if any timeline is paused.
 
-**Is paused**
+**Is paused**  
 True if a specified timeline is paused, given by its tag.
 
-**On started**
+**On started**  
 Triggered when a timeline starts playing, given by its tag. Use the **"Type"** parameter to specify when the trigger should take place. *"Any"* will execute the trigger any time a timeline is started, *"Starting"* will execute the trigger only  on the initial playback of the timeline and *"Resuming"* will execute the trigger only when the timeline is resumed after being paused.
 
-**On any started**
+**On any started**  
 Triggered when any timeline starts playing. Use the **"Type"** parameter to specify when the trigger should take place. *"Any"* will execute the trigger any time a timeline is started, *"Starting"* will execute the trigger only  on the initial playback of the timeline and *"Resuming"* will execute the trigger only when the timeline is resumed after being paused.
 
-**On finished**
+**On finished**  
 Triggered when a timeline finishes playback, given by its tag.
 
-**On any finished**
+**On any finished**  
 Triggered when any timeline finishes playback.
 
-**On keyframe reached**
+**On keyframe reached**  
 Triggered when a [master keyframe](../project-primitives/timelines/master-keyframe.md) with certain tags is reached during playback. The keyframe can be identified by whether it matches any of the given tags, or if it has all of the given tags. Separate tags with spaces.
 
-**On any keyframe reached**
+**On any keyframe reached**  
 Triggered when any master keyframe is reached during playback. The *KeyframeTags* expression has a string of the keyframe's *Tags* property.
 
-**On time set**
+**On time set**  
 Triggered when the time of a timeline is set with the **Set Time** action.
 
 ## Timeline controller actions
 
-**Play**
+**Play**  
 Start playing a timeline, with tags to identify this playback.
 
-**Play all**
+**Play all**  
 Play all the timelines in the layout.
 
-**Pause**
+**Pause**  
 Pause a timeline by its tag. Paused timelines can subsequently be resumed.
 
-**Pause all**
+**Pause all**  
 Pause all currently playing timelines.
 
-**Resume**
+**Resume**  
 Resume a paused timeline by its tag.
 
-**Resume all**
+**Resume all**  
 Resume all paused timelines.
 
-**Stop**
+**Stop**  
 Stop a timeline and reset it to its initial state.
 
-**Stop all**
+**Stop all**  
 Stop all timelines, resetting them all to their initial state.
 
-**Set time**
+**Set time**  
 Set the current playback time of a timeline in seconds. **Note:** you can also use a string with a keyframe tag for the *Time* parameter, in which case the time is set to the position of that keyframe. If the timeline is playing when its time is set, playback is stopped.
 
-**Set playback rate**
+**Set playback rate**  
 Set the playback rate of a timeline. 1 is normal speed, 0.5 is half speed, etc. Negative numbers will play in reverse.
 
-**Set instance**
+**Set instance**  
 Set an instance to be used for the next timeline playback. The instance can be of a different type to the one used in the editor. The instance will be set to the track with the corresponding track ID. The track ID can also be left empty in which case it uses the first track in the timeline. It can also be used repeatedly with an empty ID to keep setting the tracks in the timeline in sequence. When the timeline is played it will then affect this instance instead of the one used in the editor. Playback can be controlled by using unique tags when playing the timeline.
 
-**Unset instances**
+**Unset instances**  
 Clears all state associated with calls to **Set instance**.
 
 ## Timeline controller expressions
 
-**Time(nameOrTags)**
+**Time(nameOrTags)**  
 Retrieve the current time of the first matching timeline by either name or tags.
 
-**Progress(nameOrTags)**
+**Progress(nameOrTags)**  
 Retrieve the progress of the first matching timeline by either name or tags, returning a value in the range [0, 1].
 
-**TotalTime(nameOrTags)**
+**TotalTime(nameOrTags)**  
 The total time of the first matching timeline by either name or tags.
 
-**KeyframeTags**
+**KeyframeTags**  
 In a On keyframe reached or On any keyframe reached trigger, a string with the Tags property of the keyframe that was reached.
 
-**KeyframeTime**
+**KeyframeTime**  
 Get the time of a keyframe providing a timeline name (or tags) and keyframe tags.
 
-**TimelineName**
+**TimelineName**  
 In a trigger, a string with the name of the relevant timeline.
 
-**TimelineTags**
+**TimelineTags**  
 In a trigger, a string with the tags of the relevant timeline.
 
-**Value(timelineNameOrTags, valueTrackNameOrId)**
+**Value(timelineNameOrTags, valueTrackNameOrId)**  
 Retrieve the value of a [value track](../project-primitives/timelines/track/value-track.md) by specifying a timeline name or tags and a value track name or track id. If no matching value track is found, the expression returns 0.
 
-**Ease(easeName, value)**
+**Ease(easeName, value)**  
 Return the result of an ease function at a given value in the range 0-1. The ease name can be either a built-in ease, or the name of a custom ease in the project. A list of the names of built-in eases is included below.
 
 ## Built-in ease names

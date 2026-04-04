@@ -18,5 +18,5 @@ The 'Destroy outside' behavior has no conditions, actions or expressions. It has
 
 ## 'Destroy outside' properties
 
-**Region**
+**Region**  
 Choose whether the area the object is destroyed outside of is the layout area, or the viewport.

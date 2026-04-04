@@ -50,46 +50,46 @@ This restriction generally only applies to web browsers. Usually if you publish 
 
 ## Video properties
 
-**Primary source**
+**Primary source**  
 The name of the project file to play if the primary format is supported. Make sure *Primary format* matches the actual container and codec used by the specified project file. See *Video formats* above for more details.
 
-**Primary format**
+**Primary format**  
 The name of the project file to play if the primary format is supported. Make sure *Primary format* matches the actual container and codec used by the specified project file. See *Video formats* above for more details.
 
-**Secondary source**
+**Secondary source**  
 The name of the project file to play, if the primary format is *not* supported. Make sure *Secondary format* matches the actual container and codec used by the specified project file. See *Video formats* above for more details.
 
-**Secondary format**
+**Secondary format**  
 The name of the project file to play, if the primary format is *not* supported. Make sure *Secondary format* matches the actual container and codec used by the specified project file. See *Video formats* above for more details.
 
-**Autoplay**
+**Autoplay**  
 The autoplay or preload mode. This can be:
 
 - **No:** nothing is done until the video is requested to be played.
 - **Preload:** on startup the video will start downloading the video data, but will not start playing it yet. This can allow video playback to start more quickly when requested. Some platforms (e.g. mobile devices on cellular data connections) may ignore this.
 - **Yes:** on startup the video will start downloading the video data, and also start playing it as soon as it determines the progress and transfer rate are sufficient to play through to the end without stalling for buffering. Some mobile platforms will not start playing until the first touch event - see *Compatibility* for more information.
 
-**Play in background**
+**Play in background**  
 If disabled, then switching browser tab, minimising the browser window, switching to a different mobile app, or otherwise hiding the window will pause the video and resume it when switching back. This is intended to avoid annoying the user with continued audio playback when deciding to do something else, and it also helps save battery on mobile devices. However for some types of app it may be desirable to keep playing in the background, in which case enabling this allows continued playback even when in the background.
 
-**Initially visibile**
+**Initially visibile**  
 Whether the video is initially visible or invisible. Note that if it is invisible, audio playback may still be heard when playing, so it may be desirable to also mute the video.
 
 ## Video conditions
 
-**Has ended**
+**Has ended**  
 True if the video playback has reached the end of the video and stopped.
 
-**Is muted**
+**Is muted**  
 True if the audio playback from the video has been muted.
 
-**Is paused**
+**Is paused**  
 True if the video playback has been paused.
 
-**Is playing**
+**Is playing**  
 True if the video playback is actively playing.
 
-**On playback event**
+**On playback event**  
 Triggers when a playback event occurs. This can be one of:
 
 - *Can play:* triggered when enough data is available to play at least a couple of frames, but there may not be enough data to play through to the end.
@@ -103,46 +103,46 @@ Triggers when a playback event occurs. This can be one of:
 
 ## Video actions
 
-**Pause**
+**Pause**  
 Pause the video playback if it is currently playing.
 
-**Play**
+**Play**  
 Start playing the video. On some platforms this can only happen in a user input event. For more information, see the section on *Compatibility*.
 
-**Set looping**
+**Set looping**  
 Set whether the video is looping, so that it restarts from the beginning when it reaches the end.
 
-**Set muted**
+**Set muted**  
 Set whether the audio playback from the video is muted (inaudible) or unmuted.
 
-**Set playback rate**
+**Set playback rate**  
 Set how fast the video playback proceeds, as a multiplier of its original speed. That means 1 is the original speed, 2 is twice as fast, 0.5 is half as fast, etc.
 
-**Set playback time**
+**Set playback time**  
 Set the video playback time to a specific time in seconds (i.e. seek to the given time). Due to the way video encoding technologies work, the video may only be able to seek close to but not exactly on the specified time.
 
-**Set source**
+**Set source**  
 Set a different video file to play. As with the object properties, different primary and secondary formats can be specified. Setting the source does not automatically start playing the video; use the *Play* action to start it after changing the source.
 
-**Set volume**
+**Set volume**  
 Set the volume of the audio playback from the video, in decibels attenuation. 0 is full volume, -10 dB is approximately half as loud, etc. The audio cannot be amplified: positive volume values will be treated as 0.
 
 ## Video expressions
 
-**Duration**
+**Duration**  
 The video duration in seconds, if the video has loaded enough for this to be determined.
 
-**PlaybackRate**
+**PlaybackRate**  
 The current playback rate as set by the *Set playback rate* action, as a multiplier of the original rate (e.g. 1 is original speed, 2 is twice as fast, etc).
 
-**PlaybackTime**
+**PlaybackTime**  
 The current playback time in seconds.
 
-**VideoWidth**
+**VideoWidth**  
 The dimensions of the source video, in pixels.
 
-**VideoHeight**
+**VideoHeight**  
 The dimensions of the source video, in pixels.
 
-**Volume**
+**Volume**  
 The current audio playback volume in dB attenuation.

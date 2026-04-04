@@ -34,16 +34,16 @@ Web exports use [Google's Ad Placement API](https://www.construct.net/out?u=http
 
 Construct supports the following advert types:
 
-**Banner Advert**
+**Banner Advert**  
 Displays an advert that partially overlays the bottom of the screen, the size of the advert can be specified when it's created. **(Mobile export only)**
 
-**Interstitial Advert**
+**Interstitial Advert**  
 Displays a full screen advert, useful for transitioning between layouts. **(Mobile & Web exports)**
 
-**Rewarded Advert**
+**Rewarded Advert**  
 Similar to an interstitial advert in that it is a full screen advert. If the user watches this advert for the designated amount of time, they will get the reward payload. If the advert is dismissed before that, the reward is not given. **(Mobile & Web exports)**
 
-**Rewarded Interstitial Advert**
+**Rewarded Interstitial Advert**  
 Similar to rewarded adverts, but users aren’t required to opt in to view a rewarded interstitial. Instead of the opt-in prompt in rewarded ads, rewarded interstitials require an intro screen that announces the reward and gives users a chance to opt out if they wish to do so. **(Mobile & Web exports)**
 
 ## Getting started with Admob
@@ -144,25 +144,25 @@ Adverts need to load over the network before you can use them. When creating an 
 
 To display a banner advert you must specify a size for it, generally smart portrait/landscape will work for most situations but here are the specifiable sizes. Using a size that is larger than the display will prevent it from loading. Smart banner will vary in height depending on the available screen height. With a smart banner if the base image isn't wide enough to fill the screen black bars are displayed on either side.
 
-**Smart portrait**
+**Smart portrait**  
 Screen width x 32/50/90
 
-**Smart landscape**
+**Smart landscape**  
 Screen width x 32/50/90
 
-**Standard**
+**Standard**  
 320 x 50
 
-**Large**
+**Large**  
 320 x 100
 
-**Medium**
+**Medium**  
 300 x 250
 
-**Full (tablet only)**
+**Full (tablet only)**  
 468 x 60
 
-**Leaderboard (tablet only)**
+**Leaderboard (tablet only)**  
 728 x 90
 
 > **Tip**  
@@ -170,22 +170,22 @@ Screen width x 32/50/90
 
 ## Mobile Advert Properties
 
-**Testing mode**
+**Testing mode**  
 Changes the displayed adverts units to testing adverts. Should be used during development. **(Mobile & Web exports)**
 
-**Android application ID**
+**Android application ID**  
 The Admob application ID for the Android version of your game. This has the format "ca-app-pub-0000000000000000~0000000000". On Android this value is required, and your application will fail to start unless it is provided and correct. [Find your app ID](https://www.construct.net/out?u=https%3a%2f%2fsupport.google.com%2fadmob%2fanswer%2f7356431) **(Mobile exports only)**
 
-**iOS application ID**
+**iOS application ID**  
 The Admob application ID for the iOS version of your game. This has the format "ca-app-pub-0000000000000000~0000000000". On iOS this value is required, and your application will fail to start unless it is provided and correct. [Find your app ID](https://www.construct.net/out?u=https%3a%2f%2fsupport.google.com%2fadmob%2fanswer%2f7356431) **(Mobile exports only)**
 
-**Spoof location (debug)**
+**Spoof location (debug)**  
 Fakes the device location to allow testing the user consent dialog in different scenarios. Testing mode must be enabled for this to work. **(Mobile exports only)**
 
-**Show on start up**
+**Show on start up**  
 Choose wether to show the consent form automatically on startup or not. This option doesn't do anything in web exports. **(Mobile exports only)**
 
-**Publisher ID**
+**Publisher ID**  
 Adsense publisher ID, found in your Adsense account. This is required if you intend to show adverts in a web export. [Find your publisher ID](https://www.construct.net/out?u=https%3a%2f%2fsupport.google.com%2fadsense%2fanswer%2f105516) **(Web exports only)**
 
 > **Tip**  
@@ -222,156 +222,156 @@ For this reason it is recommended to use the [Platform Info](platform-info.md) p
 
 ## Mobile Advert Conditions
 
-**On Banner Ready**
+**On Banner Ready**  
 Triggers when a banner advert has loaded.
 
-**On Interstitial Ready**
+**On Interstitial Ready**  
 Triggers when a interstitial advert has loaded.
 
-**On Rewarded Ready**
+**On Rewarded Ready**  
 Triggers when a rewarded advert has loaded.
 
-**On Rewarded Interstitial Ready**
+**On Rewarded Interstitial Ready**  
 Triggers when a rewarded interstitial advert has loaded.
 
-**On Banner Failed to Load**
+**On Banner Failed to Load**  
 Triggers when a banner advert fails to load.
 
-**On Interstitial Failed to Load**
+**On Interstitial Failed to Load**  
 Triggers when a interstitial advert fails to load.
 
-**On Rewarded Failed to Load**
+**On Rewarded Failed to Load**  
 Triggers when a rewarded advert fails to load.
 
-**On Rewarded Interstitial Failed to Load**
+**On Rewarded Interstitial Failed to Load**  
 Triggers when a rewarded interstitial advert fails to load.
 
-**On Banner Shown**
+**On Banner Shown**  
 Triggers when a banner advert has been displayed.
 
-**On Interstitial Complete**
+**On Interstitial Complete**  
 Triggers when a interstitial advert has closed.
 
-**On Rewarded Complete**
+**On Rewarded Complete**  
 Triggers when a rewarded advert has closed, and the user has been rewarded.
 
-**On Rewarded Interstitial Complete**
+**On Rewarded Interstitial Complete**  
 Triggers when a rewarded interstitial advert has closed, and the user has been rewarded.
 
-**On Banner Hidden**
+**On Banner Hidden**  
 Triggers when a banner advert has been hidden.
 
-**On Interstitial Cancelled**
+**On Interstitial Cancelled**  
 Triggers when a interstitial advert has been cancelled.
 
-**On Rewarded Cancelled**
+**On Rewarded Cancelled**  
 Triggers when a rewarded advert has been cancelled.
 
-**On Rewarded Interstitial Cancelled**
+**On Rewarded Interstitial Cancelled**  
 Triggers when a rewarded interstitial advert has been cancelled.
 
-**On Configuration Complete**
+**On Configuration Complete**  
 Triggers when the application ID has been successfully set.
 
-**On Configuration Failed**
+**On Configuration Failed**  
 Triggers when the application ID failed to be set.
 
-**On IDFA request complete**
+**On IDFA request complete**  
 Triggered after the *Request IDFA* action once the user has made a decision. The outcome of their decision is reflected in the *IDFAStatus* expression.
 
-**Is Configured**
+**Is Configured**  
 True if the plugin has been succesfully configured.
 
-**Is Showing Banner**
+**Is Showing Banner**  
 True if a banner advert is being shown.
 
-**Is Showing Interstitial**
+**Is Showing Interstitial**  
 True if a interstitial advert is being shown.
 
-**Is Showing Rewarded**
+**Is Showing Rewarded**  
 True if a rewarded advert is being shown.
 
-**Is Showing Rewarded Interstitial**
+**Is Showing Rewarded Interstitial**  
 True if a rewarded interstitial advert is being shown.
 
-**Is Banner Loaded**
+**Is Banner Loaded**  
 True if a banner advert is ready to be shown.
 
-**Is Interstitial Loaded**
+**Is Interstitial Loaded**  
 True if a interstitial advert is ready to be shown.
 
-**Is Rewarded Loaded**
+**Is Rewarded Loaded**  
 True if a rewarded advert is ready to be shown.
 
-**Is Rewarded Interstitial Loaded**
+**Is Rewarded Interstitial Loaded**  
 True if a rewarded interstitial advert is ready to be shown.
 
-**Is in EEA or unknown**
+**Is in EEA or unknown**  
 True if the SDK consider the device to be inside the EEA or is unable to detect the location. As it is a requirement to show the dialog inside the EEA "unknown" is considered effectively the same as being in the EEA. In web exports this condition always evaluates to "true".
 
 ## Mobile Advert Actions
 
-**Create Banner**
+**Create Banner**  
 Create a banner advert with a AdMob advert unit ID and size. Optionally show when loaded. Only one banner may be created at a time. If the **reload** parameter is set to **true** an existing banner will be reloaded with the new settings. Setting **overlap** to **true** causes the banner to overlap the main Webview, If **false** the main Webview will be resized so both it and the banner fit in the screen without overlapping. In the case of setting **overlap** to **true** the **offset** parameter can be used to specify an amount by which the banner should be offset from it's initial position.
 
-**Create Rewarded**
+**Create Rewarded**  
 Create a rewarded advert with a AdMob advert unit ID. Optionally show when loaded. Only one rewarded advert may be created at a time.
 
-**Create Interstitial**
+**Create Interstitial**  
 Create a interstitial advert with a AdMob advert unit ID. Optionally show when loaded. Only one interstitial may be created at a time.
 
-**Create Rewarded Interstitial**
+**Create Rewarded Interstitial**  
 Create a rewarded interstitial advert with a AdMob advert unit ID. Optionally show when loaded. Only one rewarded interstitial may be created at a time.
 
-**Show User Consent Dialog**
+**Show User Consent Dialog**  
 Shows the modal user consent dialog
 
-**Show Banner**
+**Show Banner**  
 Show a loaded banner advert. Will only display if there is a loaded banner ready.
 
-**Show Rewarded**
+**Show Rewarded**  
 Show a loaded rewarded advert. Will only display if there is a loaded video ready.
 
-**Show Interstitial**
+**Show Interstitial**  
 Show a loaded interstitial advert. Will only display if there is a loaded interstitial ready.
 
-**Show Rewarded Interstitial**
+**Show Rewarded Interstitial**  
 Show a loaded rewarded interstitial advert. Will only display if there is a loaded rewarded interstitial ready.
 
-**Hide Banner**
+**Hide Banner**  
 Hide an active banner advert (destroys the advert). Does nothing if no banner is available.
 
-**Request IDFA**
+**Request IDFA**  
 Prompt the user for permission to use the *identifier for advertisers* (IDFA). When the user makes a decision, *On IDFA request complete* triggers, and the outcome is indicated in the *IDFAStatus* expression. See the section on using the IDFA above.
 
-**Set Max Advert Content Rating**
+**Set Max Advert Content Rating**  
 Filter the viewed adverts based on the digital content label classifications for various age groups. This action is not supported in web exports.
 
-**Tag For Child Directed Treatment**
+**Tag For Child Directed Treatment**  
 Request advert content that is child-directed for the purposes of the Children's Online Privacy Protection Act (COPPA). This action is not supported in web exports.
 
-**Tag for under age of consent**
+**Tag for under age of consent**  
 Indicate the user should be treated as under the age of consent as per the restrictions in the European Economic Area(EEA) General Data Protection Act(GDPR). This action is not supported in web exports.
 
 ## Mobile Advert Expressions
 
-**ErrorMessage**
+**ErrorMessage**  
 When in a failure condition, an error message related to it.
 
-**RewardType**
+**RewardType**  
 When in a **On Rewarded Complete** condition, the type of the related reward. In web exports this expression always returns the value "Reward".
 
-**RewardValue**
+**RewardValue**  
 When in a **On Rewarded Complete** condition, the value of the related reward. In web exports this expression always returns the value "1".
 
-**RewardInterstitialType**
+**RewardInterstitialType**  
 When in a **On Rewarded Interstitial Complete** condition, the type of the related reward. In web exports this expression always returns the value "Reward".
 
-**RewardInterstitialValue**
+**RewardInterstitialValue**  
 When in a **On Rewarded Interstitial Complete** condition, the value of the related reward.  In web exports this expression always returns the value "1".
 
-**ConsentStatus**
+**ConsentStatus**  
 The current user consent status as a string, can take the values of: UNKNOWN, NOT_REQUIRED, REQUIRED or OBTAINED. In web exports this expression always return the UNKNOWN value.
 
-**IDFAStatus**
+**IDFAStatus**  
 Indicates the outcome of requesting to use the IDFA. If no request has been made this defaults to "not-determined". After a request it is either "authorized" or "denied" depending on the choice the user made. In web exports this expression always return the "not-determined" value.

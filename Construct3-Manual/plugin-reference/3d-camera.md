@@ -37,10 +37,10 @@ When moving the camera in 3D, it can be useful to play positioned sounds which w
 
 The 3D Camera object has two properties: **Z scale** and **Default camera Z**. These are related and are influenced by the *Z axis scale* [project property](../project-primitives/projects.md). The properties are defined as follows.
 
-**Z scale**
+**Z scale**  
 The number of pixels per unit on the Z axis. With a *Regular* Z axis scale, this is always 1, as the Z axis uses the same scale as the other axes.
 
-**Default camera Z**
+**Default camera Z**  
 The default position of the camera on the Z axis, producing 2D rendering at 100% scale on the layout. With a *Normalized* Z axis scale, this is always 100.
 
 The relationship between the properties and the *Z axis scale* property is as follows:
@@ -56,178 +56,178 @@ The 3D Camera object has no conditions.
 
 ## 3D Camera actions
 
-**Look at position**
+**Look at position**  
 Set the position and orientation of the 3D Camera using a camera position, a position for the camera to look towards, and an up vector. The camera and look-at positions are given as 3D co-ordinates. The up vector is a 3D vector specifying which way is up, as this is also necessary to determine how to orient the camera towards the look-at position. The default up vector is (0, 1, 0), i.e. up is the positive direction on the Y axis, suitable for a top-down view.
 
-**Look parallel to layout**
+**Look parallel to layout**  
 Set the position and orientation of the 3D Camera using a camera position and a camera angle in degrees. Whereas the default view is top-down, this sets a camera position looking along the layout, such that the layout appears as the floor at the bottom of the screen. This is a shortcut for using the *Look at position* action looking towards a 2D angle with an up vector of (0, 0, 1).
 
-**Move along camera axis**
+**Move along camera axis**  
 Move the camera position, the look position, or both, a distance along an axis relative to the current camera orientation. The distance can be negative, for example to move left when the specified axis is *Right*.
 
 > **Tip**  
 > Note the scale on the Z axis can be different to the X and Y axes.
 
-**Move along layout axis**
+**Move along layout axis**  
 Move the camera position, the look position, or both, a distance along an axis relative to the layout. The distance can be negative, for example to move left when the specified axis is *X*.
 
 > **Tip**  
 > Note the scale on the Z axis can be different to the X and Y axes.
 
-**Restore 2D camera**
+**Restore 2D camera**  
 Restore the camera to its default 2D behavior, using the standard scrolling features to move the view.
 
-**Rotate camera**
+**Rotate camera**  
 Moves the camera look-at position according to X and Y rotations in degrees. Note that a 3D Camera must first have been enabled using the *Look at position*, *Look parallel to layout* or *Set position* actions, since these also define the starting orientation that this action rotates around. Typically the rotation values will be provided by the [Mouse](mouse.md) object's *MovementX* and *MovementY* expressions in an *On movement* trigger to achieve "mouse look" - see [First-person platformer](https://editor.construct.net/#open=first-person-platformer) for an example of this.
 
-**Set field of view**
+**Set field of view**  
 Set the angle of the field of view in degrees. Note this only has an effect when *Z Axis scale* is set to *Regular* in Project Properties. The default field of view is also set in Project Properties.
 
-**Set position**
+**Set position**  
 Set the camera position or the look position to a 3D co-ordinate. This can be used to control the camera or look positions independently without having to always specify both, such as to move the camera while using mouse look to control the look direction.
 
 ## 3D Camera expressions
 
-**CameraX**
+**CameraX**  
 Get the current 3D position of the camera.
 
-**CameraY**
+**CameraY**  
 Get the current 3D position of the camera.
 
-**CameraZ**
+**CameraZ**  
 Get the current 3D position of the camera.
 
-**LookX**
+**LookX**  
 Get the current 3D position of the position the camera is pointing at.
 
-**LookY**
+**LookY**  
 Get the current 3D position of the position the camera is pointing at.
 
-**LookZ**
+**LookZ**  
 Get the current 3D position of the position the camera is pointing at.
 
-**LookVectorX**
+**LookVectorX**  
 Get the current vector of the direction the camera is pointing in, including camera rotation (i.e. changes applied with the *Rotate camera* action for purposes like mouse look).
 
-**LookVectorY**
+**LookVectorY**  
 Get the current vector of the direction the camera is pointing in, including camera rotation (i.e. changes applied with the *Rotate camera* action for purposes like mouse look).
 
-**LookVectorZ**
+**LookVectorZ**  
 Get the current vector of the direction the camera is pointing in, including camera rotation (i.e. changes applied with the *Rotate camera* action for purposes like mouse look).
 
-**ZScale**
+**ZScale**  
 The number of pixels per unit on the Z axis. See *Z scale* under *3D Camera properties* for more details.
 
-**DefaultCameraZ**
+**DefaultCameraZ**  
 The default position of the camera on the Z axis, producing 2D rendering at 100% scale on the layout. See *Z scale* under *3D Camera properties* for more details.
 
-**FieldOfView**
+**FieldOfView**  
 The current field of view in degrees. This is only applicable when *Z axis scale* is set to *Regular*.
 
-**CanvasToLayerX(layer, x, y, layerZ)**
+**CanvasToLayerX(layer, x, y, layerZ)**  
 Transform a position in canvas co-ordinates to layer co-ordinates on a Z plane given by *layerZ*. This is similar to the [system expressions](../system-reference/system-expressions.md) of the same name, but working in 3D.
 
-**CanvasToLayerY(layer, x, y, layerZ)**
+**CanvasToLayerY(layer, x, y, layerZ)**  
 Transform a position in canvas co-ordinates to layer co-ordinates on a Z plane given by *layerZ*. This is similar to the [system expressions](../system-reference/system-expressions.md) of the same name, but working in 3D.
 
-**LayerToCanvasX(layer, x, y, z)**
+**LayerToCanvasX(layer, x, y, z)**  
 Transform a position in 3D layer co-ordinates to 2D canvas co-ordinates. This is similar to the [system expressions](../system-reference/system-expressions.md) of the same name, but working in 3D.
 
-**LayerToCanvasY(layer, x, y, z)**
+**LayerToCanvasY(layer, x, y, z)**  
 Transform a position in 3D layer co-ordinates to 2D canvas co-ordinates. This is similar to the [system expressions](../system-reference/system-expressions.md) of the same name, but working in 3D.
 
-**LayerToLayerX(fromLayer, toLayer, x, y, z)**
+**LayerToLayerX(fromLayer, toLayer, x, y, z)**  
 Calculate the 2D position on a second layer (*toLayer*) that corresponds to a 3D position given on a first layer (*fromLayer*). This is similar to the [system expressions](../system-reference/system-expressions.md) of the same name, but working in 3D.
 
-**LayerToLayerY(fromLayer, toLayer, x, y, z)**
+**LayerToLayerY(fromLayer, toLayer, x, y, z)**  
 Calculate the 2D position on a second layer (*toLayer*) that corresponds to a 3D position given on a first layer (*fromLayer*). This is similar to the [system expressions](../system-reference/system-expressions.md) of the same name, but working in 3D.
 
-**ViewportBottomLeftX(layer)**
+**ViewportBottomLeftX(layer)**  
 Return the X and Y position in layer co-ordinates of the four corners of the visible viewport, taking in to account the layer's Z elevation. These expressions are similar to the viewport [system expressions](../system-reference/system-expressions.md), but when using a 3D camera the viewport area can be an irregular quadrilateral instead of a simple 2D rectangle, so these expressions provide four separate positions.
 
 > **Tip**  
 > These expressions can return NaN (Not A Number) if a corner of the viewport does not intersect the layer plane.
 
-**ViewportBottomLeftY(layer)**
+**ViewportBottomLeftY(layer)**  
 Return the X and Y position in layer co-ordinates of the four corners of the visible viewport, taking in to account the layer's Z elevation. These expressions are similar to the viewport [system expressions](../system-reference/system-expressions.md), but when using a 3D camera the viewport area can be an irregular quadrilateral instead of a simple 2D rectangle, so these expressions provide four separate positions.
 
 > **Tip**  
 > These expressions can return NaN (Not A Number) if a corner of the viewport does not intersect the layer plane.
 
-**ViewportBottomRightX(layer)**
+**ViewportBottomRightX(layer)**  
 Return the X and Y position in layer co-ordinates of the four corners of the visible viewport, taking in to account the layer's Z elevation. These expressions are similar to the viewport [system expressions](../system-reference/system-expressions.md), but when using a 3D camera the viewport area can be an irregular quadrilateral instead of a simple 2D rectangle, so these expressions provide four separate positions.
 
 > **Tip**  
 > These expressions can return NaN (Not A Number) if a corner of the viewport does not intersect the layer plane.
 
-**ViewportBottomRightY(layer)**
+**ViewportBottomRightY(layer)**  
 Return the X and Y position in layer co-ordinates of the four corners of the visible viewport, taking in to account the layer's Z elevation. These expressions are similar to the viewport [system expressions](../system-reference/system-expressions.md), but when using a 3D camera the viewport area can be an irregular quadrilateral instead of a simple 2D rectangle, so these expressions provide four separate positions.
 
 > **Tip**  
 > These expressions can return NaN (Not A Number) if a corner of the viewport does not intersect the layer plane.
 
-**ViewportTopLeftX(layer)**
+**ViewportTopLeftX(layer)**  
 Return the X and Y position in layer co-ordinates of the four corners of the visible viewport, taking in to account the layer's Z elevation. These expressions are similar to the viewport [system expressions](../system-reference/system-expressions.md), but when using a 3D camera the viewport area can be an irregular quadrilateral instead of a simple 2D rectangle, so these expressions provide four separate positions.
 
 > **Tip**  
 > These expressions can return NaN (Not A Number) if a corner of the viewport does not intersect the layer plane.
 
-**ViewportTopLeftY(layer)**
+**ViewportTopLeftY(layer)**  
 Return the X and Y position in layer co-ordinates of the four corners of the visible viewport, taking in to account the layer's Z elevation. These expressions are similar to the viewport [system expressions](../system-reference/system-expressions.md), but when using a 3D camera the viewport area can be an irregular quadrilateral instead of a simple 2D rectangle, so these expressions provide four separate positions.
 
 > **Tip**  
 > These expressions can return NaN (Not A Number) if a corner of the viewport does not intersect the layer plane.
 
-**ViewportTopRightX(layer)**
+**ViewportTopRightX(layer)**  
 Return the X and Y position in layer co-ordinates of the four corners of the visible viewport, taking in to account the layer's Z elevation. These expressions are similar to the viewport [system expressions](../system-reference/system-expressions.md), but when using a 3D camera the viewport area can be an irregular quadrilateral instead of a simple 2D rectangle, so these expressions provide four separate positions.
 
 > **Tip**  
 > These expressions can return NaN (Not A Number) if a corner of the viewport does not intersect the layer plane.
 
-**ViewportTopRightY(layer)**
+**ViewportTopRightY(layer)**  
 Return the X and Y position in layer co-ordinates of the four corners of the visible viewport, taking in to account the layer's Z elevation. These expressions are similar to the viewport [system expressions](../system-reference/system-expressions.md), but when using a 3D camera the viewport area can be an irregular quadrilateral instead of a simple 2D rectangle, so these expressions provide four separate positions.
 
 > **Tip**  
 > These expressions can return NaN (Not A Number) if a corner of the viewport does not intersect the layer plane.
 
-**CameraXRotation**
+**CameraXRotation**  
 Return the X and Y rotation of the camera in degrees, as set by the *Rotate camera* action.
 
-**CameraYRotation**
+**CameraYRotation**  
 Return the X and Y rotation of the camera in degrees, as set by the *Rotate camera* action.
 
-**ForwardX**
+**ForwardX**  
 Returns a 3D unit vector pointing in the direction of the camera.
 
 > **Tip**  
 > Note this does not include camera rotation. Use the *LookVectorX/Y/Z* expressions to get the vector of the direction the camera is pointing in including camera rotation.
 
-**ForwardY**
+**ForwardY**  
 Returns a 3D unit vector pointing in the direction of the camera.
 
 > **Tip**  
 > Note this does not include camera rotation. Use the *LookVectorX/Y/Z* expressions to get the vector of the direction the camera is pointing in including camera rotation.
 
-**ForwardZ**
+**ForwardZ**  
 Returns a 3D unit vector pointing in the direction of the camera.
 
 > **Tip**  
 > Note this does not include camera rotation. Use the *LookVectorX/Y/Z* expressions to get the vector of the direction the camera is pointing in including camera rotation.
 
-**RightX**
+**RightX**  
 Returns a 3D unit vector pointing to the right of the camera, perpendicular to the forward vector.
 
-**RightY**
+**RightY**  
 Returns a 3D unit vector pointing to the right of the camera, perpendicular to the forward vector.
 
-**RightZ**
+**RightZ**  
 Returns a 3D unit vector pointing to the right of the camera, perpendicular to the forward vector.
 
-**UpX**
+**UpX**  
 Returns a 3D unit vector for the camera up vector, which helps determine the camera orientation. Note this is recomputed from the given camera and look positions, so may not be exactly the same as the up vector given in the *Look at position* action.
 
-**UpY**
+**UpY**  
 Returns a 3D unit vector for the camera up vector, which helps determine the camera orientation. Note this is recomputed from the given camera and look positions, so may not be exactly the same as the up vector given in the *Look at position* action.
 
-**UpZ**
+**UpZ**  
 Returns a 3D unit vector for the camera up vector, which helps determine the camera orientation. Note this is recomputed from the given camera and look positions, so may not be exactly the same as the up vector given in the *Look at position* action.

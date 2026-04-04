@@ -142,76 +142,76 @@ Another alternative is to use BBCode or plain text as the content type. In both 
 
 ## HTML Element properties
 
-**Tag**
+**Tag**  
 The name of the HTML tag that Construct creates. By default this is `div` for a `<div>` element, but it can be changed to any other HTML element.
 
-**Content**
+**Content**  
 The text to use as the initial content of the HTML Element. The way this is interpreted is set by the *Content type* property, which defaults to HTML. If you have a lot of content consider using a project file instead - see *Managing long HTML content* above.
 
-**Content type**
+**Content type**  
 Choose how the initial content text is interpreted. The default is *HTML*. It can also be set to *BBCode* (see the section on *Using BBCode* above), or *Plain text* to avoid interpreting any tags on the text at all.
 
-**Initially visible**
+**Initially visible**  
 Set whether the HTML Element is visible upon creation. The element is made invisible by setting the style `display: none`.
 
-**ID**
+**ID**  
 The ID to set for the HTML Element.
 
-**Class**
+**Class**  
 The class to set for the HTML Element. Like with the HTML *class* attribute, multiple classes can be specified separated by spaces.
 
-**Allow context menu**
+**Allow context menu**  
 Whether the browser's default context menu should be allowed on the HTML Element. Typically this should be allowed for input elements, but often disallowing it is appropriate for games, which may use controls like right-clicking for other purposes. If disallowed, Construct will call `preventDefault()` on the `"contextmenu"` event.
 
-**Stop input events**
+**Stop input events**  
 Construct sometimes stops input events on HTML elements from reaching the rest of the project. For example using arrow keys to move the caret inside a text input should not also move the player if they are controlled by arrow keys. This also applies to mouse or touch input. This is optional with the HTML Element object and has three modes:
 
 - **No** - no input events are stopped. All mouse, touch or keyboard input on the element will reach the rest of the project.
 - **Child elements only** - input events reaching child elements of the main HTML element will be stopped from reaching the rest of the project. However the main HTML element will not stop any input.
 - **Entire element** - all input events on the entire HTML element will be stopped from reaching the rest of the project.
 
-**Origin**
+**Origin**  
 Choose the position of the origin of the object relative to its unrotated bounding rectangle.
 
-**Set color**
+**Set color**  
 Enable *Set color* to set the `color` CSS style on the HTML element to the given color. This changes the text color. Usually this is desirable as otherwise the text color may not be visible against the background.
 
-**Default color**
+**Default color**  
 Enable *Set color* to set the `color` CSS style on the HTML element to the given color. This changes the text color. Usually this is desirable as otherwise the text color may not be visible against the background.
 
-**Set background color**
+**Set background color**  
 Enable *Set background color* to set the `background-color` style on the HTML element to the given color.
 
-**Default background color**
+**Default background color**  
 Enable *Set background color* to set the `background-color` style on the HTML element to the given color.
 
-**Auto font size**
+**Auto font size**  
 Automatically set a `font-size` CSS style on the HTML element according to the display scale of the canvas. This provides a convenient way to size HTML content with the canvas by using `em` units. See the section *Scaling with the canvas* above for more details.
 
-**Allow text selection**
+**Allow text selection**  
 Set whether dragging over text is allowed to create a selection. By default this is disabled, which adds the CSS style `user-select: none`.
 
-**Style attribute**
+**Style attribute**  
 Additional CSS styles for the main HTML element can be added here, separated by semicolons. This will be set via the `style` attribute of the HTML element. Consider using CSS files if there are more than a couple of simple styles - see the section *CSS styling* above for more details.
 
 ## HTML Element conditions
 
-**On clicked**
+**On clicked**  
 Triggered when any part of the HTML element is clicked. The *TargetID* and *TargetClass* expressions are set to the ID and class of the clicked element.
 
-**On clicked class**
+**On clicked class**  
 Triggered when an element with a given list of CSS classes is clicked. This includes a click on any child elements contained by the element with the given CSS classes. A single class name can be specified, or multiple classes given separated by spaces, in which case the clicked element must match all the given classes.
 
 > **Tip**  
 > This does not use a CSS selector, so don't prefix class names with a dot.
 
-**On clicked ID**
+**On clicked ID**  
 Triggered when an element with a given ID is clicked. This includes a click on any child elements contained by the element with the given ID.
 
 > **Tip**  
 > This does not use a CSS selector, so don't prefix the ID with `#`.
 
-**On CSS animation ended**
+**On CSS animation ended**  
 Triggered when a CSS animation for any contained element finishes (i.e. the `"animationend"` event). The animation name is specified by the `@keyframes` rule. The *TargetID* and *TargetClass* expressions are set to the ID and class of the element that finished a CSS animation. This trigger is useful for things like destroying the HTML element after a fade out CSS animation has finished.
 
 ## HTML Element actions
@@ -219,67 +219,67 @@ Triggered when a CSS animation for any contained element finishes (i.e. the `"an
 > **Tip**  
 > Note that some actions have the same name. Actions in the *HTML element* group are common to all HTML-based plugins like Button and Text Input, and will only affect the main HTML element. Actions in the *HTML content* group are unique to the HTML Element plugin and can update the content of the object.
 
-**Create sprite image element**
+**Create sprite image element**  
 Creates an `<img>` element with the content of a given [Sprite](sprite.md) object's current image, and inserts it to the HTML element. The location to insert is set by a CSS selector. This can be left blank to insert in to the main HTML element. Alternatively a selector like `".myclass"` will mean to insert content to the child element with the class *myclass*. The element can be set to inserted at the start or the end of the given element, or alternatively replacing all the content of the given element with the image. The inserted image element can optionally also be given an ID and class, which helps make it easy to style the inserted image with CSS.
 
 > **Tip**  
 > This action provides a simple way to show a Sprite image on top of a HTML element, since normally HTML elements always show on top of Sprites.
 
-**Insert content**
+**Insert content**  
 Insert the given string of content inside the HTML element. The string is interpreted according to the content type (HTML, BBCode or plain text). The position indicates whether to insert at the start or the end of the given location. The location to insert is set by a CSS selector. This can be left blank to insert in to the main HTML element. Alternatively a selector like `".myclass"` will mean to insert content to the child element with the class *myclass*; if the *Type* is set to *all*, it will insert the same content to all elements matching the selector.
 
 > **Warning**  
 > Be careful when inserting user-provided values as HTML. See the section on *Security* above.
 
-**Position object at element**
+**Position object at element**  
 Sets the position and size of a given object to match the position and size of a specific HTML element. The element is chosen by a CSS selector, e.g. `".myclass"` to position an object at an element with the class *myclass*.
 
 > **Tip**  
 > This action provides a way to use invisible HTML and CSS for complex layouts, while displaying the actual content with other objects, allowing for full use of Z order, effects and so on.
 
-**Remove content**
+**Remove content**  
 Either removes elements entirely, or clears their content to make them empty, according to the given mode. The content to remove or clear is given by a CSS selector. This can be left blank to clear the main HTML element. (Note the main HTML element cannot be removed, so in this case it will be cleared instead.) Alternatively a selector like `".myclass"` will mean an element with the class *myclass* will be removed or cleared; if the *Type* is set to *all*, this will remove or clear all elements matching the selector.
 
-**Set attribute**
+**Set attribute**  
 Either sets or removes a named attribute on a HTML element, according to the given mode. The value is ignored if removing. The HTML element to alter attributes for is given by a CSS selector. This can be left blank to alter attributes for the main HTML element. Alternatively a selector like `".myclass"` will update attributes for an element with the class *myclass*; if the *Type* is set to *all*, this will update attributes for all elements matching the selector.
 
-**Set class**
+**Set class**  
 Either adds, toggles or removes classes on a HTML element, according to the given mode. Multiple classes can be updated at once by separating their names with spaces. The HTML element to alter classes for is given by a CSS selector. This can be left blank to alter classes for the main HTML element. Alternatively a selector like `".myclass"` will update the classes for an element with the class *myclass*; if the *Type* is set to *all*, this will update classes for all elements matching the selector.
 
 > **Tip**  
 > Note that the *Class* parameter is not a selector so does not need class names to be prefixed with a dot; however the *Selector* parameter is a CSS selector and so needs class names to be prefixed with a dot.
 
-**Set content**
+**Set content**  
 Replaces some content inside the HTML element with the given string. The string is interpreted according to the content type (HTML, BBCode or plain text). The location to replace content is set by a CSS selector. This can be left blank to replace the content of the entire main HTML element. Alternatively a selector like `".myclass"` will mean to replace the content of the child element with the class *myclass*; if the *Type* is set to *all*, it will replace the content of all elements matching the selector.
 
 > **Warning**  
 > Be careful when inserting user-provided values as HTML. See the section on *Security* above.
 
-**Set CSS style**
+**Set CSS style**  
 Set a single CSS style on the style attribute inside the HTML element, based on a CSS property name and a string for its value. Setting the value to an empty string will remove the property from the style attribute. The element to change the style for is set by a CSS selector. This can be left blank to update the style attribute of the main HTML element. Alternatively a selector like `".myclass"` will mean to update the CSS style of the child element with the class *myclass*; if the *Type* is set to *all*, it will update the style of all elements matching the selector.
 
-**Set scroll position**
+**Set scroll position**  
 Set the horizontal or vertical scroll position of an element. The HTML element to scroll is given by a CSS selector. This can be left blank to scroll the main HTML element, or use a CSS selector string like `".myclass"` to scroll an element with the class *myclass*. This action only scrolls one element matching the selector. The *Direction* specifies whether to set the scroll top (vertical) or left (horizontal) position, and the *Position* value is the scroll position to set in CSS pixels.
 
 ## HTML element expressions
 
-**EscapeHTML(string)**
+**EscapeHTML(string)**  
 Escapes any characters with meaning in HTML from the given string, such as replacing `<` with `&lt;`. This is important for securely inserting user content in to HTML strings. See the *Security* section above for more details.
 
-**HTMLContent**
+**HTMLContent**  
 A string with the complete content of the HTML element, either as a full HTML string, or plain text only (with HTML tags removed).
 
 > **Tip**  
 > Note that this does not update immediately after actions that change the HTML content - use the *Wait for previous actions to complete* system action to ensure any modifying actions have completed before reading updated content from these expressions.
 
-**TextContent**
+**TextContent**  
 A string with the complete content of the HTML element, either as a full HTML string, or plain text only (with HTML tags removed).
 
 > **Tip**  
 > Note that this does not update immediately after actions that change the HTML content - use the *Wait for previous actions to complete* system action to ensure any modifying actions have completed before reading updated content from these expressions.
 
-**TargetClass**
+**TargetClass**  
 In a trigger like *On clicked*, these contain the class and ID of the affected HTML element. Note that *TargetClass* can be a space-separated list of multiple classes, as per the *class* HTML attribute.
 
-**TargetID**
+**TargetID**  
 In a trigger like *On clicked*, these contain the class and ID of the affected HTML element. Note that *TargetClass* can be a space-separated list of multiple classes, as per the *class* HTML attribute.

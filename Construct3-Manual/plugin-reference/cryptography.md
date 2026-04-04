@@ -62,57 +62,57 @@ For advanced users who wish to interoperate encrypted data with other code or se
 
 ## Cryptography conditions
 
-**On encryption finished**
+**On encryption finished**  
 Triggered after an encryption action depending on whether the operation completed successfully. A tag can be specified to distinguish different encryption operations. The "any" variants always trigger regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
-**On encryption failed**
+**On encryption failed**  
 Triggered after an encryption action depending on whether the operation completed successfully. A tag can be specified to distinguish different encryption operations. The "any" variants always trigger regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
-**On any encryption finished**
+**On any encryption finished**  
 Triggered after an encryption action depending on whether the operation completed successfully. A tag can be specified to distinguish different encryption operations. The "any" variants always trigger regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
-**On any encryption failed**
+**On any encryption failed**  
 Triggered after an encryption action depending on whether the operation completed successfully. A tag can be specified to distinguish different encryption operations. The "any" variants always trigger regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
-**On decryption finished**
+**On decryption finished**  
 Triggered after a decryption action depending on whether the operation completed successfully. Decryption will fail if the incorrect password is specified. A tag can be specified to distinguish different decryption operations. The "any" variants always trigger regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
-**On decryption failed**
+**On decryption failed**  
 Triggered after a decryption action depending on whether the operation completed successfully. Decryption will fail if the incorrect password is specified. A tag can be specified to distinguish different decryption operations. The "any" variants always trigger regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
-**On any decryption finished**
+**On any decryption finished**  
 Triggered after a decryption action depending on whether the operation completed successfully. Decryption will fail if the incorrect password is specified. A tag can be specified to distinguish different decryption operations. The "any" variants always trigger regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
-**On any decryption failed**
+**On any decryption failed**  
 Triggered after a decryption action depending on whether the operation completed successfully. Decryption will fail if the incorrect password is specified. A tag can be specified to distinguish different decryption operations. The "any" variants always trigger regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
-**On hash finished**
+**On hash finished**  
 Triggered after a hash action when the operation completes. A tag can be specified to distinguish different hashing operations. The "any" variant always triggers regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
-**On any hash finished**
+**On any hash finished**  
 Triggered after a hash action when the operation completes. A tag can be specified to distinguish different hashing operations. The "any" variant always triggers regardless of the tag, and the associated tag can be retrieved with the *Tag* expression.
 
 ## Cryptography actions
 
-**Encrypt binary**
+**Encrypt binary**  
 Encrypt the contents of a given [Binary Data](binary-data.md) object. The same provided password must be specified to successfully decrypt the data. The *Iterations* parameter indicates how many times to repeat a hash function when generating an encryption key; higher values use more processing power and so slow down encryption and decryption, but make it harder to use a brute-force attack to decrypt the data. An optional tag can be specified to distinguish different encryption operations. When the data has finished being encrypted, *On encryption finished* triggers.
 
 > **Warning**  
 > Using encryption does not guarantee your project is secure. See the section *Encryption does not guarantee security* above.
 
-**Decrypt binary**
+**Decrypt binary**  
 Decrypt the contents of a given [Binary Data](binary-data.md) object. Decryption will only succeed if the same password that was used to encrypt the data is provided. An optional tag can be specified to distinguish different decryption operations. When the data has finished being decrypted, *On decryption finished* triggers; if decryption fails, including due to having the wrong password, then *On decryption failed* will trigger instead.
 
-**Hash binary**
+**Hash binary**  
 Compute a [cryptographic hash function](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fCryptographic_hash_function) for the contents of a given [Binary Data](binary-data.md) object. Currently supported hash functions include SHA-256, SHA-384 and SHA-512 from the [SHA-2](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fSHA-2) family of functions. An optional tag can be specified to distinguish different hasing operations. When the hashing completes, *On hash finished* will trigger and the resulting hash will be available as a hexadecimal string in the *Hash* expression.
 
 ## Cryptography expressions
 
-**Hash**
+**Hash**  
 After *On hash finished* triggers, a hexadecimal string of the resulting hash. For example the SHA-256 hash of the string "Construct" is `67e7c6e28e540b4fd412ad663b634a38572b98d3f4608fc5792f2600d32c1eb9`.
 
-**Tag**
+**Tag**  
 In a trigger such as *On any decryption finished* or *On any hash finished*, this returns the associated tag of the action that resulted in the trigger.
 
-**RandomUUID**
+**RandomUUID**  
 Returns a random v4 [UUID](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fUniversally_unique_identifier) as a string using a cryptographically secure random number generator, e.g. `36b8f84d-df4e-4d49-b662-bcde71a8764f`.

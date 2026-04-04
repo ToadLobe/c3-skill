@@ -80,22 +80,22 @@ To request a resource that is received as a binary, use it as follows:
 
 ## AJAX conditions
 
-**On completed**
+**On completed**  
 Triggered when a request with the same tag has completed successfully. The *LastData* expression contains the response, unless the *Set response binary* action was used, in which case the selected [Binary Data](binary-data.md) object now contains the response.
 
-**On any completed**
+**On any completed**  
 Triggered when any request has completed successfully. The *Tag* expression identifies the request, and *LastData* contains the response.
 
-**On error**
+**On error**  
 Triggered when a request with the same tag has failed. This can be for a number of reasons, such as the server being down or the request timing out. (The *LastData* expression is not set since there is no response.)
 
-**On any error**
+**On any error**  
 Triggered when any request has failed. The *Tag* expression identifies the request.
 
-**On progress**
+**On progress**  
 For long running downloads, *On progress* triggers periodically and updates the *Progress* expression with the state of the request. This is useful for making progress bars for things like large file downloads.
 
-**On upload progress**
+**On upload progress**  
 For long running uploads, *On upload progress* triggers periodically and updates the *Progress* expression with the state of the request. This is useful for making progress bars for things like large POST data uploads.
 
 > **Tip**  
@@ -103,49 +103,49 @@ For long running uploads, *On upload progress* triggers periodically and updates
 
 ## AJAX actions
 
-**Override MIME type**
+**Override MIME type**  
 In some cases you may wish to interpret the server's response with a different MIME type to the one the server indicates. For example a misconfigured server may return a text file with the wrong character set, and you want to force the response to be interpreted as UTF-8. In this case you could override the MIME type as `text/plain; charset=utf-8` to avoid garbling the text. This action only applies to the next AJAX request that is made, after which the MIME type will be set back to the default setting of accepting what the server response indicates.
 
-**Post to URL**
+**Post to URL**  
 Send a request with data to a URL and retrieve the response. A tag is provided to match it up with the *On completed*, *On progress* and *On error* triggers. The *binary* variant can post the contents of a [Binary Data](binary-data.md) object to the server; otherwise a string is used. Construct does not automatically URL encode the string - use the *URLEncode* [system expression](../system-reference/system-expressions.md) to ensure the data is in the correct format for posting. Note string data is in the same format as a query string, e.g. `"foo=1&bar=2"`. The method can also be specified: by default it is POST, but for some APIs you may need to change this to PUT, DELETE or another HTTP method.
 
-**Post binary to URL**
+**Post binary to URL**  
 Send a request with data to a URL and retrieve the response. A tag is provided to match it up with the *On completed*, *On progress* and *On error* triggers. The *binary* variant can post the contents of a [Binary Data](binary-data.md) object to the server; otherwise a string is used. Construct does not automatically URL encode the string - use the *URLEncode* [system expression](../system-reference/system-expressions.md) to ensure the data is in the correct format for posting. Note string data is in the same format as a query string, e.g. `"foo=1&bar=2"`. The method can also be specified: by default it is POST, but for some APIs you may need to change this to PUT, DELETE or another HTTP method.
 
-**Request URL**
+**Request URL**  
 Send a GET request to retrieve the contents of a URL. A tag is provided to match it up with the *On completed*, *On progress* and *On error* triggers.
 
-**Request project file**
+**Request project file**  
 Request the contents of a [project file](../project-primitives/files.md). A tag is provided to match it up with the *On completed*, *On progress* and *On error* triggers.
 
-**Set request header**
+**Set request header**  
 Set a HTTP header on the next AJAX request that is made. After the next AJAX request all the headers set with this action are cleared again, so it only takes effect once.
 
-**Set timeout**
+**Set timeout**  
 Set the amount of time a request has to complete in seconds; if the timeout expires without the request completing successfully, it will instead fail and trigger *On error*. This action only affects subsequent requests, and does not affect any requests that have already started. If the timeout is set to -1 it restores the default browser timeout.
 
-**Set upload progress enabled**
+**Set upload progress enabled**  
 Set whether tracking the progress of large upload requests is enabled for subsequent requests. This is enabled by default so the *On upload progress* trigger works. However tracking upload progress means that cross-domain requests send a "preflighted" request with the OPTIONS method, which can cause problems with some misconfigured servers. Disabling upload progress allows many kinds of cross-domain requests to be treated as "simple requests" and thus not need to send a "preflighted" request. For more information see [HTTP access control (CORS) on MDN](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fAccess_control_CORS).
 
-**Set with credentials**
+**Set with credentials**  
 Set the *with credentials* setting for the next AJAX request that is made. After the next AJAX request the setting will revert to its default (off), so it only takes effect once. When enabled, sending a request with credentials will cause cross-site requests to be made using credentials such as cookies and authorization headers. Internally this sets the `withCredentials` property of XMLHttpRequest. More details can be found at the [MDN withCredentials documentation](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fXMLHttpRequest%2fwithCredentials).
 
-**Set response binary**
+**Set response binary**  
 Use this action before a *Request* action to read the response in to a [Binary Data](binary-data.md) object instead of returning it as a string in the *LastData* expression. This allows for non-text resources like images to be fetched and processed directly.
 
 ## AJAX expressions
 
-**LastData**
+**LastData**  
 The contents of the last response. This is set in the *On completed* trigger. Note if *Set response binary* was used, the response is in the chosen Binary Data object instead, and this expression will return an empty string.
 
-**LastStatusCode**
+**LastStatusCode**  
 The HTTP status code of the last response, e.g. 200 for OK or 404 for Not Found. This is set in the *On completed* trigger.
 
 > **Tip**  
 > You can find a complete list of possible status codes and what they mean on the MDN page [HTTP response status codes](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fStatus).
 
-**Progress**
+**Progress**  
 Return the progress of the AJAX request in an *On progress* trigger. The progress is represented as a number from 0 to 1, e.g. 0.5 for half completed.
 
-**Tag**
+**Tag**  
 The tag of the AJAX request in a trigger. This is useful to identify requests in *On any completed* or *On any error*.

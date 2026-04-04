@@ -40,24 +40,24 @@ It is only by moving (or re-enabling) Solids, or using *Set position*, that obje
 
 ## Solid properties
 
-**Enabled**
+**Enabled**  
 Set whether the behavior is initially enabled or disabled. If disabled, the object no longer acts as if it is solid, and objects will be able to pass through it.
 
-**Use instance tags**
+**Use instance tags**  
 Check to use the instance tags for the *Set solid collision filter* action instead of specifying tags separately in the Solid behavior's own *Tags* property. This is checked by default - the use of the Solid behavior's own *Tags* property exists only for backwards-compatibility reasons (see [Superseded features](../tips-and-guides/superseded-features.md)).
 
-**Tags**
+**Tags**  
 When *Use instance tags* is unchecked, a list of tags to apply to the Solid, separated by spaces. This property exists only for backwards-compatibility reasons - enabling *Use instance tags* is recommended instead.
 
 ## Solid conditions
 
-**Is enabled**
+**Is enabled**  
 True if the behavior is currently enabled. This can be changed by the *Enabled* property or the *Set enabled* action.
 
 ## Solid actions
 
-**Set enabled**
+**Set enabled**  
 Enable or disable Solid for this object. Be careful not to trap objects by enabling the solid when an object is overlapping it; see *Avoid crushing/trapping objects with Solids*.
 
-**Set tags**
+**Set tags**  
 Change the *Tags* property, affecting solid collision filtering.

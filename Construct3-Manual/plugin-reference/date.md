@@ -41,180 +41,180 @@ A timestamp consists of the following parts, all of which are also numbers, with
 
 ## Date Conditions
 
-**Compare Timestamps**
+**Compare Timestamps**  
 Compare two timestamps. Equal timestamps refer to the same time, and a timestamp that is less than another precedes it in time.
 
-**Compare Date Strings**
+**Compare Date Strings**  
 Compare two date strings with each other. The date strings are converted to their equivalent numeric timestamp before the comparison.
 
-**Compare Timestamp parts**
+**Compare Timestamp parts**  
 Compare two timestamp parts with each other. The possible parts are Year (4 digit), Month (0 - 11), Date (1 - 31), Day (0 - 6), Hours (0 - 23), Minutes (0 - 59), Seconds (0 - 59), and Milliseconds (0 - 999).
 
-**Compare date string parts**
+**Compare date string parts**  
 Compare two date string parts with each other, they are converted to their equivalent numeric timestamp before the comparison. The possible parts are Year (4 digit), Month (0 - 11), Date (1 - 31), Day (0 - 6), Hours (0 - 23), Minutes (0 - 59), Seconds (0 - 59), Milliseconds (0 - 999).
 
 ### Date Expressions
 
-**ToString(timeStamp)**
+**ToString(timeStamp)**  
 Convert a timestamp to a string representation including both date and time.
 
-**ToDateString(timeStamp)**
+**ToDateString(timeStamp)**  
 Convert a timestamp to a string showing the corresponding date.
 
-**ToTimeString(timeStamp)**
+**ToTimeString(timeStamp)**  
 Convert a timestamp to a string showing the corresponding time.
 
-**ToLocaleString(timeStamp)**
+**ToLocaleString(timeStamp)**  
 Convert a timestamp to a localized string representation including both date and time.
 
-**ToLocaleDateString(timeStamp)**
+**ToLocaleDateString(timeStamp)**  
 Convert a timestamp to a localized string showing the corresponding date.
 
-**ToLocaleTimeString(timeStamp)**
+**ToLocaleTimeString(timeStamp)**  
 Convert a timestamp to a localized string showing the corresponding time.
 
-**ToUTCString(timeStamp)**
+**ToUTCString(timeStamp)**  
 Convert a timestamp to a string representation including both date and time in universal time.
 
-**Parse(dateString)**
+**Parse(dateString)**  
 Parse a date string into the corresponding numeric timestamp. For the supported string formats, refer to the [MDN documentation for Date.parse()](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fDate%2fparse%23Date_Time_String_Format), which is the underlying method used by this expression.
 
-**ToTimerHours(milliseconds)**
+**ToTimerHours(milliseconds)**  
 Convert milliseconds to the equivalent amount of hours as they would be shown in a timer.
 
-**ToTimerMinutes(milliseconds)**
+**ToTimerMinutes(milliseconds)**  
 Convert milliseconds to the equivalent amount of minutes as they would be shown in a timer (0-59).
 
-**ToTimerSeconds(milliseconds)**
+**ToTimerSeconds(milliseconds)**  
 Convert milliseconds to the equivalent amount of seconds as they would be shown in a timer (0-59).
 
-**ToTimerMilliseconds(milliseconds)**
+**ToTimerMilliseconds(milliseconds)**  
 Convert milliseconds to the equivalent amount of milliseconds as they would be shown in a timer (0-999).
 
-**ToTotalHours(milliseconds)**
+**ToTotalHours(milliseconds)**  
 Convert milliseconds to the equivalent amount of hours, which may be a fractional value.
 
-**ToTotalMinutes(milliseconds)**
+**ToTotalMinutes(milliseconds)**  
 Convert milliseconds to the equivalent amount of minutes, which may be a fractional value.
 
-**ToTotalSeconds(milliseconds)**
+**ToTotalSeconds(milliseconds)**  
 Convert milliseconds to the equivalent amount of seconds, which may be a fractional value.
 
-**Now**
+**Now**  
 Get the current timestamp (the number of milliseconds since January 1st 1970).
 
-**ExportTimestamp**
+**ExportTimestamp**  
 Get the timestamp at the time the project was exported from Construct. In preview mode, this is the time the preview was launched.
 
-**Get(year, month, day, hours, minutes, seconds, milliseconds)**
+**Get(year, month, day, hours, minutes, seconds, milliseconds)**  
 Return a timestamp by providing the individual parts of the date and time.
 
-**TimezoneOffset**
+**TimezoneOffset**  
 Get the timezone offset of the local system.
 
-**GetYear(timeStamp)**
+**GetYear(timeStamp)**  
 Extract the 4 digit year from the provided timestamp in local time.
 
-**GetUTCYear(timeStamp)**
+**GetUTCYear(timeStamp)**  
 Extract the 4 digit year from the provided timestamp in universal time.
 
-**GetMonth(timeStamp)**
+**GetMonth(timeStamp)**  
 Extract the month (0 - 11) from the provided timestamp in local time.
 
-**GetUTCMonth(timeStamp)**
+**GetUTCMonth(timeStamp)**  
 Extract the month (0 - 11) from the provided timestamp in universal time.
 
-**GetDate(timeStamp)**
+**GetDate(timeStamp)**  
 Extract the date (1 - 31) from the provided timestamp in local time.
 
-**GetUTCDate(timeStamp)**
+**GetUTCDate(timeStamp)**  
 Extract the date (1 - 31) from the provided timestamp in universal time.
 
-**GetDay(timeStamp)**
+**GetDay(timeStamp)**  
 Extract the day (0 - 6) from the provided timestamp in local time.
 
-**GetUTCDay(timeStamp)**
+**GetUTCDay(timeStamp)**  
 Extract the day (0 - 6) from the provided timestamp in universal time.
 
-**GetHours(timeStamp)**
+**GetHours(timeStamp)**  
 Extract the hours (0 - 23) from the provided timestamp in local time.
 
-**GetUTCHours(timeStamp)**
+**GetUTCHours(timeStamp)**  
 Extract the hours (0 - 23) from the provided timestamp in universal time.
 
-**GetMinutes(timeStamp)**
+**GetMinutes(timeStamp)**  
 Extract the minutes (0 - 59) from the provided timestamp in local time.
 
-**GetUTCMinutes(timeStamp)**
+**GetUTCMinutes(timeStamp)**  
 Extract the minutes (0 - 59) from the provided timestamp in universal time.
 
-**GetSeconds(timeStamp)**
+**GetSeconds(timeStamp)**  
 Extract the seconds (0 - 59) from the provided timestamp in local time.
 
-**GetUTCSeconds(timeStamp)**
+**GetUTCSeconds(timeStamp)**  
 Extract the seconds (0 - 59) from the provided timestamp in universal time.
 
-**GetUTCMilliseconds(timeStamp)**
+**GetUTCMilliseconds(timeStamp)**  
 Extract the milliseconds (0 - 999) from the provided timestamp in local time.
 
-**GetMilliseconds(timeStamp)**
+**GetMilliseconds(timeStamp)**  
 Extract the milliseconds (0 - 999) from the provided timestamp in universal time.
 
-**Difference(first, second)**
+**Difference(first, second)**  
 Calculate the difference between two timestamps.
 
-**ChangeYear(timeStamp, year)**
+**ChangeYear(timeStamp, year)**  
 Change the year (4 digit) of the provided timestamp in local time, and return as a new timestamp.
 
-**ChangeUTCYear(timeStamp, year)**
+**ChangeUTCYear(timeStamp, year)**  
 Change the year (4 digit) of the provided timestamp in universal, time and return as a new timestamp.
 
-**ChangeMonth(timeStamp, month)**
+**ChangeMonth(timeStamp, month)**  
 Change the month (0 - 11) of the provided timestamp in local time, and return as a new timestamp.
 
-**ChangeUTCMonth(timeStamp, month)**
+**ChangeUTCMonth(timeStamp, month)**  
 Change the month (0 - 11) of the provided timestamp in universal, time and return as a new timestamp.
 
-**ChangeDate(timeStamp, date)**
+**ChangeDate(timeStamp, date)**  
 Change the date (1 - 31) of the provided timestamp in local time, and return as a new timestamp.
 
-**ChangeUTCDate(timeStamp, date)**
+**ChangeUTCDate(timeStamp, date)**  
 Change the date (1 - 31) of the provided timestamp in universal time, and return as a new timestamp.
 
-**ChangeDay(timeStamp, day)**
+**ChangeDay(timeStamp, day)**  
 Change the day (0 - 6) of the provided timestamp in local time, and return as a new timestamp.
 
-**ChangeUTCDay(timeStamp, day)**
+**ChangeUTCDay(timeStamp, day)**  
 Change the day (0 - 6) of the provided timestamp in universal time, and return as a new timestamp.
 
-**ChangeHours(timeStamp, hours)**
+**ChangeHours(timeStamp, hours)**  
 Change the hours (0 - 23) of the provided timestamp in local time, and return as a new timestamp.
 
-**ChangeUTCHours(timeStamp, hours)**
+**ChangeUTCHours(timeStamp, hours)**  
 Change the hours (0 - 23) of the provided timestamp in universal time, and return as a new timestamp.
 
-**ChangeMinutes(timeStamp, minutes)**
+**ChangeMinutes(timeStamp, minutes)**  
 Change the minutes (0 - 59) of the provided timestamp in local time, and return as a new timestamp.
 
-**ChangeUTCMinutes(timeStamp, minutes)**
+**ChangeUTCMinutes(timeStamp, minutes)**  
 Change the minutes (0 - 59) of the provided timestamp in universal time, and return as a new timestamp.
 
-**ChangeSeconds(timeStamp, seconds)**
+**ChangeSeconds(timeStamp, seconds)**  
 Change the seconds (0 - 59) of the provided timestamp in local time, and return as a new timestamp.
 
-**ChangeUTCSeconds(timeStamp, seconds)**
+**ChangeUTCSeconds(timeStamp, seconds)**  
 Change the seconds (0 - 59) of the provided timestamp in universal time, and return as a new timestamp.
 
-**ChangeMilliseconds(timeStamp, milliseconds)**
+**ChangeMilliseconds(timeStamp, milliseconds)**  
 Change the milliseconds (0 - 999) of the provided timestamp in local time, and return as a new timestamp.
 
-**ChangeUTCMilliseconds(timeStamp, milliseconds)**
+**ChangeUTCMilliseconds(timeStamp, milliseconds)**  
 Change the milliseconds (0 - 999) of the provided timestamp in universal time, and return as a new timestamp.
 
-**FormatDateWithStyles(locale, timeStamp, dateStyle, timeStyle, hourFormat)**
+**FormatDateWithStyles(locale, timeStamp, dateStyle, timeStyle, hourFormat)**  
 Format the provided time stamp using the locale and optional styles. **"dateStyle"** can be any of *"full"*, *"long"*, *"medium"* or *"short"* and affects the date section of the final result, if an unsupported value is used, the date section will be omitted from the final output of the expression. **"timeStyle"** can be any of *"full"*, *"long"*, *"medium"* or *"short"* and affects the time section of the final result, if an unsupported value is used, the time section will be omitted from the final output of the expression. **"hourFormat"** can be either *"12"* or *"24"* and affects the formatting of the time section of the final result, if an unsupported value is used, the end result will be locale dependant.
 
-**FormatDateWithComponents(locale, timeStamp, weekday, year, month, day, hour, minute, second, hourFormat)**
+**FormatDateWithComponents(locale, timeStamp, weekday, year, month, day, hour, minute, second, hourFormat)**  
 Format the provided time stamp using the locale and optional components. **"weekday"** can be any of *"long"*, *"short"* or *"narrow"*. **"year"** can be any of *"numeric"* or *"2-digit"*. **"month"** can be any of *"numeric"*, *"2-digit"*, *"long"*, *"short"* or *"narrow"*. **"day"** can be any of *"numeric"* or *"2-digit"*. **"hour"** can be any of *"numeric"* or *"2-digit"*. **"minute"** can be any of *"numeric"* or *"2-digit"*. **"second"** can be any of *"numeric"* or *"2-digit"*. **"hourFormat"** can be either *"12"* or *"24"* and affects the formatting of the time section of the final result, if an unsupported value is used the end result will be locale dependant.
 
 Any of the components can be omitted from the final result by providing an unsupported value.

@@ -54,140 +54,140 @@ Don't use tilemaps to display large images where every tile in the tilemap is di
 
 ## Tilemap Properties
 
-**Image**
+**Image**  
 Click the *Edit* link to edit the tileset image from which tiles are drawn.
 
-**Initially visibile**
+**Initially visibile**  
 Choose whether the object is visible or invisible at the start of the layout.
 
-**Tile width**
+**Tile width**  
 The size of tiles in the tilemap, in pixels.
 
-**Tile height**
+**Tile height**  
 The size of tiles in the tilemap, in pixels.
 
-**Tile X offset**
+**Tile X offset**  
 The offset in pixels of the top-left tile in the tileset image. This is not normally necessary and is provided mainly for compatibility with existing tileset images that have the tiles drawn at an offset.
 
-**Tile Y offset**
+**Tile Y offset**  
 The offset in pixels of the top-left tile in the tileset image. This is not normally necessary and is provided mainly for compatibility with existing tileset images that have the tiles drawn at an offset.
 
-**Tile X spacing**
+**Tile X spacing**  
 The spacing in pixels between tiles in the tileset image. This is not normally necessary and is provided mainly for compatibility with existing tileset images that have the tiles drawn apart from each other.
 
-**Tile Y spacing**
+**Tile Y spacing**  
 The spacing in pixels between tiles in the tileset image. This is not normally necessary and is provided mainly for compatibility with existing tileset images that have the tiles drawn apart from each other.
 
 ## Tilemap conditions
 
-**Compare tile at**
+**Compare tile at**  
 Compare the tile ID at a position in the tilemap.
 
-**Compare tile state at**
+**Compare tile state at**  
 Test whether a tile at a position in the tilemap is flipped or rotated from its normal state.
 
-**On image URL loaded**
+**On image URL loaded**  
 Triggered when *Load image from URL* finishes downloading the image and is ready to display it, or if the load fails.
 
-**On image URL failed to load**
+**On image URL failed to load**  
 Triggered when *Load image from URL* finishes downloading the image and is ready to display it, or if the load fails.
 
-**Brush exists**
+**Brush exists**  
 Check if a tilemap brush exists
 
 ## Tilemap actions
 
-**Download**
+**Download**  
 Invoke a download of the current tilemap data (from the *TilesJSON* expression) as a JSON file. This can be useful for in-game level editors.
 
-**Load**
+**Load**  
 Load the current tiles from a string of JSON data from a previous use of the *TilesJSON* expression.
 
-**Erase tile**
+**Erase tile**  
 Erase the tile at a position.
 
-**Erase tile range**
+**Erase tile range**  
 Erase a rectangular area of tiles in the tilemap.
 
-**Erase tile with brush**
+**Erase tile with brush**  
 Erase tiles using a brush created in the [Tilemap Brush Editor](../interface/bars/tilemap-bar/tilemap-brush-editor.md). When using an auto tiling brush, the specified position will be modified, along with the surrounding eight positions. If a patch brush is used the whole patch will be erased.
 
-**Erase tile with brush (by name)**
+**Erase tile with brush (by name)**  
 Like **Erase tile with brush**, but allows you to specify the name of the brush using a string.
 
-**Erase tiles with patch brush**
+**Erase tiles with patch brush**  
 Erase tiles using a patch brush. This is similar to **Erase tile with brush**, with the additional options to specify to *mirror*, *flip* and *rotate* the brush.
 
-**Erase tiles with patch brush (by name)**
+**Erase tiles with patch brush (by name)**  
 Like **Erase tiles with patch brush**, but allows you to specify the name of the brush using a string.
 
-**Set tile**
+**Set tile**  
 Set the tile at a position in the tilemap by its tile ID. The tile that is set can also optionally be flipped or rotated.
 
-**Set tile range**
+**Set tile range**  
 As with *Set tile*, but sets a rectangular area of tiles in the tilemap.
 
-**Set tile state**
+**Set tile state**  
 Set the tile flipped or rotated state at a position in the tilemap. The tile ID is not changed.
 
-**Set tile state range**
+**Set tile state range**  
 Set the flipped or rotated state for a rectangular area of tiles in the tilemap. None of the tile IDs in the rectangular area are changed.
 
-**Set tile with brush**
+**Set tile with brush**  
 Set tiles using a brush created in the [Tilemap Brush Editor](../interface/bars/tilemap-bar/tilemap-brush-editor.md). When using an auto tiling brush, the specified position will be modified, along with the surrounding eight positions. Using a patch brush modifies all the tiles covered by the patch, the selected position corresponds to the top left of the patch.
 
-**Set tile with brush (by name)**
+**Set tile with brush (by name)**  
 Like **Set tile with brush**, but allows you to specify the name of the brush using a string.
 
-**Set tile with patch brush**
+**Set tile with patch brush**  
 Set tiles using a patch brush. This is similar to **Set tile with brush**, with the additional options to specify to *mirror*, *flip* and *rotate* the brush. The **Invalid indexes** parameter allows you to choose what should happen when a patch brush doesn't have a valid tile set at a given position, **Erase** deletes the corresponding tile, while **Ignore** leaves the tile unchanged.
 
-**Set tile with patch brush (by name)**
+**Set tile with patch brush (by name)**  
 Like **Set tile with patch brush**, but allows you to specify the name of the brush using a string.
 
-**Load image from URL**
+**Load image from URL**  
 Load a new tilemap image from a given URL. It is not used until the image has finished downloading, and *On image URL loaded* triggers. Images loaded from different domains are subject to the same cross-domain restrictions as AJAX requests - for more information see the section on cross-domain in the [AJAX](ajax.md) object. Data URIs can also be passed as an image, e.g. from a canvas snapshot or camera image.
 
 ## Tilemap expressions
 
-**TilesJSON**
+**TilesJSON**  
 Retrieve the tile data in JSON format, which can be loaded in again later using the *Load* action. Note this differs from the built-in *AsJSON* expression, which returns the entire object state (including position, size, behaviors etc), whereas *TilesJSON* returns only the tile data.
 
-**MapDisplayWidth**
+**MapDisplayWidth**  
 The size of the displayed tilemap in tiles. For example if a Tilemap is 320px wide with tiles 32px wide, the display width is 10 as at this size it can fit 10 tiles in to the width.
 
-**MapDisplayHeight**
+**MapDisplayHeight**  
 The size of the displayed tilemap in tiles. For example if a Tilemap is 320px wide with tiles 32px wide, the display width is 10 as at this size it can fit 10 tiles in to the width.
 
-**PositionToTileX(x)**
+**PositionToTileX(x)**  
 Convert an X or Y layout co-ordinate in to the corresponding tile number in the tilemap. For example, this can be used to get the tile position under the mouse.
 
-**PositionToTileY(y)**
+**PositionToTileY(y)**  
 Convert an X or Y layout co-ordinate in to the corresponding tile number in the tilemap. For example, this can be used to get the tile position under the mouse.
 
-**SnapX(x)**
+**SnapX(x)**  
 Snap an X or Y layout co-ordinate to the nearest tile. This also returns a layout co-ordinate, but aligned to the nearest tile in the tilemap.
 
-**SnapY(y)**
+**SnapY(y)**  
 Snap an X or Y layout co-ordinate to the nearest tile. This also returns a layout co-ordinate, but aligned to the nearest tile in the tilemap.
 
-**TileAt(x, y)**
+**TileAt(x, y)**  
 Return the tile ID at a position in the tilemap. Note the position is given in tiles, not layout co-ordinates. If the tile at the given position is empty (has been erased), the expression returns -1.
 
-**TileWidth**
+**TileWidth**  
 The width and height of each tile, as specified in the Tilemap properties.
 
-**TileHeight**
+**TileHeight**  
 The width and height of each tile, as specified in the Tilemap properties.
 
-**TileToPositionX(x)**
+**TileToPositionX(x)**  
 Convert a tile position to layout co-ordinates. For example, this can be used to position a Sprite object on top of a given tile.
 
-**TileToPositionY(y)**
+**TileToPositionY(y)**  
 Convert a tile position to layout co-ordinates. For example, this can be used to position a Sprite object on top of a given tile.
 
-**BrushWidth**
+**BrushWidth**  
 The width and height (in tiles) of a patch brush. Auto tiling brushes always return 0.
 
-**BrushHeight**
+**BrushHeight**  
 The width and height (in tiles) of a patch brush. Auto tiling brushes always return 0.

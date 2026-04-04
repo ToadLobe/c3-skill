@@ -32,56 +32,56 @@ It should be noted that tracking the user's location may involve activating GPS 
 
 ## Geolocation conditions
 
-**Is supported**
+**Is supported**  
 True if the current device supports reporting the user position with geolocation. If false, none of the features of the object will work.
 
-**Is watching location**
+**Is watching location**  
 True after a successful *Watch location* action, until the *Stop watching* action is used.
 
-**On error**
+**On error**  
 Triggered if an error occurs when requesting permission for, or retrieving, the user's location. The *ErrorMessage* expression contains more information about the problem in this trigger.
 
-**On location update**
+**On location update**  
 Triggered after a successful *Request location* or *Watch location* action, when the position has been updated. This only triggers once after a successful *Request location action*, but can trigger regularly after a successful *Watch location* action whilst the position is tracked and updated.
 
 ## Geolocation actions
 
-**Request location**
+**Request location**  
 Make a one-off request for the user's current location. The user may see a permission prompt which they must approve before any information is returned; if they decline, *On error* will trigger. *Accuracy* can be set to *High* to get more accurate results, but it may take longer to calculate and consume more battery. *Timeout* is the maximum time in seconds the device may take before it must return a position or trigger *On error*. *Maximum age* is the maximum age of a cached result that can be returned. If zero, the device will actively try to determine the user's position at that time. However if it is nonzero, and the operating system had previously requested the user's position within that time, the previous result may be returned immediately instead. This is faster and can save battery, but the result will not be as close to real-time. If a result is successfully determined, *On location update* will trigger.
 
-**Watch location**
+**Watch location**  
 As with *Request location*, but the location will be tracked. *On location update* will trigger whenever new position information is available, until the *Stop watching* action is used. Watching the location can consume more battery on mobile devices than one-off requests.
 
-**Stop watching**
+**Stop watching**  
 Stop a previous successful request to watch the user's location. The position will no longer be updated.
 
 ## Geolocation expressions
 
 The position-related expressions only update when *On location update* triggers, which in turn can only occur after a successful *Request location* or *Watch location* action.
 
-**Accuracy**
+**Accuracy**  
 The estimated accuracy in meters of the latitude and longitude (for *Accuracy*) or the altitude (for *AltitudeAccuracy*). The accuracy may be more or less a guess, or if it is not known the expression returns 0.
 
-**AltitudeAccuracy**
+**AltitudeAccuracy**  
 The estimated accuracy in meters of the latitude and longitude (for *Accuracy*) or the altitude (for *AltitudeAccuracy*). The accuracy may be more or less a guess, or if it is not known the expression returns 0.
 
-**Altitude**
+**Altitude**  
 The estimated altitude in meters relative to sea-level, or 0 if not known.
 
-**ErrorMessage**
+**ErrorMessage**  
 In *On error*, a string with some additional information about the error.
 
-**Heading**
+**Heading**  
 While watching a position, the direction of travel in degrees relative to due north and speed in meters per second if available, else 0 of not available.
 
-**Speed**
+**Speed**  
 While watching a position, the direction of travel in degrees relative to due north and speed in meters per second if available, else 0 of not available.
 
-**Latitude**
+**Latitude**  
 The latitude and longitude that has been determined, subject to the *Accuracy* (which may not be known).
 
-**Longitude**
+**Longitude**  
 The latitude and longitude that has been determined, subject to the *Accuracy* (which may not be known).
 
-**Timestamp**
+**Timestamp**  
 A timestamp of the time at which the current details were retrieved. This is measured in milliseconds since midnight, January 1, 1970 (also known as a UNIX timestamp).

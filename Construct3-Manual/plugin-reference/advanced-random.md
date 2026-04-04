@@ -40,10 +40,10 @@ Another feature of Advanced Random is creating *Permutation tables*. These are s
 
 ## Advanced random properties
 
-**Seed**
+**Seed**  
 A string of characters used as the seed for random number generation. The same seed will always provide the same sequence of numbers. An empty string (the default) will use a random seed, ensuring the sequence of numbers is different every time.
 
-**Replace system random**
+**Replace system random**  
 If enabled, the system random function, which covers the *random* system expression as well as randomness in behaviors, is overridden to use the Advanced Random object's PRNG. Since the Advanced Random object can control the seed, this provides a way to seed the random number generation of the entire runtime.
 
 ## Advanced random conditions
@@ -52,100 +52,100 @@ The Advanced Random object has no conditions.
 
 ## Advanced random actions
 
-**Set octaves**
+**Set octaves**  
 Set the number of octaves used for coherent noise generation, from 1-16. The default is 1. This affects the Billow, Classic and Ridged expressions only. Using additional octaves adds layers of increasing detail to the noise functions, but is also slower to process.
 
-**Update seed**
+**Update seed**  
 Set a new seed for random number generation, using a string.
 
 > **Tip**  
 > Note if you pass an empty string, it still uses the empty string as the seed. If you want to go back to using a random seed, pass the *RandomSeed* expression as the seed to set.
 
-**Add gradient stop**
+**Add gradient stop**  
 Adds a stop to the current gradient. Use after *Create gradient* to specify the gradient. The stop position can be any number, but is generally kept within the 0-1 range so it can be used with the random expressions. The stop value should be an expression of the form *rgbEx(r, g, b)* or *rgba(r, g, b, a)* when the gradient uses color mode; otherwise it can be a simple number. The default gradient is a simple black to white gradient, using *rgbEx(0, 0, 0)* at position 0 and *rgbEx(100, 100, 100)* at position 1.
 
-**Create gradient**
+**Create gradient**  
 Create a new gradient. Multiple gradients can be managed by giving them different names. Creating a gradient also sets it as the current gradient, so this action can be immediately followed by *Add gradient stop* to specify the gradient. By default gradients work in color mode, which uses values based on the *rgbEx* or *rgba* expressions; however they can also be set to number mode which uses simple numbers.
 
-**Set gradient**
+**Set gradient**  
 Set the current gradient by its name. This allows switching between multiple gradients.
 
-**Create permutation table**
+**Create permutation table**  
 Generate a randomly ordered sequence of numbers. *Length* is how many numbers to generate, and *Offset* is the first number in the sequence. For example a length of 3 with an offset of 1 will generate the numbers 1, 2 and 3, and then randomly shuffle them.
 
-**Shuffle permutation table**
+**Shuffle permutation table**  
 Re-shuffle an existing permutation table.
 
-**Add probability entry**
+**Add probability entry**  
 Add an entry to the current probability table. The value can be a string or a number. The weight affects how likely the item is to be picked, relative to other item's weights.
 
-**Create probability table**
+**Create probability table**  
 Create a new probability table, using a string to identify it.
 
-**Remove probability entry**
+**Remove probability entry**  
 Remove an existing entry from the current probability table. If a weight of 0 is specified, the first entry with the given value is removed regardless of its weight. Otherwise an entry is only removed if it matches both the value and the weight.
 
-**Set probability table**
+**Set probability table**  
 Set the current probability table from which weighted random values are taken.
 
-**Create probability table from JSON**
+**Create probability table from JSON**  
 Create a new probability table from a JSON string. The input should be an array of `[weight: number, value: number|string]` tuples, e.g. `[[1, "Apple"], [2, "Banana"], [3, "Carrot"]]`.
 
 ## Advanced random expressions
 
-**Billow2d(x, y)**
+**Billow2d(x, y)**  
 Generate a random number using billow noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Billow3d(x, y, z)**
+**Billow3d(x, y, z)**  
 Generate a random number using billow noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Cellular2d(x, y)**
+**Cellular2d(x, y)**  
 Generate a random number using cellular noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Cellular3d(x, y, z)**
+**Cellular3d(x, y, z)**  
 Generate a random number using cellular noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Classic2d(x, y)**
+**Classic2d(x, y)**  
 Generate a random number using classic (perlin) noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Classic3d(x, y, z)**
+**Classic3d(x, y, z)**  
 Generate a random number using classic (perlin) noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Random**
+**Random**  
 Generate a random number in the range [0, 1) using the current seed. This allows generating random numbers with a predictable sequence even when *Replace system random* is not used.
 
-**RandomSeed**
+**RandomSeed**  
 Generate a random seed string that can be used to set the seed, restoring an unpredictable number sequence.
 
-**Ridged2d(x, y)**
+**Ridged2d(x, y)**  
 Generate a random number using ridged noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Ridged3d(x, y, z)**
+**Ridged3d(x, y, z)**  
 Generate a random number using ridged noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Seed**
+**Seed**  
 The currently set seed, as a string.
 
-**Voronoi2d(x, y)**
+**Voronoi2d(x, y)**  
 Generate a random number using Voronoi noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Voronoi3d(x, y, z)**
+**Voronoi3d(x, y, z)**  
 Generate a random number using Voronoi noise in the range 0-1, using either 2D or 3D co-ordinates.
 
-**Gradient(Position)**
+**Gradient(Position)**  
 Sample a gradient at the given position. This returns a color value for color mode gradients, otherwise a simple number. The *Gradient* variant refers to the current gradient, whereas the *GradientByName* variant refers to any gradient using a case-insensitive string of its name.
 
-**GradientByName(Name, Position)**
+**GradientByName(Name, Position)**  
 Sample a gradient at the given position. This returns a color value for color mode gradients, otherwise a simple number. The *Gradient* variant refers to the current gradient, whereas the *GradientByName* variant refers to any gradient using a case-insensitive string of its name.
 
-**Permutation**
+**Permutation**  
 Get a value at a zero-based index in the permutation table, from 0 (for the first item) up to but not including the length of the table.
 
-**Weighted**
+**Weighted**  
 Get a random value from a probability table. The relative likelihood of values is affected by their weight. The *Weighted* variant refers to the current probability table, whereas the *WeightedByName* variant refers to any probability table using a case-insensitive string of its name.
 
-**WeightedByName(Name)**
+**WeightedByName(Name)**  
 Get a random value from a probability table. The relative likelihood of values is affected by their weight. The *Weighted* variant refers to the current probability table, whereas the *WeightedByName* variant refers to any probability table using a case-insensitive string of its name.
 
-**ProbabilityTableAsJSON**
+**ProbabilityTableAsJSON**  
 Get the current probability table as a JSON string. This can be read back using the **Create probability table from JSON** action.

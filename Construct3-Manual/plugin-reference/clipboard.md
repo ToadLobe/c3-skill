@@ -25,36 +25,36 @@ For security and privacy reasons, clipboard access - particularly paste operatio
 
 ## Clipboard conditions
 
-**On copy success**
+**On copy success**  
 Triggered after a copy action when the copy has successfully completed, so the data is now on the user's clipboard.
 
-**On copy error**
+**On copy error**  
 Triggered after a copy action fails. The user may not have granted permission or the attempt may not have been in a user input trigger.
 
-**On paste text**
+**On paste text**  
 Triggered after a *Request paste text* action completes successfully. The text from the user's clipboard is available with the *PastedText* expression.
 
-**On paste binary**
+**On paste binary**  
 Triggered after a *Request paste binary* action completes successfully, and the data in the user's clipboard matches the [MIME type](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fBasics_of_HTTP%2fMIME_types) specified in the trigger (e.g. "image/png" for a PNG image). This allows using different triggers to receive different types of clipboard data. When this triggers, the pasted data is placed inside the chosen [Binary Data object](binary-data.md).
 
-**On paste error**
+**On paste error**  
 Triggered after a paste action fails. The user may not have granted permission or the attempt may not have been in a user input trigger.
 
 ## Clipboard actions
 
-**Copy text**
+**Copy text**  
 Copy a string of text to the user's clipboard. This may require permission from the browser. *On copy success* or *On copy error* will trigger afterwards depending on the result.
 
-**Copy binary**
+**Copy binary**  
 Copy the contents of a [Binary Data object](binary-data.md) the user's clipboard. The [MIME type](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fBasics_of_HTTP%2fMIME_types) of the data must also be specified, e.g. "image/png" for a PNG image, so other apps know whether they can paste the data. Copying may require permission from the browser. *On copy success* or *On copy error* will trigger afterwards depending on the result.
 
-**Request paste text**
+**Request paste text**  
 Request to read text from the user's current clipboard. This usually involves a permission prompt in browsers and may only be allowed in a user input trigger. If successful then *On paste text* will trigger and the pasted text will be available in the *PastedText* expression; otherwise *On paste error* will trigger.
 
-**Request paste binary**
+**Request paste binary**  
 Request to read binary data from the user's current clipboard. This usually involves a permission prompt in browsers and may only be allowed in a user input trigger. If successful then *On paste binary* will trigger assuming the type of the clipboard data matches the type specified in the trigger; then the data is available in the chosen Binary Data object. Otherwise *On paste error* will trigger if the attempt to paste fails.
 
 ## Clipboard expressions
 
-**PastedText**
+**PastedText**  
 After *On paste text* triggers, this is set to the text that was copied to the user's clipboard.

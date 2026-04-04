@@ -35,60 +35,60 @@ The file URL can be used like any other URL. For example, it can be requested by
 
 ## File Chooser properties
 
-**Accept**
+**Accept**  
 The file type filter to accept. This can be a comma-separated list of file extensions, e.g. ".png,.jpg,.jpeg", or a MIME type, such as *image/** for any image file, *video/** for any video file, and so on. If left empty, the file chooser will be able to choose any kind of file.
 
 > **Tip**  
 > For best cross-platform compatibility, where possible use a MIME type instead of a file extension. For example prefer using *application/json* instead of the *.json* file extension.
 
-**Select**
+**Select**  
 Whether to allow selecting a single file only, or multiple files in one go.
 
-**Initially visibile**
+**Initially visibile**  
 Whether the control is initially visible or hidden.
 
-**ID Optional**
+**ID Optional**  
 An optional *id* attribute for the element in the DOM (Document Object Model). This can be useful for CSS styling.
 
-**Class Optional**
+**Class Optional**  
 An optional *class* attribute for the element in the DOM (Document Object Model). This can be useful for CSS styling.
 
 ## File Chooser conditions
 
 See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
 
-**On changed**
+**On changed**  
 Triggered when a file or set of files has been chosen from the input control.
 
 ## File Chooser actions
 
 See [common actions](common-features/common-actions.md) for features shared between form control objects.
 
-**Clear**
+**Clear**  
 Reset the control to its initial state with no selection, clearing any prior picked file.
 
-**Click**
+**Click**  
 Acts as if the file chooser was clicked, which brings up the system file picker. This allows the button to be completely customised, as the actual File Chooser object can be moved offscreen, and a custom sprite or other object used to activate the *Click* action of File Chooser instead.
 
 > **Tip**  
 > Normally this action can only be used in a user input trigger, e.g. in a mouse click event, touch start event, etc.
 
-**Release file**
+**Release file**  
 Release a previously returned file URL. This allows the browser to release memory for the file. If the user chooses lots of files or chooses them regularly this action should be used to release the files after they are no longer needed.
 
 ## File Chooser expressions
 
-**FileCount**
+**FileCount**  
 The number of chosen files. If *Select* is *Single*, this is always 1. If *Multiple* then this returns the number of chosen files.
 
-**FileNameAt(index)**
+**FileNameAt(index)**  
 Return the name of the chosen file at an index. In *Single* select mode, the index should always be 0, since only one file can be chosen.
 
-**FileSizeAt(index)**
+**FileSizeAt(index)**  
 Return the size of the chosen file in bytes at an index. In *Single* select mode, the index should always be 0, since only one file can be chosen.
 
-**FileTypeAt(index)**
+**FileTypeAt(index)**  
 Return the MIME type of the chosen file at an index. The MIME type is the standardised Internet media type of the file contents. For example, this can be *image/png* for a PNG image, *image/jpeg* for a JPEG image, or *text/plain* for a plaintext file. In *Single* select mode, the index should always be 0, since only one file can be chosen.
 
-**FileURLAt(index)**
+**FileURLAt(index)**  
 The URL to access the local file's contents at an index. For more information see *Using files* above. In *Single* select mode, the index should always be 0, since only one file can be chosen.

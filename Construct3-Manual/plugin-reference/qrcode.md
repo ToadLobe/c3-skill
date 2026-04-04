@@ -21,13 +21,13 @@ See the [QR code maker example project](https://editor.construct.net/#open=qr-co
 
 ## QR code properties
 
-**Text**
+**Text**  
 The text to encode within the QR code. This can also be a URL, and most devices will offer to open a browser if scanning a QR code that contains a URL.
 
-**Correction level**
+**Correction level**  
 QR codes contain redundant additional information for error recovery purposes. This improves the reliability of scanning the QR code, particularly if the image is in any way obscured, distorted or damaged. The correction level allows choosing how much additional error recovery information to include. Higher levels mean more data is stored in the QR code (and so it will also appear more detailed) but increase the scanning reliability.
 
-**Initially visible**
+**Initially visible**  
 Whether the object is initially visible in the layout at runtime.
 
 ## QR code conditions
@@ -36,10 +36,10 @@ The QR code object does not have any of its own conditions. However see [Common 
 
 ## QR code actions
 
-**Set text**
+**Set text**  
 Change the text encoded within the QR code. This allows dynamically creating a QR code, such as to represent a unique link for joining a multiplayer game.
 
-**Set correction level**
+**Set correction level**  
 Change the correction level of the QR code. See the *Correction level* property above for more details.
 
 ## QR code expressions

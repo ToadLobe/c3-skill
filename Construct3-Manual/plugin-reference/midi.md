@@ -56,155 +56,155 @@ The *NoteNumberToName* and *NoteNameToNumber* expressions allow converting betwe
 
 ## MIDI conditions
 
-**Has access**
+**Has access**  
 True if MIDI access is available, i.e. requesting MIDI access has completed successfully.
 
-**Is supported**
+**Is supported**  
 True if MIDI access is supported on this browser/platform. This depends on support for the Web MIDI API.
 
-**On devices state changed**
+**On devices state changed**  
 Triggered when any MIDI devices are connected, disconnected, or changed. If your project displays a list of available MIDI devices, it should update the list in this trigger.
 
 > **Tip**  
 > This may trigger multiple times in quick succession - for example if a single MIDI hardware device that provides both an input and an output is removed, then this trigger may fire twice as both the input and output become unavailable.
 
-**On request access success**
+**On request access success**  
 Triggered after the *Request MIDI access* action, depending on the outcome of the request.
 
-**On request access failed**
+**On request access failed**  
 Triggered after the *Request MIDI access* action, depending on the outcome of the request.
 
-**On any device opened**
+**On any device opened**  
 Triggered after the *Open device* action when the device has been opened and can now send or receive MIDI messages. With the *any* variant, the relevant MIDI device can be identified by expressions like *CurrentDeviceID*.
 
-**On device opened**
+**On device opened**  
 Triggered after the *Open device* action when the device has been opened and can now send or receive MIDI messages. With the *any* variant, the relevant MIDI device can be identified by expressions like *CurrentDeviceID*.
 
-**On any device closed**
+**On any device closed**  
 Triggered after the *Close device* action when the device has been closed and so will no longer send or receive MIDI messages. With the *any* variant, the relevant MIDI device can be identified by expressions like *CurrentDeviceID*.
 
-**On device closed**
+**On device closed**  
 Triggered after the *Close device* action when the device has been closed and so will no longer send or receive MIDI messages. With the *any* variant, the relevant MIDI device can be identified by expressions like *CurrentDeviceID*.
 
-**On any device error**
+**On any device error**  
 Triggered if an error occurs when accessing a MIDI device. With the *any* variant, the relevant MIDI device can be identified by expressions like *CurrentDeviceID*.
 
-**On device error**
+**On device error**  
 Triggered if an error occurs when accessing a MIDI device. With the *any* variant, the relevant MIDI device can be identified by expressions like *CurrentDeviceID*.
 
-**Compare parameter**
+**Compare parameter**  
 Compare an aspect of a MIDI message such as the note number or velocity.
 
-**On any binary message**
+**On any binary message**  
 Triggered when any MIDI message is received from any device. The raw binary data of the MIDI message is stored in a specified [Binary Data object](binary-data.md). The associated MIDI device can be identified by expressions like *CurrentDeviceID*. Using the binary data will require knowledge of the MIDI specification - for example a three-byte message in hexadecimal notation 0x90 0x3C 0x40 refers to Note On, MIDI channel 0, note 60 (middle C), velocity 64.
 
-**On any message**
+**On any message**  
 Triggered when a MIDI message of a specific type, e.g. Note On, is received from any MIDI device. The associated MIDI device can be identified by expressions like *CurrentDeviceID*. Details about the message can be compared with *Compare parameter* or retrieved via expressions.
 
-**On message**
+**On message**  
 Triggered when a MIDI message of a specific type, e.g. Note On, is received from a specific MIDI device given by its ID. The device ID may be left as an empty string to refer to the last opened input device. Details about the message can be compared with *Compare parameter* or retrieved via expressions.
 
 ## MIDI actions
 
-**Request MIDI access**
+**Request MIDI access**  
 Request to access MIDI devices. This must be done before any MIDI devices can be used, and may show a permission prompt to the user. For more details see the section on *MIDI access* above.
 
-**Open device**
+**Open device**  
 Open a MIDI device specified by its device ID and type (input/output). The device ID may be left as an empty string to open the first available device; however note if multiple devices are available, this may not select the device you really want, so generally you should provide a way for the user to pick the device (see the MIDI input/output examples in Construct). Once a device is opened, it may start sending or receiving messages (depending on whether it is an input or output device).
 
-**Close device**
+**Close device**  
 Close a MIDI device specified by its device ID and type (input/output). The device ID may be left as an empty string to close the last opened device (useful when only one device is opened at a time). Once a device is closed, it will no longer send or receive messages.
 
-**Schedule next message**
+**Schedule next message**  
 This action will cause the next *Send* action to actually send the message after a given delay in seconds. This can be used to schedule messages to be sent with higher accuracy than ticks in Construct, which typically run approximately every 16ms (for a 60 Hz display).
 
-**Send binary message**
+**Send binary message**  
 Send raw binary data as a MIDI message to an output device ID. The ID may be left as an empty string to send a message to the last opened MIDI output device. The message contents is taken from a chosen [Binary Data object](binary-data.md). Using the binary data will require knowledge of the MIDI specification - for example a three-byte message in hexadecimal notation 0x90 0x3C 0x40 refers to Note On, MIDI channel 0, note 60 (middle C), velocity 64.
 
-**Send control change message**
+**Send control change message**  
 Send a MIDI Control Change message to an output device ID. The ID may be left as an empty string to send a message to the last opened MIDI output device. Refer to the MIDI specification for possible controller numbers; a common one to use is controller number 1 to refer to the modulation wheel (coarse). The controller value is a number in the range 0-127.
 
-**Send message**
+**Send message**  
 Send a Program Change, Channel Pressure or Pitch Wheel message to an output device ID. The ID may be left as an empty string to send a message to the last opened MIDI output device. The value is a number in the range 0-127 for Program Change or Channel Pressure messages, or 0-16383 for Pitch Wheel messages.
 
-**Send note message**
+**Send note message**  
 Send a Note Off, Note On or AfterTouch message to an output device ID. The ID may be left as an empty string to send a message to the last opened MIDI output device. The note may be specified by either its MIDI note number (0-127, e.g. 60 for middle C) or a note name e.g. "C4". The note velocity is given as a number 0-127.
 
 > **Tip**  
 > Some devices will treat a Note On message with velocity 0 as Note Off.
 
-**Set MIDI channel**
+**Set MIDI channel**  
 Set the MIDI channel of outgoing messages, from 0-15. The default is channel 0. Some devices will be configured to only receive messages on a certain channel and will have a setting to select the MIDI channel number of the device; note that many consumer devices will use 1-based indexing for the MIDI channel (so the first MIDI channel is displayed as channel 1, rather than channel 0).
 
 ## MIDI expressions
 
-**InputCount**
+**InputCount**  
 Retrieve the list of available input devices. These expressions provide the number of input devices, and the device ID, manufacturer, and name of the device at a given zero-based index. Note this list first becomes available in *On request access success*, and may change in *On devices state changed*.
 
-**InputIDAt(index)**
+**InputIDAt(index)**  
 Retrieve the list of available input devices. These expressions provide the number of input devices, and the device ID, manufacturer, and name of the device at a given zero-based index. Note this list first becomes available in *On request access success*, and may change in *On devices state changed*.
 
-**InputManufacturerAt(index)**
+**InputManufacturerAt(index)**  
 Retrieve the list of available input devices. These expressions provide the number of input devices, and the device ID, manufacturer, and name of the device at a given zero-based index. Note this list first becomes available in *On request access success*, and may change in *On devices state changed*.
 
-**InputNameAt(index)**
+**InputNameAt(index)**  
 Retrieve the list of available input devices. These expressions provide the number of input devices, and the device ID, manufacturer, and name of the device at a given zero-based index. Note this list first becomes available in *On request access success*, and may change in *On devices state changed*.
 
-**OutputCount**
+**OutputCount**  
 Retrieve the list of available input devices. These expressions provide the number of input devices, and the device ID, manufacturer, and name of the device at a given zero-based index. Note this list first becomes available in *On request access success*, and may change in *On devices state changed*.
 
-**OutputIDAt(index)**
+**OutputIDAt(index)**  
 Retrieve the list of available input devices. These expressions provide the number of input devices, and the device ID, manufacturer, and name of the device at a given zero-based index. Note this list first becomes available in *On request access success*, and may change in *On devices state changed*.
 
-**OutputManufacturerAt(index)**
+**OutputManufacturerAt(index)**  
 Retrieve the list of available input devices. These expressions provide the number of input devices, and the device ID, manufacturer, and name of the device at a given zero-based index. Note this list first becomes available in *On request access success*, and may change in *On devices state changed*.
 
-**OutputNameAt(index)**
+**OutputNameAt(index)**  
 Retrieve the list of available input devices. These expressions provide the number of input devices, and the device ID, manufacturer, and name of the device at a given zero-based index. Note this list first becomes available in *On request access success*, and may change in *On devices state changed*.
 
-**CurrentDeviceID**
+**CurrentDeviceID**  
 In a trigger, such as *On any message*, these expressions contain information about the device that sent the message.
 
-**CurrentDeviceManfucaturer**
+**CurrentDeviceManfucaturer**  
 In a trigger, such as *On any message*, these expressions contain information about the device that sent the message.
 
-**CurrentDeviceName**
+**CurrentDeviceName**  
 In a trigger, such as *On any message*, these expressions contain information about the device that sent the message.
 
-**Channel**
+**Channel**  
 When a MIDI message is received, this returns the MIDI channel of the message from 0-15.
 
-**ControllerNumber**
+**ControllerNumber**  
 When a Control Change message is received, these return the controller number (0-127) and controller value (0-127) specified in the message.
 
-**ControllerValue**
+**ControllerValue**  
 When a Control Change message is received, these return the controller number (0-127) and controller value (0-127) specified in the message.
 
-**NoteName**
+**NoteName**  
 When a note message is recieved (Note Off, Note On or After Touch), these return the associated note name as a string (e.g. "C4") or MIDI note number (0-127, e.g. 60 for middle C).
 
-**NoteNumber**
+**NoteNumber**  
 When a note message is recieved (Note Off, Note On or After Touch), these return the associated note name as a string (e.g. "C4") or MIDI note number (0-127, e.g. 60 for middle C).
 
-**PitchWheelValue**
+**PitchWheelValue**  
 When a Pitch Wheel message is received, this returns pitch wheel position in the range 0-16383.
 
-**Pressure**
+**Pressure**  
 When an After Touch or Channel Pressure message is received, this returns the pressure value (0-127).
 
-**ProgramNumber**
+**ProgramNumber**  
 When a Program Change message is received, this returns the program number (0-127).
 
-**Velocity**
+**Velocity**  
 When a Note On or Note Off message is received, this returns the velocity in the range 0-127. If the device does not support detecting note velocity, a default value such as 64 may be sent instead. Some devices send a Note On message with velocity 0 to indicate Note Off; in this case the velocity will be returned as 64 as a default value given the velocity is not actually specified in that case.
 
-**NoteNameToNumber(NoteName)**
+**NoteNameToNumber(NoteName)**  
 Convert between a note name (e.g. "C4" for middle C) and a MIDI note number in the range 0-127 (e.g. 60 for middle C). See the section on *MIDI notes* above for more information.
 
 > **Tip**  
 > NoteNumberToName will always use the sharp variant, e.g. note number 61 will always return "C#4" and never "Db4".
 
-**NoteNumberToName(NoteNumber)**
+**NoteNumberToName(NoteNumber)**  
 Convert between a note name (e.g. "C4" for middle C) and a MIDI note number in the range 0-127 (e.g. 60 for middle C). See the section on *MIDI notes* above for more information.
 
 > **Tip**  

@@ -47,95 +47,95 @@ Multiple gamepad devices can be connected to a single computer. To differentiate
 
 ## Gamepad properties
 
-**Analog deadzone**
+**Analog deadzone**  
 Devices with analog joysticks are extremely sensitive to input. This allows fine control in games, but also means a joystick in rest position can still register a fairly large amount of movement. If this wasn't ignored, a joystick-controlled player could start moving around erratically even when the player is not touching the control. To solve this all values close to rest position are ignored. Joystick movement is in the range -100 to 100 on each axis, and if the distance from the center is below the *Analog deadzone* value, it will return 0. For example, the default is 25, so values inside a circle with the radius 25 will still count as zero. This is the recommended value to ensure even ageing controllers with highly erratic input do not cause unintended player movement.
 
 ## Gamepad conditions
 
-**Gamepad supports vibration type**
+**Gamepad supports vibration type**  
 Check if a currently connected gamepad supports a particular kind of vibration effect, such as dual rumble or trigger rumble. Note both the browser and the hardware must support the vibration type - for example it is possible a gamepad has hardware support for trigger rumble, but one browser supports it where another browser does not.
 
-**Has gamepads**
+**Has gamepads**  
 True if any gamepad is connected and activated. To prevent websites tracking you based on the available gamepads, most browsers supporting Gamepad input will report that no controllers are connected until a button is pressed on one of the devices.
 
-**On gamepad connected**
+**On gamepad connected**  
 Triggered when a gamepad device is connected to the computer. To prevent websites tracking you based on the available gamepads, most browsers supporting Gamepad input will report that no controllers are connected until a button is pressed on one of the devices, when *On gamepad connected* will also run.
 
 > **Tip**  
 > In this trigger, the *GamepadIndex* expression gives the index of the gamepad that was connected.
 
-**On gamepad disconnected**
+**On gamepad disconnected**  
 Triggered when a gamepad device is disconnected from the computer, such as by pulling out its cable.
 
 > **Tip**  
 > In this trigger, the *GamepadIndex* expression gives the index of the gamepad that was disconnected.
 
-**Compare axis**
+**Compare axis**  
 Compare the position of an analog joystick on a specific gamepad. Values within the *Analog deadzone* are returned as 0. Axes values range from -100 to 100.
 
-**Is button down**
+**Is button down**  
 True if a given button is currently down on a specific gamepad. The buttons are always referred to according to the XBox controller layout.
 
-**Is button index down**
+**Is button index down**  
 True if a given button by its numerical index is currently down on a specific gamepad.
 
-**On any button pressed**
+**On any button pressed**  
 Triggered when any button is pressed on a specific gamepad. The *ButtonIndex* expression is set with the index of the button. The special value -1 can also be used for the gamepad, in which case the trigger will fire when any button on any gamepad is pressed, and the *GamepadIndex* expression will also be set to the index of the gamepad where the button was pressed.
 
-**On any button released**
+**On any button released**  
 Triggered when any button is released on a specific gamepad. The *ButtonIndex* expression is set with the index of the button. The special value -1 can also be used for the gamepad, in which case the trigger will fire when any button on any gamepad is released, and the *GamepadIndex* expression will also be set to the index of the gamepad where the button was released.
 
-**On button index pressed**
+**On button index pressed**  
 Triggered when a given button by its numerical index is pressed on a specific gamepad.
 
-**On button index released**
+**On button index released**  
 Triggered when a given button by its numerical index is released on a specific gamepad.
 
-**On button pressed**
+**On button pressed**  
 Triggered when a given button is pressed on a specific gamepad. The buttons are always referred to according to the XBox controller layout.
 
-**On button released**
+**On button released**  
 Triggered when a given button is released on a specific gamepad. The buttons are always referred to according to the XBox controller layout.
 
 ## Gamepad actions
 
-**Vibrate (dual rumble)**
+**Vibrate (dual rumble)**  
 Initiate vibration (also known as "rumble") of a specific gamepad for a period of time given in milliseconds. Each kind of vibration uses different rumble motors in the gamepad hardware. The types of vibration that are supported can be checked with the *Gamepad supports vibration type* condition. Each kind of vibration has different parameters for the hardware motors, allowing for different types of rumble effects to be produced. If a vibration is already active when this action is used, it will be replaced by this action.
 
-**Vibrate (trigger rumble)**
+**Vibrate (trigger rumble)**  
 Initiate vibration (also known as "rumble") of a specific gamepad for a period of time given in milliseconds. Each kind of vibration uses different rumble motors in the gamepad hardware. The types of vibration that are supported can be checked with the *Gamepad supports vibration type* condition. Each kind of vibration has different parameters for the hardware motors, allowing for different types of rumble effects to be produced. If a vibration is already active when this action is used, it will be replaced by this action.
 
-**Reset vibration**
+**Reset vibration**  
 Stop any active vibration started by the *Vibrate* action for a specific gamepad. The vibration will be immediately cancelled, so it will not fulfil the duration it was started for. If no vibration is active, this has no effect.
 
 ## Gamepad expressions
 
-**Axis(Gamepad, Index)**
+**Axis(Gamepad, Index)**  
 Retrieve the current position of an analog joystick on a specific gamepad. *Index* specifies left analog X and Y or right analog X and Y axes. Axes range from -100 to 100. Axis values within the *Analog deadzone* are returned as 0.
 
-**Button(Gamepad, Index)**
+**Button(Gamepad, Index)**  
 Retrieve the current button press value of a button on a specific gamepad. *Index* specifies the zero-based index of a button from the dropdown list in the *Is button down* condition (e.g. 0 returns the value for the *A* button). The returned value depends on the features of the button: if the button is pressure sensitive, it can return any value from 0 to 100 depending on the pressure; otherwise it returns 0 for not pressed and 100 for pressed. Buttons which are not pressure sensitive are easier to detect using the *Is button down* condition.
 
-**GamepadCount**
+**GamepadCount**  
 Return the number of currently connected and active gamepad devices. To prevent websites tracking you based on the available gamepads, most browsers supporting Gamepad input will report that no controllers are connected until a button is pressed on one of the devices.
 
-**GamepadID(Gamepad)**
+**GamepadID(Gamepad)**  
 A string intended to represent the device manufacturer and model for a specific gamepad, e.g. "XBox 360 controller". However in practice this varies depending on the system and browser in use.
 
-**GamepadIndex**
+**GamepadIndex**  
 In an *On gamepad connected/disconnected* trigger, or when using *On any button pressed/released* with a gamepad of -1, this expression indicates the index of the corresponding gamepad.
 
-**ButtonIndex**
+**ButtonIndex**  
 Return the numerical index of the last button pressed on a specific gamepad. This is useful with the *On any button pressed* and *On any button released* triggers to set up custom controls.
 
-**RawAxis(Gamepad, Index)**
+**RawAxis(Gamepad, Index)**  
 Retrieve raw axis input for a specific gamepad and axis index. This returns the value without keymapping, applying the analog deadzone, or multiplying the returned value by 100. Axis values range from -1 to 1.
 
-**RawAxisCount(Gamepad)**
+**RawAxisCount(Gamepad)**  
 Return the number of axes available in the raw input for a specific gamepad. This returns the value without keymapping.
 
-**RawButton(Gamepad, Index)**
+**RawButton(Gamepad, Index)**  
 Retrieve raw button input for a specific gamepad and button index. This returns the value without keymapping. Button values range from 0 to 1 (pressure sensitive buttons can return values in between).
 
-**RawButtonCount(Gamepad)**
+**RawButtonCount(Gamepad)**  
 Return the number of buttons available in the raw input for a specific gamepad. This returns the value without keymapping.

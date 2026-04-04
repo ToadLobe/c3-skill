@@ -31,39 +31,39 @@ For an example of this, [open the 'Taking screenshots' example](https://editor.c
 
 ## Share conditions
 
-**Is supported**
+**Is supported**  
 Check whether sharing is supported on the current platform. Sharing will only work if this is true.
 
-**Is sharing files supported**
+**Is sharing files supported**  
 Check whether sharing files with the *Add file* action is supported on the current platform. The *Add file* action will only work if this is true. If it is false but *Is supported* is still true, then the *Share* action can still be used to share text and a URL.
 
-**On share completed**
+**On share completed**  
 Triggered after a share action once the user completes the share process.
 
 > **Tip**  
 > This does not necessarily mean anything was shared - this can be triggered if the user cancels the share.
 
-**On share failed**
+**On share failed**  
 Triggered if a share action is not successfully completed or an error otherwise occurs.
 
 ## Share actions
 
-**Add file**
+**Add file**  
 Attach a file to the next share using the contents of a [Binary Data](binary-data.md) object, with a given filename. This can be used multiple times before a *Share* action to attach multiple files to be shared, such as a series of screenshots. The type of the data must also be specified, which is normally `"image/png"` for a screenshot, or `"video/webm"` for a video, but can also be other types (see [MIME Types](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fBasics_of_HTTP%2fMIME_types)). For more information see *Sharing files* above.
 
-**Share**
+**Share**  
 Use the system share feature to share some text via another app. *Text* is the text to share; *Title* is an optional title to use (which can be used for other fields, such as the subject of an email if shared to an email app); and *URL* is a link to share. All three fields are optional, but at least one must be provided. If *Is sharing files supported* is true and any *Add file* actions were used before this action, those files are attached to the share.
 
 > **Tip**  
 > To avoid annoying the user, browsers may only allow this action in a user input event, such as *On button clicked*, *On touch start*, etc. So to ensure sharing works, only use this action in a user input trigger.
 
-**Request app rating**
+**Request app rating**  
 Display a dialog to the user requesting that they rate your application. Where available this uses the platform's built-in request app rating dialog, which has predefined text. On Android if this is not supported it falls back to using a custom system dialog, the content of which is defined by the parameters to the action. You should request review at an appropriate time, and infrequently, as so not to frustrate your users. For iOS see [Apple's guide on ratings](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.apple.com%2fdesign%2fhuman-interface-guidelines%2fios%2fsystem-capabilities%2fratings-and-reviews%2f), and for Android see the [Google Play In-App Review API guide](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.android.com%2fguide%2fplaycore%2fin-app-review).
 
 > **Warning**  
 > This action is not guaranteed to show anything to the user. For the best user experience app stores limit how often the dialog is allowed to appear. Check the linked guides for more details.
 
-**Display store page**
+**Display store page**  
 Display the native store page (Google Play/App Store) for an application with a given identifier. Note the app ID can be left empty to use the app ID specified in Project Properties.
 
 ## Share expressions

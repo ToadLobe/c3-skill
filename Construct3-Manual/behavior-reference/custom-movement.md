@@ -30,7 +30,7 @@ Every tick the Custom Movement adjusts the object's position according to the *d
 
 ## Custom Movement properties
 
-**Stepping mode**
+**Stepping mode**  
 How to step the movement each tick. The number of steps taken (if not *None*) depends on the *Pixels per step* property. The different modes are:
 
 - **None** simply steps the object once per tick according to its velocity.
@@ -38,87 +38,87 @@ How to step the movement each tick. The number of steps taken (if not *None*) de
 - **Horizontal then vertical** will step the object to its destination first on the X axis (triggering *On horizontal step*), then on the Y axis (triggering *On vertical step*).
 - **Vertical then horizontal** will step the object to its destination first on the Y axis (triggering *On vertical step*), then on the X axis (triggering *On horizontal step*).
 
-**Pixels per step**
+**Pixels per step**  
 If *Stepping mode* is not *None*, this is the distance in pixels of each step towards the destination position each tick. The default is 5, which means if the object is moving 20 pixels in a tick, it will move in four five-pixel steps.
 
-**Enabled**
+**Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, it can be enabled at runtime using the *Set enabled* action.
 
 ## Custom Movement conditions
 
-**Compare speed**
+**Compare speed**  
 Compare the current speed of the movement, in pixels per second. *Horizontal* and *Vertical* compares to the *dx* and *dy* speeds respectively, and *Overall* compares to the magnitude of the vector (*dx*, *dy*) (the overall movement speed).
 
-**Is enabled**
+**Is enabled**  
 Test if the behavior is currently enabled. When disabled it will have no effect on the object.
 
-**Is moving**
+**Is moving**  
 True if either *dx* or *dy* are not zero. Invert to test if stopped.
 
-**On horizontal step**
+**On horizontal step**  
 Triggered for each step along an axis when *Stepping mode* is either *Horizontal then vertical* or *Vertical then horizontal*. This can be used to accurately detect collisions with *Is overlapping*.
 
-**On vertical step**
+**On vertical step**  
 Triggered for each step along an axis when *Stepping mode* is either *Horizontal then vertical* or *Vertical then horizontal*. This can be used to accurately detect collisions with *Is overlapping*.
 
-**On step**
+**On step**  
 Triggered for each step when *Stepping mode* is *Linear*. This can be used to accurately detect collisions with *Is overlapping*.
 
 ## Custom Movement actions
 
-**Set enabled**
+**Set enabled**  
 Enable or disable the behavior. If disabled, the behavior will not modify the object's position.
 
-**Rotate clockwise**
+**Rotate clockwise**  
 Adjust the angle of motion. This will calculate new values for *dx* and *dy* reflecting a new angle of motion with the same overall speed. **Note:** if the overall speed is 0, then setting the angle of motion has no effect, because there is no motion. A common mistake is to set the angle of motion then the speed, and find that the angle is not used. Instead simply set the speed first then the angle of motion and it will work as expected.
 
-**Rotate counter-clockwise**
+**Rotate counter-clockwise**  
 Adjust the angle of motion. This will calculate new values for *dx* and *dy* reflecting a new angle of motion with the same overall speed. **Note:** if the overall speed is 0, then setting the angle of motion has no effect, because there is no motion. A common mistake is to set the angle of motion then the speed, and find that the angle is not used. Instead simply set the speed first then the angle of motion and it will work as expected.
 
-**Set angle of motion**
+**Set angle of motion**  
 Adjust the angle of motion. This will calculate new values for *dx* and *dy* reflecting a new angle of motion with the same overall speed. **Note:** if the overall speed is 0, then setting the angle of motion has no effect, because there is no motion. A common mistake is to set the angle of motion then the speed, and find that the angle is not used. Instead simply set the speed first then the angle of motion and it will work as expected.
 
-**Accelerate**
+**Accelerate**  
 Accelerate either the overall movement, or movement on a specific axis.
 
-**Accelerate toward angle**
+**Accelerate toward angle**  
 Accelerate the movement towards an angle or position.
 
-**Accelerate toward position**
+**Accelerate toward position**  
 Accelerate the movement towards an angle or position.
 
-**Push out solid**
+**Push out solid**  
 Only valid when the behavior is currently overlapping an object with the [solid behavior](solid.md). Automatically move the object until it is no longer overlapping the solid. This has no effect if the object is not currently overlapping a solid. The following techniques can be used:
 
 - **Opposite angle** reverses (or 'backtracks') the object from its current angle of motion until it is no longer overlapping.
 - **Nearest** moves the object in an eight-direction spiral out one pixel at a time until it is no longer overlapping. The aim is for the object to end up in the nearest free space, but since only eight directions are used it will be an approximation.
 - **Up**, **down**, **left** and **right** moves the object along a specific axis until it is no longer overlapping.
 
-**Push out solid at angle**
+**Push out solid at angle**  
 Only valid when the behavior is currently overlapping an object with the solid behavior. Move the object from its current position at a given angle until it is no longer overlapping the solid. This has no effect if the object is not currently overlapping a solid.
 
-**Reverse**
+**Reverse**  
 Inverts the movement by flipping the signs of *dx* and *dy*.
 
-**Set speed**
+**Set speed**  
 Set the current speed in pixels per second either for the horizontal or vertical axes, or the overall movement speed. Setting horizontal or vertical speeds assigns *dx* and *dy* directly. Setting the overall speed calculates new values for *dx* and *dy* such that they reflect the new overall speed while keeping the same angle of motion.
 
-**Stop**
+**Stop**  
 A shortcut for setting both *dx* and *dy* to 0, stopping the movement.
 
-**Stop stepping**
+**Stop stepping**  
 Only valid in *On step*, *On horizontal step* and *On vertical step*. Stop the current stepping for this tick. The object can either go back to its old position (where it was at the start of the tick) or stay at its current position (possibly half way between its start and end positions). Note that in *Horizontal then vertical* or *Vertical then horizontal* modes, only the current axis is stopped. The next axis will still continue stepping, unless you also use *Stop stepping* for that axis as well.
 
 ## Custom Movement expressions
 
-**dx**
+**dx**  
 Return the movement's *dx* and *dy* values, which are the speed in pixels per second on each axis.
 
-**dy**
+**dy**  
 Return the movement's *dx* and *dy* values, which are the speed in pixels per second on each axis.
 
-**MovingAngle**
+**MovingAngle**  
 Return the current angle of motion, in degrees, calculated as the angle of the vector (*dx*, *dy*).
 
-**Speed**
+**Speed**  
 Return the current overall speed in pixels per second, calculated as the magnitude of the vector (*dx*, *dy*).

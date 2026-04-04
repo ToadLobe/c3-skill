@@ -29,21 +29,21 @@ XML must be loaded as a string with the *Load* action. If you have a small snipp
 
 ## XML conditions
 
-**For each node**
+**For each node**  
 Repeat the event once for each node returned by an XPath query. Typically this will be used with a query that returns multiple nodes, e.g. `"/bookstore/book"` to select all "book" nodes under "bookstore". In the *For each node* event, the current node is set to the one currently being iterated. This means relative XPaths, like `"title/text()"`, work relative to the current node (in this case returning the text of the child "title" tag). *For each node* can also be nested, so you can iterate another list relative to the current node.
 
 ## XML actions
 
-**Load**
+**Load**  
 Load an XML document from a string. See 'Loading an XML document' above.
 
 ## XML expressions
 
-**NodeCount**
+**NodeCount**  
 Return the number of nodes returned by an XPath expression. For example, this can count the number of elements with a given name. In a *For each node* event, the XPath is relative to the current node.
 
-**NumberValue**
+**NumberValue**  
 Return a number from an XPath expression. If multiple values are returned, only the first value is retrieved. In a *For each node* event, the XPath is relative to the current node.
 
-**StringValue**
+**StringValue**  
 Return a string from an XPath expression. If multiple values are returned, only the first value is retrieved. In a *For each node* event, the XPath is relative to the current node.

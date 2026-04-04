@@ -194,77 +194,77 @@ As an example, the locale **"ar-EG"** (Egypt Arabic) has six different plural ca
 
 ## Internationalization conditions
 
-**Compare to current locale**
+**Compare to current locale**  
 Test the passed in locale value against the locale the plugin is currently configured with.
 
 ## Internationalization actions
 
-**Set locale**
+**Set locale**  
 Set the locale the plugin will use.
 
-**Set context**
+**Set context**  
 Set a context to get strings from. An absolute context overwrites any existing context and a relative context is appended to the existing one.
 
-**Push context**
+**Push context**  
 Push a context to get strings from. This helps to avoid duplication in the case of having to look up multiple strings in the same context.
 
-**Pop context**
+**Pop context**  
 Remove the existing context from the stack.
 
-**Add string**
+**Add string**  
 Dynamically add a localized string to the provided context in the localization data for the current locale.
 
-**Load from JSON**
+**Load from JSON**  
 Load the plugin with localization data for the current locale or the locale defined in the passed in JSON.
 
 
 
 ## Internationalization expressions
 
-**Locale**
+**Locale**  
 Returns the locale string the plugin is currently using.
 
-**DefaultLocale**
+**DefaultLocale**  
 Return the default locale for the current system. This can be used to select the default language.
 
-**Lookup(Context [, ...])**
+**Lookup(Context [, ...])**  
 Looks up a localized string based on the current locale and a passed in context. Supports a variable list of arguments for substitution.
 
-**LookupPlural(Context, Count [, ...])**
+**LookupPlural(Context, Count [, ...])**  
 Looks up the plural form of a localized string based on the current locale a passed in context and a number to decide which plural form to return. Supports a variable list of arguments for substitution.
 
-**CurrentContext**
+**CurrentContext**  
 Return the current context of the plugin.
 
-**SelectPlural(number)**
+**SelectPlural(number)**  
 Returns the name of the plural form based on the current locale and the passed in number.
 
-**PluralCategoryCount**
+**PluralCategoryCount**  
 Returns the total amount of plural categories for the current locale.
 
-**PluralCategoryAt(index)**
+**PluralCategoryAt(index)**  
 Returns the plural category name based on the current locale and the provided zero-based index.
 
-**SaveToJSON**
+**SaveToJSON**  
 Returns a JSON representation of the plugin internal state.
 
-**FormatNumberAsDecimal(number)**
+**FormatNumberAsDecimal(number)**  
 Format the passed in number as a decimal based on the current locale.
 
-**FormatNumberAsPercent(number)**
+**FormatNumberAsPercent(number)**  
 Format the passed in number as a percent based on the current locale.
 
-**FormatNumberAsCurrency(Number, Currency, CurrencyDisplay)**
+**FormatNumberAsCurrency(Number, Currency, CurrencyDisplay)**  
 Format the passed in number as a currency in the current locale. The **currency** argument must be a valid 3 letter ISO currency code - [see this table for supported currencies](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fISO_4217%23List_of_ISO_4217_currency_codes). If an unsupported currency is passed in, a warning will be printed to console indicating all the supported currencies. The **currencyDisplay** argument can be any of *"symbol"*, *"narrowSymbol"*, *"code"*, *"name"*. Using an unsupported value will default to *"symbol"*.
 
-**FormatNumberWithUnit(Number, Unit, UnitDisplay)**
+**FormatNumberWithUnit(Number, Unit, UnitDisplay)**  
 Format the passed number as a unit in the current locale. The **unit** argument can take any of the values [defined in this table](https://www.construct.net/out?u=https%3a%2f%2ftc39.es%2fecma402%2f%23table-sanctioned-single-unit-identifiers). The **unitDisplay** argument can be any of *"long"*, *"short"* or *"narrow"*. Using an unsupported value will default to *"short"*.
 
-**RegionName(RegionLocale)**
+**RegionName(RegionLocale)**  
 Returns the region name of the passed in locale in the language of the current locale of the plugin.
 
-**LanguageName(LanguageLocale)**
+**LanguageName(LanguageLocale)**  
 Returns the language name of the passed in locale in the language of the current locale of the plugin.
 
-**CurrencyName(CurrencyCode)**
+**CurrencyName(CurrencyCode)**  
 Returns the currency name of the passed 3 letter ISO currency code, in the language of the current locale of the plugin.

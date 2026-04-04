@@ -41,95 +41,95 @@ It is still possible for targets to dodge predictive aiming turrets, by changing
 
 ## Turret properties
 
-**Range**
+**Range**  
 The range, in pixels, that the turret can detect targets in. Any targets further away from the turret than this distance will be ignored.
 
-**Rate of fire**
+**Rate of fire**  
 The rate at which to trigger *On shoot*, when the turret has both acquired a target and rotated to point in the direction of the target.
 
-**Rotate**
+**Rotate**  
 Whether to automatically set the object's angle according to the angle of the turret.
 
-**Rotate speed**
+**Rotate speed**  
 The speed at which the turret can rotate towards targets, in degrees per second.
 
-**Target mode**
+**Target mode**  
 If *First in range*, the turret will always track the same target until it leaves range, even if other targets come in range. If *Nearest*, the turret may switch to a different target before its current target leaves range, if another target comes closer.
 
-**Predictive aim**
+**Predictive aim**  
 Whether to enable predictive aim or not. If enabled, you must set the correct *Projectile speed* for the predictive aim to work correctly. For more information see the section on *Predictive aim* above.
 
-**Projectile speed**
+**Projectile speed**  
 If *Predictive aim* is enabled, this must be set to the projectile speed in pixels per second for the predictive aim to work correctly. For more information, see the section on *Predictive aim* above.
 
-**Use collision cells**
+**Use collision cells**  
 Whether to use the [collision cells optimisation](https://www.construct.net/en/blogs/ashleys-blog-2/collision-cell-optimisation-914) when looking for targets that are within range. Usually this is faster, but with extremely long ranges it can sometimes be slower.
 
-**Enabled**
+**Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, it can be enabled at runtime using the *Set enabled* action.
 
 ## Turret conditions
 
-**Has target**
+**Has target**  
 True if the turret currently has a target acquired.
 
-**Is enabled**
+**Is enabled**  
 Test if the behavior is currently enabled. When disabled it will have no effect on the object.
 
-**On shoot**
+**On shoot**  
 Triggered at the frequency given by the *Rate of fire* property, when the turret both has a target and has rotated to point towards it. If the turret is to fire upon the target, you should spawn a projectile from the turret in this trigger.
 
-**On target acquired**
+**On target acquired**  
 Triggered when the turret has no target, but acquires one as it enters range.
 
 ## Turret actions
 
-**Acquire target**
+**Acquire target**  
 Target a specific object if it is in range. If the object is out of range, the action is ignored. If in range, the turret will switch to targeting the given object, even if it already has a different target. Note if *Target mode* is *Nearest*, the turret may still immediately switch to a nearer target.
 
-**Add object to target**
+**Add object to target**  
 Use on startup to tell the turret which objects it should target. Use a [Family](../project-primitives/objects/families.md)  `[Paid plans only]`   to conveniently target a whole group of objects.
 
-**Clear targets**
+**Clear targets**  
 Remove all targets added using the *Add object to target* action. The turret will no longer target any objects at all.
 
-**Unacquire target**
+**Unacquire target**  
 Tell the turret to forget its existing target, even if it is in range. This frees it up to target a different object, but it may choose to immediately target the same object again unless the *Acquire target* action is used immediately afterwards.
 
-**Set enabled**
+**Set enabled**  
 Enable or disable the behavior. If disabled, the behavior will not detect targets, rotate the object, or run any triggers.
 
-**Set predictive aim**
+**Set predictive aim**  
 Set the corresponding properties. For more information, see *Turret properties*.
 
-**Set projectile speed**
+**Set projectile speed**  
 Set the corresponding properties. For more information, see *Turret properties*.
 
-**Set range**
+**Set range**  
 Set the corresponding properties. For more information, see *Turret properties*.
 
-**Set rate of fire**
+**Set rate of fire**  
 Set the corresponding properties. For more information, see *Turret properties*.
 
-**Set rotate**
+**Set rotate**  
 Set the corresponding properties. For more information, see *Turret properties*.
 
-**Set rotate speed**
+**Set rotate speed**  
 Set the corresponding properties. For more information, see *Turret properties*.
 
-**Set target mode**
+**Set target mode**  
 Set the corresponding properties. For more information, see *Turret properties*.
 
 ## Turret expressions
 
-**Range**
+**Range**  
 Retrieve the corresponding properties. For more information, see *Turret properties*.
 
-**RateOfFire**
+**RateOfFire**  
 Retrieve the corresponding properties. For more information, see *Turret properties*.
 
-**RotateSpeed**
+**RotateSpeed**  
 Retrieve the corresponding properties. For more information, see *Turret properties*.
 
-**TargetUID**
+**TargetUID**  
 Get the UID of the currently targeted object, if any. For more information about UIDs, see [instances](../project-primitives/objects/instances.md).

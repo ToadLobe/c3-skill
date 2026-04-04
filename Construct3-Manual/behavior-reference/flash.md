@@ -21,16 +21,16 @@ When using JavaScript or TypeScript coding, the features of this behavior can be
 
 ## Flash conditions
 
-**Is flashing**
+**Is flashing**  
 True if the object is currently within a flash duration.
 
-**On flash ended**
+**On flash ended**  
 Triggered when the end of the flash duration is reached, and the object has returned to visible.
 
 ## Flash actions
 
-**Flash**
+**Flash**  
 Make the object flash by toggling its visibility on and off. The *On* time is the duration in seconds the object remains visible. The *Off* time is the duration in seconds the object remains invisible. The object will alternate between these two states for the given duration in seconds. The object is always set back to visible after the flash duration finishes.
 
-**Stop flashing**
+**Stop flashing**  
 If the object is currently flashing, this stops the flashing and sets the object back to visible. If the object is not currently flashing this action has no effect.

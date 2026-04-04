@@ -28,75 +28,75 @@ This object displays using a HTML element rather than drawing in to the canvas. 
 
 ## Slider bar properties
 
-**Minimum**
+**Minimum**  
 The lowest value that can be picked, when the slider is all the way to the left.
 
-**Maximum**
+**Maximum**  
 The highest value that can be picked, when the slider is all the way to the right.
 
-**Step**
+**Step**  
 The increment of possible values. For example if the step is 10, then the slider will jump in units of 10 as it is moved, and only a multiple of 10 can be chosen as a value.
 
-**Tooltip**
+**Tooltip**  
 An optional tooltip to show while hovering the mouse over the control.
 
-**Initially visibile**
+**Initially visibile**  
 Whether the control is initially visible or invisible in the page.
 
-**Enabled**
+**Enabled**  
 Whether the control is initially enabled and usable, or disabled so that it cannot be interacted with.
 
-**ID Optional**
+**ID Optional**  
 An optional *id* attribute for the element in the DOM (Document Object Model). This can be useful for CSS styling.
 
-**Class Optional**
+**Class Optional**  
 An optional *class* attribute for the element in the DOM (Document Object Model). This can be useful for CSS styling.
 
 ## Slider bar conditions
 
 See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
 
-**Compare value**
+**Compare value**  
 Compare the currently chosen value from the slider bar.
 
-**On changed**
+**On changed**  
 Triggered when the user finishes changing the chosen value on the slider bar. Typically this only triggers when the user releases a mouse button or touch after moving the slider.
 
-**On changing**
+**On changing**  
 Triggered repeatedly as the user changes the chosen value on the slider bar. Unlike *On changed* this will reflect the current value of the slider as the user is still dragging it.
 
-**On clicked**
+**On clicked**  
 Triggered when the user clicks the slider bar.
 
 ## Slider bar actions
 
 See [common actions](common-features/common-actions.md) for features shared between form control objects.
 
-**Set maximum**
+**Set maximum**  
 Set the maximum value that can be chosen from the slider bar.
 
-**Set minimum**
+**Set minimum**  
 Set the minimum value that can be chosen from the slider bar.
 
-**Set step**
+**Set step**  
 Set the increment step of the slider bar.
 
-**Set tooltip**
+**Set tooltip**  
 Set the tooltip that appears when the mouse hovers over the slider bar.
 
-**Set value**
+**Set value**  
 Set the currently selected value of the slider bar. This must be between the currently set minimum and maximum values.
 
 ## Slider bar expressions
 
-**Maximum**
+**Maximum**  
 Return the currently set maximum slider value.
 
-**Minimum**
+**Minimum**  
 Return the currently set minimum slider value.
 
-**Step**
+**Step**  
 Return the currently set slider step value (increment).
 
-**Value**
+**Value**  
 Return the current value chosen by the user, between the minimum and maximum values.

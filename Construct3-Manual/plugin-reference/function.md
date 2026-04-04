@@ -80,33 +80,33 @@ if (self.c2_callFunction)
 
 ## Function conditions
 
-**Compare parameter**
+**Compare parameter**  
 Compare the value of one of the parameters to a function call. This condition should only be used in an *On function* event, since outside of function calls there are no parameters set.
 
-**On function**
+**On function**  
 Triggered when the corresponding *Call function* action is used.
 
 ## Function actions
 
-**Call expression**
+**Call expression**  
 This is an alternative to the *Call function* action. It simply provides a parameter to enter an expression, and the result is ignored. You can use this to call a function via the *Function.Call(...)* expression, which may be more convenient if using a very large number of parameters.
 
-**Call function**
+**Call function**  
 Trigger the corresponding *On function* events. Additional parameters can be passed that are accessed by the *Param* expression.
 
-**Set return value**
+**Set return value**  
 In a function event, set the value to be returned to the caller. This is either returned by the *Call* expression or accessed later using the *ReturnValue* expression.
 
 ## Function expressions
 
-**Call**
+**Call**  
 Call a function directly from an expression. The expression returns the return value that was set in the function, or 0 if no return value was set. Additional parameters can optionally be added after the name of the function, e.g. `Function.Call("CreateEnemy", 123, 456)`.
 
-**Param**
+**Param**  
 Retrieve a parameter passed to a function call by its zero-based index. For example, `Function.Param(0)` returns the value of the first parameter.
 
-**ParamCount**
+**ParamCount**  
 Return the number of parameters passed to a function call.
 
-**ReturnValue**
+**ReturnValue**  
 Return the value set using the *Set return value* action from the last function call. If *Set return value* is not used in a function, it returns 0.

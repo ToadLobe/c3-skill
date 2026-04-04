@@ -21,48 +21,48 @@ Note not all browsers or platforms record the same types of audio or video. The 
 
 ## Video recorder conditions
 
-**Is audio format supported**
+**Is audio format supported**  
 Check if particular audio and video codecs are supported for the recorded video.
 
-**Is video format supported**
+**Is video format supported**  
 Check if particular audio and video codecs are supported for the recorded video.
 
-**Is recording**
+**Is recording**  
 True while currently recording the canvas or screen.
 
-**Is recording supported**
+**Is recording supported**  
 Check if the current browser or platform supports recording. If this is not true, video recording will not work.
 
-**Is screen recording supported**
+**Is screen recording supported**  
 Check if the *Start screen recording* action is supported. This action can record the user's entire screen, and is not always supported even when the *Start recording* action is supported.
 
-**On recording error**
+**On recording error**  
 Triggered if an error occurs while recording a video. The recording is unlikely to be available after an error.
 
-**On recording ready**
+**On recording ready**  
 Triggered after recording finishes, e.g. after the *Stop recording* action, when the video recording has finished encoding and is available to download with the *RecordingURL* expression. This can be downloaded using the Browser object's *Invoke download* action.
 
 ## Video recorder actions
 
-**Start recording**
+**Start recording**  
 Start recording a video of the main display canvas. Note this excludes form controls like buttons and text inputs, because these are HTML elements that "float" above the main display canvas and aren't actually part of the canvas, so are excluded from the recording. (If it is important to record these, some browsers support screen recording and can capture the entire browser tab.) Specific video and audio formats can be chosen, but it is recommended to leave them at *Auto* to ensure a supported format is used, or set to *None* to omit either the video or audio from the recording. A custom framerate can be set but the default 0 indicates the display rate. The quality in kilobits per second (kbps) can also be set, determining the video quality vs. size tradeoff. Use *Stop recording* to end the recording, after which *On recording ready* will trigger so the video can be downloaded.
 
-**Start screen recording**
+**Start screen recording**  
 Start recording a video of the user's entire screen. This only works when the *Is screen recording supported* condition is true. For security reasons, browsers will prompt the user before the recording starts. To avoid the prompt annoying users, this action may only be allowed in a user input trigger, e.g. *On button clicked*, *On touch start* etc. Some browsers also provide options in the prompt to record either the browser tab (which will include non-canvas elements like form controls), a different app, or the screen. Specific video and audio formats can be chosen, but it is recommended to leave them at *Auto* to ensure a supported format is used, or set to *None* to omit either the video or audio from the recording. Note that if audio is included, the video can only include audio played by the project itself, unless *System audio* is checked, which allows for recording all audio output from the system including other apps; note however the user may still need to opt-in to including system audio in the permission prompt. The quality in kilobits per second (kbps) can also be set, determining the video quality vs. size tradeoff. Use *Stop recording* to end the recording, after which *On recording ready* will trigger so the video can be downloaded.
 
-**Start User Media recording**
+**Start User Media recording**  
 Start recording video and/or audio from a [User Media](user-media.md) object's input. *On media request approved* must trigger before this can be used.
 
-**Stop recording**
+**Stop recording**  
 Stop any active recording. When the video has finished encoding, *On recording ready* will trigger so the video can be downloaded.
 
 ## Video recorder expressions
 
-**RecordingURL**
+**RecordingURL**  
 In *On recording ready*, a URL that can be used to download the recorded video file. Use the Browser object's *Invoke download* action to download this.
 
-**RecordingType**
+**RecordingType**  
 The content type (also known as MIME type) of the recording that was made, e.g. *"video/webm;codecs=vp9"*. This is useful if you need to know the type of an *Auto* format recording, such as when sharing it.
 
-**RecordingFileExtension**
+**RecordingFileExtension**  
 The file extension of the recording that was made including the dot, e.g. *".webm"*. This is useful if you need to know the file extension of an *Auto* format recording, such as when download it.

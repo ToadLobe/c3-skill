@@ -67,37 +67,37 @@ If you ask the pathfinding behavior to pathfind to a destination inside an obsta
 
 ## Pathfinding properties
 
-**Cell size**
+**Cell size**  
 The cell size, in pixels, of the grid of obstacles. See above for more details about how this is used.
 
-**Cell border**
+**Cell border**  
 The amount, in pixels, to expand the cell size by when testing for obstacles. See above for more details about how this is used.
 
-**Obstacles**
+**Obstacles**  
 If *Solids*, the behavior will automatically mark cells touching objects with the [Solid behavior](solid.md) as being obstacles. If *Custom*, you must define which objects are obstacles by using the *Add obstacle* action on startup.
 
 > **Tip**  
 > Note this applies to all instances, since the obstacle map is shared. This setting cannot be used to affect individual instances differently.
 
-**Max speed**
+**Max speed**  
 If the *Move along path* action is used, the maximum speed in pixels per second the object can move at.
 
-**Acceleration**
+**Acceleration**  
 If the *Move along path* action is used, the acceleration rate in pixels per second per second.
 
-**Deceleration**
+**Deceleration**  
 If the *Move along path* action is used, the deceleration rate in pixels per second per second, used when approaching the final node.
 
-**Rotate speed**
+**Rotate speed**  
 If the *Move along path* action is used, the rate at which the object can rotate in degrees per second. Note this can affect the speed of the object: if the rotation speed is low, the object will have to slow down on tight corners.
 
-**Rotate object**
+**Rotate object**  
 Whether to automatically set the angle of the object with the behavior to the angle of motion.
 
-**Diagonals**
+**Diagonals**  
 Whether paths moving along diagonals are allowed. If disabled, the result nodes along paths will only ever change at 90-degree angles (up, right, down and left). If enabled nodes can move along diagonals as well.
 
-**Direct movement**
+**Direct movement**  
 Specifies where path nodes may be removed if the box of cells enclosing nodes is completely clear. The options are:
 
 - **None:** no path nodes are ever removed. This means even paths across entirely clear areas will still place nodes for movement along the pathfinding grid.
@@ -106,74 +106,74 @@ Specifies where path nodes may be removed if the box of cells enclosing nodes is
 
  See the [Pathfinding direct movement](https://editor.construct.net/#open=pathfinding-direct-movement) example for a visualization of how the setting changes paths.
 
-**Enabled**
+**Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, it can be enabled at runtime using the *Set enabled* action.
 
 ## Pathfinding conditions
 
-**Compare speed**
+**Compare speed**  
 If moving along a path, compare the current speed of the object in pixels per second.
 
-**Diagonals are enabled**
+**Diagonals are enabled**  
 True if the *Diagonals* property allows moving diagonally along cells. This can also be changed with the *Set diagonals enabled* action.
 
-**Is calculating path**
+**Is calculating path**  
 True if the object is currently calculating a path in the background. This is true between the *Find path* action and the *On path found* or *On failed to find path* triggers.
 
-**Is cell obstacle**
+**Is cell obstacle**  
 Test if a cell in the obstacle grid is marked as an obstacle. This is useful for debugging or displaying the obstacle grid. Note the position is taken in cell co-ordinates rather than layout co-ordinates.
 
-**Is enabled**
+**Is enabled**  
 Test if the behavior is currently enabled. When disabled it will have no effect on the object.
 
-**Is moving along path**
+**Is moving along path**  
 True after using the *Move along path* action until *On arrived* triggers.
 
-**On arrived**
+**On arrived**  
 Triggered after *Move along path* when the object finally arrives at its destination.
 
-**On failed to find path**
+**On failed to find path**  
 Triggered after the *Find path* action if no path can be found to the destination, such as if it is surrounded by a ring of obstacles.
 
-**On path found**
+**On path found**  
 Triggered after the *Find path* action once a path has successfully been found to the destination. The nodes are now available via the *NodeCount*, *NodeXAt* and *NodeYAt* expressions, and the *Move along path* action can also be used.
 
 ## Pathfinding actions
 
-**Add obstacle**
+**Add obstacle**  
 If the *Obstacles* property is *Custom*, add an object type to mark as an obstacle in the pathfinding grid. If this is done during the game (after *Start of layout*), you must also use *Regenerate obstacle map* for it to take effect.
 
 > **Tip**  
 > Note this applies to all instances of both object types involved. This action does not affect individual instances.
 
-**Add path cost**
+**Add path cost**  
 Add an object to increase the path cost in the pathfinding grid. This can be used to simulate rough terrain - the behavior will try to find paths around them if possible, unless the route is a major shortcut. See the *Pathfinding path cost* in the Start Page for a demo. If this is done during the game (after *Start of layout*), you must also use *Regenerate obstacle map* for it to take effect.
 
-**Clear cost**
+**Clear cost**  
 Remove all path cost objects added with *Add path cost*. You must also use *Regenerate obstacle map* for this to take effect.
 
-**Clear obstacles**
+**Clear obstacles**  
 Remove all obstacle objects added with *Add obstacle*. You must also use *Regenerate obstacle map* for this to take effect.
 
-**Find path**
+**Find path**  
 Start calculating a path to a destination in the layout. This is processed in the background and the results are not immediately ready after this action; you must wait until the *On path found* or *On failed to find path* triggers run before the result is known or the path can be moved along. If this action is used while *Is calculating path* is true, the old path is still calculated and the result triggered, but it then immediately begins calculating the new path and will also trigger for that result.
 
-**Regenerate obstacle map**
+**Regenerate obstacle map**  
 Determine whether each cell in the obstacles grid is an obstacle again. This is a very CPU intensive action and should not be used regularly. If only part of the obstacle map has changed, prefer to use one of the *Regenerate region* actions. Any changes made by using *Add obstacle*, *Clear obstacles*, *Add path cost* and *Clear cost* will take effect the next tick after this action. Note this means if you attempt to find a path immediately after this action, the obstacle map won't have been updated yet; add a *Wait* action with a short delay to make sure the updated map is used in that case.
 
-**Regenerate region**
+**Regenerate region**  
 As with *Regenerate obstacle map*, but only the specified area is updated. This is usually considerably faster than regenerating the entire map. However as with regenerating the entire obstacle map, changes only take effect next tick. *Regenerate region* takes a rectangle in layout co-ordinates to regenerate. *Regenerate region around object* similarly regenerates the rectangle in the layout given by an object's bounding box. Note if multiple instances have met the event's conditions, this will regenerate multiple rectangles (one for every picked object).
 
-**Regenerate region around object**
+**Regenerate region around object**  
 As with *Regenerate obstacle map*, but only the specified area is updated. This is usually considerably faster than regenerating the entire map. However as with regenerating the entire obstacle map, changes only take effect next tick. *Regenerate region* takes a rectangle in layout co-ordinates to regenerate. *Regenerate region around object* similarly regenerates the rectangle in the layout given by an object's bounding box. Note if multiple instances have met the event's conditions, this will regenerate multiple rectangles (one for every picked object).
 
-**Set enabled**
+**Set enabled**  
 Set whether the behavior is enabled or disabled. If disabled, it will not calculate any paths or move the object.
 
-**Set move cost**
+**Set move cost**  
 Set the base path cost for moving a single cell. This affects the relative cost of additional costs added by other features such as the *Add path cost* action and path groups. The default is 10. The move cost is rounded to an integer, and it is multiplied by the square root of 2 for the diagonal move cost if diagonals are enabled.
 
-**Start path group**
+**Start path group**  
 Start and end a *path group*, which can be used to spread out paths found while inside the group. When a path is found inside the group, it adds a cost to cells along the discovered path in order to discourage subsequent paths in the same group from following the same path. Once the path group is ended, all added costs from the group are removed and normal pathfinding is restored. The parameters that affect path groups are:
 
 - **Base cost:** The cost to add for each cell along a found path. Higher costs will spread out paths more. Paths are found across multiple independent workers which don't include the costs added by paths found in other workers; in order to compensate for this, the base cost is multiplied by the number of workers.
@@ -182,7 +182,7 @@ Start and end a *path group*, which can be used to spread out paths found while 
 
  See the [Pathfinding groups](https://editor.construct.net/#open=pathfinding-groups) example for a visualization of the effect of spreading out paths with this feature.
 
-**End path group**
+**End path group**  
 Start and end a *path group*, which can be used to spread out paths found while inside the group. When a path is found inside the group, it adds a cost to cells along the discovered path in order to discourage subsequent paths in the same group from following the same path. Once the path group is ended, all added costs from the group are removed and normal pathfinding is restored. The parameters that affect path groups are:
 
 - **Base cost:** The cost to add for each cell along a found path. Higher costs will spread out paths more. Paths are found across multiple independent workers which don't include the costs added by paths found in other workers; in order to compensate for this, the base cost is multiplied by the number of workers.
@@ -191,67 +191,67 @@ Start and end a *path group*, which can be used to spread out paths found while 
 
  See the [Pathfinding groups](https://editor.construct.net/#open=pathfinding-groups) example for a visualization of the effect of spreading out paths with this feature.
 
-**Move along path**
+**Move along path**  
 Automatically start moving the object along the found path. This can only be used after *On path found* - the path is not immediately known after the *Find path* action.
 
 > **Tip**  
 > You can also use the [Move To behavior](move.md)'s *Move along Pathfinding path* action as an alternative, since the Move To behavior uses a different movement algorithm.
 
-**Set speed**
+**Set speed**  
 Set the current speed of the object if it is currently moving along its path, in pixels per second. This cannot be negative or greater than the maximum speed of the behavior.
 
-**Stop**
+**Stop**  
 If the object is moving along its path, causes it to stop.
 
-**Set acceleration**
+**Set acceleration**  
 Set the corresponding behavior properties. See the property definitions above for more information.
 
-**Set deceleration**
+**Set deceleration**  
 Set the corresponding behavior properties. See the property definitions above for more information.
 
-**Set diagonals enabled**
+**Set diagonals enabled**  
 Set the corresponding behavior properties. See the property definitions above for more information.
 
-**Set max speed**
+**Set max speed**  
 Set the corresponding behavior properties. See the property definitions above for more information.
 
-**Set rotate speed**
+**Set rotate speed**  
 Set the corresponding behavior properties. See the property definitions above for more information.
 
-**Set direct movement**
+**Set direct movement**  
 Set the corresponding behavior properties. See the property definitions above for more information.
 
 ## Pathfinding expressions
 
-**CurrentNode**
+**CurrentNode**  
 When moving along a path, the zero-based index of the node the object is currently moving towards. This may skip ahead just before the object actually reaches the next node, in order to help it round corners.
 
-**MovingAngle**
+**MovingAngle**  
 The current angle of motion when moving along a path, in degrees.
 
-**NodeCount**
+**NodeCount**  
 The number of nodes in the path that was found. This is only updated after *On path found*.
 
-**NodeXAt**
+**NodeXAt**  
 Return the position of a node in the path that was found, in layout co-ordinates, using the zero-based index of the node. This is only available after *On path found*.
 
-**NodeYAt**
+**NodeYAt**  
 Return the position of a node in the path that was found, in layout co-ordinates, using the zero-based index of the node. This is only available after *On path found*.
 
-**Speed**
+**Speed**  
 The current speed in pixels per second when moving along a path.
 
-**Acceleration**
+**Acceleration**  
 Return the current values of the behavior properties. For more information, see the property definitions above.
 
-**CellSize**
+**CellSize**  
 Return the current values of the behavior properties. For more information, see the property definitions above.
 
-**Deceleration**
+**Deceleration**  
 Return the current values of the behavior properties. For more information, see the property definitions above.
 
-**MaxSpeed**
+**MaxSpeed**  
 Return the current values of the behavior properties. For more information, see the property definitions above.
 
-**RotateSpeed**
+**RotateSpeed**  
 Return the current values of the behavior properties. For more information, see the property definitions above.

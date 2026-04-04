@@ -87,122 +87,122 @@ You can also create separate storage *buckets* in your Construct Game Services a
 
 ## CGS properties
 
-**Simulate popup blocked**
+**Simulate popup blocked**  
 When enabled, act as if the first attempt to open the login popup window is blocked, requiring the use of *Retry sign in popup*. See the section *Handling popup blockers* above for more information.
 
 ## CGS conditions
 
-**Can sign in persistent**
+**Can sign in persistent**  
 True if the user previously successfully signed in when *Allow persisting* was enabled and did not sign out. This means the *Sign in persistent* action can be used to continue with the previous sign in.
 
-**Is signed in**
+**Is signed in**  
 True if the user is currently signed in.
 
-**On sign in popup blocked**
+**On sign in popup blocked**  
 Triggered during sign in if the browser prevented the login popup window from appearing. See the section *Handling popup blockers* above for more information.
 
-**On create success**
+**On create success**  
 Triggered after the cloud save *Create* actions with the corresponding bucket ID and key, depending on the outcome of the operation.
 
-**On create error**
+**On create error**  
 Triggered after the cloud save *Create* actions with the corresponding bucket ID and key, depending on the outcome of the operation.
 
-**On get success**
+**On get success**  
 Triggered after the cloud save *Get* action with the corresponding bucket ID and key completes successfully. When the *Get* action *Type* is *text*, *On get success* triggers, and the downloaded data is provided by the *CloudSaveText* expression; when *Type* is *binary*, *On get binary success* triggers, and the downloaded data is placed in the specified [Binary Data](binary-data.md) object.
 
-**On get binary success**
+**On get binary success**  
 Triggered after the cloud save *Get* action with the corresponding bucket ID and key completes successfully. When the *Get* action *Type* is *text*, *On get success* triggers, and the downloaded data is provided by the *CloudSaveText* expression; when *Type* is *binary*, *On get binary success* triggers, and the downloaded data is placed in the specified [Binary Data](binary-data.md) object.
 
-**On get error**
+**On get error**  
 Triggered after the cloud save *Get* action with the corresponding bucket ID and key fails to complete. This could occur if the user went offline, or if a network error occured.
 
-**On success**
+**On success**  
 Triggered after an action depending on whether it completed successfully or failed.
 
-**On error**
+**On error**  
 Triggered after an action depending on whether it completed successfully or failed.
 
 ## CGS actions
 
-**Sign in with provider**
+**Sign in with provider**  
 Attempt to sign the user in with a third-party identity service like Google or Microsoft. The game ID to sign in to from your [Construct Game Services account](https://cgs.construct.net/) must be provided. If *Allow persisting* is enabled, a successful sign in is remembered, and may be re-used in future with the *Sign in persistent* action. The *Expiry* is the time in minutes that sessions remain active; the plugin will attempt to renew sessions shortly before expiry to extend the session. Signing in with a provider will open a popup window, and you can also specify the size of this popup window. Upon completing a sign in, *On success* will trigger for *sign in with provider*. In some cases if the sign in is cancelled or fails, *On error* will trigger.
 
 > **Tip**  
 > Note that in some cases, sign in may be cancelled in a way that cannot be detected (neither *On success* nor *On error* will trigger). Be sure to design your project with this in mind - for example do not block the user interface until sign in finishes, as you cannot reliably detect that.
 
-**Sign in persistent**
+**Sign in persistent**  
 Attempt to sign in re-using a previous successful sign in that allowed persisting. This can only be used when *Can sign in persistent* is true. This will trigger either *On success* or *On error* for *sign in persistent* depending on whether the persistent sign in completed successfully.
 
-**Sign out**
+**Sign out**  
 Sign out of any account the user is currently signed in to, and also delete any remembered sign in if it allowed persisting. Locally this operation completes immediately and so there is no corresponding success or error trigger. For completeness signing out will send a request in the background to ensure the session is ended on the server-side as well, but that is optional and if it fails the session will time out anyway.
 
-**Retry sign in popup**
+**Retry sign in popup**  
 After *On sign in popup blocked* triggers, attempt to open the login popup window again. See the section *Handling popup blockers* above for more information.
 
-**Set player name**
+**Set player name**  
 Set the name of the currently signed in player. In some cases the player name is obtained from the authentication provider, but in others a generic name will be used, in which case the player will likely want to change their name for features like leaderboards. The current player name is provided by the *PlayerName* expression.
 
-**Create (binary)**
+**Create (binary)**  
 Create or replace the data for a key. A game bucket ID can optionally be provided, but if left empty it will use player private storage. The *text* variant uploads a string for the data, whereas the *binary* variant uploads the contents of a [Binary Data](binary-data.md) object. *On create success* or *On create error* will trigger depending on whether the upload completed successfully.
 
-**Create (text)**
+**Create (text)**  
 Create or replace the data for a key. A game bucket ID can optionally be provided, but if left empty it will use player private storage. The *text* variant uploads a string for the data, whereas the *binary* variant uploads the contents of a [Binary Data](binary-data.md) object. *On create success* or *On create error* will trigger depending on whether the upload completed successfully.
 
-**Get**
+**Get**  
 Download the data previously uploaded for a key with one of the *Create* actions. A game bucket ID can optionally be provided, but if left empty it will use player private storage. If this fails, *On get error* will trigger. Otherwise when *Type* is *Text*, *On get success* will trigger, and the downloaded data will be in the *CloudSaveText* expression; when *Type* is *binary*, *On get binary success* will trigger, with the downloaded data stored in the specified Binary Data object.
 
-**Submit score**
+**Submit score**  
 Submit a score to a leaderboard. The *Score* must be an integer (fractional scores are not supported). The *Leaderboard ID* may be left empty to submit a score on the Construct Arcade, which does not require authentication. Otherwise it may be set to the leaderboard ID to submit the score to, in which case authentication is required.
 
-**Get leaderboard scores**
+**Get leaderboard scores**  
 Request a page of scores from a given leaderboard ID, with a specified zero-based page number and number of results per page. This does not require authentication. The returned scores can optionally be filtered with several options. An [ISO 3166-1 alpha-2](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fISO_3166-1_alpha-2) country code filter can be provided, e.g. "US" to only return scores submitted in the United States of America. A time range can also be specified, such as *Daily* to return today's scores. Weekly leaderboards run from Monday to Sunday. A range offset can also be specified to return a prior range - for example specifying a *Daily* range with offset 1 will return yesterday's scores. The *Culture* can be set to a locale to use for returned values, or left empty to use the leaderboard's default culture. *On success* will trigger for *get scores* when scores are retrieved successfully, in which case the leaderboard expressions can be used to access them.
 
 ## CGS expressions
 
-**GameID**
+**GameID**  
 A string of the game ID currently signed in to.
 
-**PlayerID**
+**PlayerID**  
 A string with a unique ID to identify the currently signed in player.
 
-**PlayerName**
+**PlayerName**  
 The display name of the currently signed in player.
 
-**CloudSaveBucketID**
+**CloudSaveBucketID**  
 In a Cloud Save trigger, the bucket ID, key and name of the associated cloud save operation.
 
-**CloudSaveKey**
+**CloudSaveKey**  
 In a Cloud Save trigger, the bucket ID, key and name of the associated cloud save operation.
 
-**CloudSaveName**
+**CloudSaveName**  
 In a Cloud Save trigger, the bucket ID, key and name of the associated cloud save operation.
 
-**CloudSaveText**
+**CloudSaveText**  
 After *On get success* triggers (after the *Get* action with type *text*), the string of text data that was downloaded.
 
-**ScoreCount**
+**ScoreCount**  
 After successfully retrieving leaderboard scores, the number of scores available.
 
-**ScoreAt(index)**
+**ScoreAt(index)**  
 After successfully retrieving leaderboard scores, these expressions return information about a score at a given zero-based index. Scores and ranks are numbers, but the formatted versions return a string formatted according to the locale. Countries are returned as ISO 3166-1 alpha-2 country codes.
 
-**ScoreFormattedAt(index)**
+**ScoreFormattedAt(index)**  
 After successfully retrieving leaderboard scores, these expressions return information about a score at a given zero-based index. Scores and ranks are numbers, but the formatted versions return a string formatted according to the locale. Countries are returned as ISO 3166-1 alpha-2 country codes.
 
-**ScoreRankAt(index)**
+**ScoreRankAt(index)**  
 After successfully retrieving leaderboard scores, these expressions return information about a score at a given zero-based index. Scores and ranks are numbers, but the formatted versions return a string formatted according to the locale. Countries are returned as ISO 3166-1 alpha-2 country codes.
 
-**ScoreFormattedRankAt(index)**
+**ScoreFormattedRankAt(index)**  
 After successfully retrieving leaderboard scores, these expressions return information about a score at a given zero-based index. Scores and ranks are numbers, but the formatted versions return a string formatted according to the locale. Countries are returned as ISO 3166-1 alpha-2 country codes.
 
-**ScorePlayerIDAt(index)**
+**ScorePlayerIDAt(index)**  
 After successfully retrieving leaderboard scores, these expressions return information about a score at a given zero-based index. Scores and ranks are numbers, but the formatted versions return a string formatted according to the locale. Countries are returned as ISO 3166-1 alpha-2 country codes.
 
-**ScorePlayerNameAt(index)**
+**ScorePlayerNameAt(index)**  
 After successfully retrieving leaderboard scores, these expressions return information about a score at a given zero-based index. Scores and ranks are numbers, but the formatted versions return a string formatted according to the locale. Countries are returned as ISO 3166-1 alpha-2 country codes.
 
-**ScoreCountryAt(index)**
+**ScoreCountryAt(index)**  
 After successfully retrieving leaderboard scores, these expressions return information about a score at a given zero-based index. Scores and ranks are numbers, but the formatted versions return a string formatted according to the locale. Countries are returned as ISO 3166-1 alpha-2 country codes.
 
-**TotalPageCount**
+**TotalPageCount**  
 After successfully retrieving leaderboard scores, the total number of pages available.

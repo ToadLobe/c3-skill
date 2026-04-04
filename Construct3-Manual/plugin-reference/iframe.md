@@ -27,28 +27,28 @@ This object displays using a HTML element rather than drawing in to the canvas. 
 
 ## iframe properties
 
-**URL**
+**URL**  
 The URL of a web page to load inside the iframe.
 
-**HTML content**
+**HTML content**  
 A string of HTML content to display inside the iframe. This loads the HTML locally and does not request a separate web page. This is only used if the *URL* property is left empty.
 
-**Initially visible**
+**Initially visible**  
 Whether the object is initially visible at runtime.
 
-**ID**
+**ID**  
 An optional `id` attribute to set on the iframe element. This may be useful if you have other styles or JavaScript code that you want to use with the iframe.
 
-**Allow**
+**Allow**  
 An optional [feature policy](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTTP%2fFeature_Policy) string to set in the iframe's `allow` attribute, which specifies what the displayed page is allowed to do. The default is designed to allow embedded video playback on services like YouTube, granting the video permission to enter fullscreen, autoplay, and use encrypted media.
 
-**Enable sandbox**
+**Enable sandbox**  
 Check *Enable sandbox* to add the `sandbox` attribute on the iframe element, providing enhanced security. The *Sandbox* property is then the string to use in the `sandbox` attribute. Enabling the sandbox starts by removing a wide range of capabilities, and then each capability can be re-enabled by adding it to the sandbox string. By default the sandbox string allows JavaScript execution, but blocks forms, popups, same-origin access, top-document navigation, and more. If you only display static HTML content, you can also remove the default `allow-scripts` to block any JavaScript execution at all. For more information see the [iframe sandbox attribute on MDN](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTML%2fElement%2fiframe).
 
 > **Warning**  
 > Do not use both the `allow-scripts` and `allow-same-origin` in the sandbox string. This allows scripts to remove the sandbox protection.
 
-**Sandbox**
+**Sandbox**  
 Check *Enable sandbox* to add the `sandbox` attribute on the iframe element, providing enhanced security. The *Sandbox* property is then the string to use in the `sandbox` attribute. Enabling the sandbox starts by removing a wide range of capabilities, and then each capability can be re-enabled by adding it to the sandbox string. By default the sandbox string allows JavaScript execution, but blocks forms, popups, same-origin access, top-document navigation, and more. If you only display static HTML content, you can also remove the default `allow-scripts` to block any JavaScript execution at all. For more information see the [iframe sandbox attribute on MDN](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fHTML%2fElement%2fiframe).
 
 > **Warning**  
@@ -62,10 +62,10 @@ The iframe object does not have any of its own conditions. See [common condition
 
 See [common actions](common-features/common-actions.md) for features shared between form control objects.
 
-**Display HTML string**
+**Display HTML string**  
 Load a string of HTML content in the iframe. This is similar to using the *HTML content* property. If the iframe was previously displaying a URL, it will switch to the HTML content instead.
 
-**Navigate to URL**
+**Navigate to URL**  
 Load a new URL in the iframe. If the iframe was previously displaying a string of HTML, it will switch to loading this URL instead.
 
 ****

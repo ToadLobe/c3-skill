@@ -90,182 +90,182 @@ Google Play Games Services offers **Immediate** and **Non-immediate** versions o
 
 ## Google Play properties
 
-**Application ID**
+**Application ID**  
 This is not currently necessary, but can be filled out with the application ID from the Google Play Developer Console.
 
-**Client ID**
+**Client ID**  
 The client ID for the game from the Google Play Developer Console. This is only required for web applications. For more information see the section *Setting up Google Play Game Services* above.
 
-**Game ID**
+**Game ID**  
 The Game ID is only used for Android applications. It is the same as the application ID. For more information see the section *Setting up Google Play Game Services* above.
 
 ## Google Play conditions
 
-**Compare achievement state**
+**Compare achievement state**  
 Compare whether an achievement at an index is revealed, hidden or unlocked. The achievement list must have already been successfully received.
 
-**On achievement list success**
+**On achievement list success**  
 Triggered after the *List achievements* action, depending on whether the request succeeded or failed. If successful, achievement information for the current player is then available.
 
-**On achievement list fail**
+**On achievement list fail**  
 Triggered after the *List achievements* action, depending on whether the request succeeded or failed. If successful, achievement information for the current player is then available.
 
-**On achievement metadata success**
+**On achievement metadata success**  
 Triggered after the *Get metadata achievements* action, depending on whether the request succeeded or failed. If successful, achievement metadata (such as the achievement names and icons) is then available.
 
-**On achievement metadata fail**
+**On achievement metadata fail**  
 Triggered after the *Get metadata achievements* action, depending on whether the request succeeded or failed. If successful, achievement metadata (such as the achievement names and icons) is then available.
 
-**On achievement revealed**
+**On achievement revealed**  
 Triggered after the *Reveal*, *Unlock* or *Increment* actions when an achievement has successfully been revealed or unlocked. When incrementing achievements, the achievement is unlocked when it has incremented through every step.
 
-**On achievement unlocked**
+**On achievement unlocked**  
 Triggered after the *Reveal*, *Unlock* or *Increment* actions when an achievement has successfully been revealed or unlocked. When incrementing achievements, the achievement is unlocked when it has incremented through every step.
 
-**Is loaded**
+**Is loaded**  
 True if the Google Play plugin has loaded and is ready to use. If false, no features of the plugin will work.
 
-**Is signed in**
+**Is signed in**  
 True if the user has been successfully signed in (possibly automatically).
 
-**On auto-sign in failed**
+**On auto-sign in failed**  
 Triggered upon the first visit, when the user cannot be automatically logged in. It is necessary to display a 'Sign in' button and use the *Sign in* action to get the user to sign in.
 
-**On sign in failed**
+**On sign in failed**  
 Triggered when an attempt to sign in fails, either due to an error or because the user cancelled the attempt.
 
-**On error**
+**On error**  
 Triggered if an error occurs. The *ErrorMessage* expression will contain information about the error.
 
-**On player details received**
+**On player details received**  
 Triggered after the *Request player details* action, when the player details have been successfully received. The *Player details* category of expressions now are set to their correct values for the currently signed in user.
 
-**On signed in**
+**On signed in**  
 Triggers when the user is signed in or signed out from Google Play Game Services.
 
-**On signed out**
+**On signed out**  
 Triggers when the user is signed in or signed out from Google Play Game Services.
 
-**On hi-score request success**
+**On hi-score request success**  
 Triggered after the *Request hi-scores* action depending on whether the request succeeded or failed. If successful, the hi-scores list is then available.
 
-**On hi-score request fail**
+**On hi-score request fail**  
 Triggered after the *Request hi-scores* action depending on whether the request succeeded or failed. If successful, the hi-scores list is then available.
 
-**On score submit success**
+**On score submit success**  
 Triggered after the *Submit score* action, depending on whether the submission succeeded or failed. If successful the score should then appear in hi-score lists.
 
-**On score submit fail**
+**On score submit fail**  
 Triggered after the *Submit score* action, depending on whether the submission succeeded or failed. If successful the score should then appear in hi-score lists.
 
 ## Google Play actions
 
-**Get metadata**
+**Get metadata**  
 Request metadata for the achievements list, such as the achievement names, descriptions and icons. If successful, *On achievement metadata* success is triggered.
 
-**Increment**
+**Increment**  
 Add to, or set, the number of steps in an incremental achievement. Once the full number of steps has been reached, the achievement is automatically unlocked.
 
-**List achievements**
+**List achievements**  
 List the achievements for the currently signed in player. Optionally the list of achievements can be filtered to only those in a given state (e.g. revealed). If successful, *On achievement list success* triggers.
 
-**Show achievements (Android only)**
+**Show achievements (Android only)**  
 Shows the native achievements dialog for the currently signed in player.
 
-**Reveal**
+**Reveal**  
 If an achievement is hidden, set its state to 'revealed' for the currently signed in player. If revealing for the first time, *On achievement revealed* will be triggered.
 
-**Unlock**
+**Unlock**  
 If an achievement is not already unlocked, set its state to unlocked for the currently signed in player. If unlocking for the first time, *On achievement unlocked* will be triggered.
 
-**Request player details**
+**Request player details**  
 Request the details of the current player, such as their name and avatar image. If successful *On player details received* triggers and the *Player details* category of expressions can be used.
 
-**Sign in**
+**Sign in**  
 If the player is not already signed in, pop up a window that allows them to sign in. Due to popup blockers, this may only work in a user input event, such as *On button clicked* or *On touch start*.
 
-**Sign out**
+**Sign out**  
 If the player is already signed in, sign them out. This also allows for a different user to then sign in.
 
-**Request hi-scores**
+**Request hi-scores**  
 Request a hi-score list for a given leaderboard. Scores can be returned for public results, or "social" (from users connected to the currently signed in player), and a time limit can be applied such as to return only the day's best scores so far. The *top* type returns the very highest scores, and the *window* type returns the scores around the current player's own best score, allowing them to see where they appear in the rankings.
 
-**Submit score**
+**Submit score**  
 Submit a new hi-score to a leaderboard. A *tag* can be provided, which is just a short string (up to 64 characters) associated with this score board entry, e.g. a short comment or an alternative alias for the player. If successfully submitted, *On score submit success* triggers.
 
-**Show leaderboards(Android only)**
+**Show leaderboards(Android only)**  
 Shows the native leaderboards dialog for the currently signed in player.
 
-**Show leaderboard (Android only)**
+**Show leaderboard (Android only)**  
 Shows the native leaderboard dialog with the specified leaderboard for the currently signed in player.
 
 ## Google Play expressions
 
-**AchievementsCount**
+**AchievementsCount**  
 The total number of achievements available. The achievements list must already have been successfully requested.
 
-**AchievementNameAt(index)**
+**AchievementNameAt(index)**  
 Retrieve information about a given achievement in the achievements list. The achievements list must already have been successfully requested.
 
-**AchievementDescriptionAt(index)**
+**AchievementDescriptionAt(index)**  
 Retrieve information about a given achievement in the achievements list. The achievements list must already have been successfully requested.
 
-**AchievementIDAt(index)**
+**AchievementIDAt(index)**  
 Retrieve information about a given achievement in the achievements list. The achievements list must already have been successfully requested.
 
-**AchievementStepsAt(index)**
+**AchievementStepsAt(index)**  
 Retrieve information about a given achievement in the achievements list. The achievements list must already have been successfully requested.
 
-**AchievementTotalStepsAt(index)**
+**AchievementTotalStepsAt(index)**  
 Retrieve information about a given achievement in the achievements list. The achievements list must already have been successfully requested.
 
-**AchievementTypeAt(index)**
+**AchievementTypeAt(index)**  
 Retrieve information about a given achievement in the achievements list. The achievements list must already have been successfully requested.
 
-**AchievementUnlockedIconURLAt(index)**
+**AchievementUnlockedIconURLAt(index)**  
 Retrieve the icon image URL for a given icon in either its unlocked or revealed state. This can be displayed using the Sprite object's *Load image from URL* action.
 
-**AchievementRevealedIconURLAt(index)**
+**AchievementRevealedIconURLAt(index)**  
 Retrieve the icon image URL for a given icon in either its unlocked or revealed state. This can be displayed using the Sprite object's *Load image from URL* action.
 
-**ErrorMessage**
+**ErrorMessage**  
 In *On error*, the relevant error message if available.
 
-**HiScoreCount**
+**HiScoreCount**  
 The number of hi-scores in the current returned list of results.
 
-**HiScoreTotalCount**
+**HiScoreTotalCount**  
 The total number of scores in the leaderboard, which may be greater than the number of returned results (*HiScoreCount*).
 
-**HiScoreAt(index)**
+**HiScoreAt(index)**  
 Return a numerical value, or formatted string, for a score at a given index.
 
-**HiScoreFormattedAt(index)**
+**HiScoreFormattedAt(index)**  
 Return a numerical value, or formatted string, for a score at a given index.
 
-**HiScoreRankAt(index)**
+**HiScoreRankAt(index)**  
 Return the numerical rank, or formatted string of the rank (e.g. "1st"), at a given index.
 
-**HiScoreFormattedRankAt(index)**
+**HiScoreFormattedRankAt(index)**  
 Return the numerical rank, or formatted string of the rank (e.g. "1st"), at a given index.
 
-**HiScoreNameAt(index)**
+**HiScoreNameAt(index)**  
 Return the name of the player associated with the score at an index.
 
-**HiScoreTagAt(index)**
+**HiScoreTagAt(index)**  
 Return the tag (a short string) that was submitted along with the score at an index.
 
-**HiScoreMyBest**
+**HiScoreMyBest**  
 Return the details for the current player's own best score, including the numerical and formatted versions of the score and rank.
 
-**HiScoreMyFormattedBest**
+**HiScoreMyFormattedBest**  
 Return the details for the current player's own best score, including the numerical and formatted versions of the score and rank.
 
-**HiScoreMyBestRank**
+**HiScoreMyBestRank**  
 Return the details for the current player's own best score, including the numerical and formatted versions of the score and rank.
 
-**HiScoreMyBestFormattedRank**
+**HiScoreMyBestFormattedRank**  
 Return the details for the current player's own best score, including the numerical and formatted versions of the score and rank.
 
-**HiScoreMyBestTag**
+**HiScoreMyBestTag**  
 Return the details for the current player's own best score, including the numerical and formatted versions of the score and rank.

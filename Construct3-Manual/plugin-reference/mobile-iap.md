@@ -92,83 +92,83 @@ On startup:
 
 ## IAP properties
 
-**Validator URL**
+**Validator URL**  
 Optional URL of a receipt validation service to verify in-app purchases with. This is for advanced users to implement a server to ensure purchases are valid. The URL is passed to the underlying `cordova-plugin-purchase`; refer to the Cordova plugin documentation on [store.validator](https://www.construct.net/out?u=https%3a%2f%2fgithub.com%2fj3k0%2fcordova-plugin-purchase%2fblob%2fmaster%2fapi%2fclasses%2fCdvPurchase.Store.md%23validator) for technical details on how to set up or implement a validation service.
 
 ## IAP conditions
 
-**On Purchase Success**
+**On Purchase Success**  
 Triggers when a specific product purchase succeeds.
 
-**On Any Purchase Success**
+**On Any Purchase Success**  
 Triggers when any product purchase succeeds.
 
-**On Purchase Failed**
+**On Purchase Failed**  
 Triggers when a specific product purchase fails.
 
-**On Any Purchase Failed**
+**On Any Purchase Failed**  
 Triggers when a any product purchase fails.
 
-**On Registration Success**
+**On Registration Success**  
 Triggers when registration has been completed (after the *Complete registration* action). This is a good time to check if a product is owned. You should wait for this trigger before attempting any purchases.
 
-**On Registration Failure**
+**On Registration Failure**  
 Triggers when registration failed. If this occurs then you won't be able to make any purchases.
 
-**On Product Available**
+**On Product Available**  
 Triggers when a specific product becomes available to purchase.
 
-**On Any Product Available**
+**On Any Product Available**  
 Triggers when any product becomes available to purchase.
 
-**On Product Owned**
+**On Product Owned**  
 Triggers when a specific product becomes owned. This triggers both after a first purchase for it, and on startup when the product was previously purchased, allowing easily identifying if the purchased product can be made use of.
 
-**On Any Product Owned**
+**On Any Product Owned**  
 Triggers when any product becomes owned.
 
-**Product Owned**
+**Product Owned**  
 True if the current user owns the product.
 
-**Product Available**
+**Product Available**  
 True if the current user can purchase the product.
 
-**Store Registered**
+**Store Registered**  
 True if the registration stage successfully completed.
 
-**On transaction finished**
+**On transaction finished**  
 Triggered when the store transaction for a purchase has finished. The transaction ID is available in the *TransactionID* expression.
 
 ## IAP Actions
 
-**Add product ID**
+**Add product ID**  
 Add a new product to the plugin by specifying the ID and type (consumable or non-consumable). This can only be called in the registration stage.
 
-**Complete product Registration**
+**Complete product Registration**  
 Ends the registration stage. After this has been called you will no longer be able to register products. This must be called before you can purchase products. *On registration success* will trigger if successful.
 
-**Restore Purchases**
+**Restore Purchases**  
 Restores user purchases. This is not necessary on Android.
 
-**Purchase Product**
+**Purchase Product**  
 Triggers the purchase of a product with a specific ID. This product must be available to purchase. *On Purchase Success/Failed* will trigger depending on the outcome of the purchase. If the purchase is successful, *On product owned* will also trigger, as well as on startup in future sessions while the product is still owned.
 
 ## IAP Expressions
 
-**ProductName(ProductID)**
+**ProductName(ProductID)**  
 Get the name of a product from its ID. This is the localized name provided by the store, you should use it instead of a hard-coded string.
 
-**ProductPrice(ProductID)**
+**ProductPrice(ProductID)**  
 Get the price of a product from its ID. This is the localized value provided by the store, you should use it instead of a hard-coded value.
 
-**ProductDescription(ProductID)**
+**ProductDescription(ProductID)**  
 The description of a product from its ID. This is the localized string provided by the store, you should use it instead of a hard-coded string.
 
-**ProductID**
+**ProductID**  
 The ID of the current product in a trigger.
 
-**TransactionID**
+**TransactionID**  
 In *On transaction finished*, the ID of the transaction that finished, using the ID provided by the store.
 
-**ErrorMessage**
+**ErrorMessage**  
 In an error trigger, the relevant error message, if any.

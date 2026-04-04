@@ -42,12 +42,12 @@ The *Right edge* and *Bottom edge* resize the object relative to the viewport ed
 
 ## Anchor conditions
 
-**Is enabled**
+**Is enabled**  
 Test if the behavior is currently enabled. When disabled it will have no effect on the object.
 
 ## Anchor actions
 
-**Set enabled**
+**Set enabled**  
 Set whether the behavior is enabled or disabled. If disabled, the behavior will not alter the size or position of the object.
 
 ## Anchor expressions

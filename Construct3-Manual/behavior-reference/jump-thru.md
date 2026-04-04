@@ -24,15 +24,15 @@ When using JavaScript or TypeScript coding, the features of this behavior can be
 
 ## Jump-thru properties
 
-**Enabled**
+**Enabled**  
 Set whether the behavior is initially enabled or disabled. If disabled, the object no longer acts as if it is a Jump-thru, and the Platform behavior will always fall through it.
 
 ## Jump-thru conditions
 
-**Is enabled**
+**Is enabled**  
 True if the behavior is currently enabled. This can be changed by the *Enabled* property or the *Set enabled* action.
 
 ## Jump-thru actions
 
-**Set enabled**
+**Set enabled**  
 Enable or disable the Jump-thru behavior for this object.

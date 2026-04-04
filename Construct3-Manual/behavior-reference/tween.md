@@ -83,152 +83,152 @@ Also note:
 
 ## Tween properties
 
-**Enabled**
+**Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, it can be enabled at runtime using the *Set enabled* action.
 
 ## Tween conditions
 
-**Is any playing**
+**Is any playing**  
 True if any tween is currently playing.
 
-**Is playing**
+**Is playing**  
 Test if a tween matching all the given tags is currently playing.
 
-**Is any paused**
+**Is any paused**  
 True if any tween is currently paused.
 
-**Is paused**
+**Is paused**  
 Test if a tween matching all the given tags is currently paused.
 
-**Is any ping-pong**
+**Is any ping-pong**  
 True if any tween is in the provided ping-pong *State*
 
-**Is ping-pong**
+**Is ping-pong**  
 True if a tween matching all the given tags is in the provided ping-pong *State*
 
-**On any finished**
+**On any finished**  
 Triggered when any tween finishes. Use the *Tags* expression to get the tag string for the tween that finished.
 
-**On finished**
+**On finished**  
 Triggered when a tween matching all the given tags finishes.
 
-**On any released**
+**On any released**  
 Triggered when any tween is released. Use the *Tags* expression to get the tag string for the tween that was released.
 
-**On released**
+**On released**  
 Triggered when a tween matching all the given tags is released.
 
-**On any looped**
+**On any looped**  
 Triggered when any tween loops. Use the *Tags* expression to get the tag string for the tween that looped.
 
-**On looped**
+**On looped**  
 Triggered when a tween matching all the given tags loops.
 
-**On any ping-pong**
+**On any ping-pong**  
 Triggered when any tween ping-pongs. Use the *State* parameter to specify at which point of the ping-pong the trigger should take place. Use the *Tags* expression to get the tag string for the tween that ping-ponged.
 
-**On ping-pong**
+**On ping-pong**  
 Triggered when a tween matching all the given tags ping-pongs. Use the *State* parameter to specify at which point of the ping-pong the trigger should take place. Use the *Tags* expression to get the tag string for the tween that ping-ponged.
 
 ## Tween actions - one property
 
-**Set end value**
+**Set end value**  
 Change the end value for an existing one-property tween matching all the given tags.
 
-**Tween (one property)**
+**Tween (one property)**  
 Start a tween for a single property. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Property* chooses which property of the object to modify. The start value of the tween uses the current value of the property. *End value* specifies the value to tween to. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Like [timelines](../project-primitives/timelines/timeline.md), a one property tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
 
 ## Tween actions - two properties
 
-**Set end values**
+**Set end values**  
 Change the end value for an existing two-property tween matching all the given tags.
 
-**Tween (two properties)**
+**Tween (two properties)**  
 Start a tween for two properties. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Property* chooses which property pair of the object to modify. The start value of the tween uses the current value of the properties. *End X* and *End Y* specify the end value for each of the two properties. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Like [timelines](../project-primitives/timelines/timeline.md), a two property tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
 
 ## Tween actions - three properties
 
-**Set end values**
+**Set end values**  
 Change the end value for an existing three-property tween matching all the given tags.
 
-**Tween (three properties)**
+**Tween (three properties)**  
 Start a tween for three properties. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Property* chooses which property triad of the object to modify. The start value of the tween uses the current value of the properties. *End X*, *End Y* and *End Z* specify the end value for each of the three properties. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Like [timelines](../project-primitives/timelines/timeline.md), a three property tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
 
 ## Tween actions - value
 
-**Set end value**
+**Set end value**  
 Change the end value for an existing value tween matching all the given tags.
 
-**Set start value**
+**Set start value**  
 Change the start value for an existing value tween matching all the given tags.
 
-**Tween (value)**
+**Tween (value)**  
 Start a tween for a number, independent of any properties. *Tags* are optional space-separated tags to identify the tween, and can be left blank if not used. *Start value* and *End value* specify the start and end value to tween through. *Time is the duration of the tween in seconds. Ease* specifies an ease function affecting the rate of change over time. *Destroy on complete* can be set to *Yes* to automatically destroy the instance when the tween finishes, useful for fade-out effects. Use the *Value* expression to retrieve the current value of the tween over time, such as to apply it to a different object, behavior or effect. Like [timelines](../project-primitives/timelines/timeline.md), a value tween can be set to *Loop* and/or *Ping Pong* and given a *Repeat count*.
 
 ## Tween actions - playback
 
-**Pause**
+**Pause**  
 Pause and resume an existing tween matching all the given tags. Pausing a tween will stop it at its current progress, and resuming will continue from where it was paused.
 
-**Resume**
+**Resume**  
 Pause and resume an existing tween matching all the given tags. Pausing a tween will stop it at its current progress, and resuming will continue from where it was paused.
 
-**Pause all**
+**Pause all**  
 Pause and resume all current tweens.
 
-**Resume all**
+**Resume all**  
 Pause and resume all current tweens.
 
-**Stop**
+**Stop**  
 Stop a tween matching all the given tags. Stopping a tween permanently ends a tween - it cannot be resumed afterwards.
 
-**Stop all**
+**Stop all**  
 Stop all tweens. This permanently ends all tweens so no more tweens can be referenced until a new tween is started.
 
 ## Tween actions - setters
 
-**Set destroy on complete**
+**Set destroy on complete**  
 Set the *Destroy on complete* and *Ease* parameters specified in the *Tween* action for existing tweens matching all the given tags. The *all* variants modify all tweens regardless of tags.
 
-**Set all destroy on complete**
+**Set all destroy on complete**  
 Set the *Destroy on complete* and *Ease* parameters specified in the *Tween* action for existing tweens matching all the given tags. The *all* variants modify all tweens regardless of tags.
 
-**Set ease**
+**Set ease**  
 Set the *Destroy on complete* and *Ease* parameters specified in the *Tween* action for existing tweens matching all the given tags. The *all* variants modify all tweens regardless of tags.
 
-**Set all eases**
+**Set all eases**  
 Set the *Destroy on complete* and *Ease* parameters specified in the *Tween* action for existing tweens matching all the given tags. The *all* variants modify all tweens regardless of tags.
 
-**Set playback rate**
+**Set playback rate**  
 Set the playback rate of existing tweens matching all the given tags, or all tweens regardless of tags. A playback rate of 1 is normal speed, 0.5 half as fast, 2 twice as fast, and so on.
 
-**Set all playback rates**
+**Set all playback rates**  
 Set the playback rate of existing tweens matching all the given tags, or all tweens regardless of tags. A playback rate of 1 is normal speed, 0.5 half as fast, 2 twice as fast, and so on.
 
-**Set time**
+**Set time**  
 Set the playback time in seconds of existing tweens matching all the given tags, or all tweens regardless of tags. For example setting a time of 1 will skip the tween to playing as if it was 1 second after the tween was started.
 
-**Set all times**
+**Set all times**  
 Set the playback time in seconds of existing tweens matching all the given tags, or all tweens regardless of tags. For example setting a time of 1 will skip the tween to playing as if it was 1 second after the tween was started.
 
-**Set enabled**
+**Set enabled**  
 Enable or disable the entire behavior. If disabled, the behavior will not affect any properties or advance any tweens.
 
 ## Tween expressions
 
 Note expressions can only return a single value. When specifying tags, expressions return the value for the first tween with all the given tags.
 
-**Progress(tag)**
+**Progress(tag)**  
 Return the progress of a tween by its tags in the range 0-1.
 
-**Tags**
+**Tags**  
 This expression can be used in the various triggers to get the tag string of the associated tween.
 
-**Time(tag)**
+**Time(tag)**  
 Return the playback time of a tween by its tags, in seconds since the tween was started.
 
-**PlaybackRate(tag)**
+**PlaybackRate(tag)**  
 Return the playback rate of a tween by its tags.
 
-**Value(tag)**
+**Value(tag)**  
 Return the current value of a value tween by its tags.

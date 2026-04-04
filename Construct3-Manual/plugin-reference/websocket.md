@@ -41,56 +41,56 @@ The WebSocket object has no properties.
 
 ## WebSocket conditions
 
-**Is connecting**
+**Is connecting**  
 True if currently in the process of establishing a connection to a server. The connection is not yet successfully established; there may still be an error.
 
-**Is open**
+**Is open**  
 True if a connection has been successfully established and the communication channel is currently open.
 
-**Is supported**
+**Is supported**  
 Use before attempting any connections to verify the current browser or platform supports WebSockets.
 
-**On closed**
+**On closed**  
 Triggered when the connection is closed, either deliberately or due to an error. The *CloseCode* and *CloseReason* expressions can indicate why the connection was closed.
 
-**On error**
+**On error**  
 Triggered when an error occurs in the WebSocket connection. Use the *ErrorMsg* expression to get the error message text.
 
-**On opened**
+**On opened**  
 Triggered when the connection is successfully established and the communication channel is now open.
 
-**On binary message**
+**On binary message**  
 Triggered when a binary message arrives from the server over an open connection. The specified [Binary Data](binary-data.md) object has the contents of the message written to it when the trigger fires, allowing access to the message content.
 
-**On text message**
+**On text message**  
 Triggered when a text message arrives from the server over an open connection. Use the *MessageText* expression to retrieve the content of the message.
 
 ## WebSocket actions
 
-**Close**
+**Close**  
 Close any active connection. No more messages can be sent or will be received after closing.
 
-**Connect**
+**Connect**  
 Connect to a WebSocket server. WebSocket server addresses typically start with **ws://** for non-secure transmission and **wss://** for secure transmission. Note some network configurations may require secure transmission in order to function correctly.
 
 The *Protocol* parameter may be optionally set to a required sub-protocol (sent with the *Sec-WebSocket-Protocol* header in the WebSocket handshake). If the server does not indicate it supports the chosen sub-protocol, the connection will fail to be established. This can be used to prevent the client connecting to WebSocket servers that do not understand your application's specific messages.
 
-**Send binary**
+**Send binary**  
 Send the contents of a [Binary Data](binary-data.md) object as a binary message to the server. This is ignored if the connection is not currently open.
 
-**Send text**
+**Send text**  
 Send a text string to the server. This is ignored if the connection is not currently open.
 
 ## WebSocket expressions
 
-**CloseCode**
+**CloseCode**  
 In the *On closed* trigger, returns the numeric code of the close reason. This can be one of the standard-specified return values, or a user-defined value.
 
-**CloseReason**
+**CloseReason**  
 In the *On closed* trigger, returns a string describing the reason the connection was closed. This is optional and may be empty.
 
-**ErrorMsg**
+**ErrorMsg**  
 In *On error*, the error message text.
 
-**MessageText**
+**MessageText**  
 In *On text message*, the text content of the message just received from the server.

@@ -15,10 +15,10 @@ The **Wrap behavior** re-positions an object to the opposite side of the layout 
 
 ## Wrap properties
 
-**Wrap to**
+**Wrap to**  
 Whether to wrap the object when it leaves the layout area, or when it leaves the visible viewport.
 
 ## Wrap conditions
 
-**On wrap**
+**On wrap**  
 Triggered when the object position is changed by wrapping. For example if the object goes past the right edge of the wrap area and so is repositioned to the left of the wrap area, then *On wrap* will trigger.

@@ -112,13 +112,13 @@ Now inside the tagged range, just the word "brown" is made bold. This also fragm
 
 ## Text properties
 
-**Text**
+**Text**  
 The text for the object to initially be showing.
 
-**Enable BBCode**
+**Enable BBCode**  
 Whether to enable the use of BBCode formatting in the text. See above for a list of allowed tags. If disabled, any BBCode tags will simply be displayed as plain text.
 
-**Font**
+**Font**  
 The font the text object uses to display its text. Click the button to the right of the font name to open a font picker dialog.
 
 > **Tip**  
@@ -126,158 +126,158 @@ The font the text object uses to display its text. Click the button to the right
 
  Remember local fonts may not be available on other devices - consider using a web font, as described in *Using web fonts* above.
 
-**Size**
+**Size**  
 The size of the text to display, in points (pt).
 
-**Line height**
+**Line height**  
 Amount to change the space between each line of text, in pixels. Use 0 for the default amount, -5 for 5 pixels shorter than default, 10 for 10 pixels taller than default, and so on.
 
-**Bold**
+**Bold**  
 Whether to use the **bold** variant of the font, if available.
 
-**Italic**
+**Italic**  
 Whether to use the *italic* variant of the font, if available.
 
-**Color**
+**Color**  
 Choose the color of the text object's text.
 
-**Horizontal alignment**
+**Horizontal alignment**  
 Choose whether the text displays left, center or right aligned within its bounding rectangle.
 
-**Vertical alignment**
+**Vertical alignment**  
 Choose whether the text displays top, center or bottom aligned within its bounding rectangle.
 
-**Wrapping**
+**Wrapping**  
 Choose how text wraps at the end of a line. *Word* will wrap entire words separated by spaces or hyphens. *Character* will wrap to the next line on any character, even punctuation. *CJK* works similarly to *Character*, but has special handling for Chinese, Japanese and Korean punctuation characters, intended to ensure punctuation wraps appropriately.
 
-**Text direction**
+**Text direction**  
 Set the direction of the text flow. The default is left-to-right (LTR). For some languages the right-to-left (RTL) direction is more appropriate, such as Arabic and Hebrew. The text direction is particularly significant when using BBcode formatting, as it affects the order of formatted fragments.
 
-**Icon set**
+**Icon set**  
 Choose a Sprite object to use for BBcode icon tags. Each animation frame of the Sprite object is treated as an individual icon. Icons can then be referred to by the animation frame index, or the animation frame *Tag* property. See the section *Using BBcode* above for more details.
 
-**Initially visibile**
+**Initially visibile**  
 Whether or not the object is shown (visible) or hidden (invisible) when the layout starts.
 
-**Origin**
+**Origin**  
 Choose the position of the origin of the object relative to its unrotated bounding rectangle.
 
-**Read aloud**
+**Read aloud**  
 Check to indicate to screen readers that the contents of this text object ought to be read aloud when it appears or changes. By default text objects are not read out by screen readers as they are rendered in to a canvas, which is essentially a large image and so not accessible to screen readers. Further, Text objects are not all automatically read aloud as this can provide a poor screen reader experience, such as constantly reading out a changing score instead of more helpful information. Checking this option for important text objects improves the accessibility of projects to ensure the contents of text objects can be understood by people who cannot necessarily read them visually. The text object does not need to be on-screen, so a dedicated text object for screen readers with this option checked can also be used. See also the [Speech Synthesis](speech-synthesis.md) plugin which can be used for similar purposes.
 
 ## Text conditions
 
 For conditions common to other objects, see [common conditions](common-features/common-conditions.md).
 
-**Compare text**
+**Compare text**  
 Test whether the text object is currently displaying a certain string of text. The comparison can be either case sensitive ("TEXT" is different to "text") or case insensitive ("TEXT" is considered the same as "text"). To test if the text object is not showing some text, invert the condition.
 
-**Has tag at position**
+**Has tag at position**  
 Test if there is text with a specific tag at the given position (case insensitive). For example if the text has the BBcode `Hello [tag=mytag]world[/tag]`, then testing if the tag "mytag" is at a given position will check if that position is over just the part of the text that says "world".
 
-**Is running typewriter text**
+**Is running typewriter text**  
 True while text is being written out using the *Typewriter text* action.
 
-**On typewriter text finished**
+**On typewriter text finished**  
 Triggered when text being written out using the *Typewriter text* action finishes writing out all the text.
 
 ## Text actions
 
 For actions common to other objects, see [common actions](common-features/common-actions.md).
 
-**Set font color**
+**Set font color**  
 Set the color of the text. Use an expression in the form `rgb(red, green, blue)`.
 
-**Set font face**
+**Set font face**  
 Change the font used to display the text. This must be the name of a web font imported to the project, or a local font that is pre-installed on the user's device.
 
-**Set font size**
+**Set font size**  
 Set the size of the text in points (pt).
 
-**Set horizontal alignment**
+**Set horizontal alignment**  
 Change the corresponding properties. See *Text properties* above for more information.
 
-**Set vertical alignment**
+**Set vertical alignment**  
 Change the corresponding properties. See *Text properties* above for more information.
 
-**Set line height**
+**Set line height**  
 Change the corresponding properties. See *Text properties* above for more information.
 
-**Set read aloud**
+**Set read aloud**  
 Change the corresponding properties. See *Text properties* above for more information.
 
-**Set text direction**
+**Set text direction**  
 Change the corresponding properties. See *Text properties* above for more information.
 
-**Set wrapping**
+**Set wrapping**  
 Change the corresponding properties. See *Text properties* above for more information.
 
-**Set resolution mode**
+**Set resolution mode**  
 By default Text objects use *Automatic* resolution mode, which means the resolution of the text adjusts according to the 2D display scale. This produces the best quality display, but only works with 2D display, and can also cause the text to constantly re-render when being smoothly scaled, which can sometimes have a significant performance overhead. *Fixed* resolution mode causes the text to render at a fixed resolution according to a provided scale factor, and ignore the display scale. This usually results in a reduced display quality but better performance.
 
-**Append text**
+**Append text**  
 Add some text to the end of the current text. For example, if the text object contains *Hello* and has *World* appended, the text object then contains *HelloWorld*.
 
-**Set text**
+**Set text**  
 Set the text the object is currently displaying. Use the **&** operator to combine text and numbers. For more information, see [expressions](../project-primitives/events/expressions.md).
 
-**Change icon set**
+**Change icon set**  
 Changes the *Icon set* property, replacing the Sprite used for BBcode icons. This can be used to change the set of icons displayed by the Text object. Note if the new Sprite object does not have the same number of animation frames, or the same animation frame tags, then some icons may disappear.
 
-**Typewriter text**
+**Typewriter text**  
 Set the text over time by starting with an empty string and gradually adding characters until the full text is written out, over a duration specified in seconds. Once the full text is written out, *On typewriter text finished* triggers. Note using *Set text* or *Append text* while text is being written out will cancel the effect.
 
 > **Tip**  
 > You can use a speed in characters per second instead of an overall time by using an expression like `len(Self.PlainText) / 10` for the time. In this case it will write out 10 characters per second regardless of the length of the string.
 
-**Finish typewriter**
+**Finish typewriter**  
 If text is being written out with the *Typewriter text* action, force it to finish immediately.
 
-**Update HTML**
+**Update HTML**  
 This action converts the contents of the Text object, including any icons, in to a string of HTML. This can then be displayed in the [HTML Element object](html-element.md). This action is *asynchronous*: it takes a moment complete, so you need to use it with the *Wait for previous actions to complete* system action before you can use the result in the *AsHTML* expression. See the [Text icons to HTML example](https://editor.construct.net/#open=text-icons-to-html) for a demonstration.
 
 ## Text expressions
 
 For expressions common to other objects, see [common expressions](common-features/common-expressions.md).
 
-**FaceName**
+**FaceName**  
 Return the corresponding object's properties. See *Text properties* above for more details.
 
-**FaceSize**
+**FaceSize**  
 Return the corresponding object's properties. See *Text properties* above for more details.
 
-**LineHeight**
+**LineHeight**  
 Return the corresponding object's properties. See *Text properties* above for more details.
 
-**Text**
+**Text**  
 Return a string containing the object's current text.
 
-**PlainText**
+**PlainText**  
 Return a string containing the object's current text, with any BBCode tags stripped out. For example if the text is `[b]Hello[/b]`, the *Text* expression will return that (with BBCode tags included), but the *PlainText* expression will return just `Hello`.
 
-**AsHTML**
+**AsHTML**  
 Returns a string of HTML code that represents the content of the Text object, including formatting and icons. This is only available after, and only updated by, the *Update HTML* action completing.
 
-**TagAtPosition(x, y)**
+**TagAtPosition(x, y)**  
 Look up the tag for a part of the text at a given position and return the tag if any, else return an empty string if no tag is specified. For example if the text has the BBcode `Hello [tag=mytag]world[/tag]`, then the tag at a position over the word "world" is "mytag", and the tag at a position over the word "Hello" is "" (an empty string).
 
-**TagCount(tag)**
+**TagCount(tag)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* above for more details.
 
-**TagX(tag, index)**
+**TagX(tag, index)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* above for more details.
 
-**TagY(tag, index)**
+**TagY(tag, index)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* above for more details.
 
-**TagWidth(tag, index)**
+**TagWidth(tag, index)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* above for more details.
 
-**TagHeight(tag, index)**
+**TagHeight(tag, index)**  
 Identify the size and position of all ranges of the text with a given tag. Note the count and the index actually refers to *fragments*, as a single tagged range may be broken up in to multiple pieces - see the section *Tagged range fragmentation* above for more details.
 
-**TextWidth**
+**TextWidth**  
 Return the size of the actual text content within the text object's rectangle.
 
-**TextHeight**
+**TextHeight**  
 Return the size of the actual text content within the text object's rectangle.

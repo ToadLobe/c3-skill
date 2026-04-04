@@ -35,59 +35,59 @@ When using JavaScript or TypeScript coding, the features of this behavior can be
 
 ## Fade properties
 
-**Fade in time**
+**Fade in time**  
 Time, in seconds, to fade in from invisible. If 0, the fade in is skipped.
 
-**Wait time**
+**Wait time**  
 Time, in seconds, to wait between fade in and fade out. If 0, the step is skipped.
 
-**Fade out time**
+**Fade out time**  
 Time, in seconds, to fade out to invisible. If 0, the fade out is skipped.
 
-**Destroy**
+**Destroy**  
 If enabled, the object is automatically destroyed after the fade out finishes. If disabled, the object is never destroyed by the behavior. Be sure to destroy objects yourself as necessary, as a build-up of invisible faded-out objects can cause the game to slow down.
 
-**Enabled**
+**Enabled**  
 If enabled, the object will begin fading as soon as it is created. Otherwise the fade will not run until you use the *Start* action.
 
-**Preview Paid plans only**
+**Preview Paid plans only**  
 Enable to run a preview of the fade effect directly in the Layout View.
 
 ## Fade conditions
 
-**On fade-in finished**
+**On fade-in finished**  
 Triggered when each stage of the fade finishes.
 
-**On wait finished**
+**On wait finished**  
 Triggered when each stage of the fade finishes.
 
-**On fade-out finished**
+**On fade-out finished**  
 Triggered when each stage of the fade finishes.
 
 ## Fade actions
 
-**Restart fade**
+**Restart fade**  
 Run the entire fade from the beginning again.
 
-**Set fade-in time**
+**Set fade-in time**  
 Set the corresponding properties described under *Fade properties*.
 
-**Set fade-out time**
+**Set fade-out time**  
 Set the corresponding properties described under *Fade properties*.
 
-**Set wait time**
+**Set wait time**  
 Set the corresponding properties described under *Fade properties*.
 
-**Start fade**
+**Start fade**  
 If the *Enabled* property is disabled, this will begin the fade.
 
 ## Fade expressions
 
-**FadeInTime**
+**FadeInTime**  
 Return the corresponding properties described under *Fade properties*.
 
-**FadeOutTime**
+**FadeOutTime**  
 Return the corresponding properties described under *Fade properties*.
 
-**WaitTime**
+**WaitTime**  
 Return the corresponding properties described under *Fade properties*.

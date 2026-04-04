@@ -27,95 +27,95 @@ When using JavaScript or TypeScript coding, the features of this behavior can be
 
 ## Tile movement properties
 
-**Grid width**
+**Grid width**  
 The size of the movement grid cells, in pixels. The object moves in increments of this size. Normally this matches the size of a corresponding tilemap.
 
-**Grid height**
+**Grid height**  
 The size of the movement grid cells, in pixels. The object moves in increments of this size. Normally this matches the size of a corresponding tilemap.
 
-**Grid offset X**
+**Grid offset X**  
 The offset of the movement grid, in pixels. This can be used to align with a tilemap that is not aligned with (0, 0) in the layout.
 
-**Grid offset Y**
+**Grid offset Y**  
 The offset of the movement grid, in pixels. This can be used to align with a tilemap that is not aligned with (0, 0) in the layout.
 
-**Speed X**
+**Speed X**  
 The speed of the movement on each axis, in pixels per second.
 
-**Speed Y**
+**Speed Y**  
 The speed of the movement on each axis, in pixels per second.
 
-**Enabled**
+**Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, it can be enabled at runtime using the *Set enabled* action.
 
-**Default controls**
+**Default controls**  
 If enabled, movement is controlled by the arrow keys on the keyboard. Disable to set up custom controls using the *Simulate control* action. For more information see the [behavior reference summary](../behavior-reference.md).
 
-**Isometric**
+**Isometric**  
 Check to enable an isometric grid movement, along diagonals. In this mode the "up" direction is towards the top-right. The default is unchecked, using a cartesian grid with horizontal and vertical movement.
 
 ## Tile movement conditions
 
-**Can move to**
+**Can move to**  
 Test if the object can move into a grid cell, given by its grid column and row. This is true if the cell is clear of any obstacles.
 
-**Can move in direction**
+**Can move in direction**  
 Test if the object can move N cells in a given direction. Unlike the **Can move to** condition this checks for obstacles between the object and the destination.
 
-**Is enabled**
+**Is enabled**  
 Test if the behavior is currently enabled.
 
-**Is moving**
+**Is moving**  
 Test if the behavior is currently moving in to a cell.
 
-**Is moving in direction**
+**Is moving in direction**  
 Test if the behavior is currently moving left, right, down or up. This is useful for setting the corresponding animation.
 
 ## Tile movement actions
 
-**Set default controls**
+**Set default controls**  
 Enable or disable the *Default controls* property (see above for more details).
 
-**Set enabled**
+**Set enabled**  
 Enable or disable the movement. If disabled, the movement no longer has any effect on the object.
 
-**Set grid dimensions**
+**Set grid dimensions**  
 Specify new values for the *Grid width*, *Grid height*, *Grid offset X* and *Grid offset Y* properties.
 
-**Set grid position**
+**Set grid position**  
 Set the object to a cell in the grid, given by its grid column and row. The *Movement* option allows the object to either be set to that position instantly, or animate over for a smooth movement over time.
 
-**Set ignoring input**
+**Set ignoring input**  
 Set whether input is being ignored. If input is ignored, pressing any of the control keys has no effect. However, unlike disabling the behavior, the object can continue to move.
 
-**Set speed**
+**Set speed**  
 Specify new values for the *Speed X* and *Speed Y* properties.
 
-**Simulate control**
+**Simulate control**  
 Simulate one of the movement controls being held down. Useful when *Default controls* is disabled. See the [behavior reference summary](../behavior-reference.md) for more information.
 
 ## Tile movement expressions
 
-**GridTargetX**
+**GridTargetX**  
 Return the grid cell the object is currently moving towards, by its column and row.
 
-**GridTargetY**
+**GridTargetY**  
 Return the grid cell the object is currently moving towards, by its column and row.
 
-**GridX**
+**GridX**  
 Return the current grid cell the object is in by its column and row.
 
-**GridY**
+**GridY**  
 Return the current grid cell the object is in by its column and row.
 
-**SpeedX**
+**SpeedX**  
 Return the current speed of the object on each axis, in pixels per second.
 
-**SpeedY**
+**SpeedY**  
 Return the current speed of the object on each axis, in pixels per second.
 
-**TargetX**
+**TargetX**  
 Return the layout co-ordinates of the grid cell the object is currently moving towards, by its column and row.
 
-**TargetY**
+**TargetY**  
 Return the layout co-ordinates of the grid cell the object is currently moving towards, by its column and row.

@@ -42,16 +42,16 @@ You can also import SVG files in the [Animations Editor](../interface/animations
 
 ## SVG Picture properties
 
-**SVG file**
+**SVG file**  
 Choose the SVG file to display. The SVG file must have been imported as a project file in the *Files* folder.
 
-**Image**
+**Image**  
 When an SVG file is selected, the *View* link provides a shortcut to preview or edit it. This is the same view you get when double-clicking the SVG file in the Project Bar.
 
-**Initially visible**
+**Initially visible**  
 Choose whether the object is shown (visible) or hidden (invisible) when the layout starts.
 
-**Origin**
+**Origin**  
 Choose the position of the origin of the object relative to its unrotated bounding rectangle.
 
 ## SVG Picture conditions
@@ -60,10 +60,10 @@ SVG Picture does not have any of its own conditions. For conditions in common to
 
 ## SVG Picture actions
 
-**Set image**
+**Set image**  
 Set the SVG file being displayed by the object, either by a dropdown list or by an expression of the filename.
 
-**Set image (by name)**
+**Set image (by name)**  
 Set the SVG file being displayed by the object, either by a dropdown list or by an expression of the filename.
 
 ## SVG Picture conditions

@@ -64,119 +64,119 @@ If you have a complex existing project and you decide you want to change how dat
 
 ## Local Storage properties
 
-**In-memory only**
+**In-memory only**  
 Check to enable in-memory only storage mode. In this mode data will not be persisted if the page or app is closed, but can be stored elsewhere instead - see *Redirecting storage* above for more details.
 
 ## Local Storage conditions
 
-**On any item get**
+**On any item get**  
 Triggered after any *Get item* action completes.
 
-**On any item removed**
+**On any item removed**  
 Triggered after any *Remove item* action completes.
 
-**On any item set**
+**On any item set**  
 Triggered after any *Set item* action completes.
 
-**On item exists**
+**On item exists**  
 Triggered after the *Check item exists* action completes if the key checked does indeed exist. In this trigger the *ItemValue* expression is also set to the value of this key, so there is no need to use another *Get item* action to read it.
 
 > **Tip**  
 > Note *ItemValue* is not set if binary data was stored.
 
-**On item get**
+**On item get**  
 Triggered after a *Get item* action completes for a given key. The *ItemValue* expression is set to the value of the key, except for when reading binary data.
 
-**On item missing**
+**On item missing**  
 Triggered after the *Check item exists* action completes if the key checked does not exist.
 
-**On item removed**
+**On item removed**  
 Triggered after the *Remove item* action completes for a given key.
 
-**On item set**
+**On item set**  
 Triggered after the *Set item* action completes for a given key. This indicates the data is now in storage.
 
-**Compare key**
+**Compare key**  
 Compare the current value of the *Key* expression, which is the name of the current key in a trigger. This can be useful in the *On any item...* triggers.
 
-**Compare value**
+**Compare value**  
 Compare the current value of the *ItemValue* expression, which is set to the item value when getting an item or in *On item exists*.
 
-**Is persistent**
+**Is persistent**  
 True if the browser has granted the current domain persistent storage permission. See the *Request persistent storage* action for more details.
 
-**On all key names loaded**
+**On all key names loaded**  
 Triggered after the *Get all key names* action completes. In this trigger the *KeyCount* and *KeyAt* expressions give the list of all the key names.
 
-**On error**
+**On error**  
 Triggered at any time while using Local Storage if an error occurs, such as if a write failed, or the maximum storage quota was exceeded. The *ErrorMessage* expression is set to the error message if available.
 
-**On storage cleared**
+**On storage cleared**  
 Triggered after the *Clear storage* action completes and storage is now empty.
 
-**Is processing gets**
+**Is processing gets**  
 True if any *Get item* actions are still processing, i.e. any *On item get* trigger is yet to fire for a *Get item* action.
 
-**Is processing sets**
+**Is processing sets**  
 True if any *Set item* actions are still processing, i.e. any *On item set* trigger is yet to fire for a *Set item* action.
 
-**On all gets complete**
+**On all gets complete**  
 Triggered when all outstanding *Get item* actions are completed, i.e. when *Is processing gets* first becomes false. In other words if 10 *Get item* actions are all used at the same time, *On all gets complete* triggers when all 10 items have been read and fired their *On item get* triggers.
 
-**On all sets complete**
+**On all sets complete**  
 Triggered when all outstanding *Set item* actions are completed, i.e. when *Is processing sets* first becomes false. In other words if 10 *Set item* actions are all used at the same time, *On all sets complete* triggers when all 10 items have been written and fired their *On item set* triggers.
 
 ## Local Storage actions
 
-**Check item exists**
+**Check item exists**  
 Check if a key exists in storage. This triggers either *On item exists* if the key exists, or *On item missing* if the key does not exist. If the item exists, the *ItemValue* expression is set to the key value in the *On item exists* trigger, so there is no need to use a subsequent *Get item* action to read the value.
 
 > **Tip**  
 > Note *ItemValue* is not set if binary data was stored.
 
-**Get item**
+**Get item**  
 Read the value of a key in storage. This triggers *On item get* when the value has been read. When reading binary data, the data will be written to the chosen [Binary Data](binary-data.md) object; otherwise the *ItemValue* expression is set to the value of the key.
 
-**Get binary item**
+**Get binary item**  
 Read the value of a key in storage. This triggers *On item get* when the value has been read. When reading binary data, the data will be written to the chosen [Binary Data](binary-data.md) object; otherwise the *ItemValue* expression is set to the value of the key.
 
-**Remove item**
+**Remove item**  
 Remove (delete) a key from storage. This triggers *On item removed* when the key has been removed.
 
-**Set item**
+**Set item**  
 Set the value of a key in storage. This triggers *On item set* when the value has been written. When setting binary data, the contents of a [Binary Data](binary-data.md) object are written; otherwise the text or number provided is used.
 
-**Set binary item**
+**Set binary item**  
 Set the value of a key in storage. This triggers *On item set* when the value has been written. When setting binary data, the contents of a [Binary Data](binary-data.md) object are written; otherwise the text or number provided is used.
 
-**Clear storage**
+**Clear storage**  
 Remove (delete) all items from storage, reverting it back to the empty state. This triggers *On storage cleared* when completed.
 
-**Get all key names**
+**Get all key names**  
 Retrieve a list of all the key names that currently exist in storage. This triggers *On all key names loaded* when the list has been loaded, where the *KeyCount* and *KeyAt* expressions can be used to access the list.
 
-**Request persistent storage**
+**Request persistent storage**  
 Request that storage be made persistent for the current domain. This typically only applies to web browsers, as all other export options already use persistent storage. In the context of a web browser, all storage is preserved on a "best effort" basis, but may be erased in various situations such as if too much storage space is being used, if the site has not been visited for too long, and so on. If persistent storage permission is granted, then the browser will avoid automatically deleting the storage wherever possible; it may also avoid deleting the storage even if the user chooses to clear storage in browser settings, unless they specifically acknowledge they want to delete the site's data. Requesting persistent storage may show a visible prompt to the user asking them to accept permission, and this action may only be allowed to be used in a user input trigger (such as mouse click or touch). The action is asynchronous, meaning it can be used with *Wait for previous actions to complete*, after which the permission will have been granted or refused. The *Is persistent* condition reflects the current persistent permission state.
 
-**Load memory from JSON**
+**Load memory from JSON**  
 Only applicable when the property *In-memory only* is enabled. Load the entire state of the storage - including all keys and values - from a string of JSON data previously returned by the *MemoryStorageAsJSON* expression. For more details on usage, see *Redirecting storage* above.
 
 ## Local Storage expressions
 
-**ItemValue**
+**ItemValue**  
 The value for a key that has been read or written in a Local Storage trigger, such as *On item get* or *On item exists*. This can be either a string or a number. This returns 0 if used outside of a Local Storage trigger, or if binary data was stored instead of text or a number.
 
-**Key**
+**Key**  
 The name of the key that was modified in any Local Storage trigger, such as *On item get*, *On item set* or *On any item set*. This returns an empty string if used outside of a Local Storage trigger.
 
-**ErrorMessage**
+**ErrorMessage**  
 In *On error*, the text of the error message if any is available.
 
-**KeyAt(index)**
+**KeyAt(index)**  
 In *On all key names loaded*, the name of the key at the given zero-based index in the list.
 
-**KeyCount**
+**KeyCount**  
 In *On all key names loaded*, the number of key names in the list.
 
-**MemoryStorageAsJSON**
+**MemoryStorageAsJSON**  
 Only applicable when the property *In-memory only* is enabled. Returns the entire state of the storage - including all keys and values - as a string of JSON data. This can then be loaded again later with the *Load memory from JSON* action. For more details on usage, see *Redirecting storage* above.

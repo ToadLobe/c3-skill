@@ -21,20 +21,20 @@ To scroll, the size of the [layout](../project-primitives/layouts.md) must be bi
 
 ## Scroll To properties
 
-**Enabled**
+**Enabled**  
 Whether the behavior is initially enabled or disabled. If disabled, it can be enabled at runtime using the *Set enabled* action.
 
 ## Scroll To conditions
 
-**Is enabled**
+**Is enabled**  
 Test if the behavior is currently enabled. When disabled it will have no effect on the object.
 
 ## Scroll To actions
 
-**Set enabled**
+**Set enabled**  
 Enable or disable the behavior. When disabled, the scrolling will not be affected.
 
-**Shake**
+**Shake**  
 Shake the screen for a duration of time, by randomly offsetting the scroll position every tick. The *Magnitude* is the maximum distance in pixels from the scrolled position the view will be offset. The *Duration* is how long the shake will last in seconds. In *Reducing magnitude* mode, the *Magnitude* will gradually reduce to zero by the end of the shake duration. In *Constant magnitude* mode, the *Magnitude* will stay the same throughout the full duration of the shake, ending abruptly.
 
 ## Scroll To expressions

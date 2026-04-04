@@ -72,119 +72,119 @@ The *For each* looping condition also sets the current path to the full path to 
 
 ## JSON conditions
 
-**Compare type**
+**Compare type**  
 Test the type of a value at a given path. This can also detect the special `null` value that cannot be returned in a Construct expression, as well as identifying arrays and objects.
 
-**Compare value**
+**Compare value**  
 Compare the value at a given path. This can only be used with number or string values.
 
-**For each**
+**For each**  
 Repeats once for each key at a path in the JSON data. This can be used with either object or array types; in the case of arrays, the keys are the array indices (e.g. 0, 1, 2...) represented as a string. Inside the loop, the current path is set to the current key being iterated, so relative paths can be used to retrieve data from the current key. The *CurrentKey*, *CurrentValue* and *CurrentType* expressions return information about the current key-value pair being iterated.
 
-**Has key**
+**Has key**  
 Determine if a key exists at a given path.
 
-**Is boolean set**
+**Is boolean set**  
 Determine if a given path contains a boolean "true" value.
 
-**On parse error**
+**On parse error**  
 Triggered after a *Parse* action if there was invalid syntax in the JSON string resulting in an error trying to parse it.
 
-**On parse success**
+**On parse success**  
 Triggered after a *Parse* action if the JSON syntax was valid and parsing completed successfully.
 
 ## JSON actions
 
 Note that when setting values, nonexistent keys are created as necessary. For example if the JSON file is empty but you set the number 5 at the path `foo.bar`, the `foo` and `bar` keys are automatically created, resulting in the data `{ "foo": { "bar": 5 } }`.
 
-**Delete key**
+**Delete key**  
 Delete the key at a path so it is no longer present in the JSON data.
 
 > **Tip**  
 > Note this action cannot remove elements from an array. Use the array modifying actions instead.
 
-**Parse**
+**Parse**  
 Parse a string of JSON data and load it in to the object so it can be accessed. If the data is valid and is parsed successfully, *On parse success* is triggered; otherwise if the data is invalid and parsing fails, *On parse error* is triggered.
 
-**Pop value**
+**Pop value**  
 Remove an element at the start or end of an array located at a path. If the path does not specify an array, this does nothing.
 
-**Push value**
+**Push value**  
 Add an element with the given value at the start or end of an array located at a path. If the path does not specify an array, this does nothing.
 
-**Insert value**
+**Insert value**  
 Inserts an element with the given value into an array located at a path, increasing the size of the array by 1. The element is inserted at a specified index, if any elements existed at or after that index they pushed forward by 1.
 
-**Remove values**
+**Remove values**  
 Removes a specified number of elements from an array located at a path, reducing the size of the array. Elements are removed starting at a specified index, if there are less elements after the array than requested to be removed then only the available number will be removed.
 
-**Set array**
+**Set array**  
 Create an array with a given number of elements at a path. If an array already exists at the given path, it is resized to the given number of elements. In both cases, any new elements are initialised to 0.
 
-**Set boolean**
+**Set boolean**  
 Set a true or false value at a path.
 
-**Set JSON**
+**Set JSON**  
 Parse a string of JSON data, and set the value at a path to the resulting JSON. This is useful to merge data from different sources in to the same JSON object.
 
-**Set null**
+**Set null**  
 Set the special `null` value at a path.
 
-**Set object**
+**Set object**  
 Set an empty object at a path. If there is already an object at the given path, it is replaced with an empty object.
 
-**Set path**
+**Set path**  
 Set the current path. This allows relative keys to continue from this path.
 
-**Set value**
+**Set value**  
 Set a number or string value at a path.
 
-**Toggle boolean**
+**Toggle boolean**  
 Toggle a boolean value at a path. If the value at the path is not a Boolean, do nothing.
 
-**Add to**
+**Add to**  
 Add a value to the numerical value at a path. If the value at the path is not numerical, do nothing.
 
-**Subtract from**
+**Subtract from**  
 Subtract a value from the numerical value at a path. If the value at the path is not numerical, do nothing.
 
 ## JSON expressions
 
-**ArraySize**
+**ArraySize**  
 Return the length of an array at a path. If there is not an array at the given path, returns -1.
 
-**Back**
+**Back**  
 Return the element at the start (front) or end (back) of an array at a given path. If there is not an array at the given path, returns -1.
 
-**Front**
+**Front**  
 Return the element at the start (front) or end (back) of an array at a given path. If there is not an array at the given path, returns -1.
 
-**CurrentKey**
+**CurrentKey**  
 In a *For each* loop, a string of the current key name. If an array is being looped, the current key is a string of the current index, e.g. "0", "1"...
 
-**CurrentType**
+**CurrentType**  
 In a *For each* loop, a string representing the type of the current value, which can be one of `"null"`, `"array"`, `"object"`, `"boolean"`, `"number"` or `"string"`.
 
-**CurrentValue**
+**CurrentValue**  
 In a *For each* loop, the current value. This only returns numbers or strings, or booleans as a number (0 for false and 1 for true). All other types will return 0.
 
-**Get**
+**Get**  
 Get the value at a given path. The path can be relative to the current path or the current key in a *For each* loop. This only returns numbers or strings, or booleans as a number (0 for false and 1 for true). All other types will return 0.
 
-**Type**
+**Type**  
 Get a string representing the type of a value at a given path, which can be one of `"null"`, `"array"`, `"object"`, `"boolean"`, `"number"` or `"string"`. The path can be relative to the current path or the current key in a *For each* loop.
 
-**Path**
+**Path**  
 Return the current path.
 
-**ToBeautifiedString**
+**ToBeautifiedString**  
 Return the current JSON data either as a formatted string with line breaks and indentation ("beautified"), or as a minimal string excluding any line breaks or indentation ("compact"). Beautified strings are easier to read, but compact strings are more efficient for storing, sending over the Internet, and loading. Both beautified and compact strings always represent identical data, and there are a range of third-party tools available that can convert between beautified and compact representation.
 
-**ToCompactString**
+**ToCompactString**  
 Return the current JSON data either as a formatted string with line breaks and indentation ("beautified"), or as a minimal string excluding any line breaks or indentation ("compact"). Beautified strings are easier to read, but compact strings are more efficient for storing, sending over the Internet, and loading. Both beautified and compact strings always represent identical data, and there are a range of third-party tools available that can convert between beautified and compact representation.
 
-**GetAsBeautifiedString**
+**GetAsBeautifiedString**  
 Return the JSON data at a specified location either as a formatted string with line breaks and indentation ("beautified"), or as a minimal string excluding any line breaks or indentation ("compact"). These expressions are conceptually similar to "ToBeautifiedString" and "ToCompactString" respectively, but for a specific part of the current data instead of everything. In that way they are the opposite half of the "Set JSON" action, which allow you to set a value from a JSON string at a given location.
 
-**GetAsCompactString**
+**GetAsCompactString**  
 Return the JSON data at a specified location either as a formatted string with line breaks and indentation ("beautified"), or as a minimal string excluding any line breaks or indentation ("compact"). These expressions are conceptually similar to "ToBeautifiedString" and "ToCompactString" respectively, but for a specific part of the current data instead of everything. In that way they are the opposite half of the "Set JSON" action, which allow you to set a value from a JSON string at a given location.

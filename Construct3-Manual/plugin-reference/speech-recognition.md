@@ -40,31 +40,31 @@ To use on-device speech recognition:
 
 ## Speech recognition conditions
 
-**Is recognising speech**
+**Is recognising speech**  
 True if a speech recognition request has been approved, and speech input through a microphone is actively being recognised.
 
-**On end**
+**On end**  
 Triggered after the *Stop speech recognition* action, or after the user stops speaking in *Single phrase* mode speech recognition.
 
-**On error**
+**On error**  
 Triggered if there is an error approving speech recognition, or during speech recognition. The *SpeechError* expression is set to a string which describes the type of problem, e.g. "not-allowed" if permission was declined.
 
-**On result**
+**On result**  
 Triggered during active speech recognition when the interim or final transcript has changed. Use either the *FinalTranscript* and/or the *InterimTranscript* expressions to get the updated result.
 
-**On start**
+**On start**  
 Triggered after *Request speech recognition* when the user has also approved any prompt for permission.
 
-**Supports speech recognition**
+**Supports speech recognition**  
 True if the current browser or platform supports speech recognition. If false, none of the speech recognition features of the object will work.
 
-**On install on-device recognition result**
+**On install on-device recognition result**  
 Triggered after the *Install on-device recognition* action completes, depending of the result of the installation.
 
-**Supports on-device recognition**
+**Supports on-device recognition**  
 Test if the current browser/platform supports on-device speech recognition. See *On-device speech recognition* above for more details.
 
-**On check language available result**
+**On check language available result**  
 Triggered after the *Check language available* action depending on the result of the check. Note this takes in to account the *Process locally* option of the action. The results can be one of the following:
 
 - *Available:* the language is available for speech recognition.
@@ -76,7 +76,7 @@ Triggered after the *Check language available* action depending on the result of
 
 ## Speech recognition actions
 
-**Request speech recognition**
+**Request speech recognition**  
 If *Supports speech recognition* is true, initiates speech recognition. Usually a permission prompt will appear asking the user if they want to allow the page to use their microphone input. The user must approve the permission prompt before *On start* triggers. If there is a problem or permission is denied, *On error* is triggered.
 
 *Language* specifies the spoken language to recognize, as an IETF language tag. Use a tag like *en* for English, *en-US* for US English, *en-GB* for British English, and so on.
@@ -87,22 +87,22 @@ Check *Process locally* to perform on-device speech recognition. Support for the
 
 *Results* can be *Interim* to allow interim (unconfirmed) results which can change, accessed by the *InterimTranscript* expression; or *Final* to only allow confirmed final results of speech recognition to be returned which will not change, accessed by the *FinalTranscript* expression.
 
-**Stop speech recognition**
+**Stop speech recognition**  
 If speech recognition is currently active, ends the speech recognition. *On end* will trigger.
 
-**Check language available**
+**Check language available**  
 Check whether a given language is available for speech recognition. Enable *Process locally* to check whether the language is available for on-device speech recognition. After using this action, *On check language available result* will trigger according to the availability.
 
-**Install on-device recognition**
+**Install on-device recognition**  
 When *Supports on-device recognition* is true, installs on-device speech recognition for a specific language. This may require a substantial download which will happen in the background. *On install on-device recognition result* will trigger after a while with the result of the installation - note this may take a while, especially on slow connections.
 
 ## Speech recognition expressions
 
-**FinalTranscript**
+**FinalTranscript**  
 If speech recognition is active, returns the final transcript of confirmed results. This does not change, other than to add newly spoken words which have also been confirmed.
 
-**InterimTranscript**
+**InterimTranscript**  
 If speech recognition is active, returns the interim transcript of results. The *Request speech recognition* action must have specified *Interim* for the *Results* parameter. The text of this expression can change, as the speech recognition engine uses the sound input in real-time to refine the results and correct any misinterpreted words. Once the user has spoken far enough for the speech recognition engine to be confident of a final result, the word will disappear from *InterimTranscript* and be appended to *FinalTranscript*.
 
-**SpeechError**
+**SpeechError**  
 In *On speech recognition error*, contains a string which identifies the type of error. Possible values are: `"no-speech"`, `"aborted"`, `"audio-capture"`, `"network"`, `"not-allowed"`, `"service-not-allowed"`, `"bad-grammar"`, or `"language-not-supported"`. The most common errors are `"not-allowed"` if the user declined the permission prompt; `"audio-capture"` if no microphone is present; or `"network"` if the speech recognition is implemented by a remote server over the Internet which is currently unavailable.
