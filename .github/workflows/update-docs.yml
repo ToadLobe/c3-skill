@@ -27,8 +27,9 @@ jobs:
           CURRENT=$(node -e "
             const fs = require('fs');
             try {
-              const v = JSON.parse(fs.readFileSync('VERSION', 'utf8'));
-              process.stdout.write(v.savedWithRelease || 'unknown');
+              const m = fs.readFileSync('Construct3-Manual/index.md', 'utf8');
+              const v = m.match(/^release:\s*(.+)$/m);
+              process.stdout.write(v ? 'r' + v[1].trim() : 'unknown');
             } catch { process.stdout.write('unknown'); }
           ")
           LATEST=$(node -e "

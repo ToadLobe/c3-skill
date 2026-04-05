@@ -747,22 +747,6 @@ async function main() {
 
   await browser.close();
 
-  // Save VERSION file
-  const totalPages = Object.values(results).reduce((sum, s) => sum + s.completedUrls.length, 0);
-  const totalFailed = Object.values(results).reduce((sum, s) => sum + s.failedUrls.length, 0);
-  const versionInfo = {
-    savedWithRelease: savedWithRelease,
-    scrapeDate: new Date().toISOString(),
-    targets: {},
-  };
-  for (const [key, state] of Object.entries(results)) {
-    versionInfo.targets[key] = {
-      totalPages: state.completedUrls.length,
-      failedPages: state.failedUrls.length,
-    };
-  }
-  fs.writeFileSync(path.join(REPO_ROOT, 'VERSION'), JSON.stringify(versionInfo, null, 2));
-
   // Final summary
   console.log('\n' + '='.repeat(60));
   console.log(`Construct 3 ${savedWithRelease} | ${new Date().toISOString().split('T')[0]}`);
