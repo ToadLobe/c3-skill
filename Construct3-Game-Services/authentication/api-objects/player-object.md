@@ -28,10 +28,10 @@ release: 476.3
 
 ## Object Properties
 
-**id** [guid](../../data-types.md#internalH1Link1)  
+**id** [`guid`](../../data-types.md#internalH1Link1)  
 A unique ID for this player.
 
-**created** [datetime](../../data-types.md#internalH1Link0)  
+**created** [`datetime`](../../data-types.md#internalH1Link0)  
 The date and time this player was first registered in the game.
 
 **playerName** `string`  

@@ -52,13 +52,13 @@ This object is only returned for some API end points that require your games sec
 
 ## Object Properties
 
-**id** [guid](../../data-types.md#internalH1Link1)  
+**id** [`guid`](../../data-types.md#internalH1Link1)  
 A unique ID for this player.
 
 **playerName** `string`  
 The publicly facing player name for this player.
 
-**created** [datetime](../../data-types.md#internalH1Link0)  
+**created** [`datetime`](../../data-types.md#internalH1Link0)  
 The date and time this player was first registered in the game.
 
 **consecutiveDailySignIns** `int32`  
@@ -109,8 +109,8 @@ The average rating this player casts expressed as a percentage 0-100.
 **lastActive** [datetime?](../../data-types.md#internalH1Link0)  
 The date and time UTC this player last interacted with these services.
 
-**emailVerified** [bool](../../data-types.md#internalH1Link4)  
+**emailVerified** [`bool`](../../data-types.md#internalH1Link4)  
 True if this player has provided an email address that they have verified via a confirmation email.
 
-**preventAllEmails** [bool](../../data-types.md#internalH1Link4)  
+**preventAllEmails** [`bool`](../../data-types.md#internalH1Link4)  
 True if all emails to this player will be prevented from being sent.  Can only be adjusted by editing the player directly via your CGS account.

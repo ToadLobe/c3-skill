@@ -36,19 +36,19 @@ This object can be rated by players.  Read about [how ratings work](../../rating
 
 ## Object Properties
 
-**id** [guid](../../data-types.md#internalH1Link1)  
+**id** [`guid`](../../data-types.md#internalH1Link1)  
 A unique record ID for this cloud save blob.
 
 **key** `string`  
 A unique key for this cloud save.
 
-**bucket** [Bucket](../../cloud-save/api-objects/game-buckets.md)  
+**bucket** [`Bucket`](../../cloud-save/api-objects/game-buckets.md)  
 If cloud save belongs in a [game bucket](../../cloud-save/api-objects/game-buckets.md), the game bucket object will be shown here.
 
-**player** [Player](../../authentication/api-objects/player-object.md)  
+**player** [`Player`](../../authentication/api-objects/player-object.md)  
 If cloud save was created by a player, the associated player object will be shown here.
 
-**created** [datetime](../../data-types.md#internalH1Link0)  
+**created** [`datetime`](../../data-types.md#internalH1Link0)  
 The date this cloud save was originally created.
 
 **sizeBytes** `int32`  
@@ -57,7 +57,7 @@ The size in bytes of the cloud save blob.
 **downloadURL** `string`  
 The URL to download the cloud save blob from.
 
-**ratingStatus** [RatingStatus](../../ratings/api-objects/rating-status-object.md)  
+**ratingStatus** [`RatingStatus`](../../ratings/api-objects/rating-status-object.md)  
 The [rating status](../../ratings/api-objects/rating-status-object.md) of this object.
 
 **pictures** Array<[Picture](../../common-objects/picture-object.md)>

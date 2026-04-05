@@ -43,8 +43,8 @@ A unique ID for this tier.
 **name** `string`  
 The name of the tier that can be shown to players.
 
-**originalLanguage** [Language](../../common-objects/language.md)  
+**originalLanguage** [`Language`](../../common-objects/language.md)  
 The language the tier name was written in.
 
-**responseLanguage** [Language](../../common-objects/language.md)  
+**responseLanguage** [`Language`](../../common-objects/language.md)  
 The language the tier name is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

@@ -29,13 +29,13 @@ This object represents a single rating for a rateable object, or for a specific 
 
 ## Object Properties
 
-**value** [uint8](../../data-types.md#internalH1Link2)  
+**value** [`uint8`](../../data-types.md#internalH1Link2)  
 The value of this rating.
 
-**maxRating** [uint8](../../data-types.md#internalH1Link2)  
+**maxRating** [`uint8`](../../data-types.md#internalH1Link2)  
 The maximum permitted rating.
 
-**date** [datetime](../../data-types.md#internalH1Link0)  
+**date** [`datetime`](../../data-types.md#internalH1Link0)  
 The date this rating was cast.
 
 **formattedDate** `string`  

@@ -35,16 +35,16 @@ A Game Bucket is a container in your game for Cloud Save Blobs.  Each bucket has
 
 ## Object Properties
 
-**id** [guid](../../data-types.md#internalH1Link1)  
+**id** [`guid`](../../data-types.md#internalH1Link1)  
 A unique record ID for this game bucket.
 
 **accessMode** `string`  
 The access mode of this bucket. Will be on of `Private`, `PublicRead` or `PublicReadWrite`.
 
-**allowRatings** [bool](../../data-types.md#internalH1Link4)  
+**allowRatings** [`bool`](../../data-types.md#internalH1Link4)  
 Are cloud saves in this bucket rateable? Even if this value is true, cloud saves are only rateable if the accessMode is not private.
 
-**created** [datetime](../../data-types.md#internalH1Link0)  
+**created** [`datetime`](../../data-types.md#internalH1Link0)  
 The date and time this game bucket was created.
 
 **maxBlobs** `int32?`  

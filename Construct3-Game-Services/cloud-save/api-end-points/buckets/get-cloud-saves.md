@@ -45,10 +45,10 @@ Your games [secret API key](../../../games/api-keys.md).
 
  ## Request Parameters
 
-**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*  
+**gameID** [`guid`](../../../data-types.md#internalH1Link1) *Required*  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**bucketID** [guid](../../../data-types.md#internalH1Link1) *Required*  
+**bucketID** [`guid`](../../../data-types.md#internalH1Link1) *Required*  
 The ID of the bucket you wish to fetch cloud saves for.
 
 **name** `string`  
@@ -78,7 +78,7 @@ How many cloud save blobs you wish to return on each page of results.  Cannot be
 **page** `int32`  
 The page of results you are requesting.  The first page is always `1`.  If this value is not specified the first page will be returned.
 
-**requestedLanguage** [Language](../../../common-objects/language.md)  
+**requestedLanguage** [`Language`](../../../common-objects/language.md)  
 Optionally specify a [language](../../../languages.md) for returning translatable properties into this language.  If not specified, your games default language will be used.
 
 **culture** `string`  
@@ -102,10 +102,10 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)  
+**success** [`bool`](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**pagination** [Pagination](../../../common-objects/pagination-object.md)  
+**pagination** [`Pagination`](../../../common-objects/pagination-object.md)  
 Pagination object to assist with browsing through other pages of cloud save blobs.
 
 **blobs** Array<[Blob](../../../cloud-save/api-objects/blob.md)>
@@ -129,7 +129,7 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)  
+**success** [`bool`](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
 **errorMessage** `string`  
@@ -138,5 +138,5 @@ An error message with more detailed information on why the request failed.
 **helpURL** `url (string)`  
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types.md#internalH1Link4)  
+**shouldRetry** [`bool`](../../../data-types.md#internalH1Link4)  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

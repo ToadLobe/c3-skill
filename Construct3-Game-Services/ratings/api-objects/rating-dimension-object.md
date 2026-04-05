@@ -46,11 +46,11 @@ The title for this dimension.
 **description** `string`  
 A description for this dimension.
 
-**maxRating** [uint8](../../data-types.md#internalH1Link2)  
+**maxRating** [`uint8`](../../data-types.md#internalH1Link2)  
 The maximum value that a player can give for this dimension.  The minimum permitted rating value is always 0.  Set this value to 1 for boolean ratings (for example, "Would you recommend this?  Yes or no.").  The maximum permitted value is 255.
 
-**originalLanguage** [Language](../../common-objects/language.md)  
+**originalLanguage** [`Language`](../../common-objects/language.md)  
 The language the title and description are written in.
 
-**responseLanguage** [Language](../../common-objects/language.md)  
+**responseLanguage** [`Language`](../../common-objects/language.md)  
 The language this dimension is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

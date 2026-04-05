@@ -43,12 +43,12 @@ The [session key](../../../authentication/api-objects/session-object.md) of the 
 **secret** `string` *Required*  
 Your games [secret API key](../../../games/api-keys.md).
 
-**playerID** [guid](../../../data-types.md#internalH1Link1) *Required*  
+**playerID** [`guid`](../../../data-types.md#internalH1Link1) *Required*  
 The player ID you wish to make this request against.
 
  ## Request Parameters
 
-**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*  
+**gameID** [`guid`](../../../data-types.md#internalH1Link1) *Required*  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
 **culture** `string`  
@@ -72,7 +72,7 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)  
+**success** [`bool`](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
 **xp** `int64`  
@@ -81,10 +81,10 @@ This players current XP.
 **formattedXP** `string`  
 This players current XP formatted to the requested formatting culture, formatted to the specified [requested culture](../../../culture.md).
 
-**rank** [XPRank](../../../xp/api-objects/rank-object.md)  
+**rank** [`XPRank`](../../../xp/api-objects/rank-object.md)  
 This players current XP rank if one exists.
 
-**nextRank** [XPRank](../../../xp/api-objects/rank-object.md)  
+**nextRank** [`XPRank`](../../../xp/api-objects/rank-object.md)  
 The next rank this player will unlock.
 
 **formattingCulture** `string`  
@@ -108,7 +108,7 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)  
+**success** [`bool`](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
 **errorMessage** `string`  
@@ -117,5 +117,5 @@ An error message with more detailed information on why the request failed.
 **helpURL** `url (string)`  
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types.md#internalH1Link4)  
+**shouldRetry** [`bool`](../../../data-types.md#internalH1Link4)  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

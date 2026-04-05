@@ -42,7 +42,7 @@ This object represents an XP rank.  Ranks are achieved when the player reaches t
 
 ## Object Properties
 
-**id** [guid](../../data-types.md#internalH1Link1)  
+**id** [`guid`](../../data-types.md#internalH1Link1)  
 A unique ID for this rank.
 
 **atXP** `int64`  
@@ -60,8 +60,8 @@ The title of this rank.
 **description** `string`  
 The description of this rank.
 
-**originalLanguage** [Language](../../common-objects/language.md)  
+**originalLanguage** [`Language`](../../common-objects/language.md)  
 The language this ranks properties are written in.
 
-**responseLanguage** [Language](../../common-objects/language.md)  
+**responseLanguage** [`Language`](../../common-objects/language.md)  
 The language this ranks properties are returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

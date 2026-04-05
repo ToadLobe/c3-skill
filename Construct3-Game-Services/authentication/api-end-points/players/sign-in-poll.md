@@ -45,7 +45,7 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**pollToken** [guid](../../../data-types.md#internalH1Link1) *Required*  
+**pollToken** [`guid`](../../../data-types.md#internalH1Link1) *Required*  
 The sign in poll token returned on the original [sign in request](../../../authentication/api-end-points/players/sign-in.md).
 
 ## Success Response
@@ -64,16 +64,16 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)  
+**success** [`bool`](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**session** [Session](../../../authentication/api-objects/session-object.md)  
+**session** [`Session`](../../../authentication/api-objects/session-object.md)  
 The new [session object](../../../authentication/api-objects/session-object.md) if the sign in was succesful.
 
 **signInErrorMessage** `string`  
 Details about why the sign in failed if it failed or was abandoned.
 
-**signInFailed** [bool](../../../data-types.md#internalH1Link4)  
+**signInFailed** [`bool`](../../../data-types.md#internalH1Link4)  
 If true, indicates the sign in failed, timed out or was abandoned.
 
 **formattingCulture** `string`  
@@ -94,7 +94,7 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)  
+**success** [`bool`](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
 **errorMessage** `string`  
@@ -103,5 +103,5 @@ An error message with more detailed information on why the request failed.
 **helpURL** `url (string)`  
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types.md#internalH1Link4)  
+**shouldRetry** [`bool`](../../../data-types.md#internalH1Link4)  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.
