@@ -402,9 +402,10 @@ async function extractContent(page) {
                 .filter(n => n.nodeType === 3)
                 .map(n => n.textContent.trim())
                 .filter(Boolean)[0] || '';
-              const type = nodeToMd(dataType).trim();
+              const hasLink = dataType.querySelector('a');
+              const type = hasLink ? nodeToMd(dataType).trim() : `\`${dataType.textContent.trim()}\``;
               const req = reqLabel ? ` *${reqLabel.textContent.trim()}*` : '';
-              return `**${name}** \`${type}\`${req}`;
+              return `**${name}** ${type}${req}`;
             }
             return `**${dt.textContent.trim()}**`;
           }
