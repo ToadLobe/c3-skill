@@ -9,6 +9,7 @@ on:
 jobs:
   check-and-update:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     permissions:
       contents: write
       pull-requests: write
@@ -27,12 +28,12 @@ jobs:
             const fs = require('fs');
             try {
               const v = JSON.parse(fs.readFileSync('VERSION', 'utf8'));
-              console.log(v.savedWithRelease || 'unknown');
-            } catch { console.log('unknown'); }
+              process.stdout.write(v.savedWithRelease || 'unknown');
+            } catch { process.stdout.write('unknown'); }
           ")
           LATEST=$(node -e "
             const https = require('https');
-            https.get('https://editor.construct.net/versions.json', {
+            const req = https.get('https://editor.construct.net/versions.json', {
               headers: { 'User-Agent': 'Mozilla/5.0' }
             }, res => {
               let d = '';
@@ -40,9 +41,10 @@ jobs:
               res.on('end', () => {
                 const v = JSON.parse(d);
                 const s = v.find(x => x.branchName === 'Stable');
-                console.log(s ? s.releaseName : 'unknown');
+                process.stdout.write(s ? s.releaseName : 'unknown');
               });
             });
+            req.on('error', () => process.stdout.write('unknown'));
           ")
           echo "current=$CURRENT"
           echo "latest=$LATEST"
@@ -50,16 +52,15 @@ jobs:
           echo "latest=$LATEST" >> $GITHUB_OUTPUT
           if [ "$CURRENT" = "$LATEST" ]; then
             echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No update needed"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Update available: $CURRENT -> $LATEST"
           fi
 
       - name: Install dependencies
         if: steps.check.outputs.changed == 'true'
-        run: |
-          cd .scripts && npm ci
-          # Install Chrome for Puppeteer
-          npx puppeteer browsers install chrome
+        run: cd .scripts && npm install
 
       - name: Install Chrome + xvfb
         if: steps.check.outputs.changed == 'true'
@@ -83,12 +84,7 @@ jobs:
           CHROME_PATH: /usr/bin/google-chrome-stable
         run: cd .scripts && xvfb-run --auto-servernum --server-args="-screen 0 1280x800x24" node autonomous-scraper.js game-services --force
 
-      - name: Regenerate markdown
-        if: steps.check.outputs.changed == 'true'
-        run: |
-          cd .scripts && node regenerate.js ${{ steps.check.outputs.latest }}
-
-      - name: Update README counts
+      - name: Update README
         if: steps.check.outputs.changed == 'true'
         run: |
           node -e "
@@ -109,17 +105,17 @@ jobs:
             const sdk = count('Construct3-Addon-SDK');
             const gs = count('Construct3-Game-Services');
             const total = manual + sdk + gs;
-            const ver = '${{ steps.check.outputs.latest }}'.replace(/^r/, '');
+            const latest = '${{ steps.check.outputs.latest }}';
             let readme = fs.readFileSync('README.md', 'utf8');
             readme = readme
-              .replace(/release-r[\w.]+-blue/, 'release-${{ steps.check.outputs.latest }}-blue')
+              .replace(/release-r[\w.]+-blue/, 'release-' + latest + '-blue')
               .replace(/\| \[Manual\].+\| \d+ \|/, '| [Manual](Construct3-Manual/index.md) | ' + manual + ' |')
               .replace(/\| \[Addon SDK\].+\| \d+ \|/, '| [Addon SDK](Construct3-Addon-SDK/index.md) | ' + sdk + ' |')
               .replace(/\| \[Game Services\].+\| \d+ \|/, '| [Game Services](Construct3-Game-Services/index.md) | ' + gs + ' |')
               .replace(/\| \*\*Total\*\* \| \*\*\d+\*\*/, '| **Total** | **' + total + '**')
-              .replace(/\| Construct 3 Manual \| r[\w.]+ \|/, '| Construct 3 Manual | ${{ steps.check.outputs.latest }} |')
-              .replace(/\| Addon SDK \| r[\w.]+ \|/, '| Addon SDK | ${{ steps.check.outputs.latest }} |')
-              .replace(/\| Game Services \| r[\w.]+ \|/, '| Game Services | ${{ steps.check.outputs.latest }} |');
+              .replace(/\| Construct 3 Manual \| r[\w.]+ \|/, '| Construct 3 Manual | ' + latest + ' |')
+              .replace(/\| Addon SDK \| r[\w.]+ \|/, '| Addon SDK | ' + latest + ' |')
+              .replace(/\| Game Services \| r[\w.]+ \|/, '| Game Services | ' + latest + ' |');
             fs.writeFileSync('README.md', readme);
             console.log('Manual:', manual, 'SDK:', sdk, 'GS:', gs, 'Total:', total);
           "
