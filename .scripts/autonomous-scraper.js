@@ -235,22 +235,8 @@ async function detectVersion(page) {
       return version;
     }
 
-    // Fallback: scrape releases page
-    await page.goto(BASE_URL + '/en/make-games/releases', {
-      waitUntil: 'domcontentloaded',
-      timeout: 60000,
-    });
-    await new Promise(r => setTimeout(r, 5000));
-    const fallback = await page.evaluate(() => {
-      const stableLink = document.querySelector('ul.latestReleases li.stable a[href*="/releases/stable/"]');
-      if (stableLink) {
-        const match = stableLink.getAttribute('href').match(/\/(r\d+)$/);
-        if (match) return match[1];
-      }
-      return 'unknown';
-    });
-    console.log(`  Version: ${fallback} (from releases page)`);
-    return fallback;
+    console.log('  Could not parse versions.json');
+    return 'unknown';
   } catch (e) {
     console.log('  Could not detect version:', e.message);
     return 'unknown';
@@ -569,6 +555,7 @@ function saveMarkdown(url, data, target, savedWithRelease) {
     .replace(/\t/g, '  ')             // MD010: no hard tabs
     // Restore trailing two spaces for soft line breaks on **bold** definition lines
     .replace(/^(\*\*[^*]+\*\*)$/gm, '$1  ')
+    .replace(/^(> \*\*[^*]+\*\*)$/gm, '$1  ')
     .trim() + '\n';                   // MD047: file ends with single newline
 
   fs.writeFileSync(filePath, md, 'utf8');
