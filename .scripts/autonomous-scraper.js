@@ -217,12 +217,15 @@ async function discoverUrls(page, target) {
 async function detectVersion(page) {
   console.log('Detecting Construct 3 version...');
   try {
-    // Primary: fetch from versions.json API (via browser to bypass Cloudflare)
+    // Navigate directly to versions.json (avoids CORS issues with cross-origin fetch)
     // Format: [{ branchName: "Stable", releaseName: "r476.3", ... }, ...]
-    const version = await page.evaluate(async () => {
+    await page.goto('https://editor.construct.net/versions.json', {
+      waitUntil: 'domcontentloaded',
+      timeout: 30000,
+    });
+    const version = await page.evaluate(() => {
       try {
-        const res = await fetch('https://editor.construct.net/versions.json');
-        const data = await res.json();
+        const data = JSON.parse(document.body.innerText);
         if (Array.isArray(data)) {
           const stable = data.find(v => v.branchName === 'Stable');
           if (stable?.releaseName) return stable.releaseName;
