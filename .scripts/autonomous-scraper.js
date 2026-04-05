@@ -533,7 +533,7 @@ function saveMarkdown(url, data, target, savedWithRelease) {
 
     // Fix leading whitespace (HTML indentation leaking into text)
     const trimmed = line.trimStart();
-    if (line.match(/^ {4,}\S/) &&
+    if (line.match(/^ {2,}\S/) &&
         !trimmed.startsWith('-') && !trimmed.startsWith('*') &&
         !trimmed.startsWith('>') && !trimmed.startsWith('|') &&
         !trimmed.match(/^\d+\./)) {
