@@ -33,16 +33,16 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*
+**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**end** `int64` *Required*
+**end** `int64` *Required*  
 The end date and time bonuses to search until as a unix time stamp (seconds since Jan 01 1970).
 
-**start** `int64`
+**start** `int64`  
 The start date and time bonuses to search from as a unix time stamp (seconds since Jan 01 1970).  If not specified, the requests date and time will be used.
 
-**culture** `string`
+**culture** `string`  
 Optionally specify a [supported culture code](../../../culture.md) for rendering various properties.  If not specified, the culture code from your games default language will be used.
 
 ## Success Response
@@ -62,13 +62,13 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
 **bonuses** Array<[XPBonus](../../../xp/api-objects/bonus-object.md)>
 All bonuses returned in the request.
 
-**formattingCulture** `string`
+**formattingCulture** `string`  
 If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
@@ -86,14 +86,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**errorMessage** `string`
+**errorMessage** `string`  
 An error message with more detailed information on why the request failed.
 
-**helpURL** `url (string)`
+**helpURL** `url (string)`  
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types.md#internalH1Link4)
+**shouldRetry** [bool](../../../data-types.md#internalH1Link4)  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

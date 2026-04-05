@@ -46,7 +46,7 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**pollToken** [guid](../../../data-types.md#internalH1Link1) *Required*
+**pollToken** [guid](../../../data-types.md#internalH1Link1) *Required*  
 The link poll token returned on the original [link request](../../../authentication/api-end-points/login-providers/link-login-provider.md).
 
 ## Success Response
@@ -66,22 +66,22 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**linked** [bool](../../../data-types.md#internalH1Link4)
+**linked** [bool](../../../data-types.md#internalH1Link4)  
 Returns true if the link was sucessful.  This will always return false until the user completes the sign in with the login provider.
 
-**forceCode** [guid?](../../../data-types.md#internalH1Link1)
+**forceCode** [guid?](../../../data-types.md#internalH1Link1)  
 A one use code to [force link](../../../authentication/api-end-points/login-providers/force-link.md) the login provider to the players account.
 
-**forceURL** `url (string)`
+**forceURL** `url (string)`  
 The URL to call to [force link](../../../authentication/api-end-points/login-providers/force-link.md) the login provider to the players account.  The `forceCode` must be posted to this URL.
 
-**forceCodeExpiryMins** `int32`
+**forceCodeExpiryMins** `int32`  
 How many minutes the force code is valid for before it expires and a new one will need to be generated.
 
-**formattingCulture** `string`
+**formattingCulture** `string`  
 If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
@@ -99,14 +99,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**errorMessage** `string`
+**errorMessage** `string`  
 An error message with more detailed information on why the request failed.
 
-**helpURL** `url (string)`
+**helpURL** `url (string)`  
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types.md#internalH1Link4)
+**shouldRetry** [bool](../../../data-types.md#internalH1Link4)  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

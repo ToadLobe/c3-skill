@@ -52,25 +52,25 @@ This object is only returned for some API end points that require your games sec
 
 ## Object Properties
 
-**id** [guid](../../data-types.md#internalH1Link1)
+**id** [guid](../../data-types.md#internalH1Link1)  
 A unique ID for this player.
 
-**playerName** `string`
+**playerName** `string`  
 The publicly facing player name for this player.
 
-**created** [datetime](../../data-types.md#internalH1Link0)
+**created** [datetime](../../data-types.md#internalH1Link0)  
 The date and time this player was first registered in the game.
 
-**consecutiveDailySignIns** `int32`
+**consecutiveDailySignIns** `int32`  
 Total number of consecutive days this player has logged in for.
 
-**successfulSignIns** `int32`
+**successfulSignIns** `int32`  
 Total number of times this player has signed into their account.
 
-**lastSuccessfulSignIn** [datetime?](../../data-types.md#internalH1Link0)
+**lastSuccessfulSignIn** [datetime?](../../data-types.md#internalH1Link0)  
 Date and time of the last successful sign in for this player.
 
-**leaderboardScores** `int32`
+**leaderboardScores** `int32`  
 Total number of leaderboard scores this player has.
 
 **avatars** Array<[Picture](../../common-objects/picture-object.md)>
@@ -79,38 +79,38 @@ If player has an avatar, a list of [picture objects](../../common-objects/pictur
 **loginProviders** Array<[PlayerLoginProvider](../../authentication/api-objects/player-login-provider.md)>
 List of player login provider objects currently assigned to this player.
 
-**totalBucketCloudSaves** `int32`
+**totalBucketCloudSaves** `int32`  
 Total number of cloud saves this player has in bucket storage.
 
-**totalCloudSaves** `int32`
+**totalCloudSaves** `int32`  
 Total number of cloud saves this player has, private and in buckets.
 
-**totalPrivateCloudSaves** `int32`
+**totalPrivateCloudSaves** `int32`  
 Total number of cloud saves this player has in their private store.
 
-**totalBucketCloudSavesSize** `int64`
+**totalBucketCloudSavesSize** `int64`  
 Total size in bytes of all this players cloud saves in buckets.
 
-**totalCloudSavesSize** `int64`
+**totalCloudSavesSize** `int64`  
 Total size in bytes of all this players cloud saves, private and in buckets.
 
-**totalPrivateCloudSavesSize** `int64`
+**totalPrivateCloudSavesSize** `int64`  
 Total size in bytes of all this players private cloud saves.
 
-**totalRatings** `int32`
+**totalRatings** `int32`  
 Total ratings this player has cast.
 
-**totalRatingsValue** `int32`
+**totalRatingsValue** `int32`  
 The sum of all this players ratings.  The summed values are normalised to a range of 0-255.
 
-**averageRatingPercent** `decimal`
+**averageRatingPercent** `decimal`  
 The average rating this player casts expressed as a percentage 0-100.
 
-**lastActive** [datetime?](../../data-types.md#internalH1Link0)
+**lastActive** [datetime?](../../data-types.md#internalH1Link0)  
 The date and time UTC this player last interacted with these services.
 
-**emailVerified** [bool](../../data-types.md#internalH1Link4)
+**emailVerified** [bool](../../data-types.md#internalH1Link4)  
 True if this player has provided an email address that they have verified via a confirmation email.
 
-**preventAllEmails** [bool](../../data-types.md#internalH1Link4)
+**preventAllEmails** [bool](../../data-types.md#internalH1Link4)  
 True if all emails to this player will be prevented from being sent.  Can only be adjusted by editing the player directly via your CGS account.

@@ -28,16 +28,16 @@ release: 476.3
 
 ## Object Properties
 
-**id** `string`
+**id** `string`  
 ID of this players membership.
 
-**lifetimeSupportCents** `int64`
+**lifetimeSupportCents** `int64`  
 The total amount that the member has ever paid to the campaign in the campaign's currency. `0` if never paid.
 
-**currentlyEntitledAmountCents** `int64`
+**currentlyEntitledAmountCents** `int64`  
 The amount in cents that the member is entitled to.  This includes a current pledge, or payment that covers the current payment period.
 
-**campaign** [PatreonCampaign](../../../authentication/api-objects/patreon/campaign.md)
+**campaign** [PatreonCampaign](../../../authentication/api-objects/patreon/campaign.md)  
 The campaign this memberships belongs to.
 
 **currentlyEntitledTiers** Array<[PatreonTier](../../../authentication/api-objects/patreon/tier.md)>

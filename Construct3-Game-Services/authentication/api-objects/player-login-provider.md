@@ -28,26 +28,26 @@ release: 476.3
 
 ## Object Properties
 
-**playerID** [guid](../../data-types.md#internalH1Link1)
+**playerID** [guid](../../data-types.md#internalH1Link1)  
 The player ID this login provider belongs to.
 
-**username** `string`
+**username** `string`  
 If the login provider is `UsernamePassword` this players username will be returned in the response.
 
-**provider** `string`
+**provider** `string`  
 The provider. Will be one of `UsernamePassword`, `Apple`, `BattleNet`, `Discord`, `Email`, `Facebook`, `Github`, `Google`, `ItchIO`, `Microsoft`, `Patreon`, `Reddit`, `Steam`, `X`, `Yandex`.
 
-**avatarURL** `string`
+**avatarURL** `string`  
 If the login provider has an avatar for this user, the URL for it will be shown here.  The URL will be an external URL, not on any CGS domains.
 
-**signIns** `int32`
+**signIns** `int32`  
 The number of successful sign ins this player has had with this player account using this login provider.
 
-**firstSignIn** [datetime](../../data-types.md#internalH1Link0)
+**firstSignIn** [datetime](../../data-types.md#internalH1Link0)  
 The date and time of their first sign in with this login provider.
 
-**lastSignIn** [datetime](../../data-types.md#internalH1Link0)
+**lastSignIn** [datetime](../../data-types.md#internalH1Link0)  
 The date and time of their last successful sign in with this login provider.
 
-**patreonMetaData** [PatreonMetaData](../../authentication/api-objects/patreon/patreon-meta-data.md)
+**patreonMetaData** [PatreonMetaData](../../authentication/api-objects/patreon/patreon-meta-data.md)  
 If this login provider is Patreon, specific data about their memberships will show here.

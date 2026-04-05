@@ -35,47 +35,47 @@ release: 476.3
 
 ## Object Properties
 
-**teamID** [guid](../../data-types.md#internalH1Link1)
+**teamID** [guid](../../data-types.md#internalH1Link1)  
 A unique ID for this team.
 
-**name** `string`
+**name** `string`  
 The name of this team.  Names cannot exceed 64 characters in length.
 
-**players** `int16`
+**players** `int16`  
 The number of players assigned in this team.
 
-**formattedPlayers** `string`
+**formattedPlayers** `string`  
 The number of players assigned to this team rendered using the requested locale, formatted to the specified [requested culture](../../culture.md).
 
-**dateCreated** [datetime](../../data-types.md#internalH1Link0)
+**dateCreated** [datetime](../../data-types.md#internalH1Link0)  
 The date the team was created.
 
-**scores** `int32`
+**scores** `int32`  
 The number of scores posted in this team.
 
-**formattedScores** `string`
+**formattedScores** `string`  
 The number of scores posted in this team rendered using the requested locale, formatted to the specified [requested culture](../../culture.md).
 
-**totalScoreValues** `decimal`
+**totalScoreValues** `decimal`  
 The sum value of all scores posted in this team.
 
-**averageScore** `int64?`
+**averageScore** `int64?`  
 The average of all the scores posted in this team.
 
-**formattedAverageScore** `string`
+**formattedAverageScore** `string`  
 The average of all the scores posted in this team formatted under the score format specifications for this leaderboard, rendered using the requested locale, formatted to the specified [requested culture](../../culture.md).
 
-**bestScore** `int64?`
+**bestScore** `int64?`  
 The best score posted in this team.
 
-**formattedBestScore** `string`
+**formattedBestScore** `string`  
 The best score posted in this team formatted under the score format specifications for this leaderboard, rendered using the requested locale, formatted to the specified [requested culture](../../culture.md).
 
-**rank** `int32?`
+**rank** `int32?`  
 The rank of this team compared to other teams in this game.
 
-**ordinal** `string`
+**ordinal** `string`  
 The ordinal for the rank of this team (EG: st, nd or rd would be ordinals for 1st 2nd or 3rd).
 
-**formattedRank** `string`
+**formattedRank** `string`  
 The rank of this score rendered using the requested locale, formatted to the specified [requested culture](../../culture.md).

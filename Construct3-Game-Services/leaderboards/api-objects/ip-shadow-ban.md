@@ -23,11 +23,11 @@ release: 476.3
 
 ## Object Properties
 
-**country** `string`
+**country** `string`  
 If the country of the underlying IP is known, the ISO 3166-1 alpha-2 country code for the IP will be shown in this property.
 
-**dateBanned** [datetime](../../data-types.md#internalH1Link0)
+**dateBanned** [datetime](../../data-types.md#internalH1Link0)  
 The date the ban was created.
 
-**ipHash** `int32`
+**ipHash** `int32`  
 The hashed IP address of the IP that is shadow banned.

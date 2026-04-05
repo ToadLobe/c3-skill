@@ -22,8 +22,8 @@ release: 476.3
 
 ## Object Properties
 
-**dateBanned** [datetime](../../data-types.md#internalH1Link0)
+**dateBanned** [datetime](../../data-types.md#internalH1Link0)  
 The date the ban was created.
 
-**player** [Player](../../authentication/api-objects/player-object.md)
+**player** [Player](../../authentication/api-objects/player-object.md)  
 The player that is shadow banned.

@@ -49,47 +49,47 @@ You can have multiple Broadcast Channels, and each Channel can contain multiple 
 
 ## Object Properties
 
-**id** [guid](../../data-types.md#internalH1Link1)
+**id** [guid](../../data-types.md#internalH1Link1)  
 A unique ID for this channel.
 
-**name** `string`
+**name** `string`  
 A publicly facing name for this channel.
 
-**description** `string`
+**description** `string`  
 A publicly facing description for this channel.
 
-**created** [datetime](../../data-types.md#internalH1Link0)
+**created** [datetime](../../data-types.md#internalH1Link0)  
 The date and time this channel was first created.
 
-**formattedCreated** `string`
+**formattedCreated** `string`  
 The date and time this channel was first created, formatted to the specified [requested culture](../../culture.md).
 
-**responseLanguage** [Language](../../common-objects/language.md)
+**responseLanguage** [Language](../../common-objects/language.md)  
 The language the channels properties are returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**broadcasts** `int32`
+**broadcasts** `int32`  
 The total number of broadcast messages currently available in this channel.
 
-**formattedBroadcasts** `string`
+**formattedBroadcasts** `string`  
 The total number of broadcast messages currently available in this channel, formatted to the specified [requested culture](../../culture.md).
 
-**lastBroadcast** [datetime?](../../data-types.md#internalH1Link0)
+**lastBroadcast** [datetime?](../../data-types.md#internalH1Link0)  
 The date and time of the last broadcast published to this channel.
 
-**formattedLastBroadcast** `string`
+**formattedLastBroadcast** `string`  
 The date and time of the last broadcast published to this channel, formatted to the specified [requested culture](../../culture.md).
 
-**allowRatings** [bool](../../data-types.md#internalH1Link4)
+**allowRatings** [bool](../../data-types.md#internalH1Link4)  
 If this channel supports rating of messages.
 
-**anyUnreadMessages** [bool](../../data-types.md#internalH1Link4)
+**anyUnreadMessages** [bool](../../data-types.md#internalH1Link4)  
 Indicates if this channel contains any unread messages by the current requester.  Read about the [unread status](../../broadcasts/concepts.md#internalH1Link2).
 
-**dimensionlessMaxRatingValue** [uint8](../../data-types.md#internalH1Link2)
+**dimensionlessMaxRatingValue** [uint8](../../data-types.md#internalH1Link2)  
 If ratings are allowed for messages in this channel, this property shows what the maximum rating value for dimensionless ratings is.  The minuimum allowed rating value is always `0`.
 
 **ratingDimensions** Dictionary<string, [RatingDimension](../../ratings/api-objects/rating-dimension-object.md)>
 If ratings are allowed for messages in this channel, this property shows all available [rating dimensions](../../ratings/api-objects/rating-dimension-object.md) that can be rated.
 
-**originalLanguage** [Language](../../common-objects/language.md)
+**originalLanguage** [Language](../../common-objects/language.md)  
 The language this channels properties (name and description) are written in.

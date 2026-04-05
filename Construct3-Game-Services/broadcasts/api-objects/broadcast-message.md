@@ -54,65 +54,65 @@ This object can be rated by players.  Read about [how ratings work](../../rating
 
 ## Object Properties
 
-**id** [guid](../../data-types.md#internalH1Link1)
+**id** [guid](../../data-types.md#internalH1Link1)  
 A unique ID for this message.
 
-**channelID** [guid](../../data-types.md#internalH1Link1)
+**channelID** [guid](../../data-types.md#internalH1Link1)  
 The ID of the [channel](../../broadcasts/api-objects/broadcast-channel.md) this message belongs to.
 
-**date** [datetime](../../data-types.md#internalH1Link0)
+**date** [datetime](../../data-types.md#internalH1Link0)  
 The date and time this message was published.
 
-**formattedDate** `string`
+**formattedDate** `string`  
 The date and time this message was published, formatted to the specified [requested culture](../../culture.md).
 
-**title** `string`
+**title** `string`  
 The title of this message.
 
-**text** `string`
+**text** `string`  
 The content of the message.  Messages can be any form of text, plain, HTML or marked up with BB code.  This property is only returned if you are retrieving the message from the [get message](../../.md##b.GetMessage##) end point, otherwise the excerpt property will be returned.
 
-**textLength** `int32`
+**textLength** `int32`  
 The length of the returned text in characters.
 
-**formattedTextLength** `string`
+**formattedTextLength** `string`  
 The length of the returned text in characters, formatted to the specified [requested culture](../../culture.md).
 
-**excerpt** `string`
+**excerpt** `string`  
 Returns the first 100 characters of the full broadcast message.  If the message text exceeds this length 3 dots (...) will be appended to the end of this value indicating there is more to read.
 
-**reads** `int32`
+**reads** `int32`  
 Total number of times this message has been read by the player base.
 
-**formattedReads** `string`
+**formattedReads** `string`  
 Total number of times this message has been read by the player base, formatted to the specified [requested culture](../../culture.md).
 
-**uniqueReads** `int32`
+**uniqueReads** `int32`  
 A count of how many unique players have read this message.  A player can be a guest or a signed in user, this value is incremented based on the players IP address.
 
-**formattedUniqueReads** `string`
+**formattedUniqueReads** `string`  
 A count of how many unique players have read this message.  A player can be a guest or a signed in user, this value is incremented based on the players IP address, formatted to the specified [requested culture](../../culture.md).
 
-**updates** `int16`
+**updates** `int16`  
 How many times the message text or title has been modified since it was first published.
 
-**formattedUpdates** `string`
+**formattedUpdates** `string`  
 How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](../../culture.md).
 
-**lastUpdate** [datetime?](../../data-types.md#internalH1Link0)
+**lastUpdate** [datetime?](../../data-types.md#internalH1Link0)  
 The date and time the message text or title was last updated.
 
-**formattedLastUpdate** `string`
+**formattedLastUpdate** `string`  
 How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](../../culture.md).
 
-**isUnread** [bool](../../data-types.md#internalH1Link4)
+**isUnread** [bool](../../data-types.md#internalH1Link4)  
 Indicates if this message is unread by the current requester.  Read about the [unread status](../../broadcasts/concepts.md#internalH1Link2).
 
-**originalLanguage** [Language](../../common-objects/language.md)
+**originalLanguage** [Language](../../common-objects/language.md)  
 The language this message is written in.
 
-**responseLanguage** [Language](../../common-objects/language.md)
+**responseLanguage** [Language](../../common-objects/language.md)  
 The language this message is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**ratingStatus** [RatingStatus](../../ratings/api-objects/rating-status-object.md)
+**ratingStatus** [RatingStatus](../../ratings/api-objects/rating-status-object.md)  
 The [rating status](../../ratings/api-objects/rating-status-object.md) of this object.

@@ -210,9 +210,9 @@ function generateMarkdown(data, jsonPath, targetKey) {
     .replace(/```\n\nCopy\n/g, '```\n')
     // Restore trailing two spaces for soft line breaks on definition lines
     // Matches: **name**, **name** `type`, **name** `type` *Required*, **name** [type](...) *Required*
-    .replace(/^(\*\*.+\*(?:\*|`|\.?\)))$/gm, '$1  ')
+    .replace(/^(\*\*.+[*`)])$/gm, '$1  ')
     // Blockquote: trailing two spaces after **Type** for line break
-    .replace(/^(> \*\*.+\*(?:\*|`|\.?\)))$/gm, '$1  ')
+    .replace(/^(> \*\*.+[*`)])$/gm, '$1  ')
     .replace(/^(> \*\*(Tip|Note|Warning|Info|[^*]+)\*\*)\n>\n(> )/gm, '$1  \n$3')
     // MD045: add alt text to images missing it
     .replace(/!\[\]\(([^)]+)\)/g, (match, src) => {

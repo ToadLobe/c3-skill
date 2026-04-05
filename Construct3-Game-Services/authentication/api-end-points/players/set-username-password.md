@@ -41,28 +41,28 @@ This end point can be called by [signed in](../../../authentication/sign-in-flow
 
 ### Session Key Authentication
 
-**sessionKey** `string` *Required*
+**sessionKey** `string` *Required*  
 The [session key](../../../authentication/api-objects/session-object.md) of the player you're making the request against.
 
 
 
 ### Secret Key Authentication
 
-**secret** `string` *Required*
+**secret** `string` *Required*  
 Your games [secret API key](../../../games/api-keys.md).
 
-**playerID** [guid](../../../data-types.md#internalH1Link1) *Required*
+**playerID** [guid](../../../data-types.md#internalH1Link1) *Required*  
 The player ID you wish to make this request against.
 
  ## Request Parameters
 
-**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*
+**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**username** `string`
+**username** `string`  
 The username you wish to set for this player.  Usernames must be at least `3` characters long, and no more than `32` characters long.  Email addresses as usernames are not permitted.
 
-**password** `string`
+**password** `string`  
 The password you wish to set for this player.  Passwords must be at least `8` characters long, and no more than `32` characters long.  Passwords must also contain at least one numeric, one uppercase, one lowercase, and one non-alphanumeric character.
 
 
@@ -82,10 +82,10 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**formattingCulture** `string`
+**formattingCulture** `string`  
 If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
@@ -103,14 +103,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**errorMessage** `string`
+**errorMessage** `string`  
 An error message with more detailed information on why the request failed.
 
-**helpURL** `url (string)`
+**helpURL** `url (string)`  
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types.md#internalH1Link4)
+**shouldRetry** [bool](../../../data-types.md#internalH1Link4)  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

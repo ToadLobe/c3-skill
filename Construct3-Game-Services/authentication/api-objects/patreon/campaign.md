@@ -24,14 +24,14 @@ release: 476.3
 
 ## Object Properties
 
-**id** `string`
+**id** `string`  
 ID of this Patreon campaign.
 
-**vanity** `string`
+**vanity** `string`  
 The campaign's vanity. Can be null.
 
-**creationName** `string`
+**creationName** `string`  
 The type of content the creator is creating, as in "vanity is creating creation_name". Can be null.
 
-**url** `string`
+**url** `string`  
 A URL to access this campaign on patreon.com

@@ -35,32 +35,32 @@ A Game Bucket is a container in your game for Cloud Save Blobs.  Each bucket has
 
 ## Object Properties
 
-**id** [guid](../../data-types.md#internalH1Link1)
+**id** [guid](../../data-types.md#internalH1Link1)  
 A unique record ID for this game bucket.
 
-**accessMode** `string`
+**accessMode** `string`  
 The access mode of this bucket. Will be on of `Private`, `PublicRead` or `PublicReadWrite`.
 
-**allowRatings** [bool](../../data-types.md#internalH1Link4)
+**allowRatings** [bool](../../data-types.md#internalH1Link4)  
 Are cloud saves in this bucket rateable? Even if this value is true, cloud saves are only rateable if the accessMode is not private.
 
-**created** [datetime](../../data-types.md#internalH1Link0)
+**created** [datetime](../../data-types.md#internalH1Link0)  
 The date and time this game bucket was created.
 
-**maxBlobs** `int32?`
+**maxBlobs** `int32?`  
 How many cloud saves are allowed in this bucket before it's full and new cloud saves are rejected.  If null, there is no limit.
 
-**maxBlobSizeBytes** `int32`
+**maxBlobSizeBytes** `int32`  
 The maximum permitted size in bytes of cloud saves in this bucket. If an associated picture is uploaded with a cloud save, this is included in the limit.
 
-**maxBlobsPerPlayer** `int16?`
+**maxBlobsPerPlayer** `int16?`  
 How many cloud saves individual players are allowed to upload to this bucket. If null, there is no limit.
 
-**name** `string`
+**name** `string`  
 The publicly facing name for this game bucket.
 
-**totalBlobs** `int32`
+**totalBlobs** `int32`  
 How many cloud saves currently exist in this bucket.
 
-**totalBytes** `int64`
+**totalBytes** `int64`  
 How many bytes of data currently are saved in this bucket. This figure includes sizes of associated pictures.

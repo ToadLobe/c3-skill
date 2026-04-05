@@ -36,16 +36,16 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*
+**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**leaderboardID** [guid](../../../data-types.md#internalH1Link1) *Required*
+**leaderboardID** [guid](../../../data-types.md#internalH1Link1) *Required*  
 The ID of the leaderboard you're fetching the score history for.
 
-**playerID** [guid](../../../data-types.md#internalH1Link1)
+**playerID** [guid](../../../data-types.md#internalH1Link1)  
 The player ID to query. You must specify this or `scoreID`.
 
-**scoreID** [guid](../../../data-types.md#internalH1Link1)
+**scoreID** [guid](../../../data-types.md#internalH1Link1)  
 The unique record ID of the score to query. You must specify this or `playerID`.
 
 ## Success Response
@@ -68,22 +68,22 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**scoreID** [guid](../../../data-types.md#internalH1Link1)
+**scoreID** [guid](../../../data-types.md#internalH1Link1)  
 The ID of the score the history is being returned on.
 
-**player** [Player](../../../authentication/api-objects/player-object.md)
+**player** [Player](../../../authentication/api-objects/player-object.md)  
 The player this score belongs to.
 
 **scoreHistory** Array<[ScoreHistory](../../../leaderboards/api-objects/score-history.md)>
 The list of score history records for this score.
 
-**country** `string`
+**country** `string`  
 If country ranks are enabled on the leaderboard, the detected country this score originates from.
 
-**formattingCulture** `string`
+**formattingCulture** `string`  
 If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
@@ -101,14 +101,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**errorMessage** `string`
+**errorMessage** `string`  
 An error message with more detailed information on why the request failed.
 
-**helpURL** `url (string)`
+**helpURL** `url (string)`  
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types.md#internalH1Link4)
+**shouldRetry** [bool](../../../data-types.md#internalH1Link4)  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

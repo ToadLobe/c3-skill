@@ -40,31 +40,31 @@ https://auth.construct.net/registerplayer.json
 
 No authentication is required for calling this end point.
 
-**secret** `string`
+**secret** `string`  
 Your games [secret API key](../../../games/api-keys.md).
 
  ## Request Parameters
 
-**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*
+**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**playerName** `string` *Required*
+**playerName** `string` *Required*  
 The new player name you wish to set.  Name must be at least `1` character long and cannot exceed `50` characters in length.  The name will also be rejected if it looks like it is an email address.  Player names are the publically facing names, wheras the username is used for sign in purposes only.
 
-**username** `string`
+**username** `string`  
 The username you wish to set for this new player.  Usernames must be at least `3` characters long, and no more than `32` characters long.  Email addresses as usernames are not permitted.
 
-**password** `string`
+**password** `string`  
 The password you wish to set for this new player.  Passwords must be at least `8` characters long, and no more than `32` characters long.  Passwords must also contain at least one numeric, one uppercase, one lowercase, and one non-alphanumeric character.
 
 
 
 A maximum password length is enforced because we hash passwords with `BCrypt` and CPU usages increases with password length during hashing.
 
-**emailAddress** `string`
+**emailAddress** `string`  
 Optionally pass in an email address for this user, allowing them to login with magic email links if your plan supports it.  Email addresses must be at least `4` characters long, and no more than `128` characters long.
 
-**expiryMins** `uint32`
+**expiryMins** `uint32`  
 How long until the session expires.  You can extend the session expiry using the [refresh session](../../../authentication/api-end-points/sessions/refresh-session.md) end point.  The default value is `1440` minutes.
 
 ## Success Response
@@ -82,16 +82,16 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**player** [Player](../../../authentication/api-objects/player-object.md)
+**player** [Player](../../../authentication/api-objects/player-object.md)  
 The newly registered player as a player object.
 
-**session** [Session](../../../authentication/api-objects/session-object.md)
+**session** [Session](../../../authentication/api-objects/session-object.md)  
 The session created for this player upon registration.
 
-**formattingCulture** `string`
+**formattingCulture** `string`  
 If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
@@ -109,14 +109,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**errorMessage** `string`
+**errorMessage** `string`  
 An error message with more detailed information on why the request failed.
 
-**helpURL** `url (string)`
+**helpURL** `url (string)`  
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types.md#internalH1Link4)
+**shouldRetry** [bool](../../../data-types.md#internalH1Link4)  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

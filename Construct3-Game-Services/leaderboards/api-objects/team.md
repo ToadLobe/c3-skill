@@ -22,8 +22,8 @@ release: 476.3
 
 ## Object Properties
 
-**teamID** [guid](../../data-types.md#internalH1Link1)
+**teamID** [guid](../../data-types.md#internalH1Link1)  
 A unique ID for this team.
 
-**name** `string`
+**name** `string`  
 The name of this team.  Names cannot exceed 64 characters in length.

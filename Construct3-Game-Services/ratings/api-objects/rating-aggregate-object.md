@@ -43,38 +43,38 @@ When retrieving a rateable object, an aggregate rating object may be returned.  
 
 ## Object Properties
 
-**totalRatings** `int32`
+**totalRatings** `int32`  
 Total number of ratings cast.
 
-**formattedTotalRatings** `string`
+**formattedTotalRatings** `string`  
 Total number of ratings cast, formatted to the specified [requested culture](../../culture.md).
 
-**averageRating** `decimal`
+**averageRating** `decimal`  
 The average rating.
 
-**averageRatingAsPercentage** `decimal`
+**averageRatingAsPercentage** `decimal`  
 The average rating expressed as a percentage (0-100).
 
-**formattedAverageRating** `string`
+**formattedAverageRating** `string`  
 The average rating, formatted to the specified [requested culture](../../culture.md).
 
-**maxRating** [uint8](../../data-types.md#internalH1Link2)
+**maxRating** [uint8](../../data-types.md#internalH1Link2)  
 The maximum permitted rating for this dimension.
 
-**originalLanguage** [Language](../../common-objects/language.md)
+**originalLanguage** [Language](../../common-objects/language.md)  
 The language the title and description are written in.
 
-**responseLanguage** [Language](../../common-objects/language.md)
+**responseLanguage** [Language](../../common-objects/language.md)  
 The language this dimension is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**lastRating** [datetime?](../../data-types.md#internalH1Link0)
+**lastRating** [datetime?](../../data-types.md#internalH1Link0)  
 The date a player last cast a rating.
 
-**formattedLastRating** `string`
+**formattedLastRating** `string`  
 The date a player last cast a rating, formatted to the specified [requested culture](../../culture.md).
 
-**title** `string`
+**title** `string`  
 The title for this dimension.
 
-**description** `string`
+**description** `string`  
 A description for this dimension.

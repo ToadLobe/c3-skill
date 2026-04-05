@@ -37,22 +37,22 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*
+**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**provider** `string` *Required*
+**provider** `string` *Required*  
 The [login provider](../../../authentication/login-providers.md) you wish to sign in with (case insensitive).  Must be one of `UsernamePassword`, `Apple`, `BattleNet`, `Discord`, `Email`, `Facebook`, `Github`, `Google`, `ItchIO`, `Microsoft`, `Patreon`, `Reddit`, `Steam`, `X`, `Yandex`
 
-**username** `string`
+**username** `string`  
 If signing in with `UsernamePassword`, the username the player is signing in with. If specified, you must also specify `password`.
 
-**password** `string`
+**password** `string`  
 If signing in with `UsernamePassword`, the password the player is signing in with. If specified, you must also specify `username`.
 
-**emailAddress** `string`
+**emailAddress** `string`  
 If signing in with `Email`, the verified email address of the account the player is signing in with.  If the provided email address doesn't exist or is not verified the same generic error will be shown.
 
-**expiryMins** `uint32`
+**expiryMins** `uint32`  
 If sign in succeeds, how long until the newly created session expires.  You can extend the session expiry using the [refresh session](../../../authentication/api-end-points/sessions/refresh-session.md) end point.  The default value is `1440` minutes.
 
 ## Success Response
@@ -70,16 +70,16 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**pollToken** [guid](../../../data-types.md#internalH1Link1)
+**pollToken** [guid](../../../data-types.md#internalH1Link1)  
 A polling token to get the status of the user action.  For [sign in requests](../../../authentication/api-end-points/players/sign-in.md) use this poll token on the [sign in poll](../../../authentication/api-end-points/players/sign-in-poll.md) end point.  For [link requests](../../../authentication/api-end-points/login-providers/link-login-provider.md) use this poll token on the [link poll](../../../authentication/api-end-points/login-providers/link-poll.md) end point.
 
-**redirectToURL** `url (string)`
+**redirectToURL** `url (string)`  
 The URL to the external third party login provider to complete the sign-in or link request.  This property will be null for the Email sign in method as no redirect is required.
 
-**formattingCulture** `string`
+**formattingCulture** `string`  
 If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
@@ -97,14 +97,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types.md#internalH1Link4)
+**success** [bool](../../../data-types.md#internalH1Link4)  
 If the request was successfull or not.
 
-**errorMessage** `string`
+**errorMessage** `string`  
 An error message with more detailed information on why the request failed.
 
-**helpURL** `url (string)`
+**helpURL** `url (string)`  
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types.md#internalH1Link4)
+**shouldRetry** [bool](../../../data-types.md#internalH1Link4)  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

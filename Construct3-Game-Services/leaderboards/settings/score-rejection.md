@@ -12,10 +12,10 @@ release: 476.3
 
 ## Leaderboard Score Rejection Settings
 
-**Reject Scores Under** ``
+**Reject Scores Under** ``  
 All scores that are posted that are under this score will be rejected by the leaderboard.  This value is optional.
 
-**Reject Scores Over** ``
+**Reject Scores Over** ``  
 All scores that are posted that are over this score will be rejected by the leaderboard.  This value is optional.
 
 **Score Rejection Mode**  

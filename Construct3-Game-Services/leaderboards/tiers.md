@@ -23,10 +23,10 @@ If a score belongs to a tier, it will be returned in some API objects such as th
 
 ## Creating a Tier
 
-**id** `Required` *Required*
+**id** `Required` *Required*  
 The unique ID for this tier.  This should not be displayed to players but is returned in API responses.
 
-**name** `Required` *Required*
+**name** `Required` *Required*  
 A name of the tier which is displayed to players.
 
 **condition Required**  

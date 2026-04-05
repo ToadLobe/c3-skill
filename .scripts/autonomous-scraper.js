@@ -586,8 +586,8 @@ function saveMarkdown(url, data, target, savedWithRelease) {
     .replace(/\t/g, '  ')             // MD010: no hard tabs
     // Restore trailing two spaces for soft line breaks on definition lines
     // Matches: **name**, **name** `type`, **name** `type` *Required*, **name** [type](...) *Required*
-    .replace(/^(\*\*.+\*(?:\*|`|\.?\)))$/gm, '$1  ')
-    .replace(/^(> \*\*.+\*(?:\*|`|\.?\)))$/gm, '$1  ')
+    .replace(/^(\*\*.+[*`)])$/gm, '$1  ')
+    .replace(/^(> \*\*.+[*`)])$/gm, '$1  ')
     .trim() + '\n';                   // MD047: file ends with single newline
 
   fs.writeFileSync(filePath, md, 'utf8');
