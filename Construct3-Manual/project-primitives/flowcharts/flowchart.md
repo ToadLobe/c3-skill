@@ -1,7 +1,7 @@
 ---
 title: "Flowchart"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/flowcharts/flowchart"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -21,5 +21,5 @@ To edit a flowchart, double click on it in the Project Bar or right-click on it 
 
 ## Flowchart properties
 
-**Name**
+**Name**  
 The name of the flowchart. Used at runtime to create an instance of a flowchart that the Flowchart Controller can manipulate.

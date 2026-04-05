@@ -1,7 +1,7 @@
 ---
 title: "IAnimation interface"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/reference/object-interfaces/ianimation"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -14,16 +14,16 @@ The `IAnimation` interface represents an animation within an animated object typ
 
 ## Methods
 
-**GetName()**
+**GetName()**  
 Return a string of the animation name.
 
-**GetObjectType()**
-Return the [IObjectType](iobjecttype.md) that this animation belongs to.
+**GetObjectType()**  
+Return the [IObjectType](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/iobjecttype) that this animation belongs to.
 
-**GetFrames()**
-Return an array of [IAnimationFrame](ianimationframe.md) representing the frames in this animation.
+**GetFrames()**  
+Return an array of [IAnimationFrame](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/ianimationframe) representing the frames in this animation.
 
-**AddFrame(blob, width, height)**
+**AddFrame(blob, width, height)**  
 Add a new animation frame to the animation. All the parameters are optional. There are four overloads of this method:
 
 1. No parameters passed: add an empty animation frame with a default size
@@ -31,39 +31,39 @@ Add a new animation frame to the animation. All the parameters are optional. The
 3. Blob passed with size: use the blob as the animation frame image file and use the provided size (which must be correct) to skip having to decompress the image to find its size
 4. No blob passed but size provided: use the size for the empty animation frame
 
- The method returns a promise that resolves with the added [IAnimationFrame](ianimationframe.md).
+ The method returns a promise that resolves with the added [IAnimationFrame](https://www.construct.net/make-games/manuals/addon-sdk/reference/object-interfaces/ianimationframe).
 
-**SetSpeed(s)**
+**SetSpeed(s)**  
 Set and get the animation speed in animation frames per second.
 
-**GetSpeed()**
+**GetSpeed()**  
 Set and get the animation speed in animation frames per second.
 
-**SetLooping(l)**
+**SetLooping(l)**  
 Set and get the looping flag for the animation, indicating if the animation will repeat.
 
-**IsLooping()**
+**IsLooping()**  
 Set and get the looping flag for the animation, indicating if the animation will repeat.
 
-**SetPingPong(p)**
+**SetPingPong(p)**  
 Set and get the ping-pong flag for the animation, indicating if the animation will repeat alternating forwards and backwards.
 
-**IsPingPong()**
+**IsPingPong()**  
 Set and get the ping-pong flag for the animation, indicating if the animation will repeat alternating forwards and backwards.
 
-**SetRepeatCount(r)**
+**SetRepeatCount(r)**  
 Set and get the number of times the animation is set to repeat.
 
-**GetRepeatCount()**
+**GetRepeatCount()**  
 Set and get the number of times the animation is set to repeat.
 
-**SetRepeatTo(f)**
+**SetRepeatTo(f)**  
 Set and get the animation frame index to return to when repeating the animation. This must be a valid index.
 
-**GetRepeatTo()**
+**GetRepeatTo()**  
 Set and get the animation frame index to return to when repeating the animation. This must be a valid index.
 
-**Delete()**
+**Delete()**  
 Immediately deletes this animation from its object without any confirmation prompt. This cannot be undone.
 
 > **Tip**  

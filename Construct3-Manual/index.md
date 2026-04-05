@@ -1,7 +1,7 @@
 ---
 title: "Welcome to the Construct 3 manual"
 source: "https://www.construct.net/en/make-games/manuals/construct-3"
-release: 449
+release: 476.3
 ---
 
 ## On this page

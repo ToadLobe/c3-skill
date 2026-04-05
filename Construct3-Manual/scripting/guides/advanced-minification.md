@@ -1,7 +1,7 @@
 ---
 title: "Exporting with Advanced minification"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/guides/advanced-minification"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -36,6 +36,7 @@ const obj = {
 };
 console.log(obj.apples, obj.oranges);
 ```
+
 This will log the numbers *1* and *2* as they correspond to the object properties *apples* and *oranges*. After advanced minification the properties are renamed to shorter names, e.g.:
 
 ```javascript
@@ -45,6 +46,7 @@ const obj = {
 };
 console.log(obj.a, obj.b);
 ```
+
 This is shorter code (which is faster to load) and harder to understand (which is harder to reverse-engineer). It also works identically to how it did previously.
 
 ## Avoiding renaming

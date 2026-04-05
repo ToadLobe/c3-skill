@@ -1,7 +1,7 @@
 ---
 title: "Asset Browser"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/asset-browser-bar"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -28,13 +28,13 @@ There are four main sources for assets that can be picked from the dropdown menu
 
 Assets can be imported into a project in three main ways:
 
-**Double clicking**
+**Double clicking**  
 The quickest way to import a single asset. Depending on the type of the asset, something different will happen when importing. Below is a table showing how the different types will be handled.
 
-**Drag & Drop**
-Assets can be dragged and dropped onto the [layout](../../project-primitives/layouts.md) view or the [project bar](project-bar.md) to import them into the project. Below is a table showing how the different types will be handled.
+**Drag & Drop**  
+Assets can be dragged and dropped onto the [layout](../../project-primitives/layouts.md) view or the [project bar](../../interface/bars/project-bar.md) to import them into the project. Below is a table showing how the different types will be handled.
 
-**Context menu**
+**Context menu**  
 Assets can also be imported by clicking on the import option at the top of the context menu for a given asset. In the case of selecting a single asset or many assets of the same type, there will be a single import option. If the context menu is brought up when multiple assets of different types are selected, there will be options to import the assets of each type individually.
 
 ### Importing zip files
@@ -75,11 +75,11 @@ Other options in the various context menus are the following:
 
 Clicking on the settings button in the toolbar brings up a dialog for adjusting settings specific to the Asset Browser. This provides the following options:
 
-**Tag new frames with asset name when importing as many object types**
+**Tag new frames with asset name when importing as many object types**  
 Toggle this setting and the animation frame for each of the created object types will be tagged with the name of the corresponding asset.
 
-**Tag new frames with asset name when importing as single object type**
-Toggle this setting and each animation frame of the created object type will be tagged with the corresponding asset's name. This option will not apply when importing an animated format, such as **.gif** or **.apng**, because the extracted images don't have a name. In the case of importing a zip file which has a **c3-import-setting.json** file used by the [Animations Editor for bulk importing](../animations-editor#internalH1Link7.md), any tag names in that file will be preferred over asset names.
+**Tag new frames with asset name when importing as single object type**  
+Toggle this setting and each animation frame of the created object type will be tagged with the corresponding asset's name. This option will not apply when importing an animated format, such as **.gif** or **.apng**, because the extracted images don't have a name. In the case of importing a zip file which has a **c3-import-setting.json** file used by the [Animations Editor for bulk importing](../../interface/animations-editor#internalH1Link7.md), any tag names in that file will be preferred over asset names.
 
 ## Browsing assets in the local file system
 

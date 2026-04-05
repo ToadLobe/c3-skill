@@ -1,7 +1,7 @@
 ---
 title: "Sine behavior"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/sine"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -19,7 +19,7 @@ The **Sine behavior** can adjust an object's properties (like its position, size
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ISineBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/sine.md).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [ISineBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/sine).
 
 ## Sine properties
 

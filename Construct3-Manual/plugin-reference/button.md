@@ -1,7 +1,7 @@
 ---
 title: "Button"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/button"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -19,11 +19,11 @@ The **Button** object creates a button control which the user can click to perfo
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IButtonInstance script interface](../scripting/scripting-reference/plugin-interfaces/button.md).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IButtonInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/button).
 
 ## Layering HTML objects
 
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
 
 ## Styling buttons
 
@@ -60,7 +60,7 @@ An optional *class* attribute for the element in the DOM (Document Object Model)
 
 ## Button conditions
 
-See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
+See [common conditions](../plugin-reference/common-features/common-conditions.md) for features shared between form control objects.
 
 **Is checked**  
 If *Type* is *Checkbox*, is true if the control is currently checked.
@@ -70,7 +70,7 @@ Triggered when the user pushes the button or checks/unchecks the control, either
 
 ## Button actions
 
-See [common actions](common-features/common-actions.md) for features shared between form control objects.
+See [common actions](../plugin-reference/common-features/common-actions.md) for features shared between form control objects.
 
 **Set checked**  
 If *Type* is *Checkbox*, set the current check state of the control.

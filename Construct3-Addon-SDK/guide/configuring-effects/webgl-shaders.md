@@ -1,7 +1,7 @@
 ---
 title: "WebGL shaders"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/configuring-effects/webgl-shaders"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -74,61 +74,61 @@ Shaders are written in a GLSL (OpenGL Shading Language) ES 1.0 fragment shader a
 
 The current foreground texture co-ordinate is provided in the special variable `vTex`. This is normally used to read the foreground texture, but it is actually optional (in case you want to write a shader that generates all of its output without reference to the foreground texture at all). All other uniforms are optional, and are documented below. The full uniform declaration is included with the recommended precision.
 
-**uniform lowp sampler2D samplerFront;**
+**uniform lowp sampler2D samplerFront;**  
 The foreground texture sampler, to be sampled at `vTex`.
 
-**uniform mediump vec2 srcStart;**
+**uniform mediump vec2 srcStart;**  
 The current foreground rectangle being rendered, in texture co-ordinates. Note this is clamped as the object reaches the edge of the viewport. These are mainly useful for calculating the background sampling position.
 
-**uniform mediump vec2 srcEnd;**
+**uniform mediump vec2 srcEnd;**  
 The current foreground rectangle being rendered, in texture co-ordinates. Note this is clamped as the object reaches the edge of the viewport. These are mainly useful for calculating the background sampling position.
 
-**uniform mediump vec2 srcOriginStart;**
+**uniform mediump vec2 srcOriginStart;**  
 The current foreground source rectangle being rendered, in texture co-ordinates. This is not clamped, so can cover a rectangle that leaves the viewport. These are mainly useful for calculating the current sampling position relative to the object being rendered, without changing as the object clips against the viewport.
 
-**uniform mediump vec2 srcOriginEnd;**
+**uniform mediump vec2 srcOriginEnd;**  
 The current foreground source rectangle being rendered, in texture co-ordinates. This is not clamped, so can cover a rectangle that leaves the viewport. These are mainly useful for calculating the current sampling position relative to the object being rendered, without changing as the object clips against the viewport.
 
-**uniform mediump vec2 layoutStart;**
+**uniform mediump vec2 layoutStart;**  
 The current foreground source rectangle being rendered, in layout co-ordinates. This allows the current fragment's position in the layout to be calculated.
 
-**uniform mediump vec2 layoutEnd;**
+**uniform mediump vec2 layoutEnd;**  
 The current foreground source rectangle being rendered, in layout co-ordinates. This allows the current fragment's position in the layout to be calculated.
 
-**uniform lowp sampler2D samplerBack;**
+**uniform lowp sampler2D samplerBack;**  
 The background texture sampler used for background-blending effects. The `blends-background` property in addon.json should also be set to `true` before using this. For the correct way to sample the background, see the next section.
 
-**uniform lowp sampler2D samplerDepth;**
+**uniform lowp sampler2D samplerDepth;**  
 The depth texture sampler used for depth-based effects. The `uses-depth` property in addon.json should also be set to `true` before using this. The depth texture is the same size as the background texture, so this is sampled similarly to `samplerBack`. See the next section for more details.
 
-**uniform mediump vec2 destStart;**
+**uniform mediump vec2 destStart;**  
 The current background rectangle being rendered to, in texture co-ordinates, for background-blending effects. For the correct way to sample the background, see the next section.
 
-**uniform mediump vec2 destEnd;**
+**uniform mediump vec2 destEnd;**  
 The current background rectangle being rendered to, in texture co-ordinates, for background-blending effects. For the correct way to sample the background, see the next section.
 
-**uniform highp float seconds;**
+**uniform highp float seconds;**  
 The time in seconds since the runtime started. This can be used for animated effects. The `animated` property in addon.json should be set to `true`.
 
 > **Tip**  
 > Note `highp` can only be used on certain platforms. To work across all systems, check `#ifdef GL_FRAGMENT_PRECISION_HIGH` to see if `highp` is supported, else fall back to using `mediump`.
 
-**uniform mediump vec2 pixelSize;**
+**uniform mediump vec2 pixelSize;**  
 The size of a texel in the foreground texture in texture co-ordinates. This allows calculating distances in pixels rather than texture co-ordinates.
 
-**uniform mediump float layerScale;**
+**uniform mediump float layerScale;**  
 The current layer scale as a factor (i.e. 1 is unscaled). This is useful to ensure effects scale according to zoom.
 
-**uniform mediump float layerAngle;**
+**uniform mediump float layerAngle;**  
 The current layer angle in radians.
 
-**uniform mediump float devicePixelRatio;**
+**uniform mediump float devicePixelRatio;**  
 The value of [devicePixelRatio](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fWindow%2fdevicePixelRatio) in the browser, which is the number of device pixels per CSS pixel. This may be necessary in some effects to handle high-DPI displays.
 
-**uniform mediump float zNear;**
+**uniform mediump float zNear;**  
 The values of the project properties *Near distance* and *Far distance*, which represent the distance of the near and far planes from the camera position.
 
-**uniform mediump float zFar;**
+**uniform mediump float zFar;**  
 The values of the project properties *Near distance* and *Far distance*, which represent the distance of the near and far planes from the camera position.
 
 ## Useful shader calculations

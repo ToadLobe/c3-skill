@@ -1,7 +1,7 @@
 ---
 title: "Video recorder"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/video-recorder"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -51,7 +51,7 @@ Start recording a video of the main display canvas. Note this excludes form cont
 Start recording a video of the user's entire screen. This only works when the *Is screen recording supported* condition is true. For security reasons, browsers will prompt the user before the recording starts. To avoid the prompt annoying users, this action may only be allowed in a user input trigger, e.g. *On button clicked*, *On touch start* etc. Some browsers also provide options in the prompt to record either the browser tab (which will include non-canvas elements like form controls), a different app, or the screen. Specific video and audio formats can be chosen, but it is recommended to leave them at *Auto* to ensure a supported format is used, or set to *None* to omit either the video or audio from the recording. Note that if audio is included, the video can only include audio played by the project itself, unless *System audio* is checked, which allows for recording all audio output from the system including other apps; note however the user may still need to opt-in to including system audio in the permission prompt. The quality in kilobits per second (kbps) can also be set, determining the video quality vs. size tradeoff. Use *Stop recording* to end the recording, after which *On recording ready* will trigger so the video can be downloaded.
 
 **Start User Media recording**  
-Start recording video and/or audio from a [User Media](user-media.md) object's input. *On media request approved* must trigger before this can be used.
+Start recording video and/or audio from a [User Media](../plugin-reference/user-media.md) object's input. *On media request approved* must trigger before this can be used.
 
 **Stop recording**  
 Stop any active recording. When the video has finished encoding, *On recording ready* will trigger so the video can be downloaded.

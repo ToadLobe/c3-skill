@@ -1,7 +1,7 @@
 ---
 title: "WebGPU shaders"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/configuring-effects/webgpu-shaders"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -38,55 +38,55 @@ WGSL is a substantially different shader language to GLSL. This documentation do
 
 Here is a list of placeholders of the form `%%NAME%%` that Construct will replace in WGSL shaders.
 
-**%%SAMPLERFRONT_BINDING%%**
+**%%SAMPLERFRONT_BINDING%%**  
 Replaced with the `@binding` and `@group` attributes for the foreground sampler and texture. Example usage:
 
 `%%SAMPLERFRONT_BINDING%% var samplerFront : sampler;`
 
 `%%TEXTUREFRONT_BINDING%% var textureFront : texture_2d<f32>;`
 
-**%%TEXTUREFRONT_BINDING%%**
+**%%TEXTUREFRONT_BINDING%%**  
 Replaced with the `@binding` and `@group` attributes for the foreground sampler and texture. Example usage:
 
 `%%SAMPLERFRONT_BINDING%% var samplerFront : sampler;`
 
 `%%TEXTUREFRONT_BINDING%% var textureFront : texture_2d<f32>;`
 
-**%%SAMPLERBACK_BINDING%%**
+**%%SAMPLERBACK_BINDING%%**  
 Replaced with the `@binding` and `@group` attributes for the background sampler and texture. Example usage:
 
 `%%SAMPLERBACK_BINDING%% var samplerBack : sampler;`
 
 `%%TEXTUREBACK_BINDING%% var textureBack : texture_2d<f32>;`
 
-**%%TEXTUREBACK_BINDING%%**
+**%%TEXTUREBACK_BINDING%%**  
 Replaced with the `@binding` and `@group` attributes for the background sampler and texture. Example usage:
 
 `%%SAMPLERBACK_BINDING%% var samplerBack : sampler;`
 
 `%%TEXTUREBACK_BINDING%% var textureBack : texture_2d<f32>;`
 
-**%%SAMPLERDEPTH_BINDING%%**
+**%%SAMPLERDEPTH_BINDING%%**  
 Replaced with the `@binding` and `@group` attributes for the depth sampler and texture for depth effects like fog. Example usage:
 
 `%%SAMPLERDEPTH_BINDING%% var samplerDepth : sampler;`
 
 `%%TEXTUREDEPTH_BINDING%% var textureDepth : texture_depth_2d;`
 
-**%%TEXTUREDEPTH_BINDING%%**
+**%%TEXTUREDEPTH_BINDING%%**  
 Replaced with the `@binding` and `@group` attributes for the depth sampler and texture for depth effects like fog. Example usage:
 
 `%%SAMPLERDEPTH_BINDING%% var samplerDepth : sampler;`
 
 `%%TEXTUREDEPTH_BINDING%% var textureDepth : texture_depth_2d;`
 
-**%%FRAGMENTINPUT_STRUCT%%**
+**%%FRAGMENTINPUT_STRUCT%%**  
 Defines the `FragmentInput` structure used as input to the fragment shader method. This structure defines `fragUV : vec2<f32>` as the current fragment texture co-ordinates (equivalent to `vTex` in GLSL shaders). It also defines `@builtin(position) fragPos : vec4<f32>` and two utility methods that use it (see below).
 
-**%%FRAGMENTOUTPUT_STRUCT%%**
+**%%FRAGMENTOUTPUT_STRUCT%%**  
 Defines the `FragmentOutput` structure returned from the fragment shader method. This structure defines `color : vec4<f32>` which is used to write the output color from the shader (equivalent to writing to `gl_FragColor` in WebGL 1 shaders).
 
-**%%SHADERPARAMS_BINDING%%**
+**%%SHADERPARAMS_BINDING%%**  
 Replaced with the `@binding` and `@group` attributes for the structure containing custom effect parameters. This structure must be defined by your shader matching the effect parameters in the same order. It can be omitted if the shader does not use any custom parameters. Example usage from the 'Set color' sample shader:
 ```none
 struct ShaderParams {
@@ -95,7 +95,7 @@ struct ShaderParams {
 %%SHADERPARAMS_BINDING%% var<uniform> shaderParams : ShaderParams;
 ```
 
-**%%C3PARAMS_STRUCT%%**
+**%%C3PARAMS_STRUCT%%**  
 Defines a structure named `c3Params` which contains members that correspond to the Construct-provided uniforms for WebGL shaders, as well as a set of utility methods. The members of the structure currently include:
 ```none
 srcStart      : vec2<f32>,
@@ -115,7 +115,7 @@ zFar        : f32,
 isSrcTexRotated    : u32
 ```
 
-**%%C3_UTILITY_FUNCTIONS%%**
+**%%C3_UTILITY_FUNCTIONS%%**  
 Defines a set of utility functions that are useful for many kinds of effects (see below)
 
 ### Utility functions
@@ -124,65 +124,65 @@ Some placeholders also include definitions for useful helper functions that perf
 
 ### Provided by %%FRAGMENTINPUT_STRUCT%%
 
-**fn c3_getBackUV(fragPos : vec2<f32>, texBack : texture_2d<f32>) -> vec2<f32>**
+**fn c3_getBackUV(fragPos : vec2<f32>, texBack : texture_2d<f32>) -> vec2<f32>**  
 Helper function to calculate the texture co-ordinates to sample the background texture at for background blending effects. Example: `c3_getBackUV(input.fragPos.xy, textureBack)`
 
-**fn c3_getDepthUV(fragPos : vec2<f32>, texDepth : texture_depth_2d) -> vec2<f32>**
+**fn c3_getDepthUV(fragPos : vec2<f32>, texDepth : texture_depth_2d) -> vec2<f32>**  
 Helper function to calculate the texture co-ordinates to sample the depth texture at for depth-processing effects. Example: `c3_getDepthUV(input.fragPos.xy, textureDepth)`
 
 ### Provided by %%C3PARAMS_STRUCT%%
 
-**fn c3_srcToNorm(p : vec2<f32>) -> vec2<f32>**
+**fn c3_srcToNorm(p : vec2<f32>) -> vec2<f32>**  
 Pass `input.fragUV` to `c3_srcToNorm()` to return a position normalized in the range [0, 1] relative to the box `srcStart` to `srcEnd`. The `c3_normToSrc()` function performs the reverse calculation. The `srcOrigin` variants work relative to the box `srcOriginStart` to `srcOriginEnd` instead.
 
-**fn c3_normToSrc(p : vec2<f32>) -> vec2<f32>**
+**fn c3_normToSrc(p : vec2<f32>) -> vec2<f32>**  
 Pass `input.fragUV` to `c3_srcToNorm()` to return a position normalized in the range [0, 1] relative to the box `srcStart` to `srcEnd`. The `c3_normToSrc()` function performs the reverse calculation. The `srcOrigin` variants work relative to the box `srcOriginStart` to `srcOriginEnd` instead.
 
-**fn c3_srcOriginToNorm(p : vec2<f32>) -> vec2<f32>**
+**fn c3_srcOriginToNorm(p : vec2<f32>) -> vec2<f32>**  
 Pass `input.fragUV` to `c3_srcToNorm()` to return a position normalized in the range [0, 1] relative to the box `srcStart` to `srcEnd`. The `c3_normToSrc()` function performs the reverse calculation. The `srcOrigin` variants work relative to the box `srcOriginStart` to `srcOriginEnd` instead.
 
-**fn c3_normToSrcOrigin(p : vec2<f32>) -> vec2<f32>**
+**fn c3_normToSrcOrigin(p : vec2<f32>) -> vec2<f32>**  
 Pass `input.fragUV` to `c3_srcToNorm()` to return a position normalized in the range [0, 1] relative to the box `srcStart` to `srcEnd`. The `c3_normToSrc()` function performs the reverse calculation. The `srcOrigin` variants work relative to the box `srcOriginStart` to `srcOriginEnd` instead.
 
-**fn c3_clampToSrc(p : vec2<f32>) -> vec2<f32>**
+**fn c3_clampToSrc(p : vec2<f32>) -> vec2<f32>**  
 Clamps a given position to the box `srcStart` to `srcEnd` or `srcOriginStart` to `srcOriginEnd`.
 
-**fn c3_clampToSrcOrigin(p : vec2<f32>) -> vec2<f32>**
+**fn c3_clampToSrcOrigin(p : vec2<f32>) -> vec2<f32>**  
 Clamps a given position to the box `srcStart` to `srcEnd` or `srcOriginStart` to `srcOriginEnd`.
 
-**fn c3_getLayoutPos(p : vec2<f32>) -> vec2<f32>**
+**fn c3_getLayoutPos(p : vec2<f32>) -> vec2<f32>**  
 Pass `input.fragUV` to calculate the current corresponding position in layout co-ordinates.
 
-**fn c3_srcToDest(p : vec2<f32>) -> vec2<f32>**
+**fn c3_srcToDest(p : vec2<f32>) -> vec2<f32>**  
 Maps a texture co-ordinate in the `srcStart` to `srcEnd` rectangle to the corresponding position in the `destStart` to `destEnd` rectangle.
 
-**fn c3_clampToDest(p : vec2<f32>) -> vec2<f32>**
+**fn c3_clampToDest(p : vec2<f32>) -> vec2<f32>**  
 Clamps a texture co-ordinate to the `destStart` to `destEnd` rectangle.
 
-**fn c3_linearizeDepth(depthSample : f32) -> f32**
+**fn c3_linearizeDepth(depthSample : f32) -> f32**  
 Linearize a sample from the depth texture to a Z distance. Depth texture samples are usually in a normalized range [0, 1]; this method returns a Z distance based on the near and far planes, which is a more useful number for things like fog effects.
 
 ### Provided by %%C3_UTILITY_FUNCTIONS%%
 
-**fn c3_premultiply(c : vec4<f32>) -> vec4<f32>**
+**fn c3_premultiply(c : vec4<f32>) -> vec4<f32>**  
 Premultiplies the RGB components by the A component in a color, and the reverse operation.
 
-**fn c3_unpremultiply(c : vec4<f32>) -> vec4<f32>**
+**fn c3_unpremultiply(c : vec4<f32>) -> vec4<f32>**  
 Premultiplies the RGB components by the A component in a color, and the reverse operation.
 
-**fn c3_grayscale(rgb : vec3<f32>) -> f32**
+**fn c3_grayscale(rgb : vec3<f32>) -> f32**  
 Convert RGB colors to a corresponding grayscale component.
 
-**fn c3_getPixelSize(t : texture_2d<f32>) -> vec2<f32>**
+**fn c3_getPixelSize(t : texture_2d<f32>) -> vec2<f32>**  
 Returns the size of a pixel in texture co-ordinates on the given texture.
 
 > **Tip**  
 > This uses the `textureDimensions()` WGSL built-in, and can be used as a replacement for the `pixelSize` uniform in the WebGL renderer. It is further also capable of determining the pixel size for any given texture.
 
-**fn c3_RGBtoHSL(color : vec3<f32>) -> vec3<f32>**
+**fn c3_RGBtoHSL(color : vec3<f32>) -> vec3<f32>**  
 Converts RGB values to the equivalent in HSL, and the reverse operation.
 
-**fn c3_HSLtoRGB(hsl : vec3<f32>) -> vec3<f32>**
+**fn c3_HSLtoRGB(hsl : vec3<f32>) -> vec3<f32>**  
 Converts RGB values to the equivalent in HSL, and the reverse operation.
 
 ## Useful shader calculations
@@ -191,7 +191,7 @@ Some common calculations done in WGSL shaders are listed below.
 
 To sample the foreground pixel:
 
-```none
+```js
 var front : vec4<f32> = textureSample(textureFront, samplerFront, input.fragUV);
 ```
 
@@ -207,7 +207,7 @@ var next : vec4<f32> = textureSample(textureFront, samplerFront, input.fragUV + 
 
 To calculate the position to sample the background, use the `c3_getBackUV()` helper function:
 
-```none
+```js
 var back : vec4<f32> = textureSample(textureBack, samplerBack, c3_getBackUV(input.fragPos.xy, textureBack));
 ```
 
@@ -223,13 +223,13 @@ var zLinear : f32 = c3_linearizeDepth(depthSample);
 
 To calculate the current texture co-ordinate relative to the object being rendered, without being affected by clipping at the edge of the viewport, use the `c3_srcOriginToNorm()` helper method:
 
-```none
+```js
 var n : vec2<f32> = c3_srcOriginToNorm(input.fragUV);
 ```
 
 To calculate the current layout co-ordinates being rendered, use the `c3_getLayoutPos()` helper method:
 
-```none
+```js
 var l : vec2<f32> = c3_getLayoutPos(input.fragUV);
 ```
 

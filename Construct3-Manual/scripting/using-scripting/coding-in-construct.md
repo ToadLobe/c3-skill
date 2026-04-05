@@ -1,7 +1,7 @@
 ---
 title: "Coding in Construct"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/using-scripting/coding-in-construct"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -63,7 +63,7 @@ You can also rely on modern support for JavaScript being available, because Cons
 > **Warning**  
 > Do not use undocumented features in your JavaScript code.
 
-If you explore the functions and variables available in a debugger, you may find undocumented APIs specific to the Construct engine. The only reason these can be found is because the way JavaScript works makes it difficult to hide them. **Do not use any such undocumented features in your JavaScript code.** These are internal details of the Construct engine and can change at any time, and such changes can easily break your code. **No support will be provided for undocumented APIs**, even if engine changes break your code. Responsible developers know to only use documented and officially supported APIs. These can be found in the [scripting reference](../scripting-reference.md). If new engine functionality is essential to you, please file a feature request.
+If you explore the functions and variables available in a debugger, you may find undocumented APIs specific to the Construct engine. The only reason these can be found is because the way JavaScript works makes it difficult to hide them. **Do not use any such undocumented features in your JavaScript code.** These are internal details of the Construct engine and can change at any time, and such changes can easily break your code. **No support will be provided for undocumented APIs**, even if engine changes break your code. Responsible developers know to only use documented and officially supported APIs. These can be found in the [scripting reference](../../scripting/scripting-reference.md). If new engine functionality is essential to you, please file a feature request.
 
 Note this only applies to the Construct engine - all other browser APIs are of course available for use.
 

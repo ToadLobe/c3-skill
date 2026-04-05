@@ -1,7 +1,7 @@
 ---
 title: "3D Model"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/3d-model"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -17,7 +17,7 @@ The **3D model** [plugin](../project-primitives/objects/plugins.md) can be used 
 
 Check the [3D model object](../project-primitives/3d-model.md) manual entry for information about how to import model files.
 
-Refer to the [3D shape](3d-shape.md) manual entry for information about working with 3D in Construct 3 which is also relevant to this plugin.
+Refer to the [3D shape](../plugin-reference/3d-shape.md) manual entry for information about working with 3D in Construct 3 which is also relevant to this plugin.
 
 ### Scripting
 
@@ -88,7 +88,7 @@ An editor only property to change the color of the bounding box of the 3D model.
 
 ## 3D model conditions
 
-For conditions in common to other objects, see [Common conditions](common-features/common-conditions.md).
+For conditions in common to other objects, see [Common conditions](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/common-features/common-conditions).
 
 **On model loaded**  
 Triggered when a new 3D model object is loaded.
@@ -122,7 +122,7 @@ Checks if collisions are enabled.
 
 ## 3D model actions
 
-For actions common to other objects, see [Common actions](common-features/common-actions.md).
+For actions common to other objects, see [Common actions](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/common-features/common-actions).
 
 **Set 3D model**  
 Start loading a new 3D model object. The **"Mesh"** parameter can optionally be used to draw a single mesh, if the parameter is left empty all the meshes will be drawn. Use the **"Animation"** parameter to choose the starting animation, if left empty the first animation is used. Choose if the animation should start playing using the **"Playing"** parameter and the **"Progress"** parameter to choose where the animation should start from, using a value in the range **[0 - 1]**.
@@ -165,7 +165,7 @@ Change the collision state.
 
 ## 3D model expressions
 
-For expressions common to other objects, see [common expressions](common-features/common-expressions.md).
+For expressions common to other objects, see [common expressions](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/common-features/common-expressions).
 
 **Error3dModelName**  
 The name of the last 3D model object that failed to load.

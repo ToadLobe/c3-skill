@@ -1,7 +1,7 @@
 ---
 title: "PluginProperty class"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/reference/pluginproperty"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -11,9 +11,9 @@ release: 449
 
 ---
 
-PluginProperty defines a single property for an addon that will appear in the Properties Bar. Typically an array of PluginProperty is passed to `this._info.SetProperties()`. See [Configuring Plugins](../guide/configuring-plugins.md) for more information. Note that despite the name, PluginProperty is also used to define properties for behaviors.
+PluginProperty defines a single property for an addon that will appear in the Properties Bar. Typically an array of PluginProperty is passed to `this._info.SetProperties()`. See [Configuring Plugins](https://www.construct.net/make-games/manuals/addon-sdk/guide/configuring-plugins) for more information. Note that despite the name, PluginProperty is also used to define properties for behaviors.
 
-Note properties do not directly define any strings that appear in the editor UI. These are defined in [The Language File](../guide/language-file.md).
+Note properties do not directly define any strings that appear in the editor UI. These are defined in [The Language File](https://www.construct.net/make-games/manuals/addon-sdk/guide/language-file).
 
 ## Constructor
 
@@ -21,7 +21,7 @@ Note properties do not directly define any strings that appear in the editor UI.
 new SDK.PluginProperty(type, id, initialValue_or_options)
 ```
 
-**type**
+**type**  
 The type of the property. This can be one of:
 
 - `"integer"` — an integer number property, always rounded to a whole number.
@@ -39,48 +39,48 @@ The type of the property. This can be one of:
 - `"link"`  `[For plugins only]`  — creates a clickable link in the Properties Bar. There is no value associated with this property. A `linkCallback` function must be specified in the options object.
 - `"info"` — creates a read-only string that cannot be edited. There is no value associated with this property. A `infoCallback` function must be specified in the options object.
 
-**id**
+**id**  
 A string of the ID for the property. This is used in the language file to identify related strings.
 
-**initialValue_or_options**
+**initialValue_or_options**  
 For many properties, the only extra information needed is the initial value. For example for a `"float"` parameter this parameter can be a number of the initial value to use for the property. However to configure more options for the property, pass an object instead, and see the section on using an options object below. Some property types require the use of an options object, e.g. `"combo"` requires it to specify the item list.
 
 ## The options object
 
 If the third parameter of the constructor is an object, use the following properties to specify further configuration of the property.
 
-**initialValue**
+**initialValue**  
 Specify the initial value for the property, since the third parameter is occupied by the options object. Note when using a `"combo"` type this must be a string of the initial item ID, and when using a `"color"` type, this must be a normalized RGB array, e.g. `[1, 0, 0]` for red.
 
-**minValue**
+**minValue**  
 Specify a minimum value for a numeric property.
 
-**maxValue**
+**maxValue**  
 Specify a maximum value for a numeric property.
 
-**items**
+**items**  
 Only valid with the `"combo"` property type. Specify an array of strings representing the available item IDs in the dropdown list. The actual displayed strings are read from the language file.
 
-**dragSpeedMultiplier**
+**dragSpeedMultiplier**  
 Only valid with numeric properties. Pass a ratio to modify how quickly the value changes when it is being dragged up or down. For example passing 2 would cause the value to increase twice as fast as the mouse moves while dragging the value.
 
-**allowedPluginIds**
+**allowedPluginIds**  
 For `"object"` type properties only. An array of plugin ID strings to filter the object picker by. This can also contain the special string `"<world>"` to allow any world-type plugin.
 
-**filter**
+**filter**  
 `[Addon SDK v2 only]`  Optional and only valid with the `"projectfile"` type. Set to a file extension including the dot to filter the list of provided project files to only those with the given file extension, e.g. `".txt"`.
 
-**linkCallback**
+**linkCallback**  
 For `"link"` type properties only. A function that is called when the link is clicked. The number of calls, and the type of the parameter, are determined by the `callbackType` option.
 
-**callbackType**
+**callbackType**  
 For `"link"` type properties only. Specifies how the link callback function is used. This can be one of the following:
 
 - `"for-each-instance"`  `[default]`  — the callback is run once per selected instance in the Layout View. The callback parameter is an instance of your addon (deriving from `SDK.IWorldInstanceBase`). This is useful for per-instance modifications, such as a link to make all instances their original size.
 - `"once-for-type"` — the callback is run once regardless of how many instances are selected in the Layout View. The callback parameter is your addon's object type (deriving from `SDK.ITypeBase`). This is useful for per-type modifications, such as a link to edit the object image.
 
-**infoCallback**
+**infoCallback**  
 For `"info"` type properties only. A function that is called to get the value to display as a read-only string. The function is automatically called when any other properties change. The parameter is an instance of your addon, which you can use to read other property values and use them in the returned value.
 
-**interpolatable**
+**interpolatable**  
 For `"integer"`, `"float"`, `"percent"`, `"text"`, `"longtext"`, `"check"`, `"combo"` and `"color"` type properties only. Has a default value of `false`, set to `true` so the property can be supported by timelines. In order to fully support timelines it is also needed to follow the [Timeline Integration Guide](../guide/timeline-integration.md).

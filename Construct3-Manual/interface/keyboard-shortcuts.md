@@ -1,7 +1,7 @@
 ---
 title: "Keyboard shortcuts"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/keyboard-shortcuts"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -56,9 +56,9 @@ Note that on macOS the **Command key** <kbd>⌘</kbd> is used instead of **Contr
 
 <kbd>F5</kbd> Preview current layout
 
-<kbd>Shift</kbd> + <kbd>F4</kbd> [Debug](debugger.md) from first layout
+<kbd>Shift</kbd> + <kbd>F4</kbd> [Debug](https://www.construct.net/make-games/manuals/construct-3/interface/debugger) from first layout
 
-<kbd>Shift</kbd> + <kbd>F5</kbd> [Debug](debugger.md) current layout
+<kbd>Shift</kbd> + <kbd>F5</kbd> [Debug](https://www.construct.net/make-games/manuals/construct-3/interface/debugger) current layout
 
 <kbd>Alt</kbd> + **Preview** button to start an additional preview
 
@@ -98,7 +98,7 @@ Note that on macOS the **Command key** <kbd>⌘</kbd> is used instead of **Contr
 
 ## Layout view
 
-See also: [Layout View](layout-view.md)
+See also: [Layout View](https://www.construct.net/make-games/manuals/construct-3/interface/layout-view)
 
 <kbd>Ctrl</kbd> + **Mouse Wheel Up** or <kbd>Ctrl</kbd> + <kbd>+</kbd> Zoom in
 
@@ -151,7 +151,7 @@ To paste objects in-place (so they paste at their original positions, instead of
 
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> Stop all Live Previews  `[Paid plans only]`
 
-When editing tilemaps using the [Tilemap Bar](bars/tilemap-bar.md):
+When editing tilemaps using the [Tilemap Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/tilemap-bar):
 
 <kbd>1</kbd> - <kbd>6</kbd> Switch current tool
 
@@ -171,13 +171,13 @@ When editing tilemaps using the [Tilemap Bar](bars/tilemap-bar.md):
 
 <kbd>Ctrl or Alt Gr</kbd> + <kbd>]</kbd> Use the **modify existing hierarchy** option on the current selection of templates and/or replicas
 
-When editing timelines using the [Timeline Bar](bars/timeline-bar.md):
+When editing timelines using the [Timeline Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/timeline-bar):
 
 Hold <kbd>Ctrl</kbd> when dragging a cubic bezier anchor point to also modify the adjacent anchor point if there is any.
 
 ## Event Sheet View
 
-See also: [Event Sheet View](event-sheet-view.md)
+See also: [Event Sheet View](https://www.construct.net/make-games/manuals/construct-3/interface/event-sheet-view)
 
 <kbd>Ctrl</kbd> + <kbd>+</kbd> Increase text size
 
@@ -251,7 +251,7 @@ In the Parameters Dialog, press <kbd>F4</kbd> to toggle the Expressions Dictiona
 
 ## Animations Editor
 
-See also: [Animations Editor](animations-editor.md)
+See also: [Animations Editor](https://www.construct.net/make-games/manuals/construct-3/interface/animations-editor)
 
 <kbd>B</kbd> Brush tool
 
@@ -349,7 +349,7 @@ Animations only:
 
 ## Timeline Bar
 
-See also: [Timeline Bar](bars/timeline-bar.md)
+See also: [Timeline Bar](../interface/bars/timeline-bar.md)
 
 <kbd>E</kbd> Toggle timeline edit mode
 
@@ -407,7 +407,7 @@ If there are tracks selected at the moment of pasting, an attempt is made to pas
 
 ## Tilemap bar
 
-See also: [Tilemap Bar](bars/tilemap-bar.md)
+See also: [Tilemap Bar](../interface/bars/tilemap-bar.md)
 
 <kbd>Esc</kbd> or <kbd>1</kbd> Restore normal layout editing
 
@@ -433,7 +433,7 @@ See also: [Tilemap Bar](bars/tilemap-bar.md)
 
 ## Tilemap brush editor
 
-See also: [Tilemap Brush Editor](../../../../../../../interface/bars/tilemap-bar/tilemap-brush-editor.md)
+See also: [Tilemap Brush Editor](..//interface/bars/tilemap-bar/tilemap-brush-editor.md)
 
 <kbd>Alt</kbd> + <kbd>T</kbd> Toggle tiles in template
 
@@ -449,13 +449,13 @@ See also: [Tilemap Brush Editor](../../../../../../../interface/bars/tilemap-bar
 
 ## Ease editor
 
-See also: [Ease Editor](dialogs/ease-editor.md)
+See also: [Ease Editor](../interface/dialogs/ease-editor.md)
 
 Hold <kbd>Ctrl</kbd> when dragging an anchor point to also modify the adjacent anchor point if there is any.
 
 ## Flowchart View
 
-See also: [Flowchart View](flowchart-view.md)
+See also: [Flowchart View](../interface/flowchart-view.md)
 
 <kbd>Ctrl</kbd> + **A** Select all nodes.
 

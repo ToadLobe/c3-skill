@@ -1,7 +1,7 @@
 ---
 title: "The Tilemap Brush Editor"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/tilemap-bar/tilemap-brush-editor"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -12,7 +12,7 @@ release: 449
 
 ## The tilemap brush editor
 
-This editor is used to create, edit and delete auto-tiling and patch brushes for use with the [Tilemap Bar](../tilemap-bar.md).
+This editor is used to create, edit and delete auto-tiling and patch brushes for use with the [Tilemap Bar](../../../interface/bars/tilemap-bar.md).
 
 There are three types of brushes supported, the 16 tile auto tiling brush, the 47 tile auto tiling brush and the patch brush. Brushes are created by default with each instance of the [Tilemap plugin](../../../plugin-reference/tilemap.md). The default brushes are setup to work correctly with the default tilemap image.
 

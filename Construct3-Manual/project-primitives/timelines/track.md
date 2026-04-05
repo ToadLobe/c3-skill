@@ -1,7 +1,7 @@
 ---
 title: "Timeline track"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/track"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -11,9 +11,9 @@ release: 449
 
 ---
 
-In the [Timeline Bar](../../interface/bars/timeline-bar.md), a track is represented as a row with an icon of the corresponding [instance](../objects/instances.md).
+In the [Timeline Bar](../../interface/bars/timeline-bar.md), a track is represented as a row with an icon of the corresponding [instance](../../project-primitives/objects/instances.md).
 
-Tracks can be moved to and from [track folders](track-folder.md) or the root of the [timeline](timeline.md) by dragging and dropping. A timeline can have many different tracks in its hierarchy, one for each instance added to it.
+Tracks can be moved to and from [track folders](../../project-primitives/timelines/track-folder.md) or the root of the [timeline](../../project-primitives/timelines/timeline.md) by dragging and dropping. A timeline can have many different tracks in its hierarchy, one for each instance added to it.
 
 ## Adding Tracks
 
@@ -26,32 +26,32 @@ To add a track to a timeline follow any of these methods:
 
 ## Track Properties
 
-**Name**
+**Name**  
 The name of the track. This can not be changed and is automatically generated from the object name and the instance UID.
 
-**Animation mode**
-See the section on common timeline element properties in [Timelines](../timelines.md). These properties follow an inheritance pattern.
+**Animation mode**  
+See the section on common timeline element properties in [Timelines](../../project-primitives/timelines.md). These properties follow an inheritance pattern.
 
-**Result mode**
-See the section on common timeline element properties in [Timelines](../timelines.md). These properties follow an inheritance pattern.
+**Result mode**  
+See the section on common timeline element properties in [Timelines](../../project-primitives/timelines.md). These properties follow an inheritance pattern.
 
-**Ease**
-See the section on common timeline element properties in [Timelines](../timelines.md). These properties follow an inheritance pattern.
+**Ease**  
+See the section on common timeline element properties in [Timelines](../../project-primitives/timelines.md). These properties follow an inheritance pattern.
 
-**Path mode**
-See the section on common timeline element properties in [Timelines](../timelines.md). These properties follow an inheritance pattern.
+**Path mode**  
+See the section on common timeline element properties in [Timelines](../../project-primitives/timelines.md). These properties follow an inheritance pattern.
 
-**Visible**
-See the section on common timeline element properties in [Timelines](../timelines.md). Changing these at the track level will apply the change to every sub-element.
+**Visible**  
+See the section on common timeline element properties in [Timelines](../../project-primitives/timelines.md). Changing these at the track level will apply the change to every sub-element.
 
-**Enabled**
-See the section on common timeline element properties in [Timelines](../timelines.md). Changing these at the track level will apply the change to every sub-element.
+**Enabled**  
+See the section on common timeline element properties in [Timelines](../../project-primitives/timelines.md). Changing these at the track level will apply the change to every sub-element.
 
-**Locked**
-See the section on common timeline element properties in [Timelines](../timelines.md). Changing these at the track level will apply the change to every sub-element.
+**Locked**  
+See the section on common timeline element properties in [Timelines](../../project-primitives/timelines.md). Changing these at the track level will apply the change to every sub-element.
 
-**Show UI Elements**
-See the section on common timeline element properties in [Timelines](../timelines.md). Changing these at the track level will apply the change to every sub-element.
+**Show UI Elements**  
+See the section on common timeline element properties in [Timelines](../../project-primitives/timelines.md). Changing these at the track level will apply the change to every sub-element.
 
-**Track ID**
+**Track ID**  
 An optional identifier to be used in tandem with the **Set Instance** action. See the [Timeline plugin](../../plugin-reference/timeline-controller.md) section of the manual for more details.

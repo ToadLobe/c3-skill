@@ -1,7 +1,7 @@
 ---
 title: "Bluetooth"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/bluetooth"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -18,7 +18,7 @@ The **Bluetooth object** allows communicating with nearby Bluetooth devices via 
 You can find a simple example of using the Bluetooth object in the [Bluetooth - device name](https://editor.construct.net/#open=bluetooth-device-name) example.
 
 > **Tip**  
-> It's useful to have a basic understanding of the way Bluetooth works before starting to use the Bluetooth object. There is plenty of information covering the general technology if you search the web. In particular it is useful to know about services and characteristics. Familiarity with [Binary Data](binary-data.md) will also be useful.
+> It's useful to have a basic understanding of the way Bluetooth works before starting to use the Bluetooth object. There is plenty of information covering the general technology if you search the web. In particular it is useful to know about services and characteristics. Familiarity with [Binary Data](../plugin-reference/binary-data.md) will also be useful.
 
 > **Tip**  
 > In Chrome, it can be useful to visit `chrome://bluetooth-internals` which provides a debug view of Bluetooth devices. This also helps identifying which services and characteristics a device exposes.

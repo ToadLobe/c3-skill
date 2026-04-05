@@ -1,7 +1,7 @@
 ---
 title: "Deprecated features"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/tips-and-guides/deprecated-features"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -16,7 +16,7 @@ release: 449
 
 ---
 
-Construct has been in development for many years. Much like with [superseded features](superseded-features.md), over time new features are occasionally introduced that replace older features. Usually the older features are supported as long as possible to improve backwards compatibility. However sometimes the maintenance burden and additional complications caused by having to continue to have the older features means that they must ultimately be retired.
+Construct has been in development for many years. Much like with [superseded features](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/superseded-features), over time new features are occasionally introduced that replace older features. Usually the older features are supported as long as possible to improve backwards compatibility. However sometimes the maintenance burden and additional complications caused by having to continue to have the older features means that they must ultimately be retired.
 
 When you open a project, Construct will warn you of any deprecated or retired features the project uses. The *Deprecated features* dialog may appear when opening a project to list all such features. It is strongly recommended to act as soon as possible to resolve all the items listed, thereby removing the use of all the deprecated features from your project. This will ensure your project continues to be supported and work correctly in future. If you don't take action, you may find your project stops working, or possibly cannot be opened, in a future release of Construct.
 
@@ -32,7 +32,7 @@ To fix this Construct moved its addon system to an industry-standard approach wi
 
 As of Construct r450+, released in 2025, support for SDK v1 addons was removed. Construct will notify you that you cannot open a project if it uses SDK v1 addons. If you see such a message, consider the following options to resolve it:
 
-- Addons installed from the official [Addons website](https://www.construct.net/en/make-games/addons) should auto-update to the latest version. If you see a prompt about addon updates being available on startup, click the notification and update addons with the [Addon Manager](../interface/dialogs/addon-manager.md). If the addon developer has published an update using SDK v2, this will then update the addon to that version.
+- Addons installed from the official [Addons website](https://www.construct.net/en/make-games/addons) should auto-update to the latest version. If you see a prompt about addon updates being available on startup, click the notification and update addons with the [Addon Manager](https://www.construct.net/make-games/manuals/construct-3/interface/dialogs/addon-manager). If the addon developer has published an update using SDK v2, this will then update the addon to that version.
 - If the addon was not installed from the official addons website, check with the addon developer to see if an update is available, and manually download and install the updated addon.
 - If there is no update for the addon using SDK v2, contact the addon developer and ask them to provide an update.
 - Consider replacing the addons with other features. For example if your project uses a third-party addon for tweening, it may be possible to use the built-in Tween behavior instead. Alternatively a different third-party addon may be available that uses SDK v2. It may even be the case that you can just remove the addon if it turns out it is not really necessary.
@@ -59,7 +59,7 @@ In 2020 Construct added support for the *app:* scheme for iOS, and in 2021 the *
 
 ## NW.js exporter
 
-For many years Construct used a framework called NW.js for its desktop exports, along with an NW.js plugin for further integration. Modern versions of Construct switched over to separate Windows, macOS and Linux exporters using different technologies, and as of r450+ released in 2025, support for NW.js has been retired. The [Browser plugin](../plugin-reference/browser.md) provides most of the windowing features of the old NW.js plugin, and the [File System plugin](../plugin-reference/filesystem.md) provides access to local files and folders. The legacy Greenworks plugin for Steam integration with NW.js has also been replaced by the [Steamworks plugin](https://www.construct.net/en/make-games/addons/1105/steamworks) which works with the modern export options.
+For many years Construct used a framework called NW.js for its desktop exports, along with an NW.js plugin for further integration. Modern versions of Construct switched over to separate Windows, macOS and Linux exporters using different technologies, and as of r450+ released in 2025, support for NW.js has been retired. The [Browser plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/browser) provides most of the windowing features of the old NW.js plugin, and the [File System plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/filesystem) provides access to local files and folders. The legacy Greenworks plugin for Steam integration with NW.js has also been replaced by the [Steamworks plugin](https://www.construct.net/en/make-games/addons/1105/steamworks) which works with the modern export options.
 
 ## Deprecated plugins/behaviors
 

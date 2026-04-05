@@ -1,7 +1,7 @@
 ---
 title: "Nested timelines"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar/nested-timelines"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -18,7 +18,7 @@ It is possible to nest [timelines](../../../project-primitives/timelines/timelin
 
 First you will need to create more than one timeline in the project, after doing that you can do any of the following:
 
-- Drag a timeline from the [Project Bar](../project-bar.md) into the [Timeline Bar](../timeline-bar.md) to nest it in the currently active timeline.
+- Drag a timeline from the [Project Bar](../../../interface/bars/project-bar.md) into the [Timeline Bar](../../../interface/bars/timeline-bar.md) to nest it in the currently active timeline.
 - Use the sub option `Timeline › Add timelines` of the <kbd>+</kbd> split button in the toolbar to bring up a dialog from which to choose timelines to add.
 - Right-click on empty space in the Timeline Bar to bring up a context menu for the current timeline and use the option `Timeline › Add timelines`.
 

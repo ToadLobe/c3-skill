@@ -1,7 +1,7 @@
 ---
 title: "Progress bar"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/progress-bar"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -18,15 +18,15 @@ The **Progress bar** object displays a bar which can be used to indicate the pro
 
 [![A progress bar](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/1018/progressbar.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/1018/progressbar.png)
 
-The progress bar is styled differently depending on the platform or browser, designed to match the style of the system. If a custom style is desired, it may instead be preferable to use a [Tiled Background](tiled-background.md) which has its width set depending on the progress.
+The progress bar is styled differently depending on the platform or browser, designed to match the style of the system. If a custom style is desired, it may instead be preferable to use a [Tiled Background](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/tiled-background) which has its width set depending on the progress.
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IProgressBarInstance script interface](../scripting/scripting-reference/plugin-interfaces/progress-bar.md).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IProgressBarInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/progress-bar).
 
 ## Layering HTML objects
 
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
 
 ## Progress bar properties
 
@@ -50,7 +50,7 @@ An optional *class* attribute for the element in the DOM (Document Object Model)
 
 ## Progress bar conditions
 
-See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
+See [common conditions](../plugin-reference/common-features/common-conditions.md) for features shared between form control objects.
 
 **Compare progress**  
 Compare the currently set progress amount.
@@ -60,7 +60,7 @@ Triggered when the progress bar control is clicked.
 
 ## Progress bar actions
 
-See [common actions](common-features/common-actions.md) for features shared between form control objects.
+See [common actions](../plugin-reference/common-features/common-actions.md) for features shared between form control objects.
 
 **Make indeterminate**  
 Set the progress bar in to an indeterminate mode, intended to indicate that it is working, but the progress is unknown. The display of this mode depends on the browser and platform. Not all browsers may support an indeterminate mode for progress bars.

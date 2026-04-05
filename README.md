@@ -1,6 +1,6 @@
 # Construct 3 Documentation (Markdown)
 
-[![Release](https://img.shields.io/badge/release-r449-blue)](https://www.construct.net/en/make-games/releases)
+[![Release](https://img.shields.io/badge/release-r476.3-blue)](https://www.construct.net/en/make-games/releases)
 [![License](https://img.shields.io/badge/license-CC%20BY--SA%203.0-green)](https://creativecommons.org/licenses/by-sa/3.0/)
 
 Unofficial Markdown conversion of the official [Construct 3](https://www.construct.net/en/make-games/games-editor) documentation for easy reading, searching, and AI-assisted development.
@@ -18,8 +18,8 @@ Unofficial Markdown conversion of the official [Construct 3](https://www.constru
 
 | Content | Release | URL |
 | --- | :---: | --- |
-| Construct 3 Manual | r449 | <https://www.construct.net/en/make-games/manuals/construct-3> |
-| Addon SDK | r449 | <https://www.construct.net/en/make-games/manuals/addon-sdk> |
+| Construct 3 Manual | r476.3 | <https://www.construct.net/en/make-games/manuals/construct-3> |
+| Addon SDK | r476.3 | <https://www.construct.net/en/make-games/manuals/addon-sdk> |
 | Game Services | r476.3 | <https://www.construct.net/en/game-services/manuals/game-services> |
 
 ## Recommended Reading

@@ -1,7 +1,7 @@
 ---
 title: "Instances Bar"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/instance-bar"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -19,7 +19,7 @@ release: 449
 
 The **Instances Bar** shows all the [instances](../../project-primitives/objects/instances.md) in the current [layout](../../project-primitives/layouts.md) at a glance, it can be very useful in large or busy layouts to quickly find specific instances.
 
-You can also use folders to group related instances together. [Hierarchies](../layout-view#internalH1Link4.md) are shown as a tree structure to quickly tell which instances are where in complex structures.
+You can also use folders to group related instances together. [Hierarchies](../../interface/layout-view#internalH1Link4.md) are shown as a tree structure to quickly tell which instances are where in complex structures.
 
 [![overview](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/124586/overview.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/124586/overview.png)
 
@@ -33,7 +33,7 @@ To add a folder right-click anywhere in the bar and choose the appropriate optio
 
 Once a folder is created you can drag & drop instances in and out of them by dragging the items in the bar.
 
-It is also possible to drag instances into a folder directly from the [Layout View](../layout-view.md).
+It is also possible to drag instances into a folder directly from the [Layout View](../../interface/layout-view.md).
 
 The order in which instances appear in the bar can also be altered by dragging and dropping.
 
@@ -113,7 +113,7 @@ These options are shown when showing a context menu for an instance or group of 
 
 - **Lock / Unlock layer:** toggle the lock state of the layer the selected instance belongs to.
 - **Toggle layer visibility:** toggle the visible state of the layer the selected instance belongs to.
-- **Select layer:** select the layer which the selected instance belongs to. This is the same as selecting a layer through the [Layers bar](layers-bar.md).
+- **Select layer:** select the layer which the selected instance belongs to. This is the same as selecting a layer through the [Layers bar](../../interface/bars/layers-bar.md).
 - **Delete:** delete the the selection of instances.
 - **Cut, Copy and Paste:** these options do the same as the ones in the Layout view context menu.
 - **Find all references:** searches the whole project for the selected instance.

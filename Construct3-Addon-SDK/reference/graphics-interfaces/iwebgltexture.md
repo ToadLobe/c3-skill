@@ -1,7 +1,7 @@
 ---
 title: "IWebGLTexture interface"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/reference/graphics-interfaces/iwebgltexture"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -16,11 +16,11 @@ This interface cannot be directly constructed. It is only available through othe
 
 ## Methods
 
-**GetWidth()**
+**GetWidth()**  
 Return the width or height of the texture. Note this refers to the source texture. Construct's in-editor spritesheeting engine means the texture could be significantly larger than an object's image to be rendered from it.
 
-**GetHeight()**
+**GetHeight()**  
 Return the width or height of the texture. Note this refers to the source texture. Construct's in-editor spritesheeting engine means the texture could be significantly larger than an object's image to be rendered from it.
 
-**GetDefaultSampling()**
+**GetDefaultSampling()**  
 Return the default sampling mode this texture was created with.

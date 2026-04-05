@@ -1,7 +1,7 @@
 ---
 title: "The Layout View"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/layout-view"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -16,19 +16,19 @@ release: 449
 
 ---
 
-The **Layout View** is a visual designer for your objects. It allows you to set up a pre-arranged *layout* of objects, such as a game level, menu or title screen. In other tools, *layouts* may be referred to as *scenes*, *rooms*, *frames* or *stages*. See also the manual section on [layouts](../project-primitives/layouts.md).
+The **Layout View** is a visual designer for your objects. It allows you to set up a pre-arranged *layout* of objects, such as a game level, menu or title screen. In other tools, *layouts* may be referred to as *scenes*, *rooms*, *frames* or *stages*. See also the manual section on [layouts](https://www.construct.net/make-games/manuals/construct-3/project-primitives/layouts).
 
 [![The Layout View](https://construct-static.com/images/v1740/r/uploads/articleuploadobject/0/images/867/layout-view_v700.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/867/layout-view.png)The Layout View
 
 The dashed rectangle in the top left of the layout area indicates the **viewport size** in the layout. By default the viewport appears in the top left of the layout, so to align something relative to the viewport, it should be placed inside this rectangle.
 
-In the corner of the view appears a small **status bar** with information about the current **mouse position** in the layout, the current **zoom level**, and the current **active layer**. The active layer is important since it is **the [layer](../project-primitives/layers.md) new object instances are added to.** The active layer can be changed by selecting a different layer in the [Layers Bar](bars/layers-bar.md).
+In the corner of the view appears a small **status bar** with information about the current **mouse position** in the layout, the current **zoom level**, and the current **active layer**. The active layer is important since it is **the [layer](https://www.construct.net/make-games/manuals/construct-3/project-primitives/layers) new object instances are added to.** The active layer can be changed by selecting a different layer in the [Layers Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/layers-bar).
 
 ## Adding, modifying and deleting objects
 
-**Double-click a space** in the layout or right-click and select `Insert new object` to add a new object type. This will bring up the [Create New Object Type dialog](dialogs/create-new-object.md).
+**Double-click a space** in the layout or right-click and select `Insert new object` to add a new object type. This will bring up the [Create New Object Type dialog](https://www.construct.net/make-games/manuals/construct-3/interface/dialogs/create-new-object).
 
-To create new [instances](../project-primitives/objects/instances.md) of an existing object type, another object can be **control + dragged**, copy and pasted, or dragged and dropped from the [Project Bar](bars/project-bar.md). (Make sure you're clear on the difference between Object Types and Instances as described in [Project Structure](../overview/project-structure.md).) When dragging and dropping from the Project Bar, you can also use [templates](../project-primitives/objects/templates.md) to define the default properties of the instance that is created.
+To create new [instances](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/instances) of an existing object type, another object can be **control + dragged**, copy and pasted, or dragged and dropped from the [Project Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/project-bar). (Make sure you're clear on the difference between Object Types and Instances as described in [Project Structure](https://www.construct.net/make-games/manuals/construct-3/overview/project-structure).) When dragging and dropping from the Project Bar, you can also use [templates](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/templates) to define the default properties of the instance that is created.
 
 A shortcut for importing image files as Sprite objects is to **drag and drop image files** in to the Layout View. This automatically creates a new Sprite object type with the dragged image. If multiple image files are dragged, the Sprite is assigned an animation with the dragged images as animation frames. Where supported, animated image file formats like GIF and APNG can also be dragged and dropped in and will be used as a Sprite animation. (Animated image file formats can also be imported to the Animations Editor where they will also be split out in to separate frames.)
 
@@ -39,7 +39,7 @@ SVG files can also be drag-and-dropped in and a [SVG Picture object](../plugin-r
 
 Instances can be moved by dragging and dropping them with the mouse. **Hold** <kbd>Shift</kbd> to axis-lock the drag to diagonals. Alternatively they can be nudged 1 pixel at a time with the arrow keys (hold shift to nudge 10 pixels), or co-ordinates can be typed in directly to the Properties Bar.
 
-The **Delete** key or right-click `Delete` option deletes instances. Deleting all instances of an object does **not** remove the [object type](../project-primitives/objects/object-types.md) from the project. To entirely remove an object from the project it should be deleted via the Project Bar.
+The **Delete** key or right-click `Delete` option deletes instances. Deleting all instances of an object does **not** remove the [object type](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/object-types) from the project. To entirely remove an object from the project it should be deleted via the Project Bar.
 
 Click objects to select them. Objects cannot be selected if their layer is locked. **Hold** <kbd>Control</kbd> while clicking to select multiple objects, or **click and drag** a selection rectangle to select all objects in an area. The Properties Bar displays properties for *all* currently selected objects, so changing a property sets it for every selected object.
 
@@ -55,7 +55,7 @@ Sometimes the resize handles, or rotate cursor, can get in the way of other obje
 
 ## Using tilemaps
 
-If you are designing a tile-based game, you can insert the [Tilemap object](../plugin-reference/tilemap.md) and edit tiles in the Layout View. To find out more, see the manual entry on the [Tilemap Bar](bars/tilemap-bar.md).
+If you are designing a tile-based game, you can insert the [Tilemap object](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/tilemap) and edit tiles in the Layout View. To find out more, see the manual entry on the [Tilemap Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/tilemap-bar).
 
 ## Scrolling and zooming
 
@@ -92,7 +92,7 @@ While a selection is wrapped, click any of the objects in the wrapped selection 
 
 ### Containers
 
-Objects that are grouped in to [Containers](../project-primitives/objects/containers.md) highlight yellow in the Layout View. Containers can also be set to automatically wrap their selection. If you still need to select an individual object in an automatically wrapped selection, **hold** <kbd>Alt</kbd> and click one of the objects.
+Objects that are grouped in to [Containers](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/containers) highlight yellow in the Layout View. Containers can also be set to automatically wrap their selection. If you still need to select an individual object in an automatically wrapped selection, **hold** <kbd>Alt</kbd> and click one of the objects.
 
 ## Setting up a hierarchy
 
@@ -102,7 +102,7 @@ To set up a hierarchy, select multiple objects, and then right-click the object 
 
 [![Scene graph hierarchy displayed in the Layout View](https://construct-static.com/images/v1740/r/uploads/articleuploadobject/0/images/53909/editor-hierarchy_v480.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/53909/editor-hierarchy.png)
 
-When the children are selected, a new hierarchy section appears in the [Properties Bar](bars/properties-bar.md) allowing you to choose which properties the child transforms with, such as the position, angle, and whether the child destroys with the parent. At runtime the child will follow any changes to the parent (for the enabled properties) - often giving a visual appearance that the objects are connected, or form a single larger object.
+When the children are selected, a new hierarchy section appears in the [Properties Bar](../interface/bars/properties-bar.md) allowing you to choose which properties the child transforms with, such as the position, angle, and whether the child destroys with the parent. At runtime the child will follow any changes to the parent (for the enabled properties) - often giving a visual appearance that the objects are connected, or form a single larger object.
 
 Once a hierarchy is set up, other options also appear to detach objects: *Remove from parent* to remove a child from its parent, and *Remove all children* to detach the entire hierarchy below that object.
 
@@ -120,7 +120,7 @@ To create a mesh, right-click an instance and choose `Mesh › Create mesh...`. 
 
 You can also **hold Shift** while dragging a mesh point to move it without distorting the image. This can create a kind of mask or cut-out appearance.
 
-When you click a mesh point, it will also appear selected and display properties for that mesh point in the [Properties Bar](bars/properties-bar.md). This allows precise control over the exact details of the mesh point, as well as providing informational values such as the mesh column and row. The **Z elevation** of the mesh point can also be modified in the Properties Bar, allowing for 3D mesh distortion. To learn more, see the tutorial [Using 3D features in Construct](https://www.construct.net/en/tutorials/using-3d-construct-2746).
+When you click a mesh point, it will also appear selected and display properties for that mesh point in the [Properties Bar](../interface/bars/properties-bar.md). This allows precise control over the exact details of the mesh point, as well as providing informational values such as the mesh column and row. The **Z elevation** of the mesh point can also be modified in the Properties Bar, allowing for 3D mesh distortion. To learn more, see the tutorial [Using 3D features in Construct](https://www.construct.net/en/tutorials/using-3d-construct-2746).
 
 Once an object has a mesh you can access some new options in the *Mesh* sub-menu:
 
@@ -135,12 +135,12 @@ The layout's editor properties also include a *Show meshes* option that lets you
 
 To go to the associated event sheet, press <kbd>Ctrl</kbd> + <kbd>E</kbd> or right-click and select `Edit event sheet`.
 
-The Z order of objects within a layer can be adjusted by right-clicking and selecting `Z Order › Send to top of layer` or `Z Order › Send to bottom of layer`. You can also open the [Z Order Bar](bars/z-order-bar.md)  `[Paid plans only]`  for advanced control.
+The Z order of objects within a layer can be adjusted by right-clicking and selecting `Z Order › Send to top of layer` or `Z Order › Send to bottom of layer`. You can also open the [Z Order Bar](https://www.construct.net/make-games/manuals/construct-3/interface/bars/z-order-bar)  `[Paid plans only]`  for advanced control.
 
-Objects can be snapped to a grid for tile placement, and the collision polygons of the displayed objects can also be outlined. These features can be enabled in the [layout's properties](../project-primitives/layouts.md).
+Objects can be snapped to a grid for tile placement, and the collision polygons of the displayed objects can also be outlined. These features can be enabled in the [layout's properties](https://www.construct.net/make-games/manuals/construct-3/project-primitives/layouts).
 
 The right-click menu in the layout view also provides some alignment tools under the `Align` sub-menu. These allow you to quickly space objects equally or align objects along their edges. When aligning, the objects are aligned to the particular object you right-clicked.
 
-The [Animations editor](animations-editor.md) can be brought up by **double-clicking** objects with images or animations like Tiled Background and Sprite. You can also double-click Text objects to edit their initial text in a dialog.
+The [Animations editor](https://www.construct.net/make-games/manuals/construct-3/interface/animations-editor) can be brought up by **double-clicking** objects with images or animations like Tiled Background and Sprite. You can also double-click Text objects to edit their initial text in a dialog.
 
-[Effects](../project-primitives/objects/effects.md) will be displayed in the layout view if enabled in [project properties](../project-primitives/projects.md).
+[Effects](https://www.construct.net/make-games/manuals/construct-3/project-primitives/objects/effects) will be displayed in the layout view if enabled in [project properties](https://www.construct.net/make-games/manuals/construct-3/project-primitives/projects).

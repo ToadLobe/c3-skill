@@ -1,10 +1,10 @@
 ---
 title: "Layout view editing"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar/layout-view-editing"
-release: 449
+release: 476.3
 ---
 
-When edit mode is on, the [Layout View](../../layout-view.md) will show handles indicating the path an [instance](../../../project-primitives/objects/instances.md) will take as the [timeline](../../../project-primitives/timelines/timeline.md) is played. The handles are only shown for **X** and **Y** properties, as those are the only that can really show any form of useful visual feedback. The handles can be used to update the path of the corresponding instance.
+When edit mode is on, the [Layout View](../../../interface/layout-view.md) will show handles indicating the path an [instance](../../../project-primitives/objects/instances.md) will take as the [timeline](../../../project-primitives/timelines/timeline.md) is played. The handles are only shown for **X** and **Y** properties, as those are the only that can really show any form of useful visual feedback. The handles can be used to update the path of the corresponding instance.
 
 Additionally, when setting the **Path mode** property to **Bezier Curve**, more handles will appear to edit the path between each pair of keyframes as curves.
 
@@ -19,7 +19,7 @@ Aside from the handles, there are a few different lines that show up when the La
 - **Blue:** These line represents the path instances will take as the timeline is played.
 - **Grey:** These lines are just visual connection between keyframes to help identify their order in the timeline.
 - **Red:** These appear to show which pair of keyframes an instance is currently between, and also to indicate that new keyframes can be added at that position.
-- **Green:** These appear when the current time marker is on top of a [master keyframe](../../../project-primitives/timelines/master-keyframe.md) in the [Timeline Bar.](../timeline-bar.md)  If the **Set Keyframes** option is used now, all the keyframes at that position will be updated.
+- **Green:** These appear when the current time marker is on top of a [master keyframe](../../../project-primitives/timelines/master-keyframe.md) in the [Timeline Bar.](../../../interface/bars/timeline-bar.md)  If the **Set Keyframes** option is used now, all the keyframes at that position will be updated.
 
 ### Show UI Elements Toggle
 

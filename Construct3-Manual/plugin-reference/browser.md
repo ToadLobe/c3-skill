@@ -1,7 +1,7 @@
 ---
 title: "Browser"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/browser"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -144,7 +144,7 @@ Load a Cascading Style Sheet (CSS) from a URL and applies its styles to the docu
 Set a CSS style on the style attribute of some HTML elements in the document, based on a CSS property name and a string for its value. Setting the value to an empty string will remove the property from the style attribute. The element to change the style for is set by a CSS selector, e.g. `".myclass"` will mean to update the CSS style of an element with the class *myclass*; if the *Type* is set to *all*, it will update the style of all elements matching the selector.
 
 > **Tip**  
-> This is useful for setting document-wide CSS variables that can be used with other HTML features like form controls or [HTML Element](html-element.md).
+> This is useful for setting document-wide CSS variables that can be used with other HTML features like form controls or [HTML Element](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/html-element).
 
 > **Tip**  
 > This action is asynchronous because in worker mode the document cannot be accessed directly. When the action finishes, the change has been made to the document.
@@ -175,7 +175,7 @@ Navigate to a given URL. Note this uses the same window/tab as is showing the pr
 Invoke a URL as a file download in the browser. Even if this points to a web page or document, it will be downloaded as a file in the browser interface. The URL can point to any address on the Internet, or it can be the name of any imported project file, or it can be a data URL (useful for downloading canvas snapshots). The filename parameter allows you to choose the filename the browser gives to the download, which can be different to the name of the resource being downloaded.
 
 > **Warning**  
-> Downloading is a browser feature and depends on the browser UI. Note that mobile apps don't run in browsers (there is no address bar etc), so the download feature isn't available there. Consider using the [Share](share.md) plugin to share the file instead.
+> Downloading is a browser feature and depends on the browser UI. Note that mobile apps don't run in browsers (there is no address bar etc), so the download feature isn't available there. Consider using the [Share](../plugin-reference/share.md) plugin to share the file instead.
 
 **Invoke download of string**  
 As with *Invoke download*, but instead of providing a URL to download, a string of the actual data to download as a file is used. A data URI combining the MIME type and data is created, then passed to the browser to download. This is convenient for downloading strings in JSON format as files, e.g. object data from the *AsJSON* expression.
@@ -222,7 +222,7 @@ Request that the browser enter fullscreen mode. Note the browser may refuse this
 > **Tip**  
 > In desktop exports (Windows, macOS and Linux), fullscreen requests are always allowed at any time.
 
- The fullscreen modes that can be entered correspond to the *Fullscreen mode* [project property](../project-primitives/projects.md). *Navigation UI* where supported sets whether the browser should show browser elements such as back buttons or the address bar, or hide them (for a true fullscreen experience). Typically this setting only affects mobile browsers.
+ The fullscreen modes that can be entered correspond to the *Fullscreen mode* [project property](https://www.construct.net/make-games/manuals/construct-3/project-primitives/projects). *Navigation UI* where supported sets whether the browser should show browser elements such as back buttons or the address bar, or hide them (for a true fullscreen experience). Typically this setting only affects mobile browsers.
 
 **Set window size**  
 Set the size and position of the main window. This is only applicable on desktop-style systems - mobile devices typically use fullscreen apps and therefore windows cannot be repositioned or resized.

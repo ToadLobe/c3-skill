@@ -1,7 +1,7 @@
 ---
 title: "File chooser"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/file-chooser"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -21,17 +21,17 @@ The appearance of the file chooser button varies depending on the platform. Seve
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IFileChooserInstance script interface](../scripting/scripting-reference/plugin-interfaces/file-chooser.md).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IFileChooserInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/file-chooser).
 
 ## Layering HTML objects
 
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
 
 ## Using files
 
 Once a file has been selected, it can be accessed using a URL. While many URLs reference web resources on the Internet, the File Chooser plugin returns a special URL that refers to the local file. This URL typically starts with "blob:" (since the browser's term for an arbitrary set of data is a "blob") followed by some kind of unique ID. By accessing this URL the local file is accessed, without using any Internet connection, so this also works offline.
 
-The file URL can be used like any other URL. For example, it can be requested by the [AJAX](ajax.md) object to load its contents as text, or passed to the Sprite object's *Load image from URL* action to display it.
+The file URL can be used like any other URL. For example, it can be requested by the [AJAX](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/ajax) object to load its contents as text, or passed to the Sprite object's *Load image from URL* action to display it.
 
 ## File Chooser properties
 
@@ -55,14 +55,14 @@ An optional *class* attribute for the element in the DOM (Document Object Model)
 
 ## File Chooser conditions
 
-See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
+See [common conditions](../plugin-reference/common-features/common-conditions.md) for features shared between form control objects.
 
 **On changed**  
 Triggered when a file or set of files has been chosen from the input control.
 
 ## File Chooser actions
 
-See [common actions](common-features/common-actions.md) for features shared between form control objects.
+See [common actions](../plugin-reference/common-features/common-actions.md) for features shared between form control objects.
 
 **Clear**  
 Reset the control to its initial state with no selection, clearing any prior picked file.

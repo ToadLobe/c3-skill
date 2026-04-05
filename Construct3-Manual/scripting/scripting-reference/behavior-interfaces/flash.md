@@ -1,7 +1,7 @@
 ---
 title: "Flash behavior script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/flash"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -12,7 +12,7 @@ release: 449
 
 ---
 
-The `IFlashBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Flash behavior](../../../behavior-reference/flash.md).
+The `IFlashBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Flash behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/flash).
 
 ## Example
 
@@ -32,18 +32,18 @@ inst.behaviors.Flash.flash(0.1, 0.1, 2);
 
 ## Flash behavior events
 
-See [behavior instance event](../interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
+See [behavior instance event](../../../scripting/scripting-reference/interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
 
-**"flashend"**
+**"flashend"**  
 Fired when a flash finishes.
 
 ## Flash behavior APIs
 
-**flash(onTime, offTime, duration)**
+**flash(onTime, offTime, duration)**  
 Start flashing for the given `duration` with the object shown visible for the `onTime` and invisible for the `offTime`, with all times in seconds.
 
-**stop()**
+**stop()**  
 Stop any currently active flash effect, returning the object to a visible state.
 
-**isFlashing**
+**isFlashing**  
 A read-only boolean indicating if the object is currently flashing.

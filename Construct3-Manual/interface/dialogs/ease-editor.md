@@ -1,7 +1,7 @@
 ---
 title: "The Ease editor"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/ease-editor"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -26,7 +26,7 @@ Here is a short summary on how to create eases, use the ease editor and finally 
 
 ### Step 1: Create a custom ease
 
-Right-click **Eases** folder in the [Project Bar](../bars/project-bar.md) and select *Add ease*.
+Right-click **Eases** folder in the [Project Bar](../../interface/bars/project-bar.md) and select *Add ease*.
 
 [![add](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/28577/add.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/28577/add.png)
 
@@ -48,7 +48,7 @@ The default ease will be something similar to the built in **In Out Sinusoidal**
 
 ### Step 4: Use the custom ease
 
-Once a custom ease is complete, it can be used in any of the places the built in eases are available. The names of the custom eases will appear after the names of the built in ease functions in all the relevant places. These include the [Properties Bar](../bars/properties-bar.md), [Timeline Bar](../bars/timeline-bar.md) and [Tween behavior](../../behavior-reference/tween.md).
+Once a custom ease is complete, it can be used in any of the places the built in eases are available. The names of the custom eases will appear after the names of the built in ease functions in all the relevant places. These include the [Properties Bar](../../interface/bars/properties-bar.md), [Timeline Bar](../../interface/bars/timeline-bar.md) and [Tween behavior](../../behavior-reference/tween.md).
 
 ## Interface
 
@@ -127,10 +127,10 @@ After closing the editor, any changes are applied to the timeline element which 
 
 As mentioned earlier, this property can take the following values:
 
-**Any**
+**Any**  
 Can be used anywhere where custom eases are supported. Their first and last keyframes can not be edited at all, that means the ease is bounded to **start at a value of 0** and **end at a value of 1**.
 
-**Expressions only**
+**Expressions only**  
 Can only be used as argument in expressions that support providing a custom ease, such as the **Ease** expression of the [Timeline Controller](../../plugin-reference/timeline-controller.md) plugin. This purpose allows to edit the first and last keyframes of the ease, allowing it to **start at values different from 0** and **end in values different from 1**.
 
 If a custom ease is already used in a place which expects it to have the **"Any"** purpose, such as [Tweens](../../behavior-reference/tween.md), then the property will not be able to be changed. The same goes if it is already used in a place which expects the **"Expressions only"** prupose.

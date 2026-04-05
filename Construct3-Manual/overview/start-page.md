@@ -1,7 +1,7 @@
 ---
 title: "The Start Page"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/overview/start-page"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -27,11 +27,11 @@ Click **New** to create a new empty project. You'll be prompted for some basic d
 
 ## Opening existing projects
 
-You can open projects from several sources: **Cloud** (projects saved to a cloud storage service like Google Drive), **local files and folders** (depending on browser support), or local browser storage. You can also find previously saved projects in the **Recent projects** section. For more information about saving and loading projects, see [Saving projects](saving-projects.md).
+You can open projects from several sources: **Cloud** (projects saved to a cloud storage service like Google Drive), **local files and folders** (depending on browser support), or local browser storage. You can also find previously saved projects in the **Recent projects** section. For more information about saving and loading projects, see [Saving projects](../overview/saving-projects.md).
 
 ## Example projects
 
-Construct comes packed with hundreds of example projects for you to learn from, or just try out for fun. Three randomly-picked recommended example projects appear along the bottom of the Start Page. Click the **Browse examples** button to open the Example Browser. You can learn more about it in the [Example Browser manual entry](example-browser.md).
+Construct comes packed with hundreds of example projects for you to learn from, or just try out for fun. Three randomly-picked recommended example projects appear along the bottom of the Start Page. Click the **Browse examples** button to open the Example Browser. You can learn more about it in the [Example Browser manual entry](../overview/example-browser.md).
 
 ## Other resources
 

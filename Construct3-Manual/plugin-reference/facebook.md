@@ -1,7 +1,7 @@
 ---
 title: "Facebook"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/facebook"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -19,7 +19,7 @@ release: 449
 The **Facebook** object allows you to integrate your game with Facebook. It can be used in any web-hosted game, not just in Facebook games. For example, you could have a game running on your own server. The Facebook object still allows you to integrate with user's Facebook accounts even when the user is playing the game on your website. However, it is still necessary to submit the app to Facebook so you have an App ID. Apps can be submitted to Facebook via [Facebook Developers](https://www.construct.net/out?u=https%3a%2f%2fdevelopers.facebook.com%2f).
 
 > **Warning**  
-> The Facebook plugin is **not compatible with Instant Games.** Use the [Instant Games](instant-games.md) plugin instead.
+> The Facebook plugin is **not compatible with Instant Games.** Use the [Instant Games](../plugin-reference/instant-games.md) plugin instead.
 
 The Facebook object makes asynchronous requests. This means the game keeps running while operations which may take several seconds (like submitting a score) complete in the background. Therefore, the Facebook object works around the principle of an action which starts a task (like *Publish score*), which then triggers a condition when it has completed (like *On score submitted*). These may be a few seconds apart and the game continues to run in between, rather than freezing the game while it waits for completion. As with most asynchronous requests, actions may complete in a different order to that which they were made.
 
@@ -82,7 +82,7 @@ Open a popup window requesting the user to log in. This can only be called in a 
 **Log out**  
 Log the current user out from Facebook.
 
-**On CTA click**
+**On CTA click**  
 
 **For Facebook Playable Ads.** In a Playable Ad, use this action when the user interacts with the call-to-action (CTA) in the ad. This action can be used independently of the rest of the plugin's features.
 

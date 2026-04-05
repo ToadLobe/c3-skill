@@ -1,7 +1,7 @@
 ---
 title: "Context menus"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar/context-menus"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -15,7 +15,7 @@ release: 449
 
 All the [timeline](../../../project-primitives/timelines/timeline.md) elements have context menu options that will come up by right-clicking on them.
 
-Right-clicking on any part of the [Timeline Bar](../timeline-bar.md) which does not reference any particular element, such as the section showing the name of the current timeline or the time ruler, will bring up a menu with options that affect the timeline itself, rather than any of its elements.
+Right-clicking on any part of the [Timeline Bar](../../../interface/bars/timeline-bar.md) which does not reference any particular element, such as the section showing the name of the current timeline or the time ruler, will bring up a menu with options that affect the timeline itself, rather than any of its elements.
 
 Here is a list with all the available options for each element. The more obvious ones such as **Delete** are not be described.
 
@@ -52,7 +52,7 @@ Here is a list with all the available options for each element. The more obvious
 - **Track folder:**
 
 
-  - **Add instances from selection:** Add all the instances currently selected in the [Layout View](../../layout-view.md) directly as children of the track folder.
+  - **Add instances from selection:** Add all the instances currently selected in the [Layout View](../../../interface/layout-view.md) directly as children of the track folder.
   - **Add instances from dialog:** Bring up a dialog to add instances which are not already part of the timeline, directly as children of the track folder.
   - **Add subfolder**
   - **Rename**
@@ -121,4 +121,4 @@ Aside from the above options, there are some common options which show up in all
   - **Path modes:** Show which path mode is in use in between each pair of keyframes
 - **Scale:** Change the zoom level of the bar. This is an editor only setting and will not affect the playback of a timeline.
 
-The [Properties Bar](../properties-bar.md) also shows most of the above options as properties. This allows you to see at a glance which settings are used all across the timeline, and offers a convenient way to change them as well.
+The [Properties Bar](../../../interface/bars/properties-bar.md) also shows most of the above options as properties. This allows you to see at a glance which settings are used all across the timeline, and offers a convenient way to change them as well.

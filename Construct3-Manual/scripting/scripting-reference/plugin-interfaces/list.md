@@ -1,7 +1,7 @@
 ---
 title: "List script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/list"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -11,55 +11,55 @@ release: 449
 
 ---
 
-The `IListInstance` interface derives from [IDOMInstance](../object-interfaces/idominstance.md) to add APIs specific to the [List plugin](../../../plugin-reference/list.md).
+The `IListInstance` interface derives from [IDOMInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/idominstance) to add APIs specific to the [List plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/list).
 
 ## List events
 
-See [instance event](../interfaces/instance-event.md) for standard instance event object properties.
+See [instance event](../../../scripting/scripting-reference/interfaces/instance-event.md) for standard instance event object properties.
 
-**"click"**
+**"click"**  
 Fired when the list is clicked.
 
-**"dblclick"**
+**"dblclick"**  
 Fired when the list is double-clicked.
 
-**"selectionchange"**
+**"selectionchange"**  
 Fired when there is any change to the selected item or items.
 
 ## List APIs
 
-**addItem(text)**
+**addItem(text)**  
 Append a new item with the given text to the end of the list.
 
-**insertItem(index, text)**
+**insertItem(index, text)**  
 Insert a new item at a zero-based index in the list with the given text.
 
-**setItemText(index, text)**
+**setItemText(index, text)**  
 Set the item text at a zero-based index in the list.
 
-**getItemText(index)**
+**getItemText(index)**  
 Return a string of the current item text at a zero-based index in the list.
 
-**removeItem(index)**
+**removeItem(index)**  
 Delete an item at a zero-based index from the list.
 
-**clear()**
+**clear()**  
 Remove all items from the list, leaving the list empty.
 
-**itemCount**
+**itemCount**  
 A read-only number representing how many items are in the list.
 
-**selectedIndex**
+**selectedIndex**  
 Set or get a number indicating the zero-based index of the currently-selected list item.
 
-**selectedCount**
+**selectedCount**  
 A read-only number with the number of selected items. This is usually only useful with multi-select lists.
 
-**getSelectedIndexAt(index)**
+**getSelectedIndexAt(index)**  
 Return the item index or the item text of a selected item by its index up to `selectedCount`. This is usually only useful with multi-select lists.
 
-**getSelectedTextAt(index)**
+**getSelectedTextAt(index)**  
 Return the item index or the item text of a selected item by its index up to `selectedCount`. This is usually only useful with multi-select lists.
 
-**tooltip**
+**tooltip**  
 A tooltip that appears if the user hovers the mouse over the list and waits. An empty string indicates no tooltip.

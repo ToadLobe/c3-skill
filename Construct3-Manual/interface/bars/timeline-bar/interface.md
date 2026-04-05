@@ -1,7 +1,7 @@
 ---
 title: "Interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar/interface"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -62,7 +62,7 @@ These are the four options at the left most side of the bar. These affect not on
 
 These are the three vertical lines in the right most section of the bar.
 
-- **Current time:** The **red line**. Change its position to the place in the timeline you wish to add new keyframes. The marker can be dragged directly or by clicking on the time ruler and dragging. Dragging the marker will produce a preview of the timeline, provided that edit mode is turned on. Holding <kbd>Ctrl/Cmd</kbd> while dragging the marker to prevent the timeline from being previewed. Can also be changed from the [Properties Bar](../properties-bar.md) when it is showing timeline properties.
+- **Current time:** The **red line**. Change its position to the place in the timeline you wish to add new keyframes. The marker can be dragged directly or by clicking on the time ruler and dragging. Dragging the marker will produce a preview of the timeline, provided that edit mode is turned on. Holding <kbd>Ctrl/Cmd</kbd> while dragging the marker to prevent the timeline from being previewed. Can also be changed from the [Properties Bar](../../../interface/bars/properties-bar.md) when it is showing timeline properties.
 - **Total time:** The **green line**. Indicates the total time the timeline takes to play to the end. Can be dragged directly like the current time marker and changed from the Properties Bar when it is showing timeline properties. This marker represents the total time of the top most timeline only, if there are nested timelines, those are not represented by this line.
 - **Compound time:** The **blue line**. Indicates the total time a timeline has from start to finish including all of it's nested content. This marker can not be dragged and is just shown as reference. It won't be visible if there is no nested content or if the total time of the main timeline is enough to hold all of it's children.
 

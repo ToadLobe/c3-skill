@@ -1,7 +1,7 @@
 ---
 title: "Timeline Integration"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/timeline-integration"
-release: 449
+release: 476.3
 ---
 
 Adding [timeline](../../Construct3-Manual/project-primitives/timelines.md) support to a 3rd party addon, be it a [plugin](../../Construct3-Manual/project-primitives/objects/plugins.md), [behavior](../../Construct3-Manual/project-primitives/objects/behaviors.md) or [effect](../../Construct3-Manual/project-primitives/objects/effects.md) is quite easy. A little bit of extra work is needed though, here is how to do it.
@@ -11,10 +11,10 @@ Adding [timeline](../../Construct3-Manual/project-primitives/timelines.md) suppo
 1. Set the `interpolatable` [plugin property](../reference/pluginproperty.md) option to `true` in all the plugin properties which should be supported by timelines.
 2. Implement the `GetPropertyValueByIndex(index)` method in the plugin instance class.
 
-**index argument**
+**index argument**  
 Refers to the index of each property in the plugin as they are given to the constructor of the plugin instance class.
 
-**return value**
+**return value**  
 The current value associated with the passed in index. Depending on the current implementation this could be as easy as returning an existing variable.
 
 > **Tip**  
@@ -25,13 +25,13 @@ The current value associated with the passed in index. Depending on the current 
 
 3. Implement the `SetPropertyValueByIndex(index, value)` method in the plugin instance class.
 
-**index argument**
+**index argument**  
 Refers to the index of each property in the plugin as they are given to the constructor of the plugin instance class.
 
-**value argument**
+**value argument**  
 The new value that needs to be applied to the specified property. The passed in value is absolute so it should be applied directly with the <kbd>=</kbd> operator.
 
-**return value**
+**return value**  
 No return value is required.
 
 > **Tip**  
@@ -50,13 +50,13 @@ Some plugins might need to update the layout view to give a preview of the chang
 
 1. Implement the `OnTimelinePropertyChanged (id, value, detail)` method in the plugin instance class.
 
-**id argument**
+**id argument**  
 The id of the property that is changing.
 
-**value argument**
+**value argument**  
 The value that is being applied by the timeline.
 
-**detail argument**
+**detail argument**  
 An object with details about the value. It has a **"resultMode"** property with a value of either **"absolute"** or **"relative"**.
 
 2. implement `OnExitTimelineEditMode ()`. This method is called when timeline edit mode is turned off. In this method the plugin's internal state should be updated again so any timeline changes from the preview are reset. Using **GetPropertyValue(id)** to get values without timeline changes, applying those to the relevant internal variables of the plugin and refreshing the layout view should be enough.

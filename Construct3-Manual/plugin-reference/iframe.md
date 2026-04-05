@@ -1,7 +1,7 @@
 ---
 title: "iframe"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/iframe"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -23,7 +23,7 @@ This object can also be used to show embedded content, such as YouTube videos. F
 
 ## Layering HTML objects
 
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
 
 ## iframe properties
 
@@ -56,11 +56,11 @@ Check *Enable sandbox* to add the `sandbox` attribute on the iframe element, pro
 
 ## iframe conditions
 
-The iframe object does not have any of its own conditions. See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
+The iframe object does not have any of its own conditions. See [common conditions](../plugin-reference/common-features/common-conditions.md) for features shared between form control objects.
 
 ## iframe actions
 
-See [common actions](common-features/common-actions.md) for features shared between form control objects.
+See [common actions](../plugin-reference/common-features/common-actions.md) for features shared between form control objects.
 
 **Display HTML string**  
 Load a string of HTML content in the iframe. This is similar to using the *HTML content* property. If the iframe was previously displaying a URL, it will switch to the HTML content instead.

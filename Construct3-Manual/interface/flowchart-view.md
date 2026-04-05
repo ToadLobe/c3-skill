@@ -1,7 +1,7 @@
 ---
 title: "The Flowchart View"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/flowchart-view"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -47,29 +47,29 @@ To delete a node you can do one of two things:
 
 Once a node has been created, there are a number of things that can be edited about them, including:
 
-**Adding outputs**
+**Adding outputs**  
 This can be done by:
 
 
 - Right-clicking on the node and choosing the `Add` option from the context menu.
 - Clicking on the `Add` link at the bottom left of each node.
-- Clicking the `Add` link in the [Properties Bar](bars/properties-bar.md) when it is showing properties for a node.
+- Clicking the `Add` link in the [Properties Bar](../interface/bars/properties-bar.md) when it is showing properties for a node.
 
-**Deleting outputs**
+**Deleting outputs**  
 This can be done by:
 
 
 - Right-clicking on the output and choosing the `Delete` option from the context menu.
 - Clicking the corresponding `Remove` link in the Properties bar when it is showing properties for a node.
 
-**Editing the tags**
+**Editing the tags**  
 This can be done by:
 
 
 - Typing in the labelled text box in the node itself.
 - Editing the corresponding property in the Properties bar.
 
-**Editing an output's name**
+**Editing an output's name**  
 This can be done by:
 
 
@@ -77,7 +77,7 @@ This can be done by:
 - Right-clicking on an output's name and choosing the `Edit` option.
 - Editing the corresponding property in the Properties bar.
 
-**Editing an output's value**
+**Editing an output's value**  
 This can be done by:
 
 
@@ -167,7 +167,7 @@ On desktop systems, middle-mouse dragging is probably the most convenient way to
 
 To zoom hold <kbd>Control</kbd> (<kbd>Meta</kbd> on Mac) and scroll the mouse wheel.
 
-Make sure to check the [Keyboard shortcuts](keyboard-shortcuts.md) section of the manual for a complete list.
+Make sure to check the [Keyboard shortcuts](../interface/keyboard-shortcuts.md) section of the manual for a complete list.
 
 ## Managing complex flowcharts
 
@@ -175,19 +175,19 @@ When flowcharts start becoming large it can be difficult to keep track of what i
 
 These are a few features that can help with that:
 
-**Node colors**
+**Node colors**  
 All nodes can be given a unique color which is applied to it's border. Helps highlight important nodes.
 
-**Output link colors**
+**Output link colors**  
 Each output can be given a unique color that is used to draw it's corresponding link. This can help to differentiate between links when it starts getting crowded. This property can only be changed from the properties of an output shown in the Properties Bar.
 
-**Output link mode**
+**Output link mode**  
 Each output can use two different methods to draw it's corresponding link. It can be either a straight line (default method), or it can use path finding so the link avoids overlapping other nodes. This can help in cases were a straight link is overlapping other nodes making the flowchart look messy. This property can only be changed from the properties of an output shown in the Properties Bar
 
-**Reference nodes**
+**Reference nodes**  
 This types of nodes are used as a placeholder for a different flowchart. Can be useful to split up large flowcharts in more manageable chunks.
 
-**Comment nodes**
+**Comment nodes**  
 This types of nodes are used to place comments directly in a flowchart.
 
 ## Preset nodes

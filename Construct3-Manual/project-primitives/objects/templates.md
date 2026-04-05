@@ -1,7 +1,7 @@
 ---
 title: "Templates"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/objects/templates"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -18,7 +18,7 @@ release: 449
 
 Templates help managing instances in larger projects. The main uses for them are:
 
-1. Conveniently updating properties for multiple instances across the project in the editor. This can prove to be time consuming and prone to error if done individually. Using templates you can declare a single instance to be the source **template** and other instances of the same [object type](object-types.md) to be **replicas** of it. After doing so, changing the template will also change all replicas, even across layouts.
+1. Conveniently updating properties for multiple instances across the project in the editor. This can prove to be time consuming and prone to error if done individually. Using templates you can declare a single instance to be the source **template** and other instances of the same [object type](../../project-primitives/objects/object-types.md) to be **replicas** of it. After doing so, changing the template will also change all replicas, even across layouts.
 2. A template can be used as a preset when creating an instance at runtime using the **Create Object** action. Doing this is can help avoid needing lots of initialization actions and makes it easier to make changes to existing presets or add new ones later on.
 3. Using templates it is possible to define different hierarchies in the editor, and then choose which one to create at runtime.
 
@@ -105,16 +105,16 @@ When a replica's property is modified and so starts using its own value, it's po
 
 ### Other Properties bar options
 
-**Propagate hierarchy**
+**Propagate hierarchy**  
 This property is only shown for template instances, if toggled all hierarchy related changes will be propagated automatically to the replicas. Turned on by default.
 
-**Ignore hierarchy propagation**
+**Ignore hierarchy propagation**  
 This property is only shown for replica instances, if toggled any changes automatically propagated from a template are ignored. Turned off by default.
 
-**Replace hierarchy**
+**Replace hierarchy**  
 When used from a template, will cause all the replicas to match the template's hierarchy. When used on a replica, that replica matches it's templates hierarchy. Creates and destroys instances as needed. Using this option ignores **Propagate hierarchy** and **Ignore hierarchy propagation** settings.
 
-**Modify hierarchy**
+**Modify hierarchy**  
 When used from a template, will cause all the replicas to match the template's hierarchy as best as possible. When used on a replica, that replica matches it's templates hierarchy as best as possible. No instances are created or deleted. Using this option ignores **Propagate hierarchy** and **Ignore hierarchy propagation** settings.
 
 ## Runtime actions

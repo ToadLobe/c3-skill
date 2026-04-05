@@ -1,7 +1,7 @@
 ---
 title: "Best practices"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/tips-and-guides/best-practices"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -31,7 +31,7 @@ The advice to back up regularly is not specific to Construct. It is vital to ado
 
 ## Test on multiple platforms, browsers and devices
 
-It is essential to test your project works as intended across a range of different systems. While Construct exports are based on the HTML5 standard  which in theory is implemented the same on all platforms, in practice there are variations between browsers and devices (e.g. in performance, features, text rendering, etc). You should install a range of browsers on every device you have available and test with them all to ensure your project will work well for everyone. [Remote Preview](../overview/testing-and-publishing.md)  `[Paid plans only]`  can help with this, especially since you can get anyone in the world to help test with their devices. You may also need to make test exports to check how your project works as published, since app containers like Cordova (for Android and iOS) can have differences too.
+It is essential to test your project works as intended across a range of different systems. While Construct exports are based on the HTML5 standard  which in theory is implemented the same on all platforms, in practice there are variations between browsers and devices (e.g. in performance, features, text rendering, etc). You should install a range of browsers on every device you have available and test with them all to ensure your project will work well for everyone. [Remote Preview](https://www.construct.net/make-games/manuals/construct-3/overview/testing-and-publishing)  `[Paid plans only]`  can help with this, especially since you can get anyone in the world to help test with their devices. You may also need to make test exports to check how your project works as published, since app containers like Cordova (for Android and iOS) can have differences too.
 
 ## Support touchscreen devices
 
@@ -39,7 +39,7 @@ Many users browse the web with touchscreen devices. Where applicable, you should
 
 ## Avoid superseded features
 
-Some features exist mainly for backwards compatibility reasons and should be avoided in new projects in favor of newer features that essentially replace them. See [Superseded features](superseded-features.md) for a list of such features to avoid.
+Some features exist mainly for backwards compatibility reasons and should be avoided in new projects in favor of newer features that essentially replace them. See [Superseded features](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/superseded-features) for a list of such features to avoid.
 
 ## Recommended file formats
 
@@ -65,12 +65,12 @@ Use fonts in **WOFF** (Web Open Font Format) format wherever possible. Fonts in 
 
 ## Performance
 
-Many people worry about performance but just end up wasting their time. There is a specific way that you ought to approach performance questions and issues - see the guide on [Performance Tips](performance-tips.md) for more about that.
+Many people worry about performance but just end up wasting their time. There is a specific way that you ought to approach performance questions and issues - see the guide on [Performance Tips](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/performance-tips) for more about that.
 
 ## Memory use
 
-Sometimes people accidentally create projects that waste large amounts of memory due to not understanding the way things like imags are handled in memory. See the guide on [Memory usage](memory-usage.md) for more about that.
+Sometimes people accidentally create projects that waste large amounts of memory due to not understanding the way things like imags are handled in memory. See the guide on [Memory usage](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/memory-usage) for more about that.
 
 ## Download size
 
-It's a good idea to at least check your project's download size, and try to reduce the size of any particularly large files. This can be important for platforms that impose a file size limit, or for people who have slow connections. See the guide on [Download size](download-size.md) for more about that.
+It's a good idea to at least check your project's download size, and try to reduce the size of any particularly large files. This can be important for platforms that impose a file size limit, or for people who have slow connections. See the guide on [Download size](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/download-size) for more about that.

@@ -1,7 +1,7 @@
 ---
 title: "Shadow caster behavior"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/shadow-caster"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -14,13 +14,13 @@ release: 449
 
 ---
 
-The **Shadow caster behavior** marks an object as casting a shadow from a [Shadow light](../plugin-reference/shadow-light.md) object. For more information, see the documentation for *Shadow light*.
+The **Shadow caster behavior** marks an object as casting a shadow from a [Shadow light](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/shadow-light) object. For more information, see the documentation for *Shadow light*.
 
 Shadows are cast from the object's collision polygon, if it has one, otherwise its bounding rectangle.
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IShadowCasterBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/shadow-caster.md).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IShadowCasterBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/shadow-caster).
 
 ## Collision polygon shape
 

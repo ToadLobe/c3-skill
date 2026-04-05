@@ -1,7 +1,7 @@
 ---
 title: "Pathfinding behavior"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/pathfinding"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -21,7 +21,7 @@ The **Pathfinding behavior** uses the A* pathfinding algorithm to efficiently fi
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IPathfindingBehaviorInstance script interface](../scripting/scripting-reference/behavior-interfaces/pathfinding.md).
+When using JavaScript or TypeScript coding, the features of this behavior can be accessed via the [IPathfindingBehaviorInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/pathfinding).
 
 ## The pathfinding grid
 
@@ -74,7 +74,7 @@ The cell size, in pixels, of the grid of obstacles. See above for more details a
 The amount, in pixels, to expand the cell size by when testing for obstacles. See above for more details about how this is used.
 
 **Obstacles**  
-If *Solids*, the behavior will automatically mark cells touching objects with the [Solid behavior](solid.md) as being obstacles. If *Custom*, you must define which objects are obstacles by using the *Add obstacle* action on startup.
+If *Solids*, the behavior will automatically mark cells touching objects with the [Solid behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/solid) as being obstacles. If *Custom*, you must define which objects are obstacles by using the *Add obstacle* action on startup.
 
 > **Tip**  
 > Note this applies to all instances, since the obstacle map is shared. This setting cannot be used to affect individual instances differently.
@@ -195,7 +195,7 @@ Start and end a *path group*, which can be used to spread out paths found while 
 Automatically start moving the object along the found path. This can only be used after *On path found* - the path is not immediately known after the *Find path* action.
 
 > **Tip**  
-> You can also use the [Move To behavior](move.md)'s *Move along Pathfinding path* action as an alternative, since the Move To behavior uses a different movement algorithm.
+> You can also use the [Move To behavior](../behavior-reference/move.md)'s *Move along Pathfinding path* action as an alternative, since the Move To behavior uses a different movement algorithm.
 
 **Set speed**  
 Set the current speed of the object if it is currently moving along its path, in pixels per second. This cannot be negative or greater than the maximum speed of the behavior.

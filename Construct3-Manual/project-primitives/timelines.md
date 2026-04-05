@@ -1,7 +1,7 @@
 ---
 title: "Timelines"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -14,15 +14,15 @@ There are several different elements that make up a timeline. When any of them a
 
 The hierarchy is as follows:
 
-- **[Timelines](timelines/timeline.md)** contain Track Folders, Tracks, Value Tracks, Timelines and Timeline Folders
-- **[Timeline Folders](timelines/timeline-folder.md)** contain Timelines and Timeline Folders
-- **[Track Folders](timelines/track-folder.md)** contain Track Folders, Tracks and Value Tracks
-- **[Tracks](timelines/track.md)** contain Property Track Folders, Property Tracks and Master Keyframes
-- **[Value Tracks](timelines/track/value-track.md)** contain a single Property Track and Master Keyframes
-- **[Property Track Folders](timelines/property-track-folder.md)** contain Property Track Folders and Property Tracks
-- **[Property Tracks](timelines/property-track.md)** contain Property Keyframes
-- **[Master Keyframes](timelines/master-keyframe.md)** contain Property Keyframes (which share a parent Track and position in the timeline)
-- **[Property Keyframes](timelines/property-keyframe.md)** are always the last elements in the hierarchy and don't contain anything
+- **[Timelines](../project-primitives/timelines/timeline.md)** contain Track Folders, Tracks, Value Tracks, Timelines and Timeline Folders
+- **[Timeline Folders](../project-primitives/timelines/timeline-folder.md)** contain Timelines and Timeline Folders
+- **[Track Folders](../project-primitives/timelines/track-folder.md)** contain Track Folders, Tracks and Value Tracks
+- **[Tracks](../project-primitives/timelines/track.md)** contain Property Track Folders, Property Tracks and Master Keyframes
+- **[Value Tracks](../project-primitives/timelines/track/value-track.md)** contain a single Property Track and Master Keyframes
+- **[Property Track Folders](../project-primitives/timelines/property-track-folder.md)** contain Property Track Folders and Property Tracks
+- **[Property Tracks](../project-primitives/timelines/property-track.md)** contain Property Keyframes
+- **[Master Keyframes](../project-primitives/timelines/master-keyframe.md)** contain Property Keyframes (which share a parent Track and position in the timeline)
+- **[Property Keyframes](../project-primitives/timelines/property-keyframe.md)** are always the last elements in the hierarchy and don't contain anything
 
 > **Tip**  
 > In the specific case of the **Ease** and **Path mode** properties, master keyframes takes precedence over the corresponding property track.
@@ -92,7 +92,7 @@ In the case of **Animation mode** and **Result mode** the value **"Default"** ca
   - **Default:** use the value defined by the element immediately above it in the hierarchy.
   - **Line:** interpolate between the starting and ending position of each property keyframe pair to form a straight line.
   - **Cubic Bezier:** This mode will enable a few additional controls in the [Layout View](../interface/layout-view.md) to allow for transitions following a curved path.
-- **Visible:** used by tracks to toggle the visibility of the corresponding [instance](objects/instances.md). This setting only takes effect while **Edit Mode** is turned on. It is only relevant for the editor and will not affect the timeline at runtime.
+- **Visible:** used by tracks to toggle the visibility of the corresponding [instance](../project-primitives/objects/instances.md). This setting only takes effect while **Edit Mode** is turned on. It is only relevant for the editor and will not affect the timeline at runtime.
 - **Enabled:** used by property keyframes. A disabled property keyframe is not taken into consideration when playing a timeline.
 - **Locked:** A locked timeline element and its children cannot be modified through the Timeline Bar or Properties Bar. It is only relevant for the editor and will not affect the timeline at runtime.
 - **Show UI Elements:** changing this property will turn off the UI elements shown in the layout associated with the affected instances. It is only relevant for the editor and will not affect the timeline at runtime.

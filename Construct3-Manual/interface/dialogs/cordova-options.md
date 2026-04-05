@@ -1,7 +1,7 @@
 ---
 title: "Cordova options"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/dialogs/cordova-options"
-release: 449
+release: 476.3
 ---
 
 `[Paid plans only]`  The **Cordova options** dialog is used to change settings for an **Android** or **iOS** export, both of which are built with Cordova.
@@ -12,13 +12,13 @@ For more information, also refer to the tutorial [How to publish mobile apps](ht
 
 The dialog shown is for an Android export, but the appearance is similar for an iOS export. The following options are available.
 
-**Min. version**
+**Min. version**  
 Choose the minimum Android or iOS version that the app will support. A lower minimum version will make your app available on a greater number of devices on the market. On the other hand a higher minimum version ensures your app runs on more modern systems with better features and performance, and often correlates with higher-spec hardware.
 
-**Target version**
+**Target version**  
 (Android exports only) This field displays the *Target API level* that Construct has configured for your app, displayed as both the Android API level and the corresponding Android version number. This is different to the minimum version and is set by Construct so is not changeable. It is usually updated annually when the Google Play publishing requirements specify a new required target API level. If you need an updated target API level, make sure you are using the latest version of Construct, or check the latest beta release.
 
-**Android build**
+**Android build**  
 (Android exports only) Choose what to export. For more details see the tutorial [How to publish mobile apps](https://www.construct.net/en/tutorials/how-to-publish-mobile-apps-26).
 
 - **Cordova project:** export a Cordova project which can be built locally with the Cordova CLI, or used with a different build service.
@@ -30,41 +30,41 @@ Choose the minimum Android or iOS version that the app will support. A lower min
 - **Signed Release APK:** build and sign a release Android application (APK) via the Scirra Mobile Build Service. This is intended for publishing to the Google Play store, it is already signed so can be uploaded directly to the store.
 - **Signed Android App Bundle:** build and signed a release Android application, in the new Android App Bundle (ABB) format, via the Scirra Mobile Build Service. This is intended for publishing to the Google Play store, it is already signed so can be uploaded directly to the store. An ABB file cannot be directly installed onto a device.
 
-**URL whitelist**
+**URL whitelist**  
 A space separated list of URLs that the app can ask the system to open. The default option `http://*/* https://*/*` allows the application to open any http or https URL.
 
-**Android Version Code**
+**Android Version Code**  
 (Android exports only) Specify a Android version code for this export. The initial value is automatically calculated from the project's version number.
 
-**iOS build**
+**iOS build**  
 (iOS exports only) Choose what to export. For more details see the tutorial [How to publish mobile apps](https://www.construct.net/en/tutorials/how-to-publish-mobile-apps-26).
 
 - **Cordova project:** export a Cordova project which can be built locally with the Cordova CLI, or used with a different build service.
 - **Xcode project:** use Cordova to generate an Xcode project, which can then be opened in Xcode on a Mac for customisation, testing and completing an iOS build.
 
-**Hide status bar**
+**Hide status bar**  
 When the app is running, hide the system status bar if possible. This allows the app to use up more space on the screen.
 
-**Require Vibrate permission**
+**Require Vibrate permission**  
 Enable if your app makes use of vibrating the device to ensure the app has permission to do this.
 
-**Require Camera permission**
+**Require Camera permission**  
 Enable if your app makes use of camera input via the User Media object to ensure the app has permission to access this.
 
-**Require Microphone permission**
+**Require Microphone permission**  
 Enable if your app makes use of microphone input via the User Media object to ensure the app has permission to access this.
 
-**Choose Keystore**
+**Choose Keystore**  
 (Signed Android builds only) Choose a keystore from the filesystem, or create a new one, for use in signing the build.
 
-**Create Keystore**
+**Create Keystore**  
 (Signed Android builds only) Choose a keystore from the filesystem, or create a new one, for use in signing the build.
 
-**Key Name**
+**Key Name**  
 (Signed Android builds only) The name of the key within the keystore you wish to use for signing the build. This is referred to as the "alias" by the create keystore dialog.
 
-**Key Store password**
+**Key Store password**  
 (Signed Android builds only) The password for the keystore you have selected.
 
-**Key password**
+**Key password**  
 (Signed Android builds only) The password for the key you have chosen in the keystore.

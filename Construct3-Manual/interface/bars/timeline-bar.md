@@ -1,7 +1,7 @@
 ---
 title: "The Timeline Bar"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/interface/bars/timeline-bar"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -28,8 +28,8 @@ Here's a summary of how to use the Timeline Bar. A project can have multiple tim
 
 With the Timeline Bar open, you can create a timeline with any of the following methods:
 
-- Right-click **Timelines** folder in the [Project Bar](project-bar.md) and select *Add timeline*
-- Right-click in the [Layout View](../layout-view.md) and select `Timeline › Add timeline`
+- Right-click **Timelines** folder in the [Project Bar](../../interface/bars/project-bar.md) and select *Add timeline*
+- Right-click in the [Layout View](../../interface/layout-view.md) and select `Timeline › Add timeline`
 
 | Project Bar context menu | Layout View context menu |
 | --- | --- |
@@ -82,7 +82,7 @@ You can control the timeline in your events using the [Timeline Controller plugi
 
 ## Edit mode
 
-When edit mode is turned on with the edit toolbar button, the selection boxes in the Layout View change color and the properties which can be animated with the timeline are highlighted in the [Properties Bar](properties-bar.md). The highlighting only happens for instances which are part of the current timeline. Properties which are not highlighted in edit mode cannot be animated with a timeline. After finishing editing a timeline remember to turn the mode off as changes made in this mode are only relevant to the active timeline, rather than the whole project.
+When edit mode is turned on with the edit toolbar button, the selection boxes in the Layout View change color and the properties which can be animated with the timeline are highlighted in the [Properties Bar](../../interface/bars/properties-bar.md). The highlighting only happens for instances which are part of the current timeline. Properties which are not highlighted in edit mode cannot be animated with a timeline. After finishing editing a timeline remember to turn the mode off as changes made in this mode are only relevant to the active timeline, rather than the whole project.
 
 | Highlighted Properties | Highlighted Selection |
 | --- | --- |
@@ -138,4 +138,4 @@ For more details on a timeline's capabilities, properties and related objects se
 
 See the [Timeline Controller plugin](../../plugin-reference/timeline-controller.md) manual entry for more information on the actions, conditions and expressions available for controlling timelines.
 
-The Timeline Bar has various keyboard shortcuts which are listed in the manual entry [Keyboard shortcuts](../keyboard-shortcuts.md).
+The Timeline Bar has various keyboard shortcuts which are listed in the manual entry [Keyboard shortcuts](../../interface/keyboard-shortcuts.md).

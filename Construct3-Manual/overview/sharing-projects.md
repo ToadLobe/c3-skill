@@ -1,7 +1,7 @@
 ---
 title: "Sharing projects"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/overview/sharing-projects"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -12,9 +12,9 @@ release: 449
 
 ---
 
-The easiest and quickest way to share your project so someone else can run it is using **Remote Preview**  `[Paid plans only]` . For more information see [Testing projects](testing-projects.md).
+The easiest and quickest way to share your project so someone else can run it is using **Remote Preview**  `[Paid plans only]` . For more information see [Testing projects](https://www.construct.net/make-games/manuals/construct-3/overview/testing-projects).
 
-If you want people to play your finished project, you should **Export** it. This produces a playable game ready for publishing. See the section on [publishing projects](publishing-projects.md).
+If you want people to play your finished project, you should **Export** it. This produces a playable game ready for publishing. See the section on [publishing projects](../overview/publishing-projects.md).
 
 ## Share a project file
 

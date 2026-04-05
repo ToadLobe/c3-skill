@@ -1,7 +1,7 @@
 ---
 title: "Fade behavior script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/fade"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -12,7 +12,7 @@ release: 449
 
 ---
 
-The `IFadeBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Fade behavior](../../../behavior-reference/fade.md).
+The `IFadeBehaviorInstance` interface derives from [IBehaviorInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehaviorinstance) to add APIs specific to the [Fade behavior](https://www.construct.net/make-games/manuals/construct-3/behavior-reference/fade).
 
 ## Example
 
@@ -32,30 +32,30 @@ inst.behaviors.Fade.startFade();
 
 ## Fade behavior events
 
-See [behavior instance event](../interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
+See [behavior instance event](../../../scripting/scripting-reference/interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
 
-**"fadeinend"**
+**"fadeinend"**  
 Fired when the fade in stage finishes, moving on to the wait stage.
 
-**"waitend"**
+**"waitend"**  
 Fired when the wait stage finishes, moving on to the fade out stage.
 
-**"fadeoutend"**
+**"fadeoutend"**  
 Fired when the fade out stage finishes. The object may also be destroyed immediately after this event if the *Destroy* property of the behavior is enabled.
 
 ## Fade behavior APIs
 
-**startFade()**
+**startFade()**  
 Start the fade effect running if it is not already running.
 
-**restartFade()**
+**restartFade()**  
 Force the fade effect to restart from the beginning.
 
-**fadeInTime**
+**fadeInTime**  
 Set or get the fade in time in seconds. Set to 0 to skip this stage.
 
-**waitTime**
+**waitTime**  
 Set or get the wait time, in between the fade in and fade out, in seconds. Set to 0 to skip this stage.
 
-**fadeOutTime**
+**fadeOutTime**  
 Set or get the fade out time in seconds. Set to 0 to skip this stage.

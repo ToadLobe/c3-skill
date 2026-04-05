@@ -1,7 +1,7 @@
 ---
 title: "Text input"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/text-input"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -15,15 +15,15 @@ release: 449
 
 ---
 
-The **Text input** object is a form control providing a text field the user can type text in to. This is used for getting data from the user; don't confuse it with the [Text](text.md) object, which is for displaying text.
+The **Text input** object is a form control providing a text field the user can type text in to. This is used for getting data from the user; don't confuse it with the [Text](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/text) object, which is for displaying text.
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ITextInputInstance script interface](../scripting/scripting-reference/plugin-interfaces/text-input.md).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ITextInputInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/text-input).
 
 ## Layering HTML objects
 
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
 
 ## Styling text inputs
 
@@ -74,7 +74,7 @@ An optional *id* attribute for the element in the DOM (Document Object Model). T
 
 ## Text input conditions
 
-See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
+See [common conditions](../plugin-reference/common-features/common-conditions.md) for features shared between form control objects.
 
 **Compare text**  
 Compare the text currently entered in to the field. The comparison can either be case sensitive ("TEXT" is different to "text") or case insensitive ("TEXT" is the same as "text").
@@ -90,7 +90,7 @@ Triggered whenever the text in the field is modified, by typing, backspace/delet
 
 ## Text input actions
 
-See [common actions](common-features/common-actions.md) for features shared between form control objects.
+See [common actions](../plugin-reference/common-features/common-actions.md) for features shared between form control objects.
 
 **Append text**  
 Add some text to the end of the current text. For example, if the text object contains *Hello* and has *World* appended, the text object then contains *HelloWorld*.

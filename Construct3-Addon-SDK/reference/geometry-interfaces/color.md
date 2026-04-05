@@ -1,7 +1,7 @@
 ---
 title: "Color interface"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/reference/geometry-interfaces/color"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -21,65 +21,66 @@ In the WebGL renderer, colors are normally required to have premultiplied alpha.
 new SDK.Color();
 new SDK.Color(r, g, b, a);
 ```
+
 A `Color` can be constructed with no parameters, which defaults all components to zero, or with given RGBA components.
 
 ## Methods
 
-**setRgb(r, g, b)**
+**setRgb(r, g, b)**  
 Set the RGB components only, without affecting the alpha component, in a single call.
 
-**setRgba(r, g, b, a)**
+**setRgba(r, g, b, a)**  
 Set the RGBA components of the color in a single call.
 
-**copy(color)**
+**copy(color)**  
 Set the components of the color by copying another `SDK.Color`.
 
-**copyRgb(color)**
+**copyRgb(color)**  
 Set the RGB components only, without affecting the alpha component, by copying another `SDK.Color`.
 
-**clone()**
+**clone()**  
 Return a new instance of an `SDK.Color` with an identical color to this one.
 
-**setR(r)**
+**setR(r)**  
 Set each component of the color individually. Note color components are floats in the range [0, 1].
 
-**setG(g)**
+**setG(g)**  
 Set each component of the color individually. Note color components are floats in the range [0, 1].
 
-**setB(b)**
+**setB(b)**  
 Set each component of the color individually. Note color components are floats in the range [0, 1].
 
-**setA(a)**
+**setA(a)**  
 Set each component of the color individually. Note color components are floats in the range [0, 1].
 
-**getR()**
+**getR()**  
 Get each component of the color individually.
 
-**getG()**
+**getG()**  
 Get each component of the color individually.
 
-**getB()**
+**getB()**  
 Get each component of the color individually.
 
-**getA()**
+**getA()**  
 Get each component of the color individually.
 
-**equals(color)**
+**equals(color)**  
 Return a boolean indicating if this color exactly matches another `SDK.Color`.
 
-**equalsIgnoringAlpha(color)**
+**equalsIgnoringAlpha(color)**  
 Return a boolean indicating if this color exactly matches the RGB components of another `SDK.Color`. The alpha component is ignored.
 
-**equalsRgb(r, g, b)**
+**equalsRgb(r, g, b)**  
 Return a boolean indicating if this color exactly matches the given RGB components.
 
-**equalsRgba(r, g, b, a)**
+**equalsRgba(r, g, b, a)**  
 Return a boolean indicating if this color exactly matches the given RGBA components.
 
-**premultiply()**
+**premultiply()**  
 Multiply the RGB components by the A component. This is usually required for rendering.
 
-**unpremultiply()**
+**unpremultiply()**  
 Divide the RGB components by the A component.
 
 > **Warning**  

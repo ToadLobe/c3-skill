@@ -1,7 +1,7 @@
 ---
 title: "Internationalization"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/internationalization"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -28,7 +28,7 @@ See the [built-in example project](https://editor.construct.net/#open=internatio
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the string lookup features of this plugin can be accessed via the [Internationalization script interface](../scripting/scripting-reference/plugin-interfaces/internationalization.md). Note however many other features of this plugin merely access the browser-provided [Intl](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fIntl) APIs, so those are not duplicated in the script interface, as you can access them directly instead.
+When using JavaScript or TypeScript coding, the string lookup features of this plugin can be accessed via the [Internationalization script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/internationalization). Note however many other features of this plugin merely access the browser-provided [Intl](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fIntl) APIs, so those are not duplicated in the script interface, as you can access them directly instead.
 
 ## Locales
 
@@ -60,7 +60,7 @@ The `"locale"` key is optional and is used when loading to indicate to what lang
 
 To load an internationalization file do the following:
 
-1. Use the [AJAX plugin](ajax.md) to request the file.
+1. Use the [AJAX plugin](../plugin-reference/ajax.md) to request the file.
 2. In the AJAX *On Complete* trigger, use the *Load from JSON* action of the Internationalization plugin to load the AJAX data.
 
 [![internationalizationmanual00](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104056/internationalizationmanual00.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104056/internationalizationmanual00.png)
@@ -127,7 +127,7 @@ By using substitutions it is possible to produce dynamic results at runtime, tak
 
 The string has two placeholders that can be replaced at runtime if additional values are provided when using the *Lookup* expression. There can be any amount of placeholders and the number in between the curly braces refers to the order of the arguments passed to *Lookup*.
 
-**Example 1**
+**Example 1**  
 
 [![internationalizationmanual04](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104097/internationalizationmanual04.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104097/internationalizationmanual04.png)
 
@@ -135,7 +135,7 @@ The output of that example is the string **"Hello Good Morning"**.
 
 If there are more placeholders than arguments, like in the example bellow, then the placeholders with no matching argument are left unchanged in the final result
 
-**Example 2**
+**Example 2**  
 
 [![internationalizationmanual05](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104098/internationalizationmanual05.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104098/internationalizationmanual05.png)
 
@@ -159,13 +159,13 @@ Following is a simple example of a localization file set up with a plural rule f
 
 In order to look up the plural form the *LookupPlural* expression is used passing in an additional value which is used to decide which plural form will be used.
 
-**Example 1**
+**Example 1**  
 
 [![internationalizationmanual06](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104099/internationalizationmanual06.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104099/internationalizationmanual06.png)
 
 That example would yield the string **"1 Pig"**.
 
-**Example 2**
+**Example 2**  
 
 [![internationalizationmanual07](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104100/internationalizationmanual07.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/104100/internationalizationmanual07.png)
 

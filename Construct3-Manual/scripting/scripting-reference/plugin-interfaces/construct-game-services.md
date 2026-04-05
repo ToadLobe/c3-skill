@@ -1,7 +1,7 @@
 ---
 title: "Construct Game Services script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/construct-game-services"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -12,11 +12,11 @@ release: 449
 
 ---
 
-The `ICGSObjectType` interface derives from [IObjectType](../object-interfaces/iobjecttype.md) to add APIs specific to the [Construct Game Services plugin](../../../plugin-reference/construct-game-services.md). Construct Game Services is also written as CGS for short.
+The `ICGSObjectType` interface derives from [IObjectType](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iobjecttype) to add APIs specific to the [Construct Game Services plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/construct-game-services). Construct Game Services is also written as CGS for short.
 
 ## Using the REST APIs
 
-Construct Game Services have a comprehensive set of REST APIs available. When writing code it is possible to use those entirely independently of this plugin. This option may be of interest to advanced users - see the [Construct Game Services manual](https://www.construct.net/en/game-services/manuals/game-services) for details.
+Construct Game Services have a comprehensive set of REST APIs available. When writing code it is possible to use those entirely independently of this plugin. This option may be of interest to advanced users - see the [Construct Game Services manual](../../../../Construct3-Game-Services/index.md) for details.
 
 The CGS script interface also provides the `sessionKey` when signed in. This can be used to make REST API calls with the user's current authentication. This allows using the CGS script interface solely for authentication, and then using the resulting `sessionKey` to make REST API calls.
 
@@ -24,30 +24,30 @@ For completeness the CGS script interface does provide equivalent features to th
 
 ## CGS events
 
-**"signinpopupblocked"**
+**"signinpopupblocked"**  
 Triggered during sign in if the browser popup blocker prevented the sign in popup window from appearing. Use the `retryOpenSignInPopup()` method in a user input event to retry.
 
 ## CGS APIs
 
-**isSignedIn**
+**isSignedIn**  
 Read-only boolean indicating if the player is currently signed in.
 
-**canSignInPersistent**
+**canSignInPersistent**  
 Read-only boolean indicating if persistent sign in with `signInPersistent()` is available.
 
-**playerId**
+**playerId**  
 A read-only string of the unique player ID when signed in.
 
-**playerName**
+**playerName**  
 A read-only string of the player display name when signed in.
 
-**gameId**
+**gameId**  
 A read-only string of the game ID signed in to when signed in.
 
-**sessionKey**
+**sessionKey**  
 When signed in, a string with the session key for this sign in. This can be used to make REST API calls using the same authentication.
 
-**async signInWithProvider(provider, gameId, options)**
+**async signInWithProvider(provider, gameId, options)**  
 Attempt to sign the user in with a third-party identity service like Google or Microsoft. `provider` must be one of: `"Apple"`, `"BattleNet"`, `"BattleNetChina"`, `"Discord"`, `"Facebook"`, `"Github"`, `"Google"`, `"ItchIO"`, `"Microsoft"`, `"Reddit"`, `"Steam"`, `"X"`, `"Yandex"`. The game ID to sign in to from your [Construct Game Services account](https://www.construct.net/en/game-services/account) must be provided. `options` is an optional object that may provide the following properties:
 
 - `allowPersisting`: if `true` a successful sign in is remembered, and may be re-used in future with `signInPersistent()`. The default is `true`.
@@ -59,22 +59,22 @@ Attempt to sign the user in with a third-party identity service like Google or M
 > **Tip**  
 > Note that in some cases, sign in may be cancelled in a way that cannot be detected, and so the returned promise will not settle. Be sure to design your project with this in mind - for example do not block the user interface until sign in finishes, as you cannot reliably detect that.
 
-**retryOpenSignInPopup()**
+**retryOpenSignInPopup()**  
 After the `"signinpopupblocked"` event fires, make another attempt to open the sign in popup window to continue the sign in process. This should be used in a user input event such as a button click or mouse click, otherwise the browser popup blocker may still block the second attempt.
 
-**async signInPersistent(gameId)**
+**async signInPersistent(gameId)**  
 Attempt to sign in re-using a previous successful sign in that allowed persisting. This can only be used when `canSignInPersistent` is true. This returns a Promise that resolves when the persistent sign in has completed.
 
-**async signOut()**
+**async signOut()**  
 Sign out of any account the user is currently signed in to, and also delete any remembered sign in if it allowed persisting. Locally this operation completes immediately. For completeness signing out will send a request in the background to ensure the session is ended on the server-side as well, but that is optional and if it fails the session will time out anyway. This method returns a Promise that resolves when the background request completes, but failure should not be considered significant.
 
-**async setPlayerName(name)**
+**async setPlayerName(name)**  
 Set the name of the currently signed in player. In some cases the player name is obtained from the authentication provider, but in others a generic name will be used, in which case the player will likely want to change their name for features like leaderboards. Returns a Promise that resolves when the operation completes.
 
-**async submitScore(score, leaderboardId)**
+**async submitScore(score, leaderboardId)**  
 Submit a score to a leaderboard. `score` must be an integer (fractional scores are not supported). `leaderboardId` may be omitted to submit a score on the Construct Arcade, which does not require authentication. Otherwise it must be set to the leaderboard ID to submit the score to, in which case authentication is required. This method returns a Promise that resolves when the score has been successfully submitted.
 
-**async getLeaderboardScores(leaderboardId, options)**
+**async getLeaderboardScores(leaderboardId, options)**  
 Request a page of scores from a given leaderboard ID. This does not require authentication. The returned scores can optionally be filtered with several options, which may include:
 
 - `resultsPerPage`: the number of results to fetch. The default is 20.
@@ -97,7 +97,7 @@ This method returns a Promise that resolves with the following object upon succe
   - `playerId`: a string of the unique player ID who submitted the score.
   - `playerName`: a string of the player display name who submitted the score.
 
-**async createCloudSave(opts)**
+**async createCloudSave(opts)**  
 Create or replace the data for a cloud save key. The `opts` parameter is an object which uses the following properties to specify options:
 
 - `key` (required): the storage key to save to.
@@ -107,7 +107,7 @@ Create or replace the data for a cloud save key. The `opts` parameter is an obje
 
  The method returns a Promise that resolves when the operation has completed.
 
-**async getCloudSave(opts)**
+**async getCloudSave(opts)**  
 Download the data previously uploaded for a key in a game bucket with `createCloudSave`. The `opts` parameter is an object which uses the following properties to specify options:
 
 - `key` (required): the storage key to save to.

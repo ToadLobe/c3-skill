@@ -1,7 +1,7 @@
 ---
 title: "Value Track"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/project-primitives/timelines/track/value-track"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -11,13 +11,13 @@ release: 449
 
 ---
 
-A value track is a special kind of [track](../track.md) which is not tied to any [instance](../../objects/instances.md).
+A value track is a special kind of [track](../../../project-primitives/timelines/track.md) which is not tied to any [instance](../../../project-primitives/objects/instances.md).
 
 Because they are not tied to any instance the value they interpolate doesn't immediately affect anything, instead it needs to be queried at runtime using the [Timeline plugin](../../../plugin-reference/timeline-controller.md) before it can be used.
 
 They are a little bit harder to use, but offer great flexibility in what they can be used for.
 
-Value tracks can only have a single [properly track](../property-track.md) and a [timeline](../timeline.md) can have as many as needed.
+Value tracks can only have a single [properly track](../../../project-primitives/timelines/property-track.md) and a [timeline](../../../project-primitives/timelines/timeline.md) can have as many as needed.
 
 ## Adding Value Tracks
 
@@ -28,20 +28,20 @@ To add a value track to a timeline follow any of these methods:
 
 ## Value Track Properties
 
-**Name**
+**Name**  
 Must be unique in the timeline. Can be used to query the value of the track at runtime.
 
-**Animation mode**
-See the section on common timeline element properties in [Timelines](../../timelines.md). These properties follow an inheritance pattern.
+**Animation mode**  
+See the section on common timeline element properties in [Timelines](../../../project-primitives/timelines.md). These properties follow an inheritance pattern.
 
-**Ease**
-See the section on common timeline element properties in [Timelines](../../timelines.md). These properties follow an inheritance pattern.
+**Ease**  
+See the section on common timeline element properties in [Timelines](../../../project-primitives/timelines.md). These properties follow an inheritance pattern.
 
-**Enabled**
-See the section on common timeline element properties in [Timelines](../../timelines.md). Changing these at the track level will apply the change to every sub-element.
+**Enabled**  
+See the section on common timeline element properties in [Timelines](../../../project-primitives/timelines.md). Changing these at the track level will apply the change to every sub-element.
 
-**Locked**
-See the section on common timeline element properties in [Timelines](../../timelines.md). Changing these at the track level will apply the change to every sub-element.
+**Locked**  
+See the section on common timeline element properties in [Timelines](../../../project-primitives/timelines.md). Changing these at the track level will apply the change to every sub-element.
 
-**Track ID**
+**Track ID**  
 An optional identifier to query the value of the track at runtime.

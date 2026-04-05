@@ -1,7 +1,7 @@
 ---
 title: "HTML Element"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/html-element"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -29,11 +29,11 @@ You can find several examples of using the HTML Element object in the Example Br
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IHTMLElementInstance script interface](../scripting/scripting-reference/plugin-interfaces/html-element.md). This allows access in worker mode; when worker mode is disabled, you can also use all the browser standard DOM APIs.
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IHTMLElementInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/html-element). This allows access in worker mode; when worker mode is disabled, you can also use all the browser standard DOM APIs.
 
 ## Layering HTML objects
 
-As the name suggests, this object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
+As the name suggests, this object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
 
 ## CSS styling
 
@@ -89,7 +89,7 @@ This sets `.mybutton` to have a height of 2em at 100% scale, but also adjusts th
 
 ## Managing long HTML content
 
-If you have a lot of HTML content to display, consider adding it as a HTML project file. Then use the [AJAX](ajax.md) object to fetch the project file, and set the content of the HTML Element to the content of the project file.
+If you have a lot of HTML content to display, consider adding it as a HTML project file. Then use the [AJAX](../plugin-reference/ajax.md) object to fetch the project file, and set the content of the HTML Element to the content of the project file.
 
 ## Scaling with the canvas
 
@@ -220,7 +220,7 @@ Triggered when a CSS animation for any contained element finishes (i.e. the `"an
 > Note that some actions have the same name. Actions in the *HTML element* group are common to all HTML-based plugins like Button and Text Input, and will only affect the main HTML element. Actions in the *HTML content* group are unique to the HTML Element plugin and can update the content of the object.
 
 **Create sprite image element**  
-Creates an `<img>` element with the content of a given [Sprite](sprite.md) object's current image, and inserts it to the HTML element. The location to insert is set by a CSS selector. This can be left blank to insert in to the main HTML element. Alternatively a selector like `".myclass"` will mean to insert content to the child element with the class *myclass*. The element can be set to inserted at the start or the end of the given element, or alternatively replacing all the content of the given element with the image. The inserted image element can optionally also be given an ID and class, which helps make it easy to style the inserted image with CSS.
+Creates an `<img>` element with the content of a given [Sprite](../plugin-reference/sprite.md) object's current image, and inserts it to the HTML element. The location to insert is set by a CSS selector. This can be left blank to insert in to the main HTML element. Alternatively a selector like `".myclass"` will mean to insert content to the child element with the class *myclass*. The element can be set to inserted at the start or the end of the given element, or alternatively replacing all the content of the given element with the image. The inserted image element can optionally also be given an ID and class, which helps make it easy to style the inserted image with CSS.
 
 > **Tip**  
 > This action provides a simple way to show a Sprite image on top of a HTML element, since normally HTML elements always show on top of Sprites.

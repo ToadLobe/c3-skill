@@ -1,7 +1,7 @@
 ---
 title: "Tilemap script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/tilemap"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -11,7 +11,7 @@ release: 449
 
 ---
 
-The `ITilemapInstance` interface derives from [IWorldInstance](../object-interfaces/iworldinstance.md) to add APIs specific to the [Tilemap plugin](../../../plugin-reference/tilemap.md).
+The `ITilemapInstance` interface derives from [IWorldInstance](../../../scripting/scripting-reference/object-interfaces/iworldinstance.md) to add APIs specific to the [Tilemap plugin](../../../plugin-reference/tilemap.md).
 
 ## Tile numbers
 
@@ -43,49 +43,49 @@ You can also use the masks to extract each component of the tile number. For exa
 
 ## Tilemap APIs
 
-**mapWidth**
+**mapWidth**  
 Read-only numbers representing the size of the tilemap in tiles. The method allows getting both values at the same time.
 
-**mapHeight**
+**mapHeight**  
 Read-only numbers representing the size of the tilemap in tiles. The method allows getting both values at the same time.
 
-**getMapSize()**
+**getMapSize()**  
 Read-only numbers representing the size of the tilemap in tiles. The method allows getting both values at the same time.
 
-**mapDisplayWidth**
+**mapDisplayWidth**  
 Read-only numbers with the displayed size of the tilemap, in tiles. The method allows getting both values at the same time.
 
 > **Tip**  
 > This can differ from `mapWidth` and `mapHeight` if the Tilemap is resized smaller at runtime - in that case the display size will be smaller, but the map size will stay the same.
 
-**mapDisplayHeight**
+**mapDisplayHeight**  
 Read-only numbers with the displayed size of the tilemap, in tiles. The method allows getting both values at the same time.
 
 > **Tip**  
 > This can differ from `mapWidth` and `mapHeight` if the Tilemap is resized smaller at runtime - in that case the display size will be smaller, but the map size will stay the same.
 
-**getMapDisplaySize()**
+**getMapDisplaySize()**  
 Read-only numbers with the displayed size of the tilemap, in tiles. The method allows getting both values at the same time.
 
 > **Tip**  
 > This can differ from `mapWidth` and `mapHeight` if the Tilemap is resized smaller at runtime - in that case the display size will be smaller, but the map size will stay the same.
 
-**tileWidth**
+**tileWidth**  
 Read-only numbers with the size of a tile in pixels. The method allows getting both values at the same time.
 
-**tileHeight**
+**tileHeight**  
 Read-only numbers with the size of a tile in pixels. The method allows getting both values at the same time.
 
-**getTileSize()**
+**getTileSize()**  
 Read-only numbers with the size of a tile in pixels. The method allows getting both values at the same time.
 
-**getTileAt(x, y)**
+**getTileAt(x, y)**  
 Get the tile at a given position in tiles (i.e. (0, 0) is the top-left tile of the tilemap, regardless of the tilemap's position or the tile size). Returns -1 for empty tiles or tiles outside the tilemap; otherwise use bit operations to determine tile ID or flags separately.
 
-**setTileAt(x, y, tile)**
+**setTileAt(x, y, tile)**  
 Set the tile at a given position in tiles. Use -1 to set a tile empty; otherwise use bit operations to combine the tile ID and flags.
 
-**async replaceImage(blob)**
+**async replaceImage(blob)**  
 Replace the current tilemap image with the contents of a [Blob](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fBlob) representing an image file such as a PNG image. The blob can be locally generated or retrieved from a URL, for example:
 
 ```javascript

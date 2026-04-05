@@ -1,7 +1,7 @@
 ---
 title: "List"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/list"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -21,11 +21,11 @@ The **List** object creates either a **dropdown list** or **list box** form cont
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IListInstance script interface](../scripting/scripting-reference/plugin-interfaces/list.md).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IListInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/list).
 
 ## Layering HTML objects
 
-This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](../tips-and-guides/html-layers.md).
+This object displays using a HTML element rather than drawing in to the canvas. This means its layering works differently to other objects. To learn more about how to layer HTML objects, see [HTML layers](https://www.construct.net/make-games/manuals/construct-3/tips-and-guides/html-layers).
 
 ## Styling lists
 
@@ -64,7 +64,7 @@ An optional *class* attribute for the element in the DOM (Document Object Model)
 
 ## List conditions
 
-See [common conditions](common-features/common-conditions.md) for features shared between form control objects.
+See [common conditions](../plugin-reference/common-features/common-conditions.md) for features shared between form control objects.
 
 **Compare item text at**  
 Compare the text of a given item in the list.
@@ -86,7 +86,7 @@ Triggered whenever the chosen selection in the control is changed. This can be b
 
 ## List actions
 
-See [common actions](common-features/common-actions.md) for features shared between form control objects.
+See [common actions](../plugin-reference/common-features/common-actions.md) for features shared between form control objects.
 
 **Add item**  
 Append a new item to the end of the list of available choices.

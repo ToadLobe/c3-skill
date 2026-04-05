@@ -1,7 +1,7 @@
 ---
 title: "Mobile Advert"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/mobile-advert"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -218,7 +218,7 @@ In mobile when the ad is viewed you can use the **RewardType** and **RewardValue
 
 In a web export, because you don't use ad units, the rewarded ads will always return the value *"Reward"* for the **RewardType** expression and the value of *"1"* for the **RewardValue** expression.
 
-For this reason it is recommended to use the [Platform Info](platform-info.md) plugin to decide what to do after a rewarded ad is viewed, depending on what platform the game is running on.
+For this reason it is recommended to use the [Platform Info](../plugin-reference/platform-info.md) plugin to decide what to do after a rewarded ad is viewed, depending on what platform the game is running on.
 
 ## Mobile Advert Conditions
 

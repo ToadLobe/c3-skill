@@ -1,7 +1,7 @@
 ---
 title: "3D Camera"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/3d-camera"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -21,7 +21,7 @@ You can learn more about 3D Camera and how it works with other 3D features in th
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [I3DCameraObjectType script interface](../scripting/scripting-reference/plugin-interfaces/3d-camera.md).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [I3DCameraObjectType script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/3d-camera).
 
 ## Using a 3D Camera
 
@@ -31,7 +31,7 @@ The 3D Camera object will only apply to layers which have their **Rendering mode
 
 ## 3D Audio
 
-When moving the camera in 3D, it can be useful to play positioned sounds which will adjust playback to make them sound like they are coming from a position in 3D space. This can be done by setting the listener orientation in the [Audio object](audio.md), and playing positioned sounds either at objects (which will also use their Z elevation as the Z co-ordinate of the sound) or at a position which allows specifying the X, Y and Z co-ordinates of the sound.
+When moving the camera in 3D, it can be useful to play positioned sounds which will adjust playback to make them sound like they are coming from a position in 3D space. This can be done by setting the listener orientation in the [Audio object](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/audio), and playing positioned sounds either at objects (which will also use their Z elevation as the Z co-ordinate of the sound) or at a position which allows specifying the X, Y and Z co-ordinates of the sound.
 
 ## 3D Camera properties
 
@@ -78,7 +78,7 @@ Move the camera position, the look position, or both, a distance along an axis r
 Restore the camera to its default 2D behavior, using the standard scrolling features to move the view.
 
 **Rotate camera**  
-Moves the camera look-at position according to X and Y rotations in degrees. Note that a 3D Camera must first have been enabled using the *Look at position*, *Look parallel to layout* or *Set position* actions, since these also define the starting orientation that this action rotates around. Typically the rotation values will be provided by the [Mouse](mouse.md) object's *MovementX* and *MovementY* expressions in an *On movement* trigger to achieve "mouse look" - see [First-person platformer](https://editor.construct.net/#open=first-person-platformer) for an example of this.
+Moves the camera look-at position according to X and Y rotations in degrees. Note that a 3D Camera must first have been enabled using the *Look at position*, *Look parallel to layout* or *Set position* actions, since these also define the starting orientation that this action rotates around. Typically the rotation values will be provided by the [Mouse](../plugin-reference/mouse.md) object's *MovementX* and *MovementY* expressions in an *On movement* trigger to achieve "mouse look" - see [First-person platformer](https://editor.construct.net/#open=first-person-platformer) for an example of this.
 
 **Set field of view**  
 Set the angle of the field of view in degrees. Note this only has an effect when *Z Axis scale* is set to *Regular* in Project Properties. The default field of view is also set in Project Properties.

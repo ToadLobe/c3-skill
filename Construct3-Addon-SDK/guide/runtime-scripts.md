@@ -1,7 +1,7 @@
 ---
 title: "Runtime scripts"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/runtime-scripts"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -63,6 +63,7 @@ By default Construct 3 assumes no DOM scripts are used. If you want to use one, 
 ```javascript
 this._info.SetDOMSideScripts(["c3runtime/domSide.js"]);
 ```
+
 Since an array of script paths is used, if you have a lot of DOM code, you can split it across different files. Don't forget to add these files to the file list in `addon.json`.
 
 For documentation on the DOM messaging APIs, refer to [DOMElementHandler](../runtime-reference/base-classes/domelementhandler.md) (used in domSide.js), [ISDKDOMPluginBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkdompluginbase.md) (used in plugin.js), and [ISDKDOMInstanceBase](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/isdkdominstancebase.md) (used in instance.js).

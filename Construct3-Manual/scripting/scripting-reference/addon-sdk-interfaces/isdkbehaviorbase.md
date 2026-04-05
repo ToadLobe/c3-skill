@@ -1,7 +1,7 @@
 ---
 title: "ISDKPluginBase addon SDK interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/addon-sdk-interfaces/isdkbehaviorbase"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -10,7 +10,7 @@ release: 449
 
 ---
 
-The `ISDKBehaviorBase` interface is used in the runtime as a base class for behaviors created with the addon SDK. It derives from [IBehavior](../object-interfaces/ibehavior.md).
+The `ISDKBehaviorBase` interface is used in the runtime as a base class for behaviors created with the addon SDK. It derives from [IBehavior](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/ibehavior).
 
 ## ISDKBehaviorBase APIs
 

@@ -1,7 +1,7 @@
 ---
 title: "Defining actions, conditions and expressions"
 source: "https://www.construct.net/en/make-games/manuals/addon-sdk/guide/defining-aces"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -84,61 +84,61 @@ The `id `and `scriptName `are the only required properties for conditions and ac
 
 The definitions for conditions, actions and expressions all share a few common properties. These are detailed below. Then the properties specific to each kind is documented after that.
 
-**id**
+**id**  
 A string specifying a unique ID for the ACE. This is used in the language file. By convention this is lowercase with dashes for separators, e.g. "my-condition".
 
-**c2id**
+**c2id**  
 If you are porting a Construct 2 addon to Construct 3, put the corresponding numerical ID that the Construct 2 addon used here. This allows Construct 3 to import Construct 2 projects using your addon.
 
-**scriptName / expressionName**
+**scriptName / expressionName**  
 The name of the function in the runtime script for this ACE. Note for expressions, use `expressionName` instead, which also defines the name typed by the user in expressions.
 
-**isDeprecated**
+**isDeprecated**  
 Set to true to deprecate the ACE. This hides it in the editor, but allows existing projects to continue using it.
 
-**highlight**
+**highlight**  
 Set to true to highlight the ACE in the condition/action/expression picker dialogs. This should only be used for the most regularly used ACEs, to help users pick them out from the list easily.
 
-**params**
+**params**  
 An array of parameter definitions. See the section below on parameters. This can be omitted if the ACE does not use any parameters.
 
 ## Condition definitions
 
 Condition definitions can also use the following properties.
 
-**isTrigger**
+**isTrigger**  
 Specifies a trigger condition. This appears with an arrow in the event sheet. Instead of being evaluated every tick, triggers only run when they are explicity triggered by a runtime call.
 
-**isFakeTrigger**
+**isFakeTrigger**  
 Specifies a fake trigger. This appears identical to a trigger in the event sheet, but is actually evaluated every tick. This is useful for conditions which are true for a single tick, such as for APIs which must poll a value every tick.
 
-**isStatic**
+**isStatic**  
 Normally, the condition runtime method is executed once per picked instance. If the condition is marked static, the runtime method is executed once only, on the object type class. This means the runtime method must also implement the instance picking entirely itself, including respecting negation and OR blocks.
 
-**isLooping**
+**isLooping**  
 Display an icon in the event sheet to indicate the condition loops. The condition method should use [ILoopingConditionContext](../../Construct3-Manual/scripting/scripting-reference/addon-sdk-interfaces/iloopingconditioncontext.md) to implement its loop.
 
-**isInvertible**
+**isInvertible**  
 Allow the condition to be inverted in the event sheet. Set to `false` to disable invert.
 
-**isCompatibleWithTriggers**
+**isCompatibleWithTriggers**  
 Allow the condition to be used in the same branch as a trigger. Set to `false` if the condition does not make sense when used in a trigger, such as the *Trigger once* condition.
 
 ## Action definitions
 
 Action definitions can also use the following properties.
 
-**isAsync**
+**isAsync**  
 Set to `true` to mark the action as asynchronous. Make the action method an `async` function, and the system *Wait for previous actions to complete* action will be able to wait for the action as well.
 
 ## Expression definitions
 
 Expressions work slightly differently to conditions and actions: they must specify a `returnType`, and instead of using a `scriptName` they specify an `expressionName` which doubles as both what is typed for the expression as well as the runtime script function name.
 
-**returnType**
+**returnType**  
 One of `"number"`, `"string"`, `"any"`. The runtime function must return the corresponding type, and `"any"` must still return either a number or a string.
 
-**isVariadicParameters**
+**isVariadicParameters**  
 If `true`, Construct 3 will allow the user to enter any number of parameters beyond those defined. In other words the parameters (if any) listed in `"params"` are required, but this flag enables adding further `"any"` type parameters beyond the end.
 
 ## Parameter definitions
@@ -159,13 +159,13 @@ ACEs can all define which parameters they use with the `"params"` property. This
 
 Note that expressions can only use `"number"`, `"string"` or `"any"` parameter types.
 
-**id**
+**id**  
 A string with a unique identifier for this parameter. This is used to refer to the parameter in the language file.
 
-**c2id**
+**c2id**  
 In some circumstances, it is necessary to specify which Construct 2 parameter ID a parameter corresponds to. However normally it can be inferred by the parameter index.
 
-**type**
+**type**  
 The parameter type. Expressions can only use `"number"`, `"string"` or `"any"`. However conditions and actions have the following options available:
 
 - `"number"` — a number parameter
@@ -188,16 +188,16 @@ The parameter type. Expressions can only use `"number"`, `"string"` or `"any"`. 
 - `"animation"` — a string parameter which is interpreted as an animation name in the object
 - `"objinstancevar"` — a dropdown list with non-boolean instance variables available in a prior `"object"` parameter. Only valid when preceded by an `"object"` parameter.
 
-**initialValue**
+**initialValue**  
 A string which is used as the initial expression for expression-based parameters. Note this is still a string for `"number"` type parameters. It can contain any valid expression for the parameter, such as "1 + 1". For `"boolean"` parameters, use a string of either `"true"` or `"false"`. For `"combo"` parameters, this is the initial item ID.
 
-**items**
+**items**  
 Only valid with the `"combo"` type. Set to an array of item IDs available in the dropdown list. The actual displayed text for the items is defined in the language file.
 
 > **Tip**  
 > If you remove a combo item after publishing your addon, existing projects using that combo item will revert to the default item.
 
-**itemGroups**
+**itemGroups**  
 Only valid with the `"combo-grouped"` type. Set to an array of item groups available in the dropdown list, with each group being represented by an object with properties `"id"` for the group ID, and `"items"` being an array of strings of item IDs in the group. The actual displayed text for the groups and items is defined in the language file.
 ```javascript
 // example "combo-grouped" parameter definition
@@ -214,15 +214,15 @@ Only valid with the `"combo-grouped"` type. Set to an array of item groups avail
 }
 ```
 
-**allowedPluginIds**
+**allowedPluginIds**  
 Optional and only valid with the `"object"` type. Set to an array of plugin IDs allowed to be shown by the object picker. For example, use `["Sprite"]` to only allow the object parameter to select a Sprite.
 
-**filter**
+**filter**  
 Optional and only valid with the `"projectfile"` type. Set to a file extension including the dot to filter the list of provided project files to only those with the given file extension, e.g. `".txt"`.
 
-**autocompleteId**
+**autocompleteId**  
 Optional and only valid with the `"string"` type. Set to a globally unique ID and string constants with the same ID will offer autocomplete in the editor. This is useful for "tag" parameters. Note the ID must be unique to all other plugins and behaviors in Construct, so it is a good idea to include your plugin or behavior name in the string, e.g. "myplugin-tag".
 
 ## Language strings
 
-The aces.json file does not include any strings displayed in the editor UI. These are all kept in a separate language file to facilitate translation. Therefore to finish adding ACEs, the relevant UI strings like the list name and description must be added to the language file. See [The language file](language-file.md) for more information.
+The aces.json file does not include any strings displayed in the editor UI. These are all kept in a separate language file to facilitate translation. Therefore to finish adding ACEs, the relevant UI strings like the list name and description must be added to the language file. See [The language file](https://www.construct.net/make-games/manuals/addon-sdk/guide/language-file) for more information.

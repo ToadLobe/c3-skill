@@ -1,7 +1,7 @@
 ---
 title: "The Example Browser"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/overview/example-browser"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -18,7 +18,7 @@ Construct comes with hundreds of example projects to help you learn about it, as
 
 There are several ways to open the Example Browser. The main ways are:
 
-- Click **Browse examples** on the [Start Page](start-page.md)
+- Click **Browse examples** on the [Start Page](../overview/start-page.md)
 - Click one of the three recommended examples on the Start Page to open it in the Example Browser
 - Select `Menu › View › Example browser`
 

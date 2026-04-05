@@ -1,7 +1,7 @@
 ---
 title: "Google Play"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/google-play"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -37,7 +37,7 @@ To ensure your finished game has permission to access the Google Play Game Servi
 
 Click the button to link a Web app. You will need to fill out details such as the URL it is played from and some authorisation details. Once completed, you should be given a client ID. This should be in a format similar to:
 
-**12345678987-abcdefghijklmnopqrstuvwxyz1234567890.apps.googleusercontent.com**
+**12345678987-abcdefghijklmnopqrstuvwxyz1234567890.apps.googleusercontent.com**  
 
 **Copy and paste** this client ID in to the Google Play plugin's *Client ID* property. It is not actually necessary to fill in the *Application ID* property, but you can add it anyway: the application ID is the number that appears beside the game name in the header of the Developer Console, e.g. "My Super Game - 12345678". The application ID in this case is 12345678.
 
@@ -47,7 +47,7 @@ Click the button to link an Android app. You will need to select an application 
 
 Once completed, you should be given a client ID and application ID. For an Android app you **only need you application ID**. This should be in a format similar to:
 
-**12345678987**
+**12345678987**  
 
 **Copy and paste** this application ID in to the Google Play plugin's *Game ID* property.
 

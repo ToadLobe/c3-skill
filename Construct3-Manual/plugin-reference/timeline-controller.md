@@ -1,7 +1,7 @@
 ---
 title: "Timeline controller"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/timeline-controller"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -81,7 +81,7 @@ The images bellow show how a timeline and it's properties might look in in this 
 | --- |
 | [![set intance no track id 1](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/47786/set-intance-no-track-id-1.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/47786/set-intance-no-track-id-1.png) |
 
-In this particular case the **octopus** [sprite](sprite.md) is used in the first track while the **toster** sprite is used in the second track. Because no track IDs are used, order is assumed to be the same as that defined in the editor.
+In this particular case the **octopus** [sprite](../plugin-reference/sprite.md) is used in the first track while the **toster** sprite is used in the second track. Because no track IDs are used, order is assumed to be the same as that defined in the editor.
 
 ## Unsetting all instances
 

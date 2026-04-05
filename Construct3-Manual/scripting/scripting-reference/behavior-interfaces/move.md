@@ -1,7 +1,7 @@
 ---
 title: "Move To behavior script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/behavior-interfaces/move"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -12,7 +12,7 @@ release: 449
 
 ---
 
-The `IMoveToBehaviorInstance` interface derives from [IBehaviorInstance](../object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Move To behavior](../../../behavior-reference/move.md).
+The `IMoveToBehaviorInstance` interface derives from [IBehaviorInstance](../../../scripting/scripting-reference/object-interfaces/ibehaviorinstance.md) to add APIs specific to the [Move To behavior](../../../behavior-reference/move.md).
 
 ## Example
 
@@ -32,66 +32,66 @@ inst.behaviors.MoveTo.moveToPosition(100, 100);
 
 ## Move To behavior events
 
-See [behavior instance event](../interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
+See [behavior instance event](../../../scripting/scripting-reference/interfaces/behavior-instance-event.md) for standard behavior instance event object properties.
 
-**"arrived"**
+**"arrived"**  
 Fired when the object arrives at its destination.
 
-**"hitsolid"**
+**"hitsolid"**  
 If *Stop on solids* is enabled, fired when the object hits a solid and stops.
 
 ## Move To behavior APIs
 
-**moveToPosition(x, y, isDirect = true)**
+**moveToPosition(x, y, isDirect = true)**  
 Start moving the object to a target position in layout co-ordinates. If `isDirect` is true, any existing waypoints will be cleared so the object moves directly to this position; otherwise it will add a waypoint to the queue.
 
-**getTargetX()**
+**getTargetX()**  
 Return the current target position in layout co-ordinates that the object is moving to. The `getTargetPosition()` variant returns `[x, y]`.
 
-**getTargetY()**
+**getTargetY()**  
 Return the current target position in layout co-ordinates that the object is moving to. The `getTargetPosition()` variant returns `[x, y]`.
 
-**getTargetPosition()**
+**getTargetPosition()**  
 Return the current target position in layout co-ordinates that the object is moving to. The `getTargetPosition()` variant returns `[x, y]`.
 
-**getWaypointCount()**
+**getWaypointCount()**  
 Return the number of waypoints that have been added.
 
-**getWaypointX(index)**
+**getWaypointX(index)**  
 Return the position in layout co-ordinates of a waypoint at a given zero-based index. The `getWaypoint()` variant returns `[x, y]`.
 
-**getWaypointY(index)**
+**getWaypointY(index)**  
 Return the position in layout co-ordinates of a waypoint at a given zero-based index. The `getWaypoint()` variant returns `[x, y]`.
 
-**getWaypoint(index)**
+**getWaypoint(index)**  
 Return the position in layout co-ordinates of a waypoint at a given zero-based index. The `getWaypoint()` variant returns `[x, y]`.
 
-**stop()**
+**stop()**  
 Stop any current movement, and clear all waypoints.
 
-**isMoving**
+**isMoving**  
 Read-only boolean indicating whether the object is currently moving.
 
-**speed**
+**speed**  
 Set or get the current movement speed in pixels per second.
 
-**maxSpeed**
+**maxSpeed**  
 Set or get the maximum movement speed in pixels per second.
 
-**acceleration**
+**acceleration**  
 Set or get the acceleration and deceleration of the movement in pixels per second per second.
 
-**deceleration**
+**deceleration**  
 Set or get the acceleration and deceleration of the movement in pixels per second per second.
 
-**angleOfMotion**
+**angleOfMotion**  
 Set or get the current angle the object is moving at, in radians.
 
-**rotateSpeed**
+**rotateSpeed**  
 Set or get the rate the object can turn at, in radians per second.
 
-**isStopOnSolids**
+**isStopOnSolids**  
 Set or get a boolean indicating whether the *Stop on solids* property is enabled. When enabled the object will stop its movement, clear all waypoints and fire the `"hitsolid"` event if it touches an object with the Solid behavior during movement.
 
-**isEnabled**
+**isEnabled**  
 A boolean indicating if the behavior is enabled. If disabled, the behavior no longer has any effect on the object.

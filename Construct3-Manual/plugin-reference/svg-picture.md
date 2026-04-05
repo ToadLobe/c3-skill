@@ -1,7 +1,7 @@
 ---
 title: "SVG Picture"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/svg-picture"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -20,11 +20,11 @@ The **SVG Picture** object can display a [Scalable Vector Graphics](https://www.
 SVG Picture currently does not support animations and only shows a static image.
 
 > **Tip**  
-> Animated SVGs can be displayed with the [HTML Element](html-element.md) object.
+> Animated SVGs can be displayed with the [HTML Element](../plugin-reference/html-element.md) object.
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ISVGPictureInstance script interface](../scripting/scripting-reference/plugin-interfaces/svg-picture.md).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [ISVGPictureInstance script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/svg-picture).
 
 ## Importing an SVG image
 
@@ -56,7 +56,7 @@ Choose the position of the origin of the object relative to its unrotated boundi
 
 ## SVG Picture conditions
 
-SVG Picture does not have any of its own conditions. For conditions in common to other objects, see [Common conditions](common-features/common-conditions.md).
+SVG Picture does not have any of its own conditions. For conditions in common to other objects, see [Common conditions](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/common-features/common-conditions).
 
 ## SVG Picture actions
 
@@ -68,4 +68,4 @@ Set the SVG file being displayed by the object, either by a dropdown list or by 
 
 ## SVG Picture conditions
 
-SVG Picture does not have any of its own expressions. For expressions in common to other objects, see [Common expressions](common-features/common-expressions.md).
+SVG Picture does not have any of its own expressions. For expressions in common to other objects, see [Common expressions](../plugin-reference/common-features/common-expressions.md).

@@ -1,7 +1,7 @@
 ---
 title: "Advanced random"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/advanced-random"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -20,11 +20,11 @@ The **Advanced Random** object provides expressions for advanced pseudo-random n
 
 It also provides seeded random functions, which provide the same pseudo-random number sequence when given the same seed. This can also be used to override the system random function (covering the *random()* expression, and any randomness used in behaviors) with a seeded random, which can provide deterministic random number generation for the whole runtime. By default the seed is always itself random, meaning random number generation is different between different runs of the game.
 
-[Click here to open an example of the Advanced Random plugin.](https://editor.construct.net/#open=noise-textures) This uses the [Drawing Canvas](drawing-canvas.md) object to display randomly generated textures using Advanced Random.
+[Click here to open an example of the Advanced Random plugin.](https://editor.construct.net/#open=noise-textures) This uses the [Drawing Canvas](../plugin-reference/drawing-canvas.md) object to display randomly generated textures using Advanced Random.
 
 ### Scripting
 
-When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IAdvancedRandomObjectType script interface](../scripting/scripting-reference/plugin-interfaces/advanced-random.md).
+When using JavaScript or TypeScript coding, the features of this object can be accessed via the [IAdvancedRandomObjectType script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/advanced-random).
 
 ## Gradients
 

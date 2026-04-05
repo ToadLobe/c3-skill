@@ -1,7 +1,7 @@
 ---
 title: "Platform Info script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/iplatforminfo"
-release: 449
+release: 476.3
 ---
 
 ## On this page
@@ -10,7 +10,7 @@ release: 449
 
 ---
 
-The `IPlatformInfo` interface provides access to Construct's detected platform details, such as the browser, operating system, and export type. It provides similar information to the [Platform info plugin](../../../plugin-reference/platform-info.md), but note that plugin does not need to be in the project to use this interface. It is typically accessed by the [IRuntime](../iruntime.md) `platformInfo` property.
+The `IPlatformInfo` interface provides access to Construct's detected platform details, such as the browser, operating system, and export type. It provides similar information to the [Platform info plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/platform-info), but note that plugin does not need to be in the project to use this interface. It is typically accessed by the [IRuntime](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime) `platformInfo` property.
 
 ```javascript
 // Example: log detected operating system to console on startup
@@ -22,58 +22,58 @@ runOnStartup(async runtime =>
 
 ## Platform info APIs
 
-**isMobile**
+**isMobile**  
 A read-only boolean indicating whether Construct detects the current device as "mobile".
 
 > **Warning**  
-> This detection may be unreliable. See the warning for the *Is on mobile* condition in the [Platform Info](../../../plugin-reference/platform-info.md) manual entry.
+> This detection may be unreliable. See the warning for the *Is on mobile* condition in the [Platform Info](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/platform-info) manual entry.
 
-**os**
+**os**  
 A read-only string with the operating system Construct has detected, which is one of `"windows"`, `"macos"`, `"linux"`, `"chrome-os"`, `"android"`, `"ios"` or `"unknown"`.
 
-**osVersion**
+**osVersion**  
 A read-only string with the operating system version Construct has detected, or the string `"(unknown)"` if it failed to identify a version.
 
-**browser**
+**browser**  
 A read-only string with the browser Construct has detected, which is one of `"chrome"`, `"chromium"`, `"edge"`, `"opera"`, `"firefox"`, `"safari"` or `"unknown"`.
 
 > **Tip**  
 > Consider using feature detection or referring to `browserEngine` rather than relying on the identified browser.
 
-**browserVersion**
+**browserVersion**  
 A read-only string with the browser version Construct has detected, or the string `"(unknown)"` if it failed to identify a version.
 
-**browserEngine**
+**browserEngine**  
 A read-only string with the browser engine Construct has detected, which is one of `"chromium"`, `"gecko"`, `"webkit"`, or `"unknown"` if failed to identify any.
 
-**exportType**
+**exportType**  
 A read-only string indicating the export option used to export the project, which is one of `"preview"` (when previewing prior to export), `"html5"`, `"scirra-arcade"`, `"cordova-android"`, `"cordova-ios"`, `"windows-webview2"`, `"macos-wkwebview"`, `"linux-cef"`, `"xbox-uwp-webview2"`, `"instant-games"` or `"playable-ad"`.
 
-**renderer**
+**renderer**  
 A read-only string indicating the graphics rendering technology in use. This can be `"webgl1"`, `"webgl2"` or `"webgpu"`. It can also have a `-software` suffix if a "major performance caveat" is detected, which normally indicates slower software rendering, typically due to unreliable GPU drivers. For example, software-rendered WebGL 1 support would return `"webgl1-software"`.
 
-**rendererDetail**
+**rendererDetail**  
 A read-only string describing system-specific detail about the graphics hardware in use. This typically describes the GPU manufacturer and model name, and sometimes some hardware capabilities.
 
-**canvasClientX**
+**canvasClientX**  
 Read-only numbers with the position of the main display canvas in CSS pixels. In other words these are the CSS co-ordinates of the top-left point of the main display canvas relative to the page.
 
-**canvasClientY**
+**canvasClientY**  
 Read-only numbers with the position of the main display canvas in CSS pixels. In other words these are the CSS co-ordinates of the top-left point of the main display canvas relative to the page.
 
-**canvasCssWidth**
+**canvasCssWidth**  
 Read-only numbers with the size of the main display canvas in CSS pixels. This does not correspond exactly to device (physical display) pixels, but is the appropriate size from a web design perspective in `px` units.
 
-**canvasCssHeight**
+**canvasCssHeight**  
 Read-only numbers with the size of the main display canvas in CSS pixels. This does not correspond exactly to device (physical display) pixels, but is the appropriate size from a web design perspective in `px` units.
 
-**canvasDeviceWidth**
+**canvasDeviceWidth**  
 Read-only numbers with the size of the main display canvas in device (physical display) pixels. Unlike the CSS size, this size reflects the number of actual pixels used in the display.
 
-**canvasDeviceHeight**
+**canvasDeviceHeight**  
 Read-only numbers with the size of the main display canvas in device (physical display) pixels. Unlike the CSS size, this size reflects the number of actual pixels used in the display.
 
-**devicePixelRatio**
+**devicePixelRatio**  
 Return the [devicePixelRatio](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fWindow%2fdevicePixelRatio) property.
 
 > **Tip**  

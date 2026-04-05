@@ -1,7 +1,7 @@
 ---
 title: "'Destroy outside' behavior"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/destroy-outside"
-release: 449
+release: 476.3
 ---
 
 ## On this page
