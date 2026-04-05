@@ -36,16 +36,16 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**gameID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
+**gameID** [guid](../../../data-types#internalH1Link1.md) *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**leaderboardID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
+**leaderboardID** [guid](../../../data-types#internalH1Link1.md) *Required*
 The ID of the leaderboard you're fetching the score history for.
 
-**playerID** `[guid](../../../data-types#internalH1Link1.md)`
+**playerID** [guid](../../../data-types#internalH1Link1.md)
 The player ID to query. You must specify this or `scoreID`.
 
-**scoreID** `[guid](../../../data-types#internalH1Link1.md)`
+**scoreID** [guid](../../../data-types#internalH1Link1.md)
 The unique record ID of the score to query. You must specify this or `playerID`.
 
 ## Success Response
@@ -68,16 +68,16 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** `[bool](../../../data-types#internalH1Link4.md)`
+**success** [bool](../../../data-types#internalH1Link4.md)
 If the request was successfull or not.
 
-**scoreID** `[guid](../../../data-types#internalH1Link1.md)`
+**scoreID** [guid](../../../data-types#internalH1Link1.md)
 The ID of the score the history is being returned on.
 
-**player** `[Player](../../../authentication/api-objects/player-object.md)`
+**player** [Player](../../../authentication/api-objects/player-object.md)
 The player this score belongs to.
 
-**scoreHistory** `Array<[ScoreHistory](../../../leaderboards/api-objects/score-history.md)>`
+**scoreHistory** Array<[ScoreHistory](../../../leaderboards/api-objects/score-history.md)>
 The list of score history records for this score.
 
 **country** `string`
@@ -101,7 +101,7 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** `[bool](../../../data-types#internalH1Link4.md)`
+**success** [bool](../../../data-types#internalH1Link4.md)
 If the request was successfull or not.
 
 **errorMessage** `string`
@@ -110,5 +110,5 @@ An error message with more detailed information on why the request failed.
 **helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
+**shouldRetry** [bool](../../../data-types#internalH1Link4.md)
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

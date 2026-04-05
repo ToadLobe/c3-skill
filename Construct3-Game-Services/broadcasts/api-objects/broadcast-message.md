@@ -54,13 +54,13 @@ This object can be rated by players.  Read about [how ratings work](../../rating
 
 ## Object Properties
 
-**id** `[guid](../../data-types#internalH1Link1.md)`
+**id** [guid](../../data-types#internalH1Link1.md)
 A unique ID for this message.
 
-**channelID** `[guid](../../data-types#internalH1Link1.md)`
+**channelID** [guid](../../data-types#internalH1Link1.md)
 The ID of the [channel](../../broadcasts/api-objects/broadcast-channel.md) this message belongs to.
 
-**date** `[datetime](../../data-types#internalH1Link0.md)`
+**date** [datetime](../../data-types#internalH1Link0.md)
 The date and time this message was published.
 
 **formattedDate** `string`
@@ -99,20 +99,20 @@ How many times the message text or title has been modified since it was first pu
 **formattedUpdates** `string`
 How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](../../culture.md).
 
-**lastUpdate** `[datetime?](../../data-types#internalH1Link0.md)`
+**lastUpdate** [datetime?](../../data-types#internalH1Link0.md)
 The date and time the message text or title was last updated.
 
 **formattedLastUpdate** `string`
 How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](../../culture.md).
 
-**isUnread** `[bool](../../data-types#internalH1Link4.md)`
+**isUnread** [bool](../../data-types#internalH1Link4.md)
 Indicates if this message is unread by the current requester.  Read about the [unread status](../../broadcasts/concepts#internalH1Link2.md).
 
-**originalLanguage** `[Language](../../common-objects/language.md)`
+**originalLanguage** [Language](../../common-objects/language.md)
 The language this message is written in.
 
-**responseLanguage** `[Language](../../common-objects/language.md)`
+**responseLanguage** [Language](../../common-objects/language.md)
 The language this message is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**ratingStatus** `[RatingStatus](../../ratings/api-objects/rating-status-object.md)`
+**ratingStatus** [RatingStatus](../../ratings/api-objects/rating-status-object.md)
 The [rating status](../../ratings/api-objects/rating-status-object.md) of this object.

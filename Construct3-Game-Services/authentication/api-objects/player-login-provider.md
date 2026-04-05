@@ -28,7 +28,7 @@ release: 476.3
 
 ## Object Properties
 
-**playerID** `[guid](../../data-types#internalH1Link1.md)`
+**playerID** [guid](../../data-types#internalH1Link1.md)
 The player ID this login provider belongs to.
 
 **username** `string`
@@ -43,11 +43,11 @@ If the login provider has an avatar for this user, the URL for it will be shown 
 **signIns** `int32`
 The number of successful sign ins this player has had with this player account using this login provider.
 
-**firstSignIn** `[datetime](../../data-types#internalH1Link0.md)`
+**firstSignIn** [datetime](../../data-types#internalH1Link0.md)
 The date and time of their first sign in with this login provider.
 
-**lastSignIn** `[datetime](../../data-types#internalH1Link0.md)`
+**lastSignIn** [datetime](../../data-types#internalH1Link0.md)
 The date and time of their last successful sign in with this login provider.
 
-**patreonMetaData** `[PatreonMetaData](../../authentication/api-objects/patreon/patreon-meta-data.md)`
+**patreonMetaData** [PatreonMetaData](../../authentication/api-objects/patreon/patreon-meta-data.md)
 If this login provider is Patreon, specific data about their memberships will show here.

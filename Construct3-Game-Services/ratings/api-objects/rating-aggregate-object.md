@@ -58,16 +58,16 @@ The average rating expressed as a percentage (0-100).
 **formattedAverageRating** `string`
 The average rating, formatted to the specified [requested culture](../../culture.md).
 
-**maxRating** `[uint8](../../data-types#internalH1Link2.md)`
+**maxRating** [uint8](../../data-types#internalH1Link2.md)
 The maximum permitted rating for this dimension.
 
-**originalLanguage** `[Language](../../common-objects/language.md)`
+**originalLanguage** [Language](../../common-objects/language.md)
 The language the title and description are written in.
 
-**responseLanguage** `[Language](../../common-objects/language.md)`
+**responseLanguage** [Language](../../common-objects/language.md)
 The language this dimension is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**lastRating** `[datetime?](../../data-types#internalH1Link0.md)`
+**lastRating** [datetime?](../../data-types#internalH1Link0.md)
 The date a player last cast a rating.
 
 **formattedLastRating** `string`

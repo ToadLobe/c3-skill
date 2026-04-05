@@ -26,7 +26,7 @@ release: 476.3
 **country** `string`
 If the country of the underlying IP is known, the ISO 3166-1 alpha-2 country code for the IP will be shown in this property.
 
-**dateBanned** `[datetime](../../data-types#internalH1Link0.md)`
+**dateBanned** [datetime](../../data-types#internalH1Link0.md)
 The date the ban was created.
 
 **ipHash** `int32`

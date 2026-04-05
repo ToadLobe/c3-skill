@@ -46,12 +46,12 @@ The [session key](../../../authentication/api-objects/session-object.md) of the 
 **secret** `string` *Required*
 Your games [secret API key](../../../games/api-keys.md).
 
-**playerID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
+**playerID** [guid](../../../data-types#internalH1Link1.md) *Required*
 The player ID you wish to make this request against.
 
  ## Request Parameters
 
-**gameID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
+**gameID** [guid](../../../data-types#internalH1Link1.md) *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
 **avatar** `string`
@@ -84,10 +84,10 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** `[bool](../../../data-types#internalH1Link4.md)`
+**success** [bool](../../../data-types#internalH1Link4.md)
 If the request was successfull or not.
 
-**avatars** `Array<[Picture](../../../common-objects/picture-object.md)>`
+**avatars** Array<[Picture](../../../common-objects/picture-object.md)>
 A list of [picture objects](../../../common-objects/picture-object.md) representing the players new avatar. Each picture object is the same avatar, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256` will be shown here along with the original avatar size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original avatar width.
 
 **formattingCulture** `string`
@@ -108,7 +108,7 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** `[bool](../../../data-types#internalH1Link4.md)`
+**success** [bool](../../../data-types#internalH1Link4.md)
 If the request was successfull or not.
 
 **errorMessage** `string`
@@ -117,5 +117,5 @@ An error message with more detailed information on why the request failed.
 **helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
+**shouldRetry** [bool](../../../data-types#internalH1Link4.md)
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

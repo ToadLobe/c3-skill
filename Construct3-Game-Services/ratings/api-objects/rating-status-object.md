@@ -34,11 +34,11 @@ When rateable objects are returned in a response, this status object is also ret
 
 ## Object Properties
 
-**isRateable** `[bool](../../data-types#internalH1Link4.md)`
+**isRateable** [bool](../../data-types#internalH1Link4.md)
 Are players allowed to cast votes on this object or not.
 
-**ratings** `Dictionary<string, [RatingAggregate](../../ratings/api-objects/rating-aggregate-object.md)>`
+**ratings** Dictionary<string, [RatingAggregate](../../ratings/api-objects/rating-aggregate-object.md)>
 A list of all [rating dimensions](../../ratings/api-objects/rating-dimension-object.md) ID's and their corresponding rating aggregate.  An empty dimension ID represents the dimensionless rating aggregate.
 
-**myRatings** `Dictionary<string, [Rating](../../ratings/api-objects/rating-object.md)>`
+**myRatings** Dictionary<string, [Rating](../../ratings/api-objects/rating-object.md)>
 If the request originated from a player providing a session key, this property is returned containing a list of all [rating dimensions](../../ratings/api-objects/rating-dimension-object.md) ID's and this players corresponding rating record.  An empty dimension ID represents the dimensionless rating.  The rating record will be `null` if the player hasn't cast a vote on this dimension yet.

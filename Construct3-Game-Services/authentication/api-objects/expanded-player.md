@@ -52,13 +52,13 @@ This object is only returned for some API end points that require your games sec
 
 ## Object Properties
 
-**id** `[guid](../../data-types#internalH1Link1.md)`
+**id** [guid](../../data-types#internalH1Link1.md)
 A unique ID for this player.
 
 **playerName** `string`
 The publicly facing player name for this player.
 
-**created** `[datetime](../../data-types#internalH1Link0.md)`
+**created** [datetime](../../data-types#internalH1Link0.md)
 The date and time this player was first registered in the game.
 
 **consecutiveDailySignIns** `int32`
@@ -67,16 +67,16 @@ Total number of consecutive days this player has logged in for.
 **successfulSignIns** `int32`
 Total number of times this player has signed into their account.
 
-**lastSuccessfulSignIn** `[datetime?](../../data-types#internalH1Link0.md)`
+**lastSuccessfulSignIn** [datetime?](../../data-types#internalH1Link0.md)
 Date and time of the last successful sign in for this player.
 
 **leaderboardScores** `int32`
 Total number of leaderboard scores this player has.
 
-**avatars** `Array<[Picture](../../common-objects/picture-object.md)>`
+**avatars** Array<[Picture](../../common-objects/picture-object.md)>
 If player has an avatar, a list of [picture objects](../../common-objects/picture-object.md). Each picture object is the same avatar, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256` will be shown here along with the original avatar size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original avatar width.
 
-**loginProviders** `Array<[PlayerLoginProvider](../../authentication/api-objects/player-login-provider.md)>`
+**loginProviders** Array<[PlayerLoginProvider](../../authentication/api-objects/player-login-provider.md)>
 List of player login provider objects currently assigned to this player.
 
 **totalBucketCloudSaves** `int32`
@@ -106,11 +106,11 @@ The sum of all this players ratings.  The summed values are normalised to a rang
 **averageRatingPercent** `decimal`
 The average rating this player casts expressed as a percentage 0-100.
 
-**lastActive** `[datetime?](../../data-types#internalH1Link0.md)`
+**lastActive** [datetime?](../../data-types#internalH1Link0.md)
 The date and time UTC this player last interacted with these services.
 
-**emailVerified** `[bool](../../data-types#internalH1Link4.md)`
+**emailVerified** [bool](../../data-types#internalH1Link4.md)
 True if this player has provided an email address that they have verified via a confirmation email.
 
-**preventAllEmails** `[bool](../../data-types#internalH1Link4.md)`
+**preventAllEmails** [bool](../../data-types#internalH1Link4.md)
 True if all emails to this player will be prevented from being sent.  Can only be adjusted by editing the player directly via your CGS account.

@@ -41,16 +41,16 @@ This object represents an bonus for a period of time.  A bonus has a modifier (e
 
 ## Object Properties
 
-**id** `[guid](../../data-types#internalH1Link1.md)`
+**id** [guid](../../data-types#internalH1Link1.md)
 A unique ID for this bonus.
 
-**startDate** `[datetime](../../data-types#internalH1Link0.md)`
+**startDate** [datetime](../../data-types#internalH1Link0.md)
 The date and time this bonus starts.
 
 **formattedStartDate** `string`
 The date and time this bonus starts formatted to the requested culture, formatted to the specified [requested culture](../../culture.md).
 
-**endDate** `[datetime](../../data-types#internalH1Link0.md)`
+**endDate** [datetime](../../data-types#internalH1Link0.md)
 The date and time this bonus ends.
 
 **formattedEndDate** `string`
@@ -65,8 +65,8 @@ The description of this bonus.
 **modifier** `decimal`
 The XP modifier for this bonus.
 
-**originalLanguage** `[Language](../../common-objects/language.md)`
+**originalLanguage** [Language](../../common-objects/language.md)
 The language this ranks properties are written in.
 
-**responseLanguage** `[Language](../../common-objects/language.md)`
+**responseLanguage** [Language](../../common-objects/language.md)
 The language this ranks properties are returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

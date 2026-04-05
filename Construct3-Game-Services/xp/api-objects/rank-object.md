@@ -42,13 +42,13 @@ This object represents an XP rank.  Ranks are achieved when the player reaches t
 
 ## Object Properties
 
-**id** `[guid](../../data-types#internalH1Link1.md)`
+**id** [guid](../../data-types#internalH1Link1.md)
 A unique ID for this rank.
 
 **atXP** `int64`
 The amount of XP required to reach this rank.
 
-**logos** `Array<[Picture](../../common-objects/picture-object.md)>`
+**logos** Array<[Picture](../../common-objects/picture-object.md)>
 If this rank has a logo, a list of [picture objects](../../common-objects/picture-object.md). Each picture object is the same logo, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256, 512` will be shown here along with the original logo size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original logo width.
 
 **formattedAtXP** `string`
@@ -60,8 +60,8 @@ The title of this rank.
 **description** `string`
 The description of this rank.
 
-**originalLanguage** `[Language](../../common-objects/language.md)`
+**originalLanguage** [Language](../../common-objects/language.md)
 The language this ranks properties are written in.
 
-**responseLanguage** `[Language](../../common-objects/language.md)`
+**responseLanguage** [Language](../../common-objects/language.md)
 The language this ranks properties are returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

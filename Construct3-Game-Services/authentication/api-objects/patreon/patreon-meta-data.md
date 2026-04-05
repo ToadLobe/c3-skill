@@ -26,5 +26,5 @@ This object is returned along with a player's Patreon login provider.  It contai
 
 ## Object Properties
 
-**memberships** `Array<[PatreonMembership](../../../authentication/api-objects/patreon/membership.md)>`
+**memberships** Array<[PatreonMembership](../../../authentication/api-objects/patreon/membership.md)>
 The list of Patreon memberships this player belongs to.

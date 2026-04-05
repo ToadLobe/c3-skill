@@ -46,7 +46,7 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**pollToken** `[guid](../../../data-types#internalH1Link1.md)` *Required*
+**pollToken** [guid](../../../data-types#internalH1Link1.md) *Required*
 The link poll token returned on the original [link request](../../../authentication/api-end-points/login-providers/link-login-provider.md).
 
 ## Success Response
@@ -66,13 +66,13 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** `[bool](../../../data-types#internalH1Link4.md)`
+**success** [bool](../../../data-types#internalH1Link4.md)
 If the request was successfull or not.
 
-**linked** `[bool](../../../data-types#internalH1Link4.md)`
+**linked** [bool](../../../data-types#internalH1Link4.md)
 Returns true if the link was sucessful.  This will always return false until the user completes the sign in with the login provider.
 
-**forceCode** `[guid?](../../../data-types#internalH1Link1.md)`
+**forceCode** [guid?](../../../data-types#internalH1Link1.md)
 A one use code to [force link](../../../authentication/api-end-points/login-providers/force-link.md) the login provider to the players account.
 
 **forceURL** `url (string)`
@@ -99,7 +99,7 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** `[bool](../../../data-types#internalH1Link4.md)`
+**success** [bool](../../../data-types#internalH1Link4.md)
 If the request was successfull or not.
 
 **errorMessage** `string`
@@ -108,5 +108,5 @@ An error message with more detailed information on why the request failed.
 **helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
+**shouldRetry** [bool](../../../data-types#internalH1Link4.md)
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

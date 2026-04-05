@@ -35,7 +35,7 @@ release: 476.3
 
 ## Object Properties
 
-**teamID** `[guid](../../data-types#internalH1Link1.md)`
+**teamID** [guid](../../data-types#internalH1Link1.md)
 A unique ID for this team.
 
 **name** `string`
@@ -47,7 +47,7 @@ The number of players assigned in this team.
 **formattedPlayers** `string`
 The number of players assigned to this team rendered using the requested locale, formatted to the specified [requested culture](../../culture.md).
 
-**dateCreated** `[datetime](../../data-types#internalH1Link0.md)`
+**dateCreated** [datetime](../../data-types#internalH1Link0.md)
 The date the team was created.
 
 **scores** `int32`

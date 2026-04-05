@@ -29,5 +29,5 @@ This players current best score.
 **formattedScore** `string`
 This players current best score formatted to the formatting culture, formatted to the specified [requested culture](../../culture.md).
 
-**player** `[Player](../../authentication/api-objects/player-object.md)`
+**player** [Player](../../authentication/api-objects/player-object.md)
 The player object.

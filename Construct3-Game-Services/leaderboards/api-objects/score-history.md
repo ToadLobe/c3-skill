@@ -36,7 +36,7 @@ Score history objects represent a snapshot in time of the scores rankings and sc
 
 ## Object Properties
 
-**date** `[datetime](../../data-types#internalH1Link0.md)`
+**date** [datetime](../../data-types#internalH1Link0.md)
 The date this score history object represents.
 
 **score** `int64`
