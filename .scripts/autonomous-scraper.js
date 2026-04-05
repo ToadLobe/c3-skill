@@ -218,17 +218,14 @@ async function detectVersion(page) {
   console.log('Detecting Construct 3 version...');
   try {
     // Primary: fetch from versions.json API (via browser to bypass Cloudflare)
+    // Format: [{ branchName: "Stable", releaseName: "r476.3", ... }, ...]
     const version = await page.evaluate(async () => {
       try {
         const res = await fetch('https://editor.construct.net/versions.json');
         const data = await res.json();
-        // data is typically { "stable": "rNNN", "beta": "rNNN", ... }
-        if (data.stable) return data.stable;
-        // Or it might be an array/object with version info
-        if (typeof data === 'object') {
-          const str = JSON.stringify(data);
-          const match = str.match(/"stable"[^"]*"(r\d+)"/);
-          if (match) return match[1];
+        if (Array.isArray(data)) {
+          const stable = data.find(v => v.branchName === 'Stable');
+          if (stable?.releaseName) return stable.releaseName;
         }
       } catch (e) {}
       return null;
