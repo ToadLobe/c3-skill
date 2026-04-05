@@ -1,0 +1,126 @@
+name: Update Construct 3 Docs
+
+# Runs every Wednesday 10:00 UTC (after Scirra's typical Tuesday evening UK release)
+on:
+  schedule:
+    - cron: '0 10 * * 3'
+  workflow_dispatch:  # manual trigger
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check for new version
+        id: check
+        run: |
+          CURRENT=$(node -e "
+            const fs = require('fs');
+            try {
+              const v = JSON.parse(fs.readFileSync('VERSION', 'utf8'));
+              console.log(v.savedWithRelease || 'unknown');
+            } catch { console.log('unknown'); }
+          ")
+          LATEST=$(node -e "
+            const https = require('https');
+            https.get('https://editor.construct.net/versions.json', {
+              headers: { 'User-Agent': 'Mozilla/5.0' }
+            }, res => {
+              let d = '';
+              res.on('data', c => d += c);
+              res.on('end', () => {
+                const v = JSON.parse(d);
+                const s = v.find(x => x.branchName === 'Stable');
+                console.log(s ? s.releaseName : 'unknown');
+              });
+            });
+          ")
+          echo "current=$CURRENT"
+          echo "latest=$LATEST"
+          echo "current=$CURRENT" >> $GITHUB_OUTPUT
+          echo "latest=$LATEST" >> $GITHUB_OUTPUT
+          if [ "$CURRENT" = "$LATEST" ]; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install dependencies
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          cd .scripts && npm ci
+          # Install Chrome for Puppeteer
+          npx puppeteer browsers install chrome
+
+      - name: Scrape all documentation
+        if: steps.check.outputs.changed == 'true'
+        env:
+          CHROME_PATH: /usr/bin/google-chrome-stable
+        run: |
+          # Install Chrome + xvfb for headed mode (bypasses Cloudflare better than headless)
+          sudo apt-get update && sudo apt-get install -y xvfb google-chrome-stable
+          cd .scripts && xvfb-run --auto-servernum --server-args="-screen 0 1280x800x24" node autonomous-scraper.js all --force
+
+      - name: Regenerate markdown
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          cd .scripts && node regenerate.js ${{ steps.check.outputs.latest }}
+
+      - name: Update README counts
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const count = dir => {
+              let n = 0;
+              const walk = d => {
+                for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+                  if (e.isDirectory()) walk(path.join(d, e.name));
+                  else if (e.name.endsWith('.md')) n++;
+                }
+              };
+              walk(dir);
+              return n;
+            };
+            const manual = count('Construct3-Manual');
+            const sdk = count('Construct3-Addon-SDK');
+            const gs = count('Construct3-Game-Services');
+            const total = manual + sdk + gs;
+            const ver = '${{ steps.check.outputs.latest }}'.replace(/^r/, '');
+            let readme = fs.readFileSync('README.md', 'utf8');
+            readme = readme
+              .replace(/release-r[\w.]+-blue/, 'release-${{ steps.check.outputs.latest }}-blue')
+              .replace(/\| \[Manual\].+\| \d+ \|/, '| [Manual](Construct3-Manual/index.md) | ' + manual + ' |')
+              .replace(/\| \[Addon SDK\].+\| \d+ \|/, '| [Addon SDK](Construct3-Addon-SDK/index.md) | ' + sdk + ' |')
+              .replace(/\| \[Game Services\].+\| \d+ \|/, '| [Game Services](Construct3-Game-Services/index.md) | ' + gs + ' |')
+              .replace(/\| \*\*Total\*\* \| \*\*\d+\*\*/, '| **Total** | **' + total + '**')
+              .replace(/\| Construct 3 Manual \| r[\w.]+ \|/, '| Construct 3 Manual | ${{ steps.check.outputs.latest }} |')
+              .replace(/\| Addon SDK \| r[\w.]+ \|/, '| Addon SDK | ${{ steps.check.outputs.latest }} |')
+              .replace(/\| Game Services \| r[\w.]+ \|/, '| Game Services | ${{ steps.check.outputs.latest }} |');
+            fs.writeFileSync('README.md', readme);
+            console.log('Manual:', manual, 'SDK:', sdk, 'GS:', gs, 'Total:', total);
+          "
+
+      - name: Create Pull Request
+        if: steps.check.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update documentation to ${{ steps.check.outputs.latest }}"
+          title: "Update documentation to ${{ steps.check.outputs.latest }}"
+          body: |
+            ${{ steps.check.outputs.current }} → ${{ steps.check.outputs.latest }}
+
+            Auto-scraped from construct.net.
+          branch: docs-${{ steps.check.outputs.latest }}
+          delete-branch: true
