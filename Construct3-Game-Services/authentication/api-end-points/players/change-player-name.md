@@ -17,13 +17,13 @@ release: 476.3
 
 ## Overview
 
-   Use this end point to change a players player name if they have one set.  The player name is the publiclly facing name you can display to other players.
+Use this end point to change a players player name if they have one set.  The player name is the publiclly facing name you can display to other players.
 
 
-   If the player is [restricted](../../../authentication/api-end-points/players/set-player-restrictions.md) from changing their player name with the `Change Player Name` restriction, the name can only be changed if the request is authenticated with a secret key.
+If the player is [restricted](../../../authentication/api-end-points/players/set-player-restrictions.md) from changing their player name with the `Change Player Name` restriction, the name can only be changed if the request is authenticated with a secret key.
 
 
-   In your [CGS account](https://www.construct.net/en/game-services/account) you are able to maintain a list of banned player name words.  If any of these words are found in the requested player name, the name will be rejected and an error returned.
+In your [CGS account](https://www.construct.net/en/game-services/account) you are able to maintain a list of banned player name words.  If any of these words are found in the requested player name, the name will be rejected and an error returned.
 
 ## Request URL
 

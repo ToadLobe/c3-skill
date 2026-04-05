@@ -17,7 +17,7 @@ release: 476.3
 
 ## Overview
 
-  You can use this end point for the following purposes:
+You can use this end point for the following purposes:
 
 
 
@@ -25,7 +25,7 @@ release: 476.3
 - Changing their currently set username/password if they currently have one set.  If you only wish to change the username, only send the `username` parameter.  If you only want to change their password, only send the `password` parameter.  Or, you can send both parameters to update both at the same time.
 
 
-  Usernames should be considered secret, and not exposed to other players.  The `playerName` should be showed publiclly.  Usernames cannot be email addresses.
+Usernames should be considered secret, and not exposed to other players.  The `playerName` should be showed publiclly.  Usernames cannot be email addresses.
 
 ## Request URL
 
