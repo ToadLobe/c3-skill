@@ -18,6 +18,10 @@ const TARGETS = {
     basePath: '/en/make-games/manuals/addon-sdk',
     outputDir: 'Construct3-Addon-SDK',
   },
+  'Construct3-Game-Services': {
+    basePath: '/en/game-services/manuals/game-services',
+    outputDir: 'Construct3-Game-Services',
+  },
 };
 
 // ─── CLI ─────────────────────────────────────────────────────────────
@@ -42,30 +46,42 @@ function slugify(text) {
   return text.toLowerCase().replace(/[^\w\- ]/g, '').replace(/ /g, '-');
 }
 
-function convertLinks(markdown, currentUrl, target) {
-  return markdown.replace(
-    /\[([^\]]*)\]\((https:\/\/www\.construct\.net(?:\/en)?\/make-games\/manuals\/(construct-3|addon-sdk)(\/[^)]*)?)\)/g,
-    (match, text, fullUrl, docType, subPath) => {
-      const linkTarget = docType === 'construct-3' ? TARGETS['Construct3-Manual'] : TARGETS['Construct3-Addon-SDK'];
-      const linkPath = (subPath || '').replace(/^\//, '');
-      const currentPath = currentUrl.replace(BASE_URL, '').replace(target.basePath + '/', '').replace(target.basePath, '');
-      const currentDir = currentPath.includes('/') ? currentPath.substring(0, currentPath.lastIndexOf('/')) : '';
+/**
+ * All targets sorted longest basePath first for greedy matching.
+ */
+const TARGET_LIST = Object.values(TARGETS)
+  .sort((a, b) => b.basePath.length - a.basePath.length);
 
-      if (linkTarget.outputDir === target.outputDir) {
-        const targetFile = linkPath ? linkPath + '.md' : 'index.md';
-        if (currentDir) {
-          const rel = path.relative(currentDir, targetFile).replace(/\\/g, '/');
-          return `[${text}](${rel})`;
-        }
-        return `[${text}](${targetFile})`;
-      } else {
-        const targetFile = linkPath ? linkPath + '.md' : 'index.md';
-        const upLevels = (currentDir ? currentDir.split('/').length : 0) + 1;
-        const prefix = '../'.repeat(upLevels);
-        return `[${text}](${prefix}${linkTarget.outputDir}/${targetFile})`;
-      }
-    }
+function convertLinks(markdown, currentUrl, target) {
+  // Build regex that matches any target's basePath
+  const basePathAlts = TARGET_LIST.map(t => t.basePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const linkRegex = new RegExp(
+    `\\[([^\\]]*)\\]\\((https:\\/\\/www\\.construct\\.net(?:${basePathAlts}))(\\/[^)]*)?\\)`,
+    'g'
   );
+
+  return markdown.replace(linkRegex, (match, text, baseUrl, subPath) => {
+    const linkTarget = TARGET_LIST.find(t => baseUrl.endsWith(t.basePath));
+    if (!linkTarget) return match;
+
+    const linkPath = (subPath || '').replace(/^\//, '');
+    const currentPath = currentUrl.replace(BASE_URL, '').replace(target.basePath + '/', '').replace(target.basePath, '');
+    const currentDir = currentPath.includes('/') ? currentPath.substring(0, currentPath.lastIndexOf('/')) : '';
+
+    if (linkTarget.outputDir === target.outputDir) {
+      const targetFile = linkPath ? linkPath + '.md' : 'index.md';
+      if (currentDir) {
+        const rel = path.relative(currentDir, targetFile).replace(/\\/g, '/');
+        return `[${text}](${rel})`;
+      }
+      return `[${text}](${targetFile})`;
+    } else {
+      const targetFile = linkPath ? linkPath + '.md' : 'index.md';
+      const upLevels = (currentDir ? currentDir.split('/').length : 0) + 1;
+      const prefix = '../'.repeat(upLevels);
+      return `[${text}](${prefix}${linkTarget.outputDir}/${targetFile})`;
+    }
+  });
 }
 
 function findJsonFiles(dir) {

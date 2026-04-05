@@ -64,6 +64,12 @@ const TARGETS = {
     outputDir: 'Construct3-Addon-SDK',
     stateFile: 'scrape-state-addon-sdk.json',
   },
+  'game-services': {
+    name: 'Game Services',
+    basePath: '/en/game-services/manuals/game-services',
+    outputDir: 'Construct3-Game-Services',
+    stateFile: 'scrape-state-game-services.json',
+  },
 };
 
 // ─── Configuration ───────────────────────────────────────────────────
@@ -127,10 +133,15 @@ function saveState(state, stateFile) {
 // ─── Link Conversion ────────────────────────────────────────────────
 
 /**
+ * Build a lookup from basePath to target for link conversion.
+ * Sorted longest-first so longer paths match before shorter ones.
+ */
+const TARGET_BY_BASEPATH = Object.values(TARGETS)
+  .sort((a, b) => b.basePath.length - a.basePath.length);
+
+/**
  * Convert absolute construct.net links to relative paths within markdown.
- * e.g. [text](https://www.construct.net/en/make-games/manuals/construct-3/plugin-reference/sprite)
- *   -> [text](plugin-reference/sprite)  (from the manual root)
- *   or [text](../plugin-reference/sprite)  (from a subdirectory)
+ * Dynamically matches all targets defined in TARGETS.
  */
 function convertLinks(markdown, currentUrl, target) {
   const currentPath = currentUrl.replace(BASE_URL, '').replace(target.basePath + '/', '').replace(target.basePath, '');
@@ -138,34 +149,38 @@ function convertLinks(markdown, currentUrl, target) {
     ? currentPath.substring(0, currentPath.lastIndexOf('/'))
     : '';
 
-  return markdown.replace(
-    /\[([^\]]*)\]\((https:\/\/www\.construct\.net(?:\/en)?\/make-games\/manuals\/(construct-3|addon-sdk)(\/[^)]*)?)\)/g,
-    (match, text, fullUrl, docType, subPath) => {
-      // Determine which target this link points to
-      const linkTarget = docType === 'construct-3' ? TARGETS.manual : TARGETS['addon-sdk'];
-      const linkPath = (subPath || '').replace(/^\//, '');
-
-      if (linkTarget === TARGETS[target === TARGETS.manual ? 'manual' : 'addon-sdk']) {
-        // Same doc: use relative path
-        if (!linkPath) return `[${text}](index.md)`;
-
-        if (currentDir) {
-          // Calculate relative path from current directory
-          const upLevels = currentDir.split('/').length;
-          const prefix = '../'.repeat(upLevels);
-          return `[${text}](${prefix}${linkPath}.md)`;
-        }
-        return `[${text}](${linkPath}.md)`;
-      } else {
-        // Cross-doc link: use relative path to sibling directory
-        const otherDir = linkTarget.outputDir;
-        const upLevels = (currentDir ? currentDir.split('/').length : 0) + 1; // +1 to exit current outputDir
-        const prefix = '../'.repeat(upLevels);
-        if (!linkPath) return `[${text}](${prefix}${otherDir}/index.md)`;
-        return `[${text}](${prefix}${otherDir}/${linkPath}.md)`;
-      }
-    }
+  // Build regex that matches any target's basePath
+  const basePathAlts = TARGET_BY_BASEPATH.map(t => t.basePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const linkRegex = new RegExp(
+    `\\[([^\\]]*)\\]\\((https:\\/\\/www\\.construct\\.net(?:${basePathAlts}))(\\/[^)]*)?\\)`,
+    'g'
   );
+
+  return markdown.replace(linkRegex, (match, text, baseUrl, subPath) => {
+    // Find which target this link points to
+    const linkTarget = TARGET_BY_BASEPATH.find(t => baseUrl.endsWith(t.basePath));
+    if (!linkTarget) return match;
+
+    const linkPath = (subPath || '').replace(/^\//, '');
+
+    if (linkTarget === target) {
+      // Same doc: use relative path
+      if (!linkPath) return `[${text}](index.md)`;
+      if (currentDir) {
+        const upLevels = currentDir.split('/').length;
+        const prefix = '../'.repeat(upLevels);
+        return `[${text}](${prefix}${linkPath}.md)`;
+      }
+      return `[${text}](${linkPath}.md)`;
+    } else {
+      // Cross-doc link: use relative path to sibling directory
+      const otherDir = linkTarget.outputDir;
+      const upLevels = (currentDir ? currentDir.split('/').length : 0) + 1;
+      const prefix = '../'.repeat(upLevels);
+      if (!linkPath) return `[${text}](${prefix}${otherDir}/index.md)`;
+      return `[${text}](${prefix}${otherDir}/${linkPath}.md)`;
+    }
+  });
 }
 
 // ─── URL Discovery ──────────────────────────────────────────────────
@@ -674,9 +689,10 @@ async function main() {
   await page.setViewport({ width: 1280, height: 800 });
 
   // Cloudflare warmup
+  const warmupTarget = TARGETS[targetKeys[0]] || TARGETS.manual;
   console.log('Cloudflare verification...');
   try {
-    await page.goto(BASE_URL + TARGETS.manual.basePath, {
+    await page.goto(BASE_URL + warmupTarget.basePath, {
       waitUntil: 'domcontentloaded',
       timeout: 60000,
     });
