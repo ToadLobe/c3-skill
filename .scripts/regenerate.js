@@ -199,6 +199,8 @@ function generateMarkdown(data, jsonPath, targetKey) {
     .replace(/\t/g, '  ')
     // Remove stray "Copy" button text after code blocks
     .replace(/```\n\nCopy\n/g, '```\n')
+    // Restore trailing two spaces for soft line breaks on **bold** definition lines
+    .replace(/^(\*\*[^*]+\*\*)$/gm, '$1  ')
     // Blockquote: trailing two spaces after **Type** for line break
     .replace(/^(> \*\*(Tip|Note|Warning|Info|[^*]+)\*\*)$/gm, '$1  ')
     .replace(/^(> \*\*(Tip|Note|Warning|Info|[^*]+)\*\*)\n>\n(> )/gm, '$1  \n$3')

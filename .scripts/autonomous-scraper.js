@@ -314,7 +314,19 @@ async function extractContent(page) {
         // MD031: blank lines around fenced code blocks
         case 'pre': {
           const code = node.querySelector('code');
-          const lang = code?.className?.match(/language-(\w+)/)?.[1] || '';
+          let lang = code?.className?.match(/language-(\w+)/)?.[1] || '';
+          // Infer language from content when no class is set
+          if (!lang) {
+            const text = (code || node).textContent.trim();
+            if (/^\s*[\[{]/.test(text) && /[\]}]\s*$/.test(text)) lang = 'json';
+            else if (/^\s*<[a-zA-Z!?]/.test(text)) lang = 'html';
+            else if (/^\s*(import |from |def |class |if __name__)/.test(text)) lang = 'python';
+            else if (/^\s*(const |let |var |function |import |export |=>)/.test(text)) lang = 'js';
+            else if (/^\s*(GET |POST |PUT |PATCH |DELETE |HEAD |OPTIONS )\/?/.test(text)) lang = 'http';
+            else if (/^\s*\$ /.test(text)) lang = 'sh';
+            else if (/^\s*(SELECT |INSERT |UPDATE |DELETE |CREATE |ALTER |DROP )/i.test(text)) lang = 'sql';
+            else if (/^\s*#(include|define|pragma)/.test(text)) lang = 'c';
+          }
           return `\n\`\`\`${lang}\n${(code || node).textContent.trim()}\n\`\`\`\n\n`;
         }
         case 'a': {
@@ -555,6 +567,8 @@ function saveMarkdown(url, data, target, savedWithRelease) {
     .replace(/\n{3,}/g, '\n\n')       // MD012: no multiple consecutive blank lines
     .replace(/[ \t]+$/gm, '')         // MD009: no trailing spaces
     .replace(/\t/g, '  ')             // MD010: no hard tabs
+    // Restore trailing two spaces for soft line breaks on **bold** definition lines
+    .replace(/^(\*\*[^*]+\*\*)$/gm, '$1  ')
     .trim() + '\n';                   // MD047: file ends with single newline
 
   fs.writeFileSync(filePath, md, 'utf8');
