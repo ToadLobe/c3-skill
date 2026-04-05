@@ -53,15 +53,21 @@ const TARGET_LIST = Object.values(TARGETS)
   .sort((a, b) => b.basePath.length - a.basePath.length);
 
 function convertLinks(markdown, currentUrl, target) {
-  // Build regex that matches any target's basePath
-  const basePathAlts = TARGET_LIST.map(t => t.basePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  // Build regex that matches any target's basePath (with /en/ prefix optional)
+  const basePathAlts = TARGET_LIST.map(t => {
+    const withoutEn = t.basePath.replace(/^\/en/, '');
+    return `(?:\\/en)?${withoutEn.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`;
+  }).join('|');
   const linkRegex = new RegExp(
     `\\[([^\\]]*)\\]\\((https:\\/\\/www\\.construct\\.net(?:${basePathAlts}))(\\/[^)]*)?\\)`,
     'g'
   );
 
   return markdown.replace(linkRegex, (match, text, baseUrl, subPath) => {
-    const linkTarget = TARGET_LIST.find(t => baseUrl.endsWith(t.basePath));
+    const linkTarget = TARGET_LIST.find(t => {
+      const withoutEn = t.basePath.replace(/^\/en/, '');
+      return baseUrl.endsWith(t.basePath) || baseUrl.endsWith(withoutEn);
+    });
     if (!linkTarget) return match;
 
     const linkPath = (subPath || '').replace(/^\//, '');

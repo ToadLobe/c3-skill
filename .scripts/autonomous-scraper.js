@@ -149,16 +149,22 @@ function convertLinks(markdown, currentUrl, target) {
     ? currentPath.substring(0, currentPath.lastIndexOf('/'))
     : '';
 
-  // Build regex that matches any target's basePath
-  const basePathAlts = TARGET_BY_BASEPATH.map(t => t.basePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  // Build regex that matches any target's basePath (with /en/ prefix optional)
+  const basePathAlts = TARGET_BY_BASEPATH.map(t => {
+    const withoutEn = t.basePath.replace(/^\/en/, '');
+    return `(?:\\/en)?${withoutEn.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`;
+  }).join('|');
   const linkRegex = new RegExp(
     `\\[([^\\]]*)\\]\\((https:\\/\\/www\\.construct\\.net(?:${basePathAlts}))(\\/[^)]*)?\\)`,
     'g'
   );
 
   return markdown.replace(linkRegex, (match, text, baseUrl, subPath) => {
-    // Find which target this link points to
-    const linkTarget = TARGET_BY_BASEPATH.find(t => baseUrl.endsWith(t.basePath));
+    // Find which target this link points to (match with or without /en/)
+    const linkTarget = TARGET_BY_BASEPATH.find(t => {
+      const withoutEn = t.basePath.replace(/^\/en/, '');
+      return baseUrl.endsWith(t.basePath) || baseUrl.endsWith(withoutEn);
+    });
     if (!linkTarget) return match;
 
     const linkPath = (subPath || '').replace(/^\//, '');
@@ -386,20 +392,37 @@ async function extractContent(page) {
           let result = '\n';
           const items = Array.from(node.children);
           const pendingDts = [];
+
+          function formatDt(dt) {
+            // Game Services: <dt>name <span class="dataType">type</span> <span class="requiredLabel">Required</span></dt>
+            const dataType = dt.querySelector('.dataType');
+            const reqLabel = dt.querySelector('.requiredLabel');
+            if (dataType) {
+              const name = Array.from(dt.childNodes)
+                .filter(n => n.nodeType === 3)
+                .map(n => n.textContent.trim())
+                .filter(Boolean)[0] || '';
+              const type = nodeToMd(dataType).trim();
+              const req = reqLabel ? ` *${reqLabel.textContent.trim()}*` : '';
+              return `**${name}** \`${type}\`${req}`;
+            }
+            return `**${dt.textContent.trim()}**`;
+          }
+
           items.forEach(child => {
             if (child.tagName === 'DT') {
               pendingDts.push(child);
             } else if (child.tagName === 'DD') {
               const desc = nodeToMd(child).trim();
               pendingDts.forEach(dt => {
-                result += `**${dt.textContent.trim()}**\n${desc}\n\n`;
+                result += `${formatDt(dt)}\n${desc}\n\n`;
               });
               pendingDts.length = 0;
             }
           });
           // Handle trailing DTs without DD
           pendingDts.forEach(dt => {
-            result += `**${dt.textContent.trim()}**\n\n`;
+            result += `${formatDt(dt)}\n\n`;
           });
           return result;
         }
@@ -407,7 +430,7 @@ async function extractContent(page) {
       }
     }
 
-    return { title, toc, content: nodeToMd(contentDiv), url: window.location.pathname };
+    return { title, toc, content: nodeToMd(contentDiv), rawHtml: contentDiv.innerHTML, url: window.location.pathname };
   });
 }
 
