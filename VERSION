@@ -1,0 +1,10 @@
+{
+  "savedWithRelease": "unknown",
+  "scrapeDate": "2026-04-05T07:18:48.855Z",
+  "targets": {
+    "game-services": {
+      "totalPages": 157,
+      "failedPages": 0
+    }
+  }
+}
