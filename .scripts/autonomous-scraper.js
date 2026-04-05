@@ -430,7 +430,7 @@ async function extractContent(page) {
       }
     }
 
-    return { title, toc, content: nodeToMd(contentDiv), rawHtml: contentDiv.innerHTML, url: window.location.pathname };
+    return { title, toc, content: nodeToMd(contentDiv), html: contentDiv.innerHTML, url: window.location.pathname };
   });
 }
 
@@ -458,7 +458,8 @@ function saveRawData(url, data, target, version) {
   if (!relPath) relPath = 'index';
   const jsonPath = path.join(versionDir, relPath + '.json');
   fs.mkdirSync(path.dirname(jsonPath), { recursive: true });
-  const rawData = { ...data, savedWithRelease: version, scrapeDate: new Date().toISOString() };
+  const { content, ...rest } = data;
+  const rawData = { ...rest, savedWithRelease: version, scrapeDate: new Date().toISOString() };
   fs.writeFileSync(jsonPath, JSON.stringify(rawData, null, 2));
 }
 
