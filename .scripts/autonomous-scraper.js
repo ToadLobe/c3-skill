@@ -167,24 +167,27 @@ function convertLinks(markdown, currentUrl, target) {
     });
     if (!linkTarget) return match;
 
-    const linkPath = (subPath || '').replace(/^\//, '');
+    const rawPath = (subPath || '').replace(/^\//, '');
+    const hashIdx = rawPath.indexOf('#');
+    const linkPath = hashIdx >= 0 ? rawPath.substring(0, hashIdx) : rawPath;
+    const fragment = hashIdx >= 0 ? rawPath.substring(hashIdx) : '';
 
     if (linkTarget === target) {
       // Same doc: use relative path
-      if (!linkPath) return `[${text}](index.md)`;
+      if (!linkPath) return `[${text}](index.md${fragment})`;
       if (currentDir) {
         const upLevels = currentDir.split('/').length;
         const prefix = '../'.repeat(upLevels);
-        return `[${text}](${prefix}${linkPath}.md)`;
+        return `[${text}](${prefix}${linkPath}.md${fragment})`;
       }
-      return `[${text}](${linkPath}.md)`;
+      return `[${text}](${linkPath}.md${fragment})`;
     } else {
       // Cross-doc link: use relative path to sibling directory
       const otherDir = linkTarget.outputDir;
       const upLevels = (currentDir ? currentDir.split('/').length : 0) + 1;
       const prefix = '../'.repeat(upLevels);
-      if (!linkPath) return `[${text}](${prefix}${otherDir}/index.md)`;
-      return `[${text}](${prefix}${otherDir}/${linkPath}.md)`;
+      if (!linkPath) return `[${text}](${prefix}${otherDir}/index.md${fragment})`;
+      return `[${text}](${prefix}${otherDir}/${linkPath}.md${fragment})`;
     }
   });
 }

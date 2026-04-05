@@ -54,13 +54,13 @@ This object can be rated by players.  Read about [how ratings work](../../rating
 
 ## Object Properties
 
-**id** [guid](../../data-types#internalH1Link1.md)
+**id** [guid](../../data-types.md#internalH1Link1)
 A unique ID for this message.
 
-**channelID** [guid](../../data-types#internalH1Link1.md)
+**channelID** [guid](../../data-types.md#internalH1Link1)
 The ID of the [channel](../../broadcasts/api-objects/broadcast-channel.md) this message belongs to.
 
-**date** [datetime](../../data-types#internalH1Link0.md)
+**date** [datetime](../../data-types.md#internalH1Link0)
 The date and time this message was published.
 
 **formattedDate** `string`
@@ -70,7 +70,7 @@ The date and time this message was published, formatted to the specified [reques
 The title of this message.
 
 **text** `string`
-The content of the message.  Messages can be any form of text, plain, HTML or marked up with BB code.  This property is only returned if you are retrieving the message from the [get message](../../##b.GetMessage##.md) end point, otherwise the excerpt property will be returned.
+The content of the message.  Messages can be any form of text, plain, HTML or marked up with BB code.  This property is only returned if you are retrieving the message from the [get message](../../.md##b.GetMessage##) end point, otherwise the excerpt property will be returned.
 
 **textLength** `int32`
 The length of the returned text in characters.
@@ -99,14 +99,14 @@ How many times the message text or title has been modified since it was first pu
 **formattedUpdates** `string`
 How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](../../culture.md).
 
-**lastUpdate** [datetime?](../../data-types#internalH1Link0.md)
+**lastUpdate** [datetime?](../../data-types.md#internalH1Link0)
 The date and time the message text or title was last updated.
 
 **formattedLastUpdate** `string`
 How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](../../culture.md).
 
-**isUnread** [bool](../../data-types#internalH1Link4.md)
-Indicates if this message is unread by the current requester.  Read about the [unread status](../../broadcasts/concepts#internalH1Link2.md).
+**isUnread** [bool](../../data-types.md#internalH1Link4)
+Indicates if this message is unread by the current requester.  Read about the [unread status](../../broadcasts/concepts.md#internalH1Link2).
 
 **originalLanguage** [Language](../../common-objects/language.md)
 The language this message is written in.

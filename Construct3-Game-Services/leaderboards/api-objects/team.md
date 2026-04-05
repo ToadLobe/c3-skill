@@ -22,7 +22,7 @@ release: 476.3
 
 ## Object Properties
 
-**teamID** [guid](../../data-types#internalH1Link1.md)
+**teamID** [guid](../../data-types.md#internalH1Link1)
 A unique ID for this team.
 
 **name** `string`

@@ -17,7 +17,7 @@ When you [create a game](../games/create-game.md), you will need to [register pl
 
 Once a player is registered or signed in, a session key will be returned for this player.  Passing this session key into other services allows this player to interact with other Construct Game Services.  **The session key is private to this player and should never be shared or exposed.**
 
-All players have a unique **player ID** which is a [guid](../data-types#internalH1Link1.md).  Players also have a **player name** which can be displayed publicly.  If a player signs in with a username and password it should be noted that the **username** is different to the **player name** and is only used to authenticate the sign in.
+All players have a unique **player ID** which is a [guid](../data-types.md#internalH1Link1).  Players also have a **player name** which can be displayed publicly.  If a player signs in with a username and password it should be noted that the **username** is different to the **player name** and is only used to authenticate the sign in.
 
 ## Registering Players
 

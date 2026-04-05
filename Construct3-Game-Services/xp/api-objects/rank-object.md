@@ -42,7 +42,7 @@ This object represents an XP rank.  Ranks are achieved when the player reaches t
 
 ## Object Properties
 
-**id** [guid](../../data-types#internalH1Link1.md)
+**id** [guid](../../data-types.md#internalH1Link1)
 A unique ID for this rank.
 
 **atXP** `int64`

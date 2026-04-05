@@ -36,7 +36,7 @@ This object can be rated by players.  Read about [how ratings work](../../rating
 
 ## Object Properties
 
-**id** [guid](../../data-types#internalH1Link1.md)
+**id** [guid](../../data-types.md#internalH1Link1)
 A unique record ID for this cloud save blob.
 
 **key** `string`
@@ -48,7 +48,7 @@ If cloud save belongs in a [game bucket](../../cloud-save/api-objects/game-bucke
 **player** [Player](../../authentication/api-objects/player-object.md)
 If cloud save was created by a player, the associated player object will be shown here.
 
-**created** [datetime](../../data-types#internalH1Link0.md)
+**created** [datetime](../../data-types.md#internalH1Link0)
 The date this cloud save was originally created.
 
 **sizeBytes** `int32`

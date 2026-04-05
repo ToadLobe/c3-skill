@@ -49,7 +49,7 @@ You can have multiple Broadcast Channels, and each Channel can contain multiple 
 
 ## Object Properties
 
-**id** [guid](../../data-types#internalH1Link1.md)
+**id** [guid](../../data-types.md#internalH1Link1)
 A unique ID for this channel.
 
 **name** `string`
@@ -58,7 +58,7 @@ A publicly facing name for this channel.
 **description** `string`
 A publicly facing description for this channel.
 
-**created** [datetime](../../data-types#internalH1Link0.md)
+**created** [datetime](../../data-types.md#internalH1Link0)
 The date and time this channel was first created.
 
 **formattedCreated** `string`
@@ -73,19 +73,19 @@ The total number of broadcast messages currently available in this channel.
 **formattedBroadcasts** `string`
 The total number of broadcast messages currently available in this channel, formatted to the specified [requested culture](../../culture.md).
 
-**lastBroadcast** [datetime?](../../data-types#internalH1Link0.md)
+**lastBroadcast** [datetime?](../../data-types.md#internalH1Link0)
 The date and time of the last broadcast published to this channel.
 
 **formattedLastBroadcast** `string`
 The date and time of the last broadcast published to this channel, formatted to the specified [requested culture](../../culture.md).
 
-**allowRatings** [bool](../../data-types#internalH1Link4.md)
+**allowRatings** [bool](../../data-types.md#internalH1Link4)
 If this channel supports rating of messages.
 
-**anyUnreadMessages** [bool](../../data-types#internalH1Link4.md)
-Indicates if this channel contains any unread messages by the current requester.  Read about the [unread status](../../broadcasts/concepts#internalH1Link2.md).
+**anyUnreadMessages** [bool](../../data-types.md#internalH1Link4)
+Indicates if this channel contains any unread messages by the current requester.  Read about the [unread status](../../broadcasts/concepts.md#internalH1Link2).
 
-**dimensionlessMaxRatingValue** [uint8](../../data-types#internalH1Link2.md)
+**dimensionlessMaxRatingValue** [uint8](../../data-types.md#internalH1Link2)
 If ratings are allowed for messages in this channel, this property shows what the maximum rating value for dimensionless ratings is.  The minuimum allowed rating value is always `0`.
 
 **ratingDimensions** Dictionary<string, [RatingDimension](../../ratings/api-objects/rating-dimension-object.md)>

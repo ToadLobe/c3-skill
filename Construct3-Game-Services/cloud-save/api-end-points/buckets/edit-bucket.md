@@ -36,10 +36,10 @@ Your games [secret API key](../../../games/api-keys.md).
 
  ## Request Parameters
 
-**gameID** [guid](../../../data-types#internalH1Link1.md) *Required*
+**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**bucketID** [guid](../../../data-types#internalH1Link1.md) *Required*
+**bucketID** [guid](../../../data-types.md#internalH1Link1) *Required*
 The ID of the bucket you wish to edit.
 
 **bucketName** `string`
@@ -48,7 +48,7 @@ The new name of the game bucket. Omit this parameter to keep the existing name. 
 **accessMode** `string`
 The new access mode of this bucket (case insensitive).  Omit this parameter to keep the existing access mode.  Must be one of `Private`, `PublicRead` or `PublicReadWrite`. You must specify at least one of this, `bucketName`, `allowRatings`, `maxBlobSize`, `maxBlobs` or `maxBlobsPerPlayer`.
 
-**allowRatings** [bool](../../../data-types#internalH1Link4.md)
+**allowRatings** [bool](../../../data-types.md#internalH1Link4)
 If [cloud save blobs](../../../cloud-save/api-objects/blob.md) in this bucket can be [rated](../../../ratings/concepts.md) by players.  Omit this parameter to keep the existing setting. You must specify at least one of this, `bucketName`, `accessMode`, `maxBlobSize`, `maxBlobs` or `maxBlobsPerPlayer`.
 
 **maxBlobSize** `int32`
@@ -74,7 +74,7 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types#internalH1Link4.md)
+**success** [bool](../../../data-types.md#internalH1Link4)
 If the request was successfull or not.
 
 **bucket** [Bucket](../../../cloud-save/api-objects/game-buckets.md)
@@ -98,7 +98,7 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types#internalH1Link4.md)
+**success** [bool](../../../data-types.md#internalH1Link4)
 If the request was successfull or not.
 
 **errorMessage** `string`
@@ -107,5 +107,5 @@ An error message with more detailed information on why the request failed.
 **helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types#internalH1Link4.md)
+**shouldRetry** [bool](../../../data-types.md#internalH1Link4)
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

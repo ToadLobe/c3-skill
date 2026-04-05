@@ -41,16 +41,16 @@ This object represents an bonus for a period of time.  A bonus has a modifier (e
 
 ## Object Properties
 
-**id** [guid](../../data-types#internalH1Link1.md)
+**id** [guid](../../data-types.md#internalH1Link1)
 A unique ID for this bonus.
 
-**startDate** [datetime](../../data-types#internalH1Link0.md)
+**startDate** [datetime](../../data-types.md#internalH1Link0)
 The date and time this bonus starts.
 
 **formattedStartDate** `string`
 The date and time this bonus starts formatted to the requested culture, formatted to the specified [requested culture](../../culture.md).
 
-**endDate** [datetime](../../data-types#internalH1Link0.md)
+**endDate** [datetime](../../data-types.md#internalH1Link0)
 The date and time this bonus ends.
 
 **formattedEndDate** `string`

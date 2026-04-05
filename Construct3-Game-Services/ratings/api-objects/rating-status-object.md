@@ -34,7 +34,7 @@ When rateable objects are returned in a response, this status object is also ret
 
 ## Object Properties
 
-**isRateable** [bool](../../data-types#internalH1Link4.md)
+**isRateable** [bool](../../data-types.md#internalH1Link4)
 Are players allowed to cast votes on this object or not.
 
 **ratings** Dictionary<string, [RatingAggregate](../../ratings/api-objects/rating-aggregate-object.md)>

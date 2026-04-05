@@ -46,7 +46,7 @@ The title for this dimension.
 **description** `string`
 A description for this dimension.
 
-**maxRating** [uint8](../../data-types#internalH1Link2.md)
+**maxRating** [uint8](../../data-types.md#internalH1Link2)
 The maximum value that a player can give for this dimension.  The minimum permitted rating value is always 0.  Set this value to 1 for boolean ratings (for example, "Would you recommend this?  Yes or no.").  The maximum permitted value is 255.
 
 **originalLanguage** [Language](../../common-objects/language.md)

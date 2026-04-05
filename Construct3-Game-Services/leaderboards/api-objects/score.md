@@ -46,7 +46,7 @@ release: 476.3
 
 ## Object Properties
 
-**scoreID** [guid](../../data-types#internalH1Link1.md)
+**scoreID** [guid](../../data-types.md#internalH1Link1)
 A unique ID for this score.
 
 **rank** `int32?`
@@ -67,7 +67,7 @@ The scores value.
 **country** `string`
 The ISO 3166-1 alpha-2 country code of the IP address that originally posted the score. Will return as NULL if the country could not be ascertained.
 
-**date** [datetime](../../data-types#internalH1Link0.md)
+**date** [datetime](../../data-types.md#internalH1Link0)
 The date this score was originally posted.
 
 **formattedDate** `string`
@@ -88,7 +88,7 @@ The global country rank of this score rendered using the requested locale. This 
 **player** [Player](../../authentication/api-objects/player-object.md)
 The player this score belongs to.
 
-**teamID** [guid?](../../data-types#internalH1Link1.md)
+**teamID** [guid?](../../data-types.md#internalH1Link1)
 The unique ID of the team this player belongs to if they have been assigned to a team.
 
 **teamName** `string`

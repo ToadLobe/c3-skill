@@ -70,19 +70,22 @@ function convertLinks(markdown, currentUrl, target) {
     });
     if (!linkTarget) return match;
 
-    const linkPath = (subPath || '').replace(/^\//, '');
+    const rawPath = (subPath || '').replace(/^\//, '');
+    const hashIdx = rawPath.indexOf('#');
+    const linkPath = hashIdx >= 0 ? rawPath.substring(0, hashIdx) : rawPath;
+    const fragment = hashIdx >= 0 ? rawPath.substring(hashIdx) : '';
     const currentPath = currentUrl.replace(BASE_URL, '').replace(target.basePath + '/', '').replace(target.basePath, '');
     const currentDir = currentPath.includes('/') ? currentPath.substring(0, currentPath.lastIndexOf('/')) : '';
 
     if (linkTarget.outputDir === target.outputDir) {
-      const targetFile = linkPath ? linkPath + '.md' : 'index.md';
+      const targetFile = (linkPath ? linkPath + '.md' : 'index.md') + fragment;
       if (currentDir) {
-        const rel = path.relative(currentDir, targetFile).replace(/\\/g, '/');
-        return `[${text}](${rel})`;
+        const rel = path.relative(currentDir, linkPath ? linkPath + '.md' : 'index.md').replace(/\\/g, '/');
+        return `[${text}](${rel}${fragment})`;
       }
       return `[${text}](${targetFile})`;
     } else {
-      const targetFile = linkPath ? linkPath + '.md' : 'index.md';
+      const targetFile = (linkPath ? linkPath + '.md' : 'index.md') + fragment;
       const upLevels = (currentDir ? currentDir.split('/').length : 0) + 1;
       const prefix = '../'.repeat(upLevels);
       return `[${text}](${prefix}${linkTarget.outputDir}/${targetFile})`;

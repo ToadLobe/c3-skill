@@ -19,7 +19,7 @@ release: 476.3
 
 This end point allows you to retrieve a single [message](../../../broadcasts/api-objects/broadcast-message.md).
 
-If a player is signed in, you should pass their session key in with the request as once the message is retrieved it will be [marked as read](../../../broadcasts/concepts#internalH1Link2.md) for that player.
+If a player is signed in, you should pass their session key in with the request as once the message is retrieved it will be [marked as read](../../../broadcasts/concepts.md#internalH1Link2) for that player.
 
 ## Request URL
 
@@ -38,10 +38,10 @@ The [session key](../../../{Replacements.Authentication.Objects.Session%257.md) 
 
  ## Request Parameters
 
-**gameID** [guid](../../../data-types#internalH1Link1.md) *Required*
+**gameID** [guid](../../../data-types.md#internalH1Link1) *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**messageID** [guid](../../../data-types#internalH1Link1.md) *Required*
+**messageID** [guid](../../../data-types.md#internalH1Link1) *Required*
 The ID of the message you want to retrieve.
 
 **requestedLanguage** [Language](../../../common-objects/language.md)
@@ -64,7 +64,7 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success** [bool](../../../data-types#internalH1Link4.md)
+**success** [bool](../../../data-types.md#internalH1Link4)
 If the request was successfull or not.
 
 **message** [BroadcastMessage](../../../broadcasts/api-objects/broadcast-message.md)
@@ -88,7 +88,7 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success** [bool](../../../data-types#internalH1Link4.md)
+**success** [bool](../../../data-types.md#internalH1Link4)
 If the request was successfull or not.
 
 **errorMessage** `string`
@@ -97,5 +97,5 @@ An error message with more detailed information on why the request failed.
 **helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry** [bool](../../../data-types#internalH1Link4.md)
+**shouldRetry** [bool](../../../data-types.md#internalH1Link4)
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.
