@@ -304,8 +304,8 @@ async function extractContent(page) {
         case 'pre': {
           const code = node.querySelector('code');
           let lang = code?.className?.match(/language-(\w+)/)?.[1] || '';
-          // Infer language from content when no class is set
-          if (!lang) {
+          // Infer language from content when no meaningful class is set
+          if (!lang || lang === 'none') {
             const text = (code || node).textContent.trim();
             if (/^\s*[\[{]/.test(text) && /[\]}]\s*$/.test(text)) lang = 'json';
             else if (/^\s*<[a-zA-Z!?]/.test(text)) lang = 'html';
