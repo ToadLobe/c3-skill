@@ -61,14 +61,27 @@ jobs:
           # Install Chrome for Puppeteer
           npx puppeteer browsers install chrome
 
-      - name: Scrape all documentation
+      - name: Install Chrome + xvfb
+        if: steps.check.outputs.changed == 'true'
+        run: sudo apt-get update && sudo apt-get install -y xvfb google-chrome-stable
+
+      - name: Scrape Manual
         if: steps.check.outputs.changed == 'true'
         env:
           CHROME_PATH: /usr/bin/google-chrome-stable
-        run: |
-          # Install Chrome + xvfb for headed mode (bypasses Cloudflare better than headless)
-          sudo apt-get update && sudo apt-get install -y xvfb google-chrome-stable
-          cd .scripts && xvfb-run --auto-servernum --server-args="-screen 0 1280x800x24" node autonomous-scraper.js all --force
+        run: cd .scripts && xvfb-run --auto-servernum --server-args="-screen 0 1280x800x24" node autonomous-scraper.js manual --force
+
+      - name: Scrape Addon SDK
+        if: steps.check.outputs.changed == 'true'
+        env:
+          CHROME_PATH: /usr/bin/google-chrome-stable
+        run: cd .scripts && xvfb-run --auto-servernum --server-args="-screen 0 1280x800x24" node autonomous-scraper.js addon-sdk --force
+
+      - name: Scrape Game Services
+        if: steps.check.outputs.changed == 'true'
+        env:
+          CHROME_PATH: /usr/bin/google-chrome-stable
+        run: cd .scripts && xvfb-run --auto-servernum --server-args="-screen 0 1280x800x24" node autonomous-scraper.js game-services --force
 
       - name: Regenerate markdown
         if: steps.check.outputs.changed == 'true'
