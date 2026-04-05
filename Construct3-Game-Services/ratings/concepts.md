@@ -1,7 +1,7 @@
 ---
 title: "Rating Concepts"
 source: "https://www.construct.net/en/game-services/manuals/game-services/ratings/concepts"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -44,7 +44,7 @@ Rating values are stored as byte values (0 - 255).  When a rating is cast, the r
 
 For example, if a rating dimension has a maximum value of 10 specified, and a rating of 7 is cast the rating value is normalised and stored:
 
-```none
+```js
 var rating = 7;
 var normalisedRating = rating * (255/10);
 ```
@@ -53,7 +53,7 @@ In this case, the normalised rating would equal `179`.  In effect, this rating i
 
 When a rating is requested, the rating is denormalised:
 
-```none
+```js
 var normalisedRating = 179;
 var denormalisedRating = rating / (255/10);
 ```

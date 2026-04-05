@@ -1,7 +1,7 @@
 ---
 title: "Get Score History"
 source: "https://www.construct.net/en/game-services/manuals/game-services/leaderboards/api-end-points/scores/get-score-history"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -19,7 +19,7 @@ release: unknown
 
 Given a player ID or a score record ID, return the daily history of this score for the last 730 days.  This is only supported on leaderboards where one score per player identifier is set, and score history tracking is an enabled feature.
 
-> **Tip**
+> **Tip**  
 > If the rankings and score value do not change day to day then no history record will exist - there will be a gap in the records.
 
 ## Request URL
@@ -36,26 +36,26 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**leaderboardID guid Required**
+**leaderboardID guid Required**  
 The ID of the leaderboard you're fetching the score history for.
 
-**playerID guid Sometimes required**
+**playerID guid Sometimes required**  
 The player ID to query. You must specify this or `scoreID`.
 
-**scoreID guid Sometimes required**
+**scoreID guid Sometimes required**  
 The unique record ID of the score to query. You must specify this or `playerID`.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
-  "scoreID": "a3464070-0772-4aac-aa4e-9fc29f515360",
+  "scoreID": "8fe3008b-d309-4f3d-9242-fdc194350b3d",
   "player": { ... },
   "scoreHistory": [
     { ... },
@@ -68,29 +68,29 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**scoreID guid**
+**scoreID guid**  
 The ID of the score the history is being returned on.
 
-**player Player**
+**player Player**  
 The player this score belongs to.
 
-**scoreHistory Array<ScoreHistory>**
+**scoreHistory Array<ScoreHistory>**  
 The list of score history records for this score.
 
-**country string**
+**country string**  
 If country ranks are enabled on the leaderboard, the detected country this score originates from.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "Your request failed due to...",
@@ -101,14 +101,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

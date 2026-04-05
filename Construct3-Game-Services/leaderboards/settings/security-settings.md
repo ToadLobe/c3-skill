@@ -1,7 +1,7 @@
 ---
 title: "Leaderboard Security Settings"
 source: "https://www.construct.net/en/game-services/manuals/game-services/leaderboards/settings/security-settings"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -12,10 +12,10 @@ release: unknown
 
 ## Leaderboard Security Settings
 
-**Require API Key For All POST Requests**
+**Require API Key For All POST Requests**  
 Should all leaderboard POST requests require an API key.  If this is enabled, all POST requests that don't send an API key will fail.
 
-**Require API Key For All GET Requests**
+**Require API Key For All GET Requests**  
 Should all leaderboard GET requests require an API key.  If this is enabled, all GET requests that don't send an API key will fail.
 
 

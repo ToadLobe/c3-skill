@@ -1,7 +1,7 @@
 ---
 title: "Set Player Avatar"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/api-end-points/avatars/set-avatar"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -36,42 +36,42 @@ This end point can be called by [signed in](https://www.construct.net/game-servi
 
 ### Session Key Authentication
 
-**sessionKey string Required**
+**sessionKey string Required**  
 The [session key](https://www.construct.net/game-services/manuals/game-services/authentication/api-objects/session-object) of the player you're making the request against.
 
 
 
 ### Secret Key Authentication
 
-**secret string Required**
+**secret string Required**  
 Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
 
-**playerID guid Required**
+**playerID guid Required**  
 The player ID you wish to make this request against.
 
  ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**avatar string Sometimes required**
+**avatar string Sometimes required**  
 The base64 encoded avatar picture being set for this player. You must specify this, `avatarURL` or `avatarData`.
 
-**avatarURL url (string) Sometimes required**
+**avatarURL url (string) Sometimes required**  
 The absolute URL of the avatar being set for this player. You must specify this, `avatar` or `avatarData`.
 
 ## File Data
 
 This request additionally supports the posting of files.  These files should be sent as `multipart/form-data,` with the corresponding keys.
 
-**avatarData multipart/form-data Sometimes required**
+**avatarData multipart/form-data Sometimes required**  
 The data of the avatar image being set for this player. You must specify this, `avatar` or `avatarURL`.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "avatars": [
@@ -84,20 +84,20 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**avatars Array<Picture>**
+**avatars Array<Picture>**  
 A list of [picture objects](https://www.construct.net/game-services/manuals/game-services/common-objects/picture-object) representing the players new avatar. Each picture object is the same avatar, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256` will be shown here along with the original avatar size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original avatar width.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "The image provided is not valid Base64 data.",
@@ -108,14 +108,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

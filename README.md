@@ -20,7 +20,7 @@ Unofficial Markdown conversion of the official [Construct 3](https://www.constru
 | --- | :---: | --- |
 | Construct 3 Manual | r449 | <https://www.construct.net/en/make-games/manuals/construct-3> |
 | Addon SDK | r449 | <https://www.construct.net/en/make-games/manuals/addon-sdk> |
-| Game Services | — | <https://www.construct.net/en/game-services/manuals/game-services> |
+| Game Services | r476.3 | <https://www.construct.net/en/game-services/manuals/game-services> |
 
 ## Recommended Reading
 

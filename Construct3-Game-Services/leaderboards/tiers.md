@@ -1,7 +1,7 @@
 ---
 title: "Score Tiers"
 source: "https://www.construct.net/en/game-services/manuals/game-services/leaderboards/tiers"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -23,26 +23,26 @@ If a score belongs to a tier, it will be returned in some API objects such as th
 
 ## Creating a Tier
 
-**id  Required**
+**id  Required**  
 The unique ID for this tier.  This should not be displayed to players but is returned in API responses.
 
-**name  Required**
+**name  Required**  
 A name of the tier which is displayed to players.
 
-**condition Required**
+**condition Required**  
 The condition to specify if players belong into this tier or not.
 
 ## Tier Conditions
 
 Tiers can have one condition to specify if a score belongs in that particular tier:
 
-**Rank is exactly equal to**
+**Rank is exactly equal to**  
 Matches if the players rank exactly equals the specified value.
 
-**Rank is in top N scores**
+**Rank is in top N scores**  
 If a value of 100 is provided, matches if the scores rank is <= 100
 
-**Rank is in top N% of scores**
+**Rank is in top N% of scores**  
 If 25 is provided, matches if the scores rank is in the top 25% of scores on the leaderboard.
 
 ## Matching Scores to Tiers

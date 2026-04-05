@@ -1,7 +1,7 @@
 ---
 title: "Create a Bucket"
 source: "https://www.construct.net/en/game-services/manuals/game-services/cloud-save/api-end-points/buckets/create-bucket"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -35,37 +35,37 @@ https://cloudsave.construct.net/createbucket.json
 
 This end point is for [secret key](https://www.construct.net/game-services/manuals/game-services/games/api-keys) authenticated requests only.  Signed in players cannot call this end point.
 
-**secret string Required**
+**secret string Required**  
 Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
 
  ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**bucketName string Required**
+**bucketName string Required**  
 The name of the game bucket you're creating.  Cannot exceed `50` characters in length.
 
-**accessMode string Required**
+**accessMode string Required**  
 The access mode of this bucket (case insensitive).  Must be one of `Private`, `PublicRead` or `PublicReadWrite`.
 
-**allowRatings bool Required**
+**allowRatings bool Required**  
 If [cloud save blobs](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/blob) in this bucket can be [rated](https://www.construct.net/game-services/manuals/game-services/ratings/concepts) by players.
 
-**maxBlobs int32**
+**maxBlobs int32**  
 Optionally specify the maximum number of [cloud save blobs](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/blob) allowed in this bucket.
 
-**maxBlobSize int32**
+**maxBlobSize int32**  
 Optionally specify the maximum size in bytes of [cloud save blobs](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/blob) in this bucket. If a picture is uploaded with a blob, the size of the picture is counted towards this limit as well as the actual cloud save blob size.
 
-**maxBlobsPerPlayer int16**
+**maxBlobsPerPlayer int16**  
 Optionally specify the maximum number of blobs an individual player can save to this bucket.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "bucket": { ... },
@@ -75,20 +75,20 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**bucket Bucket**
+**bucket Bucket**  
 The bucket returned from the request.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "Your request failed due to...",
@@ -99,14 +99,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

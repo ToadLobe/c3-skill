@@ -1,7 +1,7 @@
 ---
 title: "Expanded Team Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/leaderboards/api-objects/expanded-team"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -13,13 +13,13 @@ release: unknown
 
 ## Example Expanded Team
 
-```none
+```json
 {
-  "teamID": "409926d8-2414-4971-9a19-83aac95a518b",
+  "teamID": "e91636a9-f91b-4520-b005-0d4576b30044",
   "name": "Red Team",
   "players": 1315,
   "formattedPlayers": "1,315",
-  "dateCreated": "2026-04-05T07:11:42.1626446Z",
+  "dateCreated": "2026-04-05T07:57:12.1494613Z",
   "scores": 902,
   "formattedScores": "902",
   "totalScoreValues": 35389191,
@@ -35,47 +35,47 @@ release: unknown
 
 ## Object Properties
 
-**teamID guid**
+**teamID guid**  
 A unique ID for this team.
 
-**name string**
+**name string**  
 The name of this team.  Names cannot exceed 64 characters in length.
 
-**players int16**
+**players int16**  
 The number of players assigned in this team.
 
-**formattedPlayers string**
+**formattedPlayers string**  
 The number of players assigned to this team rendered using the requested locale, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**dateCreated datetime**
+**dateCreated datetime**  
 The date the team was created.
 
-**scores int32**
+**scores int32**  
 The number of scores posted in this team.
 
-**formattedScores string**
+**formattedScores string**  
 The number of scores posted in this team rendered using the requested locale, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**totalScoreValues decimal**
+**totalScoreValues decimal**  
 The sum value of all scores posted in this team.
 
-**averageScore int64?**
+**averageScore int64?**  
 The average of all the scores posted in this team.
 
-**formattedAverageScore string**
+**formattedAverageScore string**  
 The average of all the scores posted in this team formatted under the score format specifications for this leaderboard, rendered using the requested locale, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**bestScore int64?**
+**bestScore int64?**  
 The best score posted in this team.
 
-**formattedBestScore string**
+**formattedBestScore string**  
 The best score posted in this team formatted under the score format specifications for this leaderboard, rendered using the requested locale, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**rank int32?**
+**rank int32?**  
 The rank of this team compared to other teams in this game.
 
-**ordinal string**
+**ordinal string**  
 The ordinal for the rank of this team (EG: st, nd or rd would be ordinals for 1st 2nd or 3rd).
 
-**formattedRank string**
+**formattedRank string**  
 The rank of this score rendered using the requested locale, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).

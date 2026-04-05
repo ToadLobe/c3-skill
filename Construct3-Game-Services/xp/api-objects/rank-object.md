@@ -1,7 +1,7 @@
 ---
 title: "Rank Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/xp/api-objects/rank-object"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -18,9 +18,9 @@ This object represents an XP rank.  Ranks are achieved when the player reaches t
 
 ## Example Rank
 
-```none
+```json
 {
-  "id": "fabb6ad1-ad7d-472f-9996-386deef9dbc2",
+  "id": "d7a0ab08-c238-4d87-951f-96d1152e9e7c",
   "atXP": 100000,
   "logos": [
     { ... },
@@ -42,26 +42,26 @@ This object represents an XP rank.  Ranks are achieved when the player reaches t
 
 ## Object Properties
 
-**id guid**
+**id guid**  
 A unique ID for this rank.
 
-**atXP int64**
+**atXP int64**  
 The amount of XP required to reach this rank.
 
-**logos Array<Picture>**
+**logos Array<Picture>**  
 If this rank has a logo, a list of [picture objects](https://www.construct.net/game-services/manuals/game-services/common-objects/picture-object). Each picture object is the same logo, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256, 512` will be shown here along with the original logo size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original logo width.
 
-**formattedAtXP string**
+**formattedAtXP string**  
 The amount of XP required to reach this rank formatted to the requested formatting culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**title string**
+**title string**  
 The title of this rank.
 
-**description string**
+**description string**  
 The description of this rank.
 
-**originalLanguage Language**
+**originalLanguage Language**  
 The language this ranks properties are written in.
 
-**responseLanguage Language**
+**responseLanguage Language**  
 The language this ranks properties are returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

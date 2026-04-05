@@ -1,7 +1,7 @@
 ---
 title: "Leaderboard Team Settings"
 source: "https://www.construct.net/en/game-services/manuals/game-services/leaderboards/settings/teams"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -12,8 +12,8 @@ release: unknown
 
 ## Leaderboard Team Settings
 
-**Allow Teams**
+**Allow Teams**  
 Enable or disable team functionality on this leaderboard.
 
-**Team Ranking Mode**
+**Team Ranking Mode**  
 If teams are enabled, teams will be ranked by this method.  `Total scores` ranks teams with the most scores submitted highest. `Average score` ranks team with the highest average score highest. `Top score` ranks teams by the player in the team with the highest score.

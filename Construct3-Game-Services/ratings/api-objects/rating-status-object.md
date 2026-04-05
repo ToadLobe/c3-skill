@@ -1,7 +1,7 @@
 ---
 title: "Rating Status Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/ratings/api-objects/rating-status-object"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -18,7 +18,7 @@ When rateable objects are returned in a response, this status object is also ret
 
 ## Example Rating Status
 
-```none
+```json
 {
   "isRateable": true,
   "ratings": {
@@ -34,11 +34,11 @@ When rateable objects are returned in a response, this status object is also ret
 
 ## Object Properties
 
-**isRateable bool**
+**isRateable bool**  
 Are players allowed to cast votes on this object or not.
 
-**ratings Dictionary<string, RatingAggregate>**
+**ratings Dictionary<string, RatingAggregate>**  
 A list of all [rating dimensions](https://www.construct.net/game-services/manuals/game-services/ratings/api-objects/rating-dimension-object) ID's and their corresponding rating aggregate.  An empty dimension ID represents the dimensionless rating aggregate.
 
-**myRatings Dictionary<string, Rating>**
+**myRatings Dictionary<string, Rating>**  
 If the request originated from a player providing a session key, this property is returned containing a list of all [rating dimensions](https://www.construct.net/game-services/manuals/game-services/ratings/api-objects/rating-dimension-object) ID's and this players corresponding rating record.  An empty dimension ID represents the dimensionless rating.  The rating record will be `null` if the player hasn't cast a vote on this dimension yet.

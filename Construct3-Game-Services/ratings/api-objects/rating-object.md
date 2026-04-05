@@ -1,7 +1,7 @@
 ---
 title: "Rating Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/ratings/api-objects/rating-object"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -18,7 +18,7 @@ This object represents a single rating for a rateable object, or for a specific 
 
 ## Example Rating
 
-```none
+```json
 {
   "value": 4,
   "maxRating": 5,
@@ -29,14 +29,14 @@ This object represents a single rating for a rateable object, or for a specific 
 
 ## Object Properties
 
-**value uint8**
+**value uint8**  
 The value of this rating.
 
-**maxRating uint8**
+**maxRating uint8**  
 The maximum permitted rating.
 
-**date datetime**
+**date datetime**  
 The date this rating was cast.
 
-**formattedDate string**
+**formattedDate string**  
 The date this rating was cast, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).

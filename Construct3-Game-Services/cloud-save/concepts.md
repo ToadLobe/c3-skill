@@ -1,7 +1,7 @@
 ---
 title: "Cloud Save Concepts"
 source: "https://www.construct.net/en/game-services/manuals/game-services/cloud-save/concepts"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -20,7 +20,7 @@ Cloud save allows players to save blobs of data to the cloud.  When they [sign i
 
 When a player saves a blob, they can either choose to save it to their own player account which means only they will have access to it, or they can save it in game buckets which are available to all players.
 
-> **Warning**
+> **Warning**  
 > Even though cloud save has access control over who can read cloud saves, this should **never** be relied upon as secure storage.  You should also never store private or confidential data in this service - you should always assume that players will have access at some point to any data that exists in your CGS cloud save account.
 > It is strictly prohibited to store any personally identifiable data in your CGS cloud save account.
 
@@ -38,13 +38,13 @@ Game buckets can be customised in many ways including restrictions on how much d
 
 Game buckets have 3 types of access:
 
-**Private**
+**Private**  
 Players cannot read or write to private game buckets.  Data in these buckets can only be accessed using an [API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
 
-**PublicRead**
+**PublicRead**  
 Players can download cloud saves from these buckets, but they are not able to save to them.  You must use an [API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys) or your Construct Game Services account to upload blobs to these buckets.
 
-**PublicReadWrite**
+**PublicReadWrite**  
 Players are allowed to read and write to these buckets.
 
 ## Rating Cloud Saves

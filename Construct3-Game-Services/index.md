@@ -1,7 +1,7 @@
 ---
 title: "The Construct Game Services"
 source: "https://www.construct.net/en/game-services/manuals/game-services"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -29,7 +29,7 @@ Implementation of the CGS into your game/application can significantly increase 
 
 These services are platform agnostic - you don't have to just use them in Construct 3, you can use them with any other game engine.  You can even use them for non-game applications, for example the Leaderboard Service could be used in business sales team to track employee performance.  You can be as creative as you want and if you're using it for something outside the box we'd love to hear/see what you're building!
 
-> **Tip**
+> **Tip**  
 > CGS are currently in Beta.  You may experience service interuption and some outages as we learn about how CGS is being used and adjust our infastructure and address bugs as they come up.
 
 If you find a bug or issue, please submit it to the official bug tracker at [https://github.com/Scirra/Construct.net-website-bugs](https://www.construct.net/out?u=https%3a%2f%2fgithub.com%2fScirra%2fConstruct.net-website-bugs).

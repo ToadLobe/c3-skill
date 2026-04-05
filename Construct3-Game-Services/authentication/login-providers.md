@@ -1,7 +1,7 @@
 ---
 title: "Login Providers"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/login-providers"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -38,49 +38,49 @@ When linking a login provider to an existing account, sometimes the login provid
 
 ## Supported Providers
 
-**Username/Password**
+**Username/Password**  
 Allows players to sign in with a username and password.  Passwords are stored on Construct Game Services servers hashed with BCrypt.
 
-**Apple**
+**Apple**  
 Allows players to sign in with their Apple account.
 
-**BattleNet**
+**BattleNet**  
 Allows players to sign in with their BattleNet account.
 
-**Discord**
+**Discord**  
 Allows players to sign in with their Discord account.
 
-**Email**
+**Email**  
 Allows players to sign in with a magic link sent to their verified email address.
 
-**Facebook**
+**Facebook**  
 Allows players to sign in with their Facebook account.
 
-**Github**
+**Github**  
 Allows players to sign in with their Github account.
 
-**Google**
+**Google**  
 Allows players to sign in with their Google account.
 
-**Itch.io**
+**Itch.io**  
 Allows players to sign in with their Itch.io account.
 
-**Microsoft**
+**Microsoft**  
 Allows players to sign in with their Microsoft account.
 
-**Patreon**
+**Patreon**  
 Allows players to sign in with their Patreon account.
 
-**Reddit**
+**Reddit**  
 Allows players to sign in with their Reddit account.
 
-**Steam**
+**Steam**  
 Allows players to sign in with their Steam account.
 
-**X (Twitter)**
+**X (Twitter)**  
 Allows players to sign in with their X (Twitter) account.
 
-**Yandex**
+**Yandex**  
 Allows players to sign in with their Yandex account.
 
 ## Customised Branding

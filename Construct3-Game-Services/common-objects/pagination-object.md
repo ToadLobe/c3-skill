@@ -1,7 +1,7 @@
 ---
 title: "Pagination Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/common-objects/pagination-object"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -20,7 +20,7 @@ The pagination object helps you to navigate through the pages of returned object
 
 ## Example Pagination
 
-```none
+```json
 {
   "formattedRequestedPage": 2,
   "requestedPage": 2,
@@ -39,38 +39,38 @@ The pagination object helps you to navigate through the pages of returned object
 
 ## Object Properties
 
-**formattedRequestedPage string**
+**formattedRequestedPage string**  
 The requested page formatted to the requests specified culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**requestedPage int32**
+**requestedPage int32**  
 The page of results requested in the request.  The first page is 1.
 
-**formattedTotalPages string**
+**formattedTotalPages string**  
 The total number of pages formatted to the requests specified culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**totalPages int32**
+**totalPages int32**  
 The total number of pages of results in the request.
 
-**formattedRecordsPerPage string**
+**formattedRecordsPerPage string**  
 The number of results that can be shown on each page formatted to the requests specified culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**recordsPerPage int32**
+**recordsPerPage int32**  
 The number of results that can be shown on each page.  The last page of results may have fewer results than this number.
 
-**formattedTotalRecords string**
+**formattedTotalRecords string**  
 The total number of objects across all pages of results formatted to the requests specified culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**totalRecords int32**
+**totalRecords int32**  
 The total number of objects across all pages of results.
 
-**formattedPrevPage string**
+**formattedPrevPage string**  
 The previous page parameter formatted to the requests specified culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**prevPage int32**
+**prevPage int32**  
 If the requestedPage is greater than 1, this value is for the previous page of results.  This property will not show if the requested page is 1 - the first page.
 
-**formattedNextPage string**
+**formattedNextPage string**  
 The next page parameter formatted to the requests specified culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**nextPage int32**
+**nextPage int32**  
 If the requestedPage is less than the total number of pages, this value is for the next page of results.  This property will not show if the requested page is the last page.

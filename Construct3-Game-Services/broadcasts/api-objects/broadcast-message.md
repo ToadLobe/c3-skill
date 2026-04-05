@@ -1,7 +1,7 @@
 ---
 title: "Message Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/broadcasts/api-objects/broadcast-message"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -20,10 +20,10 @@ This object can be rated by players.  Read about [how ratings work](https://www.
 
 ## Example Message
 
-```none
+```json
 {
-  "id": "bc4ebde3-61e2-4b6b-ab0a-234630917e8b",
-  "channelID": "72e1d5ad-8247-41be-9ee9-c7db0bb27617",
+  "id": "061cd393-d48a-44d5-85e5-8f4e14d23589",
+  "channelID": "ff78c8bb-5bbb-4be6-839e-c554a27ea803",
   "date": "2025-09-22T14:30:02.437",
   "formattedDate": "9/22/2025 2:30:02 PM",
   "title": "New October features and news from the team.",
@@ -54,65 +54,65 @@ This object can be rated by players.  Read about [how ratings work](https://www.
 
 ## Object Properties
 
-**id guid**
+**id guid**  
 A unique ID for this message.
 
-**channelID guid**
+**channelID guid**  
 The ID of the [channel](https://www.construct.net/game-services/manuals/game-services/broadcasts/api-objects/broadcast-channel) this message belongs to.
 
-**date datetime**
+**date datetime**  
 The date and time this message was published.
 
-**formattedDate string**
+**formattedDate string**  
 The date and time this message was published, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**title string Translatable**
+**title string Translatable**  
 The title of this message.
 
-**text string Translatable**
+**text string Translatable**  
 The content of the message.  Messages can be any form of text, plain, HTML or marked up with BB code.  This property is only returned if you are retrieving the message from the [get message](https://www.construct.net/game-services/manuals/game-services/##b.GetMessage##) end point, otherwise the excerpt property will be returned.
 
-**textLength int32**
+**textLength int32**  
 The length of the returned text in characters.
 
-**formattedTextLength string**
+**formattedTextLength string**  
 The length of the returned text in characters, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**excerpt string Translatable**
+**excerpt string Translatable**  
 Returns the first 100 characters of the full broadcast message.  If the message text exceeds this length 3 dots (...) will be appended to the end of this value indicating there is more to read.
 
-**reads int32**
+**reads int32**  
 Total number of times this message has been read by the player base.
 
-**formattedReads string**
+**formattedReads string**  
 Total number of times this message has been read by the player base, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**uniqueReads int32**
+**uniqueReads int32**  
 A count of how many unique players have read this message.  A player can be a guest or a signed in user, this value is incremented based on the players IP address.
 
-**formattedUniqueReads string**
+**formattedUniqueReads string**  
 A count of how many unique players have read this message.  A player can be a guest or a signed in user, this value is incremented based on the players IP address, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**updates int16**
+**updates int16**  
 How many times the message text or title has been modified since it was first published.
 
-**formattedUpdates string**
+**formattedUpdates string**  
 How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**lastUpdate datetime?**
+**lastUpdate datetime?**  
 The date and time the message text or title was last updated.
 
-**formattedLastUpdate string**
+**formattedLastUpdate string**  
 How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**isUnread bool**
+**isUnread bool**  
 Indicates if this message is unread by the current requester.  Read about the [unread status](https://www.construct.net/game-services/manuals/game-services/broadcasts/concepts#internalH1Link2).
 
-**originalLanguage Language**
+**originalLanguage Language**  
 The language this message is written in.
 
-**responseLanguage Language**
+**responseLanguage Language**  
 The language this message is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**ratingStatus RatingStatus**
+**ratingStatus RatingStatus**  
 The [rating status](https://www.construct.net/game-services/manuals/game-services/ratings/api-objects/rating-status-object) of this object.

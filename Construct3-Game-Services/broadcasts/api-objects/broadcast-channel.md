@@ -1,7 +1,7 @@
 ---
 title: "Channel Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/broadcasts/api-objects/broadcast-channel"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -18,9 +18,9 @@ You can have multiple Broadcast Channels, and each Channel can contain multiple 
 
 ## Example Channel
 
-```none
+```json
 {
-  "id": "89e966f4-f6c8-445c-a494-05142f334fc0",
+  "id": "7e1b0203-78ab-4330-b99c-f3a5c546b32c",
   "name": "Game Updates & News",
   "description": "The latest updates and news from Space Blaster dev team!",
   "created": "2025-09-22T14:30:02.437",
@@ -49,47 +49,47 @@ You can have multiple Broadcast Channels, and each Channel can contain multiple 
 
 ## Object Properties
 
-**id guid**
+**id guid**  
 A unique ID for this channel.
 
-**name string Translatable**
+**name string Translatable**  
 A publicly facing name for this channel.
 
-**description string Translatable**
+**description string Translatable**  
 A publicly facing description for this channel.
 
-**created datetime**
+**created datetime**  
 The date and time this channel was first created.
 
-**formattedCreated string**
+**formattedCreated string**  
 The date and time this channel was first created, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**responseLanguage Language**
+**responseLanguage Language**  
 The language the channels properties are returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**broadcasts int32**
+**broadcasts int32**  
 The total number of broadcast messages currently available in this channel.
 
-**formattedBroadcasts string**
+**formattedBroadcasts string**  
 The total number of broadcast messages currently available in this channel, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**lastBroadcast datetime?**
+**lastBroadcast datetime?**  
 The date and time of the last broadcast published to this channel.
 
-**formattedLastBroadcast string**
+**formattedLastBroadcast string**  
 The date and time of the last broadcast published to this channel, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**allowRatings bool**
+**allowRatings bool**  
 If this channel supports rating of messages.
 
-**anyUnreadMessages bool**
+**anyUnreadMessages bool**  
 Indicates if this channel contains any unread messages by the current requester.  Read about the [unread status](https://www.construct.net/game-services/manuals/game-services/broadcasts/concepts#internalH1Link2).
 
-**dimensionlessMaxRatingValue uint8**
+**dimensionlessMaxRatingValue uint8**  
 If ratings are allowed for messages in this channel, this property shows what the maximum rating value for dimensionless ratings is.  The minuimum allowed rating value is always `0`.
 
-**ratingDimensions Dictionary<string, RatingDimension>**
+**ratingDimensions Dictionary<string, RatingDimension>**  
 If ratings are allowed for messages in this channel, this property shows all available [rating dimensions](https://www.construct.net/game-services/manuals/game-services/ratings/api-objects/rating-dimension-object) that can be rated.
 
-**originalLanguage Language**
+**originalLanguage Language**  
 The language this channels properties (name and description) are written in.

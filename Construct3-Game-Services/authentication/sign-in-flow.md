@@ -1,7 +1,7 @@
 ---
 title: "Sign-In Flow"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/sign-in-flow"
-release: unknown
+release: 476.3
 ---
 
 ## On this page

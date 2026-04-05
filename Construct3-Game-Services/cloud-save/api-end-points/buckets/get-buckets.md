@@ -1,7 +1,7 @@
 ---
 title: "Get Buckets"
 source: "https://www.construct.net/en/game-services/manuals/game-services/cloud-save/api-end-points/buckets/get-buckets"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -33,26 +33,26 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**orderBy string**
+**orderBy string**  
 How you wish the players returned in this query to be ordered.  Can be one of `AZ`, `ZA`, `MostBlobs`, `LeastBlobs`, `MostData` or `LeastData`.  The default value if not specified is `AZ`.
 
-**perPage int32**
+**perPage int32**  
 How many buckets you wish to return on each page of results.  Cannot be less than `1` or more than `100`.  Default value is `20`.
 
-**page int32**
+**page int32**  
 The page of results you are requesting.  The first page is always `1`.  If this value is not specified the first page will be returned.
 
-**culture string Optional**
+**culture string Optional**  
 Optionally specify a [supported culture code](https://www.construct.net/game-services/manuals/game-services/culture) for rendering various properties.  If not specified, the culture code from your games default language will be used.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "pagination": { ... },
@@ -66,23 +66,23 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**pagination Pagination**
+**pagination Pagination**  
 If there are more buckets than can be displayed on one page of results, this pagination object can be used to help browse through other pages of results.
 
-**buckets Array<Bucket>**
+**buckets Array<Bucket>**  
 The buckets returned from the request.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "Your request failed due to...",
@@ -93,14 +93,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

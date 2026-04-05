@@ -1,7 +1,7 @@
 ---
 title: "List Bonuses"
 source: "https://www.construct.net/en/game-services/manuals/game-services/xp/api-end-points/bonuses/list-bonuses"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -33,23 +33,23 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**end int64 Required**
+**end int64 Required**  
 The end date and time bonuses to search until as a unix time stamp (seconds since Jan 01 1970).
 
-**start int64**
+**start int64**  
 The start date and time bonuses to search from as a unix time stamp (seconds since Jan 01 1970).  If not specified, the requests date and time will be used.
 
-**culture string Optional**
+**culture string Optional**  
 Optionally specify a [supported culture code](https://www.construct.net/game-services/manuals/game-services/culture) for rendering various properties.  If not specified, the culture code from your games default language will be used.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "bonuses": [
@@ -62,20 +62,20 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**bonuses Array<XPBonus>**
+**bonuses Array<XPBonus>**  
 All bonuses returned in the request.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "Your request failed due to...",
@@ -86,14 +86,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

@@ -1,7 +1,7 @@
 ---
 title: "Translation Concepts"
 source: "https://www.construct.net/en/game-services/manuals/game-services/translations/concepts"
-release: unknown
+release: 476.3
 ---
 
 ## On this page

@@ -1,7 +1,7 @@
 ---
 title: "Get a Player"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/api-end-points/players/get-player"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -33,25 +33,25 @@ https://auth.construct.net/getplayer.json
 
 This end point is for [secret key](https://www.construct.net/game-services/manuals/game-services/games/api-keys) authenticated requests only.  Signed in players cannot call this end point.
 
-**secret string Required**
+**secret string Required**  
 Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
 
  ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**playerID guid Sometimes required**
+**playerID guid Sometimes required**  
 The ID of the player you are querying. You must specify this or `playerName`.
 
-**playerName string Sometimes required**
+**playerName string Sometimes required**  
 The name of the player you are querying.  Player names are case insensitive. You must specify this or `playerID`.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "player": { ... },
@@ -61,20 +61,20 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**player Player**
+**player Player**  
 The player returned from the query.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "Your request failed due to...",
@@ -85,14 +85,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

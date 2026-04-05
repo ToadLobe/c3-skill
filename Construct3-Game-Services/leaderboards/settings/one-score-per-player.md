@@ -1,12 +1,12 @@
 ---
 title: "One Score Per Player"
 source: "https://www.construct.net/en/game-services/manuals/game-services/leaderboards/settings/one-score-per-player"
-release: unknown
+release: 476.3
 ---
 
 If enabled, each player in the leaderboard will only have one score record representing their best score.
 
-> **Warning**
+> **Warning**  
 > Once you set this parameter when creating a leaderboard, it will not be possible to change it at a later date.
 
 If set, a player identifier must be sent with all scores.

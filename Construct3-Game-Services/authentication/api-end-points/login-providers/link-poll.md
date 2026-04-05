@@ -1,7 +1,7 @@
 ---
 title: "Link Polling"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/api-end-points/login-providers/link-poll"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -46,49 +46,49 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**pollToken guid Required**
+**pollToken guid Required**  
 The link poll token returned on the original [link request](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/login-providers/link-login-provider).
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "linked": false,
-  "forceCode": "adc8a3f0-4318-426b-bfa1-71e3043e4006",
+  "forceCode": "d6148947-9cf4-4f93-a3b0-683fb577b9bf",
   "forceURL": "https://...",
-  "forceCodeExpiryMins": 62,
+  "forceCodeExpiryMins": 5,
   "formattingCulture": "en-us"
 }
 ```
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**linked bool**
+**linked bool**  
 Returns true if the link was sucessful.  This will always return false until the user completes the sign in with the login provider.
 
-**forceCode guid?**
+**forceCode guid?**  
 A one use code to [force link](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/login-providers/force-link) the login provider to the players account.
 
-**forceURL url (string)**
+**forceURL url (string)**  
 The URL to call to [force link](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/login-providers/force-link) the login provider to the players account.  The `forceCode` must be posted to this URL.
 
-**forceCodeExpiryMins int32**
+**forceCodeExpiryMins int32**  
 How many minutes the force code is valid for before it expires and a new one will need to be generated.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "Your request failed due to...",
@@ -99,14 +99,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

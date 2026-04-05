@@ -1,7 +1,7 @@
 ---
 title: "Rating Aggregate Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/ratings/api-objects/rating-aggregate-object"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -18,7 +18,7 @@ When retrieving a rateable object, an aggregate rating object may be returned.  
 
 ## Example Aggregate
 
-```none
+```json
 {
   "totalRatings": 414,
   "formattedTotalRatings": "414",
@@ -43,38 +43,38 @@ When retrieving a rateable object, an aggregate rating object may be returned.  
 
 ## Object Properties
 
-**totalRatings int32**
+**totalRatings int32**  
 Total number of ratings cast.
 
-**formattedTotalRatings string**
+**formattedTotalRatings string**  
 Total number of ratings cast, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**averageRating decimal**
+**averageRating decimal**  
 The average rating.
 
-**averageRatingAsPercentage decimal**
+**averageRatingAsPercentage decimal**  
 The average rating expressed as a percentage (0-100).
 
-**formattedAverageRating string**
+**formattedAverageRating string**  
 The average rating, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**maxRating uint8**
+**maxRating uint8**  
 The maximum permitted rating for this dimension.
 
-**originalLanguage Language**
+**originalLanguage Language**  
 The language the title and description are written in.
 
-**responseLanguage Language**
+**responseLanguage Language**  
 The language this dimension is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**lastRating datetime?**
+**lastRating datetime?**  
 The date a player last cast a rating.
 
-**formattedLastRating string**
+**formattedLastRating string**  
 The date a player last cast a rating, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
 
-**title string Translatable**
+**title string Translatable**  
 The title for this dimension.
 
-**description string Translatable**
+**description string Translatable**  
 A description for this dimension.

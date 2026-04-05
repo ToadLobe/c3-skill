@@ -1,7 +1,7 @@
 ---
 title: "API Keys"
 source: "https://www.construct.net/en/game-services/manuals/game-services/games/api-keys"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -17,7 +17,7 @@ release: unknown
 
 Some resources or requests you make on a game may require an API key.
 
-> **Warning**
+> **Warning**  
 > API keys should NEVER be exposed or distributed to clients.
 
 ## Create API Key

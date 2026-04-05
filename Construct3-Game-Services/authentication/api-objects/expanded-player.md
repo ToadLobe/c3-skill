@@ -1,7 +1,7 @@
 ---
 title: "Expanded Player Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/api-objects/expanded-player"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -18,14 +18,14 @@ This object is only returned for some API end points that require your games sec
 
 ## Example Expanded Player
 
-```none
+```json
 {
-  "id": "ce5e0005-93c2-4c39-ae9e-cd27252adf50",
+  "id": "baac6798-66d6-4cb1-b745-ace9d4824eb6",
   "playerName": "Chuckling Warrior",
-  "created": "2026-04-05T05:41:39.9530387Z",
+  "created": "2026-04-05T07:11:41.8261904Z",
   "consecutiveDailySignIns": 6,
   "successfulSignIns": 121,
-  "lastSuccessfulSignIn": "2026-04-05T05:41:39.9603022Z",
+  "lastSuccessfulSignIn": "2026-04-05T07:11:41.8281991Z",
   "leaderboardScores": 3,
   "avatars": [
     { ... },
@@ -44,7 +44,7 @@ This object is only returned for some API end points that require your games sec
   "totalRatings": 5,
   "totalRatingsValue": 875,
   "averageRatingPercent": 68.6275,
-  "lastActive": "2026-04-05T05:41:39.9703431Z",
+  "lastActive": "2026-04-05T07:11:41.8362329Z",
   "emailVerified": true,
   "preventAllEmails": true
 }
@@ -52,65 +52,65 @@ This object is only returned for some API end points that require your games sec
 
 ## Object Properties
 
-**id guid**
+**id guid**  
 A unique ID for this player.
 
-**playerName string**
+**playerName string**  
 The publicly facing player name for this player.
 
-**created datetime**
+**created datetime**  
 The date and time this player was first registered in the game.
 
-**consecutiveDailySignIns int32**
+**consecutiveDailySignIns int32**  
 Total number of consecutive days this player has logged in for.
 
-**successfulSignIns int32**
+**successfulSignIns int32**  
 Total number of times this player has signed into their account.
 
-**lastSuccessfulSignIn datetime?**
+**lastSuccessfulSignIn datetime?**  
 Date and time of the last successful sign in for this player.
 
-**leaderboardScores int32**
+**leaderboardScores int32**  
 Total number of leaderboard scores this player has.
 
-**avatars Array<Picture>**
+**avatars Array<Picture>**  
 If player has an avatar, a list of [picture objects](https://www.construct.net/game-services/manuals/game-services/common-objects/picture-object). Each picture object is the same avatar, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256` will be shown here along with the original avatar size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original avatar width.
 
-**loginProviders Array<PlayerLoginProvider>**
+**loginProviders Array<PlayerLoginProvider>**  
 List of player login provider objects currently assigned to this player.
 
-**totalBucketCloudSaves int32**
+**totalBucketCloudSaves int32**  
 Total number of cloud saves this player has in bucket storage.
 
-**totalCloudSaves int32**
+**totalCloudSaves int32**  
 Total number of cloud saves this player has, private and in buckets.
 
-**totalPrivateCloudSaves int32**
+**totalPrivateCloudSaves int32**  
 Total number of cloud saves this player has in their private store.
 
-**totalBucketCloudSavesSize int64**
+**totalBucketCloudSavesSize int64**  
 Total size in bytes of all this players cloud saves in buckets.
 
-**totalCloudSavesSize int64**
+**totalCloudSavesSize int64**  
 Total size in bytes of all this players cloud saves, private and in buckets.
 
-**totalPrivateCloudSavesSize int64**
+**totalPrivateCloudSavesSize int64**  
 Total size in bytes of all this players private cloud saves.
 
-**totalRatings int32**
+**totalRatings int32**  
 Total ratings this player has cast.
 
-**totalRatingsValue int32**
+**totalRatingsValue int32**  
 The sum of all this players ratings.  The summed values are normalised to a range of 0-255.
 
-**averageRatingPercent decimal**
+**averageRatingPercent decimal**  
 The average rating this player casts expressed as a percentage 0-100.
 
-**lastActive datetime?**
+**lastActive datetime?**  
 The date and time UTC this player last interacted with these services.
 
-**emailVerified bool**
+**emailVerified bool**  
 True if this player has provided an email address that they have verified via a confirmation email.
 
-**preventAllEmails bool**
+**preventAllEmails bool**  
 True if all emails to this player will be prevented from being sent.  Can only be adjusted by editing the player directly via your CGS account.

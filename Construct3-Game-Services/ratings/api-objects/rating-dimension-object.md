@@ -1,7 +1,7 @@
 ---
 title: "Rating Dimension Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/ratings/api-objects/rating-dimension-object"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -18,7 +18,7 @@ It is possible to set up rating dimensions for rateable objects.  A rating dimen
 
 ## Example Dimension
 
-```none
+```json
 {
   "id": "game-graphics",
   "title": "How good are the graphics?",
@@ -37,20 +37,20 @@ It is possible to set up rating dimensions for rateable objects.  A rating dimen
 
 ## Object Properties
 
-**id string**
+**id string**  
 A unique string based ID for this dimension.  ID's can only contain alpha-numeric characters, dots or dashes and cannot exceed 50 characters in length.
 
-**title string Translatable**
+**title string Translatable**  
 The title for this dimension.
 
-**description string Translatable**
+**description string Translatable**  
 A description for this dimension.
 
-**maxRating uint8**
+**maxRating uint8**  
 The maximum value that a player can give for this dimension.  The minimum permitted rating value is always 0.  Set this value to 1 for boolean ratings (for example, "Would you recommend this?  Yes or no.").  The maximum permitted value is 255.
 
-**originalLanguage Language**
+**originalLanguage Language**  
 The language the title and description are written in.
 
-**responseLanguage Language**
+**responseLanguage Language**  
 The language this dimension is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

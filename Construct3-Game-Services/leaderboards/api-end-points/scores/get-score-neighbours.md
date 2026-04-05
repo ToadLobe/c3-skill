@@ -1,7 +1,7 @@
 ---
 title: "Get Score Neighbours"
 source: "https://www.construct.net/en/game-services/manuals/game-services/leaderboards/api-end-points/scores/get-score-neighbours"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -33,35 +33,35 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**leaderboardID guid Required**
+**leaderboardID guid Required**  
 The ID of the leaderboard you're fetching the scores for.
 
-**playerID guid Sometimes required**
+**playerID guid Sometimes required**  
 The player ID to query. You must specify this or `scoreID`.
 
-**scoreID guid Sometimes required**
+**scoreID guid Sometimes required**  
 The ID of the score to query. You must specify this or `playerID`.
 
-**range int16**
+**range int16**  
 How many scores to return on either side of the queried score.  If no value is specified, or an invalid value is specified this defaults to `5` which will return up to 11 scores (the queried score, plus up to 5 scores on each side).  The maximum value allowed is `50`.
 
-**compareRanks int16**
+**compareRanks int16**  
 Optionally specify this value for leaderboards that support score history tracking. This value represents how many days ago you wish to compare returned scores in this query to. For example, if 10 is specified then the relevant score history object will be returned in the score object representing what this score was 10 days ago.
 
-**requesterIP string**
+**requesterIP string**  
 If using secret key authentication, you can pass an IP address here to return results as if this IP address made the request.  This is useful when building your own implementation and ensuring shadow banned scores are properly hidden/shown to the end user.
 
-**culture string Optional**
+**culture string Optional**  
 Optionally specify a [supported culture code](https://www.construct.net/game-services/manuals/game-services/culture) for rendering various properties.  If not specified, the culture code from your games default language will be used.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "scores": [
@@ -74,20 +74,20 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**scores Array<Score>**
+**scores Array<Score>**  
 The list of score objects returned from the request.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "Your request failed due to...",
@@ -98,14 +98,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

@@ -1,7 +1,7 @@
 ---
 title: "List Players on a Team"
 source: "https://www.construct.net/en/game-services/manuals/game-services/leaderboards/api-end-points/teams/list-team-players"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -31,37 +31,37 @@ https://leaderboards.construct.net/listteamplayers.json
 
 No authentication is required for calling this end point.
 
-**secret string Optional**
+**secret string Optional**  
 Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
 
  ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**leaderboardID guid Required**
+**leaderboardID guid Required**  
 The ID of the leaderboard you're fetching team players from.
 
-**teamID guid Required**
+**teamID guid Required**  
 The ID of the team you're fetching players from.
 
-**order string**
+**order string**  
 Order method to return players in.  Permitted values are `PlayerName` or `Score`.  Defaults to `PlayerName` if not specified.
 
-**perPage int32**
+**perPage int32**  
 How many players you wish to return on each page of results.  Cannot be less than `1` or more than `50`.  Default value is `10`.
 
-**page int32**
+**page int32**  
 The page of results you are requesting.  The first page is always `1`.  If this value is not specified the first page will be returned.
 
-**culture string Optional**
+**culture string Optional**  
 Optionally specify a [supported culture code](https://www.construct.net/game-services/manuals/game-services/culture) for rendering various properties.  If not specified, the culture code from your games default language will be used.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "pagination": { ... },
@@ -76,26 +76,26 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**pagination Pagination**
+**pagination Pagination**  
 A pagination object helpful for navigating other pages of results.
 
-**players Array<TeamPlayer>**
+**players Array<TeamPlayer>**  
 The list of players returned in the request.
 
-**team ExpandedTeam**
+**team ExpandedTeam**  
 The team object these players belong to.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "Your request failed due to...",
@@ -106,14 +106,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

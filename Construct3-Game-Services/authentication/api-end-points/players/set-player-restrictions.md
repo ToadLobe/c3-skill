@@ -1,7 +1,7 @@
 ---
 title: "Set Player Restrictions"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/api-end-points/players/set-player-restrictions"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -19,19 +19,19 @@ release: unknown
 
 Restrict a specific player from performing certain actions in your game/application.  The following restrictions with their corresponding ID's are:
 
-**0 = Upload Avatar**
+**0 = Upload Avatar**  
 Prevents the player from uploading an avatar image.
 
-**1 = Change Player Name**
+**1 = Change Player Name**  
 Prevents the player from being able to change their name.
 
-**101 = Cloud Save to Buckets**
+**101 = Cloud Save to Buckets**  
 Prevents the player from cloud saving to game buckets.
 
-**102 = Cloud Save to Buckets**
+**102 = Cloud Save to Buckets**  
 Prevents the player from cloud saving to their player account.
 
-**200 = Rate**
+**200 = Rate**  
 Prevents the player from being able to rate objects.
 
 If an error is returned, the players restrictions will not of been updated.
@@ -50,25 +50,25 @@ This end point can only be called with [secret key](https://www.construct.net/ga
 
 ### Secret Key Authentication
 
-**secret string Required**
+**secret string Required**  
 Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
 
-**playerID guid Required**
+**playerID guid Required**  
 The player ID you wish to make this request against.
 
  ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**restrictedActions string Sometimes required**
+**restrictedActions string Sometimes required**  
 A CSV list of actions to restrict.  Values in this list can be the string value of the restricted action for example `Upload Avatar` (case insensitive), or the ID of the restricted action, for example `0`.  Don't send this parameter or send an empty string to indicate you wish to remove all existing restrictions currently on this player.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "formattingCulture": "en-us"
@@ -77,17 +77,17 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "The restriction with the ID 1337 doesn't exist.",
@@ -98,14 +98,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

@@ -1,7 +1,7 @@
 ---
 title: "Sign In Polling"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/api-end-points/players/sign-in-poll"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -45,14 +45,14 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**pollToken guid Required**
+**pollToken guid Required**  
 The sign in poll token returned on the original [sign in request](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/sign-in).
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
   "session": { ... },
@@ -64,26 +64,26 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**session Session**
+**session Session**  
 The new [session object](https://www.construct.net/game-services/manuals/game-services/authentication/api-objects/session-object) if the sign in was succesful.
 
-**signInErrorMessage string**
+**signInErrorMessage string**  
 Details about why the sign in failed if it failed or was abandoned.
 
-**signInFailed bool**
+**signInFailed bool**  
 If true, indicates the sign in failed, timed out or was abandoned.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "Your request failed due to...",
@@ -94,14 +94,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

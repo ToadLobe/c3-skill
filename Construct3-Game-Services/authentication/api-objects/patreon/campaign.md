@@ -1,7 +1,7 @@
 ---
 title: "Campaign Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/api-objects/patreon/campaign"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -13,7 +13,7 @@ release: unknown
 
 ## Example Campaign
 
-```none
+```json
 {
   "id": "f7c95b18-d5df-4b40-bc29-35ab442a7961",
   "vanity": "Construct Team",
@@ -24,14 +24,14 @@ release: unknown
 
 ## Object Properties
 
-**id string**
+**id string**  
 ID of this Patreon campaign.
 
-**vanity string**
+**vanity string**  
 The campaign's vanity. Can be null.
 
-**creationName string**
+**creationName string**  
 The type of content the creator is creating, as in "vanity is creating creation_name". Can be null.
 
-**url string**
+**url string**  
 A URL to access this campaign on patreon.com

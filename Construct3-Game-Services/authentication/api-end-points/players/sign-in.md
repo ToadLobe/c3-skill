@@ -1,7 +1,7 @@
 ---
 title: "Sign In"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/api-end-points/players/sign-in"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -37,32 +37,32 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**gameID guid Required**
+**gameID guid Required**  
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**provider string Required**
+**provider string Required**  
 The [login provider](https://www.construct.net/game-services/manuals/game-services/authentication/login-providers) you wish to sign in with (case insensitive).  Must be one of `UsernamePassword`, `Apple`, `BattleNet`, `Discord`, `Email`, `Facebook`, `Github`, `Google`, `ItchIO`, `Microsoft`, `Patreon`, `Reddit`, `Steam`, `X`, `Yandex`
 
-**username string Sometimes required**
+**username string Sometimes required**  
 If signing in with `UsernamePassword`, the username the player is signing in with. If specified, you must also specify `password`.
 
-**password string Sometimes required**
+**password string Sometimes required**  
 If signing in with `UsernamePassword`, the password the player is signing in with. If specified, you must also specify `username`.
 
-**emailAddress string Sometimes required**
+**emailAddress string Sometimes required**  
 If signing in with `Email`, the verified email address of the account the player is signing in with.  If the provided email address doesn't exist or is not verified the same generic error will be shown.
 
-**expiryMins uint32**
+**expiryMins uint32**  
 If sign in succeeds, how long until the newly created session expires.  You can extend the session expiry using the [refresh session](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/sessions/refresh-session) end point.  The default value is `1440` minutes.
 
 ## Success Response
 
 Successful responses always return a `HTTP 200` status code.
 
-```none
+```json
 {
   "success": true,
-  "pollToken": "888ade42-1290-48c9-bf18-180888543a85",
+  "pollToken": "fcc26210-70f1-4a4a-9502-7f2b6f3dd162",
   "redirectToURL": "https://...",
   "formattingCulture": "en-us"
 }
@@ -70,23 +70,23 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**pollToken guid**
+**pollToken guid**  
 A polling token to get the status of the user action.  For [sign in requests](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/sign-in) use this poll token on the [sign in poll](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/sign-in-poll) end point.  For [link requests](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/login-providers/link-login-provider) use this poll token on the [link poll](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/login-providers/link-poll) end point.
 
-**redirectToURL url (string)**
+**redirectToURL url (string)**  
 The URL to the external third party login provider to complete the sign-in or link request.  This property will be null for the Email sign in method as no redirect is required.
 
-**formattingCulture string**
+**formattingCulture string**  
 If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
 Unsuccessful responses always return `HTTP 4xx` status codes.
 
-```none
+```json
 {
   "success": false,
   "errorMessage": "The username/password you provided are invalid.",
@@ -97,14 +97,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**
+**success bool**  
 If the request was successfull or not.
 
-**errorMessage string**
+**errorMessage string**  
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**
+**helpURL url (string)**  
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**
+**shouldRetry bool**  
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

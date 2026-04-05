@@ -1,7 +1,7 @@
 ---
 title: "Tier Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/authentication/api-objects/patreon/tier"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -13,7 +13,7 @@ release: unknown
 
 ## Example Tier
 
-```none
+```json
 {
   "id": "248bb5e3-fcf8-4307-adf1-5a3c2802227a",
   "description": "For anyone who donates to my Patreon!",
@@ -23,11 +23,11 @@ release: unknown
 
 ## Object Properties
 
-**id string**
+**id string**  
 ID of this Patreon tier.
 
-**description string**
+**description string**  
 Tier display description.
 
-**title string**
+**title string**  
 Tier display title.

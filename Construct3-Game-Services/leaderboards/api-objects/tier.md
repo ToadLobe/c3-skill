@@ -1,7 +1,7 @@
 ---
 title: "Tier Object"
 source: "https://www.construct.net/en/game-services/manuals/game-services/leaderboards/api-objects/tier"
-release: unknown
+release: 476.3
 ---
 
 ## On this page
@@ -20,7 +20,7 @@ When you retrieve scores from a leaderboard, each score will contain a tier obje
 
 ## Example Tier
 
-```none
+```json
 {
   "id": "gold-players",
   "name": "Gold Tier Players",
@@ -37,14 +37,14 @@ When you retrieve scores from a leaderboard, each score will contain a tier obje
 
 ## Object Properties
 
-**id string**
+**id string**  
 A unique ID for this tier.
 
-**name string**
+**name string**  
 The name of the tier that can be shown to players.
 
-**originalLanguage Language**
+**originalLanguage Language**  
 The language the tier name was written in.
 
-**responseLanguage Language**
+**responseLanguage Language**  
 The language the tier name is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
