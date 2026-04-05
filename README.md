@@ -24,6 +24,10 @@ Unofficial Markdown conversion of the official [Construct 3](https://www.constru
 
 ## Recommended Reading
 
+### Project & Workflow
+
+- [Construct's project format](https://www.construct.net/en/tutorials/constructs-project-format-3275)
+
 ### Performance & Memory
 
 - [Memory usage](Construct3-Manual/tips-and-guides/memory-usage.md)
@@ -32,10 +36,6 @@ Unofficial Markdown conversion of the official [Construct 3](https://www.constru
 - [Optimisation: don't waste your time](https://www.construct.net/en/blogs/construct-official-blog-1/optimisation-dont-waste-time-768)
 - [Answer your own performance questions](https://www.construct.net/en/blogs/ashleys-blog-2/answer-own-performance-925)
 - [Outstanding game performance](https://www.construct.net/en/blogs/construct-official-blog-1/outstanding-game-performance-1584)
-
-### Project & Workflow
-
-- [Construct's project format](https://www.construct.net/en/tutorials/constructs-project-format-3275)
 
 ### Development Experience
 
