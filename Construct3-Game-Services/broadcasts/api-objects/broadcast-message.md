@@ -16,14 +16,14 @@ release: 476.3
 
 A broadcast message is published to a broadcast channel.  Messages can contain any form of text, including HTML or BB code.
 
-This object can be rated by players.  Read about [how ratings work](https://www.construct.net/game-services/manuals/game-services/ratings/concepts).
+This object can be rated by players.  Read about [how ratings work](../../ratings/concepts.md).
 
 ## Example Message
 
 ```json
 {
-  "id": "061cd393-d48a-44d5-85e5-8f4e14d23589",
-  "channelID": "ff78c8bb-5bbb-4be6-839e-c554a27ea803",
+  "id": "75437bf4-a6f7-4b92-bec6-381052b79cd8",
+  "channelID": "7ae7cc19-7dd9-4f80-8ae7-e725bd382867",
   "date": "2025-09-22T14:30:02.437",
   "formattedDate": "9/22/2025 2:30:02 PM",
   "title": "New October features and news from the team.",
@@ -54,65 +54,65 @@ This object can be rated by players.  Read about [how ratings work](https://www.
 
 ## Object Properties
 
-**id guid**  
+**id** `[guid](../../data-types#internalH1Link1.md)`
 A unique ID for this message.
 
-**channelID guid**  
-The ID of the [channel](https://www.construct.net/game-services/manuals/game-services/broadcasts/api-objects/broadcast-channel) this message belongs to.
+**channelID** `[guid](../../data-types#internalH1Link1.md)`
+The ID of the [channel](../../broadcasts/api-objects/broadcast-channel.md) this message belongs to.
 
-**date datetime**  
+**date** `[datetime](../../data-types#internalH1Link0.md)`
 The date and time this message was published.
 
-**formattedDate string**  
-The date and time this message was published, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedDate** `string`
+The date and time this message was published, formatted to the specified [requested culture](../../culture.md).
 
-**title string Translatable**  
+**title** `string`
 The title of this message.
 
-**text string Translatable**  
-The content of the message.  Messages can be any form of text, plain, HTML or marked up with BB code.  This property is only returned if you are retrieving the message from the [get message](https://www.construct.net/game-services/manuals/game-services/##b.GetMessage##) end point, otherwise the excerpt property will be returned.
+**text** `string`
+The content of the message.  Messages can be any form of text, plain, HTML or marked up with BB code.  This property is only returned if you are retrieving the message from the [get message](../../##b.GetMessage##.md) end point, otherwise the excerpt property will be returned.
 
-**textLength int32**  
+**textLength** `int32`
 The length of the returned text in characters.
 
-**formattedTextLength string**  
-The length of the returned text in characters, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedTextLength** `string`
+The length of the returned text in characters, formatted to the specified [requested culture](../../culture.md).
 
-**excerpt string Translatable**  
+**excerpt** `string`
 Returns the first 100 characters of the full broadcast message.  If the message text exceeds this length 3 dots (...) will be appended to the end of this value indicating there is more to read.
 
-**reads int32**  
+**reads** `int32`
 Total number of times this message has been read by the player base.
 
-**formattedReads string**  
-Total number of times this message has been read by the player base, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedReads** `string`
+Total number of times this message has been read by the player base, formatted to the specified [requested culture](../../culture.md).
 
-**uniqueReads int32**  
+**uniqueReads** `int32`
 A count of how many unique players have read this message.  A player can be a guest or a signed in user, this value is incremented based on the players IP address.
 
-**formattedUniqueReads string**  
-A count of how many unique players have read this message.  A player can be a guest or a signed in user, this value is incremented based on the players IP address, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedUniqueReads** `string`
+A count of how many unique players have read this message.  A player can be a guest or a signed in user, this value is incremented based on the players IP address, formatted to the specified [requested culture](../../culture.md).
 
-**updates int16**  
+**updates** `int16`
 How many times the message text or title has been modified since it was first published.
 
-**formattedUpdates string**  
-How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedUpdates** `string`
+How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](../../culture.md).
 
-**lastUpdate datetime?**  
+**lastUpdate** `[datetime?](../../data-types#internalH1Link0.md)`
 The date and time the message text or title was last updated.
 
-**formattedLastUpdate string**  
-How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedLastUpdate** `string`
+How many times the message text or title has been modified since it was first published, formatted to the specified [requested culture](../../culture.md).
 
-**isUnread bool**  
-Indicates if this message is unread by the current requester.  Read about the [unread status](https://www.construct.net/game-services/manuals/game-services/broadcasts/concepts#internalH1Link2).
+**isUnread** `[bool](../../data-types#internalH1Link4.md)`
+Indicates if this message is unread by the current requester.  Read about the [unread status](../../broadcasts/concepts#internalH1Link2.md).
 
-**originalLanguage Language**  
+**originalLanguage** `[Language](../../common-objects/language.md)`
 The language this message is written in.
 
-**responseLanguage Language**  
+**responseLanguage** `[Language](../../common-objects/language.md)`
 The language this message is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**ratingStatus RatingStatus**  
-The [rating status](https://www.construct.net/game-services/manuals/game-services/ratings/api-objects/rating-status-object) of this object.
+**ratingStatus** `[RatingStatus](../../ratings/api-objects/rating-status-object.md)`
+The [rating status](../../ratings/api-objects/rating-status-object.md) of this object.

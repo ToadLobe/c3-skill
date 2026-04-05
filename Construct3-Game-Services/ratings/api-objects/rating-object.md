@@ -29,14 +29,14 @@ This object represents a single rating for a rateable object, or for a specific 
 
 ## Object Properties
 
-**value uint8**  
+**value** `[uint8](../../data-types#internalH1Link2.md)`
 The value of this rating.
 
-**maxRating uint8**  
+**maxRating** `[uint8](../../data-types#internalH1Link2.md)`
 The maximum permitted rating.
 
-**date datetime**  
+**date** `[datetime](../../data-types#internalH1Link0.md)`
 The date this rating was cast.
 
-**formattedDate string**  
-The date this rating was cast, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedDate** `string`
+The date this rating was cast, formatted to the specified [requested culture](../../culture.md).

@@ -53,4 +53,4 @@ If a properties data type is `bool`, the values `1`, `yes`, `on` or `true` are t
 
 ## Pagination
 
-When [pagination objects](https://www.construct.net/game-services/manuals/game-services/common-objects/pagination-object) are returned in responses, it's important to note that pages are not 0-indexed, but rather 1-indexed.  This means that the first page is page 1, the second page is page 2, and so on.
+When [pagination objects](common-objects/pagination-object.md) are returned in responses, it's important to note that pages are not 0-indexed, but rather 1-indexed.  This means that the first page is page 1, the second page is page 2, and so on.

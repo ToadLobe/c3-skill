@@ -11,17 +11,17 @@ release: 476.3
 
 ---
 
-This object can be rated by players.  Read about [how ratings work](https://www.construct.net/game-services/manuals/game-services/ratings/concepts).
+This object can be rated by players.  Read about [how ratings work](../../ratings/concepts.md).
 
 ## Example Blob
 
 ```json
 {
-  "id": "a486a811-6640-44fb-8d4b-cdf2ea982e55",
+  "id": "db5e1cec-e01f-4752-b23d-e488b9c86232",
   "key": "savegame.1",
   "bucket": { ... },
   "player": { ... },
-  "created": "2026-04-05T07:11:42.0781249Z",
+  "created": "2026-04-05T08:32:13.7574289Z",
   "sizeBytes": 1024,
   "downloadURL": "https://cloudsave.construct.net/download...",
   "ratingStatus": { ... },
@@ -29,42 +29,42 @@ This object can be rated by players.  Read about [how ratings work](https://www.
     { ... },
     { ... }
   ],
-  "pictureSizeBytes": 22,
+  "pictureSizeBytes": 1,
   "name": "My save game"
 }
 ```
 
 ## Object Properties
 
-**id guid**  
+**id** `[guid](../../data-types#internalH1Link1.md)`
 A unique record ID for this cloud save blob.
 
-**key string**  
+**key** `string`
 A unique key for this cloud save.
 
-**bucket Bucket**  
-If cloud save belongs in a [game bucket](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/game-buckets), the game bucket object will be shown here.
+**bucket** `[Bucket](../../cloud-save/api-objects/game-buckets.md)`
+If cloud save belongs in a [game bucket](../../cloud-save/api-objects/game-buckets.md), the game bucket object will be shown here.
 
-**player Player**  
+**player** `[Player](../../authentication/api-objects/player-object.md)`
 If cloud save was created by a player, the associated player object will be shown here.
 
-**created datetime**  
+**created** `[datetime](../../data-types#internalH1Link0.md)`
 The date this cloud save was originally created.
 
-**sizeBytes int32**  
+**sizeBytes** `int32`
 The size in bytes of the cloud save blob.
 
-**downloadURL string**  
+**downloadURL** `string`
 The URL to download the cloud save blob from.
 
-**ratingStatus RatingStatus**  
-The [rating status](https://www.construct.net/game-services/manuals/game-services/ratings/api-objects/rating-status-object) of this object.
+**ratingStatus** `[RatingStatus](../../ratings/api-objects/rating-status-object.md)`
+The [rating status](../../ratings/api-objects/rating-status-object.md) of this object.
 
-**pictures Array<Picture>**  
-If this cloud save object has an associated picture, an array of [picture objects](https://www.construct.net/game-services/manuals/game-services/common-objects/picture-object) will be returned here. Each picture object is the same associated picture, but in different available sizes. Sizes available are based on widths, and the widths 16, 32, 64, 128, 256, 512, 1024 and 2048 will be shown here along with the original picture size if it is different to this predetermined list. Some widths may not show if the original picture width is smaller than any of the available widths.
+**pictures** `Array<[Picture](../../common-objects/picture-object.md)>`
+If this cloud save object has an associated picture, an array of [picture objects](../../common-objects/picture-object.md) will be returned here. Each picture object is the same associated picture, but in different available sizes. Sizes available are based on widths, and the widths 16, 32, 64, 128, 256, 512, 1024 and 2048 will be shown here along with the original picture size if it is different to this predetermined list. Some widths may not show if the original picture width is smaller than any of the available widths.
 
-**pictureSizeBytes int64?**  
+**pictureSizeBytes** `int64?`
 If this cloud save object has an associated picture, the size of the original uploaded picture in bytes.
 
-**name string**  
+**name** `string`
 The publicly facing name for this cloud save.

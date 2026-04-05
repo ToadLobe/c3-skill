@@ -37,20 +37,20 @@ It is possible to set up rating dimensions for rateable objects.  A rating dimen
 
 ## Object Properties
 
-**id string**  
+**id** `string`
 A unique string based ID for this dimension.  ID's can only contain alpha-numeric characters, dots or dashes and cannot exceed 50 characters in length.
 
-**title string Translatable**  
+**title** `string`
 The title for this dimension.
 
-**description string Translatable**  
+**description** `string`
 A description for this dimension.
 
-**maxRating uint8**  
+**maxRating** `[uint8](../../data-types#internalH1Link2.md)`
 The maximum value that a player can give for this dimension.  The minimum permitted rating value is always 0.  Set this value to 1 for boolean ratings (for example, "Would you recommend this?  Yes or no.").  The maximum permitted value is 255.
 
-**originalLanguage Language**  
+**originalLanguage** `[Language](../../common-objects/language.md)`
 The language the title and description are written in.
 
-**responseLanguage Language**  
+**responseLanguage** `[Language](../../common-objects/language.md)`
 The language this dimension is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

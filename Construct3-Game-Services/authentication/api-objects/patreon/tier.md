@@ -23,11 +23,11 @@ release: 476.3
 
 ## Object Properties
 
-**id string**  
+**id** `string`
 ID of this Patreon tier.
 
-**description string**  
+**description** `string`
 Tier display description.
 
-**title string**  
+**title** `string`
 Tier display title.

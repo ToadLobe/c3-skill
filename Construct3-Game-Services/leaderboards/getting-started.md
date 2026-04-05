@@ -12,4 +12,4 @@ release: 476.3
 
 ## Create a Leaderboard
 
-To create a leaderboard, visit your [Construct Services account page](https://www.construct.net/en/game-services/account).  [Create a game](https://www.construct.net/game-services/manuals/game-services/games/create-game) if you have not already, and from there you can add leaderboards.
+To create a leaderboard, visit your [Construct Services account page](https://www.construct.net/en/game-services/account).  [Create a game](../games/create-game.md) if you have not already, and from there you can add leaderboards.

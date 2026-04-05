@@ -15,30 +15,30 @@ release: 476.3
 
 ```json
 {
-  "id": "0d861228-c0ea-4b44-85f8-0993dc3861f7",
-  "created": "2026-04-05T07:11:41.8939911Z",
+  "id": "b49397de-26e2-45f8-8249-7183d4bba4d9",
+  "created": "2026-04-05T08:32:13.5772629Z",
   "playerName": "Chuckling Warrior",
   "avatars": [
     { ... },
     { ... }
   ],
-  "lastActive": "2026-04-05T07:11:41.8959981Z"
+  "lastActive": "2026-04-05T08:32:13.5789164Z"
 }
 ```
 
 ## Object Properties
 
-**id guid**  
+**id** `[guid](../../data-types#internalH1Link1.md)`
 A unique ID for this player.
 
-**created datetime**  
+**created** `[datetime](../../data-types#internalH1Link0.md)`
 The date and time this player was first registered in the game.
 
-**playerName string**  
+**playerName** `string`
 The publicly facing player name for this player.
 
-**avatars Array<Picture>**  
-If player has an avatar, a list of [picture objects](https://www.construct.net/game-services/manuals/game-services/common-objects/picture-object). Each picture object is the same avatar, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256` will be shown here along with the original avatar size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original avatar width.
+**avatars** `Array<[Picture](../../common-objects/picture-object.md)>`
+If player has an avatar, a list of [picture objects](../../common-objects/picture-object.md). Each picture object is the same avatar, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256` will be shown here along with the original avatar size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original avatar width.
 
-**lastActive datetime?**  
+**lastActive** `[datetime?](../../data-types#internalH1Link0.md)`
 The date and time UTC this player last interacted with these services.

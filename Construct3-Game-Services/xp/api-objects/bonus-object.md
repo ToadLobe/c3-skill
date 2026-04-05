@@ -20,11 +20,11 @@ This object represents an bonus for a period of time.  A bonus has a modifier (e
 
 ```json
 {
-  "id": "f038299e-4fde-4105-b36d-dece8caebbbf",
-  "startDate": "2026-04-05T07:57:12.5733907Z",
-  "formattedStartDate": "j89Xw",
-  "endDate": "2026-04-05T07:57:12.587442Z",
-  "formattedEndDate": "j89Xw",
+  "id": "b28eb434-490b-4b27-9668-bd25aa326b42",
+  "startDate": "2026-04-05T08:32:14.2442998Z",
+  "formattedStartDate": "Ne7ce",
+  "endDate": "2026-04-05T08:32:14.2460485Z",
+  "formattedEndDate": "Ne7ce",
   "title": "Double XP weekend!",
   "description": "This weekend only, earn 2x XP!  Let's go!",
   "modifier": 2,
@@ -41,32 +41,32 @@ This object represents an bonus for a period of time.  A bonus has a modifier (e
 
 ## Object Properties
 
-**id guid**  
+**id** `[guid](../../data-types#internalH1Link1.md)`
 A unique ID for this bonus.
 
-**startDate datetime**  
+**startDate** `[datetime](../../data-types#internalH1Link0.md)`
 The date and time this bonus starts.
 
-**formattedStartDate string**  
-The date and time this bonus starts formatted to the requested culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedStartDate** `string`
+The date and time this bonus starts formatted to the requested culture, formatted to the specified [requested culture](../../culture.md).
 
-**endDate datetime**  
+**endDate** `[datetime](../../data-types#internalH1Link0.md)`
 The date and time this bonus ends.
 
-**formattedEndDate string**  
-The date and time this bonus ends formatted to the requested culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedEndDate** `string`
+The date and time this bonus ends formatted to the requested culture, formatted to the specified [requested culture](../../culture.md).
 
-**title string**  
+**title** `string`
 The title of this bonus.
 
-**description string**  
+**description** `string`
 The description of this bonus.
 
-**modifier decimal**  
+**modifier** `decimal`
 The XP modifier for this bonus.
 
-**originalLanguage Language**  
+**originalLanguage** `[Language](../../common-objects/language.md)`
 The language this ranks properties are written in.
 
-**responseLanguage Language**  
+**responseLanguage** `[Language](../../common-objects/language.md)`
 The language this ranks properties are returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

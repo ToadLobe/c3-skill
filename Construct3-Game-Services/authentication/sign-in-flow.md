@@ -20,7 +20,7 @@ Signing in a player requires a few steps to complete successfully.
 
 ## Call signin.json
 
-Call the [sign in API end point](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/sign-in).  For username/password sign in this will return if the sign in was successful or not immediately.
+Call the [sign in API end point](../authentication/api-end-points/players/sign-in.md).  For username/password sign in this will return if the sign in was successful or not immediately.
 
 For other login providers, a redirect URL will be returned along with a sign in poll token:
 
@@ -53,6 +53,6 @@ If the client allows it, a message is sent to the window opened indicating the l
 
 ## Determine If Sign In Was Successful
 
-With the poll token, and query the [sign in poll API end point](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/sign-in-poll) periodically.  This will tell you when the sign in fails or succeeds.
+With the poll token, and query the [sign in poll API end point](../authentication/api-end-points/players/sign-in-poll.md) periodically.  This will tell you when the sign in fails or succeeds.
 
 We recommend querying this end point every 500-1000ms.  If you query the poll token too frequently you may receive rate limit errors.  If you query the same poll token before previous poll requests have completed you will always see an error.  You should only re-query the poll token when the previous poll token response has completed and returned data.

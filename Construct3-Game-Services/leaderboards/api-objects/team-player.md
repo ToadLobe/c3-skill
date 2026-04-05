@@ -15,19 +15,19 @@ release: 476.3
 
 ```json
 {
-  "currentScore": 66,
-  "formattedScore": "evv7Z",
+  "currentScore": 51,
+  "formattedScore": "5iFMV",
   "player": { ... }
 }
 ```
 
 ## Object Properties
 
-**currentScore int64?**  
+**currentScore** `int64?`
 This players current best score.
 
-**formattedScore string**  
-This players current best score formatted to the formatting culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedScore** `string`
+This players current best score formatted to the formatting culture, formatted to the specified [requested culture](../../culture.md).
 
-**player Player**  
+**player** `[Player](../../authentication/api-objects/player-object.md)`
 The player object.

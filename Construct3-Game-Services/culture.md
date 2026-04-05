@@ -13,9 +13,9 @@ release: 476.3
 
 ## Overview
 
-You can optionally pass a culture code with all requests with the parameter `culture`.  If you do not specify a culture code in the request, the culture code of the requested [language](https://www.construct.net/game-services/manuals/game-services/languages) of the request will be used.
+You can optionally pass a culture code with all requests with the parameter `culture`.  If you do not specify a culture code in the request, the culture code of the requested [language](languages.md) of the request will be used.
 
-The culture code is used to format various data types such as numbers and dates.  For example, an API request may return a property such as "totalScores" which may have a value such as `190318`.  Sometimes there will be a second property called "formattedTotalScores" which will return the culture specific string formatted value, in this instance `190,318` for the `en-US` culture code.  The [pagination object](https://www.construct.net/game-services/manuals/game-services/common-objects/pagination-object) is a good example of how these values are specified.
+The culture code is used to format various data types such as numbers and dates.  For example, an API request may return a property such as "totalScores" which may have a value such as `190318`.  Sometimes there will be a second property called "formattedTotalScores" which will return the culture specific string formatted value, in this instance `190,318` for the `en-US` culture code.  The [pagination object](common-objects/pagination-object.md) is a good example of how these values are specified.
 
 ## Supported Culture Codes
 

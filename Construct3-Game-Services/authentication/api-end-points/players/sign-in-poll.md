@@ -17,7 +17,7 @@ release: 476.3
 
 ## Overview
 
-When making a [sign in request](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/sign-in) a poll token will be provided.  Use this poll token on this request to monitor the status of the sign in request.
+When making a [sign in request](../../../authentication/api-end-points/players/sign-in.md) a poll token will be provided.  Use this poll token on this request to monitor the status of the sign in request.
 
 The response property `success` will always be `true` until the user completes the sign in with the provider.  If the user takes longer than `5` minutes, the request will return an error saying the token has now expired.
 
@@ -27,7 +27,7 @@ If a user completes a sign in with the provider within `5` minutes, there are tw
 
 Not all login providers will return an error, in which case the token will eventually expire if the user abandons or cancels the login.
 
-- The property `session` will return a new [session object](https://www.construct.net/game-services/manuals/game-services/authentication/api-objects/session-object), indicating that the sign in succeeded.  This response is only returned once, after which repeat calls with the poll token will show an invalid poll token error.
+- The property `session` will return a new [session object](../../../authentication/api-objects/session-object.md), indicating that the sign in succeeded.  This response is only returned once, after which repeat calls with the poll token will show an invalid poll token error.
 
 
 
@@ -45,8 +45,8 @@ No authentication is required for this request type.
 
 ## Request Parameters
 
-**pollToken guid Required**  
-The sign in poll token returned on the original [sign in request](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/sign-in).
+**pollToken** `[guid](../../../data-types#internalH1Link1.md)` *Required*
+The sign in poll token returned on the original [sign in request](../../../authentication/api-end-points/players/sign-in.md).
 
 ## Success Response
 
@@ -64,20 +64,20 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**session Session**  
-The new [session object](https://www.construct.net/game-services/manuals/game-services/authentication/api-objects/session-object) if the sign in was succesful.
+**session** `[Session](../../../authentication/api-objects/session-object.md)`
+The new [session object](../../../authentication/api-objects/session-object.md) if the sign in was succesful.
 
-**signInErrorMessage string**  
+**signInErrorMessage** `string`
 Details about why the sign in failed if it failed or was abandoned.
 
-**signInFailed bool**  
+**signInFailed** `[bool](../../../data-types#internalH1Link4.md)`
 If true, indicates the sign in failed, timed out or was abandoned.
 
-**formattingCulture string**  
-If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
+**formattingCulture** `string`
+If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
@@ -94,14 +94,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**errorMessage string**  
+**errorMessage** `string`
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**  
+**helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**  
+**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

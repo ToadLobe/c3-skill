@@ -17,7 +17,7 @@ release: 476.3
 
 ## Overview
 
-This end point allows you to retrieve a [player object](https://www.construct.net/game-services/manuals/game-services/authentication/api-objects/player-object) based on the players player name or players ID.  As the only way to query this end point is with a secret key, this should only be called by back end services.
+This end point allows you to retrieve a [player object](../../../authentication/api-objects/player-object.md) based on the players player name or players ID.  As the only way to query this end point is with a secret key, this should only be called by back end services.
 
 As a player, this request is never needed as the relevant player objects are returned in responses when interacting with the other services and end points.
 
@@ -31,20 +31,20 @@ https://auth.construct.net/getplayer.json
 
 ## Authenticating The Request
 
-This end point is for [secret key](https://www.construct.net/game-services/manuals/game-services/games/api-keys) authenticated requests only.  Signed in players cannot call this end point.
+This end point is for [secret key](../../../games/api-keys.md) authenticated requests only.  Signed in players cannot call this end point.
 
-**secret string Required**  
-Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
+**secret** `string` *Required*
+Your games [secret API key](../../../games/api-keys.md).
 
  ## Request Parameters
 
-**gameID guid Required**  
+**gameID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**playerID guid Sometimes required**  
+**playerID** `[guid](../../../data-types#internalH1Link1.md)`
 The ID of the player you are querying. You must specify this or `playerName`.
 
-**playerName string Sometimes required**  
+**playerName** `string`
 The name of the player you are querying.  Player names are case insensitive. You must specify this or `playerID`.
 
 ## Success Response
@@ -61,14 +61,14 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**player Player**  
+**player** `[Player](../../../authentication/api-objects/player-object.md)`
 The player returned from the query.
 
-**formattingCulture string**  
-If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
+**formattingCulture** `string`
+If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
@@ -85,14 +85,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**errorMessage string**  
+**errorMessage** `string`
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**  
+**helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**  
+**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

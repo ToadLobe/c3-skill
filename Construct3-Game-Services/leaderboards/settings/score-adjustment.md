@@ -12,6 +12,6 @@ release: 476.3
 
 ## Leaderboard Score Adjustment
 
-If you enabled score adjustments on your leaderboard, then the [adjust score API end point](https://www.construct.net/game-services/manuals/game-services/leaderboards/api-end-points/scores/adjust-score) will be enabled for your leaderboard.
+If you enabled score adjustments on your leaderboard, then the [adjust score API end point](../../leaderboards/api-end-points/scores/adjust-score.md) will be enabled for your leaderboard.
 
 Adjusting scores is a useful function for scores that can be cumulatively added to for the lifetime of the player across all the players sessions.

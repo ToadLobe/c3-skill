@@ -43,38 +43,38 @@ When retrieving a rateable object, an aggregate rating object may be returned.  
 
 ## Object Properties
 
-**totalRatings int32**  
+**totalRatings** `int32`
 Total number of ratings cast.
 
-**formattedTotalRatings string**  
-Total number of ratings cast, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedTotalRatings** `string`
+Total number of ratings cast, formatted to the specified [requested culture](../../culture.md).
 
-**averageRating decimal**  
+**averageRating** `decimal`
 The average rating.
 
-**averageRatingAsPercentage decimal**  
+**averageRatingAsPercentage** `decimal`
 The average rating expressed as a percentage (0-100).
 
-**formattedAverageRating string**  
-The average rating, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedAverageRating** `string`
+The average rating, formatted to the specified [requested culture](../../culture.md).
 
-**maxRating uint8**  
+**maxRating** `[uint8](../../data-types#internalH1Link2.md)`
 The maximum permitted rating for this dimension.
 
-**originalLanguage Language**  
+**originalLanguage** `[Language](../../common-objects/language.md)`
 The language the title and description are written in.
 
-**responseLanguage Language**  
+**responseLanguage** `[Language](../../common-objects/language.md)`
 The language this dimension is returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.
 
-**lastRating datetime?**  
+**lastRating** `[datetime?](../../data-types#internalH1Link0.md)`
 The date a player last cast a rating.
 
-**formattedLastRating string**  
-The date a player last cast a rating, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedLastRating** `string`
+The date a player last cast a rating, formatted to the specified [requested culture](../../culture.md).
 
-**title string Translatable**  
+**title** `string`
 The title for this dimension.
 
-**description string Translatable**  
+**description** `string`
 A description for this dimension.

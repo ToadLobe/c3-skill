@@ -17,10 +17,10 @@ release: 476.3
 
 ## Overview
 
-This end point allows you to create a new rating dimension for a [game bucket](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/game-buckets) - all [cloud save blobs](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/blob) in that bucket can then be rated using that dimension.
+This end point allows you to create a new rating dimension for a [game bucket](../../../cloud-save/api-objects/game-buckets.md) - all [cloud save blobs](../../../cloud-save/api-objects/blob.md) in that bucket can then be rated using that dimension.
 
 
-We strongly recommend you read about [rating concepts](https://www.construct.net/game-services/manuals/game-services/ratings/concepts) to understand how dimensions in ratings work.
+We strongly recommend you read about [rating concepts](../../../ratings/concepts.md) to understand how dimensions in ratings work.
 
 ## Request URL
 
@@ -32,36 +32,36 @@ https://cloudsave.construct.net/bucketcreateratingdimension.json
 
 ## Authenticating The Request
 
-This end point is for [secret key](https://www.construct.net/game-services/manuals/game-services/games/api-keys) authenticated requests only.  Signed in players cannot call this end point.
+This end point is for [secret key](../../../games/api-keys.md) authenticated requests only.  Signed in players cannot call this end point.
 
-**secret string Required**  
-Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
+**secret** `string` *Required*
+Your games [secret API key](../../../games/api-keys.md).
 
  ## Request Parameters
 
-**gameID guid Required**  
+**gameID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**thingID guid Required**  
-The ID of the [game bucket](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/game-buckets) you're creating a rating dimension for.
+**thingID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
+The ID of the [game bucket](../../../cloud-save/api-objects/game-buckets.md) you're creating a rating dimension for.
 
-**dimensionID string Required**  
-The ID of the rating dimension you're creating.  Must be unique for this [game bucket](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/game-buckets).  Cannot exceed `50` characters in length and must only contain alpha-numeric, dots (.) and dash (-) characters.  Once set, this ID cannot be changed.
+**dimensionID** `string` *Required*
+The ID of the rating dimension you're creating.  Must be unique for this [game bucket](../../../cloud-save/api-objects/game-buckets.md).  Cannot exceed `50` characters in length and must only contain alpha-numeric, dots (.) and dash (-) characters.  Once set, this ID cannot be changed.
 
-**title string**  
+**title** `string`
 The title of this rating dimension.  Cannot exceed `128` characters in length.
 
-**description string**  
+**description** `string`
 The description of this rating dimension.  Cannot exceed `1024` characters in length.
 
-**maxRating uint8 Required**  
+**maxRating** `[uint8](../../../data-types#internalH1Link2.md)` *Required*
 The maximum allowed rating value.  `0` is always permitted, so the minimum permitted value is `1` and the maximum permitted value is `255`.
 
-**language string**  
+**language** `string`
 Provide this parameter to set the language that the title and description of this dimension are written in.  Permitted values are `AR`, `BG`, `CS`, `DA`, `DE`, `EL`, `EN`, `ES`, `ET`, `FI`, `FR`, `HE`, `HU`, `ID`, `IT`, `JA`, `KO`, `LT`, `LV`, `NB`, `NL`, `PL`, `PT`, `RO`, `RU`, `SK`, `SL`, `SV`, `TH`, `TR`, `UK`, `VI`, `ZH`.
 
-**requestedLanguage Language Optional**  
-Optionally specify a [language](https://www.construct.net/game-services/manuals/game-services/languages) for returning translatable properties into this language.  If not specified, your games default language will be used.
+**requestedLanguage** `[Language](../../../common-objects/language.md)`
+Optionally specify a [language](../../../languages.md) for returning translatable properties into this language.  If not specified, your games default language will be used.
 
 ## Success Response
 
@@ -77,14 +77,14 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**dimension RatingDimension**  
+**dimension** `[RatingDimension](../../../ratings/api-objects/rating-dimension-object.md)`
 The returned dimension for the request.
 
-**formattingCulture string**  
-If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
+**formattingCulture** `string`
+If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
@@ -101,14 +101,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**errorMessage string**  
+**errorMessage** `string`
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**  
+**helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**  
+**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

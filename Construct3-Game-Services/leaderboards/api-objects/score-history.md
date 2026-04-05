@@ -22,7 +22,7 @@ Score history objects represent a snapshot in time of the scores rankings and sc
 
 ```json
 {
-  "date": "2026-04-05T07:57:12.3514064Z",
+  "date": "2026-04-05T08:32:14.0134142Z",
   "score": 20110,
   "formattedScore": "20,110",
   "rank": 1770,
@@ -36,29 +36,29 @@ Score history objects represent a snapshot in time of the scores rankings and sc
 
 ## Object Properties
 
-**date datetime**  
+**date** `[datetime](../../data-types#internalH1Link0.md)`
 The date this score history object represents.
 
-**score int64**  
+**score** `int64`
 The score value at this date.
 
-**formattedScore string**  
-The score formatted under the score format specifications for this leaderboard, rendered using the requested locale, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedScore** `string`
+The score formatted under the score format specifications for this leaderboard, rendered using the requested locale, formatted to the specified [requested culture](../../culture.md).
 
-**rank int32**  
+**rank** `int32`
 The global rank of this score at this date.
 
-**ordinal string**  
+**ordinal** `string`
 The ordinal for the global rank of this score.
 
-**formattedRank string**  
-The global rank of this score rendered using the requested locale, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedRank** `string`
+The global rank of this score rendered using the requested locale, formatted to the specified [requested culture](../../culture.md).
 
-**countryRank int32**  
+**countryRank** `int32`
 The country rank of this score at this date. This property will not be shown if country scores are disabled in the leaderboard settings.
 
-**countryOrdinal string**  
+**countryOrdinal** `string`
 The ordinal for the global country rank of this score. This property will not be shown if country scores are disabled in the leaderboard settings.
 
-**formattedCountryRank string**  
-The country rank of this score rendered using the requested locale. This property will not be shown if country scores are disabled in the leaderboard settings, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedCountryRank** `string`
+The country rank of this score rendered using the requested locale. This property will not be shown if country scores are disabled in the leaderboard settings, formatted to the specified [requested culture](../../culture.md).

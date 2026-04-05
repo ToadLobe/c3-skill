@@ -15,39 +15,39 @@ release: 476.3
 
 ```json
 {
-  "playerID": "07a781e3-61a7-4115-9f4f-359977a3e334",
+  "playerID": "a21008f6-adab-469a-862c-7a3a8408dc9e",
   "username": "TomGullen1",
   "provider": "UsernamePassword",
   "avatarURL": "https://avatar.discord.com/...",
   "signIns": 24,
-  "firstSignIn": "2026-04-05T07:11:41.9253622Z",
-  "lastSignIn": "2026-04-05T07:11:41.9262693Z",
+  "firstSignIn": "2026-04-05T08:32:13.6068513Z",
+  "lastSignIn": "2026-04-05T08:32:13.6068513Z",
   "patreonMetaData": { ... }
 }
 ```
 
 ## Object Properties
 
-**playerID guid**  
+**playerID** `[guid](../../data-types#internalH1Link1.md)`
 The player ID this login provider belongs to.
 
-**username string**  
+**username** `string`
 If the login provider is `UsernamePassword` this players username will be returned in the response.
 
-**provider string**  
+**provider** `string`
 The provider. Will be one of `UsernamePassword`, `Apple`, `BattleNet`, `Discord`, `Email`, `Facebook`, `Github`, `Google`, `ItchIO`, `Microsoft`, `Patreon`, `Reddit`, `Steam`, `X`, `Yandex`.
 
-**avatarURL string**  
+**avatarURL** `string`
 If the login provider has an avatar for this user, the URL for it will be shown here.  The URL will be an external URL, not on any CGS domains.
 
-**signIns int32**  
+**signIns** `int32`
 The number of successful sign ins this player has had with this player account using this login provider.
 
-**firstSignIn datetime**  
+**firstSignIn** `[datetime](../../data-types#internalH1Link0.md)`
 The date and time of their first sign in with this login provider.
 
-**lastSignIn datetime**  
+**lastSignIn** `[datetime](../../data-types#internalH1Link0.md)`
 The date and time of their last successful sign in with this login provider.
 
-**patreonMetaData PatreonMetaData**  
+**patreonMetaData** `[PatreonMetaData](../../authentication/api-objects/patreon/patreon-meta-data.md)`
 If this login provider is Patreon, specific data about their memberships will show here.

@@ -20,7 +20,7 @@ This object represents an XP rank.  Ranks are achieved when the player reaches t
 
 ```json
 {
-  "id": "d7a0ab08-c238-4d87-951f-96d1152e9e7c",
+  "id": "9e52169d-05b5-4292-9396-1c60b3e8cad8",
   "atXP": 100000,
   "logos": [
     { ... },
@@ -42,26 +42,26 @@ This object represents an XP rank.  Ranks are achieved when the player reaches t
 
 ## Object Properties
 
-**id guid**  
+**id** `[guid](../../data-types#internalH1Link1.md)`
 A unique ID for this rank.
 
-**atXP int64**  
+**atXP** `int64`
 The amount of XP required to reach this rank.
 
-**logos Array<Picture>**  
-If this rank has a logo, a list of [picture objects](https://www.construct.net/game-services/manuals/game-services/common-objects/picture-object). Each picture object is the same logo, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256, 512` will be shown here along with the original logo size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original logo width.
+**logos** `Array<[Picture](../../common-objects/picture-object.md)>`
+If this rank has a logo, a list of [picture objects](../../common-objects/picture-object.md). Each picture object is the same logo, but provided in different sizes. Sizes available are based on widths, and the widths `16, 32, 64, 96, 128, 256, 512` will be shown here along with the original logo size if it doesn't match a width in this list.  Some sizes may not show if the width is less than the original logo width.
 
-**formattedAtXP string**  
-The amount of XP required to reach this rank formatted to the requested formatting culture, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedAtXP** `string`
+The amount of XP required to reach this rank formatted to the requested formatting culture, formatted to the specified [requested culture](../../culture.md).
 
-**title string**  
+**title** `string`
 The title of this rank.
 
-**description string**  
+**description** `string`
 The description of this rank.
 
-**originalLanguage Language**  
+**originalLanguage** `[Language](../../common-objects/language.md)`
 The language this ranks properties are written in.
 
-**responseLanguage Language**  
+**responseLanguage** `[Language](../../common-objects/language.md)`
 The language this ranks properties are returned in - this will differ from original language if the request asks for content to be returned in a different language and the plan supports translations.

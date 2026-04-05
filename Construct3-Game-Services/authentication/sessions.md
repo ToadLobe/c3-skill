@@ -22,8 +22,8 @@ Session keys should be stored on the client so they can be re-used.
 
 ## Refreshing Sessions
 
-Session expiries can be extended by calling the [refresh session end point](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/sessions/refresh-session).  If you use short expiries, it is important to keep refreshing the session to make sure the player is no unexpectedly signed out when interacting with your game.
+Session expiries can be extended by calling the [refresh session end point](../authentication/api-end-points/sessions/refresh-session.md).  If you use short expiries, it is important to keep refreshing the session to make sure the player is no unexpectedly signed out when interacting with your game.
 
 ## Ending a Session
 
-If you wish to sign out a player, you can simply remove the session key from the client device so that it is no longer known or can be used.  However, when signing out we recommend for security purposes to also make a call to the [end session end point](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/sessions/end-session).  Calling this invalidates the session key itself.
+If you wish to sign out a player, you can simply remove the session key from the client device so that it is no longer known or can be used.  However, when signing out we recommend for security purposes to also make a call to the [end session end point](../authentication/api-end-points/sessions/end-session.md).  Calling this invalidates the session key itself.

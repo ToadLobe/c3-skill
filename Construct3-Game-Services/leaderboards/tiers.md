@@ -19,14 +19,14 @@ Leaderboard tiers are an optional feature for leaderboards that allow you to gro
 
 An example use case would be to have a `Diamond Tier` for the top 5% of scores, a `Gold Tier` for the top 15% of scores etc.
 
-If a score belongs to a tier, it will be returned in some API objects such as the [score object](https://www.construct.net/game-services/manuals/game-services/leaderboards/api-objects/score).
+If a score belongs to a tier, it will be returned in some API objects such as the [score object](../leaderboards/api-objects/score.md).
 
 ## Creating a Tier
 
-**id  Required**  
+**id** `Required` *Required*
 The unique ID for this tier.  This should not be displayed to players but is returned in API responses.
 
-**name  Required**  
+**name** `Required` *Required*
 A name of the tier which is displayed to players.
 
 **condition Required**  

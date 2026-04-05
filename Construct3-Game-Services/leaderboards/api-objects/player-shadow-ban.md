@@ -15,15 +15,15 @@ release: 476.3
 
 ```json
 {
-  "dateBanned": "2026-04-05T07:57:12.1937982Z",
+  "dateBanned": "2026-04-05T08:32:13.8817954Z",
   "player": { ... }
 }
 ```
 
 ## Object Properties
 
-**dateBanned datetime**  
+**dateBanned** `[datetime](../../data-types#internalH1Link0.md)`
 The date the ban was created.
 
-**player Player**  
+**player** `[Player](../../authentication/api-objects/player-object.md)`
 The player that is shadow banned.

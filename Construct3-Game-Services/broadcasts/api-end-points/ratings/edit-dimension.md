@@ -17,9 +17,9 @@ release: 476.3
 
 ## Overview
 
-This end point allows you to update properties on an existing [rating dimension](https://www.construct.net/game-services/manuals/game-services/ratings/api-objects/rating-dimension-object) setup on a [channel](https://www.construct.net/game-services/manuals/game-services/broadcasts/api-objects/broadcast-channel).
+This end point allows you to update properties on an existing [rating dimension](../../../ratings/api-objects/rating-dimension-object.md) setup on a [channel](../../../broadcasts/api-objects/broadcast-channel.md).
 
-We strongly recommend you read about [rating concepts](https://www.construct.net/game-services/manuals/game-services/ratings/concepts) to understand how dimensions in ratings work.
+We strongly recommend you read about [rating concepts](../../../ratings/concepts.md) to understand how dimensions in ratings work.
 
 ## Request URL
 
@@ -31,36 +31,36 @@ https://broadcasts.construct.net/channeleditratingdimension.json
 
 ## Authenticating The Request
 
-This end point is for [secret key](https://www.construct.net/game-services/manuals/game-services/games/api-keys) authenticated requests only.  Signed in players cannot call this end point.
+This end point is for [secret key](../../../games/api-keys.md) authenticated requests only.  Signed in players cannot call this end point.
 
-**secret string Required**  
-Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
+**secret** `string` *Required*
+Your games [secret API key](../../../games/api-keys.md).
 
  ## Request Parameters
 
-**gameID guid Required**  
+**gameID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**thingID guid Required**  
-The ID of the [channel](https://www.construct.net/game-services/manuals/game-services/broadcasts/api-objects/broadcast-channel) the rating dimension exists on that you wish to update.
+**thingID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
+The ID of the [channel](../../../broadcasts/api-objects/broadcast-channel.md) the rating dimension exists on that you wish to update.
 
-**dimensionID string Required**  
-The ID of the [rating dimension](https://www.construct.net/game-services/manuals/game-services/ratings/api-objects/rating-dimension-object) you're editing.  It is not possible to change the ID's of rating dimensions once created.
+**dimensionID** `string` *Required*
+The ID of the [rating dimension](../../../ratings/api-objects/rating-dimension-object.md) you're editing.  It is not possible to change the ID's of rating dimensions once created.
 
-**title string**  
+**title** `string`
 A new title for this rating dimension, or omit this parameter to keep existing value.  Cannot exceed `128` characters in length.
 
-**description string**  
+**description** `string`
 A new description for this rating dimension, or omit this parameter to keep existing value.  Cannot exceed `1024` characters in length.
 
-**maxRating uint8**  
+**maxRating** `[uint8](../../../data-types#internalH1Link2.md)`
 The new maximum allowed rating value, or omit this parameter to keep existing value.  `0` is always permitted, so the minimum permitted value is `1` and the maximum permitted value is `255`.
 
-**language string**  
+**language** `string`
 The language this rating dimensions title and description are written in, or omit this parameter to keep existing value.  Permitted values are `AR`, `BG`, `CS`, `DA`, `DE`, `EL`, `EN`, `ES`, `ET`, `FI`, `FR`, `HE`, `HU`, `ID`, `IT`, `JA`, `KO`, `LT`, `LV`, `NB`, `NL`, `PL`, `PT`, `RO`, `RU`, `SK`, `SL`, `SV`, `TH`, `TR`, `UK`, `VI`, `ZH`.
 
-**requestedLanguage Language Optional**  
-Optionally specify a [language](https://www.construct.net/game-services/manuals/game-services/languages) for returning translatable properties into this language.  If not specified, your games default language will be used.
+**requestedLanguage** `[Language](../../../common-objects/language.md)`
+Optionally specify a [language](../../../languages.md) for returning translatable properties into this language.  If not specified, your games default language will be used.
 
 ## Success Response
 
@@ -76,14 +76,14 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**dimension RatingDimension**  
+**dimension** `[RatingDimension](../../../ratings/api-objects/rating-dimension-object.md)`
 The returned dimension for the request.
 
-**formattingCulture string**  
-If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
+**formattingCulture** `string`
+If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
@@ -100,14 +100,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**errorMessage string**  
+**errorMessage** `string`
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**  
+**helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**  
+**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

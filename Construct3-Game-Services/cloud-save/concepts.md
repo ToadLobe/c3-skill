@@ -16,7 +16,7 @@ release: 476.3
 
 ## What is the Cloud Save Service?
 
-Cloud save allows players to save blobs of data to the cloud.  When they [sign in to your game](https://www.construct.net/game-services/manuals/game-services/authentication/sign-in-flow) from any device, they will have access to download these blobs of data again.  Data blobs can be anything - text files, binary data, pictures etc.
+Cloud save allows players to save blobs of data to the cloud.  When they [sign in to your game](../authentication/sign-in-flow.md) from any device, they will have access to download these blobs of data again.  Data blobs can be anything - text files, binary data, pictures etc.
 
 When a player saves a blob, they can either choose to save it to their own player account which means only they will have access to it, or they can save it in game buckets which are available to all players.
 
@@ -26,7 +26,7 @@ When a player saves a blob, they can either choose to save it to their own playe
 
 A cloud save cannot be edited (although the associated picture can be).
 
-All cloud saves have an associated key with them which can be used to organise and find cloud saves.  You can read more about [how keys work here](https://www.construct.net/game-services/manuals/game-services/cloud-save/keys).
+All cloud saves have an associated key with them which can be used to organise and find cloud saves.  You can read more about [how keys work here](../cloud-save/keys.md).
 
 ## Game Buckets
 
@@ -39,17 +39,17 @@ Game buckets can be customised in many ways including restrictions on how much d
 Game buckets have 3 types of access:
 
 **Private**  
-Players cannot read or write to private game buckets.  Data in these buckets can only be accessed using an [API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
+Players cannot read or write to private game buckets.  Data in these buckets can only be accessed using an [API key](../games/api-keys.md).
 
 **PublicRead**  
-Players can download cloud saves from these buckets, but they are not able to save to them.  You must use an [API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys) or your Construct Game Services account to upload blobs to these buckets.
+Players can download cloud saves from these buckets, but they are not able to save to them.  You must use an [API key](../games/api-keys.md) or your Construct Game Services account to upload blobs to these buckets.
 
 **PublicReadWrite**  
 Players are allowed to read and write to these buckets.
 
 ## Rating Cloud Saves
 
-If a cloud save exists in a game bucket with **PublicRead** or **PublicReadWrite**, players can rate the cloud saves.   We recommend reading about [rating concepts](https://www.construct.net/game-services/manuals/game-services/ratings/concepts) for an overview on how to use ratings and set up rating dimensions.
+If a cloud save exists in a game bucket with **PublicRead** or **PublicReadWrite**, players can rate the cloud saves.   We recommend reading about [rating concepts](../ratings/concepts.md) for an overview on how to use ratings and set up rating dimensions.
 
 Rating cloud saves opens up some exciting possibilities, for example you can have a public game bucket for players to upload their level designs to - and other players can then rate the levels.  When showing the available levels to download to the player base you can return the results ordered by the highest rated.  By setting up multiple rating dimensions, you can ask players for each cloud save if they would recommend the level (yes/no), how they rate the design of the level on a scale 0-10 and how they rate the level overall on a scale 0-*n*.
 

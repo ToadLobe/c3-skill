@@ -32,9 +32,9 @@ When signing in with a login provider, sometimes the provider will return an ava
 
 ## Linking Login Providers
 
-Players can have multiple login providers allowing them to sign into the same player account.  To link another login provider to an existing player account, use the [link end point](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/login-providers/link-login-provider).
+Players can have multiple login providers allowing them to sign into the same player account.  To link another login provider to an existing player account, use the [link end point](../authentication/api-end-points/login-providers/link-login-provider.md).
 
-When linking a login provider to an existing account, sometimes the login provider being linked is already associated with another player account.  In such circumstances, a **force token** will be generated allowing you to call the [force link end point](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/login-providers/force-link).  Force linking a login provier will remove it from the existing players account, and assign it to the requesting players account.  It's important to note that you should always confirm with the player they wish to force this link, as if this was the only login provider on the other player account it will become unrecoverable.
+When linking a login provider to an existing account, sometimes the login provider being linked is already associated with another player account.  In such circumstances, a **force token** will be generated allowing you to call the [force link end point](../authentication/api-end-points/login-providers/force-link.md).  Force linking a login provier will remove it from the existing players account, and assign it to the requesting players account.  It's important to note that you should always confirm with the player they wish to force this link, as if this was the only login provider on the other player account it will become unrecoverable.
 
 ## Supported Providers
 

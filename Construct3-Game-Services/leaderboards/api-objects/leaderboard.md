@@ -29,14 +29,14 @@ When you post or adjust a score, the returned leaderboard status object will giv
 
 ## Object Properties
 
-**countryScores int32**  
+**countryScores** `int32`
 The total number of scores in the leaderboard with the same country ID. This property will not be shown if country scores are disabled in the leaderboard settings.
 
-**formattedCountryScores string**  
-The total number of scores in the leaderboard with the same country ID rendered using the requested locale. This property will not be shown if country scores are disabled in the leaderboard settings, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedCountryScores** `string`
+The total number of scores in the leaderboard with the same country ID rendered using the requested locale. This property will not be shown if country scores are disabled in the leaderboard settings, formatted to the specified [requested culture](../../culture.md).
 
-**formattedGlobalScores string**  
-The total number of scores in the leaderboard rendered using the requested locale, formatted to the specified [requested culture](https://www.construct.net/game-services/manuals/game-services/culture).
+**formattedGlobalScores** `string`
+The total number of scores in the leaderboard rendered using the requested locale, formatted to the specified [requested culture](../../culture.md).
 
-**globalScores int32**  
+**globalScores** `int32`
 The total number of scores in the leaderboard.

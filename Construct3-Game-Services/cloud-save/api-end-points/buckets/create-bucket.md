@@ -17,7 +17,7 @@ release: 476.3
 
 ## Overview
 
-This end point allows you to create a [bucket](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/game-buckets).  Game buckets are containers that can hold multiple [cloud save blobs](https://www.construct.net/game-services/manuals/game-services/cloud).
+This end point allows you to create a [bucket](../../../cloud-save/api-objects/game-buckets.md).  Game buckets are containers that can hold multiple [cloud save blobs](../../../cloud.md).
 
 You can set up buckets with different access modes.  For example, create a `PublicRead` bucket to upload game content to which players can only read from.  Or, create a `PublicReadWrite` bucket to allow players to upload shared content such as level designs.
 
@@ -33,32 +33,32 @@ https://cloudsave.construct.net/createbucket.json
 
 ## Authenticating The Request
 
-This end point is for [secret key](https://www.construct.net/game-services/manuals/game-services/games/api-keys) authenticated requests only.  Signed in players cannot call this end point.
+This end point is for [secret key](../../../games/api-keys.md) authenticated requests only.  Signed in players cannot call this end point.
 
-**secret string Required**  
-Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
+**secret** `string` *Required*
+Your games [secret API key](../../../games/api-keys.md).
 
  ## Request Parameters
 
-**gameID guid Required**  
+**gameID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**bucketName string Required**  
+**bucketName** `string` *Required*
 The name of the game bucket you're creating.  Cannot exceed `50` characters in length.
 
-**accessMode string Required**  
+**accessMode** `string` *Required*
 The access mode of this bucket (case insensitive).  Must be one of `Private`, `PublicRead` or `PublicReadWrite`.
 
-**allowRatings bool Required**  
-If [cloud save blobs](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/blob) in this bucket can be [rated](https://www.construct.net/game-services/manuals/game-services/ratings/concepts) by players.
+**allowRatings** `[bool](../../../data-types#internalH1Link4.md)` *Required*
+If [cloud save blobs](../../../cloud-save/api-objects/blob.md) in this bucket can be [rated](../../../ratings/concepts.md) by players.
 
-**maxBlobs int32**  
-Optionally specify the maximum number of [cloud save blobs](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/blob) allowed in this bucket.
+**maxBlobs** `int32`
+Optionally specify the maximum number of [cloud save blobs](../../../cloud-save/api-objects/blob.md) allowed in this bucket.
 
-**maxBlobSize int32**  
-Optionally specify the maximum size in bytes of [cloud save blobs](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/blob) in this bucket. If a picture is uploaded with a blob, the size of the picture is counted towards this limit as well as the actual cloud save blob size.
+**maxBlobSize** `int32`
+Optionally specify the maximum size in bytes of [cloud save blobs](../../../cloud-save/api-objects/blob.md) in this bucket. If a picture is uploaded with a blob, the size of the picture is counted towards this limit as well as the actual cloud save blob size.
 
-**maxBlobsPerPlayer int16**  
+**maxBlobsPerPlayer** `int16`
 Optionally specify the maximum number of blobs an individual player can save to this bucket.
 
 ## Success Response
@@ -75,14 +75,14 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**bucket Bucket**  
+**bucket** `[Bucket](../../../cloud-save/api-objects/game-buckets.md)`
 The bucket returned from the request.
 
-**formattingCulture string**  
-If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
+**formattingCulture** `string`
+If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
@@ -99,14 +99,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**errorMessage string**  
+**errorMessage** `string`
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**  
+**helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**  
+**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

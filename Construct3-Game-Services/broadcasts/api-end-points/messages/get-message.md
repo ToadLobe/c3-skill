@@ -17,9 +17,9 @@ release: 476.3
 
 ## Overview
 
-This end point allows you to retrieve a single [message](https://www.construct.net/game-services/manuals/game-services/broadcasts/api-objects/broadcast-message).
+This end point allows you to retrieve a single [message](../../../broadcasts/api-objects/broadcast-message.md).
 
-If a player is signed in, you should pass their session key in with the request as once the message is retrieved it will be [marked as read](https://www.construct.net/game-services/manuals/game-services/broadcasts/concepts#internalH1Link2) for that player.
+If a player is signed in, you should pass their session key in with the request as once the message is retrieved it will be [marked as read](../../../broadcasts/concepts#internalH1Link2.md) for that player.
 
 ## Request URL
 
@@ -33,22 +33,22 @@ https://broadcasts.construct.net/getmessage.json
 
 No authentication is required for calling this end point, however if the request is being made by a signed in player it is recommended to pass in a `sessionKey` parameter as the request response will return additional information useful to the player.
 
-**sessionKey string Optional**  
-The [session key](https://www.construct.net/game-services/manuals/game-services/{Replacements.Authentication.Objects.Session%257) of the player who is currently signed in and making this request.
+**sessionKey** `string`
+The [session key](../../../{Replacements.Authentication.Objects.Session%257.md) of the player who is currently signed in and making this request.
 
  ## Request Parameters
 
-**gameID guid Required**  
+**gameID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**messageID guid Required**  
+**messageID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
 The ID of the message you want to retrieve.
 
-**requestedLanguage Language Optional**  
-Optionally specify a [language](https://www.construct.net/game-services/manuals/game-services/languages) for returning translatable properties into this language.  If not specified, your games default language will be used.
+**requestedLanguage** `[Language](../../../common-objects/language.md)`
+Optionally specify a [language](../../../languages.md) for returning translatable properties into this language.  If not specified, your games default language will be used.
 
-**culture string Optional**  
-Optionally specify a [supported culture code](https://www.construct.net/game-services/manuals/game-services/culture) for rendering various properties.  If not specified, the `requestedLanguage` default culture code will be used.
+**culture** `string`
+Optionally specify a [supported culture code](../../../culture.md) for rendering various properties.  If not specified, the `requestedLanguage` default culture code will be used.
 
 ## Success Response
 
@@ -64,14 +64,14 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**message BroadcastMessage**  
+**message** `[BroadcastMessage](../../../broadcasts/api-objects/broadcast-message.md)`
 The message object returned from the request.
 
-**formattingCulture string**  
-If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
+**formattingCulture** `string`
+If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
@@ -88,14 +88,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**errorMessage string**  
+**errorMessage** `string`
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**  
+**helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**  
+**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

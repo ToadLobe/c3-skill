@@ -16,7 +16,7 @@ release: 476.3
 
 ## Ratings
 
-Various objects are allowed to be rated by players, such as [cloud saves](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/blob).
+Various objects are allowed to be rated by players, such as [cloud saves](../cloud-save/api-objects/blob.md).
 
 Objects usually have owners (for example a cloud save uploaded by Player1 is owned by Player1).  The owner of a rateable object cannot cast ratings on their own object.
 

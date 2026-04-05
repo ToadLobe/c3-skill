@@ -32,12 +32,12 @@ There are currently three types of emails that Construct Game Services can send 
 
 ### Verify Email Address
 
-Before any other types of emails are sent, the player must have verified their email address.  An email address for a player can either be set from the [register player end point](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/register-player), or from the [set email address end point](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/set-email-address).  Once set, the email will be despatched to the player with a link to vertify their email address.
+Before any other types of emails are sent, the player must have verified their email address.  An email address for a player can either be set from the [register player end point](authentication/api-end-points/players/register-player.md), or from the [set email address end point](authentication/api-end-points/players/set-email-address.md).  Once set, the email will be despatched to the player with a link to vertify their email address.
 
 ### Forgotten Password
 
-This email is only sent if the players email address is verified.  Make a call to the [forgotten password end point](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/forgotten-password) and an email will be sent to the player with a link to change their password.  If the player doesn't have a username/password set yet, the link will allow the player to set a username and password.  The link sent in the email expires after a short period of time for security reasons.
+This email is only sent if the players email address is verified.  Make a call to the [forgotten password end point](authentication/api-end-points/players/forgotten-password.md) and an email will be sent to the player with a link to change their password.  If the player doesn't have a username/password set yet, the link will allow the player to set a username and password.  The link sent in the email expires after a short period of time for security reasons.
 
 ### Sign In With Email
 
-This email is only sent if the players email address is verified.  Setting the sign in provider to Email on the [sign in](https://www.construct.net/game-services/manuals/game-services/authentication/api-end-points/players/sign-in) end point will send the user an email with a link in it, once clicked the sign in request will be completed.
+This email is only sent if the players email address is verified.  Setting the sign in provider to Email on the [sign in](authentication/api-end-points/players/sign-in.md) end point will send the user an email with a link in it, once clicked the sign in request will be completed.

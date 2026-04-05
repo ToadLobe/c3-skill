@@ -54,7 +54,7 @@ This service is the core of the CGS - the players ID is used to identify them an
 
 ## Broadcasts Service
 
-Allows you to create [Broadcast Channels](https://www.construct.net/game-services/manuals/game-services/broadcasts/api-objects/broadcast-channel), and from these channels create [Broadcast Messages](https://www.construct.net/game-services/manuals/game-services/broadcasts/api-objects/broadcast-message) that are accessible to all players in your game/application.  For example, you might create a channel "New Features" and publish messages into this channel describing new features you have introduced when you update your game.
+Allows you to create [Broadcast Channels](broadcasts/api-objects/broadcast-channel.md), and from these channels create [Broadcast Messages](broadcasts/api-objects/broadcast-message.md) that are accessible to all players in your game/application.  For example, you might create a channel "New Features" and publish messages into this channel describing new features you have introduced when you update your game.
 
 Once your message is published to your channel, it can be requested from your game/application auto-translated into the following languages: `AR`, `BG`, `CS`, `DA`, `DE`, `EL`, `EN-GB`, `EN-US`, `ES`, `ES-419`, `ET`, `FI`, `FR`, `HE`, `HU`, `ID`, `IT`, `JA`, `KO`, `LT`, `LV`, `NB`, `NL`, `PL`, `PT-BR`, `PT-PT`, `RO`, `RU`, `SK`, `SL`, `SV`, `TH`, `TR`, `UK`, `VI`, `ZH-HANS`, `ZH-HANT`.
 
@@ -64,7 +64,7 @@ You can also see how many players have read each message you publish.  If setup,
 
 Allow players to save blobs of data into the cloud for retrieval at a later date.  The most useful and simple applciation for this is allowing players to save their game progress.  You can also save a picture alongside a cloud save to represent the data more visually - for example a screenshot of the game where the save game was created.
 
-You can also create public [Game Buckets](https://www.construct.net/game-services/manuals/game-services/cloud-save/api-objects/game-buckets) that players can save data into - for example if your game allows you to create custom levels, you could create a public bucket for these levels and allow players to share their creations with other players.  These data blobs can also be rated with multiple dimensions, and returned to players sorted by the ratings.
+You can also create public [Game Buckets](cloud-save/api-objects/game-buckets.md) that players can save data into - for example if your game allows you to create custom levels, you could create a public bucket for these levels and allow players to share their creations with other players.  These data blobs can also be rated with multiple dimensions, and returned to players sorted by the ratings.
 
 ## Leaderboards Service
 
@@ -95,11 +95,11 @@ Tracks player XP.  The XP service allows you to:
 
 ## Construct 3 Plugin
 
-It's easy to interact with the leaderboard service directly within Construct 3 using the official [Construct Services Plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/construct-game-services).
+It's easy to interact with the leaderboard service directly within Construct 3 using the official [Construct Services Plugin](../Construct3-Manual/plugin-reference/construct-game-services.md).
 
 ## Construct Arcade
 
-If you use the [Construct Services Plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/construct-game-services) in your Construct 3 project, the plugin has methods to interact with the Construct Arcade Leaderboard.  When you upload your game to the  [Construct Arcade](https://www.construct.net/en/free-online-games) a leaderboard will be created and configured automatically for you.  Please note, for scores to be submitted to the Construct Arcade users must be logged in on Construct.net, guest scores are not permitted.
+If you use the [Construct Services Plugin](../Construct3-Manual/plugin-reference/construct-game-services.md) in your Construct 3 project, the plugin has methods to interact with the Construct Arcade Leaderboard.  When you upload your game to the  [Construct Arcade](https://www.construct.net/en/free-online-games) a leaderboard will be created and configured automatically for you.  Please note, for scores to be submitted to the Construct Arcade users must be logged in on Construct.net, guest scores are not permitted.
 
 ## .NET Class Library
 

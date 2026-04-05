@@ -15,15 +15,15 @@ release: 476.3
 
 ```json
 {
-  "teamID": "f827cd64-7325-4cb9-9f18-1a6e74ff0d3e",
+  "teamID": "dfde08c6-bae6-4702-9561-972c216779a8",
   "name": "Red Team"
 }
 ```
 
 ## Object Properties
 
-**teamID guid**  
+**teamID** `[guid](../../data-types#internalH1Link1.md)`
 A unique ID for this team.
 
-**name string**  
+**name** `string`
 The name of this team.  Names cannot exceed 64 characters in length.

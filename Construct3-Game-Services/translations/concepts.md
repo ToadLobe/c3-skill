@@ -14,7 +14,7 @@ release: 476.3
 
 ## What is the Translation Service?
 
-Various objects in the Construct Game Services can have translatable properties.  For example, [broadcast messages](https://www.construct.net/game-services/manuals/game-services/broadcasts/api-objects/broadcast-message) have a title and text content that can be translated into multiple languages.  When a client makes a request for this content, you can send the [`requestedLanguage`](https://www.construct.net/game-services/manuals/game-services/languages) property with the request.
+Various objects in the Construct Game Services can have translatable properties.  For example, [broadcast messages](../broadcasts/api-objects/broadcast-message.md) have a title and text content that can be translated into multiple languages.  When a client makes a request for this content, you can send the [`requestedLanguage`](../languages.md) property with the request.
 
 Your plan has a certain number of monthly translation characters that can be used.  If you have previously translated a translatable property into a specific language, this translation is saved and does not consume any of your translation budget.  If it has not yet been translated and you have enough characters, a new translation will be generated and the result returned to the client.  If you do not have enough translation budget left in your plan, the original source language text will be returned instead.
 

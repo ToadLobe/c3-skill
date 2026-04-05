@@ -11,4 +11,4 @@ If enabled, each player in the leaderboard will only have one score record repre
 
 If set, a player identifier must be sent with all scores.
 
-This must be set if you wish to enable [score history tracking](https://www.construct.net/game-services/manuals/game-services/leaderboards/settings/score-history) and [teams](https://www.construct.net/game-services/manuals/game-services/leaderboards/settings/teams).
+This must be set if you wish to enable [score history tracking](../../leaderboards/settings/score-history.md) and [teams](../../leaderboards/settings/teams.md).

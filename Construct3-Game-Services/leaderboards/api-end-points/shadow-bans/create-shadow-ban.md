@@ -19,7 +19,7 @@ release: 476.3
 
 You can shadow ban IP addresses and player identifiers from your leaderboards.  This will still show their posted scores to the affected player identifiers and IP addresses, but will be hidden from view for everyone else viewing your leaderboard.
 
-IP addresses are never stored in their raw format in our database, see our [privacy page](https://www.construct.net/game-services/manuals/game-services/leaderboards/privacy) for more information.
+IP addresses are never stored in their raw format in our database, see our [privacy page](../../../leaderboards/privacy.md) for more information.
 
 ## Request URL
 
@@ -31,29 +31,29 @@ https://leaderboards.construct.net/createshadowban.json
 
 ## Authenticating The Request
 
-This end point is for [secret key](https://www.construct.net/game-services/manuals/game-services/games/api-keys) authenticated requests only.  Signed in players cannot call this end point.
+This end point is for [secret key](../../../games/api-keys.md) authenticated requests only.  Signed in players cannot call this end point.
 
-**secret string Required**  
-Your games [secret API key](https://www.construct.net/game-services/manuals/game-services/games/api-keys).
+**secret** `string` *Required*
+Your games [secret API key](../../../games/api-keys.md).
 
  ## Request Parameters
 
-**gameID guid Required**  
+**gameID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
 The ID of the game you are making this request against.  You can find the ID of your game in your [Construct Game Services (CGS) account](https://www.construct.net/en/game-services/account).
 
-**leaderboardID guid Required**  
+**leaderboardID** `[guid](../../../data-types#internalH1Link1.md)` *Required*
 The ID of the leaderboard you're creating the shadow ban for.
 
-**playerID guid Sometimes required**  
+**playerID** `[guid](../../../data-types#internalH1Link1.md)`
 The player ID to shadow ban from this leaderboard. You must specify this, `scoreID`, `ipAddress` or `ipHash`.
 
-**scoreID guid Sometimes required**  
+**scoreID** `[guid](../../../data-types#internalH1Link1.md)`
 The score ID to shadow ban from this leaderboard.  Providing this will shadow ban the player + IP address associated with this score record. You must specify this, `playerID`, `ipAddress` or `ipHash`.
 
-**ipAddress string Sometimes required**  
+**ipAddress** `string`
 The IP address to shadow ban from this leaderboard. You must specify this, `playerID`, `scoreID` or `ipHash`.
 
-**ipHash int32 Sometimes required**  
+**ipHash** `int32`
 The IP hash to shadow ban from this leaderboard. You must specify this, `playerID`, `scoreID` or `ipAddress`.
 
 ## Success Response
@@ -69,11 +69,11 @@ Successful responses always return a `HTTP 200` status code.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**formattingCulture string**  
-If some return values are [culture specific](https://www.construct.net/game-services/manuals/game-services/culture), this property indicates what culture the values have been rendered as.
+**formattingCulture** `string`
+If some return values are [culture specific](../../../culture.md), this property indicates what culture the values have been rendered as.
 
 ## Failure Response
 
@@ -90,14 +90,14 @@ Unsuccessful responses always return `HTTP 4xx` status codes.
 
 ### Response Properties
 
-**success bool**  
+**success** `[bool](../../../data-types#internalH1Link4.md)`
 If the request was successfull or not.
 
-**errorMessage string**  
+**errorMessage** `string`
 An error message with more detailed information on why the request failed.
 
-**helpURL url (string)**  
+**helpURL** `url (string)`
 A link to documentation which should provide help with the error.
 
-**shouldRetry bool**  
+**shouldRetry** `[bool](../../../data-types#internalH1Link4.md)`
 Should the client wait a short period of time and retry the request.  Usually this is false, but returns true if the request failed due to rate limiting.

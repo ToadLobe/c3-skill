@@ -38,25 +38,25 @@ The leaderboard service scales effortlessly to millions of scores on single lead
 
 ## Country Leaderboards Built In
 
-Unlike other leaderboard services, you do not need to create a new leaderboard for each country you want to represent.  Each leaderboard is capable of tracking countries automatically.  Refer to our [privacy page](https://www.construct.net/game-services/manuals/game-services/leaderboards/privacy) for details on how IP addresses and countries are calculated and stored.
+Unlike other leaderboard services, you do not need to create a new leaderboard for each country you want to represent.  Each leaderboard is capable of tracking countries automatically.  Refer to our [privacy page](../leaderboards/privacy.md) for details on how IP addresses and countries are calculated and stored.
 
 ## Teams
 
-[Add teams](https://www.construct.net/game-services/manuals/game-services/leaderboards/teams) into your leaderboards.  Teams have their own customisable ranking system independent of the main leaderboard rankings.
+[Add teams](../leaderboards/teams.md) into your leaderboards.  Teams have their own customisable ranking system independent of the main leaderboard rankings.
 
 ## Highly Customisable
 
-Leaderboards come with a [wide range of settings](https://www.construct.net/game-services/manuals/game-services/leaderboards/settings) allowing you to customise it to your needs.
+Leaderboards come with a [wide range of settings](../leaderboards/settings.md) allowing you to customise it to your needs.
 
 ## Daly, Weekly, Monthly or Annual Leaderboards
 
-Use the `range` parameter on the [get scores request](https://www.construct.net/game-services/manuals/game-services/leaderboards/api-end-points/scores/get-scores) to return daily, weekly, monthly or yearly leaderboards.  Use the `rangeOffset` parameter to retrieve historic records.
+Use the `range` parameter on the [get scores request](../leaderboards/api-end-points/scores/get-scores.md) to return daily, weekly, monthly or yearly leaderboards.  Use the `rangeOffset` parameter to retrieve historic records.
 
 You can also filter by country, allowing you for example to show the monthly leaderboard for the US.
 
 ## Score History
 
-Track the players score over time.  You can [retrieve the score history](https://www.construct.net/game-services/manuals/game-services/leaderboards/api-end-points/scores/get-score-history) of a score up to 1 year in the past.
+Track the players score over time.  You can [retrieve the score history](../leaderboards/api-end-points/scores/get-score-history.md) of a score up to 1 year in the past.
 
 ## Compare Rank
 
@@ -64,13 +64,13 @@ The get score request has a `compareRanks` parameter allowing you to compare the
 
 ## Shadow Bans
 
-If bad actors submit faked scores into your leaderboard, your able to [shadow ban](https://www.construct.net/game-services/manuals/game-services/leaderboards/shadow-banned-scores) them based on their player ID (if one exists) and/or their IP address.
+If bad actors submit faked scores into your leaderboard, your able to [shadow ban](../leaderboards/shadow-banned-scores.md) them based on their player ID (if one exists) and/or their IP address.
 
 If a players score is shadow banned, it will show in the leaderboard for them - but no one else.
 
 ## Auto Score Rejection
 
-You know your game better than anyone else.  You can set [score thresholds](https://www.construct.net/game-services/manuals/game-services/leaderboards/settings/score-rejection) to automatically reject scores that fall out of bounds.  You're also able to customise how rejected scores are handled.
+You know your game better than anyone else.  You can set [score thresholds](../leaderboards/settings/score-rejection.md) to automatically reject scores that fall out of bounds.  You're also able to customise how rejected scores are handled.
 
 ## Store Additional Values
 
@@ -78,19 +78,19 @@ Each score record has the ability to record up to 3 different additional values.
 
 ## Score Adjustment
 
-You're able to [adjust existing scores](https://www.construct.net/game-services/manuals/game-services/leaderboards/api-end-points/scores/adjust-score) in the leaderboard to allow for cumulative scoring over the lifetime of the player.
+You're able to [adjust existing scores](../leaderboards/api-end-points/scores/adjust-score.md) in the leaderboard to allow for cumulative scoring over the lifetime of the player.
 
 ## Tier System
 
-Add players into [tiers](https://www.construct.net/game-services/manuals/game-services/leaderboards/tiers) based on customisable rulesets.
+Add players into [tiers](../leaderboards/tiers.md) based on customisable rulesets.
 
 ## Many Views
 
 The leaderboards API has many end points allowing you to:
 
-- [Get newest scores](https://www.construct.net/game-services/manuals/game-services/leaderboards/api-end-points/scores/get-newest-scores)
-- [Get a players scores](https://www.construct.net/game-services/manuals/game-services/leaderboards/api-end-points/scores/get-player-scores)
-- [Get neighbour scores](https://www.construct.net/game-services/manuals/game-services/leaderboards/api-end-points/scores/get-score-neighbours)
+- [Get newest scores](../leaderboards/api-end-points/scores/get-newest-scores.md)
+- [Get a players scores](../leaderboards/api-end-points/scores/get-player-scores.md)
+- [Get neighbour scores](../leaderboards/api-end-points/scores/get-score-neighbours.md)
 
 ## And Much More
 
