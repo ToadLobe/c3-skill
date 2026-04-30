@@ -1,60 +1,48 @@
-# Construct 3 Documentation (Markdown)
+# c3-skill
 
-[![Release](https://img.shields.io/badge/release-r476.3-blue)](https://www.construct.net/en/make-games/releases)
-[![License](https://img.shields.io/badge/license-CC%20BY--SA%203.0-green)](https://creativecommons.org/licenses/by-sa/3.0/)
+A [Claude Code](https://claude.ai/code) agent skill that gives your AI in-depth knowledge of the [Construct 3](https://www.construct.net/) scripting APIs.
 
-Unofficial Markdown conversion of the official [Construct 3](https://www.construct.net/en/make-games/games-editor) documentation for easy reading, searching, and AI-assisted development.
+Covers the complete Construct 3 scripting manual: `IRuntime`, `IInstance`, `IWorldInstance`, all built-in plugin interfaces (Sprite, Audio, Mouse, Keyboard, Tilemap, etc.), all behavior interfaces (Bullet, Platform, Physics, Pathfinding, Tween, etc.), layout/layer APIs, graphics interfaces, addon SDK interfaces, and usage guides.
 
-## Contents
+## Install
 
-| Directory | Docs | Description |
-| --------- | :---: | ---------- |
-| [Manual](Construct3-Manual/index.md) | 346 | Plugins, behaviors, events, scripting, publishing |
-| [Addon SDK](Construct3-Addon-SDK/index.md) | 63 | Custom plugins, behaviors, effects, themes |
-| [Game Services](Construct3-Game-Services/index.md) | 157 | Leaderboards, achievements, cloud saves, authentication, broadcasts, XP, ratings |
-| **Total** | **566** | |
+```bash
+npx skills install ToadLobe/c3-skill
+```
+
+Or install globally (available in all projects):
+
+```bash
+npx skills install ToadLobe/c3-skill -g
+```
+
+## Usage
+
+Once installed, your agent automatically applies this skill when you ask Construct 3 scripting questions. You can also invoke it explicitly:
+
+```
+/c3
+```
+
+## What's included
+
+| Section | Files |
+|---|---|
+| Core runtime | `IRuntime` events, APIs, SDK |
+| Object interfaces | `IInstance`, `IWorldInstance`, `IObjectType`, `IBehavior`, animations, effects |
+| Layout & layer | `ILayout`, `ILayer` |
+| Plugin interfaces | 35 built-in plugins (Sprite, Audio, Tilemap, Drawing Canvas, 3D, …) |
+| Behavior interfaces | 22 built-in behaviors (Bullet, Platform, Physics, Pathfinding, Tween, …) |
+| Graphics interfaces | `IRenderer`, `ITexture`, `IMeshData`, `IRendererText` |
+| Utility interfaces | Storage, asset manager, collision engine, tween/timeline state, platform info |
+| Addon SDK interfaces | `ISdkInstanceBase`, `ISdkPluginBase`, `ISdkBehaviorBase`, utils, … |
+| Guides | External editor, import maps, subclassing, minification |
+| Using scripting | Script files, event sheet scripts, TypeScript, debugging |
 
 ## Source
 
-| Content | Release | URL |
-| --- | :---: | --- |
-| Construct 3 Manual | r476.3 | <https://www.construct.net/en/make-games/manuals/construct-3> |
-| Addon SDK | r476.3 | <https://www.construct.net/en/make-games/manuals/addon-sdk> |
-| Game Services | r476.3 | <https://www.construct.net/en/game-services/manuals/game-services> |
+Documentation scraped from the official [Construct 3 manual](https://www.construct.net/en/make-games/manuals/construct-3/scripting) (release 476.3).
 
-## Recommended Reading
+## License
 
-### Project & Workflow
-
-- [Construct's project format](https://www.construct.net/en/tutorials/constructs-project-format-3275)
-
-### Performance & Memory
-
-- [Memory usage](Construct3-Manual/tips-and-guides/memory-usage.md)
-- [Performance tips](Construct3-Manual/tips-and-guides/performance-tips.md)
-- [Remember not to waste memory](https://www.construct.net/en/blogs/construct-official-blog-1/remember-not-waste-memory-796)
-- [Optimisation: don't waste your time](https://www.construct.net/en/blogs/construct-official-blog-1/optimisation-dont-waste-time-768)
-- [Answer your own performance questions](https://www.construct.net/en/blogs/ashleys-blog-2/answer-own-performance-925)
-- [Outstanding game performance](https://www.construct.net/en/blogs/construct-official-blog-1/outstanding-game-performance-1584)
-
-### Development Experience
-
-- [Common mis-used events & gotchas](https://www.construct.net/en/blogs/construct-official-blog-1/common-mis-used-events-gotchas-822)
-- [Simple software things that are actually really hard](https://www.construct.net/en/blogs/ashleys-blog-2/simple-software-things-1587)
-- [Unexpected complications](https://www.construct.net/en/blogs/ashleys-blog-2/unexpected-complications-1535)
-- [Software development is hard](https://www.construct.net/en/blogs/ashleys-blog-2/software-development-hard-951)
-- [Blame the technology aardvark](https://www.construct.net/en/blogs/ashleys-blog-2/blame-technology-aardvark-case-948)
-- [The reality of long-term software development](https://www.construct.net/en/blogs/ashleys-blog-2/reality-long-term-software-1892)
-
-### JavaScript & Advanced
-
-- [JavaScript beats GameMaker Language](https://www.construct.net/en/blogs/construct-official-blog-1/javascript-beats-gamemaker-1570)
-- [RTS update: architecture](https://www.construct.net/en/blogs/ashleys-blog-2/rts-update-architecture-1597)
-
-## License & Copyright
-
-> The Construct 3 documentation is licensed under [Creative Commons BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
-> **© [Scirra Ltd](https://www.construct.net/).** All rights reserved.
->
-> This repository is an unofficial conversion for personal learning and AI-assisted development.
-> For the official documentation, visit [construct.net](https://www.construct.net/).
+MIT

@@ -1,0 +1,24 @@
+{
+  "name": "c3-skill",
+  "version": "1.0.0",
+  "description": "Construct 3 scripting API reference skill for Claude Code and compatible AI agents",
+  "keywords": [
+    "construct3",
+    "construct-3",
+    "c3",
+    "scripting",
+    "claude",
+    "agent-skill",
+    "claude-code",
+    "game-development"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToadLobe/c3-skill.git"
+  },
+  "files": [
+    "SKILL.md",
+    "Construct3-Manual/"
+  ]
+}
