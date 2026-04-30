@@ -2,18 +2,10 @@
 
 A [Claude Code](https://claude.ai/code) agent skill that gives your AI in-depth knowledge of the [Construct 3](https://www.construct.net/) scripting APIs.
 
-Covers the complete Construct 3 scripting manual: `IRuntime`, `IInstance`, `IWorldInstance`, all built-in plugin interfaces (Sprite, Audio, Mouse, Keyboard, Tilemap, etc.), all behavior interfaces (Bullet, Platform, Physics, Pathfinding, Tween, etc.), layout/layer APIs, graphics interfaces, addon SDK interfaces, and usage guides.
-
 ## Install
 
 ```bash
 npx skills install ToadLobe/c3-skill
-```
-
-Or install globally (available in all projects):
-
-```bash
-npx skills install ToadLobe/c3-skill -g
 ```
 
 ## Usage
@@ -24,25 +16,10 @@ Once installed, your agent automatically applies this skill when you ask Constru
 /c3
 ```
 
-## What's included
+## Source & License
 
-| Section | Files |
-|---|---|
-| Core runtime | `IRuntime` events, APIs, SDK |
-| Object interfaces | `IInstance`, `IWorldInstance`, `IObjectType`, `IBehavior`, animations, effects |
-| Layout & layer | `ILayout`, `ILayer` |
-| Plugin interfaces | 35 built-in plugins (Sprite, Audio, Tilemap, Drawing Canvas, 3D, …) |
-| Behavior interfaces | 22 built-in behaviors (Bullet, Platform, Physics, Pathfinding, Tween, …) |
-| Graphics interfaces | `IRenderer`, `ITexture`, `IMeshData`, `IRendererText` |
-| Utility interfaces | Storage, asset manager, collision engine, tween/timeline state, platform info |
-| Addon SDK interfaces | `ISdkInstanceBase`, `ISdkPluginBase`, `ISdkBehaviorBase`, utils, … |
-| Guides | External editor, import maps, subclassing, minification |
-| Using scripting | Script files, event sheet scripts, TypeScript, debugging |
+Documentation scraped from the official [Construct 3 manual](https://www.construct.net/en/make-games/manuals/construct-3/scripting).
 
-## Source
-
-Documentation scraped from the official [Construct 3 manual](https://www.construct.net/en/make-games/manuals/construct-3/scripting) (release 476.3).
-
-## License
+Repository forked from https://github.com/XHXIAIEIN/Construct3-Manual and adapted for use as a skill.
 
 The Construct 3 documentation is licensed under Creative Commons BY-SA 3.0. © Scirra Ltd. All rights reserved.
