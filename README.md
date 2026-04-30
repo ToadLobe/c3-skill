@@ -13,7 +13,7 @@ npx skills install ToadLobe/c3-skill
 Once installed, your agent automatically applies this skill when you ask Construct 3 scripting questions. You can also invoke it explicitly:
 
 ```
-/c3
+/c3-skill
 ```
 
 ## Source & License
