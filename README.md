@@ -45,4 +45,4 @@ Documentation scraped from the official [Construct 3 manual](https://www.constru
 
 ## License
 
-MIT
+The Construct 3 documentation is licensed under Creative Commons BY-SA 3.0. © Scirra Ltd. All rights reserved.
