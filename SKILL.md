@@ -82,6 +82,7 @@ Read files directly to get accurate, up-to-date API details. Prefer reading the 
 - `scripting-reference/plugin-interfaces/3d-camera.md`
 - `scripting-reference/plugin-interfaces/3d-model.md`
 - `scripting-reference/plugin-interfaces/3d-shape.md`
+- `scripting-reference/plugin-interfaces/steamworks.md` — Steamworks: Steam integration, user info, overlay, achievements, DLC, rich presence, auth tickets, Steam Cloud
 
 **Behavior interfaces** (one file per built-in behavior)
 - `scripting-reference/behavior-interfaces/bullet.md`

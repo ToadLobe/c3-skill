@@ -16,6 +16,27 @@ The `IFileSystemObjectType` interface derives from [IObjectClass](../../../scrip
 
 Note this class derives from the object class interface, not the instance interface. Typically it is used through `runtime.objects.FileSystem`.
 
+## Picker tags
+
+In Windows WebView2, macOS WKWebView and Linux CEF exports, the browser permission model can be bypassed to directly access folders such as the user's documents folder. This is done by using pre-defined folder picker tags like `"<documents>"`. These act like the folder was already picked on startup. Use `hasPickerTag()` to check if they are available.
+
+| Picker tag         | Description / path                                                   |
+| ------------------ | -------------------------------------------------------------------- |
+| `<app>`            | Folder the main application executable belongs to.                   |
+| `<web-resource>`   | Folder containing web resource files (e.g. `www` subfolder).        |
+| `<current-app-data>` | Local app data folder for this specific application.               |
+| `<local-app-data>` | Main system local app data folder for the current user.              |
+| `<roaming-app-data>` | Main system roaming app data folder (Windows only).               |
+| `<desktop>`        | User's desktop folder.                                               |
+| `<documents>`      | User's documents folder.                                             |
+| `<downloads>`      | User's downloads folder.                                             |
+| `<pictures>`       | User's pictures/photos folder.                                       |
+| `<profile>`        | Parent folder for all files/folders relating to the current user.    |
+| `<saved-games>`    | User's saved games folder (Windows only).                            |
+| `<screenshots>`    | User's screenshots folder (Windows only).                            |
+| `<videos>`         | User's videos/movies folder.                                         |
+| `<dropped-files>`  | References files dragged and dropped into the window (used with the `"drop"` event). |
+
 ## Common types
 
 The following types are used across multiple APIs and so are described once here.
