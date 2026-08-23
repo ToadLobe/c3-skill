@@ -1,7 +1,7 @@
 ---
 title: "File System script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/file-system"
-release: 476.3
+release: 495
 ---
 
 ## On this page
@@ -12,30 +12,9 @@ release: 476.3
 
 ---
 
-The `IFileSystemObjectType` interface derives from [IObjectClass](../../../scripting/scripting-reference/object-interfaces/iobjectclass.md) to add APIs specific to the [File System plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/filesystem). Refer to the plugin documentation for details about permissions and known folders.
+The `IFileSystemObjectType` interface derives from [IObjectClass](../../../scripting/scripting-reference/object-interfaces/iobjectclass.md) to add APIs specific to the [File System plugin](../../../plugin-reference/filesystem.md). Refer to the plugin documentation for details about permissions and known folders.
 
 Note this class derives from the object class interface, not the instance interface. Typically it is used through `runtime.objects.FileSystem`.
-
-## Picker tags
-
-In Windows WebView2, macOS WKWebView and Linux CEF exports, the browser permission model can be bypassed to directly access folders such as the user's documents folder. This is done by using pre-defined folder picker tags like `"<documents>"`. These act like the folder was already picked on startup. Use `hasPickerTag()` to check if they are available.
-
-| Picker tag         | Description / path                                                   |
-| ------------------ | -------------------------------------------------------------------- |
-| `<app>`            | Folder the main application executable belongs to.                   |
-| `<web-resource>`   | Folder containing web resource files (e.g. `www` subfolder).        |
-| `<current-app-data>` | Local app data folder for this specific application.               |
-| `<local-app-data>` | Main system local app data folder for the current user.              |
-| `<roaming-app-data>` | Main system roaming app data folder (Windows only).               |
-| `<desktop>`        | User's desktop folder.                                               |
-| `<documents>`      | User's documents folder.                                             |
-| `<downloads>`      | User's downloads folder.                                             |
-| `<pictures>`       | User's pictures/photos folder.                                       |
-| `<profile>`        | Parent folder for all files/folders relating to the current user.    |
-| `<saved-games>`    | User's saved games folder (Windows only).                            |
-| `<screenshots>`    | User's screenshots folder (Windows only).                            |
-| `<videos>`         | User's videos/movies folder.                                         |
-| `<dropped-files>`  | References files dragged and dropped into the window (used with the `"drop"` event). |
 
 ## Common types
 
@@ -66,7 +45,7 @@ An initial folder location can be specified using a string which may be one of t
 ## File System events
 
 **"drop"**  
-Fired when the user drags and drops files in to the window. The event object has the property `files` which has an array of [File](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fFile) objects representing the dropped files.
+Fired when the user drags and drops files in to the window. The event object has the property `files` which has an array of [File](https://developer.mozilla.org/en-US/docs/Web/API/File) objects representing the dropped files.
 
 ## File System APIs
 
@@ -123,7 +102,7 @@ Show a folder picker allowing the user to choose a folder on their local system.
 Write data to a previously chosen file. The `opts` parameter is an object which uses the following properties to specify options:
 
 - `pickerTag` (required): a string of the picker tag used to choose the file or folder.
-- `data` (required): a string or [ArrayBuffer](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fArrayBuffer) with the data to be written. Strings are written as text with UTF-8 encoding.
+- `data` (required): a string or [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) with the data to be written. Strings are written as text with UTF-8 encoding.
 - `folderPath`: when the picker tag refers to a folder, the relative path to the file inside that folder, e.g. "subfolder/file.txt".
 - `mode`: a string of either `"overwrite"` or `"append"` for the file write mode. The default is to overwrite, replacing the entire file contents with the provided data. Append mode is only supported when writing text (passing a string for `data`).
 - `fileTag`: a file tag used by triggers in the event system.
@@ -134,7 +113,7 @@ Write data to a previously chosen file. The `opts` parameter is an object which 
 Read data from a previously chosen file. The `opts` parameter is an object which uses the following properties to specify options:
 
 - `pickerTag` (required): a string of the picker tag used to choose the file or folder.
-- `mode` (required): a string of either `"text"` or `"binary"` to specify the type of the data returned. In text mode the returned Promise will resolve with a string, and in binary mode it will resolve with an [ArrayBuffer](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fJavaScript%2fReference%2fGlobal_Objects%2fArrayBuffer).
+- `mode` (required): a string of either `"text"` or `"binary"` to specify the type of the data returned. In text mode the returned Promise will resolve with a string, and in binary mode it will resolve with an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
 - `folderPath`: when the picker tag refers to a folder, the relative path to the file inside that folder, e.g. "subfolder/file.txt".
 - `fileTag`: a file tag used by triggers in the event system.
 

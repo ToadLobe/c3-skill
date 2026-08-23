@@ -1,7 +1,7 @@
 ---
 title: "9-patch script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/9-patch"
-release: 476.3
+release: 495
 ---
 
 ## On this page
@@ -10,7 +10,7 @@ release: 476.3
 
 ---
 
-The `I9PatchInstance` interface derives from [IWorldInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance) to add APIs specific to the [9-patch plugin](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/9-patch).
+The `I9PatchInstance` interface derives from [IWorldInstance](../../../scripting/scripting-reference/object-interfaces/iworldinstance.md) to add APIs specific to the [9-patch plugin](../../../plugin-reference/9-patch.md).
 
 ## 9-patch APIs
 
@@ -42,7 +42,7 @@ Set or get the scale of the patches drawn inside the object, as a scale factor (
 Set or get the scale of the patches drawn inside the object, as a scale factor (e.g. 1 represents 100% scale).
 
 **async replaceImage(blob)**  
-Replace the current image with the contents of a [Blob](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fBlob) representing an image file such as a PNG image. The blob can be locally generated or retrieved from a URL, for example:
+Replace the current image with the contents of a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) representing an image file such as a PNG image. The blob can be locally generated or retrieved from a URL, for example:
 
 ```javascript
 // Loading an image from a URL

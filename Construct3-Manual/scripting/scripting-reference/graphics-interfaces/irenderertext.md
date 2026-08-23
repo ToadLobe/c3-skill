@@ -1,7 +1,7 @@
 ---
 title: "IRendererText script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderertext"
-release: 476.3
+release: 495
 ---
 
 ## On this page
@@ -10,7 +10,7 @@ release: 476.3
 
 ---
 
-The `IRendererText` interface manages text wrapping, drawing text to a canvas, and then uploading the result to a texture. This makes it easy to display text in Construct's renderer. It is created via the [IRenderer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderer-interface) method `createWebGLText()`.
+The `IRendererText` interface manages text wrapping, drawing text to a canvas, and then uploading the result to a texture. This makes it easy to display text in Construct's renderer. It is created via the [IRenderer](../../../scripting/scripting-reference/graphics-interfaces/irenderer-interface.md) method `createWebGLText()`.
 
 ## IRendererText APIs
 
@@ -60,10 +60,10 @@ Set or get the text string to be drawn.
 Set the size of the area that text can be drawn in. The size is specified in CSS pixels. The `zoomScale` can be increased to render the text at a higher resolution, which can be useful when zooming in.
 
 **getTexture()**  
-Get an [ITexture](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/itexture) interface representing the texture with the requested text rendered on to it. **Note:** the texture is generated asynchronously, so can return `null` when first requested. Use `setTextureUpdateCallback()` to get a callback when the texture has updated.
+Get an [ITexture](../../../scripting/scripting-reference/graphics-interfaces/itexture.md) interface representing the texture with the requested text rendered on to it. **Note:** the texture is generated asynchronously, so can return `null` when first requested. Use `setTextureUpdateCallback()` to get a callback when the texture has updated.
 
 **getTexRect()**  
-Return a [DOMRect](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fDOMRect) representing the content area of the text on the texture. This is the subset of the texture that ought to be rendered. Note: this is only valid when `getTexture()` returns a non-null result.
+Return a [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) representing the content area of the text on the texture. This is the subset of the texture that ought to be rendered. Note: this is only valid when `getTexture()` returns a non-null result.
 
 **setTextureUpdateCallback(callback)**  
 Set a function to call when the texture containing the rendered text is updated. Since the texture is generated asynchronously, this is necessary to know when to redraw anything that may be displaying the text, so they can redraw with the updated texture.

@@ -1,7 +1,7 @@
 ---
 title: "Tilemap script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/tilemap"
-release: 476.3
+release: 495
 ---
 
 ## On this page
@@ -86,7 +86,7 @@ Get the tile at a given position in tiles (i.e. (0, 0) is the top-left tile of t
 Set the tile at a given position in tiles. Use -1 to set a tile empty; otherwise use bit operations to combine the tile ID and flags.
 
 **async replaceImage(blob)**  
-Replace the current tilemap image with the contents of a [Blob](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fBlob) representing an image file such as a PNG image. The blob can be locally generated or retrieved from a URL, for example:
+Replace the current tilemap image with the contents of a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) representing an image file such as a PNG image. The blob can be locally generated or retrieved from a URL, for example:
 
 ```javascript
 // Loading an image from a URL

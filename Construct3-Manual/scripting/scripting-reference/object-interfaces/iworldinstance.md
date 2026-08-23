@@ -1,7 +1,7 @@
 ---
 title: "WorldInstance script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance"
-release: 476.3
+release: 495
 ---
 
 ## On this page
@@ -29,7 +29,7 @@ Instances are typically accessed through [IObjectClass](../../../scripting/scrip
 
 ## World instance events
 
-The following events can be listened for on any `IWorldInstance` using the `addEventListener` method. See [instance event](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/instance-event) for standard event properties. Note many more kinds of addon-specific events can be fired. See the documentation on each addon's script interfaces for more information.
+The following events can be listened for on any `IWorldInstance` using the `addEventListener` method. See [instance event](../../../scripting/scripting-reference/interfaces/instance-event.md) for standard event properties. Note many more kinds of addon-specific events can be fired. See the documentation on each addon's script interfaces for more information.
 
 **"hierarchyready"**  
 Fired for the root instance in a hierarchy after all instances have finished creating. During creation of a hierarchy it is uncertain whether other instances in the hierarchy have been created yet, which can sometimes complicate initializing hierarchies. When this event fires all instances in the hierarchy have been created, including triggering *On created* in event sheets, and so it is a suitable time to perform initialization of an entire hierarchy. As this only fires for the root instance, if you wish to iterate the rest of the instances in the hierarchy, use the `allInstances()` generator method of the root instance.
@@ -73,25 +73,43 @@ Set, offset or get the X, Y and Z co-ordinates at the same time.
 Set, offset or get the X, Y and Z co-ordinates at the same time.
 
 **originX**  
-The current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The methods allow setting or getting both co-ordinates at the same time.
+Set and get the current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin X/Y (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The origin Z is only applicable to 3D objects that have a depth. The methods `setOrigin()` and `getOrigin()` allow setting or getting the X and Y co-ordinates at the same time. The `setOrigin3d()` and `getOrigin3d()` methods include the origin Z co-ordinate.
 
 > **Tip**  
 > With Sprite objects, changing the animation frame will also update the origin according to the origin placement in the Animations Editor.
 
 **originY**  
-The current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The methods allow setting or getting both co-ordinates at the same time.
+Set and get the current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin X/Y (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The origin Z is only applicable to 3D objects that have a depth. The methods `setOrigin()` and `getOrigin()` allow setting or getting the X and Y co-ordinates at the same time. The `setOrigin3d()` and `getOrigin3d()` methods include the origin Z co-ordinate.
+
+> **Tip**  
+> With Sprite objects, changing the animation frame will also update the origin according to the origin placement in the Animations Editor.
+
+**originZ**  
+Set and get the current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin X/Y (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The origin Z is only applicable to 3D objects that have a depth. The methods `setOrigin()` and `getOrigin()` allow setting or getting the X and Y co-ordinates at the same time. The `setOrigin3d()` and `getOrigin3d()` methods include the origin Z co-ordinate.
 
 > **Tip**  
 > With Sprite objects, changing the animation frame will also update the origin according to the origin placement in the Animations Editor.
 
 **setOrigin(originX, originY)**  
-The current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The methods allow setting or getting both co-ordinates at the same time.
+Set and get the current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin X/Y (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The origin Z is only applicable to 3D objects that have a depth. The methods `setOrigin()` and `getOrigin()` allow setting or getting the X and Y co-ordinates at the same time. The `setOrigin3d()` and `getOrigin3d()` methods include the origin Z co-ordinate.
+
+> **Tip**  
+> With Sprite objects, changing the animation frame will also update the origin according to the origin placement in the Animations Editor.
+
+**setOrigin3d(originX, originY, originZ)**  
+Set and get the current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin X/Y (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The origin Z is only applicable to 3D objects that have a depth. The methods `setOrigin()` and `getOrigin()` allow setting or getting the X and Y co-ordinates at the same time. The `setOrigin3d()` and `getOrigin3d()` methods include the origin Z co-ordinate.
 
 > **Tip**  
 > With Sprite objects, changing the animation frame will also update the origin according to the origin placement in the Animations Editor.
 
 **getOrigin()**  
-The current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The methods allow setting or getting both co-ordinates at the same time.
+Set and get the current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin X/Y (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The origin Z is only applicable to 3D objects that have a depth. The methods `setOrigin()` and `getOrigin()` allow setting or getting the X and Y co-ordinates at the same time. The `setOrigin3d()` and `getOrigin3d()` methods include the origin Z co-ordinate.
+
+> **Tip**  
+> With Sprite objects, changing the animation frame will also update the origin according to the origin placement in the Animations Editor.
+
+**getOrigin3d()**  
+Set and get the current origin point of this instance, represented as a normalized position in the range [0, 1]. For example the origin X/Y (0, 0) is in the top-left corner, and (0.5, 0.5) is in the middle regardless of the size of the object. The origin Z is only applicable to 3D objects that have a depth. The methods `setOrigin()` and `getOrigin()` allow setting or getting the X and Y co-ordinates at the same time. The `setOrigin3d()` and `getOrigin3d()` methods include the origin Z co-ordinate.
 
 > **Tip**  
 > With Sprite objects, changing the animation frame will also update the origin according to the origin placement in the Animations Editor.
@@ -123,20 +141,32 @@ The angle of the instance in radians. If this is changed, `angleDegrees` updates
 **angleDegrees**  
 The angle of the instance in degrees. If this is changed, `angle` updates accordingly.
 
+**setRotationEuler(x, y, z)**  
+Where 3D rotation is supported, sets the orientation according to the rotation around each of the axes in radians. Note that changing the Euler rotation will also update the quaternion.
+
+**getRotationEuler()**  
+Return the current 3D rotation around each axis in the form `[x, y, z]`.
+
+**setQuaternion(x, y, z, w)**  
+Where 3D rotation is supported, sets the orientation using the four components of a quaternion. Note changing the quaternion will also update the Euler rotation.
+
+**getQuaternion()**  
+Return the current 3D rotation as a quaternion in the form `[x, y, z, w]`.
+
 **getBoundingBox(ignoreMesh = false)**  
-Return a [DOMRect](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fDOMRect), or for the 3D variant an [IAABB3D](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/iaabb3d), representing the axis-aligned bounding box of the instance in layout co-ordinates. By default this takes in to account any changes from the mesh distortion feature - specifying `false` for the `ignoreMesh` parameter will return a bounding box as if the object did not use mesh distortion.
+Return a [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect), or for the 3D variant an [IAABB3D](../../../scripting/scripting-reference/interfaces/iaabb3d.md), representing the axis-aligned bounding box of the instance in layout co-ordinates. By default this takes in to account any changes from the mesh distortion feature - specifying `false` for the `ignoreMesh` parameter will return a bounding box as if the object did not use mesh distortion.
 
 > **Tip**  
 > This returns a copy of the bounding box. The returned DOMRect or IAABB3D does not change if the instance changes, nor does changing the return value affect the instance.
 
 **getBoundingBox3d(ignoreMesh = false)**  
-Return a [DOMRect](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fDOMRect), or for the 3D variant an [IAABB3D](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/iaabb3d), representing the axis-aligned bounding box of the instance in layout co-ordinates. By default this takes in to account any changes from the mesh distortion feature - specifying `false` for the `ignoreMesh` parameter will return a bounding box as if the object did not use mesh distortion.
+Return a [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect), or for the 3D variant an [IAABB3D](../../../scripting/scripting-reference/interfaces/iaabb3d.md), representing the axis-aligned bounding box of the instance in layout co-ordinates. By default this takes in to account any changes from the mesh distortion feature - specifying `false` for the `ignoreMesh` parameter will return a bounding box as if the object did not use mesh distortion.
 
 > **Tip**  
 > This returns a copy of the bounding box. The returned DOMRect or IAABB3D does not change if the instance changes, nor does changing the return value affect the instance.
 
 **getBoundingQuad(ignoreMesh = false)**  
-Return a [DOMQuad](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fDOMQuad) representing the bounding quad of the instance in layout co-ordinates. This is always a rectangle, but unlike the bounding box can represent rotation. By default this takes in to account any changes from the mesh distortion feature - specifying `false` for the `ignoreMesh` parameter will return a bounding quad as if the object did not use mesh distortion.
+Return a [DOMQuad](https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad) representing the bounding quad of the instance in layout co-ordinates. This is always a rectangle, but unlike the bounding box can represent rotation. By default this takes in to account any changes from the mesh distortion feature - specifying `false` for the `ignoreMesh` parameter will return a bounding quad as if the object did not use mesh distortion.
 
 > **Tip**  
 > This returns a copy of the bounding quad. The returned DOMQuad does not change if the instance changes, nor does changing the DOMQuad affect the instance.
@@ -154,7 +184,7 @@ The opacity of the instance, as a floating point number in the range [0, 1], whe
 An array with 3 elements specifying the red, green and blue color filter of the instance, with color values as floats in the 0-1 range.
 
 **blendMode**  
-A string indicating the current blend mode of the instance, controlling how it draws over the background. The allowed strings are the same as accepted by the [IRenderer](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/graphics-interfaces/irenderer-interface) method `setBlendMode()`.
+A string indicating the current blend mode of the instance, controlling how it draws over the background. The allowed strings are the same as accepted by the [IRenderer](../../../scripting/scripting-reference/graphics-interfaces/irenderer-interface.md) method `setBlendMode()`.
 
 **sampling**  
 A string of the instance's sampling mode, which is one of `"auto"`, `"nearest"`, `"bilinear"` or `"trilinear"`.
@@ -163,7 +193,7 @@ A string of the instance's sampling mode, which is one of `"auto"`, `"nearest"`,
 A read-only string with the instance's active sampling mode. This is only different to `sampling` when the sampling mode is `"auto"`: in this case the active sampling mode is inherited from the project, layout, layer, or hierarchy. This is the sampling mode with which this instance will be rendered.
 
 **effects**  
-An array of [IEffectInstance](../../../scripting/scripting-reference/object-interfaces/ieffectinstance.md) representing the effect parameters for each effect on the instance.
+An array of [IEffectInstance](../../../scripting/scripting-reference/object-interfaces/ieffectinstance.md) representing the effect parameters for each effect on the instance. Effects can also be accessed by name as well as by index - for example if there is one effect named `AdjustHSL`, it can be referred to with both `effects[0]` and `effects.AdjustHSL`.
 
 ## Z order APIs
 
@@ -184,7 +214,7 @@ A read-only integer indicating the instance's current index in the Z order on it
 
 ## Collision APIs
 
-See also the [ICollisionEngine](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/interfaces/icollisionengine) interface for more collision APIs.
+See also the [ICollisionEngine](../../../scripting/scripting-reference/interfaces/icollisionengine.md) interface for more collision APIs.
 
 **isCollisionEnabled**  
 Set or get a boolean indicating whether collisions are enabled for this instance. If disabled, the instance will always fail all overlap or collision checks.
@@ -203,8 +233,8 @@ Test if this instance overlaps any instance with the [Solid behavior](../../../b
 
 ## Mesh distortion APIs
 
-**createMesh(hsize, vsize)**  
-Create a mesh for deforming the appearance of the object with the given number of mesh points horizontally and vertically. The minimum size is 2.
+**createMesh(hsize, vsize, copyFromOldMesh = false)**  
+Create a mesh for deforming the appearance of the object with the given number of mesh points horizontally and vertically. The minimum size is 2 on each axis. If there is an existing mesh, by default all mesh points are reset when the mesh size changes. To preserve the existing mesh points when resizing an existing mesh, pass `true` for `copyFromOldMesh.`
 
 **releaseMesh()**  
 Releases any mesh that has been created, reverting back to default rendering of the object with no mesh distortion. Ignored if no mesh created.
@@ -231,7 +261,7 @@ Return the parent `IWorldInstance` of this instance in the scene graph hierarchy
 **getTopParent()**  
 Return the top parent of this instance in the scene graph hierarchy (which by definition has no parent itself) if any, else `null`.
 
-***parents()**
+***parents()**  
 A generator method that can be used to iterate all the instance's parents, up to the top parent.
 
 **getChildCount()**  
@@ -240,10 +270,10 @@ Returns the number of children that have been added to this instance in the scen
 **getChildAt(index)**  
 Of the children that have been added to this instance, return the child instance at the given zero-based index. If the index is out of bounds, returns `null`.
 
-***children()**
+***children()**  
 A generator method that can be used to iterate all the instance's added children.
 
-***allChildren()**
+***allChildren()**  
 A generator method that can be used to iterate all the instance's children recursively, i.e. including children of children, down to the bottom of the scene graph hierarchy.
 
 **addChild(wi, opts)**  

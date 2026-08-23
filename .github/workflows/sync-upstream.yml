@@ -1,0 +1,48 @@
+name: Sync upstream docs
+run-name: "Sync Construct 3 docs · ${{ github.event_name }} #${{ github.run_number }}"
+
+# Upstream (XHXIAIEIN/Construct3-Manual) scrapes the official Construct 3
+# manual on its own schedule (Wednesdays ~10:00 UTC) and merges into its
+# main branch. This workflow polls that branch daily and vendors any
+# changes under Construct3-Manual/scripting/ into this repo.
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Clone upstream
+        run: |
+          git clone --depth 1 https://github.com/XHXIAIEIN/Construct3-Manual.git /tmp/upstream
+          echo "UPSTREAM_SHA=$(git -C /tmp/upstream rev-parse --short HEAD)" >> "$GITHUB_ENV"
+
+      - name: Vendor scripting docs
+        run: |
+          # No --delete: some docs here (e.g. steamworks.md) are manually
+          # curated additions upstream doesn't have yet. Only add/update
+          # files that exist upstream; never remove local-only ones.
+          rsync -a /tmp/upstream/Construct3-Manual/scripting/ Construct3-Manual/scripting/
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- Construct3-Manual/scripting; then
+            echo "No changes; docs already up to date."
+            exit 0
+          fi
+          git add Construct3-Manual/scripting
+          git commit -m "Sync Construct 3 scripting docs from upstream@${UPSTREAM_SHA}"
+          git push

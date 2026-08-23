@@ -1,7 +1,7 @@
 ---
 title: "3D model"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/3d-model"
-release: 476.3
+release: 495
 ---
 
 ## On this page
@@ -23,6 +23,12 @@ This function is not defined by default. When defined it is executed after loadi
 **onError**  
 This function is not defined by default. When defined it is executed if there is any problem during the process of loading a new 3D model object.
 
+**loadTextureFromURL**  
+Load a texture from a url into a mesh. The *"target"* parameter indicates which instances will be affected, *"object-type"* will affect all instances of the same object type while *"instance"* will only affect the instance used to call this function. The function returns a promise that resolves when the texture is loaded and is rejected if loading fails.
+
+**unloadTextures**  
+Unload dynamically loaded textures from the provided 3D model and mesh. The function returns a promise that resolves when unloading completes and is rejected if there is any problem unloading.
+
 **modelName**  
 returns the value of the current 3D model object in use. When set it acts as a shortcut for **loadModel** where only a 3D model name is provided.
 
@@ -38,8 +44,20 @@ returns the progress of the current animation. When set it updates the progress 
 **isPlaying**  
 returns the playing state of the current animation. Setting will resume playback or stop it.
 
+**isLooping**  
+sets or gets the current looping state of all animations in the model.
+
 **meshRenderMode**  
 returns or changes the current render mode. It accepts these values: `"hierarchy"` to draw the enabled meshes as they where authored in the model file and `"isolate"` to draw the enabled meshes as if they where the only ones in the model file.
+
+**backfaceCulling**  
+returns or changes the current state of back face culling.
+
+**onAnimationFinished**  
+if set this callback executes when an animation finishes, it has one string argument which is the name of the animation that finished playing.
+
+**onAnimationLooped**  
+if set this callback executes when an animation loops, it has one string argument which is the name of the animation that loopped.
 
 **offsetX**  
 return or set the current offset of the 3D model in relation to the position of the corresponding [instance](../../../project-primitives/objects/instances.md).
@@ -49,15 +67,6 @@ return or set the current offset of the 3D model in relation to the position of 
 
 **offsetZ**  
 return or set the current offset of the 3D model in relation to the position of the corresponding [instance](../../../project-primitives/objects/instances.md).
-
-**rotationX**  
-return or set the current rotation of the 3D model. `rotationZ` is added to the **angle** of the corresponding instance.
-
-**rotationY**  
-return or set the current rotation of the 3D model. `rotationZ` is added to the **angle** of the corresponding instance.
-
-**rotationZ**  
-return or set the current rotation of the 3D model. `rotationZ` is added to the **angle** of the corresponding instance.
 
 **scaleX**  
 return or set the current scale of the 3D model. These values are compounded with the scale of the corresponding instance.

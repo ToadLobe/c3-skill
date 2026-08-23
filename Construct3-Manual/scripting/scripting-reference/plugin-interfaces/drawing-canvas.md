@@ -1,7 +1,7 @@
 ---
 title: "Drawing canvas script interface"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/scripting-reference/plugin-interfaces/drawing-canvas"
-release: 476.3
+release: 495
 ---
 
 ## On this page
@@ -22,7 +22,7 @@ See the [Drawing Canvas: Generate Image](https://editor.construct.net/#open=draw
 
 ## Drawing co-ordinates
 
-The co-ordinate system used in drawing APIs work the same as they do for actions. For more information refer to the [Drawing Canvas object documentation](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/drawing-canvas).
+The co-ordinate system used in drawing APIs work the same as they do for actions. For more information refer to the [Drawing Canvas object documentation](../../../plugin-reference/drawing-canvas.md).
 
 ## Colors in drawing methods
 
@@ -69,7 +69,7 @@ Draw either a solid or a dashed line between two points with a given color and l
 **fillPoly(polyPoints, color, isConvex = false)**  
 Fill or outline a polygon area with a given color. The polygon is specified as an array of two-element arrays with co-ordinates for `polyPoints`, e.g. `[[x1, y1], [x2, y2], ...]`. For the line variants, the `thickness`, `dashLength` and `lineCap` parameters are the same as used for the `line()` and `lineDashed()` methods.
 
-With `fillPoly()` the polygon must provide at least three points, and may be [convex](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fConvex_polygon) or [concave](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fConcave_polygon). However concave polygons are internally converted in to multiple convex polygons. This process can sometimes fail due to floating point precision issues in the geometric calculations, and result in a glitchy rendering. If you know the shape you are rendering is convex, pass `true` for the `isConvex` parameter, which will bypass the internal conversion; however this will not render correctly if the polygon is in fact concave.
+With `fillPoly()` the polygon must provide at least three points, and may be [convex](https://en.wikipedia.org/wiki/Convex_polygon) or [concave](https://en.wikipedia.org/wiki/Concave_polygon). However concave polygons are internally converted in to multiple convex polygons. This process can sometimes fail due to floating point precision issues in the geometric calculations, and result in a glitchy rendering. If you know the shape you are rendering is convex, pass `true` for the `isConvex` parameter, which will bypass the internal conversion; however this will not render correctly if the polygon is in fact concave.
 
 > **Tip**  
 > Note that self-intersecting polygons are not supported with `fillPoly()` and will not draw correctly.
@@ -77,7 +77,7 @@ With `fillPoly()` the polygon must provide at least three points, and may be [co
 **linePoly(polyPoints, color, thickness, lineCap = "butt")**  
 Fill or outline a polygon area with a given color. The polygon is specified as an array of two-element arrays with co-ordinates for `polyPoints`, e.g. `[[x1, y1], [x2, y2], ...]`. For the line variants, the `thickness`, `dashLength` and `lineCap` parameters are the same as used for the `line()` and `lineDashed()` methods.
 
-With `fillPoly()` the polygon must provide at least three points, and may be [convex](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fConvex_polygon) or [concave](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fConcave_polygon). However concave polygons are internally converted in to multiple convex polygons. This process can sometimes fail due to floating point precision issues in the geometric calculations, and result in a glitchy rendering. If you know the shape you are rendering is convex, pass `true` for the `isConvex` parameter, which will bypass the internal conversion; however this will not render correctly if the polygon is in fact concave.
+With `fillPoly()` the polygon must provide at least three points, and may be [convex](https://en.wikipedia.org/wiki/Convex_polygon) or [concave](https://en.wikipedia.org/wiki/Concave_polygon). However concave polygons are internally converted in to multiple convex polygons. This process can sometimes fail due to floating point precision issues in the geometric calculations, and result in a glitchy rendering. If you know the shape you are rendering is convex, pass `true` for the `isConvex` parameter, which will bypass the internal conversion; however this will not render correctly if the polygon is in fact concave.
 
 > **Tip**  
 > Note that self-intersecting polygons are not supported with `fillPoly()` and will not draw correctly.
@@ -85,7 +85,7 @@ With `fillPoly()` the polygon must provide at least three points, and may be [co
 **lineDashedPoly(polyPoints, color, thickness, dashLength, lineCap = "butt")**  
 Fill or outline a polygon area with a given color. The polygon is specified as an array of two-element arrays with co-ordinates for `polyPoints`, e.g. `[[x1, y1], [x2, y2], ...]`. For the line variants, the `thickness`, `dashLength` and `lineCap` parameters are the same as used for the `line()` and `lineDashed()` methods.
 
-With `fillPoly()` the polygon must provide at least three points, and may be [convex](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fConvex_polygon) or [concave](https://www.construct.net/out?u=https%3a%2f%2fen.wikipedia.org%2fwiki%2fConcave_polygon). However concave polygons are internally converted in to multiple convex polygons. This process can sometimes fail due to floating point precision issues in the geometric calculations, and result in a glitchy rendering. If you know the shape you are rendering is convex, pass `true` for the `isConvex` parameter, which will bypass the internal conversion; however this will not render correctly if the polygon is in fact concave.
+With `fillPoly()` the polygon must provide at least three points, and may be [convex](https://en.wikipedia.org/wiki/Convex_polygon) or [concave](https://en.wikipedia.org/wiki/Concave_polygon). However concave polygons are internally converted in to multiple convex polygons. This process can sometimes fail due to floating point precision issues in the geometric calculations, and result in a glitchy rendering. If you know the shape you are rendering is convex, pass `true` for the `isConvex` parameter, which will bypass the internal conversion; however this will not render correctly if the polygon is in fact concave.
 
 > **Tip**  
 > Note that self-intersecting polygons are not supported with `fillPoly()` and will not draw correctly.
@@ -94,16 +94,16 @@ With `fillPoly()` the polygon must provide at least three points, and may be [co
 Set the blend mode used for draw operations on to the canvas. This is different to the blend used to draw the canvas itself to the layout. The blend mode is specified as a string and must be one of `"normal"`, `"additive"`, `"copy"`, `"destination-over"`, `"source-in"`, `"destination-in"`, `"source-out"`, `"destination-out"`, `"source-atop"` or `"destination-atop"`.
 
 **async pasteInstances(instancesArr, includeEffects = true)**  
-Draw a list of instances that are currently overlapping the canvas at their current positions, given as an array of [IWorldInstance](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/object-interfaces/iworldinstance). By default objects are drawn exactly as they appear, taking in to account any effects added to them; set `includeEffects` to `false` to draw without effects, as if all the object's effects were disabled. Note that the drawing actually happens at the end of the tick, and so this method is `async` so it can be awaited to ensure the paste has completed.
+Draw a list of instances that are currently overlapping the canvas at their current positions, given as an array of [IWorldInstance](../../../scripting/scripting-reference/object-interfaces/iworldinstance.md). By default objects are drawn exactly as they appear, taking in to account any effects added to them; set `includeEffects` to `false` to draw without effects, as if all the object's effects were disabled. Note that the drawing actually happens at the end of the tick, and so this method is `async` so it can be awaited to ensure the paste has completed.
 
 > **Tip**  
 > Note if an object is destroyed immediately after pasting without waiting for completion, it will not be drawn, as it will be destroyed before it gets to be drawn.
 
 **setFixedResolutionMode(fixedWidth, fixedHeight)**  
-Switch between fixed and auto resolution modes. For more information refer to the [Drawing Canvas object documentation](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/drawing-canvas).
+Switch between fixed and auto resolution modes. For more information refer to the [Drawing Canvas object documentation](../../../plugin-reference/drawing-canvas.md).
 
 **setAutoResolutionMode()**  
-Switch between fixed and auto resolution modes. For more information refer to the [Drawing Canvas object documentation](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/drawing-canvas).
+Switch between fixed and auto resolution modes. For more information refer to the [Drawing Canvas object documentation](../../../plugin-reference/drawing-canvas.md).
 
 **surfaceDeviceWidth**  
 Read-only values representing the size of the Drawing Canvas rendering surface in device pixels. The method returns both values at the same time.
@@ -115,13 +115,13 @@ Read-only values representing the size of the Drawing Canvas rendering surface i
 Read-only values representing the size of the Drawing Canvas rendering surface in device pixels. The method returns both values at the same time.
 
 **pixelScale**  
-A read-only value with the size of a single canvas pixel in object co-ordinates. See the section *Co-ordinate systems* in the [Drawing Canvas object documentation](https://www.construct.net/make-games/manuals/construct-3/plugin-reference/drawing-canvas) for more information.
+A read-only value with the size of a single canvas pixel in object co-ordinates. See the section *Co-ordinate systems* in the [Drawing Canvas object documentation](../../../plugin-reference/drawing-canvas.md) for more information.
 
 **async getImagePixelData()**  
-Takes a snapshot of the drawing canvas pixel state on the GPU, and reads it back to the CPU asynchronously. Resolves with an [ImageData](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fImageData) representing the pixel data. Note this uses unpremultiplied alpha, whereas the surface on the GPU is premultiplied, so technically this is lossy.
+Takes a snapshot of the drawing canvas pixel state on the GPU, and reads it back to the CPU asynchronously. Resolves with an [ImageData](https://developer.mozilla.org/en-US/docs/Web/API/ImageData) representing the pixel data. Note this uses unpremultiplied alpha, whereas the surface on the GPU is premultiplied, so technically this is lossy.
 
 **loadImagePixelData(imageData, premultiplyAlpha = false)**  
-Load pixel data in an [ImageData](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fImageData) in to the Drawing Canvas rendering surface. The ImageData must have a size equal to `surfaceDeviceWidth` and `surfaceDeviceHeight`. If the optional `premultiplyAlpha` parameter is set to `true`, the pixel data will premultiply the alpha (multiplying the RGB components by the A component). This can be left disabled if the pixel data is already premultiplied, which is also faster since the premultiplication step can be skipped.
+Load pixel data in an [ImageData](https://developer.mozilla.org/en-US/docs/Web/API/ImageData) in to the Drawing Canvas rendering surface. The ImageData must have a size equal to `surfaceDeviceWidth` and `surfaceDeviceHeight`. If the optional `premultiplyAlpha` parameter is set to `true`, the pixel data will premultiply the alpha (multiplying the RGB components by the A component). This can be left disabled if the pixel data is already premultiplied, which is also faster since the premultiplication step can be skipped.
 
 **saveImage(format, quality, areaRect)**  
-Save the current canvas image in a compressed format (e.g. PNG or JPEG). All parameters are optional - if none are specified, the entire canvas is saved in PNG format. The `format` parameter is a string of the MIME type of the image format to use, e.g. "image/png". Where a lossy format is used like "image/jpeg", the `quality` parameter is a number from 0-1 for the compression quality. A subset of the canvas area can be saved (e.g. for saving a cropped image) by specifying a [DOMRect](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fDOMRect) for the `areaRect` parameter using units of device pixels. The method returns a Promise that resolves with a [Blob](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fBlob) of the resulting image.
+Save the current canvas image in a compressed format (e.g. PNG or JPEG). All parameters are optional - if none are specified, the entire canvas is saved in PNG format. The `format` parameter is a string of the MIME type of the image format to use, e.g. "image/png". Where a lossy format is used like "image/jpeg", the `quality` parameter is a number from 0-1 for the compression quality. A subset of the canvas area can be saved (e.g. for saving a cropped image) by specifying a [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) for the `areaRect` parameter using units of device pixels. The method returns a Promise that resolves with a [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) of the resulting image.

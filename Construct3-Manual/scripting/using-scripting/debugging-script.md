@@ -1,7 +1,7 @@
 ---
 title: "Debugging script"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/using-scripting/debugging-script"
-release: 476.3
+release: 495
 ---
 
 ## On this page
@@ -17,7 +17,7 @@ release: 476.3
 
 Browsers provide comprehensive developer tools ("dev tools" for short) to help debug and profile JavaScript code. Construct is designed to allow you to use these industry-standard tools to also debug code used in your project.
 
-Developer tools are complex and sophisticated tools used by professional developers. For full documentation you should refer to each browser's own dev tools documentation, such as [Google's Chrome DevTools documentation](https://www.construct.net/out?u=https%3a%2f%2fdevelopers.google.com%2fweb%2ftools%2fchrome-devtools%2f). However an overview is provided here, focusing on how to use dev tools with Construct specifically. Screenshots of dev tools are taken from Chrome's DevTools, as it is the most widely-used browser. Other browser's dev tools will look different, but generally they work in similar ways.
+Developer tools are complex and sophisticated tools used by professional developers. For full documentation you should refer to each browser's own dev tools documentation, such as [Google's Chrome DevTools documentation](https://developers.google.com/web/tools/chrome-devtools/). However an overview is provided here, focusing on how to use dev tools with Construct specifically. Screenshots of dev tools are taken from Chrome's DevTools, as it is the most widely-used browser. Other browser's dev tools will look different, but generally they work in similar ways.
 
 ## Debugging TypeScript
 
@@ -43,11 +43,11 @@ For more information, including using remote debugging to open developer tools f
 
 ## The console
 
-The *Console* tab provides a list of messages, used for development purposes. Calling `console.log("Hello!")` will add the message *Hello!* here. For more console features available in code, see the [Console API](https://www.construct.net/out?u=https%3a%2f%2fdeveloper.mozilla.org%2fen-US%2fdocs%2fWeb%2fAPI%2fconsole). Adding console messages to indicate which parts of the code have been reached, and the contents of any important variables, can be a useful way to diagnose code.
+The *Console* tab provides a list of messages, used for development purposes. Calling `console.log("Hello!")` will add the message *Hello!* here. For more console features available in code, see the [Console API](https://developer.mozilla.org/en-US/docs/Web/API/console). Adding console messages to indicate which parts of the code have been reached, and the contents of any important variables, can be a useful way to diagnose code.
 
 [![console hello v430](https://construct-static.com/images/v1740/r/uploads/articleuploadobject/0/images/132045/console-hello_v430.png)](https://construct-static.com/images/v1740/uploads/articleuploadobject/0/images/132045/console-hello.png)
 
-You can also directly type in JavaScript code in the console, which runs when you press <kbd>Enter</kbd>. This is a useful way to try out snippets of code or quickly write and test a function to use in your project. If you are stopped on a breakpoint, code run in the console can also use any variables in the scope of the breakpoint. Often this is useful if you break in some code with the `runtime` variable available, allowing you to call [runtime script interface](https://www.construct.net/make-games/manuals/construct-3/scripting/scripting-reference/iruntime) functions from the console.
+You can also directly type in JavaScript code in the console, which runs when you press <kbd>Enter</kbd>. This is a useful way to try out snippets of code or quickly write and test a function to use in your project. If you are stopped on a breakpoint, code run in the console can also use any variables in the scope of the breakpoint. Often this is useful if you break in some code with the `runtime` variable available, allowing you to call [runtime script interface](../../scripting/scripting-reference/iruntime.md) functions from the console.
 
 > **Tip**  
 > Remember that browsers can only directly run JavaScript code. Therefore you can only type JavaScript code in to the console - you can't enter TypeScript code there.

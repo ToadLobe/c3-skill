@@ -1,7 +1,7 @@
 ---
 title: "Using an external editor"
 source: "https://www.construct.net/en/make-games/manuals/construct-3/scripting/guides/using-external-editor"
-release: 476.3
+release: 495
 ---
 
 ## On this page
@@ -10,13 +10,13 @@ release: 476.3
 
 ---
 
-Construct provides its own built-in code editor based on [Monaco](https://www.construct.net/out?u=https%3a%2f%2fmicrosoft.github.io%2fmonaco-editor%2f) to help you conveniently write code in your project. However you may wish to use an external code editor, such as an industry-standard tool like [Visual Studio Code](https://www.construct.net/out?u=https%3a%2f%2fcode.visualstudio.com%2f) (aka VS Code). Construct has special features to help you use external editors, and this guide describes how they work.
+Construct provides its own built-in code editor based on [Monaco](https://microsoft.github.io/monaco-editor/) to help you conveniently write code in your project. However you may wish to use an external code editor, such as an industry-standard tool like [Visual Studio Code](https://code.visualstudio.com/) (aka VS Code). Construct has special features to help you use external editors, and this guide describes how they work.
 
 Using TypeScript requires some extra steps which are detailed below. However the basic setup is explained first, which works well for JavaScript projects.
 
 ### Step 1: save a folder project
 
-First of all, make sure you save your project to a folder. This means all your project files, including your script files, are saved as individual files within the project folder, rather than all contained within a .c3p file. For more information see the section on project folders in [Saving projects](https://www.construct.net/make-games/manuals/construct-3/overview/saving-projects).
+First of all, make sure you save your project to a folder. This means all your project files, including your script files, are saved as individual files within the project folder, rather than all contained within a .c3p file. For more information see the section on project folders in [Saving projects](../../overview/saving-projects.md).
 
 ### Step 2: enable auto-reload
 
@@ -47,8 +47,8 @@ To help you get started, this section describes the necessary steps to set up Ty
 
 With some external editors like VS Code, you may need to install TypeScript separately. You will only need to do this once to set up your code editor.
 
-1. First install [VS Code](https://www.construct.net/out?u=https%3a%2f%2fcode.visualstudio.com%2f) if you haven't installed it already
-2. Next, install [Node.js](https://www.construct.net/out?u=https%3a%2f%2fnodejs.org%2f) if you haven't installed it already
+1. First install [VS Code](https://code.visualstudio.com/) if you haven't installed it already
+2. Next, install [Node.js](https://nodejs.org/) if you haven't installed it already
 3. Then in a terminal run run the command `npm install -g typescript` to install TypeScript
 
 You can check the TypeScript compiler, or `tsc` for short, is installed by running `tsc --version` in the terminal. It should print the version installed.
@@ -56,7 +56,7 @@ You can check the TypeScript compiler, or `tsc` for short, is installed by runni
 > **Warning**  
 > Modern versions of Windows use PowerShell for the terminal, and running some of the above commands could return an error like *tsc.ps1 cannot be loaded because running scripts is disabled on this system* due to the security restrictions set by default. To fix this, run the command `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` to allow permission to run the command, and then try the original command again.
 
-For more details refer to [TypeScript in Visual Studio Code](https://www.construct.net/out?u=https%3a%2f%2fcode.visualstudio.com%2fdocs%2flanguages%2ftypescript) in VS Code's official documentation.
+For more details refer to [TypeScript in Visual Studio Code](https://code.visualstudio.com/docs/languages/typescript) in VS Code's official documentation.
 
 ### Setting up the Construct project
 
@@ -86,4 +86,4 @@ Note that we recommend using the workflow described here, where you only have th
 
 If your Construct project has both a .ts and .js version of the same file, Construct gives precedence to the .js file. This should mean your external editor workflow keeps working as expected, but there's no reason to keep the .ts file in the project - Construct isn't actually using it at all, and so to avoid confusion, we would recommend not having it in your project. In particular this could be confusing if you try to edit the .ts file from within Construct: it would not change the .js file and so not affect the way your project works, and auto-reload mode would overwrite the file on the next preview, so your changes would be lost anyway.
 
-For more advice about TypeScript workflows, see [TypeScript in Construct](https://www.construct.net/make-games/manuals/construct-3/scripting/using-scripting/typescript-construct).
+For more advice about TypeScript workflows, see [TypeScript in Construct](../../scripting/using-scripting/typescript-construct.md).
